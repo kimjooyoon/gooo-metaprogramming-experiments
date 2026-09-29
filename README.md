@@ -71,9 +71,10 @@ emits a small subset of `.gooo` `computes` programs as deterministic,
 typechecked Go functions. [PR #1074](https://github.com/kimjooyoon/meta-ontology-go/pull/1074)
 adds a bounded Laya choice among three equivalent conditional-lowering shapes,
 with deterministic `preserve` fallback and route/latency/completeness receipts;
-it is merged to `dev` as [PR #1074](https://github.com/kimjooyoon/meta-ontology-go/pull/1074)
-after the language CI suite passed. Promotion to `main` is still pending. A warm 30-call smoke on one
-fixture measured 108.48 ms p50 / 123.10 ms p95, with `preserve` selected on
+it is on `main` via [PR #1079](https://github.com/kimjooyoon/meta-ontology-go/pull/1079),
+which promoted the exact `dev` tree. Main CI and the promotion proof passed.
+The deployed commit is `0299ba548f15ac9550d1c7f742749d5e42948a4a`. A warm
+30-call smoke on one fixture measured 108.48 ms p50 / 123.10 ms p95, with `preserve` selected on
 every call. This is a latency/resource observation, not an accuracy result.
 
 The 100-case corpus reported above remains the sidecar-based baseline: it does

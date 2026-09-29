@@ -22,6 +22,8 @@ jobs:
           repository: kimjooyoon/meta-ontology-go
           ref: 3086deb0892329fe10a38f2ee2882a5375be2fa6
           path: gooo
+      - name: Validate public intent repository catalog
+        run: python3 scripts/validate_intent_repositories.py
       - uses: actions/setup-go@v5
         with:
           go-version: '1.27.x'

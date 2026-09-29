@@ -82,7 +82,14 @@ separate [direct body-codegen cohort](cohorts/body-codegen-100/README.md)
 routes 100 generated `.gooo` bodies through the pinned Gooo CLI and checks 2,500
 finite-domain outputs after compiling the generated Go package. It keeps
 behavioral agreement separate from body-AST coverage and records replay,
-latency, child CPU, and peak child RSS. CI runs without a model service and
-uses the deterministic fallback; Laya route choice remains an optional local
-measurement. The two cohorts have different input construction and evidence
-boundaries, so their percentages are not averaged together.
+latency, child CPU, peak child RSS, and average core-normalized CPU use. Its
+machine-readable completeness receipt reports independent PASS/PROGRESS/UNKNOWN
+dimensions without a single aggregate score, keeping real-use-case coverage,
+reverse observation, full-domain behavior, and route quality UNKNOWN until
+those claims have their own evidence. Resource figures cover Gooo and generated
+Go child processes; a separately running Laya server is excluded. CI runs
+without a model service and uses the deterministic fallback; Laya route choice
+remains an optional local measurement, with request digest, model revision,
+probabilities, and confidence preserved when available. The two cohorts have
+different input construction and evidence boundaries, so their percentages are
+not averaged together.

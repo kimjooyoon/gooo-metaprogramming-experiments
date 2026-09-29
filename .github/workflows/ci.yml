@@ -61,6 +61,22 @@ jobs:
             .int64_extreme_expected_outputs == 400 and
             .int64_extreme_checked_outputs == 400 and
             .int64_extreme_behavioral_matches == 400 and
+            .int64_partition_proven_cases == 100 and
+            .int64_partition_expected_observations == 800 and
+            .int64_partition_observed_matches == 800 and
+            .int64_partition_proof.schema == "gooo/int64-comparison-partition/v1" and
+            .int64_partition_proof.profile_supported and
+            .int64_partition_proof.partition_covers_int64 and
+            .int64_partition_proof.plan_contains_all_representatives and
+            .int64_partition_proof.compiled_execution_matches_representatives and
+            .int64_partition_proof.proved_case_count == 100 and
+            .int64_partition_proof.comparison_count == 13 and
+            .int64_partition_proof.condition_count == 10 and
+            .int64_partition_proof.result_pair_count == 5 and
+            (.int64_partition_proof.body_styles | length) == 2 and
+            .int64_partition_proof.partition_cell_count == 8 and
+            (.int64_partition_proof.transition_points | length) == 7 and
+            (.int64_partition_proof.representative_inputs | length) == 8 and
             .external_repeat_mismatches == 0 and
             .repository_writes == 0 and
             (.cases | length) == 100 and
@@ -83,6 +99,9 @@ jobs:
             dimension("int64_extreme_boundary_behavior").status == "PASS" and
             dimension("int64_extreme_boundary_behavior").numerator == 400 and
             dimension("int64_extreme_boundary_behavior").denominator == 400 and
+            dimension("partitioned_int64_semantics").status == "PASS" and
+            dimension("partitioned_int64_semantics").numerator == 100 and
+            dimension("partitioned_int64_semantics").denominator == 100 and
             dimension("resource_baseline_comparison").status == "UNKNOWN" and
             dimension("route_quality").status == "UNKNOWN" and
             dimension("laya_decision_observation").status == "UNKNOWN"

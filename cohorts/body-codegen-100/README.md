@@ -26,13 +26,25 @@ PASS, PROGRESS, UNKNOWN, and FAIL_CLOSED dimensions. The receipt deliberately
 has no aggregate completeness score: synthetic fixture coverage, generated
 behavior, source binding, reverse observation, real use cases, and route quality
 remain distinct claims. It keeps missing real-use-case, reverse-observation,
-full-domain, and route-quality evidence UNKNOWN rather than treating finite
-fixture success as universal completeness.
+unrestricted full-domain, and route-quality evidence UNKNOWN rather than treating
+finite fixture success as universal completeness.
 
 The separate `int64_extreme_boundary_behavior` dimension reports those 400
 edge observations without converting four boundary samples into full-domain
-proof. The entire signed `int64` domain remains UNKNOWN until the supported
-condition profile has a symbolic or partitioned proof.
+proof. The edge samples alone do not establish full-domain behavior; the scoped
+partition proof below uses the actual supported condition grammar.
+
+The plan's current conditions are Boolean combinations of 13 comparisons
+between `input` and signed integer literals. They change truth only at seven
+integer transition points (`-2, 0, 1, 2, 3, 5, 6`), so the full signed
+`int64` domain has eight truth-stable cells for this profile. CI checks one
+representative in each cell (`MinInt64, -2, 0, 1, 2, 3, 5, 6`) against the
+independent condition oracle and compiled generated functions. It records
+`partitioned_int64_semantics` as 100/100 only when the declared input set
+contains every representative, all generated routes have equivalence receipts,
+and the compiled run passes. This proves the 100 constant-result fixtures over
+the declared comparison profile; general Gooo bodies and other predicate
+operators remain outside the proof.
 
 A 100% finite-domain result applies only to this fixture domain. The
 body-codegen completeness field means accepted source AST units were represented

@@ -237,6 +237,12 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
     runtime_was_run = "generated_package_test_passed" in report
     runtime_failed = runtime_was_run and report.get("generated_package_test_passed") is False
     observed_outputs = int(report.get("behavioral_matches", 0))
+    if report.get("route_sample_seed_sha256"):
+        repeat_reason = "Explicitly seeded route draws are repeated and compared with the recorded weights and draw receipt."
+    elif laya_configured:
+        repeat_reason = "Unseeded live Laya choices are recorded but are not repeated by this cohort."
+    else:
+        repeat_reason = "Deterministic fallback runs are repeated and compared byte-for-byte."
 
     dimensions = [
         dimension(
@@ -273,8 +279,8 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
         dimension(
             "external_repeat_determinism", external_repeat_matches, external_repeat_count,
             "repeated CLI decisions",
-            "Fallback runs are repeated byte-for-byte; a live Laya run is not repeated by this cohort.",
-            ["route, generated digest, and source equality on external repeat"],
+            repeat_reason,
+            ["route and generated digest", "sample draw and normalized weights when seeded"],
         ),
         dimension(
             "route_choice_protocol", protocol_bound_routes, expected_cases, "declared route choices",
@@ -429,6 +435,10 @@ def partial_report(
         "domain": domain,
         "gooo_source_sha": gooo_source_sha or "UNBOUND_LOCAL_SOURCE",
         "laya_configured": laya_enabled,
+        "route_sample_seed_sha256": (
+            digest(os.environ["GOOO_BODY_CODEGEN_SAMPLE_SEED"].encode("utf-8"))
+            if os.environ.get("GOOO_BODY_CODEGEN_SAMPLE_SEED") else None
+        ),
         "external_repeat_observation_count": external_repeat_count,
         "repository_writes": 0,
         "cases": cases,
@@ -450,6 +460,8 @@ def main() -> int:
     args.out.mkdir(parents=True, exist_ok=True)
     env = os.environ.copy()
     laya_enabled = bool(env.get("GOOO_LAYA_URL"))
+    sample_seed = env.get("GOOO_BODY_CODEGEN_SAMPLE_SEED", "")
+    sample_seed_sha256 = digest(sample_seed.encode("utf-8")) if sample_seed else None
     gooo_source_sha = env.get("GOOO_SOURCE_SHA", "")
 
     if len(cases) != plan["expected_case_count"]:
@@ -499,6 +511,8 @@ def main() -> int:
             source_path.write_text(source, encoding="utf-8")
             source_hash = digest(source.encode("utf-8"))
             command = [str(args.gooo_bin), "body-codegen", "--json", "--activity", case["activity"], str(source_path)]
+            if sample_seed:
+                command.extend(["--sample-seed", sample_seed])
             first, elapsed = run_command(command, env)
             invocation_ms.append(elapsed)
             if first.returncode != 0:
@@ -525,7 +539,7 @@ def main() -> int:
                 )
 
             repeat_equal: bool | None = None
-            if not laya_enabled:
+            if not laya_enabled or sample_seed:
                 replay, elapsed = run_command(command, env)
                 invocation_ms.append(elapsed)
                 if replay.returncode != 0:
@@ -545,6 +559,9 @@ def main() -> int:
                         and replay_report.get("route") == result.get("route")
                         and replay_payload.get("source") == generated_source
                     )
+                    if sample_seed:
+                        repeat_equal = repeat_equal and replay_report.get("route_selection") == result.get("route_selection")
+                        repeat_equal = repeat_equal and replay_report.get("route_decision", {}).get("model_revision") == result.get("route_decision", {}).get("model_revision")
                 except (json.JSONDecodeError, KeyError, TypeError):
                     repeat_equal = False
                 external_repeat_observations += 1
@@ -617,6 +634,7 @@ def main() -> int:
                     "route_answer_confidence": result.get("route_decision", {}).get("answer_confidence"),
                     "route_routing": result.get("route_decision", {}).get("routing"),
                     "route_fallback_reason": result.get("route_decision", {}).get("fallback_reason"),
+                    "route_selection": result.get("route_selection"),
                     "candidate_routes": candidates,
                     "route_decision_latency_ms": result.get("route_decision_latency_ms", 0),
                     "source_semantic_units": source_units,
@@ -642,8 +660,12 @@ def main() -> int:
 
     test_env = os.environ.copy()
     test_env["GOWORK"] = "off"
-    test_env["GOTOOLCHAIN"] = "local"
+    test_env["GOTOOLCHAIN"] = os.environ.get("GOTOOLCHAIN", "local")
     test_result, test_elapsed_ms = run_command(["go", "test", "-count=1", "./..."], test_env, generated_dir)
+    go_version_result = subprocess.run(
+        ["go", "version"], cwd=generated_dir, env=test_env,
+        capture_output=True, text=True, check=False,
+    )
     runtime_match = test_result.returncode == 0
 
     cohort_wall_elapsed_ms = (time.perf_counter() - cohort_started) * 1000
@@ -655,9 +677,12 @@ def main() -> int:
     logical_cpu_count = os.cpu_count() or 1
     one_core_utilization = 100 * total_child_cpu / max(cohort_wall_elapsed_ms / 1000, 1e-9)
     laya_modes: dict[str, int] = {}
+    route_selection_methods: dict[str, int] = {}
     for item in case_reports:
         mode = str(item.get("route_mode") or "unknown")
         laya_modes[mode] = laya_modes.get(mode, 0) + 1
+        selection_method = str((item.get("route_selection") or {}).get("method") or "unknown")
+        route_selection_methods[selection_method] = route_selection_methods.get(selection_method, 0) + 1
 
     report = {
         "schema": SCHEMA,
@@ -668,12 +693,14 @@ def main() -> int:
         "decision": "PASS" if runtime_match and replay_mismatches == 0 and len(case_reports) == plan["expected_case_count"] else "FAIL_CLOSED",
         "plan_sha256": digest(plan_bytes),
         "gooo_source_sha": gooo_source_sha or "UNBOUND_LOCAL_SOURCE",
-        "gooo_binary": str(args.gooo_bin),
-        "go_version": subprocess.run(["go", "version"], capture_output=True, text=True, check=False).stdout.strip(),
+        "gooo_binary": args.gooo_bin.name,
+        "go_version": go_version_result.stdout.strip(),
         "host_platform": platform.platform(),
         "laya_configured": laya_enabled,
+        "route_sample_seed_sha256": sample_seed_sha256,
         "external_repeat_observation_count": external_repeat_observations,
         "selection_mode_counts": laya_modes,
+        "route_selection_method_counts": route_selection_methods,
         "case_count": len(case_reports),
         "body_style_counts": {
             style: sum(1 for case in cases if case["body_style"] == style)
@@ -690,7 +717,7 @@ def main() -> int:
         "body_ast_completeness_percent": (100.0 * lowered_units / construct_units) if construct_units else 0.0,
         "all_typechecks_passed": all(item["typecheck_passed"] for item in case_reports),
         "all_internal_replays_passed": all(item["internal_deterministic_replay"] for item in case_reports),
-        "external_repeat_mismatches": None if laya_enabled else replay_mismatches,
+        "external_repeat_mismatches": None if laya_enabled and not sample_seed else replay_mismatches,
         "generated_package_test_passed": runtime_match,
         "generated_package_test_elapsed_ms": round(test_elapsed_ms, 3),
         "cohort_wall_elapsed_ms": round(cohort_wall_elapsed_ms, 3),

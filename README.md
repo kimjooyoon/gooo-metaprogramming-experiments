@@ -123,3 +123,44 @@ remains an optional local measurement, with request digest, model revision,
 probabilities, and confidence preserved when available. The two cohorts have
 different input construction and evidence boundaries, so their percentages are
 not averaged together.
+
+## Seeded Laya route experiment — 2026-09-30
+
+Two local runs used the compiler's seeded weighted sampler with live Laya route
+probabilities. Each run processed the same 100 generated bodies (50 had three
+eligible routes; 50 had only the source-preserving route), compiled and ran the
+generated package, and repeated every seeded CLI invocation. Both runs passed:
+2,500/2,500 finite-domain outputs, 100% body-AST coverage, and 100/100 exact
+external replays, with no replay mismatches. Across the 50 Laya-routed cases,
+changing only the seed changed four selected routes. That demonstrates
+reproducible variation in this fixture, not better route quality or broader
+intent coverage.
+
+| Measurement | Seed 1 | Seed 2 |
+| --- | ---: | ---: |
+| Laya route choices | 50 | 50 |
+| `preserve` / `guard-return` / `merge-result` among those choices | 47 / 1 / 2 | 48 / 1 / 1 |
+| Laya decision latency p50 / p95 | 104.3 / 328.2 ms | 104.8 / 239.5 ms |
+| Laya process CPU, one core / 10-core host | 140.7% / 14.1% | 169.6% / 17.0% |
+| Laya sampled peak resident memory | 3.82 GiB | 3.15 GiB |
+| Generated package | passed | passed |
+
+The latency percentiles use linear interpolation over 50 Laya decisions per
+run; one seed-1 request took 2.52 seconds. The separate Laya server ran pinned to revision
+`55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851`, on CPU with four configured
+threads. Its CPU and memory are measured separately from Gooo and generated-Go
+child-process costs. The checkpoint emitted a warning that some temperature
+values were clamped; confidence values for affected entries are therefore
+uncalibrated. Probability sampling remains behind compiler type-checking,
+deterministic replay, generated-package compilation, and declared-domain
+behavior checks.
+
+The complete per-case reports, generated package, and separate Laya process
+telemetry are in
+[`results/2026-09-30/laya-seeded-route-sampling/`](results/2026-09-30/laya-seeded-route-sampling/)
+and
+[`results/2026-09-30/laya-seeded-route-sampling-seed-2/`](results/2026-09-30/laya-seeded-route-sampling-seed-2/).
+These are local observations from one machine, not CI timings. The machine
+readable receipts retain 12 PASS and 5 UNKNOWN dimensions with no aggregate
+score; real-use-case coverage, reverse observation, full-domain semantics,
+route quality, and comparable resource baseline remain UNKNOWN.

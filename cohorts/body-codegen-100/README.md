@@ -33,6 +33,14 @@ uses deterministic fallback. Set `GOOO_LAYA_URL` when running the cohort
 locally to record actual Laya route decisions; Laya can select only among the
 compiler-declared eligible routes.
 
+To exercise the seeded probability sampler against a live local Laya service,
+also set `GOOO_BODY_CODEGEN_SAMPLE_SEED` to a caller-chosen seed. The runner
+passes it to each `gooo body-codegen --sample-seed` invocation and repeats the
+invocation to verify identical route-selection receipts and generated source.
+Reports publish only the seed digest, not the raw value. Without this variable,
+the runner preserves its ordinary deterministic fallback behavior when Laya
+is absent; seeded sampling does not change the default CI path.
+
 GitHub Actions uploads the generated source and JSON measurement report for
 each run. The report records cohort wall time and both one-core and
 host-normalized average child CPU use, alongside cumulative child CPU seconds

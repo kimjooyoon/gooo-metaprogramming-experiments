@@ -275,9 +275,10 @@ dimensions all pass. The Python cohort receipt remains a separate outer
 measurement, and both aggregate completeness scores stay null.
 
 A clean local run against candidate Gooo commit
-`b44e288e2c9aed7001cc1f14b0b9d97f3be271d3` (proposed in
-[meta-ontology-go PR #1084](https://github.com/kimjooyoon/meta-ontology-go/pull/1084))
-validated 100/100 compiler receipts and 100/100 core receipts. The compiler
+`b44e288e2c9aed7001cc1f14b0b9d97f3be271d3` validated 100/100 compiler
+receipts and 100/100 core receipts. Its source tree was promoted to protected
+`main` by [meta-ontology-go PR #1085](https://github.com/kimjooyoon/meta-ontology-go/pull/1085)
+at deployed commit `3086deb0892329fe10a38f2ee2882a5375be2fa6`. The compiler
 reported 1,000 PASS and 1,000 UNKNOWN dimension observations across the 100
 cases; UNKNOWNs remain visible for execution, permissions, Laya observation,
 real workflows, reverse observation, broad-domain behavior, route quality,
@@ -295,6 +296,6 @@ finite-domain outputs and 2,500/2,500 affine partition representatives.
 
 These resource figures are one local macOS arm64 run using Go 1.27.0. They
 include Gooo and generated-package child processes, exclude a Laya server, and
-are not yet a same-profile before/after comparison. The public experiment PR's
-CI run remains the cross-platform reproduction; the compiler candidate will
-become the deployed dependency only after its protected branch flow completes.
+are not yet a same-profile before/after comparison. The public experiment PR
+now pins deployed `main` commit `3086deb0892329fe10a38f2ee2882a5375be2fa6`;
+its CI run is the cross-platform reproduction against that protected revision.

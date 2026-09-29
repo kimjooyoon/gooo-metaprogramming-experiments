@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: kimjooyoon/meta-ontology-go
-          ref: b44e288e2c9aed7001cc1f14b0b9d97f3be271d3
+          ref: 3086deb0892329fe10a38f2ee2882a5375be2fa6
           path: gooo
       - uses: actions/setup-go@v5
         with:

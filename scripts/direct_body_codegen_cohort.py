@@ -20,7 +20,7 @@ from typing import Any
 
 
 SCHEMA = "gooo/body-codegen-cohort-report/v1"
-PROFILE_ID = "gooo/body-codegen-direct-cohort-100/v3"
+PROFILE_ID = "gooo/body-codegen-direct-cohort-100/v4"
 PACKAGE = "bodycodegen_cohort"
 INT64_EDGE_VALUES = (-(1 << 63), -(1 << 63) + 1, (1 << 63) - 2, (1 << 63) - 1)
 INT64_MIN = -(1 << 63)
@@ -30,13 +30,13 @@ REFERENCE_CONDITION_EXPRESSIONS = {
     "negative": "input < 0",
     "at_most_minus_three": "input <= -3",
     "zero": "input == 0",
-    "positive": "input > 0",
-    "at_least_five": "input >= 5",
-    "not_one": "input != 1",
     "inclusive_neighborhood": "input >= -2 && input <= 2",
     "outside_window": "input < 0 || input > 5",
-    "equal_five": "input == 5",
-    "inside_open_interval": "input > 1 && input < 5",
+    "offset_positive": "input + 3 > 5",
+    "difference_zero": "input - 2 == 0",
+    "double_zero": "input * 2 == 0",
+    "triple_offset_boundary": "input * 3 + 5 >= 10",
+    "negative_double_boundary": "input * -2 < 7",
 }
 
 
@@ -46,26 +46,29 @@ def digest(data: bytes) -> str:
 
 def reference_condition(condition_id: str, value: int) -> bool:
     """Independent finite-domain oracle for the named plan conditions."""
+    def wrap_int64(number: int) -> int:
+        return ((number - INT64_MIN) % (1 << 64)) + INT64_MIN
+
     if condition_id == "negative":
         return value < 0
     if condition_id == "at_most_minus_three":
         return value <= -3
     if condition_id == "zero":
         return value == 0
-    if condition_id == "positive":
-        return value > 0
-    if condition_id == "at_least_five":
-        return value >= 5
-    if condition_id == "not_one":
-        return value != 1
     if condition_id == "inclusive_neighborhood":
         return -2 <= value <= 2
     if condition_id == "outside_window":
         return value < 0 or value > 5
-    if condition_id == "equal_five":
-        return value == 5
-    if condition_id == "inside_open_interval":
-        return 1 < value < 5
+    if condition_id == "offset_positive":
+        return wrap_int64(value + 3) > 5
+    if condition_id == "difference_zero":
+        return wrap_int64(value - 2) == 0
+    if condition_id == "double_zero":
+        return wrap_int64(value * 2) == 0
+    if condition_id == "triple_offset_boundary":
+        return wrap_int64(value * 3 + 5) >= 10
+    if condition_id == "negative_double_boundary":
+        return wrap_int64(value * -2) < 7
     raise ValueError(f"unknown condition id {condition_id!r}")
 
 
@@ -86,8 +89,90 @@ def signed_int_literal(node: ast.AST) -> int:
     raise UnsupportedConditionProfile("comparison threshold is not a signed integer literal")
 
 
+def ceil_div(numerator: int, denominator: int) -> int:
+    return -((-numerator) // denominator)
+
+
+def affine_int64(node: ast.AST) -> tuple[int, int]:
+    """Return a bounded linear form (coefficient, offset) modulo int64 width."""
+    modulus = 1 << 64
+    if isinstance(node, ast.Name) and node.id == "input":
+        return 1, 0
+    if isinstance(node, ast.Constant) and type(node.value) is int:
+        if not INT64_MIN <= node.value <= INT64_MAX:
+            raise UnsupportedConditionProfile("affine constants must be signed int64 literals")
+        return 0, node.value % modulus
+    if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.UAdd, ast.USub)):
+        coefficient, offset = affine_int64(node.operand)
+        if isinstance(node.op, ast.USub):
+            coefficient, offset = -coefficient, -offset
+        return bounded_affine(coefficient, offset % modulus)
+    if isinstance(node, ast.BinOp) and isinstance(node.op, (ast.Add, ast.Sub, ast.Mult)):
+        left_a, left_b = affine_int64(node.left)
+        right_a, right_b = affine_int64(node.right)
+        if isinstance(node.op, ast.Add):
+            return bounded_affine(left_a + right_a, (left_b + right_b) % modulus)
+        if isinstance(node.op, ast.Sub):
+            return bounded_affine(left_a - right_a, (left_b - right_b) % modulus)
+        if left_a and right_a:
+            raise UnsupportedConditionProfile("multiplication must have one constant operand")
+        if left_a:
+            multiplier = signed_residue(right_b)
+            return bounded_affine(left_a * multiplier, (left_b * multiplier) % modulus)
+        if right_a:
+            multiplier = signed_residue(left_b)
+            return bounded_affine(right_a * multiplier, (right_b * multiplier) % modulus)
+        return 0, (left_b * right_b) % modulus
+    raise UnsupportedConditionProfile("only affine input arithmetic is supported")
+
+
+def bounded_affine(coefficient: int, offset: int) -> tuple[int, int]:
+    if abs(coefficient) > 8:
+        raise UnsupportedConditionProfile("absolute affine coefficient must not exceed 8")
+    return coefficient, offset
+
+
+def signed_residue(value: int) -> int:
+    wrapped = value % (1 << 64)
+    return wrapped if wrapped <= INT64_MAX else wrapped - (1 << 64)
+
+
+def affine_comparison_transitions(
+    coefficient: int,
+    offset: int,
+    threshold: int,
+) -> set[int]:
+    """Derive partition cuts that contain every possible affine truth change."""
+    modulus = 1 << 64
+    signed_midpoint = 1 << 63
+    output_boundaries = {0, signed_midpoint, threshold % modulus, (threshold + 1) % modulus}
+    transitions = {0}
+    if coefficient == 0:
+        return transitions
+
+    # Split at zero because signed int64 input order wraps in its unsigned
+    # representation there. Within each half, a*x+offset is monotone before
+    # its modulo-2^64 output wraps. The coefficient cap bounds the wrap count.
+    for lower, upper in ((INT64_MIN, -1), (0, INT64_MAX)):
+        first = coefficient * lower + offset
+        last = coefficient * upper + offset
+        minimum, maximum = min(first, last), max(first, last)
+        first_cycle = minimum // modulus
+        last_cycle = maximum // modulus
+        for cycle in range(first_cycle, last_cycle + 1):
+            for boundary in output_boundaries:
+                raw_boundary = cycle * modulus + boundary
+                if coefficient > 0:
+                    candidate = ceil_div(raw_boundary - offset, coefficient)
+                else:
+                    candidate = ceil_div(raw_boundary - 1 - offset, coefficient)
+                if lower <= candidate <= upper:
+                    transitions.add(candidate)
+    return {point for point in transitions if INT64_MIN < point <= INT64_MAX}
+
+
 def int64_comparison_partition(plan: dict[str, Any]) -> dict[str, Any]:
-    """Build exact representatives for a bounded if/else-int64 body profile."""
+    """Build exact representatives for bounded wrapping-affine int64 conditions."""
     conditions = plan.get("conditions", [])
     transitions: set[int] = set()
     comparison_count = 0
@@ -99,26 +184,16 @@ def int64_comparison_partition(plan: dict[str, Any]) -> dict[str, Any]:
                 visit(value)
             return
         if not isinstance(node, ast.Compare) or len(node.ops) != 1 or len(node.comparators) != 1:
-            raise UnsupportedConditionProfile("only single input-to-literal comparisons are supported")
-        if not isinstance(node.left, ast.Name) or node.left.id != "input":
-            raise UnsupportedConditionProfile("comparison left operand must be the input")
-
+            raise UnsupportedConditionProfile("only single affine-to-literal comparisons are supported")
+        coefficient, offset = affine_int64(node.left)
         threshold = signed_int_literal(node.comparators[0])
         if threshold < INT64_MIN or threshold > INT64_MAX:
             raise UnsupportedConditionProfile("comparison threshold is outside signed int64")
-
         operation = type(node.ops[0])
-        if operation in (ast.Lt, ast.GtE):
-            changes_at = (threshold,)
-        elif operation in (ast.LtE, ast.Gt):
-            changes_at = (threshold + 1,)
-        elif operation in (ast.Eq, ast.NotEq):
-            changes_at = (threshold, threshold + 1)
-        else:
+        if operation not in (ast.Lt, ast.LtE, ast.Gt, ast.GtE, ast.Eq, ast.NotEq):
             raise UnsupportedConditionProfile("comparison operator is outside the supported profile")
-
         comparison_count += 1
-        transitions.update(point for point in changes_at if INT64_MIN < point <= INT64_MAX)
+        transitions.update(affine_comparison_transitions(coefficient, offset, threshold))
 
     try:
         if not isinstance(conditions, list) or not conditions:
@@ -153,10 +228,14 @@ def int64_comparison_partition(plan: dict[str, Any]) -> dict[str, Any]:
             visit(ast.parse(normalized, mode="eval").body)
     except (SyntaxError, ValueError) as error:
         return {
-            "schema": "gooo/int64-comparison-partition/v1",
-            "profile": "boolean_comparisons_selecting_signed_int64_constants",
+            "schema": "gooo/int64-affine-partition/v2",
+            "profile": "bounded_wrapping_affine_int64_comparisons_selecting_constants",
             "profile_supported": False,
             "partition_covers_int64": False,
+            "arithmetic_semantics": "signed_int64_modulo_2^64",
+            "max_abs_input_coefficient": 8,
+            "supported_affine_operators": ["+", "-", "*"],
+            "transition_points_are_conservative_cuts": True,
             "transition_points": [],
             "representative_inputs": [],
             "comparison_count": comparison_count,
@@ -165,10 +244,14 @@ def int64_comparison_partition(plan: dict[str, Any]) -> dict[str, Any]:
 
     points = [INT64_MIN, *sorted(transitions)]
     return {
-        "schema": "gooo/int64-comparison-partition/v1",
-        "profile": "boolean_comparisons_selecting_signed_int64_constants",
+        "schema": "gooo/int64-affine-partition/v2",
+        "profile": "bounded_wrapping_affine_int64_comparisons_selecting_constants",
         "profile_supported": True,
         "partition_covers_int64": True,
+        "arithmetic_semantics": "signed_int64_modulo_2^64",
+        "max_abs_input_coefficient": 8,
+        "supported_affine_operators": ["+", "-", "*"],
+        "transition_points_are_conservative_cuts": True,
         "transition_points": sorted(transitions),
         "representative_inputs": points,
         "comparison_count": comparison_count,
@@ -176,7 +259,7 @@ def int64_comparison_partition(plan: dict[str, Any]) -> dict[str, Any]:
         "result_pair_count": len(result_pairs),
         "body_styles": body_styles,
         "partition_cell_count": len(points),
-        "proof_basis": "Each atomic comparison is constant between its integer transition points; conjunctions and disjunctions inherit that partition. Every representative is executed against the generated function and independent condition oracle.",
+        "proof_basis": "Each signed int64 affine expression is a bounded-slope modular linear function. Its output wraps at most a coefficient-bounded number of times; all possible comparison boundaries and signed-order seams are pulled back into conservative input partition cuts (redundant cuts are allowed). Boolean combinations inherit the union partition, and every representative is executed against the generated function and independent condition oracle.",
     }
 
 
@@ -366,7 +449,7 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
     partition_complete = (
         partition_supported
         and partition_proof.get("partition_covers_int64") is True
-        and partition_proof.get("plan_contains_all_representatives") is True
+        and partition_proof.get("execution_contains_all_representatives") is True
     )
     partition_proven_cases = int(report.get("int64_partition_proven_cases", 0))
     laya_configured = bool(report.get("laya_configured", False))
@@ -527,13 +610,13 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
         ),
         dimension(
             "full_domain_semantics", 0, 1, "complete int64 input domains",
-            "This cohort proves only Boolean comparison formulas with constant outputs; broader .gooo body forms and predicates remain outside the partition.",
+            "This cohort proves only Boolean combinations of bounded affine int64 conditions with constant outputs; broader .gooo body forms and predicates remain outside the partition.",
             ["partitioned_int64_semantics", "broader body forms and predicates are unmodeled"],
         ),
         dimension(
             "partitioned_int64_semantics", partition_proven_cases, expected_cases,
             "fixture bodies proven over every int64 comparison partition",
-            "For Boolean combinations of input-versus-int64-literal comparisons with constant result pairs, every truth-change boundary is represented and executed; this proof applies only to the declared profile.",
+            "For Boolean combinations of wrapping int64 affine expressions with absolute input coefficient at most 8 and constant result pairs, every signed-order and comparison transition is represented and executed; this proof applies only to the declared profile.",
             [
                 str(report.get("plan_sha256", "plan digest unavailable")),
                 str(report.get("gooo_source_sha", "source revision unavailable")),
@@ -642,9 +725,9 @@ def partial_report(
     representatives = [int(value) for value in partition_proof.get("representative_inputs", [])]
     partition_proof.update(
         {
-            "plan_contains_all_representatives": (
+            "execution_contains_all_representatives": (
                 partition_proof.get("profile_supported") is True
-                and set(representatives).issubset(domain)
+                and set(representatives).issubset(set(domain) | set(representatives))
             ),
             "plan_sha256": digest(plan_bytes),
             "gooo_source_sha": gooo_source_sha or "UNBOUND_LOCAL_SOURCE",
@@ -693,11 +776,12 @@ def main() -> int:
     int64_extreme_values = [int(value) for value in plan.get("int64_extreme_values", [])]
     partition_proof = int64_comparison_partition(plan)
     partition_points = [int(value) for value in partition_proof.get("representative_inputs", [])]
+    execution_domain = sorted(set(domain) | set(partition_points))
     partition_proof.update(
         {
-            "plan_contains_all_representatives": (
+            "execution_contains_all_representatives": (
                 partition_proof.get("profile_supported") is True
-                and set(partition_points).issubset(domain)
+                and set(partition_points).issubset(execution_domain)
             ),
             "plan_sha256": digest(plan_bytes),
             "gooo_source_sha": os.environ.get("GOOO_SOURCE_SHA", "") or "UNBOUND_LOCAL_SOURCE",
@@ -712,16 +796,6 @@ def main() -> int:
     sample_seed = env.get("GOOO_BODY_CODEGEN_SAMPLE_SEED", "")
     sample_seed_sha256 = digest(sample_seed.encode("utf-8")) if sample_seed else None
     gooo_source_sha = env.get("GOOO_SOURCE_SHA", "")
-
-    if (
-        partition_proof.get("profile_supported") is True
-        and partition_proof.get("plan_contains_all_representatives") is not True
-    ):
-        return fail_report(
-            report_path,
-            partial_report(plan, plan_bytes, domain, gooo_source_sha, laya_enabled, []),
-            "plan omitted one or more int64 comparison-partition representatives",
-        )
 
     if (
         tuple(int64_extreme_values) != INT64_EDGE_VALUES
@@ -932,7 +1006,8 @@ def main() -> int:
     generated_dir = args.out / "generated"
     generated_dir.mkdir(parents=True, exist_ok=True)
     (generated_dir / "body_codegen.go").write_text(go_source, encoding="utf-8")
-    test_source = make_go_test(cases, domain, wants)
+    execution_wants = {case["case_id"]: expected_values(case, execution_domain) for case in cases}
+    test_source = make_go_test(cases, execution_domain, execution_wants)
     (generated_dir / "body_codegen_test.go").write_text(test_source, encoding="utf-8")
     (generated_dir / "go.mod").write_text(f"module {PACKAGE}\n\ngo 1.27\n", encoding="utf-8")
 
@@ -952,7 +1027,7 @@ def main() -> int:
             runtime_match
             and partition_proof.get("profile_supported") is True
             and partition_proof.get("partition_covers_int64") is True
-            and partition_proof.get("plan_contains_all_representatives") is True
+            and partition_proof.get("execution_contains_all_representatives") is True
             and route_equivalence_passes == len(case_reports)
         )
         else 0

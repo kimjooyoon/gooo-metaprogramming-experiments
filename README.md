@@ -69,22 +69,27 @@ real-use-case coverage, reverse observation, full-domain behavior, route
 quality, and a comparable resource baseline remain UNKNOWN pending their own
 evidence.
 
-## Scoped int64 partition proof — 2026-09-30
+## Scoped wrapping-affine int64 partition experiment — 2026-09-30
 
-The merged [main CI run](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36624796029)
-compiled and executed 100 direct Gooo bodies against 2,900 declared inputs.
-All 2,900 outputs matched the independent condition oracle, including 400
-checks at signed `int64` extrema and adjacent values. For this plan's 13
-comparisons, the verifier derived seven transition points and eight
-truth-stable cells, then matched all 800 case/cell representative outputs.
-All 100 compiler route-equivalence receipts and the generated Go package test
-passed.
+The direct body-codegen cohort now covers Boolean combinations of bounded
+wrapping-affine conditions such as `input + 3 > 5`, `input * 2 == 0`, and
+`input * 3 + 5 >= 10`. Its proof profile accepts signed `int64` constants and
+limits the absolute input coefficient to 8. It derives transition inputs at
+modular wraps, signed-order seams, and comparison boundaries, then adds those
+representatives to generated-package execution alongside the separate 29-point
+finite fixture domain. The independent oracle models Go `int64` wraparound.
 
-The receipt reports 14 PASS and 6 UNKNOWN dimensions, without an aggregate
-score. `partitioned_int64_semantics` is PASS for Boolean combinations of
-`input` comparisons against signed integer literals with constant result pairs.
-Unrestricted Gooo body semantics, Laya route quality, and real-workflow coverage
-remain UNKNOWN; this cohort does not claim universal language completeness.
+The [PR CI run](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36626379233)
+passed with 100 generated bodies, 2,900/2,900 finite-domain matches, and
+2,500/2,500 partition-representative matches across 25 cells. All 100 route
+equivalence receipts and the generated Go package test passed. The receipt has
+14 PASS and 6 UNKNOWN dimensions with no aggregate score.
+
+This claim is limited to the declared affine condition profile with constant
+result pairs and the two tested body shapes. Other supported body expressions,
+unrestricted Gooo body semantics, Laya route quality, and real-workflow coverage
+remain outside this proof. The CI receipt keeps those dimensions UNKNOWN and
+does not collapse completeness into one score.
 
 ## Reproduce
 
@@ -142,10 +147,10 @@ machine-readable completeness receipt reports independent PASS/PROGRESS/UNKNOWN
 dimensions without a single aggregate score, keeping real-use-case coverage,
 reverse observation, unrestricted full-domain behavior, and route quality
 UNKNOWN until those claims have their own evidence. The current direct cohort
-also derives the seven transition points in its Boolean comparison conditions
-and checks one representative from each of the eight truth-stable cells across
-int64; CI records this as a separate 100/100 scoped partition proof. It does not
-extend that proof to other Gooo body expressions. Resource figures cover Gooo
+also derives exact transition points for bounded wrapping-affine conditions
+and executes one representative from each resulting int64 cell; CI records
+this as a separate 100/100 scoped partition proof. It does not extend that proof
+to other Gooo body expressions. Resource figures cover Gooo
 and generated-Go child processes; a separately running Laya server is excluded. CI runs
 without a model service and uses the deterministic fallback; Laya route choice
 remains an optional local measurement, with request digest, model revision,

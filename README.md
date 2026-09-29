@@ -107,11 +107,11 @@ The deployed commit is `6414da939c5d7e55425cdb3a4ed220121ab49c16`. A warm
 30-call smoke on one fixture measured 108.48 ms p50 / 123.10 ms p95, with `preserve` selected on
 every call. This is a latency/resource observation, not an accuracy result.
 
-The compiler-derived route-equivalence receipt is under review in
-[PR #1082](https://github.com/kimjooyoon/meta-ontology-go/pull/1082). This
-experiment branch pins that exact candidate while CI checks the 100-case
-cohort. After the compiler change is promoted, the cohort pin will move to its
-deployed `main` commit.
+The compiler-derived route-equivalence receipt was added by
+[PR #1082](https://github.com/kimjooyoon/meta-ontology-go/pull/1082), now merged
+to `dev`. This experiment repo pins the exact compiler commit until its
+promotion to `main`; the next cohort update will move the pin to the deployed
+commit.
 
 The 100-case corpus reported above remains the sidecar-based baseline. A
 separate [direct body-codegen cohort](cohorts/body-codegen-100/README.md)
@@ -170,3 +170,34 @@ These are local observations from one machine, not CI timings. The machine
 readable receipts retain 12 PASS and 5 UNKNOWN dimensions with no aggregate
 score; real-use-case coverage, reverse observation, full-domain semantics,
 route quality, and comparable resource baseline remain UNKNOWN.
+
+## Route-equivalence receipt with Laya — 2026-09-30
+
+A third seeded local run used Gooo dev commit
+`453c7c8a27cd1a5fcb80e1383ade3829477b8a2c` (tree
+`9b464b9d7bfb00fdebc252823781104bb9108e99`), containing the compiler change
+from PR #1082. It generated and ran all 100 bodies, matched 2,500/2,500 finite
+domain outputs, passed 100/100 semantic-equivalence receipts, and replayed all
+100 seeded CLI calls without mismatch. The 50 Laya-selected cases chose 47
+`preserve`, one `guard-return`, and two `merge-result` routes; the other 50
+cases had only the deterministic `preserve` route. The receipt now reports 13
+PASS and 5 UNKNOWN dimensions, with no aggregate score. Route quality remains
+UNKNOWN because semantic equality does not rank clarity or usefulness.
+
+| Measurement | Result |
+| --- | ---: |
+| Laya decision p50 / p95 | 102.159 / 169.770 ms |
+| Laya CPU use, one core / 10-core host | 169.46% / 16.95% |
+| Laya sampled peak RSS | 3,791,716,352 bytes (3.53 GiB) |
+| Gooo and generated-Go children | 13.036 s; 8.934% of one core; 94,044,160 bytes peak RSS |
+
+The model ran on CPU with four configured threads at revision
+`55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851`. With lazy model loading, the first
+request took 3,001.856 ms and reached the decision budget during lazy loading,
+so it used deterministic fallback; the next warm request took 108.518 ms. A checkpoint temperature was
+clamped to 0.5, so affected confidence values are uncalibrated. Full case
+reports, warm/cold receipts, generated package, and sampled process metrics are
+in [`results/2026-09-30/laya-route-equivalence-seed-3/`](results/2026-09-30/laya-route-equivalence-seed-3/).
+The compiler change has not yet reached `main`; promotion must retain the
+reported source tree before these measurements are described as deployed-main
+results.

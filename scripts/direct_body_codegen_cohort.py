@@ -384,8 +384,8 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
         ),
         dimension(
             "full_domain_semantics", 0, 1, "complete int64 input domains",
-            "Twenty-five points per case do not prove behavior for every int64 input.",
-            ["finite domain only"],
+            "The 29 declared points include edge values but do not partition or exhaust every int64 input.",
+            ["finite domain only", "int64_extreme_boundary_behavior"],
         ),
         dimension(
             "route_quality", 0, 1, "independently validated route-quality criteria",

@@ -45,8 +45,38 @@ jobs:
             --gooo-bin "$RUNNER_TEMP/gooo" \
             --plan cohorts/body-codegen-100/plan-v1.json \
             --out "$RUNNER_TEMP/body-codegen-100"
-          jq -e '.decision == "PASS" and .case_count == 100 and .checked_output_count == 2500 and .behavioral_matches == 2500 and .behavioral_completeness_percent == 100 and .body_ast_completeness_percent == 100 and .eligible_multi_route_cases == 50 and .generated_package_test_passed and .all_typechecks_passed and .all_internal_replays_passed and .external_repeat_mismatches == 0 and .repository_writes == 0 and (.cases | length) == 100' \
-            "$RUNNER_TEMP/body-codegen-100/body-codegen-report.json"
+          jq -e '
+            def dimension($id): [.completeness_receipt.dimensions[] | select(.id == $id)][0];
+            .decision == "PASS" and
+            .case_count == 100 and
+            .checked_output_count == 2500 and
+            .behavioral_matches == 2500 and
+            .behavioral_completeness_percent == 100 and
+            .body_ast_completeness_percent == 100 and
+            .eligible_multi_route_cases == 50 and
+            .generated_package_test_passed and
+            .all_typechecks_passed and
+            .all_internal_replays_passed and
+            .external_repeat_mismatches == 0 and
+            .repository_writes == 0 and
+            (.cases | length) == 100 and
+            .children_average_cpu_one_core_percent > 0 and
+            .children_average_cpu_host_percent > 0 and
+            .children_peak_rss_bytes > 0 and
+            .external_laya_process_resources_included == false and
+            .completeness_receipt.decision == "PASS_WITHIN_DECLARED_FIXTURE_SCOPE" and
+            (.completeness_receipt | has("aggregate_completeness_score")) and
+            .completeness_receipt.aggregate_completeness_score == null and
+            .completeness_receipt.first_unresolved.id == "laya_decision_observation" and
+            .completeness_receipt.first_unresolved.status == "UNKNOWN" and
+            .completeness_receipt.first_unresolved.next_operation == "RUN_WITH_A_PINNED_LAYA_SERVICE_AND_RETAIN_MODEL_REVISION" and
+            dimension("real_use_case_coverage").status == "UNKNOWN" and
+            dimension("reverse_observation_coverage").status == "UNKNOWN" and
+            dimension("full_domain_semantics").status == "UNKNOWN" and
+            dimension("resource_baseline_comparison").status == "UNKNOWN" and
+            dimension("route_quality").status == "UNKNOWN" and
+            dimension("laya_decision_observation").status == "UNKNOWN"
+          ' "$RUNNER_TEMP/body-codegen-100/body-codegen-report.json"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

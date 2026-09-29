@@ -18,7 +18,7 @@ import time
 from pathlib import Path
 from typing import Any
 
-from completeness_receipt import dimension, finalize_receipt
+from completeness_receipt import dimension, finalize_receipt, validate_receipt
 
 
 SCHEMA = "gooo/body-codegen-cohort-report/v1"
@@ -311,6 +311,26 @@ def run_command(command: list[str], env: dict[str, str], cwd: Path | None = None
     return result, (time.perf_counter() - started) * 1000
 
 
+def validate_compiler_receipt(report: dict[str, Any], expected_source_sha: str) -> tuple[dict[str, Any], str, bool]:
+    receipt = report.get("completeness_receipt")
+    validate_receipt(receipt)
+    expected_source = expected_source_sha or "UNBOUND_LOCAL_SOURCE"
+    scope = receipt["scope"]
+    if report.get("compiler_source_sha") != expected_source:
+        raise ValueError("compiler report revision does not match the pinned source SHA")
+    if scope.get("compiler_source_sha") != expected_source:
+        raise ValueError("compiler receipt revision is not bound to the pinned source SHA")
+    if scope.get("plan_sha256") != report.get("plan_sha256"):
+        raise ValueError("compiler receipt plan digest is not bound to its body-codegen report")
+    dimensions = {item["id"]: item for item in receipt["dimensions"]}
+    core_ids = receipt["core_dimensions"]
+    core_passed = all(dimensions[dimension_id]["status"] == "PASS" for dimension_id in core_ids)
+    if report.get("decision") == "PASS" and not core_passed:
+        raise ValueError("compiler marked code generation PASS while a declared core receipt dimension was not PASS")
+    canonical = json.dumps(receipt, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
+    return receipt, digest(canonical), core_passed
+
+
 def expected_values(case: dict[str, Any], domain: list[int]) -> list[int]:
     return [
         case["when_true"] if reference_condition(case["condition_id"], value) else case["when_false"]
@@ -431,6 +451,8 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
         return sum(1 for item in cases if item.get(key) is True)
 
     passed_generation = sum(1 for item in cases if item.get("report_decision") == "PASS")
+    compiler_receipt_cases = count_true("compiler_receipt_valid")
+    compiler_core_receipt_passes = count_true("compiler_core_dimensions_passed")
     passed_typechecks = count_true("typecheck_passed")
     passed_replays = count_true("internal_deterministic_replay")
     route_equivalence_passes = sum(1 for item in cases if route_equivalence_receipt_valid(item))
@@ -492,6 +514,18 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
             "generation_coverage", passed_generation, expected_cases, "generated activity bodies",
             "Counts accepted Gooo body-codegen reports against all planned cases.",
             ["per-case PASS report", str(report.get("gooo_source_sha", "source revision unavailable"))],
+        ),
+        dimension(
+            "compiler_completeness_receipt_coverage", compiler_receipt_cases, expected_cases,
+            "body-codegen reports with a validated compiler completeness receipt",
+            "Validates the compiler-emitted v2 receipt and binds its plan and compiler revision to each exact body-codegen report.",
+            ["per-case compiler receipt SHA-256", str(report.get("gooo_source_sha", "source revision unavailable"))],
+        ),
+        dimension(
+            "compiler_core_receipt_passes", compiler_core_receipt_passes, expected_cases,
+            "compiler receipts whose declared core dimensions all pass",
+            "Counts compiler core evidence separately from non-core UNKNOWN dimensions such as generated execution and Laya observation.",
+            ["per-case compiler completeness receipt core_dimensions", "per-case dimension status counts"],
         ),
         dimension(
             "typecheck_coverage", passed_typechecks, expected_cases, "typechecked bodies",
@@ -627,6 +661,7 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
     ]
     core_ids = {
         "declaration_coverage", "generation_coverage", "typecheck_coverage",
+        "compiler_completeness_receipt_coverage", "compiler_core_receipt_passes",
         "source_ast_coverage", "route_semantic_equivalence", "finite_domain_behavior", "internal_replay_coverage",
         "route_choice_protocol", "source_binding_integrity", "repository_write_boundary",
         "partitioned_int64_semantics",
@@ -652,6 +687,8 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
         "external_network_boundary": "RECORD_THE_CONFIGURED_PROVIDER_ENDPOINT_AND_AUDIT_THE_ALLOWED_NETWORK_SCOPE",
         "declaration_coverage": "BIND_PLAN_CASES_TO_THE_DECLARED_FIXTURE_DENOMINATOR",
         "generation_coverage": "REPAIR_FAILING_GOOO_BODY_CODEGEN_CASES",
+        "compiler_completeness_receipt_coverage": "EMIT_AND_BIND_A_VALID_COMPILER_COMPLETENESS_RECEIPT_FOR_EACH_CASE",
+        "compiler_core_receipt_passes": "REPAIR_OR_EXPLAIN_EACH_NONPASS_COMPILER_CORE_DIMENSION",
         "typecheck_coverage": "REPAIR_GENERATED_GO_TYPE_ERRORS",
         "source_ast_coverage": "LOWER_EVERY_ACCEPTED_SOURCE_AST_UNIT_OR_FAIL_CLOSED",
         "finite_domain_behavior": "ADD_THE_MISSING_COMPILED_INPUT_OUTPUT_OBSERVATIONS",
@@ -879,6 +916,21 @@ def main() -> int:
                     ),
                     f"{case['case_id']} emitted malformed JSON: {error}",
                 )
+            try:
+                if result.get("decision") != "PASS":
+                    raise ValueError(f"compiler report decision is {result.get('decision')!r}")
+                compiler_receipt, compiler_receipt_sha256, compiler_core_passed = validate_compiler_receipt(
+                    result, gooo_source_sha
+                )
+            except (KeyError, TypeError, ValueError) as error:
+                return fail_report(
+                    report_path,
+                    partial_report(
+                        plan, plan_bytes, domain, gooo_source_sha, laya_enabled,
+                        case_reports, external_repeat_observations,
+                    ),
+                    f"{case['case_id']} compiler completeness receipt is invalid: {error}",
+                )
             generated_hash = digest(generated_source.encode("utf-8"))
 
             repeat_equal: bool | None = None
@@ -897,15 +949,17 @@ def main() -> int:
                 try:
                     replay_payload = json.loads(replay.stdout)
                     replay_report = replay_payload["report"]
+                    _, replay_receipt_sha256, _ = validate_compiler_receipt(replay_report, gooo_source_sha)
                     repeat_equal = (
                         replay_report.get("generated_digest") == result.get("generated_digest")
                         and replay_report.get("route") == result.get("route")
                         and replay_payload.get("source") == generated_source
+                        and replay_receipt_sha256 == compiler_receipt_sha256
                     )
                     if sample_seed:
                         repeat_equal = repeat_equal and replay_report.get("route_selection") == result.get("route_selection")
                         repeat_equal = repeat_equal and replay_report.get("route_decision", {}).get("model_revision") == result.get("route_decision", {}).get("model_revision")
-                except (json.JSONDecodeError, KeyError, TypeError):
+                except (json.JSONDecodeError, KeyError, TypeError, ValueError):
                     repeat_equal = False
                 external_repeat_observations += 1
             if not repeat_equal:
@@ -974,6 +1028,12 @@ def main() -> int:
                     "body_style": case["body_style"],
                     **route_evidence,
                     "replay_sha256": result.get("replay_digest"),
+                    "compiler_source_sha": result.get("compiler_source_sha"),
+                    "compiler_plan_sha256": result.get("plan_sha256"),
+                    "compiler_completeness_receipt": compiler_receipt,
+                    "compiler_completeness_receipt_sha256": compiler_receipt_sha256,
+                    "compiler_receipt_valid": True,
+                    "compiler_core_dimensions_passed": compiler_core_passed,
                     "report_decision": result.get("decision"),
                     "route_mode": result.get("route_decision", {}).get("mode"),
                     "route_provider": result.get("route_decision", {}).get("provider"),
@@ -1046,6 +1106,7 @@ def main() -> int:
     route_selection_methods: dict[str, int] = {}
     route_equivalence_decisions: dict[str, int] = {}
     route_equivalence_rules: dict[str, int] = {}
+    compiler_receipt_status_counts = {"PASS": 0, "PROGRESS": 0, "UNKNOWN": 0, "FAIL_CLOSED": 0}
     for item in case_reports:
         mode = str(item.get("route_mode") or "unknown")
         laya_modes[mode] = laya_modes.get(mode, 0) + 1
@@ -1056,6 +1117,8 @@ def main() -> int:
         route_equivalence_decisions[equivalence_decision] = route_equivalence_decisions.get(equivalence_decision, 0) + 1
         equivalence_rule = str(equivalence.get("rule") or "unknown")
         route_equivalence_rules[equivalence_rule] = route_equivalence_rules.get(equivalence_rule, 0) + 1
+        for dimension_item in item["compiler_completeness_receipt"]["dimensions"]:
+            compiler_receipt_status_counts[dimension_item["status"]] += 1
 
     failure_reasons: list[str] = []
     if not runtime_match:
@@ -1109,6 +1172,9 @@ def main() -> int:
         "route_selection_method_counts": route_selection_methods,
         "route_equivalence_decision_counts": route_equivalence_decisions,
         "route_equivalence_rule_counts": route_equivalence_rules,
+        "compiler_receipt_valid_case_count": sum(1 for item in case_reports if item.get("compiler_receipt_valid") is True),
+        "compiler_core_receipt_passes": sum(1 for item in case_reports if item.get("compiler_core_dimensions_passed") is True),
+        "compiler_receipt_status_counts": compiler_receipt_status_counts,
         "route_semantic_equivalence_passes": route_equivalence_passes,
         "case_count": len(case_reports),
         "body_style_counts": {
@@ -1165,6 +1231,7 @@ def main() -> int:
         "children_system_cpu_seconds", "children_average_cpu_one_core_percent",
         "children_average_cpu_host_percent", "logical_cpu_count", "cohort_wall_elapsed_ms",
         "children_peak_rss_bytes", "external_laya_process_resources_included", "cpu_utilization_basis",
+        "compiler_receipt_valid_case_count", "compiler_core_receipt_passes", "compiler_receipt_status_counts",
     )
     summary = {key: report[key] for key in summary_keys}
     summary["completeness_receipt"] = {

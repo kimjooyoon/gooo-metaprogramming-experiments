@@ -12,6 +12,12 @@ oracle, for 200 outputs. It binds source and generated digests to each
 compiler report, requires compiler type checking, internal emission replay,
 route-equivalence receipts, and external deterministic CLI repeats.
 
+The [PR CI run](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36627399107)
+passed: all 200 outputs matched, all 100 route receipts passed, and all 100
+external repeats matched. With Laya disabled on the GitHub runner, the recorded
+Gooo CLI invocation p50 was 2.77 ms; this is a fallback-path timing sample, not
+a Laya response-latency measurement.
+
 `exhaustive_boolean_domain` is a full-domain claim for Boolean inputs only.
 Real workflows, Laya route quality, and unrestricted body-codegen completeness
 remain UNKNOWN. The receipt has no aggregate score, and the generated package

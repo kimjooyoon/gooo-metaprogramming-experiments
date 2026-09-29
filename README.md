@@ -166,6 +166,11 @@ real-use-case and Laya route-quality dimensions UNKNOWN. The sidecar matrix,
 affine `int64` proof, and Boolean proof retain separate denominators and are
 never averaged into a single score.
 
+Its [PR CI run](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36627399107)
+matched 200/200 outputs, 100/100 route-equivalence receipts, and 100/100
+external repeats. Gooo CLI invocation p50 was 2.77 ms on the GitHub runner with
+Laya disabled; that timing is only the deterministic fallback path.
+
 ## Seeded Laya route experiment — 2026-09-30
 
 Two local runs used the compiler's seeded weighted sampler with live Laya route

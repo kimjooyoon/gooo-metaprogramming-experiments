@@ -103,15 +103,16 @@ adds a bounded Laya choice among three equivalent conditional-lowering shapes,
 with deterministic `preserve` fallback and route/latency/completeness receipts;
 it is on `main` via [PR #1080](https://github.com/kimjooyoon/meta-ontology-go/pull/1080)
 and exact-tree promotion [PR #1081](https://github.com/kimjooyoon/meta-ontology-go/pull/1081).
-The deployed commit is `6414da939c5d7e55425cdb3a4ed220121ab49c16`. A warm
+The initial seeded-sampler deployment was commit
+`6414da939c5d7e55425cdb3a4ed220121ab49c16`. A warm
 30-call smoke on one fixture measured 108.48 ms p50 / 123.10 ms p95, with `preserve` selected on
 every call. This is a latency/resource observation, not an accuracy result.
 
 The compiler-derived route-equivalence receipt was added by
-[PR #1082](https://github.com/kimjooyoon/meta-ontology-go/pull/1082), now merged
-to `dev`. This experiment repo pins the exact compiler commit until its
-promotion to `main`; the next cohort update will move the pin to the deployed
-commit.
+[PR #1082](https://github.com/kimjooyoon/meta-ontology-go/pull/1082) and
+promoted by exact-tree [PR #1083](https://github.com/kimjooyoon/meta-ontology-go/pull/1083).
+The current `main` commit is `3e31f92f529a8cff013b933d04fb8bbdc8fec72b`, with
+the same tree as `dev`. Experiment CI now pins this deployed Gooo commit.
 
 The 100-case corpus reported above remains the sidecar-based baseline. A
 separate [direct body-codegen cohort](cohorts/body-codegen-100/README.md)
@@ -198,6 +199,8 @@ so it used deterministic fallback; the next warm request took 108.518 ms. A chec
 clamped to 0.5, so affected confidence values are uncalibrated. Full case
 reports, warm/cold receipts, generated package, and sampled process metrics are
 in [`results/2026-09-30/laya-route-equivalence-seed-3/`](results/2026-09-30/laya-route-equivalence-seed-3/).
-The compiler change has not yet reached `main`; promotion must retain the
-reported source tree before these measurements are described as deployed-main
-results.
+The compiler change was promoted by PR #1083 at commit
+`3e31f92f529a8cff013b933d04fb8bbdc8fec72b`; its tree matches the source tree
+used by this measurement. The report retains the pre-promotion `dev` SHA as its
+source identity because that is the exact revision used to build the local
+compiler binary.

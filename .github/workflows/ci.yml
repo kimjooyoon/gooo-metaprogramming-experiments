@@ -15,11 +15,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: kimjooyoon/gooo-metaprogramming-lab
+          ref: e5954340edbe9611508a69c20ed627a424aa11ca
           path: lab
       - uses: actions/checkout@v4
         with:
           repository: kimjooyoon/meta-ontology-go
-          ref: dev
+          ref: 0299ba548f15ac9550d1c7f742749d5e42948a4a
           path: gooo
       - uses: actions/setup-go@v5
         with:
@@ -35,3 +36,20 @@ jobs:
         run: |
           "$RUNNER_TEMP/gooo-lab" matrix --plan plan-v1.json --out "$RUNNER_TEMP/matrix"
           jq -e '.experiment_count == 100 and .top1_mean_completeness == 1 and ([.candidates[] | select(.compiled)] | length) == 100 and ([.candidates[] | select(.deterministic)] | length) == 100' "$RUNNER_TEMP/matrix/matrix-report.json"
+      - name: Generate, compile, and execute 100 Gooo body-codegen cases
+        env:
+          GOOO_LAYA_URL: ''
+        run: |
+          export GOOO_SOURCE_SHA="$(git -C gooo rev-parse HEAD)"
+          python3 scripts/direct_body_codegen_cohort.py \
+            --gooo-bin "$RUNNER_TEMP/gooo" \
+            --plan cohorts/body-codegen-100/plan-v1.json \
+            --out "$RUNNER_TEMP/body-codegen-100"
+          jq -e '.decision == "PASS" and .case_count == 100 and .checked_output_count == 2500 and .behavioral_matches == 2500 and .behavioral_completeness_percent == 100 and .body_ast_completeness_percent == 100 and .eligible_multi_route_cases == 50 and .generated_package_test_passed and .all_typechecks_passed and .all_internal_replays_passed and .external_repeat_mismatches == 0 and .repository_writes == 0 and (.cases | length) == 100' \
+            "$RUNNER_TEMP/body-codegen-100/body-codegen-report.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: direct-body-codegen-cohort-${{ github.sha }}
+          path: ${{ runner.temp }}/body-codegen-100/
+          if-no-files-found: error

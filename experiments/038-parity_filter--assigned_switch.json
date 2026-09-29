@@ -1,0 +1,55 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 38,
+  "experiment_id": "parity_filter__assigned_switch",
+  "intent": {
+    "id": "parity_filter",
+    "task": "짝수만 통과시킨다. 나머지는 거부한다. 음수에서도 나머지 조건이 일관되어야 한다.",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "assigned_switch",
+    "description": "결과 변수를 선언하고 조건 switch의 일치 분기에서 값을 할당한다.",
+    "style": "assign_switch",
+    "constructs": [
+      "assignment",
+      "switch",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "parity_filter__assigned_switch",
+    "intent_id": "parity_filter",
+    "route_id": "assigned_switch",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 150,
+    "source_sha256": "sha256:126c87e2c588a46cfad6e3eba22bd000f0f0a8fe27f69ea454c6f27242150c1d",
+    "replay_sha256": "sha256:126c87e2c588a46cfad6e3eba22bd000f0f0a8fe27f69ea454c6f27242150c1d",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

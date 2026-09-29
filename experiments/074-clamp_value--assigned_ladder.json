@@ -1,0 +1,56 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 74,
+  "experiment_id": "clamp_value__assigned_ladder",
+  "intent": {
+    "id": "clamp_value",
+    "task": "입력을 -3에서 3 사이로 제한한다. 범위 안에서는 원래 값을 보존하고 바깥은 가장 가까운 끝값으로 치환한다.",
+    "requirements": [
+      "lower clamp",
+      "identity interior",
+      "upper clamp"
+    ],
+    "reachable_rule_count": 3
+  },
+  "lowering_route": {
+    "id": "assigned_ladder",
+    "description": "기본 결과 변수를 먼저 할당하고 if/else-if에서 값을 갱신한 뒤 한 번 반환한다.",
+    "style": "assign_ladder",
+    "constructs": [
+      "assignment",
+      "if",
+      "else",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "clamp_value__assigned_ladder",
+    "intent_id": "clamp_value",
+    "route_id": "assigned_ladder",
+    "requirements": [
+      "lower clamp",
+      "identity interior",
+      "upper clamp"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 3,
+    "clauses_total": 3,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 211,
+    "source_sha256": "sha256:47f03bc74d5401a3038c3a459ff7411a632c22438c62eaf8fa94f4ad41c074de",
+    "replay_sha256": "sha256:47f03bc74d5401a3038c3a459ff7411a632c22438c62eaf8fa94f4ad41c074de",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

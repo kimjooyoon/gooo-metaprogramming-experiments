@@ -1,0 +1,57 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 55,
+  "experiment_id": "compound_gate__predicate_helpers",
+  "intent": {
+    "id": "compound_gate",
+    "task": "입력이 2 이상 5 이하이면서 4가 아닐 때만 통과시킨다. 두 조건의 결합과 제외 조건을 함께 표현한다.",
+    "requirements": [
+      "lower bound",
+      "upper bound",
+      "excluded value",
+      "combined condition"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "predicate_helpers",
+    "description": "각 조건을 이름 있는 보조 판정 함수로 분리한 다음 본문에서 순서대로 조립한다.",
+    "style": "helpers",
+    "constructs": [
+      "call",
+      "if",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "compound_gate__predicate_helpers",
+    "intent_id": "compound_gate",
+    "route_id": "predicate_helpers",
+    "requirements": [
+      "lower bound",
+      "upper bound",
+      "excluded value",
+      "combined condition"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 259,
+    "source_sha256": "sha256:f13a414e767cbfc440a43753c8cde5f9ed36e7191078068603ce0a31916130d7",
+    "replay_sha256": "sha256:f13a414e767cbfc440a43753c8cde5f9ed36e7191078068603ce0a31916130d7",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

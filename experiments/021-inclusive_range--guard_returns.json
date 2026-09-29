@@ -1,0 +1,56 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 21,
+  "experiment_id": "inclusive_range__guard_returns",
+  "intent": {
+    "id": "inclusive_range",
+    "task": "허용 구간은 양 끝을 포함해 -2부터 2까지다. 허용은 1, 구간 밖은 0이다.",
+    "requirements": [
+      "lower inclusive boundary",
+      "interior",
+      "upper inclusive boundary",
+      "outside range"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "guard_returns",
+    "description": "조건을 순서대로 검사하고 각 일치 지점에서 즉시 반환한다. 기본 결과는 마지막 반환이다.",
+    "style": "guard",
+    "constructs": [
+      "if",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "inclusive_range__guard_returns",
+    "intent_id": "inclusive_range",
+    "route_id": "guard_returns",
+    "requirements": [
+      "lower inclusive boundary",
+      "interior",
+      "upper inclusive boundary",
+      "outside range"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 117,
+    "source_sha256": "sha256:79bbc76d56657bd4f9f6eaad6cff654ee9acc322a57c9d33c2ee4bb1616c14ad",
+    "replay_sha256": "sha256:79bbc76d56657bd4f9f6eaad6cff654ee9acc322a57c9d33c2ee4bb1616c14ad",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": true,
+    "deterministic_fallback": true,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

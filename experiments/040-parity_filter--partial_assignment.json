@@ -1,0 +1,56 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 40,
+  "experiment_id": "parity_filter__partial_assignment",
+  "intent": {
+    "id": "parity_filter",
+    "task": "짝수만 통과시킨다. 나머지는 거부한다. 음수에서도 나머지 조건이 일관되어야 한다.",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "partial_assignment",
+    "description": "처음 두 규칙만 변수 갱신 경로로 조립하고 나머지는 기본값으로 둔다. 의도적 부분 완성 경로다.",
+    "style": "partial_assign",
+    "constructs": [
+      "assignment",
+      "if",
+      "else",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "parity_filter__partial_assignment",
+    "intent_id": "parity_filter",
+    "route_id": "partial_assignment",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 141,
+    "source_sha256": "sha256:7ece77f84b81c0190380657373e439f756dea1d392843f23ce85d3afdaac7160",
+    "replay_sha256": "sha256:7ece77f84b81c0190380657373e439f756dea1d392843f23ce85d3afdaac7160",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

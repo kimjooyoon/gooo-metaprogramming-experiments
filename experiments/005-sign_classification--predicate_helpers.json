@@ -1,0 +1,55 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 5,
+  "experiment_id": "sign_classification__predicate_helpers",
+  "intent": {
+    "id": "sign_classification",
+    "task": "정수의 부호를 분류한다. 음수는 -1, 0은 0, 양수는 1이다. 음수·경계·양수 구간이 모두 구현되어야 한다.",
+    "requirements": [
+      "negative branch",
+      "zero boundary",
+      "positive branch"
+    ],
+    "reachable_rule_count": 3
+  },
+  "lowering_route": {
+    "id": "predicate_helpers",
+    "description": "각 조건을 이름 있는 보조 판정 함수로 분리한 다음 본문에서 순서대로 조립한다.",
+    "style": "helpers",
+    "constructs": [
+      "call",
+      "if",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "sign_classification__predicate_helpers",
+    "intent_id": "sign_classification",
+    "route_id": "predicate_helpers",
+    "requirements": [
+      "negative branch",
+      "zero boundary",
+      "positive branch"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 3,
+    "clauses_total": 3,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 574,
+    "source_sha256": "sha256:3b1b46087e8f1c5ae135114a3e281d5a5377dfbe878bac7bb553220c20d8477e",
+    "replay_sha256": "sha256:3b1b46087e8f1c5ae135114a3e281d5a5377dfbe878bac7bb553220c20d8477e",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

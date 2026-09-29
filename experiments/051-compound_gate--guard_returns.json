@@ -1,0 +1,56 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 51,
+  "experiment_id": "compound_gate__guard_returns",
+  "intent": {
+    "id": "compound_gate",
+    "task": "입력이 2 이상 5 이하이면서 4가 아닐 때만 통과시킨다. 두 조건의 결합과 제외 조건을 함께 표현한다.",
+    "requirements": [
+      "lower bound",
+      "upper bound",
+      "excluded value",
+      "combined condition"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "guard_returns",
+    "description": "조건을 순서대로 검사하고 각 일치 지점에서 즉시 반환한다. 기본 결과는 마지막 반환이다.",
+    "style": "guard",
+    "constructs": [
+      "if",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "compound_gate__guard_returns",
+    "intent_id": "compound_gate",
+    "route_id": "guard_returns",
+    "requirements": [
+      "lower bound",
+      "upper bound",
+      "excluded value",
+      "combined condition"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 132,
+    "source_sha256": "sha256:6b3ac81fba31b5dd8230e6d6747fe7227b09c2ae6faedb5ac4a9dd565e5c8c2a",
+    "replay_sha256": "sha256:6b3ac81fba31b5dd8230e6d6747fe7227b09c2ae6faedb5ac4a9dd565e5c8c2a",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": true,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

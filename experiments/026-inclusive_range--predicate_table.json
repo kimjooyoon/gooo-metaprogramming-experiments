@@ -1,0 +1,60 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 26,
+  "experiment_id": "inclusive_range__predicate_table",
+  "intent": {
+    "id": "inclusive_range",
+    "task": "허용 구간은 양 끝을 포함해 -2부터 2까지다. 허용은 1, 구간 밖은 0이다.",
+    "requirements": [
+      "lower inclusive boundary",
+      "interior",
+      "upper inclusive boundary",
+      "outside range"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "predicate_table",
+    "description": "조건 함수와 결과 함수를 표에 모으고 순서대로 훑어 첫 일치 결과를 반환한다.",
+    "style": "table",
+    "constructs": [
+      "range",
+      "if",
+      "closure",
+      "condition",
+      "assignment",
+      "call",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "inclusive_range__predicate_table",
+    "intent_id": "inclusive_range",
+    "route_id": "predicate_table",
+    "requirements": [
+      "lower inclusive boundary",
+      "interior",
+      "upper inclusive boundary",
+      "outside range"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 306,
+    "source_sha256": "sha256:3e632e2bf718d2c64cae9e4095cc5c56ee8be69eda4bf63258c6df93011f90c2",
+    "replay_sha256": "sha256:3e632e2bf718d2c64cae9e4095cc5c56ee8be69eda4bf63258c6df93011f90c2",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

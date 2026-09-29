@@ -1,0 +1,57 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 15,
+  "experiment_id": "threshold_gate__predicate_helpers",
+  "intent": {
+    "id": "threshold_gate",
+    "task": "임계값 10 이상인 입력만 승인한다. 음수 입력은 오류 -2, 나머지 미달 값은 0, 승인 값은 1이다.",
+    "requirements": [
+      "negative error",
+      "below-threshold result",
+      "threshold boundary",
+      "above-threshold result"
+    ],
+    "reachable_rule_count": 3
+  },
+  "lowering_route": {
+    "id": "predicate_helpers",
+    "description": "각 조건을 이름 있는 보조 판정 함수로 분리한 다음 본문에서 순서대로 조립한다.",
+    "style": "helpers",
+    "constructs": [
+      "call",
+      "if",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "threshold_gate__predicate_helpers",
+    "intent_id": "threshold_gate",
+    "route_id": "predicate_helpers",
+    "requirements": [
+      "negative error",
+      "below-threshold result",
+      "threshold boundary",
+      "above-threshold result"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 3,
+    "clauses_total": 3,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 386,
+    "source_sha256": "sha256:aa95eb76faf4ca0caeb8a28899eef9c35a28e90f486d54db2278b81eb7d60028",
+    "replay_sha256": "sha256:aa95eb76faf4ca0caeb8a28899eef9c35a28e90f486d54db2278b81eb7d60028",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

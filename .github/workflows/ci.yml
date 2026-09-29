@@ -1,0 +1,37 @@
+name: 100-case codegen matrix
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: kimjooyoon/gooo-metaprogramming-lab
+          path: lab
+      - uses: actions/checkout@v4
+        with:
+          repository: kimjooyoon/meta-ontology-go
+          ref: dev
+          path: gooo
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.27.x'
+      - name: Build Gooo and matrix runner
+        run: |
+          (cd gooo && go build -o "$RUNNER_TEMP/gooo" ./cmd/gooo)
+          (cd lab && go build -o "$RUNNER_TEMP/gooo-lab" ./cmd/lab)
+      - name: Compile and replay all 100 candidates
+        env:
+          GOOO_BIN: ${{ runner.temp }}/gooo
+          GOOO_LAYA_URL: ''
+        run: |
+          "$RUNNER_TEMP/gooo-lab" matrix --plan plan-v1.json --out "$RUNNER_TEMP/matrix"
+          jq -e '.experiment_count == 100 and .top1_mean_completeness == 1 and ([.candidates[] | select(.compiled)] | length) == 100 and ([.candidates[] | select(.deterministic)] | length) == 100' "$RUNNER_TEMP/matrix/matrix-report.json"

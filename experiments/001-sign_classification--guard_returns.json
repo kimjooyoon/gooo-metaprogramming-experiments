@@ -1,0 +1,54 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 1,
+  "experiment_id": "sign_classification__guard_returns",
+  "intent": {
+    "id": "sign_classification",
+    "task": "정수의 부호를 분류한다. 음수는 -1, 0은 0, 양수는 1이다. 음수·경계·양수 구간이 모두 구현되어야 한다.",
+    "requirements": [
+      "negative branch",
+      "zero boundary",
+      "positive branch"
+    ],
+    "reachable_rule_count": 3
+  },
+  "lowering_route": {
+    "id": "guard_returns",
+    "description": "조건을 순서대로 검사하고 각 일치 지점에서 즉시 반환한다. 기본 결과는 마지막 반환이다.",
+    "style": "guard",
+    "constructs": [
+      "if",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "sign_classification__guard_returns",
+    "intent_id": "sign_classification",
+    "route_id": "guard_returns",
+    "requirements": [
+      "negative branch",
+      "zero boundary",
+      "positive branch"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 3,
+    "clauses_total": 3,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 165,
+    "source_sha256": "sha256:2a73be0b98876a5e60df1715c334700422375c69958076fef3b71b845a9ce50f",
+    "replay_sha256": "sha256:2a73be0b98876a5e60df1715c334700422375c69958076fef3b71b845a9ce50f",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": true,
+    "seeded_probability_sample": true,
+    "deterministic_fallback": true,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

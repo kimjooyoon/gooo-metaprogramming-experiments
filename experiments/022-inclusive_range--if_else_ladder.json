@@ -1,0 +1,57 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 22,
+  "experiment_id": "inclusive_range__if_else_ladder",
+  "intent": {
+    "id": "inclusive_range",
+    "task": "허용 구간은 양 끝을 포함해 -2부터 2까지다. 허용은 1, 구간 밖은 0이다.",
+    "requirements": [
+      "lower inclusive boundary",
+      "interior",
+      "upper inclusive boundary",
+      "outside range"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "if_else_ladder",
+    "description": "우선순위를 보존하는 if/else-if/else 계단으로 분기를 구성한다.",
+    "style": "ladder",
+    "constructs": [
+      "if",
+      "else",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "inclusive_range__if_else_ladder",
+    "intent_id": "inclusive_range",
+    "route_id": "if_else_ladder",
+    "requirements": [
+      "lower inclusive boundary",
+      "interior",
+      "upper inclusive boundary",
+      "outside range"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 129,
+    "source_sha256": "sha256:ebe50a6ba29ae5fa5ccc56fcdcbe7035f0a2233f29dd7e8e1ad19905b260bcbc",
+    "replay_sha256": "sha256:ebe50a6ba29ae5fa5ccc56fcdcbe7035f0a2233f29dd7e8e1ad19905b260bcbc",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

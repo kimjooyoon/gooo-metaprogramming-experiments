@@ -1,0 +1,60 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 16,
+  "experiment_id": "threshold_gate__predicate_table",
+  "intent": {
+    "id": "threshold_gate",
+    "task": "임계값 10 이상인 입력만 승인한다. 음수 입력은 오류 -2, 나머지 미달 값은 0, 승인 값은 1이다.",
+    "requirements": [
+      "negative error",
+      "below-threshold result",
+      "threshold boundary",
+      "above-threshold result"
+    ],
+    "reachable_rule_count": 3
+  },
+  "lowering_route": {
+    "id": "predicate_table",
+    "description": "조건 함수와 결과 함수를 표에 모으고 순서대로 훑어 첫 일치 결과를 반환한다.",
+    "style": "table",
+    "constructs": [
+      "range",
+      "if",
+      "closure",
+      "condition",
+      "assignment",
+      "call",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "threshold_gate__predicate_table",
+    "intent_id": "threshold_gate",
+    "route_id": "predicate_table",
+    "requirements": [
+      "negative error",
+      "below-threshold result",
+      "threshold boundary",
+      "above-threshold result"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 3,
+    "clauses_total": 3,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 367,
+    "source_sha256": "sha256:11377a6d9e4d480a7bdd40aee698870c8067ccadc5b0068e56c9d436a1d7a51f",
+    "replay_sha256": "sha256:11377a6d9e4d480a7bdd40aee698870c8067ccadc5b0068e56c9d436a1d7a51f",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 77,
+  "experiment_id": "clamp_value__closure_branch",
+  "intent": {
+    "id": "clamp_value",
+    "task": "입력을 -3에서 3 사이로 제한한다. 범위 안에서는 원래 값을 보존하고 바깥은 가장 가까운 끝값으로 치환한다.",
+    "requirements": [
+      "lower clamp",
+      "identity interior",
+      "upper clamp"
+    ],
+    "reachable_rule_count": 3
+  },
+  "lowering_route": {
+    "id": "closure_branch",
+    "description": "선택 결과를 만드는 지역 함수를 만들고 그 안에 가드 분기를 조립한다.",
+    "style": "closure",
+    "constructs": [
+      "closure",
+      "assignment",
+      "if",
+      "condition",
+      "call",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "clamp_value__closure_branch",
+    "intent_id": "clamp_value",
+    "route_id": "closure_branch",
+    "requirements": [
+      "lower clamp",
+      "identity interior",
+      "upper clamp"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 3,
+    "clauses_total": 3,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 226,
+    "source_sha256": "sha256:696a2d0a06d75a95c45a6217e6c67cce9db32bdcbd793c3f7048525dcaa2f674",
+    "replay_sha256": "sha256:696a2d0a06d75a95c45a6217e6c67cce9db32bdcbd793c3f7048525dcaa2f674",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

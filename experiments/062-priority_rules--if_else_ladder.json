@@ -1,0 +1,57 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 62,
+  "experiment_id": "priority_rules__if_else_ladder",
+  "intent": {
+    "id": "priority_rules",
+    "task": "우선순위가 높은 규칙부터 적용한다. 7은 최우선 3, 그 외 3 초과는 2, 0 이상은 1, 음수는 -1이다.",
+    "requirements": [
+      "highest-priority override",
+      "secondary range",
+      "nonnegative range",
+      "negative fallback"
+    ],
+    "reachable_rule_count": 4
+  },
+  "lowering_route": {
+    "id": "if_else_ladder",
+    "description": "우선순위를 보존하는 if/else-if/else 계단으로 분기를 구성한다.",
+    "style": "ladder",
+    "constructs": [
+      "if",
+      "else",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "priority_rules__if_else_ladder",
+    "intent_id": "priority_rules",
+    "route_id": "if_else_ladder",
+    "requirements": [
+      "highest-priority override",
+      "secondary range",
+      "nonnegative range",
+      "negative fallback"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 4,
+    "clauses_total": 4,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 201,
+    "source_sha256": "sha256:1977a3fd92dd740160f4f2dab1159cd7bced215bb08f43acca878430b23201f9",
+    "replay_sha256": "sha256:1977a3fd92dd740160f4f2dab1159cd7bced215bb08f43acca878430b23201f9",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": true,
+    "seeded_probability_sample": true,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 45,
+  "experiment_id": "status_mapping__predicate_helpers",
+  "intent": {
+    "id": "status_mapping",
+    "task": "상태 코드 0, 1, 2, 3을 각각 그대로 보존한다. 선언되지 않은 코드는 -1로 변환한다.",
+    "requirements": [
+      "status 0",
+      "status 1",
+      "status 2",
+      "status 3",
+      "unknown fallback"
+    ],
+    "reachable_rule_count": 5
+  },
+  "lowering_route": {
+    "id": "predicate_helpers",
+    "description": "각 조건을 이름 있는 보조 판정 함수로 분리한 다음 본문에서 순서대로 조립한다.",
+    "style": "helpers",
+    "constructs": [
+      "call",
+      "if",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "status_mapping__predicate_helpers",
+    "intent_id": "status_mapping",
+    "route_id": "predicate_helpers",
+    "requirements": [
+      "status 0",
+      "status 1",
+      "status 2",
+      "status 3",
+      "unknown fallback"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 5,
+    "clauses_total": 5,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 696,
+    "source_sha256": "sha256:1e9cca3f81a5d8eeb899f871d7dbf3ba6283adb88df938d2ab6ef7cb0abff516",
+    "replay_sha256": "sha256:1e9cca3f81a5d8eeb899f871d7dbf3ba6283adb88df938d2ab6ef7cb0abff516",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

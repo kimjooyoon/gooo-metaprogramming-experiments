@@ -1,0 +1,56 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 53,
+  "experiment_id": "compound_gate__boolean_switch",
+  "intent": {
+    "id": "compound_gate",
+    "task": "입력이 2 이상 5 이하이면서 4가 아닐 때만 통과시킨다. 두 조건의 결합과 제외 조건을 함께 표현한다.",
+    "requirements": [
+      "lower bound",
+      "upper bound",
+      "excluded value",
+      "combined condition"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "boolean_switch",
+    "description": "조건식을 switch case로 평가하고 default 경로를 명시한다.",
+    "style": "switch",
+    "constructs": [
+      "switch",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "compound_gate__boolean_switch",
+    "intent_id": "compound_gate",
+    "route_id": "boolean_switch",
+    "requirements": [
+      "lower bound",
+      "upper bound",
+      "excluded value",
+      "combined condition"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 154,
+    "source_sha256": "sha256:48eb352ffe24bd19636ed7f25b3f6f404553becfadb5a6233f8e9fc6cda3933e",
+    "replay_sha256": "sha256:48eb352ffe24bd19636ed7f25b3f6f404553becfadb5a6233f8e9fc6cda3933e",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

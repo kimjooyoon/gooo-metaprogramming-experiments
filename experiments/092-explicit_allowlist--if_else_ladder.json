@@ -1,0 +1,59 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 92,
+  "experiment_id": "explicit_allowlist__if_else_ladder",
+  "intent": {
+    "id": "explicit_allowlist",
+    "task": "정확히 2, 4, 6인 코드만 허용한다. 비슷한 인접 값과 음수는 기본 거부 처리한다.",
+    "requirements": [
+      "allow code 2",
+      "allow code 4",
+      "allow code 6",
+      "adjacent deny",
+      "negative deny"
+    ],
+    "reachable_rule_count": 4
+  },
+  "lowering_route": {
+    "id": "if_else_ladder",
+    "description": "우선순위를 보존하는 if/else-if/else 계단으로 분기를 구성한다.",
+    "style": "ladder",
+    "constructs": [
+      "if",
+      "else",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "explicit_allowlist__if_else_ladder",
+    "intent_id": "explicit_allowlist",
+    "route_id": "if_else_ladder",
+    "requirements": [
+      "allow code 2",
+      "allow code 4",
+      "allow code 6",
+      "adjacent deny",
+      "negative deny"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 4,
+    "clauses_total": 4,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 206,
+    "source_sha256": "sha256:df6907f50a3935ddbcf05c94e670b30f0c487a566d584e014d7c87666290f42f",
+    "replay_sha256": "sha256:df6907f50a3935ddbcf05c94e670b30f0c487a566d584e014d7c87666290f42f",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": true,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

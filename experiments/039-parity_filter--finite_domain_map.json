@@ -1,0 +1,54 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 39,
+  "experiment_id": "parity_filter__finite_domain_map",
+  "intent": {
+    "id": "parity_filter",
+    "task": "짝수만 통과시킨다. 나머지는 거부한다. 음수에서도 나머지 조건이 일관되어야 한다.",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "finite_domain_map",
+    "description": "선언된 유한 평가 도메인에 대해 미리 계산한 결과 표를 조회하고 범위 밖은 기본값으로 처리한다.",
+    "style": "finite_map",
+    "constructs": [
+      "assignment",
+      "if",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "parity_filter__finite_domain_map",
+    "intent_id": "parity_filter",
+    "route_id": "finite_domain_map",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 375,
+    "source_sha256": "sha256:5beb4867e28490297952d37d30d9a71ffc520e8daa0d2f72536ea38fb44025d5",
+    "replay_sha256": "sha256:5beb4867e28490297952d37d30d9a71ffc520e8daa0d2f72536ea38fb44025d5",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

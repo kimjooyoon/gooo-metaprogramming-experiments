@@ -1,0 +1,57 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 37,
+  "experiment_id": "parity_filter__closure_branch",
+  "intent": {
+    "id": "parity_filter",
+    "task": "짝수만 통과시킨다. 나머지는 거부한다. 음수에서도 나머지 조건이 일관되어야 한다.",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "closure_branch",
+    "description": "선택 결과를 만드는 지역 함수를 만들고 그 안에 가드 분기를 조립한다.",
+    "style": "closure",
+    "constructs": [
+      "closure",
+      "assignment",
+      "if",
+      "condition",
+      "call",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "parity_filter__closure_branch",
+    "intent_id": "parity_filter",
+    "route_id": "closure_branch",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 163,
+    "source_sha256": "sha256:d6d8dc478db3970c215a4ef8cc90407ee7d6656d04d18c8ba3348dd97d88050d",
+    "replay_sha256": "sha256:d6d8dc478db3970c215a4ef8cc90407ee7d6656d04d18c8ba3348dd97d88050d",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

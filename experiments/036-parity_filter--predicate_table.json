@@ -1,0 +1,58 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 36,
+  "experiment_id": "parity_filter__predicate_table",
+  "intent": {
+    "id": "parity_filter",
+    "task": "짝수만 통과시킨다. 나머지는 거부한다. 음수에서도 나머지 조건이 일관되어야 한다.",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "predicate_table",
+    "description": "조건 함수와 결과 함수를 표에 모으고 순서대로 훑어 첫 일치 결과를 반환한다.",
+    "style": "table",
+    "constructs": [
+      "range",
+      "if",
+      "closure",
+      "condition",
+      "assignment",
+      "call",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "parity_filter__predicate_table",
+    "intent_id": "parity_filter",
+    "route_id": "predicate_table",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 309,
+    "source_sha256": "sha256:2e14acfa799d51958f8a3daaf62ce7525fbe6c1d2e5523c1092f7a93af5f622d",
+    "replay_sha256": "sha256:2e14acfa799d51958f8a3daaf62ce7525fbe6c1d2e5523c1092f7a93af5f622d",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

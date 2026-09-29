@@ -1,0 +1,58 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 41,
+  "experiment_id": "status_mapping__guard_returns",
+  "intent": {
+    "id": "status_mapping",
+    "task": "상태 코드 0, 1, 2, 3을 각각 그대로 보존한다. 선언되지 않은 코드는 -1로 변환한다.",
+    "requirements": [
+      "status 0",
+      "status 1",
+      "status 2",
+      "status 3",
+      "unknown fallback"
+    ],
+    "reachable_rule_count": 5
+  },
+  "lowering_route": {
+    "id": "guard_returns",
+    "description": "조건을 순서대로 검사하고 각 일치 지점에서 즉시 반환한다. 기본 결과는 마지막 반환이다.",
+    "style": "guard",
+    "constructs": [
+      "if",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "status_mapping__guard_returns",
+    "intent_id": "status_mapping",
+    "route_id": "guard_returns",
+    "requirements": [
+      "status 0",
+      "status 1",
+      "status 2",
+      "status 3",
+      "unknown fallback"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 5,
+    "clauses_total": 5,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 192,
+    "source_sha256": "sha256:6635ea0fa06956d8c412ba105b189d7b53298d310ebb4973eb128f1019d02e5c",
+    "replay_sha256": "sha256:6635ea0fa06956d8c412ba105b189d7b53298d310ebb4973eb128f1019d02e5c",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": true,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

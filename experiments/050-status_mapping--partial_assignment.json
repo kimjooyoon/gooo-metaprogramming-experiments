@@ -1,0 +1,60 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 50,
+  "experiment_id": "status_mapping__partial_assignment",
+  "intent": {
+    "id": "status_mapping",
+    "task": "상태 코드 0, 1, 2, 3을 각각 그대로 보존한다. 선언되지 않은 코드는 -1로 변환한다.",
+    "requirements": [
+      "status 0",
+      "status 1",
+      "status 2",
+      "status 3",
+      "unknown fallback"
+    ],
+    "reachable_rule_count": 5
+  },
+  "lowering_route": {
+    "id": "partial_assignment",
+    "description": "처음 두 규칙만 변수 갱신 경로로 조립하고 나머지는 기본값으로 둔다. 의도적 부분 완성 경로다.",
+    "style": "partial_assign",
+    "constructs": [
+      "assignment",
+      "if",
+      "else",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "status_mapping__partial_assignment",
+    "intent_id": "status_mapping",
+    "route_id": "partial_assignment",
+    "requirements": [
+      "status 0",
+      "status 1",
+      "status 2",
+      "status 3",
+      "unknown fallback"
+    ],
+    "covered": 23,
+    "total": 25,
+    "behavioral_completeness": 0.92,
+    "clauses_covered": 3,
+    "clauses_total": 5,
+    "rule_clause_completeness": 0.6,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 163,
+    "source_sha256": "sha256:ec4bec530fbeeee772c7de41dfd040323a0c730e04eee18f15438393a35594a1",
+    "replay_sha256": "sha256:ec4bec530fbeeee772c7de41dfd040323a0c730e04eee18f15438393a35594a1",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

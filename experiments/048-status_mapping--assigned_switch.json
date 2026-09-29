@@ -1,0 +1,59 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 48,
+  "experiment_id": "status_mapping__assigned_switch",
+  "intent": {
+    "id": "status_mapping",
+    "task": "상태 코드 0, 1, 2, 3을 각각 그대로 보존한다. 선언되지 않은 코드는 -1로 변환한다.",
+    "requirements": [
+      "status 0",
+      "status 1",
+      "status 2",
+      "status 3",
+      "unknown fallback"
+    ],
+    "reachable_rule_count": 5
+  },
+  "lowering_route": {
+    "id": "assigned_switch",
+    "description": "결과 변수를 선언하고 조건 switch의 일치 분기에서 값을 할당한다.",
+    "style": "assign_switch",
+    "constructs": [
+      "assignment",
+      "switch",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "status_mapping__assigned_switch",
+    "intent_id": "status_mapping",
+    "route_id": "assigned_switch",
+    "requirements": [
+      "status 0",
+      "status 1",
+      "status 2",
+      "status 3",
+      "unknown fallback"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 5,
+    "clauses_total": 5,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 229,
+    "source_sha256": "sha256:00c0b5a022382df34a13be857f9b67a5513ad77d65f101bc7baa13945264d78d",
+    "replay_sha256": "sha256:00c0b5a022382df34a13be857f9b67a5513ad77d65f101bc7baa13945264d78d",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

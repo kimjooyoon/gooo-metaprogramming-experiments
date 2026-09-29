@@ -1,0 +1,58 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 83,
+  "experiment_id": "retry_state__boolean_switch",
+  "intent": {
+    "id": "retry_state",
+    "task": "재시도 상태를 변환한다. 0은 종료, 1은 2로, 2는 3으로 이동, 음수는 오류 -1, 나머지는 대기 0이다.",
+    "requirements": [
+      "terminal state",
+      "first retry transition",
+      "second retry transition",
+      "error path",
+      "pending fallback"
+    ],
+    "reachable_rule_count": 5
+  },
+  "lowering_route": {
+    "id": "boolean_switch",
+    "description": "조건식을 switch case로 평가하고 default 경로를 명시한다.",
+    "style": "switch",
+    "constructs": [
+      "switch",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "retry_state__boolean_switch",
+    "intent_id": "retry_state",
+    "route_id": "boolean_switch",
+    "requirements": [
+      "terminal state",
+      "first retry transition",
+      "second retry transition",
+      "error path",
+      "pending fallback"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 5,
+    "clauses_total": 5,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 207,
+    "source_sha256": "sha256:d94c79bd378f5107a03ad99f1465062e75ebd09cc27355a4fbb2fc7c8303be92",
+    "replay_sha256": "sha256:d94c79bd378f5107a03ad99f1465062e75ebd09cc27355a4fbb2fc7c8303be92",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": true,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

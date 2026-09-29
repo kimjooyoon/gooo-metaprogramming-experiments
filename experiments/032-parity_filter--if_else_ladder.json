@@ -1,0 +1,55 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 32,
+  "experiment_id": "parity_filter__if_else_ladder",
+  "intent": {
+    "id": "parity_filter",
+    "task": "짝수만 통과시킨다. 나머지는 거부한다. 음수에서도 나머지 조건이 일관되어야 한다.",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "if_else_ladder",
+    "description": "우선순위를 보존하는 if/else-if/else 계단으로 분기를 구성한다.",
+    "style": "ladder",
+    "constructs": [
+      "if",
+      "else",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "parity_filter__if_else_ladder",
+    "intent_id": "parity_filter",
+    "route_id": "if_else_ladder",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 128,
+    "source_sha256": "sha256:7925bbb5f38c7a0c87891828c860cab8a6562d950c08e2fdc116cb0e30dfd127",
+    "replay_sha256": "sha256:7925bbb5f38c7a0c87891828c860cab8a6562d950c08e2fdc116cb0e30dfd127",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

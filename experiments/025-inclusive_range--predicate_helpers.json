@@ -1,0 +1,57 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 25,
+  "experiment_id": "inclusive_range__predicate_helpers",
+  "intent": {
+    "id": "inclusive_range",
+    "task": "허용 구간은 양 끝을 포함해 -2부터 2까지다. 허용은 1, 구간 밖은 0이다.",
+    "requirements": [
+      "lower inclusive boundary",
+      "interior",
+      "upper inclusive boundary",
+      "outside range"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "predicate_helpers",
+    "description": "각 조건을 이름 있는 보조 판정 함수로 분리한 다음 본문에서 순서대로 조립한다.",
+    "style": "helpers",
+    "constructs": [
+      "call",
+      "if",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "inclusive_range__predicate_helpers",
+    "intent_id": "inclusive_range",
+    "route_id": "predicate_helpers",
+    "requirements": [
+      "lower inclusive boundary",
+      "interior",
+      "upper inclusive boundary",
+      "outside range"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 248,
+    "source_sha256": "sha256:9f418594e297355de58ebd37e4db88a5b3e79f490f9544aae3901895bc039466",
+    "replay_sha256": "sha256:9f418594e297355de58ebd37e4db88a5b3e79f490f9544aae3901895bc039466",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": false,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

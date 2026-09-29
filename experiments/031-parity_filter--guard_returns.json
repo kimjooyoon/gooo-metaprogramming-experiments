@@ -1,0 +1,54 @@
+{
+  "schema": "gooo/metaprogramming-experiment/v1",
+  "experiment_number": 31,
+  "experiment_id": "parity_filter__guard_returns",
+  "intent": {
+    "id": "parity_filter",
+    "task": "짝수만 통과시킨다. 나머지는 거부한다. 음수에서도 나머지 조건이 일관되어야 한다.",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "reachable_rule_count": 2
+  },
+  "lowering_route": {
+    "id": "guard_returns",
+    "description": "조건을 순서대로 검사하고 각 일치 지점에서 즉시 반환한다. 기본 결과는 마지막 반환이다.",
+    "style": "guard",
+    "constructs": [
+      "if",
+      "condition",
+      "return"
+    ]
+  },
+  "result": {
+    "experiment_id": "parity_filter__guard_returns",
+    "intent_id": "parity_filter",
+    "route_id": "guard_returns",
+    "requirements": [
+      "even case",
+      "odd case",
+      "negative parity"
+    ],
+    "covered": 25,
+    "total": 25,
+    "behavioral_completeness": 1,
+    "clauses_covered": 2,
+    "clauses_total": 2,
+    "rule_clause_completeness": 1,
+    "construct_coverage": 1,
+    "construct_precision": 1,
+    "generated_bytes": 116,
+    "source_sha256": "sha256:8fa184a9c1cbb589e6d826502c782d90255b9a5a158126f4538d541ddececa0f",
+    "replay_sha256": "sha256:8fa184a9c1cbb589e6d826502c782d90255b9a5a158126f4538d541ddececa0f",
+    "deterministic": true,
+    "compiled": true
+  },
+  "selection": {
+    "laya_top1": false,
+    "seeded_probability_sample": false,
+    "deterministic_fallback": true,
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+  }
+}

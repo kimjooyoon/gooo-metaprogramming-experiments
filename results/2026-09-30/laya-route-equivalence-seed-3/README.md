@@ -3,9 +3,11 @@
 This local run used the exact Gooo `dev` source at commit
 `453c7c8a27cd1a5fcb80e1383ade3829477b8a2c`, tree
 `9b464b9d7bfb00fdebc252823781104bb9108e99`. The corresponding compiler change
-is PR [#1082](https://github.com/kimjooyoon/meta-ontology-go/pull/1082); the
-main promotion must preserve this tree. The Gooo binary and generated package
-used Go 1.27.0 from the local toolchain cache.
+is [PR #1082](https://github.com/kimjooyoon/meta-ontology-go/pull/1082),
+promoted by [PR #1083](https://github.com/kimjooyoon/meta-ontology-go/pull/1083)
+to main commit `3e31f92f529a8cff013b933d04fb8bbdc8fec72b` with this same tree.
+The report retains its exact pre-promotion dev source SHA. The Gooo binary and
+generated package used Go 1.27.0 from the local toolchain cache.
 
 ## Cohort results
 

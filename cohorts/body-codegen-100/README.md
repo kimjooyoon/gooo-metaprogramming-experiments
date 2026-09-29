@@ -13,7 +13,13 @@ all generated functions on the same declared domain of 25 integer values
 
 The report keeps separate measures for finite-domain behavior, source-body AST
 coverage, type checking, replay equality, eligible route choices, and process
-cost. It also emits a machine-readable completeness receipt with independent
+cost. Each generated case also carries a compiler-derived route-equivalence
+receipt. The receipt canonicalizes the source and emitted control-flow forms,
+normalizing only the declared if/else-return rewrites; other accepted bodies
+must retain the same formatted Go AST. The cohort binds those semantic digests
+to the exact input and generated-source digests. It establishes equivalence
+inside the closed, typechecked body profile, not intent coverage or behavior
+over all `int64` values. It also emits a machine-readable completeness receipt with independent
 PASS, PROGRESS, UNKNOWN, and FAIL_CLOSED dimensions. The receipt deliberately
 has no aggregate completeness score: synthetic fixture coverage, generated
 behavior, source binding, reverse observation, real use cases, and route quality

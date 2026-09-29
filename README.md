@@ -96,16 +96,22 @@ types beyond the small prototype. The intentionally partial route demonstrates
 that the score detects omitted branches: its candidate agreement ranges from
 48% to 96%, depending on the intent.
 
-The separate experimental [`gooo body-codegen` path](https://github.com/kimjooyoon/meta-ontology-go/blob/dev/docs/language/body-codegen.md)
+The separate experimental [`gooo body-codegen` path](https://github.com/kimjooyoon/meta-ontology-go/blob/main/docs/language/body-codegen.md)
 emits a small subset of `.gooo` `computes` programs as deterministic,
 typechecked Go functions. [PR #1074](https://github.com/kimjooyoon/meta-ontology-go/pull/1074)
 adds a bounded Laya choice among three equivalent conditional-lowering shapes,
 with deterministic `preserve` fallback and route/latency/completeness receipts;
-it is on `main` via [PR #1079](https://github.com/kimjooyoon/meta-ontology-go/pull/1079),
-which promoted the exact `dev` tree. Main CI and the promotion proof passed.
-The deployed commit is `0299ba548f15ac9550d1c7f742749d5e42948a4a`. A warm
+it is on `main` via [PR #1080](https://github.com/kimjooyoon/meta-ontology-go/pull/1080)
+and exact-tree promotion [PR #1081](https://github.com/kimjooyoon/meta-ontology-go/pull/1081).
+The deployed commit is `6414da939c5d7e55425cdb3a4ed220121ab49c16`. A warm
 30-call smoke on one fixture measured 108.48 ms p50 / 123.10 ms p95, with `preserve` selected on
 every call. This is a latency/resource observation, not an accuracy result.
+
+The compiler-derived route-equivalence receipt is under review in
+[PR #1082](https://github.com/kimjooyoon/meta-ontology-go/pull/1082). This
+experiment branch pins that exact candidate while CI checks the 100-case
+cohort. After the compiler change is promoted, the cohort pin will move to its
+deployed `main` commit.
 
 The 100-case corpus reported above remains the sidecar-based baseline. A
 separate [direct body-codegen cohort](cohorts/body-codegen-100/README.md)

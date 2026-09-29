@@ -67,7 +67,16 @@ that the score detects omitted branches: its candidate agreement ranges from
 48% to 96%, depending on the intent.
 
 The separate experimental [`gooo body-codegen` path](https://github.com/kimjooyoon/meta-ontology-go/blob/dev/docs/language/body-codegen.md)
-now emits a small subset of `.gooo` `computes` programs as deterministic,
-typechecked Go functions. This 100-case corpus does not yet invoke that command
-or route Laya decisions into it; the measured matrix above remains the
-sidecar-based baseline for the next integration experiment.
+emits a small subset of `.gooo` `computes` programs as deterministic,
+typechecked Go functions. [PR #1074](https://github.com/kimjooyoon/meta-ontology-go/pull/1074)
+adds a bounded Laya choice among three equivalent conditional-lowering shapes,
+with deterministic `preserve` fallback and route/latency/completeness receipts;
+it is awaiting CI in the language repository. A warm 30-call smoke on one
+fixture measured 108.48 ms p50 / 123.10 ms p95, with `preserve` selected on
+every call. This is a latency/resource observation, not an accuracy result.
+
+The 100-case corpus reported above remains the sidecar-based baseline: it does
+not yet invoke `body-codegen` or route these 100 source cases through the
+compiler. The next published run should add that direct path as a separate
+cohort and compare semantic completeness, finite-domain agreement, compilation,
+replay, latency, and CPU/RSS against the existing baseline.

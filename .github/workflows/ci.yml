@@ -62,21 +62,25 @@ jobs:
             .int64_extreme_checked_outputs == 400 and
             .int64_extreme_behavioral_matches == 400 and
             .int64_partition_proven_cases == 100 and
-            .int64_partition_expected_observations == 800 and
-            .int64_partition_observed_matches == 800 and
-            .int64_partition_proof.schema == "gooo/int64-comparison-partition/v1" and
+            .int64_partition_expected_observations == (100 * (.int64_partition_proof.representative_inputs | length)) and
+            .int64_partition_observed_matches == .int64_partition_expected_observations and
+            .int64_partition_proof.schema == "gooo/int64-affine-partition/v2" and
             .int64_partition_proof.profile_supported and
             .int64_partition_proof.partition_covers_int64 and
-            .int64_partition_proof.plan_contains_all_representatives and
+            .int64_partition_proof.arithmetic_semantics == "signed_int64_modulo_2^64" and
+            .int64_partition_proof.max_abs_input_coefficient == 8 and
+            .int64_partition_proof.supported_affine_operators == ["+", "-", "*"] and
+            .int64_partition_proof.transition_points_are_conservative_cuts and
+            .int64_partition_proof.execution_contains_all_representatives and
             .int64_partition_proof.compiled_execution_matches_representatives and
             .int64_partition_proof.proved_case_count == 100 and
-            .int64_partition_proof.comparison_count == 13 and
+            .int64_partition_proof.comparison_count == 12 and
             .int64_partition_proof.condition_count == 10 and
             .int64_partition_proof.result_pair_count == 5 and
             (.int64_partition_proof.body_styles | length) == 2 and
-            .int64_partition_proof.partition_cell_count == 8 and
-            (.int64_partition_proof.transition_points | length) == 7 and
-            (.int64_partition_proof.representative_inputs | length) == 8 and
+            .int64_partition_proof.partition_cell_count == (.int64_partition_proof.representative_inputs | length) and
+            (.int64_partition_proof.transition_points | length) == (.int64_partition_proof.representative_inputs | length) - 1 and
+            (.int64_partition_proof.representative_inputs | length) > 8 and
             .external_repeat_mismatches == 0 and
             .repository_writes == 0 and
             (.cases | length) == 100 and

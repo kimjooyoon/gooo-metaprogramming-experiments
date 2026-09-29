@@ -89,6 +89,7 @@ jobs:
             .children_peak_rss_bytes > 0 and
             .external_laya_process_resources_included == false and
             .completeness_receipt.decision == "PASS_WITHIN_DECLARED_FIXTURE_SCOPE" and
+            .completeness_receipt.schema == "gooo/metaprogramming-completeness-receipt/v2" and
             (.completeness_receipt | has("aggregate_completeness_score")) and
             .completeness_receipt.aggregate_completeness_score == null and
             .completeness_receipt.first_unresolved.id == "laya_decision_observation" and
@@ -140,17 +141,31 @@ jobs:
             (.completeness_receipt | has("aggregate_completeness_score")) and
             .completeness_receipt.aggregate_completeness_score == null and
             .completeness_receipt.decision == "PASS_WITHIN_DECLARED_FIXTURE_SCOPE" and
+            .completeness_receipt.schema == "gooo/metaprogramming-completeness-receipt/v2" and
             .completeness_receipt.scope.input_type == "Boolean" and
             .completeness_receipt.scope.domain_cardinality == 2 and
+            (.completeness_receipt.scope.allowed_investment | length) > 0 and
+            (.completeness_receipt.scope.excluded_scope | length) > 0 and
+            (.completeness_receipt.status_counts | has("UNKNOWN")) and
+            (.completeness_receipt.unresolved_claims | length) > 0 and
+            .completeness_receipt.first_unresolved.id == "laya_decision_observation" and
+            .completeness_receipt.first_unresolved.status == "UNKNOWN" and
+            (.completeness_receipt.first_unresolved.reason | length) > 0 and
+            (.completeness_receipt.first_unresolved.next_operation | length) > 0 and
             dimension("exhaustive_boolean_domain").status == "PASS" and
             dimension("exhaustive_boolean_domain").numerator == 200 and
             dimension("exhaustive_boolean_domain").denominator == 200 and
             dimension("route_semantic_equivalence").status == "PASS" and
             dimension("route_semantic_equivalence").numerator == 100 and
             dimension("route_semantic_equivalence").denominator == 100 and
-            dimension("real_use_case_coverage").status == "UNKNOWN" and
+            dimension("use_case_coverage").status == "UNKNOWN" and
             dimension("laya_decision_observation").status == "UNKNOWN"
           ' "$RUNNER_TEMP/body-codegen-boolean-100/boolean-body-codegen-report.json"
+      - name: Validate shared completeness receipt contract
+        run: |
+          python3 scripts/validate_completeness_receipts.py \
+            "$RUNNER_TEMP/body-codegen-100/body-codegen-report.json" \
+            "$RUNNER_TEMP/body-codegen-boolean-100/boolean-body-codegen-report.json"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

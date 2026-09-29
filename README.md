@@ -171,6 +171,24 @@ matched 200/200 outputs, 100/100 route-equivalence receipts, and 100/100
 external repeats. Gooo CLI invocation p50 was 2.77 ms on the GitHub runner with
 Laya disabled; that timing is only the deterministic fallback path.
 
+## Shared completeness receipt contract — 2026-09-30
+
+The direct affine and exhaustive Boolean cohorts now emit the same
+`gooo/metaprogramming-completeness-receipt/v2` contract. Each dimension carries
+its evidence unit, numerator and denominator, reason, and evidence references.
+Every `PROGRESS`, `UNKNOWN`, or `FAIL_CLOSED` item is retained in receipt order
+with a concrete next operation; `first_unresolved` identifies the earliest
+remaining item. Scope binds the hashed plan, compiler source revision,
+toolchain, execution environment, allowed investment, and explicit exclusions.
+
+The receipt keeps its aggregate completeness score null. A cohort can pass its
+declared fixture core while real workflows, reverse observation, host
+permissions, route quality, or a compatible before/after semantic baseline
+remain UNKNOWN. Baseline comparison is a separate dimension so experiments
+can show per-dimension regressions without turning unrelated coverage into a
+single percentage. GitHub Actions checks both cohort reports against the
+shared schema and their report identities.
+
 ## Seeded Laya route experiment — 2026-09-30
 
 Two local runs used the compiler's seeded weighted sampler with live Laya route

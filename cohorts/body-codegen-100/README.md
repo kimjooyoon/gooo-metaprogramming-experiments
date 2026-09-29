@@ -8,8 +8,10 @@ The 100 cases are the cross product of ten Boolean condition shapes, five
 integer result pairs, and two source forms: explicit branch returns, and a
 `let` result followed by conditional assignment and return. CI binds each
 generated report to the pinned Gooo source revision, then compiles and executes
-all generated functions on the same declared domain of 25 integer values
-(-12 through 12), for 2,500 checked outputs.
+all generated functions over 29 declared inputs: the original 25 values
+(-12 through 12) plus four signed `int64` edge values, for 2,900 checked
+outputs. The four added values are `MinInt64`, `MinInt64+1`, `MaxInt64-1`, and
+`MaxInt64`; CI requires all 400 case/edge pairs to execute and match.
 
 The report keeps separate measures for finite-domain behavior, source-body AST
 coverage, type checking, replay equality, eligible route choices, and process
@@ -26,6 +28,11 @@ behavior, source binding, reverse observation, real use cases, and route quality
 remain distinct claims. It keeps missing real-use-case, reverse-observation,
 full-domain, and route-quality evidence UNKNOWN rather than treating finite
 fixture success as universal completeness.
+
+The separate `int64_extreme_boundary_behavior` dimension reports those 400
+edge observations without converting four boundary samples into full-domain
+proof. The entire signed `int64` domain remains UNKNOWN until the supported
+condition profile has a symbolic or partitioned proof.
 
 A 100% finite-domain result applies only to this fixture domain. The
 body-codegen completeness field means accepted source AST units were represented

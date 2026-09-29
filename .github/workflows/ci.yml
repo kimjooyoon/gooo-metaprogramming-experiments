@@ -49,8 +49,8 @@ jobs:
             def dimension($id): [.completeness_receipt.dimensions[] | select(.id == $id)][0];
             .decision == "PASS" and
             .case_count == 100 and
-            .checked_output_count == 2500 and
-            .behavioral_matches == 2500 and
+            .checked_output_count == 2900 and
+            .behavioral_matches == 2900 and
             .behavioral_completeness_percent == 100 and
             .body_ast_completeness_percent == 100 and
             .eligible_multi_route_cases == 50 and
@@ -58,6 +58,9 @@ jobs:
             .all_typechecks_passed and
             .all_internal_replays_passed and
             .route_semantic_equivalence_passes == 100 and
+            .int64_extreme_expected_outputs == 400 and
+            .int64_extreme_checked_outputs == 400 and
+            .int64_extreme_behavioral_matches == 400 and
             .external_repeat_mismatches == 0 and
             .repository_writes == 0 and
             (.cases | length) == 100 and
@@ -77,6 +80,9 @@ jobs:
             dimension("route_semantic_equivalence").status == "PASS" and
             dimension("route_semantic_equivalence").numerator == 100 and
             dimension("route_semantic_equivalence").denominator == 100 and
+            dimension("int64_extreme_boundary_behavior").status == "PASS" and
+            dimension("int64_extreme_boundary_behavior").numerator == 400 and
+            dimension("int64_extreme_boundary_behavior").denominator == 400 and
             dimension("resource_baseline_comparison").status == "UNKNOWN" and
             dimension("route_quality").status == "UNKNOWN" and
             dimension("laya_decision_observation").status == "UNKNOWN"

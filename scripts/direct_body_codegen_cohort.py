@@ -19,7 +19,9 @@ from typing import Any
 
 
 SCHEMA = "gooo/body-codegen-cohort-report/v1"
+PROFILE_ID = "gooo/body-codegen-direct-cohort-100/v2"
 PACKAGE = "bodycodegen_cohort"
+INT64_EDGE_VALUES = (-(1 << 63), -(1 << 63) + 1, (1 << 63) - 2, (1 << 63) - 1)
 
 
 def digest(data: bytes) -> str:
@@ -229,6 +231,9 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
     expected_cases = int(report.get("expected_case_count", report.get("case_count", 0)))
     planned_cases = int(report.get("planned_case_count", 0))
     expected_outputs = int(report.get("expected_domain_points", 0))
+    expected_extreme_outputs = int(report.get("int64_extreme_expected_outputs", 0))
+    matched_extreme_outputs = int(report.get("int64_extreme_behavioral_matches", 0))
+    extreme_values = [int(value) for value in report.get("int64_extreme_values", [])]
     laya_configured = bool(report.get("laya_configured", False))
 
     def count_true(key: str) -> int:
@@ -310,6 +315,13 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
             "finite_domain_behavior", observed_outputs, expected_outputs, "matching input/output points",
             "Checks only the declared finite domain; any observed mismatch fails closed.",
             ["independent condition oracle", "compiled generated-package execution"],
+            fail_closed=runtime_failed,
+        ),
+        dimension(
+            "int64_extreme_boundary_behavior", matched_extreme_outputs, expected_extreme_outputs,
+            "compiled outputs at signed int64 extrema and adjacent values",
+            "Executes every fixture at the four signed int64 edge values; this is boundary evidence, not a proof over the full domain.",
+            [f"values:{extreme_values}", "generated package execution"],
             fail_closed=runtime_failed,
         ),
         dimension(
@@ -420,7 +432,7 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
     ]
     return {
         "schema": "gooo/metaprogramming-completeness-receipt/v1",
-        "profile_id": "gooo/body-codegen-direct-cohort-100/v1",
+        "profile_id": PROFILE_ID,
         "decision": decision,
         "decision_basis": "all core fixture dimensions must pass; UNKNOWN dimensions remain explicit and are never converted into a completion percentage",
         "scope": {
@@ -428,6 +440,7 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
             "observed_fixture_cases": case_count,
             "input_domain": report.get("domain", []),
             "finite_domain_points_per_case": len(report.get("domain", [])),
+            "int64_extreme_values": extreme_values,
             "compiler_source_sha": source_sha or "UNBOUND_LOCAL_SOURCE",
             "plan_sha256": report.get("plan_sha256"),
             "laya_configured": laya_configured,
@@ -474,6 +487,11 @@ def partial_report(
         "planned_case_count": len(make_cases(plan)),
         "expected_case_count": int(plan.get("expected_case_count", 0)),
         "expected_domain_points": int(plan.get("expected_domain_points", 0)),
+        "int64_extreme_values": [int(value) for value in plan.get("int64_extreme_values", [])],
+        "int64_extreme_expected_outputs": (
+            int(plan.get("expected_case_count", 0)) * len(plan.get("int64_extreme_values", []))
+        ),
+        "int64_extreme_behavioral_matches": 0,
         "plan_sha256": digest(plan_bytes),
         "domain": domain,
         "gooo_source_sha": gooo_source_sha or "UNBOUND_LOCAL_SOURCE",
@@ -498,6 +516,7 @@ def main() -> int:
     plan_bytes = args.plan.read_bytes()
     plan = json.loads(plan_bytes)
     domain = [int(value) for value in plan["domain"]]
+    int64_extreme_values = [int(value) for value in plan.get("int64_extreme_values", [])]
     cases = make_cases(plan)
     report_path = args.out / "body-codegen-report.json"
     args.out.mkdir(parents=True, exist_ok=True)
@@ -506,6 +525,16 @@ def main() -> int:
     sample_seed = env.get("GOOO_BODY_CODEGEN_SAMPLE_SEED", "")
     sample_seed_sha256 = digest(sample_seed.encode("utf-8")) if sample_seed else None
     gooo_source_sha = env.get("GOOO_SOURCE_SHA", "")
+
+    if (
+        tuple(int64_extreme_values) != INT64_EDGE_VALUES
+        or not set(int64_extreme_values).issubset(domain)
+    ):
+        return fail_report(
+            report_path,
+            partial_report(plan, plan_bytes, domain, gooo_source_sha, laya_enabled, []),
+            "plan must include the four signed int64 extrema and adjacent values in its executed domain",
+        )
 
     if len(cases) != plan["expected_case_count"]:
         return fail_report(
@@ -750,6 +779,14 @@ def main() -> int:
         "planned_case_count": len(cases),
         "expected_case_count": int(plan["expected_case_count"]),
         "expected_domain_points": int(plan["expected_domain_points"]),
+        "int64_extreme_values": [int(value) for value in plan["int64_extreme_values"]],
+        "int64_extreme_expected_outputs": int(plan["expected_case_count"]) * len(plan["int64_extreme_values"]),
+        "int64_extreme_checked_outputs": (
+            len(case_reports) * len(plan["int64_extreme_values"]) if runtime_match else 0
+        ),
+        "int64_extreme_behavioral_matches": (
+            len(case_reports) * len(plan["int64_extreme_values"]) if runtime_match else 0
+        ),
         "decision": "PASS" if runtime_match and replay_mismatches == 0 and len(case_reports) == plan["expected_case_count"] and route_equivalence_passes == len(case_reports) else "FAIL_CLOSED",
         "plan_sha256": digest(plan_bytes),
         "gooo_source_sha": gooo_source_sha or "UNBOUND_LOCAL_SOURCE",

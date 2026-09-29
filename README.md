@@ -77,8 +77,12 @@ The deployed commit is `0299ba548f15ac9550d1c7f742749d5e42948a4a`. A warm
 30-call smoke on one fixture measured 108.48 ms p50 / 123.10 ms p95, with `preserve` selected on
 every call. This is a latency/resource observation, not an accuracy result.
 
-The 100-case corpus reported above remains the sidecar-based baseline: it does
-not yet invoke `body-codegen` or route these 100 source cases through the
-compiler. The next published run should add that direct path as a separate
-cohort and compare semantic completeness, finite-domain agreement, compilation,
-replay, latency, and CPU/RSS against the existing baseline.
+The 100-case corpus reported above remains the sidecar-based baseline. A
+separate [direct body-codegen cohort](cohorts/body-codegen-100/README.md)
+routes 100 generated `.gooo` bodies through the pinned Gooo CLI and checks 2,500
+finite-domain outputs after compiling the generated Go package. It keeps
+behavioral agreement separate from body-AST coverage and records replay,
+latency, child CPU, and peak child RSS. CI runs without a model service and
+uses the deterministic fallback; Laya route choice remains an optional local
+measurement. The two cohorts have different input construction and evidence
+boundaries, so their percentages are not averaged together.

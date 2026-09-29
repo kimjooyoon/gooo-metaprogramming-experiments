@@ -1,0 +1,27 @@
+{
+  "schema": "gooo/body-codegen-cohort-plan/v1",
+  "cohort_id": "direct_body_codegen_100_v1",
+  "domain": [-12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  "conditions": [
+    {"id": "negative", "expression": "input < 0"},
+    {"id": "at_most_minus_three", "expression": "input <= -3"},
+    {"id": "zero", "expression": "input == 0"},
+    {"id": "positive", "expression": "input > 0"},
+    {"id": "at_least_five", "expression": "input >= 5"},
+    {"id": "not_one", "expression": "input != 1"},
+    {"id": "inclusive_neighborhood", "expression": "input >= -2 && input <= 2"},
+    {"id": "outside_window", "expression": "input < 0 || input > 5"},
+    {"id": "equal_five", "expression": "input == 5"},
+    {"id": "inside_open_interval", "expression": "input > 1 && input < 5"}
+  ],
+  "result_pairs": [
+    {"id": "positive_zero", "when_true": 1, "when_false": 0},
+    {"id": "zero_negative", "when_true": 0, "when_false": -1},
+    {"id": "seven_negative_three", "when_true": 7, "when_false": -3},
+    {"id": "negative_two_five", "when_true": -2, "when_false": 5},
+    {"id": "ten_negative_ten", "when_true": 10, "when_false": -10}
+  ],
+  "body_styles": ["branch_returns", "result_assignment"],
+  "expected_case_count": 100,
+  "expected_domain_points": 2500
+}

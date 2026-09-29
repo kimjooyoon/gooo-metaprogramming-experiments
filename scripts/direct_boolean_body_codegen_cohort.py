@@ -7,12 +7,15 @@ import argparse
 import hashlib
 import json
 import os
+import platform
 import subprocess
 import sys
 import tempfile
 import time
 from pathlib import Path
 from typing import Any
+
+from completeness_receipt import dimension, finalize_receipt
 
 
 PACKAGE = "bodycodegen_boolean_cohort"
@@ -155,42 +158,96 @@ def completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
     cases = report.get("cases", [])
     total = int(report.get("expected_case_count", 0))
     outputs = int(report.get("expected_domain_points", 0))
+    source_sha = str(report.get("gooo_source_sha", ""))
+    plan_sha = str(report.get("plan_sha256", ""))
+    source_sha_bound = len(source_sha) == 40 and all(char in "0123456789abcdef" for char in source_sha)
+    source_bound_cases = sum(bool(item.get("source_sha256") and item.get("generated_sha256")) for item in cases)
+    provenance_numerator = source_bound_cases + int(source_sha_bound and plan_sha.startswith("sha256:"))
+    route_passes = int(report.get("route_equivalence_passes", 0))
+    eligible_routes = sum(len(item.get("candidate_routes") or []) > 1 for item in cases)
+    laya_observed = sum(item.get("route_mode") == "laya" for item in cases)
+    source_ast_passes = sum(item.get("completeness_percent") == 100 for item in cases)
+    runtime_passed = report.get("generated_package_test_passed") is True
     dimensions = [
-        {"id": "generation_coverage", "status": "PASS" if len(cases) == total else "FAIL_CLOSED", "numerator": len(cases), "denominator": total},
-        {"id": "route_semantic_equivalence", "status": "PASS" if report.get("route_equivalence_passes") == total else "FAIL_CLOSED", "numerator": int(report.get("route_equivalence_passes", 0)), "denominator": total},
-        {"id": "typecheck_coverage", "status": "PASS" if report.get("all_typechecks_passed") else "FAIL_CLOSED", "numerator": sum(item.get("typecheck_passed") is True for item in cases), "denominator": total},
-        {"id": "internal_replay_coverage", "status": "PASS" if report.get("all_internal_replays_passed") else "FAIL_CLOSED", "numerator": sum(item.get("internal_replay_passed") is True for item in cases), "denominator": total},
-        {"id": "external_repeat_determinism", "status": "PASS" if report.get("external_repeat_matches") == total else "FAIL_CLOSED", "numerator": int(report.get("external_repeat_matches", 0)), "denominator": total},
-        {"id": "exhaustive_boolean_domain", "status": "PASS" if report.get("behavioral_matches") == outputs else "FAIL_CLOSED", "numerator": int(report.get("behavioral_matches", 0)), "denominator": outputs},
-        {"id": "repository_write_boundary", "status": "PASS" if report.get("repository_writes") == 0 else "FAIL_CLOSED", "numerator": int(report.get("repository_writes", 0) == 0), "denominator": 1},
-        {"id": "real_use_case_coverage", "status": "UNKNOWN", "numerator": 0, "denominator": 1},
-        {"id": "laya_decision_observation", "status": "UNKNOWN", "numerator": 0, "denominator": 1},
+        dimension("declaration_coverage", int(report.get("condition_count", 0)), int(report.get("condition_count", 0)), "hashed Boolean condition forms", "Counts declared synthetic condition forms only; this is not natural-language or real-domain coverage.", [plan_sha]),
+        dimension("generation_coverage", len(cases), total, "generated activity bodies", "Counts compiler-accepted bodies against the planned cohort size.", [plan_sha, source_sha or "compiler source unavailable"]),
+        dimension("source_ast_coverage", source_ast_passes, total, "fully lowered source bodies", "Uses compiler-reported accepted body AST units; it does not measure unstated intent.", ["per-case completeness_percent", "source_semantic_units and lowered_semantic_units"]),
+        dimension("route_semantic_equivalence", route_passes, total, "source/generated pairs with matching semantic receipts", "Requires compiler-derived structural equivalence and source/generated digest binding.", ["per-case route_equivalence receipt", "per-case source and generated digests"]),
+        dimension("typecheck_coverage", sum(item.get("typecheck_passed") is True for item in cases), total, "typechecked bodies", "Counts generated bodies accepted by Gooo's Go type checker.", ["per-case typecheck_passed"]),
+        dimension("internal_replay_coverage", sum(item.get("internal_replay_passed") is True for item in cases), total, "deterministic compiler replays", "Counts compiler-internal emission replay equality.", ["per-case deterministic_replay"]),
+        dimension("external_repeat_determinism", int(report.get("external_repeat_matches", 0)), total, "repeated CLI decisions", "Repeats every CLI request and compares route, selection receipt, and generated source.", ["per-case route and generated digest", "external_repeat_equal"]),
+        dimension("exhaustive_boolean_domain", int(report.get("behavioral_matches", 0)), outputs, "compiled Boolean input/output points", "Executes false and true for every generated function; complete only for this Boolean fixture profile.", ["independent condition oracle", "compiled generated-package execution"], fail_closed=not runtime_passed and "generated_package_test_passed" in report),
+        dimension("execution_boundary", total if runtime_passed else 0, total, "functions executed in a temporary generated package", "Generated code runs in the isolated output package; this does not grant repository or external-service authority.", ["generated_package_test_passed", "temporary generated package path"] , fail_closed=not runtime_passed and "generated_package_test_passed" in report),
+        dimension("repository_write_boundary", int(report.get("repository_writes", 0) == 0), 1, "runs with zero repository writes", "Generated files are kept under the caller-declared output directory; the report records repository writes only.", ["repository_writes", "temporary generated package"] , fail_closed=int(report.get("repository_writes", 0)) != 0),
+        dimension("provenance_integrity", provenance_numerator, total + 1, "case and compiler/plan identity bindings", "Binds per-case source/generated digests and the compiler commit plus plan digest.", [plan_sha, source_sha or "compiler source unavailable", "per-case source_sha256 and generated_sha256"]),
+        dimension("laya_decision_observation", laya_observed, eligible_routes, "eligible multi-route Laya decisions", "Records model decisions only when Laya is configured; it does not assess route quality.", ["per-case route_mode", "candidate_routes"]),
+        dimension("reverse_observation_coverage", 0, 1, "generated-to-source observation paths", "This cohort executes generated outputs but does not reverse-map runtime observations to source declarations.", ["no source-bound reverse-observation trace"]),
+        dimension("use_case_coverage", 0, 1, "independently sourced real workflows", "All planned cases are synthetic fixtures, not independently sourced workflows.", ["no real-workflow corpus is bound"]),
+        dimension("permission_boundary", 0, 1, "observed host permission profiles", "Repository writes are measured, but the local OS user's filesystem permission set is not captured.", ["repository_write_boundary is measured separately", "no host permission receipt"]),
+        dimension("external_network_boundary", int(not report.get("laya_configured", False)), 1, "runs with no configured Laya service", "An empty Laya URL proves no model decision was requested in this run; it does not audit every possible process network call.", [f"laya_configured:{bool(report.get('laya_configured', False))}", "CI route service configuration"]),
+        dimension("semantic_profile_delta", 0, 1, "compatible before/after semantic receipts", "No prior receipt with the same plan, compiler, toolchain, and runner is bound for per-dimension regression deltas.", [plan_sha, source_sha or "compiler source unavailable", "no comparable prior receipt"]),
+        dimension("route_quality", 0, 1, "independently validated route-quality criteria", "Semantic equivalence is measured; this cohort has no independent clarity or utility oracle.", ["route_semantic_equivalence", "no route-clarity or utility measure"]),
+        dimension("unrestricted_body_semantics", 0, 1, "all supported Gooo body forms", "Only the declared pure Boolean subset is evaluated here.", ["bounded Boolean profile", "other body forms are unmodeled"]),
     ]
-    core = dimensions[:7]
-    decision = "PASS_WITHIN_DECLARED_FIXTURE_SCOPE" if all(item["status"] == "PASS" for item in core) else "FAIL_CLOSED"
-    return {
-        "schema": "gooo/metaprogramming-completeness-receipt/v1",
-        "profile_id": "gooo/body-codegen-boolean-exhaustive/v1",
-        "decision": decision,
-        "decision_basis": "all core dimensions must pass; UNKNOWN dimensions are explicit and are never scored",
-        "scope": {
+    core = {
+        "declaration_coverage", "generation_coverage", "source_ast_coverage",
+        "route_semantic_equivalence", "typecheck_coverage", "internal_replay_coverage",
+        "external_repeat_determinism", "exhaustive_boolean_domain", "execution_boundary",
+        "repository_write_boundary", "provenance_integrity",
+    }
+    next_operations = {
+        "declaration_coverage": "BIND_PLAN_CASES_TO_THE_DECLARED_FIXTURE_DENOMINATOR",
+        "generation_coverage": "REPAIR_FAILING_GOOO_BODY_CODEGEN_CASES",
+        "source_ast_coverage": "LOWER_EVERY_ACCEPTED_SOURCE_AST_UNIT_OR_FAIL_CLOSED",
+        "route_semantic_equivalence": "BIND_SOURCE_AND_GENERATED_ENVELOPES_AND_REQUIRE_THE_DECLARED_CANONICAL_FORM_TO_MATCH",
+        "typecheck_coverage": "REPAIR_GENERATED_GO_TYPE_ERRORS",
+        "internal_replay_coverage": "REPLAY_EACH_COMPILER_SELECTED_ROUTE",
+        "external_repeat_determinism": "REPEAT_EACH_CLI_DECISION_AND_COMPARE_ROUTE_AND_GENERATED_DIGEST",
+        "exhaustive_boolean_domain": "EXECUTE_MISSING_BOOLEAN_INPUTS_OR_REPAIR_THE_GENERATED_PACKAGE",
+        "execution_boundary": "BIND_COMPILED_EXECUTION_TO_TEMPORARY_OUTPUT_AND_RECHECK_WRITE_BOUNDARIES",
+        "repository_write_boundary": "KEEP_OUTPUT_IN_TEMPORARY_STORAGE_AND_RECHECK_REPOSITORY_STATE",
+        "provenance_integrity": "BIND_EACH_SOURCE_AND_GENERATED_DIGEST_TO_COMPILER_AND_PLAN_IDENTITIES",
+        "laya_decision_observation": "RUN_WITH_A_PINNED_LAYA_SERVICE_AND_RETAIN_MODEL_REVISION",
+        "reverse_observation_coverage": "ADD_SOURCE_BOUND_GENERATED_TO_SOURCE_OBSERVATION_EVIDENCE",
+        "use_case_coverage": "BIND_INDEPENDENTLY_SOURCED_REAL_WORKFLOW_FIXTURES",
+        "permission_boundary": "CAPTURE_THE_HOST_PERMISSION_PROFILE_WITHOUT_GRANTING_ADDITIONAL_AUTHORITY",
+        "external_network_boundary": "RECORD_THE_CONFIGURED_PROVIDER_ENDPOINT_AND_AUDIT_THE_ALLOWED_NETWORK_SCOPE",
+        "semantic_profile_delta": "BIND_A_COMPATIBLE_BASELINE_AND_REPORT_PER_DIMENSION_DELTAS",
+        "route_quality": "DEFINE_AN_INDEPENDENT_ROUTE_QUALITY_ORACLE",
+        "unrestricted_body_semantics": "EXTEND_CONFORMANCE_TO_THE_REMAINING_SUPPORTED_BODY_FORMS",
+    }
+    return finalize_receipt(
+        profile_id="gooo/body-codegen-boolean-exhaustive/v1",
+        decision_basis="all core fixture dimensions must pass; UNKNOWN dimensions remain explicit and are never converted into a completion percentage",
+        scope={
+            "domain_scope": "100 synthetic single-input Boolean activity bodies evaluated at false and true",
+            "allowed_investment": "measure bounded pure Boolean body generation, type checking, equivalence, replay, and full two-value input behavior",
+            "excluded_scope": ["natural-language intent", "real workflows", "unrestricted body syntax", "route quality", "reverse observation"],
             "input_type": "Boolean",
             "input_domain": list(DOMAIN),
             "domain_cardinality": len(DOMAIN),
             "planned_fixture_cases": total,
             "checked_outputs": outputs,
-            "plan_sha256": report.get("plan_sha256"),
-            "gooo_source_sha": report.get("gooo_source_sha"),
+            "plan_sha256": plan_sha,
+            "compiler_source_sha": source_sha or "UNBOUND_LOCAL_SOURCE",
+            "toolchain": report.get("go_version", "UNOBSERVED_GO_VERSION"),
+            "execution_environment": report.get("host_platform", "UNOBSERVED_RUNNER"),
+            "laya_configured": bool(report.get("laya_configured", False)),
         },
-        "dimensions": dimensions,
-        "aggregate_completeness_score": None,
-        "not_claimed": [
+        dimensions=dimensions,
+        core_dimensions=core,
+        next_operations=next_operations,
+        not_claimed=[
             "user-intent completeness",
             "real-workflow coverage",
             "Laya route quality",
             "unrestricted Gooo body-codegen completeness",
         ],
-    }
+        force_fail_closed_reason=(
+            str(report.get("failure") or "cohort execution reported FAIL_CLOSED")
+            if report.get("decision") == "FAIL_CLOSED" else ""
+        ),
+    )
 
 
 def fail_report(path: Path, report: dict[str, Any], message: str) -> int:
@@ -230,8 +287,8 @@ def main() -> int:
         "result_pair_count": len(plan.get("result_pairs", [])),
         "body_style_count": len(plan.get("body_styles", [])),
         "plan_sha256": digest(plan_bytes),
-        "plan_sha256": digest(plan_bytes),
         "gooo_source_sha": source_sha or "UNBOUND_LOCAL_SOURCE",
+        "laya_configured": bool(os.environ.get("GOOO_LAYA_URL")),
         "input_domain": list(DOMAIN),
         "cases": [],
         "repository_writes": 0,
@@ -311,10 +368,14 @@ def main() -> int:
                     "source_sha256": source_hash,
                     "generated_sha256": generated_hash,
                     "route": result.get("route"),
+                    "route_mode": result.get("route_decision", {}).get("mode"),
                     "candidate_routes": result.get("candidate_routes"),
                     "route_equivalence_passed": True,
                     "typecheck_passed": True,
                     "internal_replay_passed": True,
+                    "completeness_percent": result.get("completeness_percent"),
+                    "source_semantic_units": result.get("source_semantic_units"),
+                    "lowered_semantic_units": result.get("lowered_semantic_units"),
                     "external_repeat_equal": repeated,
                     "checked_domain_points": len(DOMAIN),
                     "expected_outputs": expected_outputs(case),
@@ -331,9 +392,11 @@ def main() -> int:
     test_env["GOTOOLCHAIN"] = os.environ.get("GOTOOLCHAIN", "local")
     go_test = subprocess.run(["go", "test", "-count=1", "./..."], cwd=generated_dir, env=test_env, capture_output=True, text=True, check=False)
     test_passed = go_test.returncode == 0
+    go_version_result = subprocess.run(["go", "version"], cwd=generated_dir, env=test_env, capture_output=True, text=True, check=False)
     report = {
         **base_report,
         "decision": "PASS" if test_passed else "FAIL_CLOSED",
+        "failure": None if test_passed else (go_test.stderr.strip() or go_test.stdout.strip() or "generated Go package test failed"),
         "case_count": len(case_reports),
         "checked_output_count": len(case_reports) * len(DOMAIN),
         "behavioral_matches": len(case_reports) * len(DOMAIN) if test_passed else 0,
@@ -345,6 +408,8 @@ def main() -> int:
         "external_repeat_matches": external_repeat_matches,
         "external_repeat_mismatches": len(case_reports) - external_repeat_matches,
         "gooo_invocation_p50_ms": sorted(invocation_ms)[len(invocation_ms) // 2] if invocation_ms else 0,
+        "go_version": go_version_result.stdout.strip() if go_version_result.returncode == 0 else "UNOBSERVED_GO_VERSION",
+        "host_platform": platform.platform(),
         "repository_writes": 0,
         "cases": case_reports,
     }

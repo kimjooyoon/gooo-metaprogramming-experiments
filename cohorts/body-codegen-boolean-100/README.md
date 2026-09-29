@@ -20,5 +20,11 @@ a Laya response-latency measurement.
 
 `exhaustive_boolean_domain` is a full-domain claim for Boolean inputs only.
 Real workflows, Laya route quality, and unrestricted body-codegen completeness
-remain UNKNOWN. The receipt has no aggregate score, and the generated package
-and fixture files remain temporary CI artifacts.
+remain UNKNOWN. The shared v2 receipt also records declaration and source-AST
+coverage, provenance, execution and repository-write boundaries, permissions,
+network configuration, reverse observation, and whether a compatible semantic
+baseline exists. Every unresolved dimension retains its reason and next
+operation; the first one is exposed as `first_unresolved`. There is no aggregate
+score, and the generated package and fixture files remain temporary CI
+artifacts. CI validates this receipt and the affine cohort's receipt against
+the same schema.

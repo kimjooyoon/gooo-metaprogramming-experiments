@@ -18,6 +18,8 @@ import time
 from pathlib import Path
 from typing import Any
 
+from completeness_receipt import dimension, finalize_receipt
+
 
 SCHEMA = "gooo/body-codegen-cohort-report/v1"
 PROFILE_ID = "gooo/body-codegen-direct-cohort-100/v4"
@@ -373,35 +375,6 @@ def percentile(values: list[float], fraction: float) -> float:
     return ordered[max(0, math.ceil(fraction * len(ordered)) - 1)]
 
 
-def dimension(
-    dimension_id: str,
-    numerator: int,
-    denominator: int,
-    unit: str,
-    reason: str,
-    evidence: list[str],
-    *,
-    fail_closed: bool = False,
-) -> dict[str, Any]:
-    if fail_closed:
-        status = "FAIL_CLOSED"
-    elif denominator <= 0 or numerator <= 0:
-        status = "UNKNOWN"
-    elif numerator == denominator:
-        status = "PASS"
-    else:
-        status = "PROGRESS"
-    return {
-        "id": dimension_id,
-        "status": status,
-        "numerator": numerator,
-        "denominator": denominator,
-        "unit": unit,
-        "reason": reason,
-        "evidence": evidence,
-    }
-
-
 def route_equivalence_receipt_valid(item: dict[str, Any]) -> bool:
     receipt = item.get("route_equivalence")
     expected_rule = {
@@ -586,6 +559,23 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
             fail_closed=int(report.get("repository_writes", 0)) != 0,
         ),
         dimension(
+            "execution_boundary", expected_cases if report.get("generated_package_test_passed") is True else 0,
+            expected_cases, "generated functions executed from temporary package files",
+            "The compiled behavior checks run from the cohort's temporary output directory; this does not grant generated code repository or external-service authority.",
+            ["generated_package_test_passed", "temporary generated package path", "repository_writes"],
+            fail_closed=runtime_failed,
+        ),
+        dimension(
+            "permission_boundary", 0, 1, "observed host permission profiles",
+            "The cohort measures repository writes but does not capture the local OS user's filesystem permission set.",
+            ["repository_write_boundary is measured separately", "no host permission receipt is bound"],
+        ),
+        dimension(
+            "external_network_boundary", int(not laya_configured), 1, "runs with no configured Laya service",
+            "A disabled Laya URL proves no model decision was requested in this run; it does not audit every possible process network call.",
+            [f"laya_configured:{laya_configured}", "CI sets GOOO_LAYA_URL to an empty value"],
+        ),
+        dimension(
             "resource_observation", int(all(key in report for key in (
                 "cohort_wall_elapsed_ms", "children_user_cpu_seconds",
                 "children_system_cpu_seconds", "children_peak_rss_bytes",
@@ -597,6 +587,11 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
             "resource_baseline_comparison", 0, 1, "compatible prior resource receipts",
             "This run records the first core-normalized direct-cohort resource sample; no same-profile baseline is bound yet.",
             ["no prior receipt with this timing and CPU schema"],
+        ),
+        dimension(
+            "semantic_profile_delta", 0, 1, "compatible before/after semantic receipts",
+            "No prior receipt with the same plan, compiler, toolchain, and runner is bound for per-dimension regression deltas.",
+            [str(report.get("plan_sha256", "plan digest unavailable")), str(report.get("gooo_source_sha", "compiler source unavailable")), "no comparable prior receipt"],
         ),
         dimension(
             "real_use_case_coverage", 0, 1, "independently sourced real use-case sets",
@@ -636,19 +631,6 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
         "route_choice_protocol", "source_binding_integrity", "repository_write_boundary",
         "partitioned_int64_semantics",
     }
-    core_dimensions = [item for item in dimensions if item["id"] in core_ids]
-    if report.get("decision") == "FAIL_CLOSED" or any(
-        item["status"] == "FAIL_CLOSED" for item in core_dimensions
-    ):
-        decision = "FAIL_CLOSED"
-    elif all(item["status"] == "PASS" for item in core_dimensions):
-        decision = "PASS_WITHIN_DECLARED_FIXTURE_SCOPE"
-    else:
-        decision = "PROGRESS_WITHIN_DECLARED_FIXTURE_SCOPE"
-    status_counts = {
-        status: sum(1 for item in dimensions if item["status"] == status)
-        for status in ("PASS", "PROGRESS", "UNKNOWN", "FAIL_CLOSED")
-    }
     next_operations = {
         "laya_decision_observation": "RUN_WITH_A_PINNED_LAYA_SERVICE_AND_RETAIN_MODEL_REVISION",
         "route_semantic_equivalence": "BIND_SOURCE_AND_GENERATED_ENVELOPES_AND_REQUIRE_THE_DECLARED_CANONICAL_FORM_TO_MATCH",
@@ -658,23 +640,36 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
         "full_domain_semantics": "EXTEND_PARTITION_PROOFS_TO_THE_REST_OF_THE_BODY_GRAMMAR",
         "partitioned_int64_semantics": "EXTEND_THE_SUPPORTED_PARTITION_PROFILE_OR_BIND_A_SEPARATE_PROOF",
         "route_quality": "DEFINE_AN_INDEPENDENT_ROUTE_QUALITY_ORACLE",
+        "semantic_profile_delta": "BIND_A_COMPATIBLE_BASELINE_AND_REPORT_PER_DIMENSION_DELTAS",
+        "resource_observation": "CAPTURE_WALL_CPU_AND_PEAK_RSS_FOR_EVERY_RUNNER_PROFILE",
+        "source_binding_integrity": "BIND_EACH_SOURCE_AND_GENERATED_DIGEST_TO_A_FULL_COMPILER_AND_PLAN_IDENTITY",
+        "external_repeat_determinism": "REPEAT_EACH_CLI_DECISION_AND_COMPARE_ROUTE_AND_GENERATED_DIGEST",
+        "internal_replay_coverage": "REPAIR_OR_REPLAY_EACH_COMPILER_SELECTED_ROUTE",
+        "route_choice_protocol": "BIND_EACH_SELECTED_ROUTE_TO_THE_COMPILER_DECLARED_CANDIDATE_SET",
+        "repository_write_boundary": "KEEP_OUTPUT_IN_TEMPORARY_STORAGE_AND_RECHECK_REPOSITORY_STATE",
+        "execution_boundary": "BIND_COMPILED_EXECUTION_TO_THE_TEMPORARY_PACKAGE_AND_RECHECK_REPOSITORY_WRITES",
+        "permission_boundary": "CAPTURE_THE_HOST_PERMISSION_PROFILE_WITHOUT_GRANTING_ADDITIONAL_AUTHORITY",
+        "external_network_boundary": "RECORD_THE_CONFIGURED_PROVIDER_ENDPOINT_AND_AUDIT_THE_ALLOWED_NETWORK_SCOPE",
+        "declaration_coverage": "BIND_PLAN_CASES_TO_THE_DECLARED_FIXTURE_DENOMINATOR",
+        "generation_coverage": "REPAIR_FAILING_GOOO_BODY_CODEGEN_CASES",
+        "typecheck_coverage": "REPAIR_GENERATED_GO_TYPE_ERRORS",
+        "source_ast_coverage": "LOWER_EVERY_ACCEPTED_SOURCE_AST_UNIT_OR_FAIL_CLOSED",
+        "finite_domain_behavior": "ADD_THE_MISSING_COMPILED_INPUT_OUTPUT_OBSERVATIONS",
+        "int64_extreme_boundary_behavior": "EXECUTE_EVERY_FIXTURE_AT_ALL_DECLARED_INT64_EDGE_VALUES",
     }
-    unresolved_dimensions = [
-        {
-            "id": item["id"],
-            "status": item["status"],
-            "reason": item["reason"],
-            "next_operation": next_operations.get(item["id"], "RESOLVE_SOURCE_BOUND_EVIDENCE_GAP"),
-        }
-        for item in dimensions
-        if item["status"] in ("PROGRESS", "UNKNOWN", "FAIL_CLOSED")
-    ]
-    return {
-        "schema": "gooo/metaprogramming-completeness-receipt/v1",
-        "profile_id": PROFILE_ID,
-        "decision": decision,
-        "decision_basis": "all core fixture dimensions must pass; UNKNOWN dimensions remain explicit and are never converted into a completion percentage",
-        "scope": {
+    return finalize_receipt(
+        profile_id=PROFILE_ID,
+        decision_basis="all core fixture dimensions must pass; UNKNOWN dimensions remain explicit and are never converted into a completion percentage",
+        scope={
+            "domain_scope": "100 synthetic pure activity bodies over bounded wrapping-affine int64 conditions",
+            "allowed_investment": "measure source-bound code generation, type checking, finite samples, and conservative full-int64 partitions for this declared profile",
+            "excluded_scope": [
+                "natural-language intent completeness",
+                "real production workflows",
+                "unrestricted Gooo body syntax",
+                "Laya route quality",
+                "runtime-to-source reverse observation",
+            ],
             "planned_fixture_cases": expected_cases,
             "observed_fixture_cases": case_count,
             "input_domain": report.get("domain", []),
@@ -683,14 +678,14 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
             "int64_partition_proof": partition_proof,
             "compiler_source_sha": source_sha or "UNBOUND_LOCAL_SOURCE",
             "plan_sha256": report.get("plan_sha256"),
+            "toolchain": report.get("go_version", "UNOBSERVED_GO_VERSION"),
+            "execution_environment": report.get("host_platform", "UNOBSERVED_RUNNER"),
             "laya_configured": laya_configured,
         },
-        "dimensions": dimensions,
-        "status_counts": status_counts,
-        "aggregate_completeness_score": None,
-        "first_unresolved": unresolved_dimensions[0] if unresolved_dimensions else None,
-        "unresolved_claims": unresolved_dimensions,
-        "not_claimed": [
+        dimensions=dimensions,
+        core_dimensions=core_ids,
+        next_operations=next_operations,
+        not_claimed=[
             "coverage of natural-language user intent",
             "coverage of real production workflows",
             "unrestricted Gooo body-codegen behavior over the full int64 domain",
@@ -699,7 +694,11 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
             "readability or utility preference between equivalent generated routes",
             "universal or production language completeness",
         ],
-    }
+        force_fail_closed_reason=(
+            str(report.get("failure") or "cohort execution reported FAIL_CLOSED")
+            if report.get("decision") == "FAIL_CLOSED" else ""
+        ),
+    )
 
 
 def fail_report(path: Path, report: dict[str, Any], message: str) -> int:
@@ -1058,6 +1057,22 @@ def main() -> int:
         equivalence_rule = str(equivalence.get("rule") or "unknown")
         route_equivalence_rules[equivalence_rule] = route_equivalence_rules.get(equivalence_rule, 0) + 1
 
+    failure_reasons: list[str] = []
+    if not runtime_match:
+        failure_reasons.append(
+            test_result.stderr.strip() or test_result.stdout.strip() or "generated package execution failed"
+        )
+    if replay_mismatches:
+        failure_reasons.append(f"{replay_mismatches} external deterministic replays diverged")
+    if len(case_reports) != plan["expected_case_count"]:
+        failure_reasons.append(
+            f"generated {len(case_reports)} of {plan['expected_case_count']} planned cases"
+        )
+    if route_equivalence_passes != len(case_reports):
+        failure_reasons.append(
+            f"{len(case_reports) - route_equivalence_passes} route-equivalence receipts did not pass"
+        )
+
     report = {
         "schema": SCHEMA,
         "cohort_id": plan["cohort_id"],
@@ -1080,7 +1095,8 @@ def main() -> int:
             len(case_reports) * len(partition_points) if partition_proven_cases == len(cases) else 0
         ),
         "int64_partition_proven_cases": partition_proven_cases,
-        "decision": "PASS" if runtime_match and replay_mismatches == 0 and len(case_reports) == plan["expected_case_count"] and route_equivalence_passes == len(case_reports) else "FAIL_CLOSED",
+        "decision": "FAIL_CLOSED" if failure_reasons else "PASS",
+        "failure": "; ".join(failure_reasons) if failure_reasons else None,
         "plan_sha256": digest(plan_bytes),
         "gooo_source_sha": gooo_source_sha or "UNBOUND_LOCAL_SOURCE",
         "gooo_binary": args.gooo_bin.name,

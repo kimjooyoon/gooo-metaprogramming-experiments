@@ -1,0 +1,67 @@
+{
+  "schema": "gooo/metaprogramming-public-intent-slices/v1",
+  "upstream_commit": "777017fa22638221636897731b64ef9c5f0599c6",
+  "experiment_count": 100,
+  "repositories": [
+    {
+      "intent_id": "sign_classification",
+      "case_count": 10,
+      "url": "https://github.com/kimjooyoon/gooo-codegen-exp-sign-classification",
+      "ci_run_url": "https://github.com/kimjooyoon/gooo-codegen-exp-sign-classification/actions/runs/36644535090"
+    },
+    {
+      "intent_id": "threshold_gate",
+      "case_count": 10,
+      "url": "https://github.com/kimjooyoon/gooo-codegen-exp-threshold-gate",
+      "ci_run_url": "https://github.com/kimjooyoon/gooo-codegen-exp-threshold-gate/actions/runs/36644569049"
+    },
+    {
+      "intent_id": "inclusive_range",
+      "case_count": 10,
+      "url": "https://github.com/kimjooyoon/gooo-codegen-exp-inclusive-range",
+      "ci_run_url": "https://github.com/kimjooyoon/gooo-codegen-exp-inclusive-range/actions/runs/36644594403"
+    },
+    {
+      "intent_id": "parity_filter",
+      "case_count": 10,
+      "url": "https://github.com/kimjooyoon/gooo-codegen-exp-parity-filter",
+      "ci_run_url": "https://github.com/kimjooyoon/gooo-codegen-exp-parity-filter/actions/runs/36644561573"
+    },
+    {
+      "intent_id": "status_mapping",
+      "case_count": 10,
+      "url": "https://github.com/kimjooyoon/gooo-codegen-exp-status-mapping",
+      "ci_run_url": "https://github.com/kimjooyoon/gooo-codegen-exp-status-mapping/actions/runs/36644552591"
+    },
+    {
+      "intent_id": "compound_gate",
+      "case_count": 10,
+      "url": "https://github.com/kimjooyoon/gooo-codegen-exp-compound-gate",
+      "ci_run_url": "https://github.com/kimjooyoon/gooo-codegen-exp-compound-gate/actions/runs/36644586991"
+    },
+    {
+      "intent_id": "priority_rules",
+      "case_count": 10,
+      "url": "https://github.com/kimjooyoon/gooo-codegen-exp-priority-rules",
+      "ci_run_url": "https://github.com/kimjooyoon/gooo-codegen-exp-priority-rules/actions/runs/36644544524"
+    },
+    {
+      "intent_id": "clamp_value",
+      "case_count": 10,
+      "url": "https://github.com/kimjooyoon/gooo-codegen-exp-clamp-value",
+      "ci_run_url": "https://github.com/kimjooyoon/gooo-codegen-exp-clamp-value/actions/runs/36644521721"
+    },
+    {
+      "intent_id": "retry_state",
+      "case_count": 10,
+      "url": "https://github.com/kimjooyoon/gooo-codegen-exp-retry-state",
+      "ci_run_url": "https://github.com/kimjooyoon/gooo-codegen-exp-retry-state/actions/runs/36644527503"
+    },
+    {
+      "intent_id": "explicit_allowlist",
+      "case_count": 10,
+      "url": "https://github.com/kimjooyoon/gooo-codegen-exp-explicit-allowlist",
+      "ci_run_url": "https://github.com/kimjooyoon/gooo-codegen-exp-explicit-allowlist/actions/runs/36644580227"
+    }
+  ]
+}

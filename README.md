@@ -1,5 +1,7 @@
 # Gooo Metaprogramming Experiments
 
+The 100 cases are also published as ten public, one-intent repositories. See the [intent-slice index](docs/intent-slices.md); [CI validates the catalog](catalog/intent-repositories.json) against the source plan.
+
 This public corpus runs 100 distinct intent/lowering combinations:
 
 - 10 intents: sign, threshold, range, parity, status mapping, compound

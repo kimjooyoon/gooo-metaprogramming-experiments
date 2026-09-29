@@ -69,6 +69,23 @@ real-use-case coverage, reverse observation, full-domain behavior, route
 quality, and a comparable resource baseline remain UNKNOWN pending their own
 evidence.
 
+## Scoped int64 partition proof — 2026-09-30
+
+The merged [main CI run](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36624796029)
+compiled and executed 100 direct Gooo bodies against 2,900 declared inputs.
+All 2,900 outputs matched the independent condition oracle, including 400
+checks at signed `int64` extrema and adjacent values. For this plan's 13
+comparisons, the verifier derived seven transition points and eight
+truth-stable cells, then matched all 800 case/cell representative outputs.
+All 100 compiler route-equivalence receipts and the generated Go package test
+passed.
+
+The receipt reports 14 PASS and 6 UNKNOWN dimensions, without an aggregate
+score. `partitioned_int64_semantics` is PASS for Boolean combinations of
+`input` comparisons against signed integer literals with constant result pairs.
+Unrestricted Gooo body semantics, Laya route quality, and real-workflow coverage
+remain UNKNOWN; this cohort does not claim universal language completeness.
+
 ## Reproduce
 
 Install/build the Gooo CLI and lab runner, then run:

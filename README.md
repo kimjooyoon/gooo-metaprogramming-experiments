@@ -39,6 +39,36 @@ Full decision probabilities, checkpoint revision, and per-candidate results:
 are in [`experiments/`](experiments/). See the [measurement details](docs/measurement-method.md)
 and [full result interpretation](docs/results-2026-09-29.md).
 
+## Latest compiler-integrated run — 2026-09-30
+
+The merged [GitHub Actions run](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36606448269)
+processed 100 `.gooo` activity bodies, compiled the generated package, and
+matched all 2,500 declared finite-domain outputs. The 1,370 accepted body AST
+units were all represented in generated code. These results describe the
+declared fixtures and finite input domain; they do not measure coverage of
+unstated user intent or prove behavior over the full integer domain.
+
+This CI run had no Laya service configured. All 100 decisions therefore used
+the deterministic `preserve` fallback, including 50 cases where multiple
+routes were eligible. It is fallback and compiler evidence, not evidence about
+Laya route quality. The separate [local Laya smoke](https://github.com/kimjooyoon/meta-ontology-go/blob/main/docs/language/laya-local-evaluation-2026-09-29.md)
+records 30 real service calls on one fixture.
+
+| Measurement | Result |
+| --- | ---: |
+| Gooo CLI invocation p50 / p95 | 3.402 / 3.775 ms |
+| Cohort wall time | 2.157 s |
+| Child-process CPU time | 5.566 CPU-s |
+| Average CPU use | 258.08% of one core; 64.52% of four logical CPUs |
+| Peak child-process RSS | 106,479,616 bytes (about 101.5 MiB) |
+| Completeness receipt | 11 PASS, 6 UNKNOWN, no aggregate score |
+
+Resource figures include the Gooo CLI and generated Go compile/run children;
+they exclude an independently running Laya service. Laya route observation,
+real-use-case coverage, reverse observation, full-domain behavior, route
+quality, and a comparable resource baseline remain UNKNOWN pending their own
+evidence.
+
 ## Reproduce
 
 Install/build the Gooo CLI and lab runner, then run:

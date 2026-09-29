@@ -1,0 +1,27 @@
+{
+  "schema": "gooo/body-codegen-boolean-cohort-plan/v1",
+  "cohort_id": "direct_body_codegen_100_boolean_exhaustive_v1",
+  "input_domain": [false, true],
+  "conditions": [
+    {"id": "identity", "expression": "input"},
+    {"id": "negation", "expression": "!input"},
+    {"id": "conjunction_false", "expression": "input && false"},
+    {"id": "disjunction_true", "expression": "input || true"},
+    {"id": "false_equal", "expression": "input == false"}
+  ],
+  "result_pairs": [
+    {"id": "true_false", "when_true": true, "when_false": false},
+    {"id": "false_true", "when_true": false, "when_false": true},
+    {"id": "true_true", "when_true": true, "when_false": true},
+    {"id": "false_false", "when_true": false, "when_false": false}
+  ],
+  "body_styles": [
+    "branch_returns",
+    "assignment_input",
+    "assignment_true",
+    "assignment_false",
+    "assignment_overwrite"
+  ],
+  "expected_case_count": 100,
+  "expected_domain_points": 200
+}

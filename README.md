@@ -154,9 +154,22 @@ to other Gooo body expressions. Resource figures cover Gooo
 and generated-Go child processes; a separately running Laya server is excluded. CI runs
 without a model service and uses the deterministic fallback; Laya route choice
 remains an optional local measurement, with request digest, model revision,
-probabilities, and confidence preserved when available. The two cohorts have
+probabilities, and confidence preserved when available. The cohorts have
 different input construction and evidence boundaries, so their percentages are
 not averaged together.
+
+The separate [exhaustive Boolean-domain cohort](cohorts/body-codegen-boolean-100/README.md)
+crosses 100 generated bodies with both possible Boolean inputs, checks 200
+compiled outputs, and exercises five condition forms plus five local/body
+shapes. It reports full-domain completeness only for Boolean input and leaves
+real-use-case and Laya route-quality dimensions UNKNOWN. The sidecar matrix,
+affine `int64` proof, and Boolean proof retain separate denominators and are
+never averaged into a single score.
+
+Its [PR CI run](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36627399107)
+matched 200/200 outputs, 100/100 route-equivalence receipts, and 100/100
+external repeats. Gooo CLI invocation p50 was 2.77 ms on the GitHub runner with
+Laya disabled; that timing is only the deterministic fallback path.
 
 ## Seeded Laya route experiment — 2026-09-30
 

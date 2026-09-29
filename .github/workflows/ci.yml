@@ -107,12 +107,59 @@ jobs:
             dimension("partitioned_int64_semantics").numerator == 100 and
             dimension("partitioned_int64_semantics").denominator == 100 and
             dimension("resource_baseline_comparison").status == "UNKNOWN" and
-            dimension("route_quality").status == "UNKNOWN" and
-            dimension("laya_decision_observation").status == "UNKNOWN"
+          dimension("route_quality").status == "UNKNOWN" and
+          dimension("laya_decision_observation").status == "UNKNOWN"
           ' "$RUNNER_TEMP/body-codegen-100/body-codegen-report.json"
+      - name: Generate, compile, and exhaust the Boolean domain for 100 Gooo bodies
+        env:
+          GOOO_LAYA_URL: ''
+        run: |
+          export GOOO_SOURCE_SHA="$(git -C gooo rev-parse HEAD)"
+          python3 scripts/direct_boolean_body_codegen_cohort.py \
+            --gooo-bin "$RUNNER_TEMP/gooo" \
+            --plan cohorts/body-codegen-boolean-100/plan-v1.json \
+            --out "$RUNNER_TEMP/body-codegen-boolean-100"
+          jq -e '
+            def dimension($id): [.completeness_receipt.dimensions[] | select(.id == $id)][0];
+            .decision == "PASS" and
+            .case_count == 100 and
+            .condition_count == 5 and
+            .result_pair_count == 4 and
+            .body_style_count == 5 and
+            .checked_output_count == 200 and
+            .behavioral_matches == 200 and
+            .full_boolean_domain_complete and
+            .generated_package_test_passed and
+            .all_typechecks_passed and
+            .all_internal_replays_passed and
+            .route_equivalence_passes == 100 and
+            .external_repeat_matches == 100 and
+            .external_repeat_mismatches == 0 and
+            .repository_writes == 0 and
+            (.cases | length) == 100 and
+            (.completeness_receipt | has("aggregate_completeness_score")) and
+            .completeness_receipt.aggregate_completeness_score == null and
+            .completeness_receipt.decision == "PASS_WITHIN_DECLARED_FIXTURE_SCOPE" and
+            .completeness_receipt.scope.input_type == "Boolean" and
+            .completeness_receipt.scope.domain_cardinality == 2 and
+            dimension("exhaustive_boolean_domain").status == "PASS" and
+            dimension("exhaustive_boolean_domain").numerator == 200 and
+            dimension("exhaustive_boolean_domain").denominator == 200 and
+            dimension("route_semantic_equivalence").status == "PASS" and
+            dimension("route_semantic_equivalence").numerator == 100 and
+            dimension("route_semantic_equivalence").denominator == 100 and
+            dimension("real_use_case_coverage").status == "UNKNOWN" and
+            dimension("laya_decision_observation").status == "UNKNOWN"
+          ' "$RUNNER_TEMP/body-codegen-boolean-100/boolean-body-codegen-report.json"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: direct-body-codegen-cohort-${{ github.sha }}
           path: ${{ runner.temp }}/body-codegen-100/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boolean-body-codegen-cohort-${{ github.sha }}
+          path: ${{ runner.temp }}/body-codegen-boolean-100/
           if-no-files-found: error

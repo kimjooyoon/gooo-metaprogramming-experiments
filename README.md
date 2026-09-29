@@ -39,12 +39,12 @@ Full decision probabilities, checkpoint revision, and per-candidate results:
 are in [`experiments/`](experiments/). See the [measurement details](docs/measurement-method.md)
 and [full result interpretation](docs/results-2026-09-29.md).
 
-## Latest compiler-integrated run — 2026-09-30
+## Previous compiler-integrated baseline — 2026-09-30
 
 The merged [GitHub Actions run](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36606448269)
-processed 100 `.gooo` activity bodies, compiled the generated package, and
-matched all 2,500 declared finite-domain outputs. The 1,370 accepted body AST
-units were all represented in generated code. These results describe the
+processed 100 `.gooo` activity bodies on the pre-edge plan, compiled the
+generated package, and matched all 2,500 declared finite-domain outputs. All
+1,370 accepted body AST units were represented in generated code. These results describe the
 declared fixtures and finite input domain; they do not measure coverage of
 unstated user intent or prove behavior over the full integer domain.
 
@@ -116,8 +116,9 @@ the same tree as `dev`. Experiment CI now pins this deployed Gooo commit.
 
 The 100-case corpus reported above remains the sidecar-based baseline. A
 separate [direct body-codegen cohort](cohorts/body-codegen-100/README.md)
-routes 100 generated `.gooo` bodies through the pinned Gooo CLI and checks 2,500
-finite-domain outputs after compiling the generated Go package. It keeps
+routes 100 generated `.gooo` bodies through the pinned Gooo CLI and checks 2,900
+finite-domain outputs after compiling the generated Go package, including 400
+observations at signed `int64` extrema and adjacent values. It keeps
 behavioral agreement separate from body-AST coverage and records replay,
 latency, child CPU, peak child RSS, and average core-normalized CPU use. Its
 machine-readable completeness receipt reports independent PASS/PROGRESS/UNKNOWN
@@ -137,7 +138,7 @@ Two local runs used the compiler's seeded weighted sampler with live Laya route
 probabilities. Each run processed the same 100 generated bodies (50 had three
 eligible routes; 50 had only the source-preserving route), compiled and ran the
 generated package, and repeated every seeded CLI invocation. Both runs passed:
-2,500/2,500 finite-domain outputs, 100% body-AST coverage, and 100/100 exact
+2,500/2,500 pre-edge-plan finite-domain outputs, 100% body-AST coverage, and 100/100 exact
 external replays, with no replay mismatches. Across the 50 Laya-routed cases,
 changing only the seed changed four selected routes. That demonstrates
 reproducible variation in this fixture, not better route quality or broader
@@ -174,7 +175,7 @@ route quality, and comparable resource baseline remain UNKNOWN.
 
 ## Route-equivalence receipt with Laya — 2026-09-30
 
-A third seeded local run used Gooo dev commit
+A third seeded local run on the pre-edge plan used Gooo dev commit
 `453c7c8a27cd1a5fcb80e1383ade3829477b8a2c` (tree
 `9b464b9d7bfb00fdebc252823781104bb9108e99`), containing the compiler change
 from PR #1082. It generated and ran all 100 bodies, matched 2,500/2,500 finite

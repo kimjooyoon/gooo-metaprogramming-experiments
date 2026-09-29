@@ -1,6 +1,6 @@
 {
   "schema": "gooo/body-codegen-cohort-plan/v1",
-  "cohort_id": "direct_body_codegen_100_int64_edges_v2",
+  "cohort_id": "direct_body_codegen_100_int64_partition_v3",
   "domain": [-9223372036854775808, -9223372036854775807, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 9223372036854775806, 9223372036854775807],
   "int64_extreme_values": [-9223372036854775808, -9223372036854775807, 9223372036854775806, 9223372036854775807],
   "conditions": [

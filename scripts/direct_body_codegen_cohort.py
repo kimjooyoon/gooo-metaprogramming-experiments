@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import hashlib
 import json
 import math
@@ -19,9 +20,24 @@ from typing import Any
 
 
 SCHEMA = "gooo/body-codegen-cohort-report/v1"
-PROFILE_ID = "gooo/body-codegen-direct-cohort-100/v2"
+PROFILE_ID = "gooo/body-codegen-direct-cohort-100/v3"
 PACKAGE = "bodycodegen_cohort"
 INT64_EDGE_VALUES = (-(1 << 63), -(1 << 63) + 1, (1 << 63) - 2, (1 << 63) - 1)
+INT64_MIN = -(1 << 63)
+INT64_MAX = (1 << 63) - 1
+
+REFERENCE_CONDITION_EXPRESSIONS = {
+    "negative": "input < 0",
+    "at_most_minus_three": "input <= -3",
+    "zero": "input == 0",
+    "positive": "input > 0",
+    "at_least_five": "input >= 5",
+    "not_one": "input != 1",
+    "inclusive_neighborhood": "input >= -2 && input <= 2",
+    "outside_window": "input < 0 || input > 5",
+    "equal_five": "input == 5",
+    "inside_open_interval": "input > 1 && input < 5",
+}
 
 
 def digest(data: bytes) -> str:
@@ -51,6 +67,117 @@ def reference_condition(condition_id: str, value: int) -> bool:
     if condition_id == "inside_open_interval":
         return 1 < value < 5
     raise ValueError(f"unknown condition id {condition_id!r}")
+
+
+class UnsupportedConditionProfile(ValueError):
+    pass
+
+
+def signed_int_literal(node: ast.AST) -> int:
+    if isinstance(node, ast.Constant) and type(node.value) is int:
+        return node.value
+    if (
+        isinstance(node, ast.UnaryOp)
+        and isinstance(node.op, (ast.UAdd, ast.USub))
+        and isinstance(node.operand, ast.Constant)
+        and type(node.operand.value) is int
+    ):
+        return node.operand.value if isinstance(node.op, ast.UAdd) else -node.operand.value
+    raise UnsupportedConditionProfile("comparison threshold is not a signed integer literal")
+
+
+def int64_comparison_partition(plan: dict[str, Any]) -> dict[str, Any]:
+    """Build exact representatives for a bounded if/else-int64 body profile."""
+    conditions = plan.get("conditions", [])
+    transitions: set[int] = set()
+    comparison_count = 0
+
+    def visit(node: ast.AST) -> None:
+        nonlocal comparison_count
+        if isinstance(node, ast.BoolOp) and isinstance(node.op, (ast.And, ast.Or)) and len(node.values) >= 2:
+            for value in node.values:
+                visit(value)
+            return
+        if not isinstance(node, ast.Compare) or len(node.ops) != 1 or len(node.comparators) != 1:
+            raise UnsupportedConditionProfile("only single input-to-literal comparisons are supported")
+        if not isinstance(node.left, ast.Name) or node.left.id != "input":
+            raise UnsupportedConditionProfile("comparison left operand must be the input")
+
+        threshold = signed_int_literal(node.comparators[0])
+        if threshold < INT64_MIN or threshold > INT64_MAX:
+            raise UnsupportedConditionProfile("comparison threshold is outside signed int64")
+
+        operation = type(node.ops[0])
+        if operation in (ast.Lt, ast.GtE):
+            changes_at = (threshold,)
+        elif operation in (ast.LtE, ast.Gt):
+            changes_at = (threshold + 1,)
+        elif operation in (ast.Eq, ast.NotEq):
+            changes_at = (threshold, threshold + 1)
+        else:
+            raise UnsupportedConditionProfile("comparison operator is outside the supported profile")
+
+        comparison_count += 1
+        transitions.update(point for point in changes_at if INT64_MIN < point <= INT64_MAX)
+
+    try:
+        if not isinstance(conditions, list) or not conditions:
+            raise UnsupportedConditionProfile("the plan must declare conditions as a non-empty list")
+        if any(not isinstance(condition, dict) for condition in conditions):
+            raise UnsupportedConditionProfile("each declared condition must be an object")
+        result_pairs = plan.get("result_pairs", [])
+        if not isinstance(result_pairs, list) or not result_pairs:
+            raise UnsupportedConditionProfile("the plan must declare constant result pairs")
+        for pair in result_pairs:
+            if not isinstance(pair, dict) or any(
+                type(pair.get(key)) is not int
+                or pair[key] < INT64_MIN
+                or pair[key] > INT64_MAX
+                for key in ("when_true", "when_false")
+            ):
+                raise UnsupportedConditionProfile("result pairs must contain signed int64 integer literals")
+        body_styles = plan.get("body_styles", [])
+        if not isinstance(body_styles, list) or not body_styles or any(
+            not isinstance(style, str) or style not in {"branch_returns", "result_assignment"}
+            for style in body_styles
+        ):
+            raise UnsupportedConditionProfile("body styles are outside the constant-result conditional profile")
+        seen_ids: set[str] = set()
+        for condition in conditions:
+            condition_id = str(condition.get("id", ""))
+            expression = str(condition.get("expression", ""))
+            if condition_id in seen_ids or REFERENCE_CONDITION_EXPRESSIONS.get(condition_id) != expression:
+                raise UnsupportedConditionProfile("condition expression is not bound to its independent oracle")
+            seen_ids.add(condition_id)
+            normalized = expression.replace("&&", " and ").replace("||", " or ")
+            visit(ast.parse(normalized, mode="eval").body)
+    except (SyntaxError, ValueError) as error:
+        return {
+            "schema": "gooo/int64-comparison-partition/v1",
+            "profile": "boolean_comparisons_selecting_signed_int64_constants",
+            "profile_supported": False,
+            "partition_covers_int64": False,
+            "transition_points": [],
+            "representative_inputs": [],
+            "comparison_count": comparison_count,
+            "failure_reason": str(error),
+        }
+
+    points = [INT64_MIN, *sorted(transitions)]
+    return {
+        "schema": "gooo/int64-comparison-partition/v1",
+        "profile": "boolean_comparisons_selecting_signed_int64_constants",
+        "profile_supported": True,
+        "partition_covers_int64": True,
+        "transition_points": sorted(transitions),
+        "representative_inputs": points,
+        "comparison_count": comparison_count,
+        "condition_count": len(conditions),
+        "result_pair_count": len(result_pairs),
+        "body_styles": body_styles,
+        "partition_cell_count": len(points),
+        "proof_basis": "Each atomic comparison is constant between its integer transition points; conjunctions and disjunctions inherit that partition. Every representative is executed against the generated function and independent condition oracle.",
+    }
 
 
 def make_cases(plan: dict[str, Any]) -> list[dict[str, Any]]:
@@ -234,6 +361,14 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
     expected_extreme_outputs = int(report.get("int64_extreme_expected_outputs", 0))
     matched_extreme_outputs = int(report.get("int64_extreme_behavioral_matches", 0))
     extreme_values = [int(value) for value in report.get("int64_extreme_values", [])]
+    partition_proof = report.get("int64_partition_proof", {})
+    partition_supported = partition_proof.get("profile_supported") is True
+    partition_complete = (
+        partition_supported
+        and partition_proof.get("partition_covers_int64") is True
+        and partition_proof.get("plan_contains_all_representatives") is True
+    )
+    partition_proven_cases = int(report.get("int64_partition_proven_cases", 0))
     laya_configured = bool(report.get("laya_configured", False))
 
     def count_true(key: str) -> int:
@@ -275,6 +410,14 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
     provenance_denominator = expected_cases + 1
     runtime_was_run = "generated_package_test_passed" in report
     runtime_failed = runtime_was_run and report.get("generated_package_test_passed") is False
+    partition_failed = runtime_failed or (
+        partition_supported
+        and (
+            not partition_complete
+            or partition_proven_cases != expected_cases
+            or route_equivalence_passes != expected_cases
+        )
+    )
     observed_outputs = int(report.get("behavioral_matches", 0))
     if report.get("route_sample_seed_sha256"):
         repeat_reason = "Explicitly seeded route draws are repeated and compared with the recorded weights and draw receipt."
@@ -384,8 +527,19 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
         ),
         dimension(
             "full_domain_semantics", 0, 1, "complete int64 input domains",
-            "The 29 declared points include edge values but do not partition or exhaust every int64 input.",
-            ["finite domain only", "int64_extreme_boundary_behavior"],
+            "This cohort proves only Boolean comparison formulas with constant outputs; broader .gooo body forms and predicates remain outside the partition.",
+            ["partitioned_int64_semantics", "broader body forms and predicates are unmodeled"],
+        ),
+        dimension(
+            "partitioned_int64_semantics", partition_proven_cases, expected_cases,
+            "fixture bodies proven over every int64 comparison partition",
+            "For Boolean combinations of input-versus-int64-literal comparisons with constant result pairs, every truth-change boundary is represented and executed; this proof applies only to the declared profile.",
+            [
+                str(report.get("plan_sha256", "plan digest unavailable")),
+                str(report.get("gooo_source_sha", "source revision unavailable")),
+                str(partition_proof.get("representative_inputs", [])),
+            ],
+            fail_closed=partition_failed,
         ),
         dimension(
             "route_quality", 0, 1, "independently validated route-quality criteria",
@@ -397,6 +551,7 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
         "declaration_coverage", "generation_coverage", "typecheck_coverage",
         "source_ast_coverage", "route_semantic_equivalence", "finite_domain_behavior", "internal_replay_coverage",
         "route_choice_protocol", "source_binding_integrity", "repository_write_boundary",
+        "partitioned_int64_semantics",
     }
     core_dimensions = [item for item in dimensions if item["id"] in core_ids]
     if report.get("decision") == "FAIL_CLOSED" or any(
@@ -417,7 +572,8 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
         "resource_baseline_comparison": "BIND_A_REPEAT_RECEIPT_FROM_THE_SAME_COMPILER_AND_RUNNER_PROFILE",
         "real_use_case_coverage": "BIND_INDEPENDENTLY_SOURCED_REAL_WORKFLOW_FIXTURES",
         "reverse_observation_coverage": "ADD_SOURCE_BOUND_GENERATED_TO_SOURCE_OBSERVATION_EVIDENCE",
-        "full_domain_semantics": "ADD_SYMBOLIC_OR_PARTITIONED_PROOF_BEYOND_THE_FINITE_GRID",
+        "full_domain_semantics": "EXTEND_PARTITION_PROOFS_TO_THE_REST_OF_THE_BODY_GRAMMAR",
+        "partitioned_int64_semantics": "EXTEND_THE_SUPPORTED_PARTITION_PROFILE_OR_BIND_A_SEPARATE_PROOF",
         "route_quality": "DEFINE_AN_INDEPENDENT_ROUTE_QUALITY_ORACLE",
     }
     unresolved_dimensions = [
@@ -441,6 +597,7 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
             "input_domain": report.get("domain", []),
             "finite_domain_points_per_case": len(report.get("domain", [])),
             "int64_extreme_values": extreme_values,
+            "int64_partition_proof": partition_proof,
             "compiler_source_sha": source_sha or "UNBOUND_LOCAL_SOURCE",
             "plan_sha256": report.get("plan_sha256"),
             "laya_configured": laya_configured,
@@ -453,7 +610,7 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
         "not_claimed": [
             "coverage of natural-language user intent",
             "coverage of real production workflows",
-            "behavior over the full int64 domain",
+            "unrestricted Gooo body-codegen behavior over the full int64 domain",
             "reverse observation from generated runtime back to .gooo declarations",
             "calibration or usefulness of Laya route probabilities",
             "readability or utility preference between equivalent generated routes",
@@ -481,6 +638,19 @@ def partial_report(
     cases: list[dict[str, Any]],
     external_repeat_count: int = 0,
 ) -> dict[str, Any]:
+    partition_proof = int64_comparison_partition(plan)
+    representatives = [int(value) for value in partition_proof.get("representative_inputs", [])]
+    partition_proof.update(
+        {
+            "plan_contains_all_representatives": (
+                partition_proof.get("profile_supported") is True
+                and set(representatives).issubset(domain)
+            ),
+            "plan_sha256": digest(plan_bytes),
+            "gooo_source_sha": gooo_source_sha or "UNBOUND_LOCAL_SOURCE",
+            "compiled_execution_matches_representatives": False,
+        }
+    )
     return {
         "schema": SCHEMA,
         "cohort_id": plan.get("cohort_id"),
@@ -492,6 +662,10 @@ def partial_report(
             int(plan.get("expected_case_count", 0)) * len(plan.get("int64_extreme_values", []))
         ),
         "int64_extreme_behavioral_matches": 0,
+        "int64_partition_proof": partition_proof,
+        "int64_partition_expected_observations": len(make_cases(plan)) * len(representatives),
+        "int64_partition_observed_matches": 0,
+        "int64_partition_proven_cases": 0,
         "plan_sha256": digest(plan_bytes),
         "domain": domain,
         "gooo_source_sha": gooo_source_sha or "UNBOUND_LOCAL_SOURCE",
@@ -517,6 +691,19 @@ def main() -> int:
     plan = json.loads(plan_bytes)
     domain = [int(value) for value in plan["domain"]]
     int64_extreme_values = [int(value) for value in plan.get("int64_extreme_values", [])]
+    partition_proof = int64_comparison_partition(plan)
+    partition_points = [int(value) for value in partition_proof.get("representative_inputs", [])]
+    partition_proof.update(
+        {
+            "plan_contains_all_representatives": (
+                partition_proof.get("profile_supported") is True
+                and set(partition_points).issubset(domain)
+            ),
+            "plan_sha256": digest(plan_bytes),
+            "gooo_source_sha": os.environ.get("GOOO_SOURCE_SHA", "") or "UNBOUND_LOCAL_SOURCE",
+            "compiled_execution_matches_representatives": False,
+        }
+    )
     cases = make_cases(plan)
     report_path = args.out / "body-codegen-report.json"
     args.out.mkdir(parents=True, exist_ok=True)
@@ -525,6 +712,16 @@ def main() -> int:
     sample_seed = env.get("GOOO_BODY_CODEGEN_SAMPLE_SEED", "")
     sample_seed_sha256 = digest(sample_seed.encode("utf-8")) if sample_seed else None
     gooo_source_sha = env.get("GOOO_SOURCE_SHA", "")
+
+    if (
+        partition_proof.get("profile_supported") is True
+        and partition_proof.get("plan_contains_all_representatives") is not True
+    ):
+        return fail_report(
+            report_path,
+            partial_report(plan, plan_bytes, domain, gooo_source_sha, laya_enabled, []),
+            "plan omitted one or more int64 comparison-partition representatives",
+        )
 
     if (
         tuple(int64_extreme_values) != INT64_EDGE_VALUES
@@ -749,6 +946,19 @@ def main() -> int:
     )
     runtime_match = test_result.returncode == 0
     route_equivalence_passes = sum(1 for item in case_reports if route_equivalence_receipt_valid(item))
+    partition_proven_cases = (
+        len(case_reports)
+        if (
+            runtime_match
+            and partition_proof.get("profile_supported") is True
+            and partition_proof.get("partition_covers_int64") is True
+            and partition_proof.get("plan_contains_all_representatives") is True
+            and route_equivalence_passes == len(case_reports)
+        )
+        else 0
+    )
+    partition_proof["compiled_execution_matches_representatives"] = partition_proven_cases == len(cases)
+    partition_proof["proved_case_count"] = partition_proven_cases
 
     cohort_wall_elapsed_ms = (time.perf_counter() - cohort_started) * 1000
     peak_rss = peak_child_rss_bytes()
@@ -787,6 +997,14 @@ def main() -> int:
         "int64_extreme_behavioral_matches": (
             len(case_reports) * len(plan["int64_extreme_values"]) if runtime_match else 0
         ),
+        "int64_partition_proof": partition_proof,
+        "int64_partition_expected_observations": (
+            len(cases) * len(partition_points) if partition_proof.get("profile_supported") is True else 0
+        ),
+        "int64_partition_observed_matches": (
+            len(case_reports) * len(partition_points) if partition_proven_cases == len(cases) else 0
+        ),
+        "int64_partition_proven_cases": partition_proven_cases,
         "decision": "PASS" if runtime_match and replay_mismatches == 0 and len(case_reports) == plan["expected_case_count"] and route_equivalence_passes == len(case_reports) else "FAIL_CLOSED",
         "plan_sha256": digest(plan_bytes),
         "gooo_source_sha": gooo_source_sha or "UNBOUND_LOCAL_SOURCE",
@@ -849,6 +1067,7 @@ def main() -> int:
         return 1
     summary_keys = (
         "decision", "case_count", "checked_output_count", "behavioral_completeness_percent",
+        "int64_partition_proven_cases", "int64_partition_expected_observations",
         "body_ast_completeness_percent", "eligible_multi_route_cases", "generated_package_test_passed",
         "route_semantic_equivalence_passes", "route_equivalence_rule_counts",
         "gooo_invocation_p50_ms", "gooo_invocation_p95_ms", "children_user_cpu_seconds",

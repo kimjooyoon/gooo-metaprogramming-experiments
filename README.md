@@ -65,3 +65,9 @@ decision clauses. It does not prove behavior for every integer or for domain
 types beyond the small prototype. The intentionally partial route demonstrates
 that the score detects omitted branches: its candidate agreement ranges from
 48% to 96%, depending on the intent.
+
+The separate experimental [`gooo body-codegen` path](https://github.com/kimjooyoon/meta-ontology-go/blob/dev/docs/language/body-codegen.md)
+now emits a small subset of `.gooo` `computes` programs as deterministic,
+typechecked Go functions. This 100-case corpus does not yet invoke that command
+or route Laya decisions into it; the measured matrix above remains the
+sidecar-based baseline for the next integration experiment.

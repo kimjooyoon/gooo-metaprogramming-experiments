@@ -1,0 +1,18 @@
+{
+  "average_cpu_percent_host": 16.95,
+  "average_cpu_percent_one_core": 169.46,
+  "device": "cpu",
+  "logical_cpu_count": 10,
+  "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "pid": 91804,
+  "process_cpu_seconds": 22.62,
+  "report_file": "body-codegen-report.json",
+  "rss_after_bytes": 3791716352,
+  "rss_before_bytes": 2101755904,
+  "rss_peak_sampled_bytes": 3791716352,
+  "samples": 53,
+  "sampling_interval_ms": 250,
+  "schema": "gooo/laya-server-process-observation/v1",
+  "scope": "separate local Laya server process; excluded from cohort child CPU and RSS totals",
+  "wall_elapsed_seconds": 13.348
+}

@@ -83,7 +83,7 @@ def make_body(expression: str, pair: dict[str, Any], style: str) -> str:
         )
     if style == "result_assignment":
         return (
-            f"let result = {pair['when_false']}\n"
+            "let result = input\n"
             f"if {expression} {{ result = {pair['when_true']} }} "
             f"else {{ result = {pair['when_false']} }}\n"
             "return result"

@@ -262,3 +262,39 @@ The compiler change was promoted by PR #1083 at commit
 used by this measurement. The report retains the pre-promotion `dev` SHA as its
 source identity because that is the exact revision used to build the local
 compiler binary.
+
+## Compiler-owned completeness receipts — 2026-09-30
+
+The direct 100-case cohort now embeds the compiler's own
+`gooo/metaprogramming-completeness-receipt/v2` in every case record. CI
+validates each receipt, binds its plan digest and compiler revision to the
+exact body-codegen report, verifies a canonical receipt SHA-256, and compares
+that digest during deterministic replay. The cohort reports compiler receipt
+coverage separately from the number of cases whose declared compiler core
+dimensions all pass. The Python cohort receipt remains a separate outer
+measurement, and both aggregate completeness scores stay null.
+
+A clean local run against candidate Gooo commit
+`b44e288e2c9aed7001cc1f14b0b9d97f3be271d3` (proposed in
+[meta-ontology-go PR #1084](https://github.com/kimjooyoon/meta-ontology-go/pull/1084))
+validated 100/100 compiler receipts and 100/100 core receipts. The compiler
+reported 1,000 PASS and 1,000 UNKNOWN dimension observations across the 100
+cases; UNKNOWNs remain visible for execution, permissions, Laya observation,
+real workflows, reverse observation, broad-domain behavior, route quality,
+resources, and comparable baselines. The outer cohort passed 2,900/2,900
+finite-domain outputs and 2,500/2,500 affine partition representatives.
+
+| Measurement | Result |
+| --- | ---: |
+| Cohort wall time | 1,715.934 ms |
+| Gooo invocation p50 / p95 | 5.174 / 5.778 ms |
+| Child CPU, one core / 10-core host | 71.270% / 7.127% |
+| Child peak RSS | 94,093,312 bytes |
+| Compiler receipts / core passes | 100/100 / 100/100 |
+| Laya decisions | 0; deterministic fallback used |
+
+These resource figures are one local macOS arm64 run using Go 1.27.0. They
+include Gooo and generated-package child processes, exclude a Laya server, and
+are not yet a same-profile before/after comparison. The public experiment PR's
+CI run remains the cross-platform reproduction; the compiler candidate will
+become the deployed dependency only after its protected branch flow completes.

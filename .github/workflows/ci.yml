@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: kimjooyoon/meta-ontology-go
-          ref: 3e31f92f529a8cff013b933d04fb8bbdc8fec72b
+          ref: b44e288e2c9aed7001cc1f14b0b9d97f3be271d3
           path: gooo
       - uses: actions/setup-go@v5
         with:
@@ -45,7 +45,7 @@ jobs:
             --gooo-bin "$RUNNER_TEMP/gooo" \
             --plan cohorts/body-codegen-100/plan-v1.json \
             --out "$RUNNER_TEMP/body-codegen-100"
-          jq -e '
+          jq -e --arg source "$GOOO_SOURCE_SHA" '
             def dimension($id): [.completeness_receipt.dimensions[] | select(.id == $id)][0];
             .decision == "PASS" and
             .case_count == 100 and
@@ -58,6 +58,15 @@ jobs:
             .all_typechecks_passed and
             .all_internal_replays_passed and
             .route_semantic_equivalence_passes == 100 and
+            .compiler_receipt_valid_case_count == 100 and
+            .compiler_core_receipt_passes == 100 and
+            ([.cases[] | select(
+              .compiler_source_sha == $source and
+              .compiler_completeness_receipt.schema == "gooo/metaprogramming-completeness-receipt/v2" and
+              .compiler_completeness_receipt.scope.compiler_source_sha == $source and
+              .compiler_completeness_receipt.scope.plan_sha256 == .compiler_plan_sha256 and
+              .compiler_completeness_receipt.aggregate_completeness_score == null
+            )] | length) == 100 and
             .int64_extreme_expected_outputs == 400 and
             .int64_extreme_checked_outputs == 400 and
             .int64_extreme_behavioral_matches == 400 and
@@ -107,6 +116,12 @@ jobs:
             dimension("partitioned_int64_semantics").status == "PASS" and
             dimension("partitioned_int64_semantics").numerator == 100 and
             dimension("partitioned_int64_semantics").denominator == 100 and
+            dimension("compiler_completeness_receipt_coverage").status == "PASS" and
+            dimension("compiler_completeness_receipt_coverage").numerator == 100 and
+            dimension("compiler_completeness_receipt_coverage").denominator == 100 and
+            dimension("compiler_core_receipt_passes").status == "PASS" and
+            dimension("compiler_core_receipt_passes").numerator == 100 and
+            dimension("compiler_core_receipt_passes").denominator == 100 and
             dimension("resource_baseline_comparison").status == "UNKNOWN" and
           dimension("route_quality").status == "UNKNOWN" and
           dimension("laya_decision_observation").status == "UNKNOWN"

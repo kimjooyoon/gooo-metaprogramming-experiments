@@ -190,6 +190,38 @@ def dimension(
     }
 
 
+def route_equivalence_receipt_valid(item: dict[str, Any]) -> bool:
+    receipt = item.get("route_equivalence")
+    expected_rule = {
+        "preserve": "source-shape-preserving-v1",
+        "guard-return": "if-return-else-return-to-guard-return-v1",
+        "merge-result": "if-return-else-return-to-explicit-result-join-v1",
+    }.get(item.get("route"))
+    return (
+        isinstance(receipt, dict)
+        and receipt.get("schema") == "gooo/body-codegen-route-equivalence/v1"
+        and receipt.get("decision") == "PASS"
+        and receipt.get("method") == "canonical_control_flow_form/v1"
+        and receipt.get("equivalent") is True
+        and receipt.get("rule") == expected_rule
+        and isinstance(receipt.get("scope"), str)
+        and bool(receipt.get("scope"))
+        and receipt.get("source_semantic_digest")
+        and receipt.get("source_semantic_digest") == receipt.get("generated_semantic_digest")
+        and item.get("compiler_source_sha256") == item.get("source_sha256")
+        and item.get("compiler_generated_sha256") == item.get("generated_sha256")
+    )
+
+
+def route_equivalence_receipt_failed_closed(item: dict[str, Any]) -> bool:
+    receipt = item.get("route_equivalence")
+    if receipt is None:
+        return False
+    if not isinstance(receipt, dict):
+        return True
+    return receipt.get("decision") != "PASS" or not route_equivalence_receipt_valid(item)
+
+
 def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
     """Describe evidence boundaries without collapsing unknowns into a score."""
     cases = report.get("cases", [])
@@ -205,6 +237,8 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
     passed_generation = sum(1 for item in cases if item.get("report_decision") == "PASS")
     passed_typechecks = count_true("typecheck_passed")
     passed_replays = count_true("internal_deterministic_replay")
+    route_equivalence_passes = sum(1 for item in cases if route_equivalence_receipt_valid(item))
+    route_equivalence_failure = any(route_equivalence_receipt_failed_closed(item) for item in cases)
     complete_bodies = sum(1 for item in cases if item.get("completeness_percent") == 100)
     source_bound_cases = sum(
         1 for item in cases if item.get("source_sha256") and item.get("generated_sha256")
@@ -264,6 +298,13 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
             "source_ast_coverage", complete_bodies, expected_cases, "fully lowered fixture bodies",
             "Uses the compiler's source-AST unit accounting; it does not measure unstated intent.",
             ["per-case completeness_percent", "source_semantic_units and lowered_semantic_units"],
+        ),
+        dimension(
+            "route_semantic_equivalence", route_equivalence_passes, expected_cases,
+            "source/generated body pairs with matching compiler-derived semantic digests",
+            "Normalizes the declared conditional rewrites and otherwise requires matching accepted Go AST bodies; this does not rank clarity or prove unstated intent.",
+            ["per-case route_equivalence receipt", "matching source and generated envelope digests"],
+            fail_closed=route_equivalence_failure,
         ),
         dimension(
             "finite_domain_behavior", observed_outputs, expected_outputs, "matching input/output points",
@@ -336,13 +377,13 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
         ),
         dimension(
             "route_quality", 0, 1, "independently validated route-quality criteria",
-            "The candidates are behaviorally equivalent; the cohort has no independent clarity or utility oracle to rank them.",
-            ["equivalence is checked; readability preference is not"],
+            "Compiler-derived semantic equivalence is measured separately; this cohort has no independent clarity or utility oracle to rank equivalent routes.",
+            ["route_semantic_equivalence", "no independent route-clarity or utility measure"],
         ),
     ]
     core_ids = {
         "declaration_coverage", "generation_coverage", "typecheck_coverage",
-        "source_ast_coverage", "finite_domain_behavior", "internal_replay_coverage",
+        "source_ast_coverage", "route_semantic_equivalence", "finite_domain_behavior", "internal_replay_coverage",
         "route_choice_protocol", "source_binding_integrity", "repository_write_boundary",
     }
     core_dimensions = [item for item in dimensions if item["id"] in core_ids]
@@ -360,6 +401,7 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
     }
     next_operations = {
         "laya_decision_observation": "RUN_WITH_A_PINNED_LAYA_SERVICE_AND_RETAIN_MODEL_REVISION",
+        "route_semantic_equivalence": "BIND_SOURCE_AND_GENERATED_ENVELOPES_AND_REQUIRE_THE_DECLARED_CANONICAL_FORM_TO_MATCH",
         "resource_baseline_comparison": "BIND_A_REPEAT_RECEIPT_FROM_THE_SAME_COMPILER_AND_RUNNER_PROFILE",
         "real_use_case_coverage": "BIND_INDEPENDENTLY_SOURCED_REAL_WORKFLOW_FIXTURES",
         "reverse_observation_coverage": "ADD_SOURCE_BOUND_GENERATED_TO_SOURCE_OBSERVATION_EVIDENCE",
@@ -401,6 +443,7 @@ def build_completeness_receipt(report: dict[str, Any]) -> dict[str, Any]:
             "behavior over the full int64 domain",
             "reverse observation from generated runtime back to .gooo declarations",
             "calibration or usefulness of Laya route probabilities",
+            "readability or utility preference between equivalent generated routes",
             "universal or production language completeness",
         ],
     }
@@ -537,6 +580,7 @@ def main() -> int:
                     ),
                     f"{case['case_id']} emitted malformed JSON: {error}",
                 )
+            generated_hash = digest(generated_source.encode("utf-8"))
 
             repeat_equal: bool | None = None
             if not laya_enabled or sample_seed:
@@ -565,9 +609,17 @@ def main() -> int:
                 except (json.JSONDecodeError, KeyError, TypeError):
                     repeat_equal = False
                 external_repeat_observations += 1
-                if not repeat_equal:
-                    replay_mismatches += 1
+            if not repeat_equal:
+                replay_mismatches += 1
 
+            route_evidence = {
+                "route_equivalence": result.get("route_equivalence"),
+                "route": result.get("route"),
+                "source_sha256": source_hash,
+                "compiler_source_sha256": result.get("source_digest"),
+                "generated_sha256": generated_hash,
+                "compiler_generated_sha256": result.get("generated_digest"),
+            }
             required = {
                 "decision": result.get("decision") == "PASS",
                 "typecheck": result.get("typecheck_passed") is True,
@@ -575,6 +627,8 @@ def main() -> int:
                 "zero_repository_writes": result.get("repository_writes") == 0,
                 "body_completeness": result.get("completeness_percent") == 100,
                 "source_binding": result.get("source_digest") == source_hash,
+                "generated_binding": result.get("generated_digest") == generated_hash,
+                "route_equivalence": route_equivalence_receipt_valid(route_evidence),
             }
             if not all(required.values()):
                 return fail_report(
@@ -619,11 +673,9 @@ def main() -> int:
                     "condition_id": case["condition_id"],
                     "result_pair_id": case["result_pair_id"],
                     "body_style": case["body_style"],
-                    "source_sha256": source_hash,
-                    "generated_sha256": result.get("generated_digest"),
+                    **route_evidence,
                     "replay_sha256": result.get("replay_digest"),
                     "report_decision": result.get("decision"),
-                    "route": route,
                     "route_mode": result.get("route_decision", {}).get("mode"),
                     "route_provider": result.get("route_decision", {}).get("provider"),
                     "route_model": result.get("route_decision", {}).get("model"),
@@ -667,6 +719,7 @@ def main() -> int:
         capture_output=True, text=True, check=False,
     )
     runtime_match = test_result.returncode == 0
+    route_equivalence_passes = sum(1 for item in case_reports if route_equivalence_receipt_valid(item))
 
     cohort_wall_elapsed_ms = (time.perf_counter() - cohort_started) * 1000
     peak_rss = peak_child_rss_bytes()
@@ -678,11 +731,18 @@ def main() -> int:
     one_core_utilization = 100 * total_child_cpu / max(cohort_wall_elapsed_ms / 1000, 1e-9)
     laya_modes: dict[str, int] = {}
     route_selection_methods: dict[str, int] = {}
+    route_equivalence_decisions: dict[str, int] = {}
+    route_equivalence_rules: dict[str, int] = {}
     for item in case_reports:
         mode = str(item.get("route_mode") or "unknown")
         laya_modes[mode] = laya_modes.get(mode, 0) + 1
         selection_method = str((item.get("route_selection") or {}).get("method") or "unknown")
         route_selection_methods[selection_method] = route_selection_methods.get(selection_method, 0) + 1
+        equivalence = item.get("route_equivalence") or {}
+        equivalence_decision = str(equivalence.get("decision") or "unknown")
+        route_equivalence_decisions[equivalence_decision] = route_equivalence_decisions.get(equivalence_decision, 0) + 1
+        equivalence_rule = str(equivalence.get("rule") or "unknown")
+        route_equivalence_rules[equivalence_rule] = route_equivalence_rules.get(equivalence_rule, 0) + 1
 
     report = {
         "schema": SCHEMA,
@@ -690,7 +750,7 @@ def main() -> int:
         "planned_case_count": len(cases),
         "expected_case_count": int(plan["expected_case_count"]),
         "expected_domain_points": int(plan["expected_domain_points"]),
-        "decision": "PASS" if runtime_match and replay_mismatches == 0 and len(case_reports) == plan["expected_case_count"] else "FAIL_CLOSED",
+        "decision": "PASS" if runtime_match and replay_mismatches == 0 and len(case_reports) == plan["expected_case_count"] and route_equivalence_passes == len(case_reports) else "FAIL_CLOSED",
         "plan_sha256": digest(plan_bytes),
         "gooo_source_sha": gooo_source_sha or "UNBOUND_LOCAL_SOURCE",
         "gooo_binary": args.gooo_bin.name,
@@ -701,6 +761,9 @@ def main() -> int:
         "external_repeat_observation_count": external_repeat_observations,
         "selection_mode_counts": laya_modes,
         "route_selection_method_counts": route_selection_methods,
+        "route_equivalence_decision_counts": route_equivalence_decisions,
+        "route_equivalence_rule_counts": route_equivalence_rules,
+        "route_semantic_equivalence_passes": route_equivalence_passes,
         "case_count": len(case_reports),
         "body_style_counts": {
             style: sum(1 for case in cases if case["body_style"] == style)
@@ -750,6 +813,7 @@ def main() -> int:
     summary_keys = (
         "decision", "case_count", "checked_output_count", "behavioral_completeness_percent",
         "body_ast_completeness_percent", "eligible_multi_route_cases", "generated_package_test_passed",
+        "route_semantic_equivalence_passes", "route_equivalence_rule_counts",
         "gooo_invocation_p50_ms", "gooo_invocation_p95_ms", "children_user_cpu_seconds",
         "children_system_cpu_seconds", "children_average_cpu_one_core_percent",
         "children_average_cpu_host_percent", "logical_cpu_count", "cohort_wall_elapsed_ms",

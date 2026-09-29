@@ -79,6 +79,12 @@ modular wraps, signed-order seams, and comparison boundaries, then adds those
 representatives to generated-package execution alongside the separate 29-point
 finite fixture domain. The independent oracle models Go `int64` wraparound.
 
+The [PR CI run](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36626379233)
+passed with 100 generated bodies, 2,900/2,900 finite-domain matches, and
+2,500/2,500 partition-representative matches across 25 cells. All 100 route
+equivalence receipts and the generated Go package test passed. The receipt has
+14 PASS and 6 UNKNOWN dimensions with no aggregate score.
+
 This claim is limited to the declared affine condition profile with constant
 result pairs and the two tested body shapes. Other supported body expressions,
 unrestricted Gooo body semantics, Laya route quality, and real-workflow coverage

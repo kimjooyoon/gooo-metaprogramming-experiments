@@ -8,6 +8,17 @@ three direct body-fill calls, eight mock scheduling treatments, and four
 candidate/test-count scaling treatments. The model's raw choices, corrected
 emission, held-out behavior, and runtime costs have separate denominators.
 
+New [IR body-search experiments](cohorts/ir-search-2026-09-30/README.md)
+choose an untried expression before scoring it, then feed local training
+failures into the next choice. Four intents compare real Laya search,
+declared-order search, and exhaustive scoring (12 invocations, six model
+choices). Final system outputs pass the finite suites; model choices alone
+were training-perfect in 2/6 rounds, with two solutions reached through the
+sole-candidate deterministic path. The model-backed runs were slower than
+both baselines in all four tasks. Model decisions, emitted behavior, and
+sampled process costs are reported separately; CI replays code and protocols
+without loading model weights.
+
 This public corpus runs 100 distinct intent/lowering combinations:
 
 - 10 intents: sign, threshold, range, parity, status mapping, compound

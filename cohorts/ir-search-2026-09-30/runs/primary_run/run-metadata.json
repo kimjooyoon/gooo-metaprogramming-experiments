@@ -1,0 +1,45 @@
+{
+  "binary_path": "/private/tmp/gooo-ir-search-20260930",
+  "binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+  "capture_proxy_url": "http://127.0.0.1:52476/v1/systemone",
+  "cohort_manifest_sha256": "626b6122ed597fe64066a9b4a0dc366e8f9795c6fae126ea2d206fe51bbff22c",
+  "completed_utc": "2026-09-30T04:08:25.939375+00:00",
+  "host_logical_cpu_count": 10,
+  "laya_health": {
+    "device": "cpu",
+    "loaded": [
+      "english"
+    ],
+    "revisions": {
+      "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    }
+  },
+  "laya_health_after": {
+    "device": "cpu",
+    "loaded": [
+      "english"
+    ],
+    "revisions": {
+      "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    }
+  },
+  "network_policy": "offline model-loading flags; loopback-only service and capture proxy; no external endpoint configured",
+  "run_id": "primary_run",
+  "runtime": {
+    "device": "cpu",
+    "model": "english",
+    "name": "Laya",
+    "offline_only": true,
+    "package": "laya",
+    "port": 52462,
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "threads": 4,
+    "version": "0.3.21",
+    "virtualenv": "/private/tmp/meta-ontology-go-laya-venv-20260930",
+    "virtualenv_default": "/tmp/meta-ontology-go-laya-venv-20260930"
+  },
+  "schema": "gooo/ir-search-run-metadata/v1",
+  "source_revision": "29d44bc778d85aee03b9af500bd83dc98f368189",
+  "started_utc": "2026-09-30T04:08:17.654815+00:00",
+  "status": "complete"
+}

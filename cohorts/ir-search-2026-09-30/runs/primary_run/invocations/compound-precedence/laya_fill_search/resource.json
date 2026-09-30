@@ -1,0 +1,25 @@
+{
+  "cli_process": {
+    "cpu_percent_host_normalized": 0.16228775964193512,
+    "cpu_percent_one_core": 1.6228775964193511,
+    "cpu_seconds_delta": 0.01,
+    "max_rss_mib": 15.515625,
+    "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+    "rss_peak_kb": 15888,
+    "samples": 4
+  },
+  "laya_server": {
+    "cpu_percent_host_normalized": 18.176229079896736,
+    "cpu_percent_one_core": 181.76229079896734,
+    "cpu_seconds_delta": 1.12,
+    "max_rss_mib": 1754.890625,
+    "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+    "rss_peak_kb": 1797008,
+    "samples": 4
+  },
+  "logical_cpu_count": 10,
+  "raw_samples": "resource-samples.jsonl",
+  "sampling_interval_ms": 150,
+  "schema": "gooo/ir-search-process-resources/v1",
+  "wall_ms": 616.1894169999993
+}

@@ -1,0 +1,83 @@
+{
+  "schema": "gooo/ir-search-study-manifest/v1",
+  "cohort_id": "ir-search-2026-09-30",
+  "status": "prepared",
+  "primary_run": null,
+  "runtime": {
+    "name": "Laya",
+    "version": "0.3.21",
+    "package": "laya",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "model": "english",
+    "device": "cpu",
+    "threads": 4,
+    "offline_only": true,
+    "virtualenv_default": "/tmp/meta-ontology-go-laya-venv-20260930"
+  },
+  "binary": {
+    "source_revision": "29d44bc778d85aee03b9af500bd83dc98f368189",
+    "sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+    "path": null
+  },
+  "invocation_variants": [
+    "laya_fill_search",
+    "deterministic_fill_search",
+    "exhaustive_fill_plan"
+  ],
+  "expected_invocation_count": 12,
+  "expected_laya_backed_invocation_count": 4,
+  "intent_count": 4,
+  "candidate_count_per_intent": 3,
+  "server_policy": "The runner may start and stop only a Laya process group it created itself, bound to loopback. It refuses to execute without --execute, a binary path, and an exact SHA-256.",
+  "artifact_policy": "Persist raw CLI stdout/stderr, exact proxy request/response bytes, event metadata, and process CPU/RSS samples before deriving reports. Keep artifacts under runs/primary_run; do not store binaries or model files.",
+  "intents": [
+    {
+      "id": "clamp",
+      "fixture": "fixtures/clamp.gooo.fixture",
+      "search_plan": "plans/clamp.search-plan.json",
+      "fill_plan": "plans/clamp.fill-plan.json",
+      "oracle": "oracles/clamp.oracle.json",
+      "training_cases": 3,
+      "holdout_cases": 4,
+      "intent": "For a signed int64 input, replace a negative input with zero and preserve every nonnegative input."
+    },
+    {
+      "id": "absolute",
+      "fixture": "fixtures/absolute.gooo.fixture",
+      "search_plan": "plans/absolute.search-plan.json",
+      "fill_plan": "plans/absolute.fill-plan.json",
+      "oracle": "oracles/absolute.oracle.json",
+      "training_cases": 3,
+      "holdout_cases": 4,
+      "intent": "For signed int64, negate negative values and preserve nonnegative values; arithmetic wraps in two's-complement int64, so MinInt64 remains MinInt64."
+    },
+    {
+      "id": "piecewise",
+      "fixture": "fixtures/piecewise.gooo.fixture",
+      "search_plan": "plans/piecewise.search-plan.json",
+      "fill_plan": "plans/piecewise.fill-plan.json",
+      "oracle": "oracles/piecewise.oracle.json",
+      "training_cases": 3,
+      "holdout_cases": 4,
+      "intent": "For a signed int64 input, return seven when negative and otherwise preserve the input."
+    },
+    {
+      "id": "compound-precedence",
+      "fixture": "fixtures/compound-precedence.gooo.fixture",
+      "search_plan": "plans/compound-precedence.search-plan.json",
+      "fill_plan": "plans/compound-precedence.fill-plan.json",
+      "oracle": "oracles/compound-precedence.oracle.json",
+      "training_cases": 4,
+      "holdout_cases": 4,
+      "intent": "Use Go precedence: input < 0 OR (input >= 10 AND input != 12). Return one hundred when that condition holds; otherwise preserve input."
+    }
+  ],
+  "planned_output_layout": {
+    "metadata": "runs/primary_run/run-metadata.json",
+    "laya_logs": "runs/primary_run/laya/{stdout.log,stderr.log}",
+    "proxy_capture": "runs/primary_run/proxy/{requests, responses, events.jsonl}",
+    "invocations": "runs/primary_run/invocations/<intent>/<variant>/{stdout.raw,stderr.raw,resource-samples.jsonl,resource.json,invocation.json}",
+    "resources": "runs/primary_run/resource_samples.json",
+    "report": "runs/primary_run/report.json and report.md"
+  }
+}

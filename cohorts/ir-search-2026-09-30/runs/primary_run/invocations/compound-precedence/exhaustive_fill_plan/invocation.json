@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "/private/tmp/gooo-ir-search-20260930",
+    "body-codegen",
+    "--json",
+    "--fill-plan",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-2026-09-30/runs/primary_run/invocations/compound-precedence/exhaustive_fill_plan/plan.json",
+    "--activity",
+    "CompoundPrecedence",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-2026-09-30/runs/primary_run/invocations/compound-precedence/exhaustive_fill_plan/fixture.gooo.fixture"
+  ],
+  "binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+  "completed_utc": "2026-09-30T04:08:25.264151+00:00",
+  "exit_code": 0,
+  "fixture_path": "fixtures/compound-precedence.gooo.fixture",
+  "fixture_sha256": "2578de3c0ee33d3e68c2dc8b7c3165316d322873cb50a4caf76ccb260e853eb3",
+  "intent_id": "compound-precedence",
+  "invocation_id": "compound-precedence/exhaustive_fill_plan",
+  "plan_path": "plans/compound-precedence.fill-plan.json",
+  "plan_sha256": "ce83073073efae41712e5322afa63b9fdf35dfd39003a5e03365453ccbcfa2bd",
+  "proxy_event_sequences": [],
+  "resources_file": "resource.json",
+  "schema": "gooo/ir-search-invocation-record/v1",
+  "started_utc": "2026-09-30T04:08:25.258011+00:00",
+  "stderr_file": "stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_file": "stdout.raw",
+  "stdout_sha256": "87bfc927686e5c3e6c8550392b03921a49df95ad5f2bd37eaabf0a4b0cc42493",
+  "variant": "exhaustive_fill_plan",
+  "wall_ms": 6.129083000000257
+}

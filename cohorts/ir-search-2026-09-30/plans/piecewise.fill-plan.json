@@ -1,0 +1,15 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "For a signed int64 input, return seven when negative and otherwise preserve the input.",
+  "hole_id": "negative_value",
+  "candidates": [
+    { "id": "identity", "expression": "input" },
+    { "id": "zero", "expression": "0" },
+    { "id": "seven", "expression": "7" }
+  ],
+  "test_cases": [
+    { "input": -3, "expected": 7 },
+    { "input": -2, "expected": 7 },
+    { "input": -1, "expected": 7 }
+  ]
+}

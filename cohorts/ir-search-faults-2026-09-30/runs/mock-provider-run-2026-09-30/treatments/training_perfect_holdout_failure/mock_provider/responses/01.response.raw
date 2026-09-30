@@ -1,0 +1,1 @@
+{"model":"MOCK local fixture","answers":{"body_ir_search":{"type":"choice","choice":"zero","probabilities":{"identity":0.3333,"negate":0.3333,"zero":0.3333},"confidence":0.5,"answer_confidence":0.5,"action":{"act_probability":1.0}}},"usage":{"input_tokens":0,"output_tokens":0},"routing":{"model":"MOCK","repo":"local-only","reason":"MOCK treatment"}}

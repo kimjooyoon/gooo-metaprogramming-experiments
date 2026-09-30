@@ -1,0 +1,55 @@
+{
+  "schema": "gooo/ir-search-mock-fault-cohort/v1",
+  "cohort_id": "ir-search-faults-2026-09-30",
+  "status": "final_run_validated",
+  "label": "MOCK_PROVIDER_ONLY_NOT_LAYA",
+  "binary": {
+    "path": "/tmp/gooo-ir-search-20260930",
+    "sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+    "source_revision": "29d44bc778d85aee03b9af500bd83dc98f368189",
+    "source_tree_clean": true
+  },
+  "final_run": "runs/final-mock-provider-run-2026-09-30",
+  "pilot_run": {
+    "path": "runs/mock-provider-run-2026-09-30",
+    "status": "superseded_holdout_fixture_misconfigured",
+    "invocations": 12,
+    "mock_requests": 19
+  },
+  "final_counts": {
+    "treatments": 12,
+    "mock_provider_treatments": 11,
+    "captured_mock_requests": 19,
+    "provider_timeout_trials": 1,
+    "external_cancellation_trials": 1
+  },
+  "provider_policy": {
+    "kind": "synthetic_loopback_mock",
+    "actual_laya_used": false,
+    "actual_model_calls": false,
+    "external_network_used": false,
+    "credentials_recorded": false
+  },
+  "validation": {
+    "script": "scripts/validate_saved.py",
+    "assertion_groups": 11,
+    "reads_saved_artifacts_only": true,
+    "runs_compiler": false,
+    "uses_network": false,
+    "unittest_probes": 3,
+    "binds_raw_stdout": true,
+    "binds_provider_events_jsonl": true,
+    "scans_recursive_raw_requests": true
+  },
+  "limitations": [
+    "One hand-authored int64 fixture and small finite suites do not establish domain coverage or full-domain correctness.",
+    "Generated package code was not executed; holdout measurements are from the bounded interpreter.",
+    "No Laya or GPT-6 performance or quality evidence is produced."
+  ],
+  "cancellation_evidence": {
+    "runner_configured_delay_ms": 350,
+    "observed_exit_code": -15,
+    "captured_mock_requests": 1,
+    "proves_request_in_flight_at_signal_instant": false
+  }
+}

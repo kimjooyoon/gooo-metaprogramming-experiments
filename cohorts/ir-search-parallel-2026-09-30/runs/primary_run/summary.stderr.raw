@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-parallel-2026-09-30/scripts/summarize_parallel.py", line 383, in <module>
+    main()
+  File "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-parallel-2026-09-30/scripts/summarize_parallel.py", line 346, in main
+    conditions[condition] = {"metadata": read_json(condition_path), "resources": condition_resources(run_dir, condition)}
+  File "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-parallel-2026-09-30/scripts/summarize_parallel.py", line 260, in condition_resources
+    return {"sample_interval_ms": int(SAMPLE_INTERVAL_MS), "sample_count_total": len(samples),
+NameError: name 'SAMPLE_INTERVAL_MS' is not defined

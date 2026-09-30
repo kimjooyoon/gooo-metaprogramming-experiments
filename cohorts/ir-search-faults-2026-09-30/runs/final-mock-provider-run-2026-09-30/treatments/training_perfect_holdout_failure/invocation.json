@@ -1,0 +1,106 @@
+{
+  "argv": [
+    "/private/tmp/gooo-ir-search-20260930",
+    "body-codegen",
+    "--json",
+    "--fill-search",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-faults-2026-09-30/runs/final-mock-provider-run-2026-09-30/treatments/training_perfect_holdout_failure/plan.json",
+    "--activity",
+    "ClampNegativeToZero",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-faults-2026-09-30/runs/final-mock-provider-run-2026-09-30/treatments/training_perfect_holdout_failure/fixture.gooo.fixture"
+  ],
+  "attempts": [
+    {
+      "accuracy_percent": 100,
+      "candidate_id": "identity",
+      "case_results": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 0,
+          "passed": true
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": 1,
+          "passed": true
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "input": 4,
+          "passed": true
+        }
+      ],
+      "decision": {
+        "answer_confidence": 0.5,
+        "confidence": 0.5,
+        "mode": "laya",
+        "model": "MOCK local fixture",
+        "probabilities": {
+          "identity": 0.3333,
+          "negate": 0.3333,
+          "zero": 0.3333
+        },
+        "provider": "laya",
+        "request_sha256": "sha256:c51e9d1aa96998fec307b1caa5360e33e190273c1f0328408714cb3daa5d05c7",
+        "routing": {
+          "model": "MOCK",
+          "reason": "MOCK treatment",
+          "repo": "local-only"
+        },
+        "schema": "gooo/typed-decision-receipt/v1",
+        "selected": "identity"
+      },
+      "decision_latency_ms": 2.813167,
+      "evaluation_ms": 0.309833,
+      "expression": "input",
+      "scoring_completed": true,
+      "selection_method": "laya",
+      "test_cases_passed": 3,
+      "test_cases_total": 3,
+      "typecheck_passed": true
+    }
+  ],
+  "binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+  "completed_utc": "2026-09-30T05:01:36.451732+00:00",
+  "exit_code": 0,
+  "expected_probe": "holdout_failure",
+  "fixture_sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1",
+  "holdout_passed": 0,
+  "holdout_total": 4,
+  "label": "MOCK_PROVIDER_TREATMENT",
+  "plan_sha256": "0bdc43750fd3a37b05c684850197195252bfd7c85e66f8ebac986e6d3d6f07ac",
+  "provider_budget_used_ms": 2.813083,
+  "provider_events": [
+    {
+      "completed_utc": "2026-09-30T05:01:35.946972+00:00",
+      "delay_ms": 0,
+      "label": "MOCK",
+      "method": "POST",
+      "path": "/v1/systemone",
+      "request_file": "requests/01.request.raw",
+      "request_sha256": "19c66f73efd23bc09b26ca13e30f66504b3d3c9a973b9374e54ef24f9fe580b8",
+      "response_file": "responses/01.response.raw",
+      "response_sha256": "278a8d48782cecc83079d07e73d63b125905394c07eb6246f9672197adf4f9c2",
+      "seq": 1,
+      "started_utc": "2026-09-30T05:01:35.946242+00:00",
+      "status": 200
+    }
+  ],
+  "provider_request_count": 1,
+  "runner_cancelled": false,
+  "schema": "gooo/ir-search-fault-invocation/v1",
+  "selected_candidate_id": "identity",
+  "started_utc": "2026-09-30T05:01:35.934051+00:00",
+  "stderr_file": "stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_file": "stdout.raw",
+  "stdout_sha256": "521ebf61e1b6c2f350b23cdc3855c4fbeab6a207963c2600292b65840ae99ced",
+  "stop_reason": "TRAINING_SUITE_PASSED",
+  "training_passed": 3,
+  "training_total": 3,
+  "treatment_id": "training_perfect_holdout_failure",
+  "wall_ms": 516.0124169999998
+}

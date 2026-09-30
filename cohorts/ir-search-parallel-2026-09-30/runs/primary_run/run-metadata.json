@@ -1,0 +1,55 @@
+{
+  "binary_path": "/private/tmp/gooo-ir-search-20260930",
+  "binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+  "claim_scope": "one observed pair per condition; no statistical, general speed, or deadlock-freedom claim",
+  "cohort_manifest_sha256": "71f0e4cf111066eb5f3df64c64da9d4810cb43ea6b555f7930aef8dc7e9a1156",
+  "completed_utc": "2026-09-30T04:38:20.534379+00:00",
+  "condition_order": [
+    "sequential",
+    "simultaneous"
+  ],
+  "failures": [],
+  "host_logical_cpu_count": 10,
+  "intent_ids": [
+    "clamp",
+    "absolute"
+  ],
+  "replicates_per_condition": 1,
+  "report_derivation": {
+    "initial_attempt": {
+      "cause": "cohort summarizer NameError; raw invocation artifacts were already complete",
+      "exit_code": 1,
+      "stderr": "summary.stderr.raw",
+      "stdout": "summary.stdout.raw"
+    },
+    "successful_rerun": {
+      "exit_code": 0,
+      "source": "saved CLI, proxy, health, resource, and finite-oracle artifacts only",
+      "stderr": "summary-rederived.stderr.raw",
+      "stdout": "summary-rederived.stdout.raw"
+    },
+    "timing_followup": {
+      "exit_code": 0,
+      "source": "saved raw CLI/proxy/resource artifacts and pinned prior primary report; no Gooo or Laya execution",
+      "stderr": "summary-followup.stderr.raw",
+      "stdout": "summary-followup.stdout.raw"
+    }
+  },
+  "run_id": "primary_run",
+  "runtime": {
+    "device": "cpu",
+    "max_concurrent_admitted_requests": 16,
+    "model": "english",
+    "name": "Laya",
+    "offline_only": true,
+    "package": "laya",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "threads": 4,
+    "version": "0.3.21",
+    "virtualenv_default": "/tmp/meta-ontology-go-laya-venv-20260930"
+  },
+  "schema": "gooo/ir-search-parallel-run/v1",
+  "source_revision": "29d44bc778d85aee03b9af500bd83dc98f368189",
+  "started_utc": "2026-09-30T04:38:11.314198+00:00",
+  "status": "complete"
+}

@@ -1,0 +1,152 @@
+{
+  "argv": [
+    "/private/tmp/gooo-ir-search-20260930",
+    "body-codegen",
+    "--json",
+    "--fill-search",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-faults-2026-09-30/runs/mock-provider-run-2026-09-30/treatments/invalid_expression_then_valid/plan.json",
+    "--activity",
+    "ClampNegativeToZero",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-faults-2026-09-30/runs/mock-provider-run-2026-09-30/treatments/invalid_expression_then_valid/fixture.gooo.fixture"
+  ],
+  "attempts": [
+    {
+      "accuracy_percent": null,
+      "candidate_id": "broken",
+      "decision": {
+        "answer_confidence": 0.5,
+        "confidence": 0.5,
+        "mode": "laya",
+        "model": "MOCK local fixture",
+        "probabilities": {
+          "broken": 0.3333,
+          "negate": 0.3333,
+          "zero": 0.3333
+        },
+        "provider": "laya",
+        "request_sha256": "sha256:eb306d832684fc17332826e86fc7938cbf380845896ea47e944356c5aa55e9b2",
+        "routing": {
+          "model": "MOCK",
+          "reason": "MOCK treatment",
+          "repo": "local-only"
+        },
+        "schema": "gooo/typed-decision-receipt/v1",
+        "selected": "broken"
+      },
+      "decision_latency_ms": 1.673291,
+      "error": "1:8: expected operand, found 'EOF'",
+      "evaluation_ms": 0.016916,
+      "expression": "input +",
+      "scoring_completed": false,
+      "selection_method": "laya",
+      "test_cases_passed": 0,
+      "test_cases_total": 3,
+      "typecheck_passed": false
+    },
+    {
+      "accuracy_percent": 100,
+      "candidate_id": "zero",
+      "case_results": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -3,
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -2,
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -1,
+          "passed": true
+        }
+      ],
+      "decision": {
+        "answer_confidence": 0.5,
+        "confidence": 0.5,
+        "mode": "laya",
+        "model": "MOCK local fixture",
+        "probabilities": {
+          "negate": 0.5,
+          "zero": 0.5
+        },
+        "provider": "laya",
+        "request_sha256": "sha256:aaa84f2fb9b39896989d92af3466a980d813035dec9cd968d0bf4106ef1dcf85",
+        "routing": {
+          "model": "MOCK",
+          "reason": "MOCK treatment",
+          "repo": "local-only"
+        },
+        "schema": "gooo/typed-decision-receipt/v1",
+        "selected": "zero"
+      },
+      "decision_latency_ms": 0.744084,
+      "evaluation_ms": 0.156375,
+      "expression": "0",
+      "scoring_completed": true,
+      "selection_method": "laya",
+      "test_cases_passed": 3,
+      "test_cases_total": 3,
+      "typecheck_passed": true
+    }
+  ],
+  "binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+  "completed_utc": "2026-09-30T05:00:09.983929+00:00",
+  "exit_code": 0,
+  "expected_probe": "parse_rejection_then_success",
+  "fixture_sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1",
+  "holdout_passed": 4,
+  "holdout_total": 4,
+  "label": "MOCK_PROVIDER_TREATMENT",
+  "plan_sha256": "6b8525003348d6711eaea0460331ca5116fa147bd863b651c02e94e8e036fea2",
+  "provider_budget_used_ms": 2.4172919999999998,
+  "provider_events": [
+    {
+      "completed_utc": "2026-09-30T05:00:09.479686+00:00",
+      "delay_ms": 0,
+      "label": "MOCK",
+      "method": "POST",
+      "path": "/v1/systemone",
+      "request_file": "requests/01.request.raw",
+      "request_sha256": "7ae041a46f68f5a42a4042aa9512e8bd14819a54e3e4813e3a727293ad1f3998",
+      "response_file": "responses/01.response.raw",
+      "response_sha256": "91602d5dcb55c7a546488e7172e78bee9f2c658841dd6f976f7771eead5d3d5e",
+      "seq": 1,
+      "started_utc": "2026-09-30T05:00:09.479678+00:00",
+      "status": 200
+    },
+    {
+      "completed_utc": "2026-09-30T05:00:09.480739+00:00",
+      "delay_ms": 0,
+      "label": "MOCK",
+      "method": "POST",
+      "path": "/v1/systemone",
+      "request_file": "requests/02.request.raw",
+      "request_sha256": "b96be9423959c51403b7a4bc6b74c9cc16b0e8b843113b1eeefdfba419d74d7c",
+      "response_file": "responses/02.response.raw",
+      "response_sha256": "5cb57bd135eaf39753423b161de3a354553fe9223a3206712f936ed1bca82d1c",
+      "seq": 2,
+      "started_utc": "2026-09-30T05:00:09.480737+00:00",
+      "status": 200
+    }
+  ],
+  "provider_request_count": 2,
+  "runner_cancelled": false,
+  "schema": "gooo/ir-search-fault-invocation/v1",
+  "selected_candidate_id": "zero",
+  "started_utc": "2026-09-30T05:00:09.473100+00:00",
+  "stderr_file": "stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_file": "stdout.raw",
+  "stdout_sha256": "2932e33b0e1a2b4a23f9ab51164f092b57f29c87933f05d298e711704a8fff6a",
+  "stop_reason": "TRAINING_SUITE_PASSED",
+  "training_passed": 3,
+  "training_total": 3,
+  "treatment_id": "invalid_expression_then_valid",
+  "wall_ms": 510.0814999999996
+}

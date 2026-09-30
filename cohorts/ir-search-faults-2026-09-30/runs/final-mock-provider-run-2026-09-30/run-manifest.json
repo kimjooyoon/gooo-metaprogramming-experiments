@@ -1,0 +1,142 @@
+{
+  "binary": {
+    "sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+    "source_revision": "29d44bc778d85aee03b9af500bd83dc98f368189"
+  },
+  "created_utc": "2026-09-30T05:01:31.591271+00:00",
+  "holdout_privacy_sentinels": [
+    -9223372036854775808,
+    1,
+    4
+  ],
+  "label": "MOCK_PROVIDER_ONLY_NOT_LAYA",
+  "schema": "gooo/ir-search-mock-fault-cohort/v1",
+  "scope": "Finite IR-search robustness treatments on the clamp fixture; provider exchanges are synthetic loopback fixtures and do not measure Laya or GPT-6 behavior.",
+  "treatment_count": 12,
+  "treatments": [
+    {
+      "expected": "deterministic",
+      "id": "unconfigured_fallback",
+      "kind": "no_provider"
+    },
+    {
+      "expected": "deterministic",
+      "id": "http_503_fallback",
+      "kind": "response"
+    },
+    {
+      "expected": "deterministic",
+      "id": "malformed_json_fallback",
+      "kind": "response"
+    },
+    {
+      "expected": "deterministic",
+      "id": "missing_choice_fallback",
+      "kind": "response"
+    },
+    {
+      "expected": "deterministic",
+      "id": "unknown_choice_fallback",
+      "kind": "response"
+    },
+    {
+      "expected": "train_perfect_after_failure",
+      "id": "failure_feedback_privacy",
+      "kind": "response"
+    },
+    {
+      "expected": "no_reselection",
+      "id": "repeated_tried_choice",
+      "kind": "response"
+    },
+    {
+      "candidate_override": [
+        {
+          "expression": "input +",
+          "id": "broken"
+        },
+        {
+          "expression": "-input",
+          "id": "negate"
+        },
+        {
+          "expression": "0",
+          "id": "zero"
+        }
+      ],
+      "expected": "parse_rejection_then_success",
+      "id": "invalid_expression_then_valid",
+      "kind": "response"
+    },
+    {
+      "candidate_override": [
+        {
+          "expression": "true",
+          "id": "boolean"
+        },
+        {
+          "expression": "-input",
+          "id": "negate"
+        },
+        {
+          "expression": "0",
+          "id": "zero"
+        }
+      ],
+      "expected": "type_rejection_then_success",
+      "id": "type_mismatch_then_valid",
+      "kind": "response"
+    },
+    {
+      "expected": "holdout_failure",
+      "holdout_override": [
+        {
+          "expected": 0,
+          "input": -1
+        },
+        {
+          "expected": 0,
+          "input": -2
+        },
+        {
+          "expected": 0,
+          "input": -17
+        },
+        {
+          "expected": 0,
+          "input": -9223372036854775808
+        }
+      ],
+      "id": "training_perfect_holdout_failure",
+      "kind": "response",
+      "training_override": [
+        {
+          "expected": 0,
+          "input": 0
+        },
+        {
+          "expected": 1,
+          "input": 1
+        },
+        {
+          "expected": 4,
+          "input": 4
+        }
+      ]
+    },
+    {
+      "delay_ms": 9000,
+      "expected": "timeout_or_fallback",
+      "id": "provider_budget_timeout",
+      "kind": "delay",
+      "process_timeout_ms": 9800
+    },
+    {
+      "cancel_after_ms": 350,
+      "delay_ms": 5000,
+      "expected": "runner_cancelled",
+      "id": "cancel_inflight_provider",
+      "kind": "delay"
+    }
+  ]
+}

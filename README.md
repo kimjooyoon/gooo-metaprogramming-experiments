@@ -14,10 +14,24 @@ failures into the next choice. Four intents compare real Laya search,
 declared-order search, and exhaustive scoring (12 invocations, six model
 choices). Final system outputs pass the finite suites; model choices alone
 were training-perfect in 2/6 rounds, with two solutions reached through the
-sole-candidate deterministic path. The model-backed runs were slower than
-both baselines in all four tasks. Model decisions, emitted behavior, and
+sole-candidate deterministic path. The model-backed harness windows exceeded
+both baseline windows in all four tasks; these include sampling and output persistence. Model decisions, emitted behavior, and
 sampled process costs are reported separately; CI replays code and protocols
 without loading model weights.
+
+The [client concurrency study](cohorts/ir-search-parallel-2026-09-30/README.md)
+adds four CLI invocations and six real Laya choices. All 28 independent finite
+oracle outputs pass. Concurrent HTTP calls overlap, while the inspected Laya
+server has one inference worker. The sequential harness adds 523.5 ms of proxy
+shutdown between commands; the one-replicate timing comparison establishes
+neither a general speed benefit nor freedom from deadlocks.
+
+The [MOCK fault study](cohorts/ir-search-faults-2026-09-30/README.md) adds 12
+synthetic treatments for provider failures, consumed choices, parse/type
+rejection, timeout and process termination. A deliberately weak suite yields
+3/3 training matches and 0/4 holdout matches. This is evidence for keeping those
+denominators separate. The superseded pilot is retained and excluded from final
+claims; these requests are not real Laya measurements.
 
 This public corpus runs 100 distinct intent/lowering combinations:
 

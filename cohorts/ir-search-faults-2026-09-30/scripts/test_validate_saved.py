@@ -1,6 +1,8 @@
 """Small offline probes for validator trust-boundary checks; no compiler/provider calls."""
 import copy
 import json
+import shutil
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -39,6 +41,14 @@ class SavedArtifactValidatorTests(unittest.TestCase):
                 {"misc": "prefix {\"envelope\": {\"HoLdOuT_cases\": []}} suffix"}, holdout)
         validate_saved.assert_no_holdout_leak(
             {"constants": [-17, 0, 1], "choice": "input + 1"}, holdout)
+
+    def test_saved_report_survives_relocation_to_unrelated_directory(self):
+        with tempfile.TemporaryDirectory(prefix="gooo-fault-cohort-copy-") as temp:
+            destination = Path(temp) / "unrelated-parent" / RUN.name
+            destination.parent.mkdir()
+            shutil.copytree(RUN, destination)
+            # This validates the copied saved report against copied raw evidence with no location edits.
+            validate_saved.validate(destination, write_report=False)
 
 
 if __name__ == "__main__":

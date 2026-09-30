@@ -206,7 +206,8 @@ def validate(run: Path, write_report=False):
             raw=p.read_bytes(); files.append({"path":str(p.relative_to(run)),"bytes":len(raw),"sha256":sha(raw)})
     total_req=sum(r["provider_request_count"] for r in rows)
     mock_treatments=sum(r["label"] == "MOCK_PROVIDER_TREATMENT" for r in rows)
-    result={"schema":"gooo/ir-search-mock-fault-report/v1","label":"MOCK_PROVIDER_ONLY_NOT_LAYA","run_dir":str(run),
+    result={"schema":"gooo/ir-search-mock-fault-report/v1","label":"MOCK_PROVIDER_ONLY_NOT_LAYA",
+        "run_id":run.name,"run_dir":f"runs/{run.name}",
         "compiler":manifest["binary"],"treatments":len(rows),"mock_provider_treatments":mock_treatments,"mock_requests":total_req,
         "pilot":{"run_id":"mock-provider-run-2026-09-30","invocations":12,"mock_requests":19,
                  "status":"SUPERSEDED_HOLDOUT_FIXTURE_MISCONFIGURED","detail":"The first pilot used a zero-expression treatment that also passed its original holdout. It is retained as raw evidence and excluded from final claims."},

@@ -1,0 +1,10 @@
+{
+  "schema": "gooo/ir-composition-evidence-mutations/v1",
+  "model_calls": 0,
+  "gooo_cli_calls": 0,
+  "validator_sha256": "ec48b1d9cb70dc31524210568ccf2bad7e00b5290ca60dd7d3022b5463c2cf55",
+  "control": "PASS: 52 saved Go module replays; original 93 compiled candidates and three expected compile failures",
+  "treatments": "Six individual mutations were rejected. A seventh coordinated raw receipt/hash mutation was accepted by the earlier checker and is rejected by this strengthened validator.",
+  "original_capture_modified": false,
+  "scope": "Evidence for these seven treatments, not a universal artifact-forgery detector."
+}

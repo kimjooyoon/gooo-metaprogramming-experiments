@@ -1,0 +1,18 @@
+{
+  "control": {
+    "baseline": "original-gooo-cli-baseline",
+    "raw_report_sha256": "7d6b82ae0afd2c1f7000ebb1cf72e057d74a7930d9084109328c486bb1f6e0ac",
+    "raw_stdout_sha256": "89ef07a6ac43f226b0729c173d2a0fd359ed3851a11479d7367248e901f74872",
+    "status": "PASS"
+  },
+  "mutation": {
+    "case_id": "ni05_negative_then_double",
+    "change": "raw completeness_receipt.dimensions[source_ast_coverage] numerator/denominator 18/18 -> 19/19; refreshed copied execution-report stdout hash and byte count",
+    "expected_rejection": "original baseline/ni05_negative_then_double: raw source_ast_coverage status/numerator/denominator differ from per-case report",
+    "status": "REJECTED",
+    "temporary_copy_only": true
+  },
+  "original_tree_unchanged": true,
+  "schema": "gooo/source-ast-receipt-mutation-probe/v1",
+  "temporary_copy": "/tmp/gooo-composition-source-ast-receipt-crosscheck-v7-20260930/original-gooo-cli-baseline"
+}

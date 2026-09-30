@@ -70,6 +70,89 @@ def dimension(receipt: dict, wanted: str) -> dict:
     return {"id": wanted, "status": "MISSING", "numerator": 0, "denominator": 0}
 
 
+def normalized_source_status(status: Any) -> str:
+    # Earlier baseline summaries labeled absent measurements MISSING; the raw
+    # compiler receipt labels the same zero-denominator state UNKNOWN.
+    return "UNKNOWN" if status in (None, "MISSING", "UNKNOWN") else str(status)
+
+
+def verify_source_ast_receipt(raw_report: dict, result: dict, case_id: str, baseline: str) -> dict:
+    raw_dim = dimension(raw_report, "source_ast_coverage")
+    case_dim = result.get("source_unit_completeness") or {}
+    require(raw_dim.get("status") != "MISSING",
+            f"{baseline}/{case_id}: raw completeness receipt lacks source_ast_coverage")
+    require((normalized_source_status(raw_dim.get("status")), raw_dim.get("numerator", 0),
+             raw_dim.get("denominator", 0))
+            == (normalized_source_status(case_dim.get("status")), case_dim.get("numerator", 0),
+                case_dim.get("denominator", 0)),
+            f"{baseline}/{case_id}: raw source_ast_coverage status/numerator/denominator differ from per-case report")
+    numerator, denominator = raw_dim.get("numerator", 0), raw_dim.get("denominator", 0)
+    require(isinstance(numerator, int) and isinstance(denominator, int)
+            and numerator >= 0 and denominator >= 0 and numerator <= denominator,
+            f"{baseline}/{case_id}: invalid raw source_ast_coverage counts")
+    if denominator:
+        require(raw_dim.get("status") == "PASS",
+                f"{baseline}/{case_id}: measured source_ast_coverage is not PASS")
+        require(raw_report.get("source_semantic_units") == denominator
+                and raw_report.get("lowered_semantic_units") == numerator,
+                f"{baseline}/{case_id}: raw semantic-unit totals differ from source_ast_coverage receipt")
+    else:
+        require(raw_dim.get("status") == "UNKNOWN" and numerator == 0,
+                f"{baseline}/{case_id}: zero-denominator source_ast_coverage is not UNKNOWN 0/0")
+        require(raw_report.get("source_semantic_units") in (None, 0)
+                and raw_report.get("lowered_semantic_units") in (None, 0),
+                f"{baseline}/{case_id}: raw semantic-unit totals are nonzero without a source-unit denominator")
+    return {"case_id": case_id, "status": normalized_source_status(raw_dim.get("status")),
+            "numerator": numerator, "denominator": denominator}
+
+
+def verify_source_unit_aggregate(summary: dict, case_rows: list[dict], baseline: str,
+                                 allow_known_raw_count_mismatch: bool = False) -> dict:
+    by_id = {row.get("case_id"): row for row in case_rows}
+    require(len(by_id) == 32 and None not in by_id,
+            f"{baseline}: source-unit summary does not contain 32 uniquely identified per-case rows")
+    observed_rows, unknown_rows = [], []
+    numerator_total = denominator_total = 0
+    for case_id, row in by_id.items():
+        numerator, denominator = row.get("numerator", 0), row.get("denominator", 0)
+        status = normalized_source_status(row.get("status"))
+        require(isinstance(numerator, int) and isinstance(denominator, int)
+                and numerator >= 0 and denominator >= 0 and numerator <= denominator,
+                f"{baseline}/{case_id}: invalid per-case source-unit counts")
+        if denominator > 0:
+            require(status == "PASS", f"{baseline}/{case_id}: measured per-case source-unit status is not PASS")
+            observed_rows.append(case_id)
+            numerator_total += numerator
+            denominator_total += denominator
+        else:
+            require(status == "UNKNOWN" and numerator == 0,
+                    f"{baseline}/{case_id}: unmeasured per-case source-unit status is not UNKNOWN 0/0")
+            unknown_rows.append(case_id)
+    require(summary.get("planned_designs") == 32,
+            f"{baseline}: source-unit aggregate planned denominator is not 32")
+    lowered_key = ("lowered_semantic_units_total_in_observed_receipts"
+                   if "lowered_semantic_units_total_in_observed_receipts" in summary
+                   else "semantic_units_lowered")
+    source_key = ("source_semantic_units_total_in_observed_receipts"
+                  if "source_semantic_units_total_in_observed_receipts" in summary
+                  else "semantic_units_total")
+    require(summary.get(lowered_key) == numerator_total and summary.get(source_key) == denominator_total,
+            f"{baseline}: raw aggregate semantic-unit totals differ from summed per-case receipts")
+    reconstructed = {"observed_receipts": len(observed_rows), "unknown_receipts": len(unknown_rows),
+                     "lowered_semantic_units": numerator_total, "source_semantic_units": denominator_total}
+    reported = {"observed_receipts": summary.get("observed_receipts"),
+                "unknown_receipts": summary.get("unknown_receipts")}
+    if reported != {key: reconstructed[key] for key in ("observed_receipts", "unknown_receipts")}:
+        require(allow_known_raw_count_mismatch
+                and reported == {"observed_receipts": 32, "unknown_receipts": 0}
+                and reconstructed["observed_receipts"] == 30 and reconstructed["unknown_receipts"] == 2,
+                f"{baseline}: aggregate receipt counts do not match per-case source-unit receipts")
+        reconstructed["known_as_run_receipt_count_mismatch"] = reported
+    else:
+        reconstructed["known_as_run_receipt_count_mismatch"] = None
+    return reconstructed
+
+
 def changed_json_paths(before: Any, after: Any, prefix: str = "") -> set[str]:
     if isinstance(before, dict) and isinstance(after, dict):
         paths = set()
@@ -224,6 +307,7 @@ def verify_old_cli_baseline(vectors: dict[str, dict], freeze: dict) -> tuple[dic
         vector_bytes = (json.dumps(vectors[case_id], ensure_ascii=False, indent=2) + "\n").encode()
         require(plan.get("vector_sha256") == sha(vector_bytes), f"original vector SHA changed: {case_id}")
 
+    raw_source_dimensions = {}
     for case_id, result in old_cases.items():
         case_dir = OLD / "cases" / case_id
         stdout = case_dir / "cli" / "stdout.raw"
@@ -232,6 +316,7 @@ def verify_old_cli_baseline(vectors: dict[str, dict], freeze: dict) -> tuple[dic
         require(file_sha(stderr) == result["cli"]["stderr_sha256"], f"original stderr hash mismatch: {case_id}")
         payload = json.loads(stdout.read_bytes())
         payload_report = payload.get("report") if isinstance(payload.get("report"), dict) else payload
+        raw_source_dimensions[case_id] = verify_source_ast_receipt(payload_report, result, case_id, "original baseline")
         source = payload.get("source", "")
         require(bool(source) == bool(result.get("cli", {}).get("emitted_source_path")),
                 f"original raw CLI source presence differs from recorded status: {case_id}")
@@ -262,16 +347,28 @@ def verify_old_cli_baseline(vectors: dict[str, dict], freeze: dict) -> tuple[dic
             and sum((row.get("denominator") or 0) <= 0 for row in old_source_rows) == 10,
             "original per-case source-unit receipts do not preserve the 22/10 measured/unknown split")
     old_results_by_id = {row["case_id"]: row for row in report["design_results"]}
+    old_source_rows_by_id = {row["case_id"]: row for row in old_source_rows}
+    require(set(old_source_rows_by_id) == set(raw_source_dimensions),
+            "original per-case source-unit summary IDs differ from raw receipt IDs")
     for source_row in old_source_rows:
         result = old_results_by_id[source_row["case_id"]]
         has_source = bool(result.get("cli", {}).get("emitted_source_path"))
         measured = (source_row.get("denominator") or 0) > 0
         require(has_source == measured,
                 f"original per-case source-unit receipt does not match emitted-source availability: {source_row['case_id']}")
+        require((normalized_source_status(source_row.get("status")), source_row.get("numerator", 0),
+                 source_row.get("denominator", 0))
+                == (raw_source_dimensions[source_row["case_id"]]["status"],
+                    raw_source_dimensions[source_row["case_id"]]["numerator"],
+                    raw_source_dimensions[source_row["case_id"]]["denominator"]),
+                f"original aggregate per-case source-unit row differs from raw receipt: {source_row['case_id']}")
+    old_source_aggregate = verify_source_unit_aggregate(
+        report["source_unit_completeness"], old_source_rows, "original baseline")
     require(report["source_unit_completeness"]["lowered_semantic_units_total_in_observed_receipts"] == 410
             and report["source_unit_completeness"]["source_semantic_units_total_in_observed_receipts"] == 410,
             "original source-unit completeness totals mismatch")
     metadata["_validated_runner_archive"] = old_runner
+    metadata["_validated_source_unit_aggregate"] = old_source_aggregate
     return metadata, report, correction
 
 
@@ -338,6 +435,7 @@ def verify_new_cli_replay(vectors: dict[str, dict], freeze: dict, old_report: di
     old_planned = {row["id"]: row for row in read_json(OLD / "planned-cases.json")["cases"]}
     new_planned = {row["id"]: row for row in read_json(NEW / "planned-cases.json")["cases"]}
     require(set(new_planned) == set(old_planned), "new and old replay planned case IDs differ")
+    raw_source_dimensions = {}
     for case_id, row in cases.items():
         old_plan, new_plan = old_planned[case_id], new_planned[case_id]
         require(new_plan["plan_sha256"] == old_plan["plan_sha256"]
@@ -359,6 +457,8 @@ def verify_new_cli_replay(vectors: dict[str, dict], freeze: dict, old_report: di
         require(file_sha(stderr) == row["cli"]["stderr_sha256"], f"new stderr hash mismatch: {case_id}")
         payload = json.loads(stdout.read_bytes())
         payload_report = payload.get("report") if isinstance(payload.get("report"), dict) else payload
+        raw_source_dimensions[case_id] = verify_source_ast_receipt(payload_report, row, case_id,
+                                                                   "equivalence replay")
         source = payload.get("source", "")
         require(bool(source) == (row["cli"].get("baseline_status") == "CLI_PASS_WITH_SOURCE"),
                 f"new raw CLI source presence differs from recorded status: {case_id}")
@@ -383,6 +483,8 @@ def verify_new_cli_replay(vectors: dict[str, dict], freeze: dict, old_report: di
     require(len(raw_source_rows) == 32, "as-run source-unit report does not preserve 32 per-case rows")
     raw_source_by_id = {row["case_id"]: row for row in raw_source_rows}
     require(set(raw_source_by_id) == set(vectors), "as-run source-unit row IDs differ from the frozen 32 cases")
+    require(set(raw_source_by_id) == set(raw_source_dimensions),
+            "as-run per-case source-unit summary IDs differ from raw receipt IDs")
     pass_rows = [row for row in raw_source_rows if row.get("status") == "PASS" and (row.get("denominator") or 0) > 0]
     unknown_rows = [row for row in raw_source_rows
                     if row.get("status") == "UNKNOWN" and (row.get("denominator") or 0) == 0]
@@ -394,6 +496,16 @@ def verify_new_cli_replay(vectors: dict[str, dict], freeze: dict, old_report: di
         has_source = result["cli"].get("baseline_status") == "CLI_PASS_WITH_SOURCE"
         require(measured == has_source,
                 f"as-run per-case source-unit receipt does not match captured source status: {case_id}")
+        source_row = raw_source_by_id[case_id]
+        raw_dimension = raw_source_dimensions[case_id]
+        require((normalized_source_status(source_row.get("status")), source_row.get("numerator", 0),
+                 source_row.get("denominator", 0))
+                == (raw_dimension["status"], raw_dimension["numerator"], raw_dimension["denominator"]),
+                f"as-run aggregate per-case source-unit row differs from raw receipt: {case_id}")
+    raw_source_aggregate = verify_source_unit_aggregate(
+        raw_source, raw_source_rows, "equivalence replay as-run", allow_known_raw_count_mismatch=True)
+    corrected_source_aggregate = verify_source_unit_aggregate(
+        report["source_unit_completeness"], source_rows, "equivalence replay derived correction")
     require(raw_source.get("observed_receipts") == 32 and raw_source.get("unknown_receipts") == 0,
             "the known as-run source-unit aggregate mismatch changed; keep raw report immutable")
     require(correction_receipt.get("reason") and correction_receipt.get("model_calls") == 0
@@ -407,6 +519,8 @@ def verify_new_cli_replay(vectors: dict[str, dict], freeze: dict, old_report: di
         "reconstructed_per_case_observed_unknown": [len(pass_rows), len(unknown_rows)],
         "corrected_observed_unknown": [report["source_unit_completeness"]["observed_receipts"],
                                         report["source_unit_completeness"]["unknown_receipts"]],
+        "reconstructed_raw_aggregate": raw_source_aggregate,
+        "corrected_aggregate": corrected_source_aggregate,
     }
     return metadata, report
 

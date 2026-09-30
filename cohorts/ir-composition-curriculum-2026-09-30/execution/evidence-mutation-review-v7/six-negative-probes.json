@@ -1,0 +1,37 @@
+{
+  "schema": "gooo/ir-composition-baseline-mutation-review/v1",
+  "probe_count": 6,
+  "all_rejected": true,
+  "results": [
+    {
+      "probe": "frozen-plan-byte",
+      "result": "REJECTED",
+      "reason": "frozen input hash mismatch: cohorts/ir-composition-curriculum-2026-09-30/plans/body-fill/01-cc01_inclusive_band.json"
+    },
+    {
+      "probe": "raw-cli-json-bytes",
+      "result": "REJECTED",
+      "reason": "original stdout hash mismatch: ni05_negative_then_double"
+    },
+    {
+      "probe": "emitted-go-bytes",
+      "result": "REJECTED",
+      "reason": "original emitted Go hash mismatch: ni05_negative_then_double"
+    },
+    {
+      "probe": "runner-source-archive",
+      "result": "REJECTED",
+      "reason": "archived runner SHA does not match run metadata: /private/tmp/gooo-composition-baseline-mutation-review-20260930/runner-source-archive/cohorts/ir-composition-curriculum-2026-09-30/execution/original-gooo-cli-baseline/go-validation-corrected-v1/runner-source-original-capture.py"
+    },
+    {
+      "probe": "unknown-relabelled-pass",
+      "result": "REJECTED",
+      "reason": "corrected source-unit measured/unknown denominators do not match per-case receipts"
+    },
+    {
+      "probe": "finite-denominator-replay",
+      "result": "REJECTED",
+      "reason": "original training scores/unknown denominator differ from replayed vectors"
+    }
+  ]
+}

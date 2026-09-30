@@ -1,0 +1,152 @@
+{
+  "argv": [
+    "/private/tmp/gooo-ir-search-20260930",
+    "body-codegen",
+    "--json",
+    "--fill-search",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-faults-2026-09-30/runs/final-mock-provider-run-2026-09-30/treatments/type_mismatch_then_valid/plan.json",
+    "--activity",
+    "ClampNegativeToZero",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-faults-2026-09-30/runs/final-mock-provider-run-2026-09-30/treatments/type_mismatch_then_valid/fixture.gooo.fixture"
+  ],
+  "attempts": [
+    {
+      "accuracy_percent": null,
+      "candidate_id": "boolean",
+      "decision": {
+        "answer_confidence": 0.5,
+        "confidence": 0.5,
+        "mode": "laya",
+        "model": "MOCK local fixture",
+        "probabilities": {
+          "boolean": 0.3333,
+          "negate": 0.3333,
+          "zero": 0.3333
+        },
+        "provider": "laya",
+        "request_sha256": "sha256:df30409b395d0fb6b9c9228385c60c11a620c45be00999c66e0d68b291bc9d30",
+        "routing": {
+          "model": "MOCK",
+          "reason": "MOCK treatment",
+          "repo": "local-only"
+        },
+        "schema": "gooo/typed-decision-receipt/v1",
+        "selected": "boolean"
+      },
+      "decision_latency_ms": 2.6625,
+      "error": "typecheck generated activity: body.goo:3:45: cannot use true (untyped bool constant) as int64 value in assignment",
+      "evaluation_ms": 0.210375,
+      "expression": "true",
+      "scoring_completed": false,
+      "selection_method": "laya",
+      "test_cases_passed": 0,
+      "test_cases_total": 3,
+      "typecheck_passed": false
+    },
+    {
+      "accuracy_percent": 100,
+      "candidate_id": "zero",
+      "case_results": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -3,
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -2,
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -1,
+          "passed": true
+        }
+      ],
+      "decision": {
+        "answer_confidence": 0.5,
+        "confidence": 0.5,
+        "mode": "laya",
+        "model": "MOCK local fixture",
+        "probabilities": {
+          "negate": 0.5,
+          "zero": 0.5
+        },
+        "provider": "laya",
+        "request_sha256": "sha256:40bd35efed3aa821792d11908a672960ec098d3c92e16a4937e5bdb15a6fcb90",
+        "routing": {
+          "model": "MOCK",
+          "reason": "MOCK treatment",
+          "repo": "local-only"
+        },
+        "schema": "gooo/typed-decision-receipt/v1",
+        "selected": "zero"
+      },
+      "decision_latency_ms": 1.333375,
+      "evaluation_ms": 0.165083,
+      "expression": "0",
+      "scoring_completed": true,
+      "selection_method": "laya",
+      "test_cases_passed": 3,
+      "test_cases_total": 3,
+      "typecheck_passed": true
+    }
+  ],
+  "binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+  "completed_utc": "2026-09-30T05:01:35.910917+00:00",
+  "exit_code": 0,
+  "expected_probe": "type_rejection_then_success",
+  "fixture_sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1",
+  "holdout_passed": 4,
+  "holdout_total": 4,
+  "label": "MOCK_PROVIDER_TREATMENT",
+  "plan_sha256": "2158c2d92dba372bb5e3b06a2553f934bcafdaa974391eeff748885aba509131",
+  "provider_budget_used_ms": 3.99575,
+  "provider_events": [
+    {
+      "completed_utc": "2026-09-30T05:01:35.403989+00:00",
+      "delay_ms": 0,
+      "label": "MOCK",
+      "method": "POST",
+      "path": "/v1/systemone",
+      "request_file": "requests/01.request.raw",
+      "request_sha256": "76240ff785e31ebf0888f593da665539f458014f233c9eb500dd4d91a9959bdd",
+      "response_file": "responses/01.response.raw",
+      "response_sha256": "f6ea246c90988e47309f9239e5d2d61190cab3d96211a375ff4ed8199168c46f",
+      "seq": 1,
+      "started_utc": "2026-09-30T05:01:35.403212+00:00",
+      "status": 200
+    },
+    {
+      "completed_utc": "2026-09-30T05:01:35.405814+00:00",
+      "delay_ms": 0,
+      "label": "MOCK",
+      "method": "POST",
+      "path": "/v1/systemone",
+      "request_file": "requests/02.request.raw",
+      "request_sha256": "35a0a9f6c5af1f50390328854b9f276f8f0c1178567190f6e9bc54c1f7226d8a",
+      "response_file": "responses/02.response.raw",
+      "response_sha256": "5cb57bd135eaf39753423b161de3a354553fe9223a3206712f936ed1bca82d1c",
+      "seq": 2,
+      "started_utc": "2026-09-30T05:01:35.405329+00:00",
+      "status": 200
+    }
+  ],
+  "provider_request_count": 2,
+  "runner_cancelled": false,
+  "schema": "gooo/ir-search-fault-invocation/v1",
+  "selected_candidate_id": "zero",
+  "started_utc": "2026-09-30T05:01:35.391014+00:00",
+  "stderr_file": "stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_file": "stdout.raw",
+  "stdout_sha256": "8dff1a3e6d38d4d118cd98b01623936545d89b96afa8fd3b8ae388979d8628f1",
+  "stop_reason": "TRAINING_SUITE_PASSED",
+  "training_passed": 3,
+  "training_total": 3,
+  "treatment_id": "type_mismatch_then_valid",
+  "wall_ms": 517.5917500000003
+}

@@ -1,0 +1,151 @@
+{
+  "argv": [
+    "/private/tmp/gooo-ir-search-20260930",
+    "body-codegen",
+    "--json",
+    "--fill-search",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-faults-2026-09-30/runs/final-mock-provider-run-2026-09-30/treatments/unconfigured_fallback/plan.json",
+    "--activity",
+    "ClampNegativeToZero",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-faults-2026-09-30/runs/final-mock-provider-run-2026-09-30/treatments/unconfigured_fallback/fixture.gooo.fixture"
+  ],
+  "attempts": [
+    {
+      "accuracy_percent": 0,
+      "candidate_id": "identity",
+      "case_results": [
+        {
+          "actual": -3,
+          "expected": 0,
+          "input": -3,
+          "passed": false
+        },
+        {
+          "actual": -2,
+          "expected": 0,
+          "input": -2,
+          "passed": false
+        },
+        {
+          "actual": -1,
+          "expected": 0,
+          "input": -1,
+          "passed": false
+        }
+      ],
+      "decision": {
+        "fallback_reason": "NOT_CONFIGURED",
+        "mode": "deterministic_fallback",
+        "provider": "deterministic",
+        "request_sha256": "sha256:3ac93dfaa0b9c64602bf0e10da303d9c188e1b5215e131d7e47943766c3354a4",
+        "schema": "gooo/typed-decision-receipt/v1",
+        "selected": "identity"
+      },
+      "decision_latency_ms": 0.01475,
+      "evaluation_ms": 0.132291,
+      "expression": "input",
+      "scoring_completed": true,
+      "selection_method": "deterministic_fallback",
+      "test_cases_passed": 0,
+      "test_cases_total": 3,
+      "typecheck_passed": true
+    },
+    {
+      "accuracy_percent": 0,
+      "candidate_id": "negate",
+      "case_results": [
+        {
+          "actual": 3,
+          "expected": 0,
+          "input": -3,
+          "passed": false
+        },
+        {
+          "actual": 2,
+          "expected": 0,
+          "input": -2,
+          "passed": false
+        },
+        {
+          "actual": 1,
+          "expected": 0,
+          "input": -1,
+          "passed": false
+        }
+      ],
+      "decision": {
+        "fallback_reason": "NOT_CONFIGURED",
+        "mode": "deterministic_fallback",
+        "provider": "deterministic",
+        "request_sha256": "sha256:1d70fa9b6e969e0abe19e51261eb7fa70ba73d29add6d1275b2238f8a8fb492e",
+        "schema": "gooo/typed-decision-receipt/v1",
+        "selected": "negate"
+      },
+      "decision_latency_ms": 0.0045,
+      "evaluation_ms": 0.061042,
+      "expression": "-input",
+      "scoring_completed": true,
+      "selection_method": "deterministic_fallback",
+      "test_cases_passed": 0,
+      "test_cases_total": 3,
+      "typecheck_passed": true
+    },
+    {
+      "accuracy_percent": 100,
+      "candidate_id": "zero",
+      "case_results": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -3,
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -2,
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -1,
+          "passed": true
+        }
+      ],
+      "decision_latency_ms": 0,
+      "evaluation_ms": 0.045209,
+      "expression": "0",
+      "scoring_completed": true,
+      "selection_method": "sole_remaining_candidate",
+      "test_cases_passed": 3,
+      "test_cases_total": 3,
+      "typecheck_passed": true
+    }
+  ],
+  "binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+  "completed_utc": "2026-09-30T05:01:31.605927+00:00",
+  "exit_code": 0,
+  "expected_probe": "deterministic",
+  "fixture_sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1",
+  "holdout_passed": 4,
+  "holdout_total": 4,
+  "label": "NO_PROVIDER_CONTROL",
+  "plan_sha256": "591c00705e10776bbe4e97e41dda96121894278c604c48d8afd024d6bf43bda0",
+  "provider_budget_used_ms": 0,
+  "provider_events": [],
+  "provider_request_count": 0,
+  "runner_cancelled": false,
+  "schema": "gooo/ir-search-fault-invocation/v1",
+  "selected_candidate_id": "zero",
+  "started_utc": "2026-09-30T05:01:31.599725+00:00",
+  "stderr_file": "stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_file": "stdout.raw",
+  "stdout_sha256": "0562f66455db45e8f093a1af2590fd9e45dbb1791de0d5fa6583ff27f1ca10c4",
+  "stop_reason": "TRAINING_SUITE_PASSED",
+  "training_passed": 3,
+  "training_total": 3,
+  "treatment_id": "unconfigured_fallback",
+  "wall_ms": 5.843417000000003
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "gooo/ir-search-parallel-study-manifest/v1",
+  "cohort_id": "ir-search-parallel-2026-09-30",
+  "status": "prepared",
+  "binary": {
+    "path": null,
+    "sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+    "source_revision": "29d44bc778d85aee03b9af500bd83dc98f368189"
+  },
+  "runtime": {
+    "name": "Laya",
+    "package": "laya",
+    "version": "0.3.21",
+    "model": "english",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "device": "cpu",
+    "threads": 4,
+    "max_concurrent_admitted_requests": 16,
+    "offline_only": true,
+    "virtualenv_default": "/tmp/meta-ontology-go-laya-venv-20260930"
+  },
+  "source_material": {
+    "cohort": "../ir-search-2026-09-30",
+    "source_manifest_sha256": "13e67b11c6f9f26fa98fe60d56319f26e785420c736ff9d0e1e02d281afa970e",
+    "source_runner_sha256": "a7143e16265525aed8f762adc8af0365d29047aeb41801256a39e589a391a102",
+    "intents": ["clamp", "absolute"],
+    "inputs": {
+      "clamp": {
+        "fixture": {"path": "fixtures/clamp.gooo.fixture", "sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1"},
+        "search_plan": {"path": "plans/clamp.search-plan.json", "sha256": "12b06c0bfd813ec648cc22e01274b593334677c6ef059dfd72d1964a8ac9f1e6"},
+        "finite_oracle": {"path": "oracles/clamp.oracle.json", "sha256": "b96c17efde2ab42606ebd6ab95b456fed6698fabbbdee3241bf1f0584ad0843f"}
+      },
+      "absolute": {
+        "fixture": {"path": "fixtures/absolute.gooo.fixture", "sha256": "28335004b1a83bbf2e0ddebf60665ff33bad4c0891affad9f5ae63bda7749463"},
+        "search_plan": {"path": "plans/absolute.search-plan.json", "sha256": "acd03f9debb927f29e23570b9d7241143df2ab283a902bb4c776c50c83cbe6fe"},
+        "finite_oracle": {"path": "oracles/absolute.oracle.json", "sha256": "be989f945bb16bc969790e3878f02c4879caa917499b2deeb3711624506adbdf"}
+      }
+    }
+  },
+  "design": {
+    "replicates_per_condition": 1,
+    "intents_per_condition": 2,
+    "invocation_count": 4,
+    "conditions": ["sequential", "simultaneous"],
+    "condition_order": "sequential_then_simultaneous",
+    "simultaneous_launch": "two independent CLI processes released from a two-party barrier; one isolated capture proxy per client",
+    "server_lifetime": "one newly owned Laya server per condition; never two concurrent Laya servers",
+    "comparison_scope": "observations from one pair per condition only; no statistical, general speed, or deadlock-freedom claim"
+  },
+  "capture_policy": {
+    "persist_raw_before_report": true,
+    "capture_exact_cli_stdout_stderr": true,
+    "capture_request_response_bytes_per_client": true,
+    "capture_condition_resource_samples_with_before_after": true,
+    "never_send_holdout_cases_to_selection_requests": true,
+    "do_not_include_binary_model_or_virtualenv": true
+  }
+}

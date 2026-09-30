@@ -207,7 +207,7 @@ def render_markdown(report):
         "",
         "## Per-intent outcomes",
         "",
-        "| Intent | Variant | Selected | Training | Holdout | Search attempts / scored candidates | Laya rounds | Stop reason | Wall ms | Laya server CPU (one core %) | Laya server sampled RSS MiB |",
+        "| Intent | Variant | Selected | Training | Holdout | Search attempts / scored candidates | Laya rounds | Stop reason | Harness window ms | Laya server CPU (one core %) | Laya server sampled RSS MiB |",
         "|---|---|---|---:|---:|---:|---:|---|---:|---:|---:|",
     ]
     for row in report["invocations"]:
@@ -234,6 +234,8 @@ def render_markdown(report):
         "",
         "## Totals",
         "",
+        "**Timing scope:** The harness invocation window starts immediately before CLI process launch (`Popen`) and ends after sampler shutdown/join and stdout/stderr persistence with `fsync`. It is not pure CLI latency. Provider decision latency is recorded separately in the per-round receipts and proxy events.",
+        "",
         f"- Gooo invocations: {totals['invocation_count']} / 12 planned.",
         f"- Laya-backed Gooo invocations: {totals['laya_backed_invocation_count']} / 4 planned.",
         f"- Captured Laya choice rounds: {totals['captured_laya_rounds']}.",
@@ -244,17 +246,17 @@ def render_markdown(report):
         f"- Laya search attempted/scored {totals['laya_search_attempted_candidates']}/{totals['laya_search_evaluated_candidates']} candidates. The exhaustive plans scored {totals['exhaustive_fill_plan_candidate_scores']} candidates.",
         f"- No-provider search attempted/scored {totals['deterministic_search_attempted_candidates']}/{totals['deterministic_search_evaluated_candidates']} candidates.",
         f"- Search-selected holdout actuals matched the independent finite oracle in {selection['holdout_oracle_matches']} / {selection['laya_search_invocations']} Laya runs.",
-        "- Per-intent measured wall costs and ratios:",
+        "- Per-intent harness-window measurements and ratios:",
     ]
     for cost in report["per_intent_costs"]:
         lines.append(
             f"  - `{cost['intent_id']}`: Laya search {cost['laya_search_wall_ms']:.1f} ms; deterministic search {cost['deterministic_search_wall_ms']:.1f} ms; exhaustive fill plan {cost['exhaustive_fill_plan_wall_ms']:.1f} ms; Laya/offline-search ratio {cost['laya_vs_deterministic_search_ratio']:.1f}x; Laya/exhaustive ratio {cost['laya_vs_exhaustive_fill_plan_ratio']:.1f}x."
         )
     lines += [
-        f"- A speed benefit was not observed in this cohort: Laya-backed wall time exceeded both no-provider baselines in {report['speed_observation']['intents_slower_than_both_baselines']} of 4 intents. The four-intent result is descriptive and does not establish general performance.",
+        f"- Laya-backed harness windows exceeded both no-provider harness windows in {report['speed_observation']['intents_slower_than_both_baselines']} of 4 intents. These measurements include process launch, periodic sampling, sampler shutdown/join, and stdout/stderr fsync; they do not isolate CLI runtime or establish a general speed benefit.",
         f"- Maximum sampled RSS of the owned Laya process across all {report['process_resource_observation']['sampled_process_rows']} saved process sample rows: {report['process_resource_observation']['laya_server_max_sampled_rss_mib']:.1f} MiB ({report['process_resource_observation']['laya_server_max_sampled_rss_invocation']}). This is the highest recorded sample, not a continuous peak measurement.",
         f"- No exact pre-run manifest snapshot was saved. The post-run reconstruction has SHA-256 `{report['manifest_provenance']['recorded_preexecution_sha256']}`, matching the digest recorded before execution; the reconstruction is labeled separately from raw evidence. Each invocation does retain its exact fixture and plan bytes with hashes.",
-        "- CPU percentages refer to the owned Laya server process: one-core utilization is process CPU-time delta divided by invocation wall time; host-normalized process utilization divides that by the logical CPU count. Controls made no provider call and had one process sample each, so server CPU is shown as N/A; their RSS values describe the resident server sample, not the Gooo command's memory.",
+        "- CPU percentages refer to the owned Laya server process: one-core utilization is process CPU-time delta divided by the harness invocation window; host-normalized process utilization divides that by the logical CPU count. Controls made no provider call and had one process sample each, so server CPU is shown as N/A; their RSS values describe the resident server sample, not the Gooo command's memory.",
         "- Search holdout outputs are checked against the independent oracle. For exhaustive `--fill-plan`, holdout values are computed from the selected candidate's independent oracle output because the command receives training cases only; this is not an executed holdout measurement.",
         "",
     ]

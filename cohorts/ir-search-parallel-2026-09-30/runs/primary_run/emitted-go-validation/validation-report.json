@@ -1,0 +1,230 @@
+{
+  "all_cases_match_independent_oracle": true,
+  "binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+  "capture_integrity_check": "validated 4 saved invocations, 6 choice requests, and 12 total proxy events; no Go or Laya execution",
+  "finite_case_execution_count": 28,
+  "go_execution_mode": "standard-library-only go test; GO111MODULE=off, GOPROXY=off, GOSUMDB=off, GOTOOLCHAIN=local",
+  "go_toolchain_required_by_ci": "go1.27.0",
+  "go_version": "go version go1.26.5 darwin/arm64",
+  "gooo_cli_calls": 0,
+  "holdout_cases_executed_after_final_selection": 16,
+  "invocation_source_count": 4,
+  "laya_calls": 0,
+  "limitations": [
+    "This is finite-suite execution, not a full int64-domain proof.",
+    "The cohort has one replicate per condition, fixed sequential-then-simultaneous order, and no separate warmup.",
+    "The sequential CLI pair's 523.5 ms inter-invocation gap is capture-proxy shutdown overhead; timing is not a speed claim.",
+    "No Gooo CLI, Laya server, provider endpoint, or model was invoked by this validator."
+  ],
+  "rows": [
+    {
+      "activity": "ClampNegativeToZero",
+      "compiled_and_executed": true,
+      "compiled_case_count": 7,
+      "condition": "sequential",
+      "emitted_source_sha256": "56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+      "generated_digest_matches": true,
+      "go_source_copy": "sources/sequential-clamp.go",
+      "holdout": {
+        "all_match": true,
+        "compiled_actual": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "expected": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "inputs": [
+          0,
+          1,
+          4,
+          -9223372036854775808
+        ]
+      },
+      "intent_id": "clamp",
+      "selected_candidate_id": "zero",
+      "selected_expression": "0",
+      "training": {
+        "all_match": true,
+        "compiled_actual": [
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0
+        ],
+        "inputs": [
+          -3,
+          -2,
+          -1
+        ]
+      }
+    },
+    {
+      "activity": "AbsWrapInt64",
+      "compiled_and_executed": true,
+      "compiled_case_count": 7,
+      "condition": "sequential",
+      "emitted_source_sha256": "47b3fa9a422a4dca29c583a5b61f959214a560e8566fb4334427f771a63b6e72",
+      "generated_digest_matches": true,
+      "go_source_copy": "sources/sequential-absolute.go",
+      "holdout": {
+        "all_match": true,
+        "compiled_actual": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "expected": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "inputs": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ]
+      },
+      "intent_id": "absolute",
+      "selected_candidate_id": "negate",
+      "selected_expression": "-input",
+      "training": {
+        "all_match": true,
+        "compiled_actual": [
+          3,
+          2,
+          1
+        ],
+        "expected": [
+          3,
+          2,
+          1
+        ],
+        "inputs": [
+          -3,
+          -2,
+          -1
+        ]
+      }
+    },
+    {
+      "activity": "ClampNegativeToZero",
+      "compiled_and_executed": true,
+      "compiled_case_count": 7,
+      "condition": "simultaneous",
+      "emitted_source_sha256": "56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+      "generated_digest_matches": true,
+      "go_source_copy": "sources/simultaneous-clamp.go",
+      "holdout": {
+        "all_match": true,
+        "compiled_actual": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "expected": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "inputs": [
+          0,
+          1,
+          4,
+          -9223372036854775808
+        ]
+      },
+      "intent_id": "clamp",
+      "selected_candidate_id": "zero",
+      "selected_expression": "0",
+      "training": {
+        "all_match": true,
+        "compiled_actual": [
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0
+        ],
+        "inputs": [
+          -3,
+          -2,
+          -1
+        ]
+      }
+    },
+    {
+      "activity": "AbsWrapInt64",
+      "compiled_and_executed": true,
+      "compiled_case_count": 7,
+      "condition": "simultaneous",
+      "emitted_source_sha256": "47b3fa9a422a4dca29c583a5b61f959214a560e8566fb4334427f771a63b6e72",
+      "generated_digest_matches": true,
+      "go_source_copy": "sources/simultaneous-absolute.go",
+      "holdout": {
+        "all_match": true,
+        "compiled_actual": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "expected": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "inputs": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ]
+      },
+      "intent_id": "absolute",
+      "selected_candidate_id": "negate",
+      "selected_expression": "-input",
+      "training": {
+        "all_match": true,
+        "compiled_actual": [
+          3,
+          2,
+          1
+        ],
+        "expected": [
+          3,
+          2,
+          1
+        ],
+        "inputs": [
+          -3,
+          -2,
+          -1
+        ]
+      }
+    }
+  ],
+  "run_id": "primary_run",
+  "schema": "gooo/ir-search-parallel-emitted-go-validation/v1",
+  "source_revision": "29d44bc778d85aee03b9af500bd83dc98f368189",
+  "training_cases_executed": 12,
+  "validated_utc": "2026-09-30T05:00:09.919097+00:00"
+}

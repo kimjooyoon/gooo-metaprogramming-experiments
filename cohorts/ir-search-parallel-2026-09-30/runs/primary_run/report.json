@@ -1,0 +1,680 @@
+{
+  "binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+  "choice_metrics": {
+    "all_model_choice_denominator": 6,
+    "all_model_choices_training_perfect": 2,
+    "final_holdout_perfect_invocations": 4,
+    "final_training_perfect_invocations": 4,
+    "first_model_choice_denominator": 4,
+    "first_model_choice_training_perfect": 2,
+    "sole_candidate_final_selections": 2
+  },
+  "claim_scope": "one observed pair per condition; no statistical, general speed, or deadlock-freedom claim",
+  "completed_utc": "2026-09-30T04:38:20.534379+00:00",
+  "condition_order": [
+    "sequential",
+    "simultaneous"
+  ],
+  "condition_order_randomized": false,
+  "conditions": {
+    "sequential": {
+      "metadata": {
+        "all_invocations_exit_zero": true,
+        "completed_utc": "2026-09-30T04:38:16.439337+00:00",
+        "condition": "sequential",
+        "invocation_count": 2,
+        "laya_health_after": {
+          "checkpoint_devices": {
+            "english": "cpu"
+          },
+          "cpu_fallbacks": {
+            "english": {
+              "count": 0,
+              "last_reason": null
+            }
+          },
+          "device": "cpu",
+          "device_is_preference": false,
+          "loaded": [
+            "english"
+          ],
+          "revisions": {
+            "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+          },
+          "status": "ok"
+        },
+        "laya_health_before": {
+          "device": "cpu",
+          "loaded": [
+            "english"
+          ],
+          "revisions": {
+            "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+          }
+        },
+        "laya_version": "0.3.21",
+        "port": 53170,
+        "runtime_environment": {
+          "HF_HUB_DISABLE_TELEMETRY": "1",
+          "HF_HUB_OFFLINE": "1",
+          "LAYA_DEVICE": "cpu",
+          "LAYA_HOST": "127.0.0.1",
+          "LAYA_MAX_CONCURRENT": "16",
+          "LAYA_MODELS": "english",
+          "LAYA_PORT": "53170",
+          "LAYA_PRELOAD": "1",
+          "LAYA_THREADS": "4",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "schema": "gooo/ir-search-parallel-condition/v1",
+        "started_utc": "2026-09-30T04:38:11.361943+00:00",
+        "status": "raw_capture_complete"
+      },
+      "resources": {
+        "after_sample": {
+          "alive": true,
+          "cpu_seconds": 3.89,
+          "pid": 82495,
+          "ps_raw": "0:03.89 2146976 82495",
+          "rss_kb": 2146976
+        },
+        "before_sample": {
+          "alive": true,
+          "cpu_seconds": 1.97,
+          "pid": 82495,
+          "ps_raw": "0:01.97 2044768 82495",
+          "rss_kb": 2044768
+        },
+        "cpu_definition": "cumulative ps CPU-time difference from first to last alive condition sample divided by sampled condition duration",
+        "laya_server_process": {
+          "cpu_percent_one_core": 95.94050091533911,
+          "cpu_seconds_delta": 1.9200000000000002,
+          "max_sampled_rss_kb": 2146976,
+          "max_sampled_rss_mib": 2096.65625,
+          "sample_count": 22
+        },
+        "measurement_window_seconds": 2.0012403329999997,
+        "rss_definition": "maximum sampled owned-server RSS across condition_before, during, and condition_after observations; not an OS lifetime peak",
+        "sample_count_total": 22,
+        "sample_interval_ms": 100
+      }
+    },
+    "simultaneous": {
+      "metadata": {
+        "all_invocations_exit_zero": true,
+        "completed_utc": "2026-09-30T04:38:20.273358+00:00",
+        "condition": "simultaneous",
+        "invocation_count": 2,
+        "laya_health_after": {
+          "checkpoint_devices": {
+            "english": "cpu"
+          },
+          "cpu_fallbacks": {
+            "english": {
+              "count": 0,
+              "last_reason": null
+            }
+          },
+          "device": "cpu",
+          "device_is_preference": false,
+          "loaded": [
+            "english"
+          ],
+          "revisions": {
+            "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+          },
+          "status": "ok"
+        },
+        "laya_health_before": {
+          "device": "cpu",
+          "loaded": [
+            "english"
+          ],
+          "revisions": {
+            "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+          }
+        },
+        "laya_version": "0.3.21",
+        "port": 53192,
+        "runtime_environment": {
+          "HF_HUB_DISABLE_TELEMETRY": "1",
+          "HF_HUB_OFFLINE": "1",
+          "LAYA_DEVICE": "cpu",
+          "LAYA_HOST": "127.0.0.1",
+          "LAYA_MAX_CONCURRENT": "16",
+          "LAYA_MODELS": "english",
+          "LAYA_PORT": "53192",
+          "LAYA_PRELOAD": "1",
+          "LAYA_THREADS": "4",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "schema": "gooo/ir-search-parallel-condition/v1",
+        "started_utc": "2026-09-30T04:38:16.807592+00:00",
+        "status": "raw_capture_complete"
+      },
+      "resources": {
+        "after_sample": {
+          "alive": true,
+          "cpu_seconds": 3.76,
+          "pid": 82576,
+          "ps_raw": "0:03.76 2126784 82576",
+          "rss_kb": 2126784
+        },
+        "before_sample": {
+          "alive": true,
+          "cpu_seconds": 1.9,
+          "pid": 82576,
+          "ps_raw": "0:01.90 2044960 82576",
+          "rss_kb": 2044960
+        },
+        "cpu_definition": "cumulative ps CPU-time difference from first to last alive condition sample divided by sampled condition duration",
+        "laya_server_process": {
+          "cpu_percent_one_core": 131.4471220662151,
+          "cpu_seconds_delta": 1.8599999999999999,
+          "max_sampled_rss_kb": 2126784,
+          "max_sampled_rss_mib": 2076.9375,
+          "sample_count": 16
+        },
+        "measurement_window_seconds": 1.4150176670000008,
+        "rss_definition": "maximum sampled owned-server RSS across condition_before, during, and condition_after observations; not an OS lifetime peak",
+        "sample_count_total": 16,
+        "sample_interval_ms": 100
+      }
+    }
+  },
+  "fresh_owned_laya_server_per_condition": true,
+  "intents_per_condition": 2,
+  "invocations": [
+    {
+      "all_proxy_events": 2,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "candidate_id": "zero",
+          "decision_mode": "laya",
+          "error": "",
+          "selection_method": "laya",
+          "training_passed": 3,
+          "training_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "choice_events": [
+        {
+          "candidate_id": "zero",
+          "completed_utc": "2026-09-30T04:38:14.762869+00:00",
+          "duration_ms": 317.911375,
+          "request_sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be",
+          "response_sha256": "5d7ba2459a59af96cc3b74f2185c4a519735a45d45f26cae89f248405ff50106",
+          "seq": 1,
+          "started_utc": "2026-09-30T04:38:14.444968+00:00",
+          "training_suite_sha256": "sha256:6f77cefd5752a0976f17a1f610e2caca8e026a53f0d7809aeb094a64876e789e",
+          "training_test_count": 3
+        }
+      ],
+      "cli_process_resources": {
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_sampled_rss_kb": 16560,
+        "max_sampled_rss_mib": 16.171875,
+        "sample_count": 4
+      },
+      "completed_utc": "2026-09-30T04:38:14.768857+00:00",
+      "condition": "sequential",
+      "exit_code": 0,
+      "final_selection_method": "laya",
+      "first_model_choice_training_perfect": true,
+      "harness_timeout": false,
+      "heldout_privacy_audit": {
+        "choice_requests_scanned": 1,
+        "holdout_case_pairs_or_fields_found": 0
+      },
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_source": "recomputed from copied finite oracle after final selection",
+      "intent_id": "clamp",
+      "model_choice_count": 1,
+      "model_choices_training_perfect": 1,
+      "raw_invocation_dir": "conditions/sequential/invocations/clamp",
+      "runner_error": "",
+      "selected_candidate_id": "zero",
+      "selected_expression": "0",
+      "source_digest": "sha256:4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1",
+      "started_utc": "2026-09-30T04:38:14.433832+00:00",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "timing": {
+        "body_search_decision_latency_minus_attempt_sum_ms": 0.0,
+        "body_search_decision_latency_ms": 323.509083,
+        "body_search_total_ms": 323.983916,
+        "cli_launch_marker_definition": "UTC marker captured immediately before Popen; simultaneous marker is recorded after the launch barrier",
+        "cli_wall_ms_from_launch_marker": 335.0124160000001,
+        "first_choice_post_offset_from_cli_launch_marker_ms": 11.136,
+        "first_choice_post_started_utc": "2026-09-30T04:38:14.444968+00:00",
+        "harness_timeout_seconds": 60,
+        "provider_budget_ms": 8000,
+        "provider_budget_used_ms": 323.508958,
+        "sum_attempt_decision_latency_ms": 323.509083,
+        "wall_minus_body_search_ms": 11.028500000000065,
+        "wall_minus_decision_latency_ms": 11.503333000000111
+      },
+      "training": {
+        "accuracy_percent": 100.0,
+        "passed": 3,
+        "total": 3
+      },
+      "wall_ms": 335.0124160000001
+    },
+    {
+      "all_proxy_events": 4,
+      "attempt_count": 3,
+      "attempts": [
+        {
+          "candidate_id": "zero",
+          "decision_mode": "laya",
+          "error": "",
+          "selection_method": "laya",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "candidate_id": "identity",
+          "decision_mode": "laya",
+          "error": "",
+          "selection_method": "laya",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "candidate_id": "negate",
+          "decision_mode": null,
+          "error": "",
+          "selection_method": "sole_remaining_candidate",
+          "training_passed": 3,
+          "training_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "choice_events": [
+        {
+          "candidate_id": "zero",
+          "completed_utc": "2026-09-30T04:38:15.552837+00:00",
+          "duration_ms": 248.5935829999999,
+          "request_sha256": "1fbfa27beca20c76d8e62be93aa3c33cbcafd4cd6aec97c187976c41b67b714d",
+          "response_sha256": "024bf22186e5d7110e847bb89c4fcd554a83e9fc82e32fa4d28f89b146033d80",
+          "seq": 1,
+          "started_utc": "2026-09-30T04:38:15.304265+00:00",
+          "training_suite_sha256": "sha256:82b60c95b85fb77b500a2dc79716131a6e20b8d3261e24f1710b9614890426a6",
+          "training_test_count": 3
+        },
+        {
+          "candidate_id": "identity",
+          "completed_utc": "2026-09-30T04:38:15.884822+00:00",
+          "duration_ms": 329.7062080000002,
+          "request_sha256": "fb574a670e4c20636142520f8c862a77f0f0f047df3fb41fea2de7417fdf4e47",
+          "response_sha256": "ed910b02876c2d2c6eb3233474ffb63cca2b1207d061adf4bf15afd89fcfa3d2",
+          "seq": 3,
+          "started_utc": "2026-09-30T04:38:15.555124+00:00",
+          "training_suite_sha256": "sha256:82b60c95b85fb77b500a2dc79716131a6e20b8d3261e24f1710b9614890426a6",
+          "training_test_count": 3
+        }
+      ],
+      "cli_process_resources": {
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_sampled_rss_kb": 15952,
+        "max_sampled_rss_mib": 15.578125,
+        "sample_count": 6
+      },
+      "completed_utc": "2026-09-30T04:38:15.887833+00:00",
+      "condition": "sequential",
+      "exit_code": 0,
+      "final_selection_method": "sole_remaining_candidate",
+      "first_model_choice_training_perfect": false,
+      "harness_timeout": false,
+      "heldout_privacy_audit": {
+        "choice_requests_scanned": 2,
+        "holdout_case_pairs_or_fields_found": 0
+      },
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_source": "recomputed from copied finite oracle after final selection",
+      "intent_id": "absolute",
+      "model_choice_count": 2,
+      "model_choices_training_perfect": 0,
+      "raw_invocation_dir": "conditions/sequential/invocations/absolute",
+      "runner_error": "",
+      "selected_candidate_id": "negate",
+      "selected_expression": "-input",
+      "source_digest": "sha256:28335004b1a83bbf2e0ddebf60665ff33bad4c0891affad9f5ae63bda7749463",
+      "started_utc": "2026-09-30T04:38:15.292322+00:00",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "timing": {
+        "body_search_decision_latency_minus_attempt_sum_ms": 0.0,
+        "body_search_decision_latency_ms": 583.997375,
+        "body_search_total_ms": 584.674459,
+        "cli_launch_marker_definition": "UTC marker captured immediately before Popen; simultaneous marker is recorded after the launch barrier",
+        "cli_wall_ms_from_launch_marker": 595.4886250000006,
+        "first_choice_post_offset_from_cli_launch_marker_ms": 11.943,
+        "first_choice_post_started_utc": "2026-09-30T04:38:15.304265+00:00",
+        "harness_timeout_seconds": 60,
+        "provider_budget_ms": 8000,
+        "provider_budget_used_ms": 583.997166,
+        "sum_attempt_decision_latency_ms": 583.997375,
+        "wall_minus_body_search_ms": 10.814166000000682,
+        "wall_minus_decision_latency_ms": 11.491250000000605
+      },
+      "training": {
+        "accuracy_percent": 100.0,
+        "passed": 3,
+        "total": 3
+      },
+      "wall_ms": 595.4886250000006
+    },
+    {
+      "all_proxy_events": 2,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "candidate_id": "zero",
+          "decision_mode": "laya",
+          "error": "",
+          "selection_method": "laya",
+          "training_passed": 3,
+          "training_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "choice_events": [
+        {
+          "candidate_id": "zero",
+          "completed_utc": "2026-09-30T04:38:19.397583+00:00",
+          "duration_ms": 524.4992090000001,
+          "request_sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be",
+          "response_sha256": "5d7ba2459a59af96cc3b74f2185c4a519735a45d45f26cae89f248405ff50106",
+          "seq": 1,
+          "started_utc": "2026-09-30T04:38:18.873092+00:00",
+          "training_suite_sha256": "sha256:6f77cefd5752a0976f17a1f610e2caca8e026a53f0d7809aeb094a64876e789e",
+          "training_test_count": 3
+        }
+      ],
+      "cli_process_resources": {
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_sampled_rss_kb": 14816,
+        "max_sampled_rss_mib": 14.46875,
+        "sample_count": 6
+      },
+      "completed_utc": "2026-09-30T04:38:19.401221+00:00",
+      "condition": "simultaneous",
+      "exit_code": 0,
+      "final_selection_method": "laya",
+      "first_model_choice_training_perfect": true,
+      "harness_timeout": false,
+      "heldout_privacy_audit": {
+        "choice_requests_scanned": 1,
+        "holdout_case_pairs_or_fields_found": 0
+      },
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_source": "recomputed from copied finite oracle after final selection",
+      "intent_id": "clamp",
+      "model_choice_count": 1,
+      "model_choices_training_perfect": 1,
+      "raw_invocation_dir": "conditions/simultaneous/invocations/clamp",
+      "runner_error": "",
+      "selected_candidate_id": "zero",
+      "selected_expression": "0",
+      "source_digest": "sha256:4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1",
+      "started_utc": "2026-09-30T04:38:18.861060+00:00",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "timing": {
+        "body_search_decision_latency_minus_attempt_sum_ms": 0.0,
+        "body_search_decision_latency_ms": 528.786,
+        "body_search_total_ms": 529.317042,
+        "cli_launch_marker_definition": "UTC marker captured immediately before Popen; simultaneous marker is recorded after the launch barrier",
+        "cli_wall_ms_from_launch_marker": 540.1600409999992,
+        "first_choice_post_offset_from_cli_launch_marker_ms": 12.032,
+        "first_choice_post_started_utc": "2026-09-30T04:38:18.873092+00:00",
+        "harness_timeout_seconds": 60,
+        "provider_budget_ms": 8000,
+        "provider_budget_used_ms": 528.78475,
+        "sum_attempt_decision_latency_ms": 528.786,
+        "wall_minus_body_search_ms": 10.842998999999168,
+        "wall_minus_decision_latency_ms": 11.374040999999238
+      },
+      "training": {
+        "accuracy_percent": 100.0,
+        "passed": 3,
+        "total": 3
+      },
+      "wall_ms": 540.1600409999992
+    },
+    {
+      "all_proxy_events": 4,
+      "attempt_count": 3,
+      "attempts": [
+        {
+          "candidate_id": "zero",
+          "decision_mode": "laya",
+          "error": "",
+          "selection_method": "laya",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "candidate_id": "identity",
+          "decision_mode": "laya",
+          "error": "",
+          "selection_method": "laya",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "candidate_id": "negate",
+          "decision_mode": null,
+          "error": "",
+          "selection_method": "sole_remaining_candidate",
+          "training_passed": 3,
+          "training_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "choice_events": [
+        {
+          "candidate_id": "zero",
+          "completed_utc": "2026-09-30T04:38:19.152043+00:00",
+          "duration_ms": 278.6363329999997,
+          "request_sha256": "1fbfa27beca20c76d8e62be93aa3c33cbcafd4cd6aec97c187976c41b67b714d",
+          "response_sha256": "024bf22186e5d7110e847bb89c4fcd554a83e9fc82e32fa4d28f89b146033d80",
+          "seq": 1,
+          "started_utc": "2026-09-30T04:38:18.873416+00:00",
+          "training_suite_sha256": "sha256:82b60c95b85fb77b500a2dc79716131a6e20b8d3261e24f1710b9614890426a6",
+          "training_test_count": 3
+        },
+        {
+          "candidate_id": "identity",
+          "completed_utc": "2026-09-30T04:38:19.725399+00:00",
+          "duration_ms": 570.458499999999,
+          "request_sha256": "fb574a670e4c20636142520f8c862a77f0f0f047df3fb41fea2de7417fdf4e47",
+          "response_sha256": "ed910b02876c2d2c6eb3233474ffb63cca2b1207d061adf4bf15afd89fcfa3d2",
+          "seq": 3,
+          "started_utc": "2026-09-30T04:38:19.154946+00:00",
+          "training_suite_sha256": "sha256:82b60c95b85fb77b500a2dc79716131a6e20b8d3261e24f1710b9614890426a6",
+          "training_test_count": 3
+        }
+      ],
+      "cli_process_resources": {
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_sampled_rss_kb": 15968,
+        "max_sampled_rss_mib": 15.59375,
+        "sample_count": 8
+      },
+      "completed_utc": "2026-09-30T04:38:19.728582+00:00",
+      "condition": "simultaneous",
+      "exit_code": 0,
+      "final_selection_method": "sole_remaining_candidate",
+      "first_model_choice_training_perfect": false,
+      "harness_timeout": false,
+      "heldout_privacy_audit": {
+        "choice_requests_scanned": 2,
+        "holdout_case_pairs_or_fields_found": 0
+      },
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_source": "recomputed from copied finite oracle after final selection",
+      "intent_id": "absolute",
+      "model_choice_count": 2,
+      "model_choices_training_perfect": 0,
+      "raw_invocation_dir": "conditions/simultaneous/invocations/absolute",
+      "runner_error": "",
+      "selected_candidate_id": "negate",
+      "selected_expression": "-input",
+      "source_digest": "sha256:28335004b1a83bbf2e0ddebf60665ff33bad4c0891affad9f5ae63bda7749463",
+      "started_utc": "2026-09-30T04:38:18.862727+00:00",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "timing": {
+        "body_search_decision_latency_minus_attempt_sum_ms": 0.0,
+        "body_search_decision_latency_ms": 855.53575,
+        "body_search_total_ms": 856.2525,
+        "cli_launch_marker_definition": "UTC marker captured immediately before Popen; simultaneous marker is recorded after the launch barrier",
+        "cli_wall_ms_from_launch_marker": 865.7975829999991,
+        "first_choice_post_offset_from_cli_launch_marker_ms": 10.689,
+        "first_choice_post_started_utc": "2026-09-30T04:38:18.873416+00:00",
+        "harness_timeout_seconds": 60,
+        "provider_budget_ms": 8000,
+        "provider_budget_used_ms": 855.534875,
+        "sum_attempt_decision_latency_ms": 855.53575,
+        "wall_minus_body_search_ms": 9.545082999999067,
+        "wall_minus_decision_latency_ms": 10.261832999999115
+      },
+      "training": {
+        "accuracy_percent": 100.0,
+        "passed": 3,
+        "total": 3
+      },
+      "wall_ms": 865.7975829999991
+    }
+  ],
+  "model_warmup_invocations_per_condition": 0,
+  "pair_timing": {
+    "sequential": {
+      "interpretation": "positive transition values are elapsed gaps between CLI completion and the next launch; negative values are overlap",
+      "invocation_count": 2,
+      "launch_spacing_ms": 858.49,
+      "max_single_cli_wall_ms": 595.4886250000006,
+      "ordered_inter_invocation_start_minus_previous_completion_ms": [
+        523.4649999999999
+      ],
+      "pair_cli_makespan_utc_ms": 1454.0010000000002,
+      "positive_sequential_idle_gap_ms": 523.4649999999999,
+      "sum_cli_wall_minus_pair_makespan_ms": -523.4999589999995,
+      "sum_per_cli_wall_ms": 930.5010410000007
+    },
+    "simultaneous": {
+      "interpretation": "positive transition values are elapsed gaps between CLI completion and the next launch; negative values are overlap",
+      "invocation_count": 2,
+      "launch_spacing_ms": 1.667,
+      "max_single_cli_wall_ms": 865.7975829999991,
+      "ordered_inter_invocation_start_minus_previous_completion_ms": [
+        -538.494
+      ],
+      "pair_cli_makespan_utc_ms": 867.522,
+      "positive_sequential_idle_gap_ms": 0.0,
+      "sum_cli_wall_minus_pair_makespan_ms": 538.4356239999983,
+      "sum_per_cli_wall_ms": 1405.9576239999983
+    }
+  },
+  "privacy_audit": {
+    "choice_requests_scanned": 6,
+    "heldout_leaks_found": 0
+  },
+  "raw_artifact_index": "conditions/<condition>/{laya/,resource-samples.jsonl,invocations/<intent>/{stdout.raw,stderr.raw,proxy/,invocation.json}}",
+  "replicates_per_condition": 1,
+  "request_overlap": {
+    "sequential": {
+      "any_pairwise_http_overlap": false,
+      "choice_http_transactions": 3,
+      "inference_queue_time_directly_measured": false,
+      "max_in_flight_choice_http_transactions": 1,
+      "overlapping_pairs": []
+    },
+    "simultaneous": {
+      "any_pairwise_http_overlap": true,
+      "choice_http_transactions": 3,
+      "inference_queue_time_directly_measured": false,
+      "max_in_flight_choice_http_transactions": 2,
+      "overlapping_pairs": [
+        {
+          "first_intent": "clamp",
+          "first_seq": 1,
+          "overlap_ms": 278.627,
+          "second_intent": "absolute",
+          "second_seq": 1
+        },
+        {
+          "first_intent": "clamp",
+          "first_seq": 1,
+          "overlap_ms": 242.637,
+          "second_intent": "absolute",
+          "second_seq": 3
+        }
+      ]
+    }
+  },
+  "run_id": "primary_run",
+  "runtime": {
+    "device": "cpu",
+    "max_concurrent_admitted_requests": 16,
+    "model": "english",
+    "name": "Laya",
+    "offline_only": true,
+    "package": "laya",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "threads": 4,
+    "version": "0.3.21",
+    "virtualenv_default": "/tmp/meta-ontology-go-laya-venv-20260930"
+  },
+  "schema": "gooo/ir-search-parallel-study-report/v1",
+  "source_revision": "29d44bc778d85aee03b9af500bd83dc98f368189",
+  "started_utc": "2026-09-30T04:38:11.314198+00:00",
+  "timing_context_from_prior_primary_cohort": {
+    "cause_of_excess_harness_window_time": "unknown; the prior harness window includes sampler shutdown/join and output fsync, so the excess is not attributed to CLI startup or model inference",
+    "first_laya_invocation_decision_latency_ms": 432.828708,
+    "first_laya_invocation_harness_window_minus_decision_latency_ms": 534.4832919999997,
+    "first_laya_invocation_harness_window_ms": 967.3119999999997,
+    "first_laya_invocation_intent_id": "clamp",
+    "later_laya_invocation_harness_window_minus_decision_latency_ms": [
+      {
+        "intent_id": "absolute",
+        "wall_minus_decision_latency_ms": 6.727334000000269
+      },
+      {
+        "intent_id": "piecewise",
+        "wall_minus_decision_latency_ms": 6.308957999999848
+      },
+      {
+        "intent_id": "compound-precedence",
+        "wall_minus_decision_latency_ms": 6.683749999999236
+      }
+    ],
+    "source": "../ir-search-2026-09-30/runs/primary_run/report.json",
+    "source_sha256": "14b3e98d48663292751e3a437c9d74e57bee7fb381731da159875841a94cc24d"
+  }
+}

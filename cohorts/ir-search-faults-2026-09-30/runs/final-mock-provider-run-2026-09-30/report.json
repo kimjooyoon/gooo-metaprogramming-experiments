@@ -1,0 +1,742 @@
+{
+  "assertions_passed": [
+    "12 treatment inventory and exact source-revision/compiler-digest pin",
+    "invocation summary fields bind to decoded stdout.raw report.body_search and local receipt",
+    "provider events bind to events.jsonl and exact raw request/response hashes",
+    "recursive request decoding rejects holdout fields and exact holdout case pairs while allowing unrelated constants",
+    "deterministic fallback for absent, HTTP-error, malformed, missing, and unknown choices",
+    "provider state carries failed training-case feedback but excludes disjoint holdout cases",
+    "consumed candidates disappear from options and are never attempted twice",
+    "invalid syntax and int64 type mismatch are rejected before scoring, then search proceeds",
+    "training-perfect identity candidate scores 0/4 on its disjoint finite holdout while stopping on training",
+    "one stalled provider call reaches the 8s budget and falls back",
+    "runner SIGTERM yields CLI exit -15 and one captured MOCK request without a Gooo report"
+  ],
+  "compiler": {
+    "sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+    "source_revision": "29d44bc778d85aee03b9af500bd83dc98f368189"
+  },
+  "invocation_index": [
+    {
+      "exit_code": 0,
+      "holdout_passed": 4,
+      "holdout_total": 4,
+      "requests": 0,
+      "selected_candidate_id": "zero",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training_passed": 3,
+      "training_total": 3,
+      "treatment_id": "unconfigured_fallback",
+      "wall_ms": 5.843
+    },
+    {
+      "exit_code": 0,
+      "holdout_passed": 4,
+      "holdout_total": 4,
+      "requests": 2,
+      "selected_candidate_id": "zero",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training_passed": 3,
+      "training_total": 3,
+      "treatment_id": "http_503_fallback",
+      "wall_ms": 509.758
+    },
+    {
+      "exit_code": 0,
+      "holdout_passed": 4,
+      "holdout_total": 4,
+      "requests": 2,
+      "selected_candidate_id": "zero",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training_passed": 3,
+      "training_total": 3,
+      "treatment_id": "malformed_json_fallback",
+      "wall_ms": 517.794
+    },
+    {
+      "exit_code": 0,
+      "holdout_passed": 4,
+      "holdout_total": 4,
+      "requests": 2,
+      "selected_candidate_id": "zero",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training_passed": 3,
+      "training_total": 3,
+      "treatment_id": "missing_choice_fallback",
+      "wall_ms": 516.821
+    },
+    {
+      "exit_code": 0,
+      "holdout_passed": 4,
+      "holdout_total": 4,
+      "requests": 2,
+      "selected_candidate_id": "zero",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training_passed": 3,
+      "training_total": 3,
+      "treatment_id": "unknown_choice_fallback",
+      "wall_ms": 517.018
+    },
+    {
+      "exit_code": 0,
+      "holdout_passed": 4,
+      "holdout_total": 4,
+      "requests": 2,
+      "selected_candidate_id": "zero",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training_passed": 3,
+      "training_total": 3,
+      "treatment_id": "failure_feedback_privacy",
+      "wall_ms": 517.459
+    },
+    {
+      "exit_code": 0,
+      "holdout_passed": 4,
+      "holdout_total": 4,
+      "requests": 2,
+      "selected_candidate_id": "zero",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training_passed": 3,
+      "training_total": 3,
+      "treatment_id": "repeated_tried_choice",
+      "wall_ms": 517.163
+    },
+    {
+      "exit_code": 0,
+      "holdout_passed": 4,
+      "holdout_total": 4,
+      "requests": 2,
+      "selected_candidate_id": "zero",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training_passed": 3,
+      "training_total": 3,
+      "treatment_id": "invalid_expression_then_valid",
+      "wall_ms": 511.648
+    },
+    {
+      "exit_code": 0,
+      "holdout_passed": 4,
+      "holdout_total": 4,
+      "requests": 2,
+      "selected_candidate_id": "zero",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training_passed": 3,
+      "training_total": 3,
+      "treatment_id": "type_mismatch_then_valid",
+      "wall_ms": 517.592
+    },
+    {
+      "exit_code": 0,
+      "holdout_passed": 0,
+      "holdout_total": 4,
+      "requests": 1,
+      "selected_candidate_id": "identity",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training_passed": 3,
+      "training_total": 3,
+      "treatment_id": "training_perfect_holdout_failure",
+      "wall_ms": 516.012
+    },
+    {
+      "exit_code": 0,
+      "holdout_passed": 4,
+      "holdout_total": 4,
+      "requests": 1,
+      "selected_candidate_id": "zero",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training_passed": 3,
+      "training_total": 3,
+      "treatment_id": "provider_budget_timeout",
+      "wall_ms": 8035.065
+    },
+    {
+      "exit_code": -15,
+      "holdout_passed": null,
+      "holdout_total": null,
+      "requests": 1,
+      "selected_candidate_id": null,
+      "stop_reason": null,
+      "training_passed": null,
+      "training_total": null,
+      "treatment_id": "cancel_inflight_provider",
+      "wall_ms": 513.233
+    }
+  ],
+  "label": "MOCK_PROVIDER_ONLY_NOT_LAYA",
+  "limitations": [
+    "All provider exchanges are local synthetic MOCK fixtures; no Laya or GPT-6 behavior was measured.",
+    "One hand-authored int64 clamp fixture and small finite suites do not establish domain coverage or full-domain correctness.",
+    "The holdout result is finite behavioral evidence from the bounded interpreter; generated package code was not executed.",
+    "The 8s timeout treatment is singular by design; the cancellation runner is configured to send SIGTERM after 350ms, but saved timing does not prove the request was still in flight at that exact instant."
+  ],
+  "mock_provider_treatments": 11,
+  "mock_requests": 19,
+  "pilot": {
+    "detail": "The first pilot used a zero-expression treatment that also passed its original holdout. It is retained as raw evidence and excluded from final claims.",
+    "invocations": 12,
+    "mock_requests": 19,
+    "run_id": "mock-provider-run-2026-09-30",
+    "status": "SUPERSEDED_HOLDOUT_FIXTURE_MISCONFIGURED"
+  },
+  "run_dir": "runs/final-mock-provider-run-2026-09-30",
+  "run_id": "final-mock-provider-run-2026-09-30",
+  "saved_files": [
+    {
+      "bytes": 61811,
+      "path": "invocations.json",
+      "sha256": "4546a984358820e2251c530bd73e9752dddd90de2e0f36141b329b715d6b98ab"
+    },
+    {
+      "bytes": 3232,
+      "path": "run-manifest.json",
+      "sha256": "af9810550885fbbdd249880267fec3d2ee6d2c62205487ba2bd776af22ba7a63"
+    },
+    {
+      "bytes": 261,
+      "path": "treatments/cancel_inflight_provider/fixture.gooo.fixture",
+      "sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1"
+    },
+    {
+      "bytes": 2272,
+      "path": "treatments/cancel_inflight_provider/invocation.json",
+      "sha256": "e453a859e60a1f1b1a6201726c8e1973768724d6bdaacf77e43c2109c6ce60e6"
+    },
+    {
+      "bytes": 470,
+      "path": "treatments/cancel_inflight_provider/mock_provider/events.jsonl",
+      "sha256": "bebc9cb7ace431cbe05b9a418835d068b99265fc645eefae45154ae6a496d9fa"
+    },
+    {
+      "bytes": 1166,
+      "path": "treatments/cancel_inflight_provider/mock_provider/requests/01.request.raw",
+      "sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be"
+    },
+    {
+      "bytes": 351,
+      "path": "treatments/cancel_inflight_provider/mock_provider/responses/01.response.raw",
+      "sha256": "bf1353b64a18a5deee27da27316ca5f0dafe949950b200315804d54a540b861e"
+    },
+    {
+      "bytes": 850,
+      "path": "treatments/cancel_inflight_provider/plan.json",
+      "sha256": "591c00705e10776bbe4e97e41dda96121894278c604c48d8afd024d6bf43bda0"
+    },
+    {
+      "bytes": 0,
+      "path": "treatments/cancel_inflight_provider/stderr.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "treatments/cancel_inflight_provider/stdout.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 261,
+      "path": "treatments/failure_feedback_privacy/fixture.gooo.fixture",
+      "sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1"
+    },
+    {
+      "bytes": 5459,
+      "path": "treatments/failure_feedback_privacy/invocation.json",
+      "sha256": "27aeb04f3672e4cbf5344b3e35e4f905ded504369af7a9fab0d8386c9482f6f2"
+    },
+    {
+      "bytes": 934,
+      "path": "treatments/failure_feedback_privacy/mock_provider/events.jsonl",
+      "sha256": "bb909c8316806c30bf136d9901daa7b708912227c3015ccff362f747759e079a"
+    },
+    {
+      "bytes": 1166,
+      "path": "treatments/failure_feedback_privacy/mock_provider/requests/01.request.raw",
+      "sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be"
+    },
+    {
+      "bytes": 1487,
+      "path": "treatments/failure_feedback_privacy/mock_provider/requests/02.request.raw",
+      "sha256": "59f83bbf329c5f3ba4c37fbcb5025a9bbe2acfd761909f7be6b2767e02261163"
+    },
+    {
+      "bytes": 355,
+      "path": "treatments/failure_feedback_privacy/mock_provider/responses/01.response.raw",
+      "sha256": "278a8d48782cecc83079d07e73d63b125905394c07eb6246f9672197adf4f9c2"
+    },
+    {
+      "bytes": 327,
+      "path": "treatments/failure_feedback_privacy/mock_provider/responses/02.response.raw",
+      "sha256": "5cb57bd135eaf39753423b161de3a354553fe9223a3206712f936ed1bca82d1c"
+    },
+    {
+      "bytes": 850,
+      "path": "treatments/failure_feedback_privacy/plan.json",
+      "sha256": "591c00705e10776bbe4e97e41dda96121894278c604c48d8afd024d6bf43bda0"
+    },
+    {
+      "bytes": 0,
+      "path": "treatments/failure_feedback_privacy/stderr.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 19400,
+      "path": "treatments/failure_feedback_privacy/stdout.raw",
+      "sha256": "da4b50091678c30bde156fb4fe41874e44d3b20aa9d113782740012602f70c9c"
+    },
+    {
+      "bytes": 261,
+      "path": "treatments/http_503_fallback/fixture.gooo.fixture",
+      "sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1"
+    },
+    {
+      "bytes": 5187,
+      "path": "treatments/http_503_fallback/invocation.json",
+      "sha256": "cde108087c44e2ef529512ab7c4100f04a9b0abab90884549ddc9f1c89f8e48f"
+    },
+    {
+      "bytes": 934,
+      "path": "treatments/http_503_fallback/mock_provider/events.jsonl",
+      "sha256": "1f32d559eac706c2022f77a7ba9134435351db16e55e6cfdfef4d269f80ca0cb"
+    },
+    {
+      "bytes": 1166,
+      "path": "treatments/http_503_fallback/mock_provider/requests/01.request.raw",
+      "sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be"
+    },
+    {
+      "bytes": 1487,
+      "path": "treatments/http_503_fallback/mock_provider/requests/02.request.raw",
+      "sha256": "59f83bbf329c5f3ba4c37fbcb5025a9bbe2acfd761909f7be6b2767e02261163"
+    },
+    {
+      "bytes": 28,
+      "path": "treatments/http_503_fallback/mock_provider/responses/01.response.raw",
+      "sha256": "76c0c452d6b7a8b21c76c02d21c8819a3c0fbbb78dd8a49c506de054f2603d79"
+    },
+    {
+      "bytes": 327,
+      "path": "treatments/http_503_fallback/mock_provider/responses/02.response.raw",
+      "sha256": "5cb57bd135eaf39753423b161de3a354553fe9223a3206712f936ed1bca82d1c"
+    },
+    {
+      "bytes": 850,
+      "path": "treatments/http_503_fallback/plan.json",
+      "sha256": "591c00705e10776bbe4e97e41dda96121894278c604c48d8afd024d6bf43bda0"
+    },
+    {
+      "bytes": 0,
+      "path": "treatments/http_503_fallback/stderr.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 19509,
+      "path": "treatments/http_503_fallback/stdout.raw",
+      "sha256": "8765cbd0a1a94e79aabcdff8fd84f3a187fd06f4f53f41dcb9ab96957dfeaf2d"
+    },
+    {
+      "bytes": 261,
+      "path": "treatments/invalid_expression_then_valid/fixture.gooo.fixture",
+      "sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1"
+    },
+    {
+      "bytes": 5151,
+      "path": "treatments/invalid_expression_then_valid/invocation.json",
+      "sha256": "ce0b9cdae35498af452a51c56d69850308569351c83467f81065e19cd888de54"
+    },
+    {
+      "bytes": 934,
+      "path": "treatments/invalid_expression_then_valid/mock_provider/events.jsonl",
+      "sha256": "101ba088d5106d61dec972b2de0e6ab4e5c8cc57105b821599dc063d9afa77b5"
+    },
+    {
+      "bytes": 1166,
+      "path": "treatments/invalid_expression_then_valid/mock_provider/requests/01.request.raw",
+      "sha256": "7ae041a46f68f5a42a4042aa9512e8bd14819a54e3e4813e3a727293ad1f3998"
+    },
+    {
+      "bytes": 1337,
+      "path": "treatments/invalid_expression_then_valid/mock_provider/requests/02.request.raw",
+      "sha256": "b96be9423959c51403b7a4bc6b74c9cc16b0e8b843113b1eeefdfba419d74d7c"
+    },
+    {
+      "bytes": 351,
+      "path": "treatments/invalid_expression_then_valid/mock_provider/responses/01.response.raw",
+      "sha256": "91602d5dcb55c7a546488e7172e78bee9f2c658841dd6f976f7771eead5d3d5e"
+    },
+    {
+      "bytes": 327,
+      "path": "treatments/invalid_expression_then_valid/mock_provider/responses/02.response.raw",
+      "sha256": "5cb57bd135eaf39753423b161de3a354553fe9223a3206712f936ed1bca82d1c"
+    },
+    {
+      "bytes": 850,
+      "path": "treatments/invalid_expression_then_valid/plan.json",
+      "sha256": "6b8525003348d6711eaea0460331ca5116fa147bd863b651c02e94e8e036fea2"
+    },
+    {
+      "bytes": 0,
+      "path": "treatments/invalid_expression_then_valid/stderr.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 19263,
+      "path": "treatments/invalid_expression_then_valid/stdout.raw",
+      "sha256": "8a57c7ace2fde091cceda8646c50a24a4d6ba6024f5f7bb53f47d584b8d70427"
+    },
+    {
+      "bytes": 261,
+      "path": "treatments/malformed_json_fallback/fixture.gooo.fixture",
+      "sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1"
+    },
+    {
+      "bytes": 5201,
+      "path": "treatments/malformed_json_fallback/invocation.json",
+      "sha256": "9f83339ae5d4781f9728f0fdb21e3082960e88047d0ecb4ad19542e5ac246d90"
+    },
+    {
+      "bytes": 934,
+      "path": "treatments/malformed_json_fallback/mock_provider/events.jsonl",
+      "sha256": "94bcc89ba78dea9ce3334a4889d5a1ab8b56a9c5f926d8858e9202f1a062c835"
+    },
+    {
+      "bytes": 1166,
+      "path": "treatments/malformed_json_fallback/mock_provider/requests/01.request.raw",
+      "sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be"
+    },
+    {
+      "bytes": 1487,
+      "path": "treatments/malformed_json_fallback/mock_provider/requests/02.request.raw",
+      "sha256": "59f83bbf329c5f3ba4c37fbcb5025a9bbe2acfd761909f7be6b2767e02261163"
+    },
+    {
+      "bytes": 15,
+      "path": "treatments/malformed_json_fallback/mock_provider/responses/01.response.raw",
+      "sha256": "31f9973c7e46f1821217f03e8eb83e7bab50fa60d1121f233d81480b5b7060fb"
+    },
+    {
+      "bytes": 327,
+      "path": "treatments/malformed_json_fallback/mock_provider/responses/02.response.raw",
+      "sha256": "5cb57bd135eaf39753423b161de3a354553fe9223a3206712f936ed1bca82d1c"
+    },
+    {
+      "bytes": 850,
+      "path": "treatments/malformed_json_fallback/plan.json",
+      "sha256": "591c00705e10776bbe4e97e41dda96121894278c604c48d8afd024d6bf43bda0"
+    },
+    {
+      "bytes": 0,
+      "path": "treatments/malformed_json_fallback/stderr.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 19522,
+      "path": "treatments/malformed_json_fallback/stdout.raw",
+      "sha256": "885e6e5268d934a392e426c55a8572312ff212242b062f2249ad7ed95787b36f"
+    },
+    {
+      "bytes": 261,
+      "path": "treatments/missing_choice_fallback/fixture.gooo.fixture",
+      "sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1"
+    },
+    {
+      "bytes": 5188,
+      "path": "treatments/missing_choice_fallback/invocation.json",
+      "sha256": "1756451870a8f7d605e2086078cbb2ed011afda5b1df77ea83887c0b5e17c339"
+    },
+    {
+      "bytes": 934,
+      "path": "treatments/missing_choice_fallback/mock_provider/events.jsonl",
+      "sha256": "b725d054ca22b07a30daa5449fcb66270d4448ca36b7723268e7ee779245f9b1"
+    },
+    {
+      "bytes": 1166,
+      "path": "treatments/missing_choice_fallback/mock_provider/requests/01.request.raw",
+      "sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be"
+    },
+    {
+      "bytes": 1487,
+      "path": "treatments/missing_choice_fallback/mock_provider/requests/02.request.raw",
+      "sha256": "59f83bbf329c5f3ba4c37fbcb5025a9bbe2acfd761909f7be6b2767e02261163"
+    },
+    {
+      "bytes": 40,
+      "path": "treatments/missing_choice_fallback/mock_provider/responses/01.response.raw",
+      "sha256": "46efd61f1f1fc38989c980a4687ddf0a457ae06c98b6a67bc555f7d030801f81"
+    },
+    {
+      "bytes": 327,
+      "path": "treatments/missing_choice_fallback/mock_provider/responses/02.response.raw",
+      "sha256": "5cb57bd135eaf39753423b161de3a354553fe9223a3206712f936ed1bca82d1c"
+    },
+    {
+      "bytes": 850,
+      "path": "treatments/missing_choice_fallback/plan.json",
+      "sha256": "591c00705e10776bbe4e97e41dda96121894278c604c48d8afd024d6bf43bda0"
+    },
+    {
+      "bytes": 0,
+      "path": "treatments/missing_choice_fallback/stderr.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 19502,
+      "path": "treatments/missing_choice_fallback/stdout.raw",
+      "sha256": "6c422b604c2fb7f772c58fff77c153a83e1a82d9a2ca9f888408adf4b46ba05e"
+    },
+    {
+      "bytes": 261,
+      "path": "treatments/provider_budget_timeout/fixture.gooo.fixture",
+      "sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1"
+    },
+    {
+      "bytes": 5196,
+      "path": "treatments/provider_budget_timeout/invocation.json",
+      "sha256": "ad7e2b6a74b09ee5832461146ed9ff88a168fdefaadaca5fe07c969c603c062a"
+    },
+    {
+      "bytes": 470,
+      "path": "treatments/provider_budget_timeout/mock_provider/events.jsonl",
+      "sha256": "8ffd52351756d8fe90aeb944136e2b062af2cd10fd1361705e6284cdf176601e"
+    },
+    {
+      "bytes": 1166,
+      "path": "treatments/provider_budget_timeout/mock_provider/requests/01.request.raw",
+      "sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be"
+    },
+    {
+      "bytes": 351,
+      "path": "treatments/provider_budget_timeout/mock_provider/responses/01.response.raw",
+      "sha256": "bf1353b64a18a5deee27da27316ca5f0dafe949950b200315804d54a540b861e"
+    },
+    {
+      "bytes": 850,
+      "path": "treatments/provider_budget_timeout/plan.json",
+      "sha256": "591c00705e10776bbe4e97e41dda96121894278c604c48d8afd024d6bf43bda0"
+    },
+    {
+      "bytes": 0,
+      "path": "treatments/provider_budget_timeout/stderr.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 19356,
+      "path": "treatments/provider_budget_timeout/stdout.raw",
+      "sha256": "8f39da02076a11e772b86d154543e9def2ee051ef3343c8ec47c4fa086051df6"
+    },
+    {
+      "bytes": 261,
+      "path": "treatments/repeated_tried_choice/fixture.gooo.fixture",
+      "sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1"
+    },
+    {
+      "bytes": 5961,
+      "path": "treatments/repeated_tried_choice/invocation.json",
+      "sha256": "3ca244ff804396f414da63d1203ef5592539a8814bd81e116433e7d287c12ea0"
+    },
+    {
+      "bytes": 934,
+      "path": "treatments/repeated_tried_choice/mock_provider/events.jsonl",
+      "sha256": "6f2599cf139699b95e6a0e75f83e83415cf4a813cbe54af2fc9334e4b0d460cf"
+    },
+    {
+      "bytes": 1166,
+      "path": "treatments/repeated_tried_choice/mock_provider/requests/01.request.raw",
+      "sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be"
+    },
+    {
+      "bytes": 1487,
+      "path": "treatments/repeated_tried_choice/mock_provider/requests/02.request.raw",
+      "sha256": "59f83bbf329c5f3ba4c37fbcb5025a9bbe2acfd761909f7be6b2767e02261163"
+    },
+    {
+      "bytes": 355,
+      "path": "treatments/repeated_tried_choice/mock_provider/responses/01.response.raw",
+      "sha256": "278a8d48782cecc83079d07e73d63b125905394c07eb6246f9672197adf4f9c2"
+    },
+    {
+      "bytes": 331,
+      "path": "treatments/repeated_tried_choice/mock_provider/responses/02.response.raw",
+      "sha256": "db6dbd58491af3d7c9191f0eec5ba51f8b4354dee17661f24a8bf396b73e436c"
+    },
+    {
+      "bytes": 850,
+      "path": "treatments/repeated_tried_choice/plan.json",
+      "sha256": "591c00705e10776bbe4e97e41dda96121894278c604c48d8afd024d6bf43bda0"
+    },
+    {
+      "bytes": 0,
+      "path": "treatments/repeated_tried_choice/stderr.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 19418,
+      "path": "treatments/repeated_tried_choice/stdout.raw",
+      "sha256": "27a9cec3740527594c093e5edce8f38763587682dc48f3a534c643d82835bde2"
+    },
+    {
+      "bytes": 261,
+      "path": "treatments/training_perfect_holdout_failure/fixture.gooo.fixture",
+      "sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1"
+    },
+    {
+      "bytes": 3640,
+      "path": "treatments/training_perfect_holdout_failure/invocation.json",
+      "sha256": "903883267258588d02e67bff205d375dde50ced2a07085116bd2058b31806cb4"
+    },
+    {
+      "bytes": 467,
+      "path": "treatments/training_perfect_holdout_failure/mock_provider/events.jsonl",
+      "sha256": "ba5635a9fdfe93e4f0d55d59e0fdbd45e43a1166ca81845a85c1b604a9e195c6"
+    },
+    {
+      "bytes": 1166,
+      "path": "treatments/training_perfect_holdout_failure/mock_provider/requests/01.request.raw",
+      "sha256": "19c66f73efd23bc09b26ca13e30f66504b3d3c9a973b9374e54ef24f9fe580b8"
+    },
+    {
+      "bytes": 355,
+      "path": "treatments/training_perfect_holdout_failure/mock_provider/responses/01.response.raw",
+      "sha256": "278a8d48782cecc83079d07e73d63b125905394c07eb6246f9672197adf4f9c2"
+    },
+    {
+      "bytes": 851,
+      "path": "treatments/training_perfect_holdout_failure/plan.json",
+      "sha256": "0bdc43750fd3a37b05c684850197195252bfd7c85e66f8ebac986e6d3d6f07ac"
+    },
+    {
+      "bytes": 0,
+      "path": "treatments/training_perfect_holdout_failure/stderr.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 18909,
+      "path": "treatments/training_perfect_holdout_failure/stdout.raw",
+      "sha256": "521ebf61e1b6c2f350b23cdc3855c4fbeab6a207963c2600292b65840ae99ced"
+    },
+    {
+      "bytes": 261,
+      "path": "treatments/type_mismatch_then_valid/fixture.gooo.fixture",
+      "sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1"
+    },
+    {
+      "bytes": 5207,
+      "path": "treatments/type_mismatch_then_valid/invocation.json",
+      "sha256": "1ed46f56f2cf5e27b6b14e8dcb5f48bd41fa40b4bb9970ef3c90ae3f689c88f9"
+    },
+    {
+      "bytes": 934,
+      "path": "treatments/type_mismatch_then_valid/mock_provider/events.jsonl",
+      "sha256": "20b73023cc342d41fcba54a9bcfce90631c21874815b4f1479473033fb4e2c61"
+    },
+    {
+      "bytes": 1162,
+      "path": "treatments/type_mismatch_then_valid/mock_provider/requests/01.request.raw",
+      "sha256": "76240ff785e31ebf0888f593da665539f458014f233c9eb500dd4d91a9959bdd"
+    },
+    {
+      "bytes": 1417,
+      "path": "treatments/type_mismatch_then_valid/mock_provider/requests/02.request.raw",
+      "sha256": "35a0a9f6c5af1f50390328854b9f276f8f0c1178567190f6e9bc54c1f7226d8a"
+    },
+    {
+      "bytes": 353,
+      "path": "treatments/type_mismatch_then_valid/mock_provider/responses/01.response.raw",
+      "sha256": "f6ea246c90988e47309f9239e5d2d61190cab3d96211a375ff4ed8199168c46f"
+    },
+    {
+      "bytes": 327,
+      "path": "treatments/type_mismatch_then_valid/mock_provider/responses/02.response.raw",
+      "sha256": "5cb57bd135eaf39753423b161de3a354553fe9223a3206712f936ed1bca82d1c"
+    },
+    {
+      "bytes": 848,
+      "path": "treatments/type_mismatch_then_valid/plan.json",
+      "sha256": "2158c2d92dba372bb5e3b06a2553f934bcafdaa974391eeff748885aba509131"
+    },
+    {
+      "bytes": 0,
+      "path": "treatments/type_mismatch_then_valid/stderr.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 19336,
+      "path": "treatments/type_mismatch_then_valid/stdout.raw",
+      "sha256": "8dff1a3e6d38d4d118cd98b01623936545d89b96afa8fd3b8ae388979d8628f1"
+    },
+    {
+      "bytes": 261,
+      "path": "treatments/unconfigured_fallback/fixture.gooo.fixture",
+      "sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1"
+    },
+    {
+      "bytes": 4579,
+      "path": "treatments/unconfigured_fallback/invocation.json",
+      "sha256": "57dac44cd10ac7e511dcf9baec32311cdc3178364d8c5861837d4a880e0155c3"
+    },
+    {
+      "bytes": 850,
+      "path": "treatments/unconfigured_fallback/plan.json",
+      "sha256": "591c00705e10776bbe4e97e41dda96121894278c604c48d8afd024d6bf43bda0"
+    },
+    {
+      "bytes": 0,
+      "path": "treatments/unconfigured_fallback/stderr.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 19061,
+      "path": "treatments/unconfigured_fallback/stdout.raw",
+      "sha256": "0562f66455db45e8f093a1af2590fd9e45dbb1791de0d5fa6583ff27f1ca10c4"
+    },
+    {
+      "bytes": 261,
+      "path": "treatments/unknown_choice_fallback/fixture.gooo.fixture",
+      "sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1"
+    },
+    {
+      "bytes": 5197,
+      "path": "treatments/unknown_choice_fallback/invocation.json",
+      "sha256": "bf90c64ad9c4094ca9ae099031fdc1873d702b106d13ba8a29688a718c2e7adb"
+    },
+    {
+      "bytes": 934,
+      "path": "treatments/unknown_choice_fallback/mock_provider/events.jsonl",
+      "sha256": "05535fea21fd8eaf6ccb6177d7cc3dcccefbca6e9cb40efb3d34934b74287956"
+    },
+    {
+      "bytes": 1166,
+      "path": "treatments/unknown_choice_fallback/mock_provider/requests/01.request.raw",
+      "sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be"
+    },
+    {
+      "bytes": 1487,
+      "path": "treatments/unknown_choice_fallback/mock_provider/requests/02.request.raw",
+      "sha256": "59f83bbf329c5f3ba4c37fbcb5025a9bbe2acfd761909f7be6b2767e02261163"
+    },
+    {
+      "bytes": 361,
+      "path": "treatments/unknown_choice_fallback/mock_provider/responses/01.response.raw",
+      "sha256": "372a4001698d678f2255e842eef37181beae4d1a94b71a3558616b0f0b538647"
+    },
+    {
+      "bytes": 327,
+      "path": "treatments/unknown_choice_fallback/mock_provider/responses/02.response.raw",
+      "sha256": "5cb57bd135eaf39753423b161de3a354553fe9223a3206712f936ed1bca82d1c"
+    },
+    {
+      "bytes": 850,
+      "path": "treatments/unknown_choice_fallback/plan.json",
+      "sha256": "591c00705e10776bbe4e97e41dda96121894278c604c48d8afd024d6bf43bda0"
+    },
+    {
+      "bytes": 0,
+      "path": "treatments/unknown_choice_fallback/stderr.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 19511,
+      "path": "treatments/unknown_choice_fallback/stdout.raw",
+      "sha256": "e8e26e74efe99bcfe120430debb2c49515221a8be531fe72bcaea79a42c95ccd"
+    }
+  ],
+  "schema": "gooo/ir-search-mock-fault-report/v1",
+  "treatments": 12
+}

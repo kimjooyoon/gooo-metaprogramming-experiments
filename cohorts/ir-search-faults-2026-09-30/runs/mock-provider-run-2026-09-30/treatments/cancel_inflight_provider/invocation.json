@@ -1,0 +1,53 @@
+{
+  "argv": [
+    "/private/tmp/gooo-ir-search-20260930",
+    "body-codegen",
+    "--json",
+    "--fill-search",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-faults-2026-09-30/runs/mock-provider-run-2026-09-30/treatments/cancel_inflight_provider/plan.json",
+    "--activity",
+    "ClampNegativeToZero",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-faults-2026-09-30/runs/mock-provider-run-2026-09-30/treatments/cancel_inflight_provider/fixture.gooo.fixture"
+  ],
+  "attempts": [],
+  "binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+  "completed_utc": "2026-09-30T05:00:19.656826+00:00",
+  "exit_code": -15,
+  "expected_probe": "runner_cancelled",
+  "fixture_sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1",
+  "holdout_passed": null,
+  "holdout_total": null,
+  "label": "MOCK_PROVIDER_TREATMENT",
+  "plan_sha256": "591c00705e10776bbe4e97e41dda96121894278c604c48d8afd024d6bf43bda0",
+  "provider_budget_used_ms": null,
+  "provider_events": [
+    {
+      "completed_utc": "2026-09-30T05:00:19.509898+00:00",
+      "delay_ms": 5000,
+      "label": "MOCK",
+      "method": "POST",
+      "path": "/v1/systemone",
+      "request_file": "requests/01.request.raw",
+      "request_sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be",
+      "response_file": "responses/01.response.raw",
+      "response_sha256": "bf1353b64a18a5deee27da27316ca5f0dafe949950b200315804d54a540b861e",
+      "seq": 1,
+      "started_utc": "2026-09-30T05:00:19.509866+00:00",
+      "status": 200
+    }
+  ],
+  "provider_request_count": 1,
+  "runner_cancelled": true,
+  "schema": "gooo/ir-search-fault-invocation/v1",
+  "selected_candidate_id": null,
+  "started_utc": "2026-09-30T05:00:19.142967+00:00",
+  "stderr_file": "stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_file": "stdout.raw",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stop_reason": null,
+  "training_passed": null,
+  "training_total": null,
+  "treatment_id": "cancel_inflight_provider",
+  "wall_ms": 512.540791000001
+}

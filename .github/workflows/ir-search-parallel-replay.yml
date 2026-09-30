@@ -1,0 +1,64 @@
+name: IR-search parallel captured-body replay
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  parallel-captured-body-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GOOO_LAYA_URL: ''
+      GOOO_LAYA_API_KEY: ''
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      GOTOOLCHAIN: local
+      GOPROXY: 'off'
+      GOSUMDB: 'off'
+      GOWORK: 'off'
+      GO111MODULE: 'off'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.27.0'
+
+      - name: Run isolated privacy-scanner regression checks
+        run: |
+          python3 -m unittest discover \
+            -s cohorts/ir-search-parallel-2026-09-30/scripts \
+            -p 'test_*.py' -v
+
+      - name: Validate saved raw capture hashes and counts
+        run: |
+          python3 cohorts/ir-search-parallel-2026-09-30/scripts/validate_run.py \
+            --run-dir cohorts/ir-search-parallel-2026-09-30/runs/primary_run
+
+      - name: Compile and execute captured Go bodies against finite oracles
+        run: |
+          python3 cohorts/ir-search-parallel-2026-09-30/scripts/validate_emitted_go.py \
+            --run-dir cohorts/ir-search-parallel-2026-09-30/runs/primary_run \
+            --require-go-version go1.27.0
+
+      - name: Add validation and study limitations to summary
+        if: always()
+        run: |
+          if [ -f cohorts/ir-search-parallel-2026-09-30/runs/primary_run/emitted-go-validation/validation-report.md ]; then
+            cat cohorts/ir-search-parallel-2026-09-30/runs/primary_run/emitted-go-validation/validation-report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ -f cohorts/ir-search-parallel-2026-09-30/runs/primary_run/report.md ]; then
+            cat cohorts/ir-search-parallel-2026-09-30/runs/primary_run/report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ir-search-parallel-validation-${{ github.sha }}
+          path: cohorts/ir-search-parallel-2026-09-30/runs/primary_run/emitted-go-validation
+          if-no-files-found: warn

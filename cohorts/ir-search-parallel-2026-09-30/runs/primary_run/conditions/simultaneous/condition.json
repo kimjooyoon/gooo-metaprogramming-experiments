@@ -1,0 +1,52 @@
+{
+  "all_invocations_exit_zero": true,
+  "completed_utc": "2026-09-30T04:38:20.273358+00:00",
+  "condition": "simultaneous",
+  "invocation_count": 2,
+  "laya_health_after": {
+    "checkpoint_devices": {
+      "english": "cpu"
+    },
+    "cpu_fallbacks": {
+      "english": {
+        "count": 0,
+        "last_reason": null
+      }
+    },
+    "device": "cpu",
+    "device_is_preference": false,
+    "loaded": [
+      "english"
+    ],
+    "revisions": {
+      "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "status": "ok"
+  },
+  "laya_health_before": {
+    "device": "cpu",
+    "loaded": [
+      "english"
+    ],
+    "revisions": {
+      "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    }
+  },
+  "laya_version": "0.3.21",
+  "port": 53192,
+  "runtime_environment": {
+    "HF_HUB_DISABLE_TELEMETRY": "1",
+    "HF_HUB_OFFLINE": "1",
+    "LAYA_DEVICE": "cpu",
+    "LAYA_HOST": "127.0.0.1",
+    "LAYA_MAX_CONCURRENT": "16",
+    "LAYA_MODELS": "english",
+    "LAYA_PORT": "53192",
+    "LAYA_PRELOAD": "1",
+    "LAYA_THREADS": "4",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "schema": "gooo/ir-search-parallel-condition/v1",
+  "started_utc": "2026-09-30T04:38:16.807592+00:00",
+  "status": "raw_capture_complete"
+}

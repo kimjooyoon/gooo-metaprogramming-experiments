@@ -386,7 +386,7 @@ def main() -> int:
     generated_dir.mkdir(parents=True, exist_ok=True)
     (generated_dir / "body_codegen.go").write_text(f"package {PACKAGE}\n\n" + "\n".join(generated_sources), encoding="utf-8")
     (generated_dir / "body_codegen_test.go").write_text(make_go_test(cases), encoding="utf-8")
-    (generated_dir / "go.mod").write_text(f"module {PACKAGE}\n\ngo 1.27\n", encoding="utf-8")
+    (generated_dir / "go.mod").write_text(f"module {PACKAGE}\n\ngo 1.27.1\n", encoding="utf-8")
     test_env = os.environ.copy()
     test_env["GOWORK"] = "off"
     test_env["GOTOOLCHAIN"] = os.environ.get("GOTOOLCHAIN", "local")

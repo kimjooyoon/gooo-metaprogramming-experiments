@@ -186,7 +186,7 @@ def main():
         vector = vectors_by_id[generated_case["case_id"]]
         all_cases = vector["training"] + vector["evaluation"]
         test_functions.append(go_test_source(generated_case["activity"], all_cases, generated_case["case_id"]))
-    (test_dir / "go.mod").write_text("module example.invalid/gooo/ir-composition-pinned-results\n\ngo 1.27\n", encoding="utf-8")
+    (test_dir / "go.mod").write_text("module example.invalid/gooo/ir-composition-pinned-results\n\ngo 1.27.1\n", encoding="utf-8")
     for generated_case in generated:
         (test_dir / f"{generated_case['case_id']}.go").write_text(generated_case["source"], encoding="utf-8")
     (test_dir / "generated_test.go").write_text("\n".join(test_functions), encoding="utf-8")

@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 COHORT = ROOT / "cohorts/ir-composition-curriculum-2026-09-30"
-GO_VERSION = "go1.27.0"
+GO_VERSION = "go1.27.1"
 
 
 def sha(data: bytes) -> str:
@@ -96,7 +96,7 @@ def compile_original_candidates(module: Path, go_bin: Path, original: str, attem
         raise SystemExit("original candidate validity attempt already exists")
     package_root.mkdir(parents=True)
     (package_root / "go.mod").write_text(
-        "module example.invalid/gooo/ir-composition-original-candidate-validity\n\ngo 1.27\n",
+        "module example.invalid/gooo/ir-composition-original-candidate-validity\n\ngo 1.27.1\n",
         encoding="utf-8",
     )
     catalog = json.loads((COHORT / "catalog.json").read_text(encoding="utf-8"))

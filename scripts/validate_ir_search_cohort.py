@@ -67,7 +67,7 @@ def check_source_provenance(compiler: Path, binary: Path, source_sha: str):
     require(head == source_sha == PIN, f"compiler source is {head}, expected pinned revision {PIN}")
     require(not dirty.strip(), "compiler checkout has tracked modifications")
     go_version = run(["go", "version"]).stdout.strip()
-    require("go1.27.0" in go_version, f"expected Go 1.27.0, got {go_version}")
+    require("go1.27.1" in go_version, f"expected Go 1.27.1, got {go_version}")
     build_info = run(["go", "version", "-m", str(binary)]).stdout
     build_settings = {}
     for line in build_info.splitlines():

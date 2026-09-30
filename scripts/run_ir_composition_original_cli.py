@@ -23,7 +23,7 @@ FREEZE_PATH = COHORT / "design-freeze.json"
 PIN_REVISION = "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f"
 PIN_BINARY_SHA256 = "47b9f3bd1b365d18771ba36b0a2b472b139fdb6a08b404697e188478dce38c6e"
 DEFAULT_BINARY = Path("/tmp/gooo-pinned-context-final-20260930")
-DEFAULT_GO_BIN = Path("/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go")
+DEFAULT_GO_BIN = Path("/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.1.darwin-arm64/bin/go")
 DEFAULT_OUTPUT = COHORT / "execution" / "original-gooo-cli-baseline"
 PREDECESSOR_ATTEMPT_DIR = COHORT / "execution" / "pinned-offline-attempt-1"
 FILL_SCHEMA = "gooo/body-codegen-ir-fill-plan/v1"
@@ -312,7 +312,7 @@ def go_harness_preflight(go_bin: Path, env: dict[str, str]) -> dict:
     stub_source = "package bodycodegen\n\nfunc HarnessSmoke(input int64) int64 { return input }\n"
     with tempfile.TemporaryDirectory(prefix="gooo-ir-composition-harness-preflight-") as temp_name:
         temp = Path(temp_name)
-        (temp / "go.mod").write_text("module example.invalid/gooo/ir-composition-harness-preflight\n\ngo 1.27\n",
+        (temp / "go.mod").write_text("module example.invalid/gooo/ir-composition-harness-preflight\n\ngo 1.27.1\n",
                                      encoding="utf-8")
         (temp / "stub.go").write_text(stub_source, encoding="utf-8")
         (temp / "generated_test.go").write_text(test_source, encoding="utf-8")
@@ -322,7 +322,7 @@ def go_harness_preflight(go_bin: Path, env: dict[str, str]) -> dict:
         elapsed_ms = (time.monotonic_ns() - started_ns) / 1_000_000
     result = {
         "schema": "gooo/ir-composition-go-test-harness-preflight/v1",
-        "command": command, "go_version": "go1.27.0", "exit_code": completed.returncode,
+        "command": command, "go_version": "go1.27.1", "exit_code": completed.returncode,
         "elapsed_ms": elapsed_ms, "status": "PASS" if completed.returncode == 0 else "FAIL",
         "stub_source_sha256": sha(stub_source.encode()), "test_source_sha256": sha(test_source.encode()),
         "stdout_sha256": sha(completed.stdout), "stderr_sha256": sha(completed.stderr),
@@ -446,7 +446,7 @@ def independent_go_one(item: dict, vector: dict, case_dir: Path, go_bin: Path,
     go_dir = case_dir / go_subdir
     go_dir.mkdir(parents=True, exist_ok=True)
     (go_dir / "go.mod").write_text(
-        f"module example.invalid/gooo/ir-composition-original-cli/{item['id']}\n\ngo 1.27\n", encoding="utf-8")
+        f"module example.invalid/gooo/ir-composition-original-cli/{item['id']}\n\ngo 1.27.1\n", encoding="utf-8")
     write_bytes(go_dir / "frozen-vectors.json",
                 json.dumps({"training": vector["training"], "evaluation": vector["evaluation"]},
                            ensure_ascii=False, indent=2).encode() + b"\n")
@@ -490,7 +490,7 @@ def independent_go_one(item: dict, vector: dict, case_dir: Path, go_bin: Path,
         "status": "GO_TEST_PASS" if exit_code == 0 and not timed_out and observed == planned
                   and all(row["passed"] for suite in parsed.values() for row in suite)
                   else "GO_TEST_FAILURE_OR_INCOMPLETE",
-        "go_version": "go1.27.0", "command": command,
+        "go_version": "go1.27.1", "command": command,
         "started_utc": started, "ended_utc": ended, "elapsed_ms": elapsed_ms,
         "timeout_seconds": timeout_seconds, "timed_out": timed_out, "exit_code": exit_code,
         "launch_error": launch_error,
@@ -697,8 +697,8 @@ def replay_go_validation_from_capture(run_dir: Path, go_bin: Path, timeout_secon
     child_env["GOSUMDB"] = "off"
     child_env["GOWORK"] = "off"
     go_version = subprocess.run([str(go_bin), "version"], capture_output=True, text=True, check=False)
-    if go_version.returncode or "go1.27.0" not in go_version.stdout:
-        raise RuntimeError(f"corrected vector replay requires Go 1.27.0; got {go_version.stdout.strip()!r}")
+    if go_version.returncode or "go1.27.1" not in go_version.stdout:
+        raise RuntimeError(f"corrected vector replay requires Go 1.27.1; got {go_version.stdout.strip()!r}")
     harness = go_harness_preflight(go_bin, child_env)
 
     correction_dir.mkdir()
@@ -870,8 +870,8 @@ def main() -> None:
     compiler = binary_build_receipt(binary, PIN_BINARY_SHA256, PIN_REVISION)
     go_bin = args.go_bin.resolve()
     go_version = subprocess.run([str(go_bin), "version"], capture_output=True, text=True, check=False)
-    if go_version.returncode or "go1.27.0" not in go_version.stdout:
-        raise RuntimeError(f"independent vector execution requires physical Go 1.27.0; got {go_version.stdout.strip()!r}")
+    if go_version.returncode or "go1.27.1" not in go_version.stdout:
+        raise RuntimeError(f"independent vector execution requires physical Go 1.27.1; got {go_version.stdout.strip()!r}")
 
     child_env = os.environ.copy()
     for name in list(child_env):

@@ -60,15 +60,15 @@ jobs:
         run: |
           echo "Postselection replay skipped. It requires a verified complete capture bundle and an explicit root measurement gate." >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Download and verify the pinned Go 1.27.0 distribution
+      - name: Download and verify the pinned Go 1.27.1 distribution
         if: ${{ steps.bundle.outputs.decision == 'VERIFIED_PUBLIC_DERIVATIVE' && inputs.root_measurement_gate == true }}
         env:
-          GO_DIST_SHA256: 675c26c449cbb18fc24b74650de1eabbae6e16f64326fd85a283fb3b58280685
+          GO_DIST_SHA256: 63d339f0da5ab53635a56f2490a7984dfe12dfcff22ad749f63edaf590168445
         run: |
-          archive="$RUNNER_TEMP/go1.27.0.linux-amd64.tar.gz"
-          # Official go.dev download archive checksum for go1.27.0 linux-amd64.
+          archive="$RUNNER_TEMP/go1.27.1.linux-amd64.tar.gz"
+          # Official go.dev download archive checksum for go1.27.1 linux-amd64.
           curl --fail --location --silent --show-error --retry 3 \
-            https://go.dev/dl/go1.27.0.linux-amd64.tar.gz --output "$archive"
+            https://go.dev/dl/go1.27.1.linux-amd64.tar.gz --output "$archive"
           echo "$GO_DIST_SHA256  $archive" | sha256sum --check --status
           tar -xzf "$archive" -C "$RUNNER_TEMP"
           "$RUNNER_TEMP/go/bin/go" version
@@ -77,7 +77,7 @@ jobs:
         if: ${{ steps.bundle.outputs.decision == 'VERIFIED_PUBLIC_DERIVATIVE' && inputs.root_measurement_gate == true }}
         env:
           CAPTURE_BUNDLE: cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/captures/ir-composition-tdd-v8-20260930T104054Z-d868d3ee7f71-public
-          GO_DIST_SHA256: 675c26c449cbb18fc24b74650de1eabbae6e16f64326fd85a283fb3b58280685
+          GO_DIST_SHA256: 63d339f0da5ab53635a56f2490a7984dfe12dfcff22ad749f63edaf590168445
         run: |
           python3 scripts/replay_extra_domain_probes_v2.py \
             --source-root "$CAPTURE_BUNDLE" \

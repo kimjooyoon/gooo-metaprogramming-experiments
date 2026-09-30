@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 COHORT = ROOT / "cohorts/ir-composition-curriculum-2026-09-30"
 PIN_REVISION = "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f"
 PIN_BINARY_SHA256 = "47b9f3bd1b365d18771ba36b0a2b472b139fdb6a08b404697e188478dce38c6e"
-GO_VERSION = "go1.27.0"
+GO_VERSION = "go1.27.1"
 
 
 def sha(data: bytes) -> str:
@@ -247,7 +247,7 @@ def main():
     go_execution = {"status": "not_run_no_generated_sources", "exit_code": None, "training": {"passed": 0, "total": 0}, "evaluation": {"passed": 0, "total": 0}}
     if generated:
         test_root = output_root / "go-execution"
-        (test_root / "go.mod").write_text("module example.invalid/gooo/ir-composition-generated-attempt-1\n\ngo 1.27\n", encoding="utf-8")
+        (test_root / "go.mod").write_text("module example.invalid/gooo/ir-composition-generated-attempt-1\n\ngo 1.27.1\n", encoding="utf-8")
         result = subprocess.run(
             [str(args.go_bin), "test", "-json", "-count=1", "./..."], cwd=test_root,
             env=env, capture_output=True, text=True, timeout=180, check=False,

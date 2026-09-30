@@ -658,8 +658,8 @@ def main() -> None:
     require(bool(args.go_bin), "Go executable not found")
     go_bin = str(Path(args.go_bin).resolve())
     go_version = subprocess.run([go_bin, "version"], capture_output=True, text=True, check=False)
-    require(go_version.returncode == 0 and "go1.27.0" in go_version.stdout,
-            f"Go 1.27.0 required, got {go_version.stdout.strip()!r}")
+    require(go_version.returncode == 0 and "go1.27.1" in go_version.stdout,
+            f"Go 1.27.1 required, got {go_version.stdout.strip()!r}")
     freeze, frozen_files, vectors = verify_freeze()
     old_meta, old_report, old_correction = verify_old_cli_baseline(vectors, freeze)
     new_meta, new_report = verify_new_cli_replay(vectors, freeze, old_report)

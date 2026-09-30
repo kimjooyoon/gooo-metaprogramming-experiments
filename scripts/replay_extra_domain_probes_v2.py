@@ -22,8 +22,8 @@ from prepare_extra_domain_probes import (
 )
 
 GO_BIN_DEFAULT = Path("go")
-GO_BINARY_SHA256 = "a19a71df81715c12d9a7e81bab036c12696fec1ddbd4258b48a2131a9080b267"
-GO_LINUX_AMD64_DIST_SHA256 = "675c26c449cbb18fc24b74650de1eabbae6e16f64326fd85a283fb3b58280685"
+GO_BINARY_SHA256 = "132b69336a1f809932a8a20b0201dbbb980e86e3a323ae32e893639d83d71598"
+GO_LINUX_AMD64_DIST_SHA256 = "63d339f0da5ab53635a56f2490a7984dfe12dfcff22ad749f63edaf590168445"
 SOURCE_SCHEMA = "gooo/ir-composition-extra-domain-source-manifest/v1"
 REFERENCE_MARKER = "EXTRA_DOMAIN_REFERENCE_RESULT:"
 CANDIDATE_MARKER = "EXTRA_DOMAIN_CANDIDATE_RESULT:"
@@ -241,9 +241,9 @@ def verify_go(go_bin: Path, output: Path, official_dist_sha256: str | None = Non
         raise ValueError(f"direct Go 1.27 binary is missing or non-executable: {go_bin}")
     binary_sha = sha256(go_bin.read_bytes())
     if official_dist_sha256 is None and binary_sha != GO_BINARY_SHA256:
-        raise ValueError("Go binary differs from the pinned Go 1.27.0 toolchain")
+        raise ValueError("Go binary differs from the pinned Go 1.27.1 toolchain")
     if official_dist_sha256 is not None and official_dist_sha256 != GO_LINUX_AMD64_DIST_SHA256:
-        raise ValueError("official Go distribution digest is not the pinned Go 1.27.0 linux-amd64 archive")
+        raise ValueError("official Go distribution digest is not the pinned Go 1.27.1 linux-amd64 archive")
     version = subprocess.run([str(go_bin), "version"], capture_output=True, text=True, check=False, timeout=10)
     write_bytes(output / "toolchain-version.stdout.raw", version.stdout.encode())
     write_bytes(output / "toolchain-version.stderr.raw", version.stderr.encode())
@@ -253,7 +253,7 @@ def verify_go(go_bin: Path, output: Path, official_dist_sha256: str | None = Non
                "path_disclosure": "omitted from public receipt"}
     if official_dist_sha256 is not None:
         receipt["official_distribution_sha256"] = official_dist_sha256
-        receipt["distribution_verification"] = "workflow-verified official Go 1.27.0 linux-amd64 archive"
+        receipt["distribution_verification"] = "workflow-verified official Go 1.27.1 linux-amd64 archive"
     return receipt
 
 
@@ -359,7 +359,7 @@ def marker_payload(raw: bytes, marker: str):
 def run_reference(go_bin: Path, temp: Path, rows: list[dict], run_dir: Path, env: dict[str, str]) -> dict:
     package = temp / "reference"
     package.mkdir()
-    go_mod = b"module extra-domain-reference\n\ngo 1.27.0\n"
+    go_mod = b"module extra-domain-reference\n\ngo 1.27.1\n"
     oracle_source = (REVISION / "oracle/oracle.go").read_bytes()
     test_source = reference_test_source(rows)
     write_bytes(package / "go.mod", go_mod)
@@ -421,7 +421,7 @@ def run_candidate(go_bin: Path, temp_root: Path, arm_id: str, cell: dict, rows: 
                 "observed_probe_count": 0}
     case_dir = temp_root / safe_name(arm_id) / safe_name(cell["design_id"])
     case_dir.mkdir(parents=True)
-    go_mod = b"module extra-domain-candidate\n\ngo 1.27.0\n"
+    go_mod = b"module extra-domain-candidate\n\ngo 1.27.1\n"
     probe_source = candidate_test_source(rows, catalog[cell["design_id"]]["activity"])
     raw_dir = run_dir / "arms" / safe_name(arm_id) / safe_name(cell["design_id"])
     write_bytes(case_dir / "go.mod", go_mod)
@@ -486,7 +486,7 @@ def main() -> None:
     parser.add_argument("--output", type=Path, required=True,
                         help="new, append-only attempt directory under extra-domain-probes-128/execution")
     parser.add_argument("--go-bin", type=Path, default=GO_BIN_DEFAULT)
-    parser.add_argument("--official-go-dist-sha256", help="CI-only: verified official go1.27.0 linux-amd64 archive SHA-256")
+    parser.add_argument("--official-go-dist-sha256", help="CI-only: verified official go1.27.1 linux-amd64 archive SHA-256")
     parser.add_argument("--after-root-measurement-gate", action="store_true",
                         help="required explicit gate; do not run during Laya measurement")
     args = parser.parse_args()

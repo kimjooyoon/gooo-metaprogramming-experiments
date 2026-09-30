@@ -338,7 +338,7 @@ def generate_inputs(expected):
         "designs": catalog,
     })
     oracle_dir = COHORT / "oracle"
-    (oracle_dir / "go.mod").write_text(f"module {GO_MODULE}\n\ngo 1.27\n", encoding="utf-8")
+    (oracle_dir / "go.mod").write_text(f"module {GO_MODULE}\n\ngo 1.27.1\n", encoding="utf-8")
     (oracle_dir / "oracle.go").write_text("\n".join(go_lines) + "\n", encoding="utf-8")
     (oracle_dir / "candidates.go").write_text("\n".join(candidate_lines) + "\n", encoding="utf-8")
 

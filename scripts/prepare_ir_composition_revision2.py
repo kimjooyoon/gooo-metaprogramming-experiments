@@ -17,7 +17,7 @@ REPO = Path(__file__).resolve().parents[1]
 ORIGINAL = REPO / "cohorts/ir-composition-curriculum-2026-09-30"
 REVISION = ORIGINAL / "revision-2"
 HOLE = "__GOOO_BODY_HOLE_choice__"
-GO_VERSION = "go1.27.0"
+GO_VERSION = "go1.27.1"
 PIN_REVISION = "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f"
 PIN_BINARY_SHA256 = "47b9f3bd1b365d18771ba36b0a2b472b139fdb6a08b404697e188478dce38c6e"
 SCRIPT_PATH = Path(__file__).resolve()
@@ -219,7 +219,7 @@ func TestCompiledCandidateFiniteCases(t *testing.T) {{
 
 def write_candidate_module(path: Path, module_name: str, designs: list[dict], candidate_source: str) -> None:
     path.mkdir(parents=True, exist_ok=True)
-    (path / "go.mod").write_text(f"module {module_name}\n\ngo 1.27\n", encoding="utf-8")
+    (path / "go.mod").write_text(f"module {module_name}\n\ngo 1.27.1\n", encoding="utf-8")
     functions = extract_functions(candidate_source)
     for index, design in enumerate(designs, start=1):
         for option in design["candidates"]:
@@ -379,7 +379,7 @@ def write_laya_plan_arms(revisions: list[dict], feedback_rows: list[dict]) -> No
 
 def reference_test_module(path: Path, vectors: list[dict], source_files: Path) -> None:
     path.mkdir(parents=True, exist_ok=True)
-    (path / "go.mod").write_text("module example.invalid/gooo/ir-composition-reference\n\ngo 1.27\n", encoding="utf-8")
+    (path / "go.mod").write_text("module example.invalid/gooo/ir-composition-reference\n\ngo 1.27.1\n", encoding="utf-8")
     (path / "oracle.go").write_bytes((source_files / "oracle.go").read_bytes())
     (path / "oracle_test.go").write_bytes((source_files / "oracle_test.go").read_bytes())
     write_json(path / "testdata/vectors.json", vectors)
@@ -388,7 +388,7 @@ def reference_test_module(path: Path, vectors: list[dict], source_files: Path) -
 def workflow_and_validator_source() -> tuple[str, str]:
     workflow = '''schema: gooo/ir-composition-revision2-ci-plan/v1
 python: standard library only
-go: "1.27.0" (direct physical binary; GOTOOLCHAIN=local, GOPROXY=off, GOSUMDB=off, GOWORK=off)
+go: "1.27.1" (direct physical binary; GOTOOLCHAIN=local, GOPROXY=off, GOSUMDB=off, GOWORK=off)
 network: disabled for the replay; provider endpoints and API keys unset
 command: python3 cohorts/ir-composition-curriculum-2026-09-30/revision-2/ci/validate_revision2.py --replay --go-bin "$GO1_27_BIN"
 steps:
@@ -534,7 +534,7 @@ def main():
     if args.replay:
         if not args.go_bin: raise SystemExit("--replay requires --go-bin")
         version=subprocess.run([str(args.go_bin),"version"],capture_output=True,text=True,check=False)
-        if version.returncode or "go1.27.0" not in version.stdout: raise SystemExit("replay requires physical Go 1.27.0")
+        if version.returncode or "go1.27.1" not in version.stdout: raise SystemExit("replay requires physical Go 1.27.1")
         modules=[
             (ROOT/"evaluation/original-reference","example.invalid/gooo/ir-composition-reference",0),
             (ROOT/"evaluation/revision2-reference","example.invalid/gooo/ir-composition-reference",0),
@@ -691,7 +691,7 @@ def prepare() -> None:
         "primary_areas": catalog["primary_areas"],
         "designs": new_catalog,
     })
-    (REVISION / "oracle/go.mod").write_text("module example.invalid/gooo/ir-composition-revision2-reference\n\ngo 1.27\n", encoding="utf-8")
+    (REVISION / "oracle/go.mod").write_text("module example.invalid/gooo/ir-composition-revision2-reference\n\ngo 1.27.1\n", encoding="utf-8")
     (REVISION / "oracle/oracle.go").write_bytes((ORIGINAL / "oracle/oracle.go").read_bytes())
     (REVISION / "oracle/oracle_test.go").write_bytes((ORIGINAL / "oracle/oracle_test.go").read_bytes())
     (REVISION / "oracle/candidates.go").write_text("\n".join(go_candidate_source) + "\n", encoding="utf-8")

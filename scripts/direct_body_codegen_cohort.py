@@ -1068,7 +1068,7 @@ def main() -> int:
     execution_wants = {case["case_id"]: expected_values(case, execution_domain) for case in cases}
     test_source = make_go_test(cases, execution_domain, execution_wants)
     (generated_dir / "body_codegen_test.go").write_text(test_source, encoding="utf-8")
-    (generated_dir / "go.mod").write_text(f"module {PACKAGE}\n\ngo 1.27\n", encoding="utf-8")
+    (generated_dir / "go.mod").write_text(f"module {PACKAGE}\n\ngo 1.27.1\n", encoding="utf-8")
 
     test_env = os.environ.copy()
     test_env["GOWORK"] = "off"

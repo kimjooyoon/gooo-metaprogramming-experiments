@@ -22,7 +22,7 @@ OLD_RUN = COHORT / "execution" / "original-gooo-cli-baseline"
 OLD_REPORT = OLD_RUN / "execution-report.json"
 OLD_CORRECTED_REPORT = OLD_RUN / "go-validation-corrected-v1" / "corrected-independent-go-report.json"
 DEFAULT_BINARY = Path("/tmp/gooo-condition-equivalence-60cf7f49-20260930")
-DEFAULT_GO_BIN = Path("/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go")
+DEFAULT_GO_BIN = Path("/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.1.darwin-arm64/bin/go")
 DEFAULT_OUTPUT = COHORT / "execution" / "condition-equivalence-60cf7f49"
 SOURCE_REVISION = "60cf7f49b0e302a6bebb42bc8da90f3ed19b2b82"
 BINARY_SHA256 = "7329b8d255b083bacfd7d44c7271caa4e3c8254bd48cc085068c92665a02591a"
@@ -351,8 +351,8 @@ def main() -> None:
     compiler = baseline.binary_build_receipt(binary, BINARY_SHA256, SOURCE_REVISION)
     go_bin = args.go_bin.resolve()
     go_version = subprocess.run([str(go_bin), "version"], capture_output=True, text=True, check=False)
-    if go_version.returncode or "go1.27.0" not in go_version.stdout:
-        raise RuntimeError(f"independent Go validation requires physical Go 1.27.0; got {go_version.stdout.strip()!r}")
+    if go_version.returncode or "go1.27.1" not in go_version.stdout:
+        raise RuntimeError(f"independent Go validation requires physical Go 1.27.1; got {go_version.stdout.strip()!r}")
 
     env = child_environment()
     harness = baseline.go_harness_preflight(go_bin, env)

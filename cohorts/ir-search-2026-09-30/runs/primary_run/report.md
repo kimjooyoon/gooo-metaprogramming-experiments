@@ -1,7 +1,7 @@
 # Gooo IR body-search cohort results
 
-Run: `primary_run`  
-Binary SHA-256: `f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9`  
+Run: `primary_run`
+Binary SHA-256: `f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9`
 Source revision: `29d44bc778d85aee03b9af500bd83dc98f368189`
 
 This report describes finite training and disjoint holdout suites. It is not a proof over all int64 inputs.

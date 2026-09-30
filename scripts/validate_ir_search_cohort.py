@@ -729,7 +729,7 @@ def main():
              f"- Exact first choices: {primary['model_choice_training_metrics']['first_choice_exact_intents']}/{primary['model_choice_training_metrics']['intents']} intents",
              "- Final selected search bodies: training and post-selection holdout are reported separately in the JSON artifact; no speedup claim is made",
              f"- Deterministic replays: {len(deterministic)} intents, each repeated identically",
-             f"- Mock protocol replays: {len(mock)} intents; no Laya calls", 
+             f"- Mock protocol replays: {len(mock)} intents; no Laya calls",
              "- CPU/RSS evidence: separate per-invocation records; sampled RSS is not a process peak, and no-provider controls have one Laya-server snapshot whose zero CPU delta is unknown",
              "- Manifest digest: the run records a pre-finalization snapshot whose bytes were not retained; fixture and plan snapshots are checked directly", ""]
     (output_dir / "validation-report.md").write_text("\n".join(lines), encoding="utf-8")

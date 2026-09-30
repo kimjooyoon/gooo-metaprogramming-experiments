@@ -199,8 +199,8 @@ def render_markdown(report):
     lines = [
         "# Gooo IR body-search cohort results",
         "",
-        f"Run: `{report['run_id']}`  ",
-        f"Binary SHA-256: `{report['binary_sha256']}`  ",
+        f"Run: `{report['run_id']}`",
+        f"Binary SHA-256: `{report['binary_sha256']}`",
         f"Source revision: `{report['source_revision']}`",
         "",
         "This report describes finite training and disjoint holdout suites. It is not a proof over all int64 inputs.",

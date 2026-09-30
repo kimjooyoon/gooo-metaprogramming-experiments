@@ -1,0 +1,8 @@
+{
+  "files": {
+    "README.md": "39846023ec978a7dddc664266e87a501a7c2965431f5c2ffcfac3eec647f003d",
+    "probe-freeze.json": "7c67f6d8faeccc79ef9a802cf31313d51b72288cfa4ce2d4c2dadfd933ac6061",
+    "probe-rows.json": "8040a38fc43e6efa458d119c65d7ff6a6cb4518d8a8e1bbbcf4494068df917bd"
+  },
+  "schema": "gooo/ir-composition-extra-domain-probe-file-index/v1"
+}

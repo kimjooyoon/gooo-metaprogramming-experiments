@@ -1,0 +1,28 @@
+name: Additional domain probe freeze
+
+on:
+  push:
+    paths:
+      - 'cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/**'
+      - 'scripts/prepare_extra_domain_probes.py'
+      - '.github/workflows/extra-domain-probe-freeze.yml'
+  pull_request:
+    paths:
+      - 'cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/**'
+      - 'scripts/prepare_extra_domain_probes.py'
+      - '.github/workflows/extra-domain-probe-freeze.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-inputs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify 128 fixed inputs, source bindings and per-intent disjointness
+        run: python3 scripts/prepare_extra_domain_probes.py --verify

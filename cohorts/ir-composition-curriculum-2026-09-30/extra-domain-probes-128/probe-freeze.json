@@ -1,0 +1,39 @@
+{
+  "bound_revision2_files": {
+    "catalog.json": "e61a01be65ea8c38a422c1709ff1822b4bf199c271fdcd67671162651271e52c",
+    "design-freeze.json": "9ef3d4bf5c3be68ef4da9c0e7c712eefb313d6bd325446e229e48b8441e33aca",
+    "oracle/go.mod": "990f4f7357fd11a1c1b9ca8caaa01e897717b581a3329642d95b997a93798683",
+    "oracle/oracle.go": "799a3410ff39019782b9fc7d2b7f9b5dbae6a136a13c39585bd5ae3053a984e7",
+    "oracle/python_spec.py": "456767452c1ca28f69bfec05242a8d1a2023dcac4d3c8162540f5201a73f86a9",
+    "oracle/testdata/vectors.json": "aa08eb50bea927a1219f81fd0d9608818e725ffd9e664e89abf0a314d1303b9e",
+    "revision-manifest.json": "d29362bcf9894ac53dc34eb44685cfeaf46b99841574e9473285fac00bfd1dd1"
+  },
+  "cohort": "ir-composition-curriculum-2026-09-30/extra-domain-probes-128",
+  "design_count": 32,
+  "expected_values_frozen": false,
+  "go_executions_during_preparation": 0,
+  "model_calls": 0,
+  "new_intentions": 0,
+  "probe_count": 128,
+  "probes_per_design": 4,
+  "reference": {
+    "execution": "deferred until the root measurement gate; compile this frozen handwritten reference separately from each captured emitted source",
+    "limitation": "the handwritten Go reference is from the same source lineage used for the prior finite oracle; matching it is a correlated-oracle diagnostic, not independent ground truth",
+    "source_path": "revision-2/oracle/oracle.go",
+    "source_sha256": "799a3410ff39019782b9fc7d2b7f9b5dbae6a136a13c39585bd5ae3053a984e7"
+  },
+  "revision2_design_freeze_sha256": "9ef3d4bf5c3be68ef4da9c0e7c712eefb313d6bd325446e229e48b8441e33aca",
+  "revision2_manifest_sha256": "d29362bcf9894ac53dc34eb44685cfeaf46b99841574e9473285fac00bfd1dd1",
+  "rows_file": "probe-rows.json",
+  "rows_sha256": "8040a38fc43e6efa458d119c65d7ff6a6cb4518d8a8e1bbbcf4494068df917bd",
+  "same_design_ids_as_revision2": true,
+  "schema": "gooo/ir-composition-extra-domain-probe-freeze/v1",
+  "seed": null,
+  "selection_policy": {
+    "balance": "16 inputs per each of 8 semantic areas",
+    "deduplication": "four inputs unique within each design and disjoint from that design's frozen training and holdout inputs",
+    "method": "fixed authored input map in prepare_extra_domain_probes.py; no RNG, no adaptive selection",
+    "range": "signed int64",
+    "selection_timing": "frozen before Laya/provider capture or candidate choice"
+  }
+}

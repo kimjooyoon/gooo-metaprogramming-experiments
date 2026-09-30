@@ -1,0 +1,1193 @@
+{
+  "classification": "postselection_only; never prompt or selection input",
+  "probe_count": 128,
+  "rows": [
+    {
+      "activity": "C01",
+      "design_id": "cc01_inclusive_band",
+      "input": -3,
+      "probe_id": "cc01_inclusive_band/x1",
+      "probe_role": "negative_or_low_exterior",
+      "region_target": "negative:negative_or_low_exterior",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C01",
+      "design_id": "cc01_inclusive_band",
+      "input": 1,
+      "probe_id": "cc01_inclusive_band/x2",
+      "probe_role": "lower_side_interior_or_neighbor",
+      "region_target": "positive:lower_side_interior_or_neighbor",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C01",
+      "design_id": "cc01_inclusive_band",
+      "input": 7,
+      "probe_id": "cc01_inclusive_band/x3",
+      "probe_role": "upper_side_interior_or_neighbor",
+      "region_target": "positive:upper_side_interior_or_neighbor",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C01",
+      "design_id": "cc01_inclusive_band",
+      "input": 10,
+      "probe_id": "cc01_inclusive_band/x4",
+      "probe_role": "positive_or_high_exterior",
+      "region_target": "positive:positive_or_high_exterior",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C02",
+      "design_id": "cc02_nonzero_disjunction",
+      "input": -2,
+      "probe_id": "cc02_nonzero_disjunction/x1",
+      "probe_role": "negative_or_low_exterior",
+      "region_target": "negative:negative_or_low_exterior",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C02",
+      "design_id": "cc02_nonzero_disjunction",
+      "input": 2,
+      "probe_id": "cc02_nonzero_disjunction/x2",
+      "probe_role": "lower_side_interior_or_neighbor",
+      "region_target": "positive:lower_side_interior_or_neighbor",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C02",
+      "design_id": "cc02_nonzero_disjunction",
+      "input": -9223372036854775808,
+      "probe_id": "cc02_nonzero_disjunction/x3",
+      "probe_role": "upper_side_interior_or_neighbor",
+      "region_target": "large_value:upper_side_interior_or_neighbor",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C02",
+      "design_id": "cc02_nonzero_disjunction",
+      "input": 9223372036854775807,
+      "probe_id": "cc02_nonzero_disjunction/x4",
+      "probe_role": "positive_or_high_exterior",
+      "region_target": "large_value:positive_or_high_exterior",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C03",
+      "design_id": "cc03_two_islands",
+      "input": -6,
+      "probe_id": "cc03_two_islands/x1",
+      "probe_role": "negative_or_low_exterior",
+      "region_target": "negative:negative_or_low_exterior",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C03",
+      "design_id": "cc03_two_islands",
+      "input": -3,
+      "probe_id": "cc03_two_islands/x2",
+      "probe_role": "lower_side_interior_or_neighbor",
+      "region_target": "negative:lower_side_interior_or_neighbor",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C03",
+      "design_id": "cc03_two_islands",
+      "input": 3,
+      "probe_id": "cc03_two_islands/x3",
+      "probe_role": "upper_side_interior_or_neighbor",
+      "region_target": "positive:upper_side_interior_or_neighbor",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C03",
+      "design_id": "cc03_two_islands",
+      "input": 6,
+      "probe_id": "cc03_two_islands/x4",
+      "probe_role": "positive_or_high_exterior",
+      "region_target": "positive:positive_or_high_exterior",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C04",
+      "design_id": "cc04_outer_cutoffs",
+      "input": -8,
+      "probe_id": "cc04_outer_cutoffs/x1",
+      "probe_role": "negative_or_low_exterior",
+      "region_target": "negative:negative_or_low_exterior",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C04",
+      "design_id": "cc04_outer_cutoffs",
+      "input": -4,
+      "probe_id": "cc04_outer_cutoffs/x2",
+      "probe_role": "lower_side_interior_or_neighbor",
+      "region_target": "negative:lower_side_interior_or_neighbor",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C04",
+      "design_id": "cc04_outer_cutoffs",
+      "input": 6,
+      "probe_id": "cc04_outer_cutoffs/x3",
+      "probe_role": "upper_side_interior_or_neighbor",
+      "region_target": "positive:upper_side_interior_or_neighbor",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C04",
+      "design_id": "cc04_outer_cutoffs",
+      "input": 10,
+      "probe_id": "cc04_outer_cutoffs/x4",
+      "probe_role": "positive_or_high_exterior",
+      "region_target": "positive:positive_or_high_exterior",
+      "semantic_area": "conditionals"
+    },
+    {
+      "activity": "C05",
+      "design_id": "ni05_negative_then_double",
+      "input": -100,
+      "probe_id": "ni05_negative_then_double/x1",
+      "probe_role": "far_negative_branch",
+      "region_target": "negative:far_negative_branch",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C05",
+      "design_id": "ni05_negative_then_double",
+      "input": -2,
+      "probe_id": "ni05_negative_then_double/x2",
+      "probe_role": "negative_or_lower_neighbor",
+      "region_target": "negative:negative_or_lower_neighbor",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C05",
+      "design_id": "ni05_negative_then_double",
+      "input": 8,
+      "probe_id": "ni05_negative_then_double/x3",
+      "probe_role": "upper_threshold_neighbor",
+      "region_target": "positive:upper_threshold_neighbor",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C05",
+      "design_id": "ni05_negative_then_double",
+      "input": 100,
+      "probe_id": "ni05_negative_then_double/x4",
+      "probe_role": "far_positive_branch",
+      "region_target": "positive:far_positive_branch",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C06",
+      "design_id": "ni06_surcharge_discount",
+      "input": -2,
+      "probe_id": "ni06_surcharge_discount/x1",
+      "probe_role": "far_negative_branch",
+      "region_target": "negative:far_negative_branch",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C06",
+      "design_id": "ni06_surcharge_discount",
+      "input": 2,
+      "probe_id": "ni06_surcharge_discount/x2",
+      "probe_role": "negative_or_lower_neighbor",
+      "region_target": "positive:negative_or_lower_neighbor",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C06",
+      "design_id": "ni06_surcharge_discount",
+      "input": 99,
+      "probe_id": "ni06_surcharge_discount/x3",
+      "probe_role": "upper_threshold_neighbor",
+      "region_target": "positive:upper_threshold_neighbor",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C06",
+      "design_id": "ni06_surcharge_discount",
+      "input": 102,
+      "probe_id": "ni06_surcharge_discount/x4",
+      "probe_role": "far_positive_branch",
+      "region_target": "positive:far_positive_branch",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C07",
+      "design_id": "ni07_zero_special_negative_offset",
+      "input": -3,
+      "probe_id": "ni07_zero_special_negative_offset/x1",
+      "probe_role": "far_negative_branch",
+      "region_target": "negative:far_negative_branch",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C07",
+      "design_id": "ni07_zero_special_negative_offset",
+      "input": 3,
+      "probe_id": "ni07_zero_special_negative_offset/x2",
+      "probe_role": "negative_or_lower_neighbor",
+      "region_target": "positive:negative_or_lower_neighbor",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C07",
+      "design_id": "ni07_zero_special_negative_offset",
+      "input": 49,
+      "probe_id": "ni07_zero_special_negative_offset/x3",
+      "probe_role": "upper_threshold_neighbor",
+      "region_target": "positive:upper_threshold_neighbor",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C07",
+      "design_id": "ni07_zero_special_negative_offset",
+      "input": 51,
+      "probe_id": "ni07_zero_special_negative_offset/x4",
+      "probe_role": "far_positive_branch",
+      "region_target": "positive:far_positive_branch",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C08",
+      "design_id": "ni08_upper_grade_excess",
+      "input": 58,
+      "probe_id": "ni08_upper_grade_excess/x1",
+      "probe_role": "far_negative_branch",
+      "region_target": "positive:far_negative_branch",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C08",
+      "design_id": "ni08_upper_grade_excess",
+      "input": 61,
+      "probe_id": "ni08_upper_grade_excess/x2",
+      "probe_role": "negative_or_lower_neighbor",
+      "region_target": "positive:negative_or_lower_neighbor",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C08",
+      "design_id": "ni08_upper_grade_excess",
+      "input": 78,
+      "probe_id": "ni08_upper_grade_excess/x3",
+      "probe_role": "upper_threshold_neighbor",
+      "region_target": "positive:upper_threshold_neighbor",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C08",
+      "design_id": "ni08_upper_grade_excess",
+      "input": 82,
+      "probe_id": "ni08_upper_grade_excess/x4",
+      "probe_role": "far_positive_branch",
+      "region_target": "positive:far_positive_branch",
+      "semantic_area": "nested_if_else"
+    },
+    {
+      "activity": "C09",
+      "design_id": "lr09_compound_total",
+      "input": -6,
+      "probe_id": "lr09_compound_total/x1",
+      "probe_role": "lower_boundary_neighbor",
+      "region_target": "negative:lower_boundary_neighbor",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C09",
+      "design_id": "lr09_compound_total",
+      "input": -4,
+      "probe_id": "lr09_compound_total/x2",
+      "probe_role": "interior_or_nonnegative_neighbor",
+      "region_target": "negative:interior_or_nonnegative_neighbor",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C09",
+      "design_id": "lr09_compound_total",
+      "input": 9,
+      "probe_id": "lr09_compound_total/x3",
+      "probe_role": "upper_boundary_or_large_interior",
+      "region_target": "positive:upper_boundary_or_large_interior",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C09",
+      "design_id": "lr09_compound_total",
+      "input": 9223372036854775807,
+      "probe_id": "lr09_compound_total/x4",
+      "probe_role": "large_int64_arithmetic",
+      "region_target": "large_value:large_int64_arithmetic",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C10",
+      "design_id": "lr10_floor_then_increment",
+      "input": -2,
+      "probe_id": "lr10_floor_then_increment/x1",
+      "probe_role": "lower_boundary_neighbor",
+      "region_target": "negative:lower_boundary_neighbor",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C10",
+      "design_id": "lr10_floor_then_increment",
+      "input": 2,
+      "probe_id": "lr10_floor_then_increment/x2",
+      "probe_role": "interior_or_nonnegative_neighbor",
+      "region_target": "positive:interior_or_nonnegative_neighbor",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C10",
+      "design_id": "lr10_floor_then_increment",
+      "input": 100,
+      "probe_id": "lr10_floor_then_increment/x3",
+      "probe_role": "upper_boundary_or_large_interior",
+      "region_target": "positive:upper_boundary_or_large_interior",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C10",
+      "design_id": "lr10_floor_then_increment",
+      "input": 9223372036854775807,
+      "probe_id": "lr10_floor_then_increment/x4",
+      "probe_role": "large_int64_arithmetic",
+      "region_target": "large_value:large_int64_arithmetic",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C11",
+      "design_id": "lr11_nonnegative_doubled_score",
+      "input": -3,
+      "probe_id": "lr11_nonnegative_doubled_score/x1",
+      "probe_role": "lower_boundary_neighbor",
+      "region_target": "negative:lower_boundary_neighbor",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C11",
+      "design_id": "lr11_nonnegative_doubled_score",
+      "input": 1,
+      "probe_id": "lr11_nonnegative_doubled_score/x2",
+      "probe_role": "interior_or_nonnegative_neighbor",
+      "region_target": "positive:interior_or_nonnegative_neighbor",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C11",
+      "design_id": "lr11_nonnegative_doubled_score",
+      "input": 4611686018427387903,
+      "probe_id": "lr11_nonnegative_doubled_score/x3",
+      "probe_role": "upper_boundary_or_large_interior",
+      "region_target": "large_value:upper_boundary_or_large_interior",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C11",
+      "design_id": "lr11_nonnegative_doubled_score",
+      "input": 9223372036854775807,
+      "probe_id": "lr11_nonnegative_doubled_score/x4",
+      "probe_role": "large_int64_arithmetic",
+      "region_target": "large_value:large_int64_arithmetic",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C12",
+      "design_id": "lr12_cap_after_adjustment",
+      "input": -6,
+      "probe_id": "lr12_cap_after_adjustment/x1",
+      "probe_role": "lower_boundary_neighbor",
+      "region_target": "negative:lower_boundary_neighbor",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C12",
+      "design_id": "lr12_cap_after_adjustment",
+      "input": -1,
+      "probe_id": "lr12_cap_after_adjustment/x2",
+      "probe_role": "interior_or_nonnegative_neighbor",
+      "region_target": "negative:interior_or_nonnegative_neighbor",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C12",
+      "design_id": "lr12_cap_after_adjustment",
+      "input": 6,
+      "probe_id": "lr12_cap_after_adjustment/x3",
+      "probe_role": "upper_boundary_or_large_interior",
+      "region_target": "positive:upper_boundary_or_large_interior",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C12",
+      "design_id": "lr12_cap_after_adjustment",
+      "input": 9,
+      "probe_id": "lr12_cap_after_adjustment/x4",
+      "probe_role": "large_int64_arithmetic",
+      "region_target": "large_value:large_int64_arithmetic",
+      "semantic_area": "let_reassignment"
+    },
+    {
+      "activity": "C13",
+      "design_id": "pr13_subtract_tripled_sum",
+      "input": -3,
+      "probe_id": "pr13_subtract_tripled_sum/x1",
+      "probe_role": "negative_neighbor",
+      "region_target": "negative:negative_neighbor",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C13",
+      "design_id": "pr13_subtract_tripled_sum",
+      "input": -1,
+      "probe_id": "pr13_subtract_tripled_sum/x2",
+      "probe_role": "small_negative_or_zero_neighbor",
+      "region_target": "negative:small_negative_or_zero_neighbor",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C13",
+      "design_id": "pr13_subtract_tripled_sum",
+      "input": 4,
+      "probe_id": "pr13_subtract_tripled_sum/x3",
+      "probe_role": "positive_neighbor",
+      "region_target": "positive:positive_neighbor",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C13",
+      "design_id": "pr13_subtract_tripled_sum",
+      "input": 9223372036854775807,
+      "probe_id": "pr13_subtract_tripled_sum/x4",
+      "probe_role": "int64_wraparound_probe",
+      "region_target": "large_value:int64_wraparound_probe",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C14",
+      "design_id": "pr14_product_neighbor_factors",
+      "input": -4,
+      "probe_id": "pr14_product_neighbor_factors/x1",
+      "probe_role": "negative_neighbor",
+      "region_target": "negative:negative_neighbor",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C14",
+      "design_id": "pr14_product_neighbor_factors",
+      "input": -1,
+      "probe_id": "pr14_product_neighbor_factors/x2",
+      "probe_role": "small_negative_or_zero_neighbor",
+      "region_target": "negative:small_negative_or_zero_neighbor",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C14",
+      "design_id": "pr14_product_neighbor_factors",
+      "input": 3,
+      "probe_id": "pr14_product_neighbor_factors/x3",
+      "probe_role": "positive_neighbor",
+      "region_target": "positive:positive_neighbor",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C14",
+      "design_id": "pr14_product_neighbor_factors",
+      "input": -9223372036854775808,
+      "probe_id": "pr14_product_neighbor_factors/x4",
+      "probe_role": "int64_wraparound_probe",
+      "region_target": "large_value:int64_wraparound_probe",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C15",
+      "design_id": "pr15_square_minus_successor_sum",
+      "input": -3,
+      "probe_id": "pr15_square_minus_successor_sum/x1",
+      "probe_role": "negative_neighbor",
+      "region_target": "negative:negative_neighbor",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C15",
+      "design_id": "pr15_square_minus_successor_sum",
+      "input": 1,
+      "probe_id": "pr15_square_minus_successor_sum/x2",
+      "probe_role": "small_negative_or_zero_neighbor",
+      "region_target": "positive:small_negative_or_zero_neighbor",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C15",
+      "design_id": "pr15_square_minus_successor_sum",
+      "input": 4,
+      "probe_id": "pr15_square_minus_successor_sum/x3",
+      "probe_role": "positive_neighbor",
+      "region_target": "positive:positive_neighbor",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C15",
+      "design_id": "pr15_square_minus_successor_sum",
+      "input": 9223372036854775807,
+      "probe_id": "pr15_square_minus_successor_sum/x4",
+      "probe_role": "int64_wraparound_probe",
+      "region_target": "large_value:int64_wraparound_probe",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C16",
+      "design_id": "pr16_composed_neighbor_product",
+      "input": -4,
+      "probe_id": "pr16_composed_neighbor_product/x1",
+      "probe_role": "negative_neighbor",
+      "region_target": "negative:negative_neighbor",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C16",
+      "design_id": "pr16_composed_neighbor_product",
+      "input": -1,
+      "probe_id": "pr16_composed_neighbor_product/x2",
+      "probe_role": "small_negative_or_zero_neighbor",
+      "region_target": "negative:small_negative_or_zero_neighbor",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C16",
+      "design_id": "pr16_composed_neighbor_product",
+      "input": 3,
+      "probe_id": "pr16_composed_neighbor_product/x3",
+      "probe_role": "positive_neighbor",
+      "region_target": "positive:positive_neighbor",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C16",
+      "design_id": "pr16_composed_neighbor_product",
+      "input": 9223372036854775807,
+      "probe_id": "pr16_composed_neighbor_product/x4",
+      "probe_role": "int64_wraparound_probe",
+      "region_target": "large_value:int64_wraparound_probe",
+      "semantic_area": "expression_precedence"
+    },
+    {
+      "activity": "C17",
+      "design_id": "cp17_nonpositive_inclusive",
+      "input": -2,
+      "probe_id": "cp17_nonpositive_inclusive/x1",
+      "probe_role": "negative_exterior",
+      "region_target": "negative:negative_exterior",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C17",
+      "design_id": "cp17_nonpositive_inclusive",
+      "input": 2,
+      "probe_id": "cp17_nonpositive_inclusive/x2",
+      "probe_role": "lower_or_zero_neighbor",
+      "region_target": "positive:lower_or_zero_neighbor",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C17",
+      "design_id": "cp17_nonpositive_inclusive",
+      "input": -1000,
+      "probe_id": "cp17_nonpositive_inclusive/x3",
+      "probe_role": "upper_or_positive_neighbor",
+      "region_target": "negative:upper_or_positive_neighbor",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C17",
+      "design_id": "cp17_nonpositive_inclusive",
+      "input": 1000,
+      "probe_id": "cp17_nonpositive_inclusive/x4",
+      "probe_role": "positive_exterior",
+      "region_target": "positive:positive_exterior",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C18",
+      "design_id": "cp18_exact_release_code",
+      "input": -7,
+      "probe_id": "cp18_exact_release_code/x1",
+      "probe_role": "negative_exterior",
+      "region_target": "negative:negative_exterior",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C18",
+      "design_id": "cp18_exact_release_code",
+      "input": 5,
+      "probe_id": "cp18_exact_release_code/x2",
+      "probe_role": "lower_or_zero_neighbor",
+      "region_target": "positive:lower_or_zero_neighbor",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C18",
+      "design_id": "cp18_exact_release_code",
+      "input": 10,
+      "probe_id": "cp18_exact_release_code/x3",
+      "probe_role": "upper_or_positive_neighbor",
+      "region_target": "positive:upper_or_positive_neighbor",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C18",
+      "design_id": "cp18_exact_release_code",
+      "input": 700,
+      "probe_id": "cp18_exact_release_code/x4",
+      "probe_role": "positive_exterior",
+      "region_target": "positive:positive_exterior",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C19",
+      "design_id": "cp19_range_without_origin",
+      "input": -2,
+      "probe_id": "cp19_range_without_origin/x1",
+      "probe_role": "negative_exterior",
+      "region_target": "negative:negative_exterior",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C19",
+      "design_id": "cp19_range_without_origin",
+      "input": -1,
+      "probe_id": "cp19_range_without_origin/x2",
+      "probe_role": "lower_or_zero_neighbor",
+      "region_target": "negative:lower_or_zero_neighbor",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C19",
+      "design_id": "cp19_range_without_origin",
+      "input": 1,
+      "probe_id": "cp19_range_without_origin/x3",
+      "probe_role": "upper_or_positive_neighbor",
+      "region_target": "positive:upper_or_positive_neighbor",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C19",
+      "design_id": "cp19_range_without_origin",
+      "input": 5,
+      "probe_id": "cp19_range_without_origin/x4",
+      "probe_role": "positive_exterior",
+      "region_target": "positive:positive_exterior",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C20",
+      "design_id": "cp20_strict_symmetric_window",
+      "input": -7,
+      "probe_id": "cp20_strict_symmetric_window/x1",
+      "probe_role": "negative_exterior",
+      "region_target": "negative:negative_exterior",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C20",
+      "design_id": "cp20_strict_symmetric_window",
+      "input": -3,
+      "probe_id": "cp20_strict_symmetric_window/x2",
+      "probe_role": "lower_or_zero_neighbor",
+      "region_target": "negative:lower_or_zero_neighbor",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C20",
+      "design_id": "cp20_strict_symmetric_window",
+      "input": 3,
+      "probe_id": "cp20_strict_symmetric_window/x3",
+      "probe_role": "upper_or_positive_neighbor",
+      "region_target": "positive:upper_or_positive_neighbor",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C20",
+      "design_id": "cp20_strict_symmetric_window",
+      "input": 7,
+      "probe_id": "cp20_strict_symmetric_window/x4",
+      "probe_role": "positive_exterior",
+      "region_target": "positive:positive_exterior",
+      "semantic_area": "comparison_expressions"
+    },
+    {
+      "activity": "C21",
+      "design_id": "bl21_saved_range_predicates",
+      "input": -4,
+      "probe_id": "bl21_saved_range_predicates/x1",
+      "probe_role": "negative_neighbor",
+      "region_target": "negative:negative_neighbor",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C21",
+      "design_id": "bl21_saved_range_predicates",
+      "input": 4,
+      "probe_id": "bl21_saved_range_predicates/x2",
+      "probe_role": "interior_or_lower_side",
+      "region_target": "positive:interior_or_lower_side",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C21",
+      "design_id": "bl21_saved_range_predicates",
+      "input": -9223372036854775808,
+      "probe_id": "bl21_saved_range_predicates/x3",
+      "probe_role": "upper_or_positive_side",
+      "region_target": "large_value:upper_or_positive_side",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C21",
+      "design_id": "bl21_saved_range_predicates",
+      "input": 9223372036854775807,
+      "probe_id": "bl21_saved_range_predicates/x4",
+      "probe_role": "large_exterior",
+      "region_target": "large_value:large_exterior",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C22",
+      "design_id": "bl22_reassigned_valid_flag",
+      "input": -2,
+      "probe_id": "bl22_reassigned_valid_flag/x1",
+      "probe_role": "negative_neighbor",
+      "region_target": "negative:negative_neighbor",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C22",
+      "design_id": "bl22_reassigned_valid_flag",
+      "input": 1,
+      "probe_id": "bl22_reassigned_valid_flag/x2",
+      "probe_role": "interior_or_lower_side",
+      "region_target": "positive:interior_or_lower_side",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C22",
+      "design_id": "bl22_reassigned_valid_flag",
+      "input": 4,
+      "probe_id": "bl22_reassigned_valid_flag/x3",
+      "probe_role": "upper_or_positive_side",
+      "region_target": "positive:upper_or_positive_side",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C22",
+      "design_id": "bl22_reassigned_valid_flag",
+      "input": 7,
+      "probe_id": "bl22_reassigned_valid_flag/x4",
+      "probe_role": "large_exterior",
+      "region_target": "positive:large_exterior",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C23",
+      "design_id": "bl23_nonzero_bounded_flag",
+      "input": -3,
+      "probe_id": "bl23_nonzero_bounded_flag/x1",
+      "probe_role": "negative_neighbor",
+      "region_target": "negative:negative_neighbor",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C23",
+      "design_id": "bl23_nonzero_bounded_flag",
+      "input": 2,
+      "probe_id": "bl23_nonzero_bounded_flag/x2",
+      "probe_role": "interior_or_lower_side",
+      "region_target": "positive:interior_or_lower_side",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C23",
+      "design_id": "bl23_nonzero_bounded_flag",
+      "input": 3,
+      "probe_id": "bl23_nonzero_bounded_flag/x3",
+      "probe_role": "upper_or_positive_side",
+      "region_target": "positive:upper_or_positive_side",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C23",
+      "design_id": "bl23_nonzero_bounded_flag",
+      "input": 6,
+      "probe_id": "bl23_nonzero_bounded_flag/x4",
+      "probe_role": "large_exterior",
+      "region_target": "positive:large_exterior",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C24",
+      "design_id": "bl24_selected_nonnegative_codes",
+      "input": -2,
+      "probe_id": "bl24_selected_nonnegative_codes/x1",
+      "probe_role": "negative_neighbor",
+      "region_target": "negative:negative_neighbor",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C24",
+      "design_id": "bl24_selected_nonnegative_codes",
+      "input": 3,
+      "probe_id": "bl24_selected_nonnegative_codes/x2",
+      "probe_role": "interior_or_lower_side",
+      "region_target": "positive:interior_or_lower_side",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C24",
+      "design_id": "bl24_selected_nonnegative_codes",
+      "input": 6,
+      "probe_id": "bl24_selected_nonnegative_codes/x3",
+      "probe_role": "upper_or_positive_side",
+      "region_target": "positive:upper_or_positive_side",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C24",
+      "design_id": "bl24_selected_nonnegative_codes",
+      "input": 100,
+      "probe_id": "bl24_selected_nonnegative_codes/x4",
+      "probe_role": "large_exterior",
+      "region_target": "positive:large_exterior",
+      "semantic_area": "boolean_locals"
+    },
+    {
+      "activity": "C25",
+      "design_id": "tx25_sign_label",
+      "input": -2,
+      "probe_id": "tx25_sign_label/x1",
+      "probe_role": "negative_neighbor",
+      "region_target": "negative:negative_neighbor",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C25",
+      "design_id": "tx25_sign_label",
+      "input": 2,
+      "probe_id": "tx25_sign_label/x2",
+      "probe_role": "positive_neighbor",
+      "region_target": "positive:positive_neighbor",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C25",
+      "design_id": "tx25_sign_label",
+      "input": -9223372036854775808,
+      "probe_id": "tx25_sign_label/x3",
+      "probe_role": "minimum_int64_sign_or_state",
+      "region_target": "large_value:minimum_int64_sign_or_state",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C25",
+      "design_id": "tx25_sign_label",
+      "input": 9223372036854775807,
+      "probe_id": "tx25_sign_label/x4",
+      "probe_role": "maximum_int64_sign_or_state",
+      "region_target": "large_value:maximum_int64_sign_or_state",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C26",
+      "design_id": "tx26_state_label",
+      "input": -2,
+      "probe_id": "tx26_state_label/x1",
+      "probe_role": "negative_neighbor",
+      "region_target": "negative:negative_neighbor",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C26",
+      "design_id": "tx26_state_label",
+      "input": 2,
+      "probe_id": "tx26_state_label/x2",
+      "probe_role": "positive_neighbor",
+      "region_target": "positive:positive_neighbor",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C26",
+      "design_id": "tx26_state_label",
+      "input": 6,
+      "probe_id": "tx26_state_label/x3",
+      "probe_role": "minimum_int64_sign_or_state",
+      "region_target": "large_value:minimum_int64_sign_or_state",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C26",
+      "design_id": "tx26_state_label",
+      "input": 9223372036854775807,
+      "probe_id": "tx26_state_label/x4",
+      "probe_role": "maximum_int64_sign_or_state",
+      "region_target": "large_value:maximum_int64_sign_or_state",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C27",
+      "design_id": "tx27_lexical_cutoff",
+      "input": -3,
+      "probe_id": "tx27_lexical_cutoff/x1",
+      "probe_role": "negative_neighbor",
+      "region_target": "negative:negative_neighbor",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C27",
+      "design_id": "tx27_lexical_cutoff",
+      "input": 3,
+      "probe_id": "tx27_lexical_cutoff/x2",
+      "probe_role": "positive_neighbor",
+      "region_target": "positive:positive_neighbor",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C27",
+      "design_id": "tx27_lexical_cutoff",
+      "input": -9223372036854775808,
+      "probe_id": "tx27_lexical_cutoff/x3",
+      "probe_role": "minimum_int64_sign_or_state",
+      "region_target": "large_value:minimum_int64_sign_or_state",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C27",
+      "design_id": "tx27_lexical_cutoff",
+      "input": 9223372036854775807,
+      "probe_id": "tx27_lexical_cutoff/x4",
+      "probe_role": "maximum_int64_sign_or_state",
+      "region_target": "large_value:maximum_int64_sign_or_state",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C28",
+      "design_id": "tx28_reassigned_text_state",
+      "input": -2,
+      "probe_id": "tx28_reassigned_text_state/x1",
+      "probe_role": "negative_neighbor",
+      "region_target": "negative:negative_neighbor",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C28",
+      "design_id": "tx28_reassigned_text_state",
+      "input": 2,
+      "probe_id": "tx28_reassigned_text_state/x2",
+      "probe_role": "positive_neighbor",
+      "region_target": "positive:positive_neighbor",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C28",
+      "design_id": "tx28_reassigned_text_state",
+      "input": 99,
+      "probe_id": "tx28_reassigned_text_state/x3",
+      "probe_role": "minimum_int64_sign_or_state",
+      "region_target": "large_value:minimum_int64_sign_or_state",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C28",
+      "design_id": "tx28_reassigned_text_state",
+      "input": 101,
+      "probe_id": "tx28_reassigned_text_state/x4",
+      "probe_role": "maximum_int64_sign_or_state",
+      "region_target": "large_value:maximum_int64_sign_or_state",
+      "semantic_area": "text_locals"
+    },
+    {
+      "activity": "C29",
+      "design_id": "ob29_saturating_increment",
+      "input": 9223372036854775803,
+      "probe_id": "ob29_saturating_increment/x1",
+      "probe_role": "near_or_beyond_boundary_low",
+      "region_target": "near_or_beyond_boundary_low",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C29",
+      "design_id": "ob29_saturating_increment",
+      "input": 9223372036854775802,
+      "probe_id": "ob29_saturating_increment/x2",
+      "probe_role": "near_or_beyond_boundary_high",
+      "region_target": "near_or_beyond_boundary_high",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C29",
+      "design_id": "ob29_saturating_increment",
+      "input": -9223372036854775808,
+      "probe_id": "ob29_saturating_increment/x3",
+      "probe_role": "opposite_sign_or_lower_edge",
+      "region_target": "opposite_sign_or_lower_edge",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C29",
+      "design_id": "ob29_saturating_increment",
+      "input": -9223372036854775807,
+      "probe_id": "ob29_saturating_increment/x4",
+      "probe_role": "opposite_sign_or_upper_edge",
+      "region_target": "opposite_sign_or_upper_edge",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C30",
+      "design_id": "ob30_saturating_decrement",
+      "input": -9223372036854775804,
+      "probe_id": "ob30_saturating_decrement/x1",
+      "probe_role": "near_or_beyond_boundary_low",
+      "region_target": "near_or_beyond_boundary_low",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C30",
+      "design_id": "ob30_saturating_decrement",
+      "input": -9223372036854775803,
+      "probe_id": "ob30_saturating_decrement/x2",
+      "probe_role": "near_or_beyond_boundary_high",
+      "region_target": "near_or_beyond_boundary_high",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C30",
+      "design_id": "ob30_saturating_decrement",
+      "input": 9223372036854775807,
+      "probe_id": "ob30_saturating_decrement/x3",
+      "probe_role": "opposite_sign_or_lower_edge",
+      "region_target": "opposite_sign_or_lower_edge",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C30",
+      "design_id": "ob30_saturating_decrement",
+      "input": 9223372036854775806,
+      "probe_id": "ob30_saturating_decrement/x4",
+      "probe_role": "opposite_sign_or_upper_edge",
+      "region_target": "opposite_sign_or_upper_edge",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C31",
+      "design_id": "ob31_saturating_double",
+      "input": 4611686018427387902,
+      "probe_id": "ob31_saturating_double/x1",
+      "probe_role": "near_or_beyond_boundary_low",
+      "region_target": "near_or_beyond_boundary_low",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C31",
+      "design_id": "ob31_saturating_double",
+      "input": 4611686018427387905,
+      "probe_id": "ob31_saturating_double/x2",
+      "probe_role": "near_or_beyond_boundary_high",
+      "region_target": "near_or_beyond_boundary_high",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C31",
+      "design_id": "ob31_saturating_double",
+      "input": -4611686018427387903,
+      "probe_id": "ob31_saturating_double/x3",
+      "probe_role": "opposite_sign_or_lower_edge",
+      "region_target": "opposite_sign_or_lower_edge",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C31",
+      "design_id": "ob31_saturating_double",
+      "input": -4611686018427387906,
+      "probe_id": "ob31_saturating_double/x4",
+      "probe_role": "opposite_sign_or_upper_edge",
+      "region_target": "opposite_sign_or_upper_edge",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C32",
+      "design_id": "ob32_clamped_absolute",
+      "input": -9223372036854775806,
+      "probe_id": "ob32_clamped_absolute/x1",
+      "probe_role": "near_or_beyond_boundary_low",
+      "region_target": "near_or_beyond_boundary_low",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C32",
+      "design_id": "ob32_clamped_absolute",
+      "input": -9223372036854775805,
+      "probe_id": "ob32_clamped_absolute/x2",
+      "probe_role": "near_or_beyond_boundary_high",
+      "region_target": "near_or_beyond_boundary_high",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C32",
+      "design_id": "ob32_clamped_absolute",
+      "input": 9223372036854775806,
+      "probe_id": "ob32_clamped_absolute/x3",
+      "probe_role": "opposite_sign_or_lower_edge",
+      "region_target": "opposite_sign_or_lower_edge",
+      "semantic_area": "int64_boundaries"
+    },
+    {
+      "activity": "C32",
+      "design_id": "ob32_clamped_absolute",
+      "input": -1,
+      "probe_id": "ob32_clamped_absolute/x4",
+      "probe_role": "opposite_sign_or_upper_edge",
+      "region_target": "opposite_sign_or_upper_edge",
+      "semantic_area": "int64_boundaries"
+    }
+  ],
+  "same_32_design_ids": [
+    "cc01_inclusive_band",
+    "cc02_nonzero_disjunction",
+    "cc03_two_islands",
+    "cc04_outer_cutoffs",
+    "ni05_negative_then_double",
+    "ni06_surcharge_discount",
+    "ni07_zero_special_negative_offset",
+    "ni08_upper_grade_excess",
+    "lr09_compound_total",
+    "lr10_floor_then_increment",
+    "lr11_nonnegative_doubled_score",
+    "lr12_cap_after_adjustment",
+    "pr13_subtract_tripled_sum",
+    "pr14_product_neighbor_factors",
+    "pr15_square_minus_successor_sum",
+    "pr16_composed_neighbor_product",
+    "cp17_nonpositive_inclusive",
+    "cp18_exact_release_code",
+    "cp19_range_without_origin",
+    "cp20_strict_symmetric_window",
+    "bl21_saved_range_predicates",
+    "bl22_reassigned_valid_flag",
+    "bl23_nonzero_bounded_flag",
+    "bl24_selected_nonnegative_codes",
+    "tx25_sign_label",
+    "tx26_state_label",
+    "tx27_lexical_cutoff",
+    "tx28_reassigned_text_state",
+    "ob29_saturating_increment",
+    "ob30_saturating_decrement",
+    "ob31_saturating_double",
+    "ob32_clamped_absolute"
+  ],
+  "schema": "gooo/ir-composition-extra-domain-probes/v1"
+}

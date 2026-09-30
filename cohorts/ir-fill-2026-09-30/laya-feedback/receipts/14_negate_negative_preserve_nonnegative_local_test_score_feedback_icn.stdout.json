@@ -1,0 +1,34 @@
+{
+  "schema": "gooo/typed-decision-receipt/v1",
+  "mode": "laya",
+  "selected": "candidate_2",
+  "provider": "laya",
+  "model": "laya-rl-agent",
+  "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "routing": {
+    "detection": {
+      "diacritic_rate": 0,
+      "is_english": true,
+      "language": "en",
+      "language_undecided": false,
+      "mixed_segment": null,
+      "non_latin_fraction": 0,
+      "script": "latin",
+      "script_profile": {
+        "latin": 1
+      }
+    },
+    "model": "english",
+    "reason": "English Latin text",
+    "repo": "convaiinnovations/laya",
+    "workflow": null
+  },
+  "probabilities": {
+    "candidate_1": 0.2262,
+    "candidate_2": 0.4249,
+    "candidate_3": 0.349
+  },
+  "confidence": 0.0286,
+  "answer_confidence": 0.4249,
+  "request_sha256": "sha256:2d42eda23655415a90092ba9d1ba37695f8e33b949f92cdd2c381ce50dc807f1"
+}

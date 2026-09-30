@@ -1,0 +1,4 @@
+package bodycodegen
+namespace bodycodegen
+entity Integer id "bodycodegen://entity/integer"
+activity Clamp(Integer) -> Integer computes "let out = input; if input < 0 { out = __GOOO_BODY_HOLE_expr__ } else { out = input }; return out"

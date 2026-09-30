@@ -1,0 +1,4 @@
+package bodycodegen
+namespace bodycodegen
+entity Integer id "bodycodegen://entity/integer"
+activity Exp08(Integer) -> Integer computes "let out = input; if input == 9223372036854775807 { out = input } else { out = __GOOO_BODY_HOLE_expr__ }; return out"

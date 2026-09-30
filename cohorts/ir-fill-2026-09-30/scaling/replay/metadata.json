@@ -1,0 +1,14 @@
+{
+  "schema": "gooo/local-body-fill-scaling/v1",
+  "started_utc": "2026-09-30T03:03:37.875627+00:00",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "logical_cpu_count": 10,
+  "binary_sha256": "28c5906f4cb9581f8833cebabfad8d977c8d142aed5e5a3f8361d7da4340fa35",
+  "build_metadata": "/private/tmp/gooo-ir-fill-fixed-20260930: go1.27.0\n\tpath\tgithub.com/kimjooyoon/meta-ontology-go/cmd/gooo\n\tmod\tgithub.com/kimjooyoon/meta-ontology-go\tv0.6.0-dev.0.20260930025447-ec4bf3e5f411\t\n\tbuild\t-buildmode=exe\n\tbuild\t-compiler=gc\n\tbuild\tCGO_ENABLED=1\n\tbuild\tCGO_CFLAGS=\n\tbuild\tCGO_CPPFLAGS=\n\tbuild\tCGO_CXXFLAGS=\n\tbuild\tCGO_LDFLAGS=\n\tbuild\tGOARCH=arm64\n\tbuild\tGOOS=darwin\n\tbuild\tGOARM64=v8.0\n\tbuild\tvcs=git\n\tbuild\tvcs.revision=ec4bf3e5f4119118b501c1b45862936eb46b95b7\n\tbuild\tvcs.time=2026-09-30T02:54:47Z\n\tbuild\tvcs.modified=false\n",
+  "fixture_sha256": "638dec6a411ee20edcf472da81ee52727fb9c616049d932cc0657ed02a69cc96",
+  "laya_configured": false,
+  "distinct_intents": 1,
+  "treatments": 4,
+  "repeats_per_treatment": 5,
+  "scope": "No Laya. CPU is child CLI CPU time per invocation; Go output is typechecked and scored by v2 but not independently executed in this scaling study. Other local agents ran concurrently, so no isolated-machine throughput claim."
+}

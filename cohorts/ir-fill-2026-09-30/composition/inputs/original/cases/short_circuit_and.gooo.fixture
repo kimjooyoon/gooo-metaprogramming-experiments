@@ -1,0 +1,4 @@
+package bodycodegen
+namespace bodycodegen
+entity Integer id "bodycodegen://entity/integer"
+activity Exp05(Integer) -> Integer computes "let out = input; if input != 0 && input < 5 { out = __GOOO_BODY_HOLE_expr__ } else { out = 7 }; return out"

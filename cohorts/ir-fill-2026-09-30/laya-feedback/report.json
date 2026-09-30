@@ -1,0 +1,484 @@
+{
+  "experiment": "Gooo validated typed-decision selection trials through real loopback Laya requests",
+  "manifest_completed_local_utc": "2026-09-30T02:47:19.560212+00:00",
+  "calls": {
+    "warmup": 1,
+    "scored_trials": 24,
+    "total_actual_laya_calls": 25,
+    "provider_valid_trials": 24,
+    "design": "4 intentions x 2 context modes x 3 candidate-position rotations; one call per cell; shuffled with seed 20260930",
+    "intentions": [
+      "clamp_negative_to_zero",
+      "integer_sign",
+      "is_even",
+      "negate_negative_preserve_nonnegative"
+    ]
+  },
+  "runtime": {
+    "host": "Apple Silicon macOS arm64, 10 logical CPUs",
+    "laya_package": "0.3.21",
+    "python": "3.11.15",
+    "torch": "2.14.0",
+    "transformers": "5.17.0",
+    "device": "cpu",
+    "threads": 4,
+    "models_loaded": [
+      "english"
+    ],
+    "model": [
+      "laya-rl-agent"
+    ],
+    "revision": [
+      "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    ],
+    "hf_hub_offline": true,
+    "transformers_offline": true,
+    "service_health_observation": {
+      "status": "ok",
+      "loaded": [
+        "english"
+      ],
+      "revisions": {
+        "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+      },
+      "device": "cpu",
+      "device_is_preference": false,
+      "checkpoint_devices": {
+        "english": "cpu"
+      },
+      "cpu_fallbacks": {
+        "english": {
+          "count": 0,
+          "last_reason": null
+        }
+      }
+    },
+    "service_health_observation_file": "/private/tmp/gooo-luna-laya-feedback-20260930/service_health_observation.json"
+  },
+  "protocol": {
+    "request_schema": "gooo/typed-decision-request/v1",
+    "receipt_schema": "gooo/typed-decision-receipt/v1",
+    "command": "/private/tmp/gooo-luna-body-experiments-20260930/gooo decide --json REQUEST.json",
+    "binary": "/private/tmp/gooo-luna-body-experiments-20260930/gooo",
+    "baseline_binary_sha256": "4e9836ac6781d236e9279584bec9da61a88219612c4b94fa2729fcb68f139dc4",
+    "baseline_build": "go1.27.0 darwin/arm64, vcs.revision=2fc19ea5b094f424f550e2b0a9ebe6477759d1a2, vcs.modified=false",
+    "trial_type": "Selection-only calls through the validated Gooo decide protocol; no end-to-end body-codegen or generated-Go execution."
+  },
+  "latency": {
+    "measurement": "Wall time around each gooo decide process, including request, local revision health lookup and CLI process startup.",
+    "n": 24,
+    "per_call_sum_ms": 3963.182,
+    "p50_ms": 169.274,
+    "p95_ms_nearest_rank": 184.862,
+    "min_ms": 149.655,
+    "max_ms": 185.983,
+    "warmup_latency": "excluded; the warm-up output is preserved but the harness did not persist its timing after the post-run report bug."
+  },
+  "accuracy": {
+    "correct_overall": 9,
+    "scored_trials": 24,
+    "accuracy_percent": 37.5,
+    "by_context": {
+      "intent_only": {
+        "calls": 12,
+        "valid_laya": 12,
+        "correct": 5,
+        "accuracy_percent": 41.7,
+        "selected_candidate_position_counts": {
+          "1": 7,
+          "2": 3,
+          "3": 2
+        },
+        "best_candidate_position_counts": {
+          "1": 4,
+          "2": 4,
+          "3": 4
+        },
+        "correct_by_best_position": {
+          "1": 3,
+          "2": 2,
+          "3": 0
+        }
+      },
+      "local_test_score_feedback": {
+        "calls": 12,
+        "valid_laya": 12,
+        "correct": 4,
+        "accuracy_percent": 33.3,
+        "selected_candidate_position_counts": {
+          "1": 7,
+          "2": 3,
+          "3": 2
+        },
+        "best_candidate_position_counts": {
+          "1": 4,
+          "2": 4,
+          "3": 4
+        },
+        "correct_by_best_position": {
+          "1": 3,
+          "2": 1,
+          "3": 0
+        }
+      }
+    },
+    "by_task_context": [
+      {
+        "task": "clamp_negative_to_zero",
+        "context": "intent_only",
+        "calls": 3,
+        "valid_laya": 3,
+        "correct": 0,
+        "accuracy_percent": 0.0,
+        "selected_candidate_position_counts": {
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "best_candidate_position_counts": {
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "correct_by_best_position": {
+          "1": 0,
+          "2": 0,
+          "3": 0
+        },
+        "selected_candidates_by_order_offset": [
+          "zero",
+          "zero",
+          "zero"
+        ]
+      },
+      {
+        "task": "clamp_negative_to_zero",
+        "context": "local_test_score_feedback",
+        "calls": 3,
+        "valid_laya": 3,
+        "correct": 1,
+        "accuracy_percent": 33.3,
+        "selected_candidate_position_counts": {
+          "1": 2,
+          "2": 1,
+          "3": 0
+        },
+        "best_candidate_position_counts": {
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "correct_by_best_position": {
+          "1": 1,
+          "2": 0,
+          "3": 0
+        },
+        "selected_candidates_by_order_offset": [
+          "clamp",
+          "zero",
+          "zero"
+        ]
+      },
+      {
+        "task": "integer_sign",
+        "context": "intent_only",
+        "calls": 3,
+        "valid_laya": 3,
+        "correct": 1,
+        "accuracy_percent": 33.3,
+        "selected_candidate_position_counts": {
+          "1": 2,
+          "2": 0,
+          "3": 1
+        },
+        "best_candidate_position_counts": {
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "correct_by_best_position": {
+          "1": 1,
+          "2": 0,
+          "3": 0
+        },
+        "selected_candidates_by_order_offset": [
+          "sign",
+          "negative_one",
+          "negative_one"
+        ]
+      },
+      {
+        "task": "integer_sign",
+        "context": "local_test_score_feedback",
+        "calls": 3,
+        "valid_laya": 3,
+        "correct": 1,
+        "accuracy_percent": 33.3,
+        "selected_candidate_position_counts": {
+          "1": 2,
+          "2": 0,
+          "3": 1
+        },
+        "best_candidate_position_counts": {
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "correct_by_best_position": {
+          "1": 1,
+          "2": 0,
+          "3": 0
+        },
+        "selected_candidates_by_order_offset": [
+          "sign",
+          "negative_one",
+          "negative_one"
+        ]
+      },
+      {
+        "task": "is_even",
+        "context": "intent_only",
+        "calls": 3,
+        "valid_laya": 3,
+        "correct": 2,
+        "accuracy_percent": 66.7,
+        "selected_candidate_position_counts": {
+          "1": 2,
+          "2": 1,
+          "3": 0
+        },
+        "best_candidate_position_counts": {
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "correct_by_best_position": {
+          "1": 1,
+          "2": 1,
+          "3": 0
+        },
+        "selected_candidates_by_order_offset": [
+          "even",
+          "positive",
+          "even"
+        ]
+      },
+      {
+        "task": "is_even",
+        "context": "local_test_score_feedback",
+        "calls": 3,
+        "valid_laya": 3,
+        "correct": 0,
+        "accuracy_percent": 0.0,
+        "selected_candidate_position_counts": {
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "best_candidate_position_counts": {
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "correct_by_best_position": {
+          "1": 0,
+          "2": 0,
+          "3": 0
+        },
+        "selected_candidates_by_order_offset": [
+          "positive",
+          "positive",
+          "positive"
+        ]
+      },
+      {
+        "task": "negate_negative_preserve_nonnegative",
+        "context": "intent_only",
+        "calls": 3,
+        "valid_laya": 3,
+        "correct": 2,
+        "accuracy_percent": 66.7,
+        "selected_candidate_position_counts": {
+          "1": 2,
+          "2": 1,
+          "3": 0
+        },
+        "best_candidate_position_counts": {
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "correct_by_best_position": {
+          "1": 1,
+          "2": 1,
+          "3": 0
+        },
+        "selected_candidates_by_order_offset": [
+          "conditional_negate",
+          "negate_all",
+          "conditional_negate"
+        ]
+      },
+      {
+        "task": "negate_negative_preserve_nonnegative",
+        "context": "local_test_score_feedback",
+        "calls": 3,
+        "valid_laya": 3,
+        "correct": 2,
+        "accuracy_percent": 66.7,
+        "selected_candidate_position_counts": {
+          "1": 2,
+          "2": 1,
+          "3": 0
+        },
+        "best_candidate_position_counts": {
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "correct_by_best_position": {
+          "1": 1,
+          "2": 1,
+          "3": 0
+        },
+        "selected_candidates_by_order_offset": [
+          "conditional_negate",
+          "negate_all",
+          "conditional_negate"
+        ]
+      }
+    ],
+    "candidate_position_effect": {
+      "interpretation": "Best-candidate position is balanced 8 times across each position when both contexts are combined. Raw selection was position 1 in 14/24 calls. Correct selections by best-candidate position were 6/8 at position 1, 3/8 at position 2, and 0/8 at position 3.",
+      "selected_candidate_position_counts_overall": {
+        "1": 14,
+        "2": 6,
+        "3": 4
+      },
+      "correct_by_best_position_overall": {
+        "1": 6,
+        "2": 3,
+        "3": 0
+      },
+      "best_position_trials_overall": {
+        "1": 8,
+        "2": 8,
+        "3": 8
+      }
+    },
+    "interpretation": "A choice counts correct if it reaches the highest deterministic local finite-suite pass count. Score context yielded 4/12 versus 5/12 intent-only in this small run; this is descriptive, not statistical evidence. Do not trust raw Laya selections to beat the deterministic score gate."
+  },
+  "resources": {
+    "server_pid": 61962,
+    "server_bind": "127.0.0.1:8787",
+    "selection_trial_cpu_delta_seconds": null,
+    "selection_trial_rss_before_mib": null,
+    "selection_trial_peak_rss_mib": null,
+    "selection_trial_rss_after_mib": null,
+    "availability": "Unavailable for the scored trial window. The run harness sampled process CPU/RSS in memory, but its post-run summary raised after all requests completed, before it persisted the resource snapshot. Later point-in-time ps observations are intentionally not attributed to the experiment.",
+    "measurement_method_intended": "macOS ps cumulative CPU time and RSS samples every 0.25 seconds."
+  },
+  "provenance": {
+    "warmup_request": "/private/tmp/gooo-luna-laya-feedback-20260930/warmup_request.json",
+    "warmup_receipt": "/private/tmp/gooo-luna-laya-feedback-20260930/warmup_stdout.json",
+    "trial_manifest": "/private/tmp/gooo-luna-laya-feedback-20260930/trial_manifest.jsonl",
+    "oracle_file": "/private/tmp/gooo-luna-laya-feedback-20260930/task_oracles.json",
+    "raw_requests": "/private/tmp/gooo-luna-laya-feedback-20260930/requests",
+    "raw_receipts": "/private/tmp/gooo-luna-laya-feedback-20260930/receipts",
+    "trial_manifest_rows": 24,
+    "raw_request_files": 24,
+    "raw_trial_receipts": 24,
+    "all_trial_request_sha256_present": true,
+    "unique_gooo_request_digests": 24,
+    "model_revision_consistent": true,
+    "request_file_hashes_sha256": {
+      "requests/01_clamp_negative_to_zero_intent_only_zci.json": "a5b5e3d20820705d76c258e108e79f41a4bb5af2501a1c6973f3357fcf6861dc",
+      "requests/02_integer_sign_local_test_score_feedback_sni.json": "783aeaf118986dc45c48566b89bf0503a49f651c3a453a299e5a013e77c1e6c4",
+      "requests/03_integer_sign_local_test_score_feedback_isn.json": "8b2e7f3494b254f699c0ed89fb3cff98f6e33a4e7b17c04f3014de6f1f42b74e",
+      "requests/04_clamp_negative_to_zero_local_test_score_feedback_zci.json": "1ff3aef98df3518fd54886df3e490932a233e7ec7942dff6631ef5d6aea1fb2e",
+      "requests/05_clamp_negative_to_zero_local_test_score_feedback_ciz.json": "0343c391674506353d8166fd6fe482fffe7d34dbc1880f71328acfeaac28cd28",
+      "requests/06_negate_negative_preserve_nonnegative_local_test_score_feedback_nic.json": "78d247c8cf782f91a54cc70bf41ca8243f8911ff1b91c858756403931583badc",
+      "requests/07_negate_negative_preserve_nonnegative_intent_only_icn.json": "cc58b2b7395cdc70aa7eb833e55c1552235399d4721dbbe25e449754abe47637",
+      "requests/08_is_even_intent_only_epn.json": "881f48eb05adce38ead090cd6e5d5a53e13abe6c201029417479ae9b027886f8",
+      "requests/09_negate_negative_preserve_nonnegative_intent_only_cni.json": "24fe967859e9ac60a35af77131a9bcb4bb35d4c84ff5ca83f74ff305bf66461e",
+      "requests/10_is_even_local_test_score_feedback_nep.json": "f0f1f81d6b2956ddeedf631f50f4452f1c9ce104996c230574886719cb55ac90",
+      "requests/11_is_even_local_test_score_feedback_epn.json": "e495bba59f3214e06c02430fdd4a30f74b733473268dc85408c4e786dbe899cc",
+      "requests/12_clamp_negative_to_zero_local_test_score_feedback_izc.json": "c5f098c7c8a2fd9e56615e3710af5aa70774b3c91962a8a5e72882fbaf40b3aa",
+      "requests/13_is_even_local_test_score_feedback_pne.json": "b35294a641489f154ee3b179448b8a3e27ec95032777e4821b9c945392f7f06e",
+      "requests/14_negate_negative_preserve_nonnegative_local_test_score_feedback_icn.json": "f8499cc8588e9c2ba4ca5b078084cfc5b0150adafc6ffcb841c167c1c9f0b16e",
+      "requests/15_is_even_intent_only_pne.json": "d4fb424700dec93c38a983a8cccde5bb3bff0be0bab6d74d041885674ac2bb45",
+      "requests/16_clamp_negative_to_zero_intent_only_izc.json": "128a6154621a3446fb8bafd51192414d9a8d4b708b84ed2ac259855ee7e8b0fd",
+      "requests/17_clamp_negative_to_zero_intent_only_ciz.json": "2ed936299d27e9924ab1cc289e1b7cb3a243031f7920e368bd3eac425911344b",
+      "requests/18_integer_sign_intent_only_nis.json": "29fafdc1f0bb9eccfaa14e27958216aa6cbe7bf614637db0477737abf1477a37",
+      "requests/19_integer_sign_local_test_score_feedback_nis.json": "6187e6de44dfa145a8372aa74be2a79e8e9de0fcb079ce6c6ec4138d30e96724",
+      "requests/20_negate_negative_preserve_nonnegative_local_test_score_feedback_cni.json": "70315c3f20c69eb1abcc4bb0a33a7783ad7b12e7d12ae5465024e98106c3d0e4",
+      "requests/21_negate_negative_preserve_nonnegative_intent_only_nic.json": "11a4e1ad2871421363662109b1e3625017d22cb576b5533a145d23501ec6adf2",
+      "requests/22_is_even_intent_only_nep.json": "a624e45ea5e0bb08a7965eaac186e47890d5db5d5e39cfdef30c40ca870b8886",
+      "requests/23_integer_sign_intent_only_sni.json": "802b2af886ed07ee61726e9d2c6c6e31aab15ccbb2f18e05fea94b816033df46",
+      "requests/24_integer_sign_intent_only_isn.json": "9d90818920efa952d748d400088fe80c9c7da51db2f166055e78385b98d6fdc2"
+    },
+    "receipt_file_hashes_sha256": {
+      "receipts/01_clamp_negative_to_zero_intent_only_zci.stdout.json": "d9bcb783615ee289a66f7b9a0a099f4902c36e4f2cbc72248cfb4582b952bd84",
+      "receipts/02_integer_sign_local_test_score_feedback_sni.stdout.json": "84dbc14fd8e8179fe358563b361ea825a59cf387d96d1a116c5276bf6b527504",
+      "receipts/03_integer_sign_local_test_score_feedback_isn.stdout.json": "b5ba3eeffb2c39ea4e51f868c5b04996e21eb82fec88cc8267f0c40a7c5db71b",
+      "receipts/04_clamp_negative_to_zero_local_test_score_feedback_zci.stdout.json": "2726333582bd0a94c2cb9c325ec3035e4a8a6d7e3817deeb9d3a79c9f97fcd48",
+      "receipts/05_clamp_negative_to_zero_local_test_score_feedback_ciz.stdout.json": "5f3a62448da864ebf9a01679e1eb4f9749855f725266ea93a25fe1fa4013eea8",
+      "receipts/06_negate_negative_preserve_nonnegative_local_test_score_feedback_nic.stdout.json": "aff3e093a8499ed79563a229e8e62f2e2de19be4c6963bbd4d8d7d04f4ef7caf",
+      "receipts/07_negate_negative_preserve_nonnegative_intent_only_icn.stdout.json": "2a3820e7ce7fd3e85a96fe2104b69e6872849f403f920baa801ea3014086af46",
+      "receipts/08_is_even_intent_only_epn.stdout.json": "3ae2c43583e5ee4179607e484079c00d08d7942779094272d60f4f3f7f9f65da",
+      "receipts/09_negate_negative_preserve_nonnegative_intent_only_cni.stdout.json": "72da287bcb28dac3a31a46756fd3e004e97c0a86b051119d76b584b27c5e3be4",
+      "receipts/10_is_even_local_test_score_feedback_nep.stdout.json": "0e74fbca152c037459c37a2c8519dfbd7575df04abf7514352e6ff542da2f02d",
+      "receipts/11_is_even_local_test_score_feedback_epn.stdout.json": "0f0dc5b07947835112fc1342944999e4cac844daf9843c5342ef35607e5f0e99",
+      "receipts/12_clamp_negative_to_zero_local_test_score_feedback_izc.stdout.json": "919a50823c7c73a75745d1d9f856e3e169eb0ecfca869799a3ea54a56e94d0d1",
+      "receipts/13_is_even_local_test_score_feedback_pne.stdout.json": "c510420dd3e178f37ac5fd250b7f7c6200cab0ef31e3b5b76af8202300147e84",
+      "receipts/14_negate_negative_preserve_nonnegative_local_test_score_feedback_icn.stdout.json": "5b7843b99bb93dfe1dc7bea2d413543c67d29c1a8befc46515271f34aff4bc75",
+      "receipts/15_is_even_intent_only_pne.stdout.json": "44056a793ba1ba8dfd592235e8deb49896080b946048f2d1ce49df1d70312101",
+      "receipts/16_clamp_negative_to_zero_intent_only_izc.stdout.json": "5b543cf35515e4a355e655204ff93730c2d8e34f5d147c0fda06b687f20d7880",
+      "receipts/17_clamp_negative_to_zero_intent_only_ciz.stdout.json": "d2461b1bd5241ff9ea8c89ec2e911ff58b053c9d60bdc07719d31c55074063c4",
+      "receipts/18_integer_sign_intent_only_nis.stdout.json": "b4ee80a9f1a3124fcad9d65d193c95b4bfa8542c11134e2faf54bf656f6afc28",
+      "receipts/19_integer_sign_local_test_score_feedback_nis.stdout.json": "a0f0885b94eed35198ce4c61c9d8b6603f1e162a50500681ee68f0463b8825f8",
+      "receipts/20_negate_negative_preserve_nonnegative_local_test_score_feedback_cni.stdout.json": "b9bc20a6c7c2fed0e801f0ca844f766c96c149fb2de82409721cfd836a48c294",
+      "receipts/21_negate_negative_preserve_nonnegative_intent_only_nic.stdout.json": "b3c46f6c59d1097616eb26259b00d0f8275ffdb31bb25a56fe1d49c37783d674",
+      "receipts/22_is_even_intent_only_nep.stdout.json": "53ca2470baa8061a03df8b6e2ce881d16380dc85bc7278f4bc8b644e421ba56f",
+      "receipts/23_integer_sign_intent_only_sni.stdout.json": "c641df5e4192c6442f38e9d405ef1012d27ddf6debdbe1317527d25374de8f36",
+      "receipts/24_integer_sign_intent_only_isn.stdout.json": "001e8a2133e55f61edfd4684a0661108ad29fedd132ee3da0ae643816fe93823"
+    }
+  },
+  "setup_incident": {
+    "summary": "Before the measured experiment, an accidental `laya-serve --help` invocation started the default server on :8000 using MPS and opened an HTTPS connection to a model CDN. That owned process was terminated before the actual run.",
+    "measured_run": "The measured server was started separately with HF_HUB_OFFLINE=1 and TRANSFORMERS_OFFLINE=1, bound only to 127.0.0.1:8787, CPU and 4 threads.",
+    "cache_observation": "Hugging Face hub cache remained 2.2G and no cache files had modification times within the 40-minute inspection window; no new weights or reinstall were observed. Transfer bytes from the accidental setup invocation were not instrumented, so the report does not claim that zero metadata bytes crossed the network."
+  },
+  "limitations": [
+    "Four hand-authored intentions and three candidates per intention; one call per context/order cell.",
+    "Each correctness score is exact only for the listed finite test cases; candidate snippets were described to Laya but not emitted or executed as generated Go.",
+    "The local oracle is not GitHub CI, generated-program runtime evidence, a full-domain proof, or a statistical benchmark.",
+    "No Gooo deterministic score gate was applied in these direct decide trials; the raw model proposal is what was measured.",
+    "The first harness completed all calls but hit a TypeError while aggregating its report. This summary was regenerated from saved exact requests, receipts, and manifest without repeating inference; the interval-only CPU sample and sampled RSS peak were not persisted."
+  ],
+  "separate_fixed_compiler_smoke": {
+    "report_file": "/private/tmp/gooo-luna-laya-feedback-20260930/fixed-compiler-smoke/smoke_report.md",
+    "calls": 3,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "raw_proposal": "negate (5/9 = 55.56%; raw proposal, not emitted)",
+    "final_emitted_candidate": "zero (9/9 = 100% over the declared finite test suite)",
+    "command_wall_p50_and_range_ms": [
+      373.841,
+      372.178,
+      911.238
+    ],
+    "laya_decision_p50_and_range_ms": [
+      367.162,
+      366.456,
+      381.632
+    ],
+    "cpu_delta_seconds": 2.62,
+    "cpu_normalization": "sum of the 3 warm smoke invocation durations (1.657 seconds); process CPU seconds divided by invocation wall seconds, normalized to one core. Other local work is not included, so this is not total host CPU utilization.",
+    "rss_start_and_peak_mib": [
+      2017.9,
+      2077.2
+    ],
+    "external_go_compile_executed": false,
+    "generated_go_runtime_executed": false
+  }
+}

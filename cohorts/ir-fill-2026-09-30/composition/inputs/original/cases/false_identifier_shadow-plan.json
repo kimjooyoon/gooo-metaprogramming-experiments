@@ -1,0 +1,21 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "Bind false as an integer local and return that local value.",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "false_local",
+      "expression": "false"
+    },
+    {
+      "id": "input",
+      "expression": "input"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": 5,
+      "expected": 5
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "gooo/typed-decision-request/v1",
+  "state": "Intent: For an int64 input, negate it if negative; preserve zero and positive inputs unchanged.\nSignature: func(input int64) int64\nChoose among the listed complete Go-like body candidates.",
+  "question": {
+    "id": "body_candidate",
+    "instructions": "Choose the one listed complete Go-like body that best matches the stated intent. When local test-score feedback is present, use it as finite-suite evidence. Return one listed candidate ID.",
+    "options": [
+      {
+        "id": "candidate_1",
+        "description": "Complete body for func(input int64) int64: `return -input`."
+      },
+      {
+        "id": "candidate_2",
+        "description": "Complete body for func(input int64) int64: `return input`."
+      },
+      {
+        "id": "candidate_3",
+        "description": "Complete body for func(input int64) int64: `if input < 0 { return -input }; return input`."
+      }
+    ]
+  },
+  "fallback": "candidate_1"
+}

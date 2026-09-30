@@ -1,0 +1,29 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "Subtract the expression input plus one from input, then double the result; this is always negative two.",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "plus_one",
+      "expression": "input + 1"
+    },
+    {
+      "id": "plus_two",
+      "expression": "input + 2"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": -3,
+      "expected": -2
+    },
+    {
+      "input": 0,
+      "expected": -2
+    },
+    {
+      "input": 4,
+      "expected": -2
+    }
+  ]
+}

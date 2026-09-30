@@ -2,6 +2,12 @@
 
 The 100 cases are also published as ten public, one-intent repositories. See the [intent-slice index](docs/intent-slices.md); [CI validates the catalog](catalog/intent-repositories.json) against the source plan.
 
+New [IR body-fill experiments](cohorts/ir-fill-2026-09-30/README.md) compare
+12 composition cases before/after a compiler repair, 24 real-Laya choices,
+three direct body-fill calls, eight mock scheduling treatments, and four
+candidate/test-count scaling treatments. The model's raw choices, corrected
+emission, held-out behavior, and runtime costs have separate denominators.
+
 This public corpus runs 100 distinct intent/lowering combinations:
 
 - 10 intents: sign, threshold, range, parity, status mapping, compound
@@ -108,8 +114,8 @@ compiles/runs all 100 candidates without downloading model weights.
 
 ## Scope and limits
 
-The current Gooo grammar does not yet express executable activity bodies.
-This lab asks Gooo to generate the semantic declaration projection, then a
+The original sidecar cohort predates Gooo's executable activity-body profile.
+That cohort asks Gooo to generate the semantic declaration projection, then a
 typed rule IR deterministically lowers to Go helpers containing `if`, Boolean
 conditions, `switch`, and assignments. The helpers are an experimental
 sidecar; they are not represented as stable `.gooo` statements yet.
@@ -135,8 +141,9 @@ every call. This is a latency/resource observation, not an accuracy result.
 The compiler-derived route-equivalence receipt was added by
 [PR #1082](https://github.com/kimjooyoon/meta-ontology-go/pull/1082) and
 promoted by exact-tree [PR #1083](https://github.com/kimjooyoon/meta-ontology-go/pull/1083).
-The current `main` commit is `3e31f92f529a8cff013b933d04fb8bbdc8fec72b`, with
-the same tree as `dev`. Experiment CI now pins this deployed Gooo commit.
+At that deployment, `main` was `3e31f92f529a8cff013b933d04fb8bbdc8fec72b`, with
+the same tree as `dev`. See the workflow's pinned compiler revision for the
+current CI baseline; historical measurements retain their original revisions.
 
 The 100-case corpus reported above remains the sidecar-based baseline. A
 separate [direct body-codegen cohort](cohorts/body-codegen-100/README.md)

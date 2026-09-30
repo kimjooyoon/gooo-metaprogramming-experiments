@@ -1,0 +1,41 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "Multiply the square plus two by three using the existing composed local.",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "scale_out",
+      "expression": "out * 3"
+    },
+    {
+      "id": "expanded",
+      "expression": "input * input * 3 + 6"
+    },
+    {
+      "id": "wrong_order",
+      "expression": "input * input + 6"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": -5,
+      "expected": 81
+    },
+    {
+      "input": -2,
+      "expected": 18
+    },
+    {
+      "input": 0,
+      "expected": 6
+    },
+    {
+      "input": 1,
+      "expected": 9
+    },
+    {
+      "input": 4,
+      "expected": 54
+    }
+  ]
+}

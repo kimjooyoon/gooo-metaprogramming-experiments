@@ -1,0 +1,422 @@
+[
+  {
+    "candidate_count": 2,
+    "test_case_count": 9,
+    "repetition": 1,
+    "return_code": 0,
+    "cli_wall_ms": 5.324749999999996,
+    "child_cpu_ms": 4.401999999999999,
+    "receipt_sha256": "07a3df9b26e975663105f9b3b2a2ef07a6671b2035203a33443b44710b176759",
+    "receipt_path": "candidates-2-tests-9/call-1.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 0.181333,
+      "laya_decision_ms": 0.025709,
+      "final_emission_ms": 0.115,
+      "total_ms": 0.430041,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 9,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 2,
+    "test_case_count": 9,
+    "repetition": 2,
+    "return_code": 0,
+    "cli_wall_ms": 4.748166999999998,
+    "child_cpu_ms": 3.950999999999998,
+    "receipt_sha256": "857c0faf19d983b4b732281f2be8170c3b14dd70f5d808776a0d719b6e85c301",
+    "receipt_path": "candidates-2-tests-9/call-2.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 0.16325,
+      "laya_decision_ms": 0.024125,
+      "final_emission_ms": 0.111958,
+      "total_ms": 0.389375,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 9,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 2,
+    "test_case_count": 9,
+    "repetition": 3,
+    "return_code": 0,
+    "cli_wall_ms": 4.728916999999999,
+    "child_cpu_ms": 3.842000000000002,
+    "receipt_sha256": "d6638194cf13412d86e3ac4160985e5ac90d30abcca03223509878c60538f807",
+    "receipt_path": "candidates-2-tests-9/call-3.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 0.178375,
+      "laya_decision_ms": 0.021167,
+      "final_emission_ms": 0.111292,
+      "total_ms": 0.406791,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 9,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 2,
+    "test_case_count": 9,
+    "repetition": 4,
+    "return_code": 0,
+    "cli_wall_ms": 4.730041000000004,
+    "child_cpu_ms": 3.9040000000000012,
+    "receipt_sha256": "c22cf84ed3b150f16026f1ff12ab39bd55a1f9434da2277e1757c0e7f9122729",
+    "receipt_path": "candidates-2-tests-9/call-4.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 0.158917,
+      "laya_decision_ms": 0.017792,
+      "final_emission_ms": 0.101667,
+      "total_ms": 0.368334,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 9,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 2,
+    "test_case_count": 9,
+    "repetition": 5,
+    "return_code": 0,
+    "cli_wall_ms": 5.039083,
+    "child_cpu_ms": 4.277999999999997,
+    "receipt_sha256": "7d74707df5a91e78e70b90f2584d8cb7f6d7e3ba20193649c54d95141d6085b9",
+    "receipt_path": "candidates-2-tests-9/call-5.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 0.179042,
+      "laya_decision_ms": 0.020584,
+      "final_emission_ms": 0.111458,
+      "total_ms": 0.407791,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 9,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 2,
+    "test_case_count": 4096,
+    "repetition": 1,
+    "return_code": 0,
+    "cli_wall_ms": 11.767708000000002,
+    "child_cpu_ms": 12.168000000000005,
+    "receipt_sha256": "c2c3532e52167aed330a4a80cfbbed7b55d071be7385e154341eddcd7cb42384",
+    "receipt_path": "candidates-2-tests-4096/call-1.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 2.134208,
+      "laya_decision_ms": 0.014208,
+      "final_emission_ms": 0.152833,
+      "total_ms": 3.824666,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 4096,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 2,
+    "test_case_count": 4096,
+    "repetition": 2,
+    "return_code": 0,
+    "cli_wall_ms": 13.418874999999996,
+    "child_cpu_ms": 13.840999999999992,
+    "receipt_sha256": "5ec9b0b5635651c2cc4386b6413d978a99b8eb0f82fa35fcbd4255482812da52",
+    "receipt_path": "candidates-2-tests-4096/call-2.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 2.26,
+      "laya_decision_ms": 0.016042,
+      "final_emission_ms": 0.167875,
+      "total_ms": 4.137708,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 4096,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 2,
+    "test_case_count": 4096,
+    "repetition": 3,
+    "return_code": 0,
+    "cli_wall_ms": 12.335333999999975,
+    "child_cpu_ms": 12.498999999999997,
+    "receipt_sha256": "02767f7c529ca05a23b00bbb72b54d1b953e431810ae5a8a701ad02cc86a2738",
+    "receipt_path": "candidates-2-tests-4096/call-3.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 2.142417,
+      "laya_decision_ms": 0.019209,
+      "final_emission_ms": 0.107542,
+      "total_ms": 3.800625,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 4096,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 2,
+    "test_case_count": 4096,
+    "repetition": 4,
+    "return_code": 0,
+    "cli_wall_ms": 12.091249999999999,
+    "child_cpu_ms": 12.355000000000004,
+    "receipt_sha256": "445b07e6c762fc70395a2892cbee105cf9ea703ed762fa135741f66ed22dbd2d",
+    "receipt_path": "candidates-2-tests-4096/call-4.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 2.128,
+      "laya_decision_ms": 0.018833,
+      "final_emission_ms": 0.111042,
+      "total_ms": 3.789917,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 4096,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 2,
+    "test_case_count": 4096,
+    "repetition": 5,
+    "return_code": 0,
+    "cli_wall_ms": 11.622333999999984,
+    "child_cpu_ms": 12.048000000000004,
+    "receipt_sha256": "b9828d4f0c7bcf34908b50e21b93e01d967a02223a57f3ccdfae979af894f3d0",
+    "receipt_path": "candidates-2-tests-4096/call-5.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 2.082541,
+      "laya_decision_ms": 0.0205,
+      "final_emission_ms": 0.117667,
+      "total_ms": 3.746,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 4096,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 16,
+    "test_case_count": 9,
+    "repetition": 1,
+    "return_code": 0,
+    "cli_wall_ms": 5.957208999999991,
+    "child_cpu_ms": 4.926,
+    "receipt_sha256": "09fff50601a6b5fc8db2998ff6059f0edbba5d1e23318957313125324aad957e",
+    "receipt_path": "candidates-16-tests-9/call-1.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 0.7825,
+      "laya_decision_ms": 0.031958,
+      "final_emission_ms": 0.107875,
+      "total_ms": 1.02875,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 9,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 16,
+    "test_case_count": 9,
+    "repetition": 2,
+    "return_code": 0,
+    "cli_wall_ms": 5.575958999999991,
+    "child_cpu_ms": 4.740999999999995,
+    "receipt_sha256": "5b2704256d8600927884bbcc9d686f2fb78c1c85c3bb465aae70d106c334b3c7",
+    "receipt_path": "candidates-16-tests-9/call-2.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 0.846667,
+      "laya_decision_ms": 0.031333,
+      "final_emission_ms": 0.113875,
+      "total_ms": 1.099875,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 9,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 16,
+    "test_case_count": 9,
+    "repetition": 3,
+    "return_code": 0,
+    "cli_wall_ms": 5.478583000000009,
+    "child_cpu_ms": 4.653000000000004,
+    "receipt_sha256": "ad307450b323953a24dec20b8421debd5f4bbeec03e24b4b2c33b877ca477181",
+    "receipt_path": "candidates-16-tests-9/call-3.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 0.770666,
+      "laya_decision_ms": 0.031958,
+      "final_emission_ms": 0.106875,
+      "total_ms": 1.010084,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 9,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 16,
+    "test_case_count": 9,
+    "repetition": 4,
+    "return_code": 0,
+    "cli_wall_ms": 5.303459000000011,
+    "child_cpu_ms": 4.520999999999997,
+    "receipt_sha256": "e3a1c8d403957476f2bfe63fbaa184136065e60cfb23f3a3460ef9cd5b847cac",
+    "receipt_path": "candidates-16-tests-9/call-4.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 0.782167,
+      "laya_decision_ms": 0.024458,
+      "final_emission_ms": 0.097083,
+      "total_ms": 1.007833,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 9,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 16,
+    "test_case_count": 9,
+    "repetition": 5,
+    "return_code": 0,
+    "cli_wall_ms": 5.297166999999991,
+    "child_cpu_ms": 4.464999999999996,
+    "receipt_sha256": "c64f0cae8f3ff6805d0bd3b5608ab3497d1ad3b5c86fe44f7dc0723f02ae0dbe",
+    "receipt_path": "candidates-16-tests-9/call-5.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 0.775375,
+      "laya_decision_ms": 0.030208,
+      "final_emission_ms": 0.105125,
+      "total_ms": 1.012625,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 9,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 16,
+    "test_case_count": 4096,
+    "repetition": 1,
+    "return_code": 0,
+    "cli_wall_ms": 27.064915999999993,
+    "child_cpu_ms": 29.96299999999999,
+    "receipt_sha256": "6ef4bb6d4a38c5321a360d9a8ff53e7ebe151c915b1ba6ad07d1457233a5a64d",
+    "receipt_path": "candidates-16-tests-4096/call-1.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 17.44675,
+      "laya_decision_ms": 0.017084,
+      "final_emission_ms": 0.273209,
+      "total_ms": 19.161334,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 4096,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 16,
+    "test_case_count": 4096,
+    "repetition": 2,
+    "return_code": 0,
+    "cli_wall_ms": 27.514499999999998,
+    "child_cpu_ms": 30.525000000000023,
+    "receipt_sha256": "b765ed467a09bbfc16f1932671bf3e81a84d1caf92d2460aa9f6961748997786",
+    "receipt_path": "candidates-16-tests-4096/call-2.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 17.685292,
+      "laya_decision_ms": 0.019791,
+      "final_emission_ms": 0.108292,
+      "total_ms": 19.423416,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 4096,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 16,
+    "test_case_count": 4096,
+    "repetition": 3,
+    "return_code": 0,
+    "cli_wall_ms": 27.088375,
+    "child_cpu_ms": 30.067999999999984,
+    "receipt_sha256": "35da6a31c4bea63a77d9b1eeab6054abe5112f28f37969bbf18971fd5f47b2f0",
+    "receipt_path": "candidates-16-tests-4096/call-3.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 17.361958,
+      "laya_decision_ms": 0.0195,
+      "final_emission_ms": 0.102084,
+      "total_ms": 19.051875,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 4096,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 16,
+    "test_case_count": 4096,
+    "repetition": 4,
+    "return_code": 0,
+    "cli_wall_ms": 27.439625000000024,
+    "child_cpu_ms": 30.03600000000001,
+    "receipt_sha256": "c03422716906fdfdaca6906183dff8b86cff9a9f9691ebadfd824b905fa6f78e",
+    "receipt_path": "candidates-16-tests-4096/call-4.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 17.590917,
+      "laya_decision_ms": 0.017125,
+      "final_emission_ms": 0.103583,
+      "total_ms": 19.264542,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 4096,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  },
+  {
+    "candidate_count": 16,
+    "test_case_count": 4096,
+    "repetition": 5,
+    "return_code": 0,
+    "cli_wall_ms": 26.93504200000002,
+    "child_cpu_ms": 29.519000000000016,
+    "receipt_sha256": "896f90069c4a278a1747b3e4280d2e0307e01ed38acc0f737587aadf387dc46c",
+    "receipt_path": "candidates-16-tests-4096/call-5.json.gz",
+    "timing": {
+      "ir_plan_build_ms": 17.193334,
+      "laya_decision_ms": 0.017083,
+      "final_emission_ms": 0.098334,
+      "total_ms": 18.893083,
+      "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+      "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+    },
+    "test_cases_passed": 4096,
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+    "mode": "deterministic_fallback"
+  }
+]

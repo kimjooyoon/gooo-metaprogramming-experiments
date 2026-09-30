@@ -1,0 +1,21 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "Return the integer local named true, not the predeclared boolean constant.",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "local",
+      "expression": "true"
+    },
+    {
+      "id": "add_zero",
+      "expression": "true + 0"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": 5,
+      "expected": 5
+    }
+  ]
+}

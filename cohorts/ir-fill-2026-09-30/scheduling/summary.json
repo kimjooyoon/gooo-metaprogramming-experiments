@@ -1,0 +1,228 @@
+{
+  "report": "/tmp/gooo-luna-scheduling-experiments-20260930/report.json",
+  "trial_count": 8,
+  "trials": [
+    {
+      "decision_modes": [
+        "laya"
+      ],
+      "emitted_candidate": [
+        "zero"
+      ],
+      "exit_codes": [
+        0
+      ],
+      "fallback_reasons": [
+        null
+      ],
+      "name": "01_fixed_binary_immediate_mock",
+      "pids": [
+        68491
+      ],
+      "provider_overlap": null,
+      "provider_proposal": [
+        "identity"
+      ],
+      "request_count": 1,
+      "wall_ms": [
+        6.641375
+      ]
+    },
+    {
+      "decision_modes": [
+        "laya"
+      ],
+      "emitted_candidate": [
+        "zero"
+      ],
+      "exit_codes": [
+        0
+      ],
+      "fallback_reasons": [
+        null
+      ],
+      "name": "02_worktree_go_run_immediate_mock",
+      "pids": [
+        68493
+      ],
+      "provider_overlap": null,
+      "provider_proposal": [
+        "identity"
+      ],
+      "request_count": 1,
+      "wall_ms": [
+        177.760917
+      ]
+    },
+    {
+      "decision_modes": [
+        "laya"
+      ],
+      "emitted_candidate": [
+        "zero"
+      ],
+      "exit_codes": [
+        0
+      ],
+      "fallback_reasons": [
+        null
+      ],
+      "name": "03_fixed_binary_delayed_mock_450ms",
+      "pids": [
+        68499
+      ],
+      "provider_overlap": null,
+      "provider_proposal": [
+        "identity"
+      ],
+      "request_count": 1,
+      "wall_ms": [
+        484.197
+      ]
+    },
+    {
+      "decision_modes": [
+        "laya"
+      ],
+      "emitted_candidate": [
+        "zero"
+      ],
+      "exit_codes": [
+        0
+      ],
+      "fallback_reasons": [
+        null
+      ],
+      "name": "04_worktree_go_run_delayed_mock_450ms",
+      "pids": [
+        68500
+      ],
+      "provider_overlap": null,
+      "provider_proposal": [
+        "identity"
+      ],
+      "request_count": 1,
+      "wall_ms": [
+        641.124459
+      ]
+    },
+    {
+      "decision_modes": [
+        "deterministic_fallback"
+      ],
+      "emitted_candidate": [
+        "zero"
+      ],
+      "exit_codes": [
+        0
+      ],
+      "fallback_reasons": [
+        "PROVIDER_HTTP_ERROR"
+      ],
+      "name": "05_http_503_deterministic_fallback",
+      "pids": [
+        68509
+      ],
+      "provider_overlap": null,
+      "provider_proposal": [
+        "zero"
+      ],
+      "request_count": 1,
+      "wall_ms": [
+        12.0275
+      ]
+    },
+    {
+      "decision_modes": [
+        "laya",
+        "laya"
+      ],
+      "emitted_candidate": [
+        "zero",
+        "zero"
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "fallback_reasons": [
+        null,
+        null
+      ],
+      "name": "06_two_process_concurrency",
+      "pids": [
+        68510,
+        68511
+      ],
+      "provider_overlap": true,
+      "provider_proposal": [
+        "identity",
+        "identity"
+      ],
+      "request_count": 2,
+      "wall_ms": [
+        935.087916,
+        934.719708
+      ]
+    },
+    {
+      "decision_modes": [
+        "deterministic_fallback"
+      ],
+      "emitted_candidate": [
+        "zero"
+      ],
+      "exit_codes": [
+        0
+      ],
+      "fallback_reasons": [
+        "PROVIDER_UNAVAILABLE"
+      ],
+      "name": "07_provider_exceeds_eight_second_context_budget",
+      "pids": [
+        68515
+      ],
+      "provider_overlap": null,
+      "provider_proposal": [
+        "zero"
+      ],
+      "request_count": 1,
+      "wall_ms": [
+        8022.046875
+      ]
+    },
+    {
+      "decision_modes": [
+        "laya",
+        "laya"
+      ],
+      "emitted_candidate": [
+        "zero",
+        "zero"
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "fallback_reasons": [
+        null,
+        null
+      ],
+      "name": "08_same_plan_repeatability",
+      "pids": [
+        68528,
+        68529
+      ],
+      "provider_overlap": null,
+      "provider_proposal": [
+        "identity",
+        "identity"
+      ],
+      "request_count": 2,
+      "wall_ms": [
+        60.38625,
+        55.113583
+      ]
+    }
+  ]
+}

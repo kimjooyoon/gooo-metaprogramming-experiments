@@ -1,0 +1,4 @@
+package bodycodegen
+namespace bodycodegen
+entity Integer id "bodycodegen://entity/integer"
+activity FocusedFalse(Integer) -> Integer computes "let false = input; return __GOOO_BODY_HOLE_expr__"

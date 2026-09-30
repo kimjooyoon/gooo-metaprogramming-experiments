@@ -1,0 +1,244 @@
+{
+  "cohort": "3 direct fixed-compiler body-codegen --fill-plan invocations",
+  "warmup": "No additional warm-up in this cohort; Laya was already warm after the preceding 25 selection-stage calls.",
+  "compiler": {
+    "commit": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+    "binary": "/tmp/gooo-ir-fill-fixed-20260930",
+    "binary_sha256": "28c5906f4cb9581f8833cebabfad8d977c8d142aed5e5a3f8361d7da4340fa35",
+    "build": "go1.27.0 darwin/arm64, vcs.modified=false",
+    "plan": "/Users/alice/meta-go/.worktrees/gooo-autonomous-governance-20260930/examples/body-codegen/ir-fill-clamp-plan.json",
+    "plan_sha256_file": "915f135fae7b70644162dc535c3027fc524fdc9def4da8f097396f2792ec35a4",
+    "fixture": "/Users/alice/meta-go/.worktrees/gooo-autonomous-governance-20260930/examples/body-codegen/ir-fill-clamp.gooo.fixture",
+    "fixture_sha256_file": "631e94b369a29e046b50a90d96779ced97fc48439164a363ce9dbacab4bbcda6"
+  },
+  "runtime": {
+    "laya_model": "laya-rl-agent",
+    "laya_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "device": "CPU, four threads, loopback-only server",
+    "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2"
+  },
+  "timing": {
+    "n": 3,
+    "command_wall_p50_ms": 373.841,
+    "command_wall_range_ms": [
+      372.178,
+      911.238
+    ],
+    "laya_decision_p50_ms": 367.162,
+    "laya_decision_range_ms": [
+      366.456,
+      381.632
+    ],
+    "p95": "Not reported (n=3)."
+  },
+  "resources": {
+    "cpu_delta_seconds": 2.62,
+    "measured_command_wall_seconds_sum": 1.657,
+    "normalized_cpu_percent_of_one_core": 158.1,
+    "normalized_cpu_denominator": "sum of the 3 warm smoke invocation durations (1.657 seconds); process CPU seconds divided by invocation wall seconds, normalized to one core. Other local work is not included, so this is not total host CPU utilization.",
+    "rss_start_mib": 2017.9,
+    "max_rss_sampled_mib": 2077.2,
+    "sampling_interval_seconds": 0.05,
+    "cpu_note": "CPU process-time deltas are measured around each command and have 0.01-second ps resolution. Normalization divides their summed delta by summed command wall time; >100% means multiple CPU cores were used on average."
+  },
+  "selection": {
+    "raw_laya_candidate_each_call": "negate (5/9 = 55.56%; raw proposal, not emitted)",
+    "deterministic_final_emitted_candidate_each_call": "zero (9/9 = 100% over the declared finite test suite)",
+    "best_candidate": "zero",
+    "adjustment": "replaced_with_best_scoring_candidate",
+    "selection_regret_percentage_points": 44.44,
+    "typecheck_passed_each_call": true,
+    "deterministic_replay_passed_each_call": true,
+    "generated_digest_each_call": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+    "candidate_scores": [
+      {
+        "id": "zero",
+        "expression": "0",
+        "typecheck_passed": true,
+        "test_cases_passed": 9,
+        "test_cases_total": 9,
+        "accuracy_percent": 100
+      },
+      {
+        "id": "identity",
+        "expression": "input",
+        "typecheck_passed": true,
+        "test_cases_passed": 5,
+        "test_cases_total": 9,
+        "accuracy_percent": 55.55555555555556
+      },
+      {
+        "id": "negate",
+        "expression": "-input",
+        "typecheck_passed": true,
+        "test_cases_passed": 5,
+        "test_cases_total": 9,
+        "accuracy_percent": 55.55555555555556
+      }
+    ],
+    "local_suite_scope": "9 declared int64 cases including the signed minimum and maximum, evaluated by the bounded v2 integer AST interpreter; not full-domain proof or CI result.",
+    "external_go_compile_executed": false,
+    "generated_go_runtime_executed": false,
+    "verification_scope": "The command internal Go typechecker accepted the output and deterministic emission replay matched; no external go build or generated-program execution was run."
+  },
+  "per_call": [
+    {
+      "call": 1,
+      "cli_return_code": 0,
+      "receipt_file": "/private/tmp/gooo-luna-laya-feedback-20260930/fixed-compiler-smoke/calls/call-01.stdout.json",
+      "receipt_sha256": "90eea540d78c92945c8ee508957430f17c58e69a0c2f12a4900ba097558c3600",
+      "body_codegen_decision": "PASS",
+      "laya_mode": "laya",
+      "model": "laya-rl-agent",
+      "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+      "request_sha256": "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+      "raw_proposed_candidate": "negate",
+      "raw_proposed_accuracy_percent": 55.55555555555556,
+      "final_emitted_candidate": "zero",
+      "best_candidate": "zero",
+      "best_candidate_accuracy_percent": 100,
+      "selected_functional_accuracy_percent": 100,
+      "selected_test_cases_passed": 9,
+      "selected_test_cases_total": 9,
+      "candidate_scores": [
+        {
+          "id": "zero",
+          "expression": "0",
+          "typecheck_passed": true,
+          "test_cases_passed": 9,
+          "test_cases_total": 9,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "identity",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 9,
+          "accuracy_percent": 55.55555555555556
+        },
+        {
+          "id": "negate",
+          "expression": "-input",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 9,
+          "accuracy_percent": 55.55555555555556
+        }
+      ],
+      "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+      "selection_adjustment": "replaced_with_best_scoring_candidate",
+      "selection_regret_percentage_points": 44.44444444444444,
+      "laya_decision_ms": 381.632125,
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867"
+    },
+    {
+      "call": 2,
+      "cli_return_code": 0,
+      "receipt_file": "/private/tmp/gooo-luna-laya-feedback-20260930/fixed-compiler-smoke/calls/call-02.stdout.json",
+      "receipt_sha256": "9686be4ee397e69530352e1529399adc6f7b380986f470217c374c2c9d7bba77",
+      "body_codegen_decision": "PASS",
+      "laya_mode": "laya",
+      "model": "laya-rl-agent",
+      "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+      "request_sha256": "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+      "raw_proposed_candidate": "negate",
+      "raw_proposed_accuracy_percent": 55.55555555555556,
+      "final_emitted_candidate": "zero",
+      "best_candidate": "zero",
+      "best_candidate_accuracy_percent": 100,
+      "selected_functional_accuracy_percent": 100,
+      "selected_test_cases_passed": 9,
+      "selected_test_cases_total": 9,
+      "candidate_scores": [
+        {
+          "id": "zero",
+          "expression": "0",
+          "typecheck_passed": true,
+          "test_cases_passed": 9,
+          "test_cases_total": 9,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "identity",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 9,
+          "accuracy_percent": 55.55555555555556
+        },
+        {
+          "id": "negate",
+          "expression": "-input",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 9,
+          "accuracy_percent": 55.55555555555556
+        }
+      ],
+      "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+      "selection_adjustment": "replaced_with_best_scoring_candidate",
+      "selection_regret_percentage_points": 44.44444444444444,
+      "laya_decision_ms": 367.162416,
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867"
+    },
+    {
+      "call": 3,
+      "cli_return_code": 0,
+      "receipt_file": "/private/tmp/gooo-luna-laya-feedback-20260930/fixed-compiler-smoke/calls/call-03.stdout.json",
+      "receipt_sha256": "08501d8a4ac821a22c1d530005c212ef5856a0bc6ab369cc421d434fa2b3a4e2",
+      "body_codegen_decision": "PASS",
+      "laya_mode": "laya",
+      "model": "laya-rl-agent",
+      "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+      "request_sha256": "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+      "raw_proposed_candidate": "negate",
+      "raw_proposed_accuracy_percent": 55.55555555555556,
+      "final_emitted_candidate": "zero",
+      "best_candidate": "zero",
+      "best_candidate_accuracy_percent": 100,
+      "selected_functional_accuracy_percent": 100,
+      "selected_test_cases_passed": 9,
+      "selected_test_cases_total": 9,
+      "candidate_scores": [
+        {
+          "id": "zero",
+          "expression": "0",
+          "typecheck_passed": true,
+          "test_cases_passed": 9,
+          "test_cases_total": 9,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "identity",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 9,
+          "accuracy_percent": 55.55555555555556
+        },
+        {
+          "id": "negate",
+          "expression": "-input",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 9,
+          "accuracy_percent": 55.55555555555556
+        }
+      ],
+      "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+      "selection_adjustment": "replaced_with_best_scoring_candidate",
+      "selection_regret_percentage_points": 44.44444444444444,
+      "laya_decision_ms": 366.456125,
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867"
+    }
+  ],
+  "resource_samples_file": "/private/tmp/gooo-luna-laya-feedback-20260930/fixed-compiler-smoke/resource_samples.json",
+  "metadata_file": "/private/tmp/gooo-luna-laya-feedback-20260930/fixed-compiler-smoke/run_metadata.json"
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "Clamp negative inputs to zero, preserve other inputs.",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "candidate_0",
+      "expression": "0"
+    },
+    {
+      "id": "candidate_1",
+      "expression": "input"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": -9223372036854775808,
+      "expected": 0
+    },
+    {
+      "input": -100,
+      "expected": 0
+    },
+    {
+      "input": -2,
+      "expected": 0
+    },
+    {
+      "input": -1,
+      "expected": 0
+    },
+    {
+      "input": 0,
+      "expected": 0
+    },
+    {
+      "input": 1,
+      "expected": 1
+    },
+    {
+      "input": 2,
+      "expected": 2
+    },
+    {
+      "input": 100,
+      "expected": 100
+    },
+    {
+      "input": 9223372036854775807,
+      "expected": 9223372036854775807
+    }
+  ]
+}

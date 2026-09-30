@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "/private/tmp/gooo-ir-search-20260930",
+    "body-codegen",
+    "--json",
+    "--fill-plan",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-2026-09-30/runs/primary_run/invocations/absolute/exhaustive_fill_plan/plan.json",
+    "--activity",
+    "AbsWrapInt64",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-2026-09-30/runs/primary_run/invocations/absolute/exhaustive_fill_plan/fixture.gooo.fixture"
+  ],
+  "binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+  "completed_utc": "2026-09-30T04:08:24.330833+00:00",
+  "exit_code": 0,
+  "fixture_path": "fixtures/absolute.gooo.fixture",
+  "fixture_sha256": "28335004b1a83bbf2e0ddebf60665ff33bad4c0891affad9f5ae63bda7749463",
+  "intent_id": "absolute",
+  "invocation_id": "absolute/exhaustive_fill_plan",
+  "plan_path": "plans/absolute.fill-plan.json",
+  "plan_sha256": "4e47543e89af603d7571a6727ee20780872224ca97276a8fb55faf96aaa07586",
+  "proxy_event_sequences": [],
+  "resources_file": "resource.json",
+  "schema": "gooo/ir-search-invocation-record/v1",
+  "started_utc": "2026-09-30T04:08:24.324533+00:00",
+  "stderr_file": "stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_file": "stdout.raw",
+  "stdout_sha256": "fe50a800e79147069d7fdd4a22b8ac687fb8a51c7da942762d328fe993aebc14",
+  "variant": "exhaustive_fill_plan",
+  "wall_ms": 6.289167000000262
+}

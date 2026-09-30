@@ -1,0 +1,317 @@
+{
+  "invocations": [
+    {
+      "cli_process": {
+        "cpu_percent_host_normalized": 0.20675852258630106,
+        "cpu_percent_one_core": 2.0675852258630107,
+        "cpu_seconds_delta": 0.02,
+        "max_rss_mib": 14.640625,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 14992,
+        "samples": 6
+      },
+      "invocation_id": "clamp/laya_fill_search",
+      "laya_server": {
+        "cpu_percent_host_normalized": 5.27234232595068,
+        "cpu_percent_one_core": 52.723423259506795,
+        "cpu_seconds_delta": 0.5100000000000002,
+        "max_rss_mib": 1673.40625,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 1713568,
+        "samples": 6
+      },
+      "logical_cpu_count": 10,
+      "raw_samples": "resource-samples.jsonl",
+      "sampling_interval_ms": 150,
+      "schema": "gooo/ir-search-process-resources/v1",
+      "wall_ms": 967.3119999999997
+    },
+    {
+      "cli_process": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 3.9375,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 4032,
+        "samples": 1
+      },
+      "invocation_id": "clamp/deterministic_fill_search",
+      "laya_server": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 1688.828125,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 1729360,
+        "samples": 1
+      },
+      "logical_cpu_count": 10,
+      "raw_samples": "resource-samples.jsonl",
+      "sampling_interval_ms": 150,
+      "schema": "gooo/ir-search-process-resources/v1",
+      "wall_ms": 7.040917000000313
+    },
+    {
+      "cli_process": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 2.828125,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 2896,
+        "samples": 1
+      },
+      "invocation_id": "clamp/exhaustive_fill_plan",
+      "laya_server": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 1688.828125,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 1729360,
+        "samples": 1
+      },
+      "logical_cpu_count": 10,
+      "raw_samples": "resource-samples.jsonl",
+      "sampling_interval_ms": 150,
+      "schema": "gooo/ir-search-process-resources/v1",
+      "wall_ms": 6.749375000000057
+    },
+    {
+      "cli_process": {
+        "cpu_percent_host_normalized": 0.17005318110544404,
+        "cpu_percent_one_core": 1.7005318110544405,
+        "cpu_seconds_delta": 0.01,
+        "max_rss_mib": 15.515625,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 15888,
+        "samples": 4
+      },
+      "invocation_id": "absolute/laya_fill_search",
+      "laya_server": {
+        "cpu_percent_host_normalized": 18.705849921598837,
+        "cpu_percent_one_core": 187.05849921598838,
+        "cpu_seconds_delta": 1.0999999999999996,
+        "max_rss_mib": 1727.65625,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 1769120,
+        "samples": 4
+      },
+      "logical_cpu_count": 10,
+      "raw_samples": "resource-samples.jsonl",
+      "sampling_interval_ms": 150,
+      "schema": "gooo/ir-search-process-resources/v1",
+      "wall_ms": 588.0513340000002
+    },
+    {
+      "cli_process": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 5.546875,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 5680,
+        "samples": 1
+      },
+      "invocation_id": "absolute/deterministic_fill_search",
+      "laya_server": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 1753.546875,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 1795632,
+        "samples": 1
+      },
+      "logical_cpu_count": 10,
+      "raw_samples": "resource-samples.jsonl",
+      "sampling_interval_ms": 150,
+      "schema": "gooo/ir-search-process-resources/v1",
+      "wall_ms": 6.56449999999964
+    },
+    {
+      "cli_process": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 2.34375,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 2400,
+        "samples": 1
+      },
+      "invocation_id": "absolute/exhaustive_fill_plan",
+      "laya_server": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 1753.546875,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 1795632,
+        "samples": 1
+      },
+      "logical_cpu_count": 10,
+      "raw_samples": "resource-samples.jsonl",
+      "sampling_interval_ms": 150,
+      "schema": "gooo/ir-search-process-resources/v1",
+      "wall_ms": 6.289167000000262
+    },
+    {
+      "cli_process": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 14.515625,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 14864,
+        "samples": 2
+      },
+      "invocation_id": "piecewise/laya_fill_search",
+      "laya_server": {
+        "cpu_percent_host_normalized": 14.557655267178243,
+        "cpu_percent_one_core": 145.57655267178242,
+        "cpu_seconds_delta": 0.34999999999999964,
+        "max_rss_mib": 1754.015625,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 1796112,
+        "samples": 2
+      },
+      "logical_cpu_count": 10,
+      "raw_samples": "resource-samples.jsonl",
+      "sampling_interval_ms": 150,
+      "schema": "gooo/ir-search-process-resources/v1",
+      "wall_ms": 240.42333299999984
+    },
+    {
+      "cli_process": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 3.1875,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 3264,
+        "samples": 1
+      },
+      "invocation_id": "piecewise/deterministic_fill_search",
+      "laya_server": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 1754.015625,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 1796112,
+        "samples": 1
+      },
+      "logical_cpu_count": 10,
+      "raw_samples": "resource-samples.jsonl",
+      "sampling_interval_ms": 150,
+      "schema": "gooo/ir-search-process-resources/v1",
+      "wall_ms": 6.3282919999991805
+    },
+    {
+      "cli_process": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 2.84375,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 2912,
+        "samples": 1
+      },
+      "invocation_id": "piecewise/exhaustive_fill_plan",
+      "laya_server": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 1754.015625,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 1796112,
+        "samples": 1
+      },
+      "logical_cpu_count": 10,
+      "raw_samples": "resource-samples.jsonl",
+      "sampling_interval_ms": 150,
+      "schema": "gooo/ir-search-process-resources/v1",
+      "wall_ms": 7.43166700000053
+    },
+    {
+      "cli_process": {
+        "cpu_percent_host_normalized": 0.16228775964193512,
+        "cpu_percent_one_core": 1.6228775964193511,
+        "cpu_seconds_delta": 0.01,
+        "max_rss_mib": 15.515625,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 15888,
+        "samples": 4
+      },
+      "invocation_id": "compound-precedence/laya_fill_search",
+      "laya_server": {
+        "cpu_percent_host_normalized": 18.176229079896736,
+        "cpu_percent_one_core": 181.76229079896734,
+        "cpu_seconds_delta": 1.12,
+        "max_rss_mib": 1754.890625,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 1797008,
+        "samples": 4
+      },
+      "logical_cpu_count": 10,
+      "raw_samples": "resource-samples.jsonl",
+      "sampling_interval_ms": 150,
+      "schema": "gooo/ir-search-process-resources/v1",
+      "wall_ms": 616.1894169999993
+    },
+    {
+      "cli_process": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 3.671875,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 3760,
+        "samples": 1
+      },
+      "invocation_id": "compound-precedence/deterministic_fill_search",
+      "laya_server": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 1784.953125,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 1827792,
+        "samples": 1
+      },
+      "logical_cpu_count": 10,
+      "raw_samples": "resource-samples.jsonl",
+      "sampling_interval_ms": 150,
+      "schema": "gooo/ir-search-process-resources/v1",
+      "wall_ms": 6.5294580000001545
+    },
+    {
+      "cli_process": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 3.890625,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 3984,
+        "samples": 1
+      },
+      "invocation_id": "compound-precedence/exhaustive_fill_plan",
+      "laya_server": {
+        "cpu_percent_host_normalized": 0.0,
+        "cpu_percent_one_core": 0.0,
+        "cpu_seconds_delta": 0.0,
+        "max_rss_mib": 1784.953125,
+        "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+        "rss_peak_kb": 1827792,
+        "samples": 1
+      },
+      "logical_cpu_count": 10,
+      "raw_samples": "resource-samples.jsonl",
+      "sampling_interval_ms": 150,
+      "schema": "gooo/ir-search-process-resources/v1",
+      "wall_ms": 6.129083000000257
+    }
+  ],
+  "schema": "gooo/ir-search-resource-samples/v1"
+}

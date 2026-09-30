@@ -1,0 +1,1557 @@
+{
+  "binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+  "completed_utc": "2026-09-30T04:08:25.939375+00:00",
+  "invocations": [
+    {
+      "attempted_candidates": 1,
+      "attempts": [
+        {
+          "accuracy_percent": 100.0,
+          "attempt": 1,
+          "candidate_id": "zero",
+          "decision_latency_ms": 432.828708,
+          "decision_mode": "laya",
+          "error": "",
+          "evaluation_ms": 0.357708,
+          "model": "laya-rl-agent",
+          "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+          "proxy_exchange": {
+            "event_seq": 1,
+            "request_sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be",
+            "response_selected_id": "zero",
+            "response_sha256": "5d7ba2459a59af96cc3b74f2185c4a519735a45d45f26cae89f248405ff50106",
+            "round_latency_ms": 429.40970899999974
+          },
+          "request_sha256": "sha256:3ac93dfaa0b9c64602bf0e10da303d9c188e1b5215e131d7e47943766c3354a4",
+          "scoring_completed": true,
+          "selection_method": "laya",
+          "training_passed": 3,
+          "training_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "evaluated_candidates": 1,
+      "exit_code": 0,
+      "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_outputs_match_independent_oracle": true,
+      "holdout_suite_sha256": "sha256:aef2361e2addd46bbf9bac8acfc91b45a2b20e6a5061a77c141450a1ebb45736",
+      "independent_holdout_oracle": {
+        "candidate_outputs": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "expected": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "passed": 4,
+        "total": 4
+      },
+      "intent_id": "clamp",
+      "ir_plan_sha256": "sha256:de6d74c80a3a76c1cc4e9ae30888a00fef49b9eab1ea42661f5b445922f1cde5",
+      "model_rounds": [
+        {
+          "accuracy_percent": 100.0,
+          "attempt": 1,
+          "candidate_id": "zero",
+          "decision_latency_ms": 432.828708,
+          "decision_mode": "laya",
+          "error": "",
+          "evaluation_ms": 0.357708,
+          "model": "laya-rl-agent",
+          "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+          "proxy_exchange": {
+            "event_seq": 1,
+            "request_sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be",
+            "response_selected_id": "zero",
+            "response_sha256": "5d7ba2459a59af96cc3b74f2185c4a519735a45d45f26cae89f248405ff50106",
+            "round_latency_ms": 429.40970899999974
+          },
+          "request_sha256": "sha256:3ac93dfaa0b9c64602bf0e10da303d9c188e1b5215e131d7e47943766c3354a4",
+          "scoring_completed": true,
+          "selection_method": "laya",
+          "training_passed": 3,
+          "training_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "repository_writes": 0,
+      "resources": {
+        "cli": {
+          "cpu_percent_host_normalized": 0.20675852258630106,
+          "cpu_percent_one_core": 2.0675852258630107,
+          "cpu_seconds_delta": 0.02,
+          "max_rss_mib": 14.640625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 14992,
+          "samples": 6
+        },
+        "laya_server": {
+          "cpu_percent_host_normalized": 5.27234232595068,
+          "cpu_percent_one_core": 52.723423259506795,
+          "cpu_seconds_delta": 0.5100000000000002,
+          "max_rss_mib": 1673.40625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1713568,
+          "samples": 6
+        },
+        "logical_cpu_count": 10,
+        "raw_samples": "resource-samples.jsonl",
+        "sampling_scope": "recomputed from saved periodic ps samples during this invocation",
+        "schema": "gooo/ir-search-process-resources/v1",
+        "wall_ms": 967.3119999999997
+      },
+      "selected_candidate_id": "zero",
+      "source_digest": "sha256:0b833bd24cf276ce7fff0cd1834921ccb7ef62893d539524d038dc5272113bcd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "df36aa10ad28d32decbbb6b4ed535f310b82d66fdbc5b157dca55f5cbfbe2996",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training": {
+        "accuracy_percent": 100.0,
+        "passed": 3,
+        "total": 3
+      },
+      "training_suite_sha256": "sha256:6f77cefd5752a0976f17a1f610e2caca8e026a53f0d7809aeb094a64876e789e",
+      "untested_candidates": 2,
+      "variant": "laya_fill_search",
+      "wall_ms": 967.3119999999997
+    },
+    {
+      "attempted_candidates": 3,
+      "attempts": [
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 1,
+          "candidate_id": "identity",
+          "decision_latency_ms": 0.015209,
+          "decision_mode": "deterministic_fallback",
+          "error": "",
+          "evaluation_ms": 0.150333,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": "sha256:3ac93dfaa0b9c64602bf0e10da303d9c188e1b5215e131d7e47943766c3354a4",
+          "scoring_completed": true,
+          "selection_method": "deterministic_fallback",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 2,
+          "candidate_id": "negate",
+          "decision_latency_ms": 0.005875,
+          "decision_mode": "deterministic_fallback",
+          "error": "",
+          "evaluation_ms": 0.072042,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": "sha256:1d70fa9b6e969e0abe19e51261eb7fa70ba73d29add6d1275b2238f8a8fb492e",
+          "scoring_completed": true,
+          "selection_method": "deterministic_fallback",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 100.0,
+          "attempt": 3,
+          "candidate_id": "zero",
+          "decision_latency_ms": 0,
+          "decision_mode": null,
+          "error": "",
+          "evaluation_ms": 0.05125,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": null,
+          "scoring_completed": true,
+          "selection_method": "sole_remaining_candidate",
+          "training_passed": 3,
+          "training_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "evaluated_candidates": 3,
+      "exit_code": 0,
+      "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_outputs_match_independent_oracle": true,
+      "holdout_suite_sha256": "sha256:aef2361e2addd46bbf9bac8acfc91b45a2b20e6a5061a77c141450a1ebb45736",
+      "independent_holdout_oracle": {
+        "candidate_outputs": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "expected": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "passed": 4,
+        "total": 4
+      },
+      "intent_id": "clamp",
+      "ir_plan_sha256": "sha256:de6d74c80a3a76c1cc4e9ae30888a00fef49b9eab1ea42661f5b445922f1cde5",
+      "model_rounds": [],
+      "repository_writes": 0,
+      "resources": {
+        "cli": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 3.9375,
+          "measurement": "not_available_one_process_sample_only",
+          "rss_peak_kb": 4032,
+          "samples": 1
+        },
+        "laya_server": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 1688.828125,
+          "measurement": "resident_server_only_no_provider_call_during_invocation",
+          "rss_peak_kb": 1729360,
+          "samples": 1
+        },
+        "logical_cpu_count": 10,
+        "raw_samples": "resource-samples.jsonl",
+        "sampling_scope": "recomputed from saved periodic ps samples during this invocation",
+        "schema": "gooo/ir-search-process-resources/v1",
+        "wall_ms": 7.040917000000313
+      },
+      "selected_candidate_id": "zero",
+      "source_digest": "sha256:0b833bd24cf276ce7fff0cd1834921ccb7ef62893d539524d038dc5272113bcd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "97289276ef6c13d7432267476101c9ad201784fd23f6959061aa95663ad0109c",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training": {
+        "accuracy_percent": 100.0,
+        "passed": 3,
+        "total": 3
+      },
+      "training_suite_sha256": "sha256:6f77cefd5752a0976f17a1f610e2caca8e026a53f0d7809aeb094a64876e789e",
+      "untested_candidates": 0,
+      "variant": "deterministic_fill_search",
+      "wall_ms": 7.040917000000313
+    },
+    {
+      "attempted_candidates": null,
+      "attempts": [],
+      "candidate_scores": [
+        {
+          "accuracy_percent": 0,
+          "expression": "input",
+          "id": "identity",
+          "test_cases_passed": 0,
+          "test_cases_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 0,
+          "expression": "-input",
+          "id": "negate",
+          "test_cases_passed": 0,
+          "test_cases_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 100,
+          "expression": "0",
+          "id": "zero",
+          "test_cases_passed": 3,
+          "test_cases_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "evaluated_candidates": 3,
+      "exit_code": 0,
+      "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_measurement": "independent_candidate_oracle_not_executed_by_fill_plan_command",
+      "intent_id": "clamp",
+      "ir_plan_sha256": "sha256:f6a038780effbd5f6f09344ab2e7103c12634b1c0763fe5662cbb822c101cd6e",
+      "model_rounds": [],
+      "repository_writes": 0,
+      "resources": {
+        "cli": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 2.828125,
+          "measurement": "not_available_one_process_sample_only",
+          "rss_peak_kb": 2896,
+          "samples": 1
+        },
+        "laya_server": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 1688.828125,
+          "measurement": "resident_server_only_no_provider_call_during_invocation",
+          "rss_peak_kb": 1729360,
+          "samples": 1
+        },
+        "logical_cpu_count": 10,
+        "raw_samples": "resource-samples.jsonl",
+        "sampling_scope": "recomputed from saved periodic ps samples during this invocation",
+        "schema": "gooo/ir-search-process-resources/v1",
+        "wall_ms": 6.749375000000057
+      },
+      "selected_candidate_id": "zero",
+      "source_digest": "sha256:0b833bd24cf276ce7fff0cd1834921ccb7ef62893d539524d038dc5272113bcd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "bcdb7402abd61dadc5b50626a048e4cc39f3ad3982429f74285aced22089bb41",
+      "test_suite_sha256": "sha256:6f77cefd5752a0976f17a1f610e2caca8e026a53f0d7809aeb094a64876e789e",
+      "training": {
+        "accuracy_percent": 100,
+        "passed": 3,
+        "total": 3
+      },
+      "variant": "exhaustive_fill_plan",
+      "wall_ms": 6.749375000000057
+    },
+    {
+      "attempted_candidates": 3,
+      "attempts": [
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 1,
+          "candidate_id": "zero",
+          "decision_latency_ms": 251.524958,
+          "decision_mode": "laya",
+          "error": "",
+          "evaluation_ms": 0.179666,
+          "model": "laya-rl-agent",
+          "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+          "proxy_exchange": {
+            "event_seq": 3,
+            "request_sha256": "1fbfa27beca20c76d8e62be93aa3c33cbcafd4cd6aec97c187976c41b67b714d",
+            "response_selected_id": "zero",
+            "response_sha256": "024bf22186e5d7110e847bb89c4fcd554a83e9fc82e32fa4d28f89b146033d80",
+            "round_latency_ms": 249.067417
+          },
+          "request_sha256": "sha256:66f28504c654632ce06cfca2855f1bbe4d812d636ffcd3a49211b6f972e2f4a7",
+          "scoring_completed": true,
+          "selection_method": "laya",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 2,
+          "candidate_id": "identity",
+          "decision_latency_ms": 329.799042,
+          "decision_mode": "laya",
+          "error": "",
+          "evaluation_ms": 0.118167,
+          "model": "laya-rl-agent",
+          "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+          "proxy_exchange": {
+            "event_seq": 5,
+            "request_sha256": "fb574a670e4c20636142520f8c862a77f0f0f047df3fb41fea2de7417fdf4e47",
+            "response_selected_id": "identity",
+            "response_sha256": "ed910b02876c2d2c6eb3233474ffb63cca2b1207d061adf4bf15afd89fcfa3d2",
+            "round_latency_ms": 327.8007079999998
+          },
+          "request_sha256": "sha256:b71bde8c31b832f93673a4353ea188657ba0e871596be770daa5c5563d8fe565",
+          "scoring_completed": true,
+          "selection_method": "laya",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 100.0,
+          "attempt": 3,
+          "candidate_id": "negate",
+          "decision_latency_ms": 0,
+          "decision_mode": null,
+          "error": "",
+          "evaluation_ms": 0.057458,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": null,
+          "scoring_completed": true,
+          "selection_method": "sole_remaining_candidate",
+          "training_passed": 3,
+          "training_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "evaluated_candidates": 3,
+      "exit_code": 0,
+      "generated_digest": "sha256:47b3fa9a422a4dca29c583a5b61f959214a560e8566fb4334427f771a63b6e72",
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_outputs_match_independent_oracle": true,
+      "holdout_suite_sha256": "sha256:bef6cb8e71e6b0ab65d7841525772de1e992d3f87fbbfc649b7f579338656306",
+      "independent_holdout_oracle": {
+        "candidate_outputs": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "expected": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "passed": 4,
+        "total": 4
+      },
+      "intent_id": "absolute",
+      "ir_plan_sha256": "sha256:60d9156e915de273b2fb441df11d9a2c970aeb81e0f2829294a07fe3a4dc8767",
+      "model_rounds": [
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 1,
+          "candidate_id": "zero",
+          "decision_latency_ms": 251.524958,
+          "decision_mode": "laya",
+          "error": "",
+          "evaluation_ms": 0.179666,
+          "model": "laya-rl-agent",
+          "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+          "proxy_exchange": {
+            "event_seq": 3,
+            "request_sha256": "1fbfa27beca20c76d8e62be93aa3c33cbcafd4cd6aec97c187976c41b67b714d",
+            "response_selected_id": "zero",
+            "response_sha256": "024bf22186e5d7110e847bb89c4fcd554a83e9fc82e32fa4d28f89b146033d80",
+            "round_latency_ms": 249.067417
+          },
+          "request_sha256": "sha256:66f28504c654632ce06cfca2855f1bbe4d812d636ffcd3a49211b6f972e2f4a7",
+          "scoring_completed": true,
+          "selection_method": "laya",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 2,
+          "candidate_id": "identity",
+          "decision_latency_ms": 329.799042,
+          "decision_mode": "laya",
+          "error": "",
+          "evaluation_ms": 0.118167,
+          "model": "laya-rl-agent",
+          "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+          "proxy_exchange": {
+            "event_seq": 5,
+            "request_sha256": "fb574a670e4c20636142520f8c862a77f0f0f047df3fb41fea2de7417fdf4e47",
+            "response_selected_id": "identity",
+            "response_sha256": "ed910b02876c2d2c6eb3233474ffb63cca2b1207d061adf4bf15afd89fcfa3d2",
+            "round_latency_ms": 327.8007079999998
+          },
+          "request_sha256": "sha256:b71bde8c31b832f93673a4353ea188657ba0e871596be770daa5c5563d8fe565",
+          "scoring_completed": true,
+          "selection_method": "laya",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "repository_writes": 0,
+      "resources": {
+        "cli": {
+          "cpu_percent_host_normalized": 0.17005318110544404,
+          "cpu_percent_one_core": 1.7005318110544405,
+          "cpu_seconds_delta": 0.01,
+          "max_rss_mib": 15.515625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 15888,
+          "samples": 4
+        },
+        "laya_server": {
+          "cpu_percent_host_normalized": 18.705849921598837,
+          "cpu_percent_one_core": 187.05849921598838,
+          "cpu_seconds_delta": 1.0999999999999996,
+          "max_rss_mib": 1727.65625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1769120,
+          "samples": 4
+        },
+        "logical_cpu_count": 10,
+        "raw_samples": "resource-samples.jsonl",
+        "sampling_scope": "recomputed from saved periodic ps samples during this invocation",
+        "schema": "gooo/ir-search-process-resources/v1",
+        "wall_ms": 588.0513340000002
+      },
+      "selected_candidate_id": "negate",
+      "source_digest": "sha256:c867cd68668eb2a4bcc050a86235bc205764ec1fda269d5164612f6f6d21682e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "83318b863d6a6f0347a86504ac8ffc5c1f6580f5ce30ef1a9762ee281ce65947",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training": {
+        "accuracy_percent": 100.0,
+        "passed": 3,
+        "total": 3
+      },
+      "training_suite_sha256": "sha256:82b60c95b85fb77b500a2dc79716131a6e20b8d3261e24f1710b9614890426a6",
+      "untested_candidates": 0,
+      "variant": "laya_fill_search",
+      "wall_ms": 588.0513340000002
+    },
+    {
+      "attempted_candidates": 3,
+      "attempts": [
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 1,
+          "candidate_id": "identity",
+          "decision_latency_ms": 0.014959,
+          "decision_mode": "deterministic_fallback",
+          "error": "",
+          "evaluation_ms": 0.141042,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": "sha256:66f28504c654632ce06cfca2855f1bbe4d812d636ffcd3a49211b6f972e2f4a7",
+          "scoring_completed": true,
+          "selection_method": "deterministic_fallback",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 2,
+          "candidate_id": "zero",
+          "decision_latency_ms": 0.003542,
+          "decision_mode": "deterministic_fallback",
+          "error": "",
+          "evaluation_ms": 0.064916,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": "sha256:ea6cef5c0278efe827000efb6921280c014db29eaef2d8cf64f8ccdc558e0f13",
+          "scoring_completed": true,
+          "selection_method": "deterministic_fallback",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 100.0,
+          "attempt": 3,
+          "candidate_id": "negate",
+          "decision_latency_ms": 0,
+          "decision_mode": null,
+          "error": "",
+          "evaluation_ms": 0.055167,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": null,
+          "scoring_completed": true,
+          "selection_method": "sole_remaining_candidate",
+          "training_passed": 3,
+          "training_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "evaluated_candidates": 3,
+      "exit_code": 0,
+      "generated_digest": "sha256:47b3fa9a422a4dca29c583a5b61f959214a560e8566fb4334427f771a63b6e72",
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_outputs_match_independent_oracle": true,
+      "holdout_suite_sha256": "sha256:bef6cb8e71e6b0ab65d7841525772de1e992d3f87fbbfc649b7f579338656306",
+      "independent_holdout_oracle": {
+        "candidate_outputs": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "expected": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "passed": 4,
+        "total": 4
+      },
+      "intent_id": "absolute",
+      "ir_plan_sha256": "sha256:60d9156e915de273b2fb441df11d9a2c970aeb81e0f2829294a07fe3a4dc8767",
+      "model_rounds": [],
+      "repository_writes": 0,
+      "resources": {
+        "cli": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 5.546875,
+          "measurement": "not_available_one_process_sample_only",
+          "rss_peak_kb": 5680,
+          "samples": 1
+        },
+        "laya_server": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 1753.546875,
+          "measurement": "resident_server_only_no_provider_call_during_invocation",
+          "rss_peak_kb": 1795632,
+          "samples": 1
+        },
+        "logical_cpu_count": 10,
+        "raw_samples": "resource-samples.jsonl",
+        "sampling_scope": "recomputed from saved periodic ps samples during this invocation",
+        "schema": "gooo/ir-search-process-resources/v1",
+        "wall_ms": 6.56449999999964
+      },
+      "selected_candidate_id": "negate",
+      "source_digest": "sha256:c867cd68668eb2a4bcc050a86235bc205764ec1fda269d5164612f6f6d21682e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "56bdcf214fba38f7808693843914c2a94b7189eaef85f835f4f58e107777e218",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training": {
+        "accuracy_percent": 100.0,
+        "passed": 3,
+        "total": 3
+      },
+      "training_suite_sha256": "sha256:82b60c95b85fb77b500a2dc79716131a6e20b8d3261e24f1710b9614890426a6",
+      "untested_candidates": 0,
+      "variant": "deterministic_fill_search",
+      "wall_ms": 6.56449999999964
+    },
+    {
+      "attempted_candidates": null,
+      "attempts": [],
+      "candidate_scores": [
+        {
+          "accuracy_percent": 0,
+          "expression": "input",
+          "id": "identity",
+          "test_cases_passed": 0,
+          "test_cases_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 0,
+          "expression": "0",
+          "id": "zero",
+          "test_cases_passed": 0,
+          "test_cases_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 100,
+          "expression": "-input",
+          "id": "negate",
+          "test_cases_passed": 3,
+          "test_cases_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "evaluated_candidates": 3,
+      "exit_code": 0,
+      "generated_digest": "sha256:47b3fa9a422a4dca29c583a5b61f959214a560e8566fb4334427f771a63b6e72",
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_measurement": "independent_candidate_oracle_not_executed_by_fill_plan_command",
+      "intent_id": "absolute",
+      "ir_plan_sha256": "sha256:befca8b9da0203653f7f28c71ce7dd1e5451fe0978ef2353ba5f91a0586475eb",
+      "model_rounds": [],
+      "repository_writes": 0,
+      "resources": {
+        "cli": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 2.34375,
+          "measurement": "not_available_one_process_sample_only",
+          "rss_peak_kb": 2400,
+          "samples": 1
+        },
+        "laya_server": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 1753.546875,
+          "measurement": "resident_server_only_no_provider_call_during_invocation",
+          "rss_peak_kb": 1795632,
+          "samples": 1
+        },
+        "logical_cpu_count": 10,
+        "raw_samples": "resource-samples.jsonl",
+        "sampling_scope": "recomputed from saved periodic ps samples during this invocation",
+        "schema": "gooo/ir-search-process-resources/v1",
+        "wall_ms": 6.289167000000262
+      },
+      "selected_candidate_id": "negate",
+      "source_digest": "sha256:c867cd68668eb2a4bcc050a86235bc205764ec1fda269d5164612f6f6d21682e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "fe50a800e79147069d7fdd4a22b8ac687fb8a51c7da942762d328fe993aebc14",
+      "test_suite_sha256": "sha256:82b60c95b85fb77b500a2dc79716131a6e20b8d3261e24f1710b9614890426a6",
+      "training": {
+        "accuracy_percent": 100,
+        "passed": 3,
+        "total": 3
+      },
+      "variant": "exhaustive_fill_plan",
+      "wall_ms": 6.289167000000262
+    },
+    {
+      "attempted_candidates": 1,
+      "attempts": [
+        {
+          "accuracy_percent": 100.0,
+          "attempt": 1,
+          "candidate_id": "seven",
+          "decision_latency_ms": 234.114375,
+          "decision_mode": "laya",
+          "error": "",
+          "evaluation_ms": 0.15225,
+          "model": "laya-rl-agent",
+          "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+          "proxy_exchange": {
+            "event_seq": 7,
+            "request_sha256": "538b3a21ab931d2612b4040a01c1598f4b23565c225d843ddc3c2a5edc8db74e",
+            "response_selected_id": "seven",
+            "response_sha256": "265a40cd0809a2dcd0653afa5639fae65392f06a55b1485c894e612550534600",
+            "round_latency_ms": 231.67533300000008
+          },
+          "request_sha256": "sha256:f6a6caa3b54ed07dcd205463a75c514dd0e1e6b51b1446b7ce1157f3b14c9c6e",
+          "scoring_completed": true,
+          "selection_method": "laya",
+          "training_passed": 3,
+          "training_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "evaluated_candidates": 1,
+      "exit_code": 0,
+      "generated_digest": "sha256:82e59ce28d08585b0828443d5137e846094aefa9251a656084fadf7790022148",
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_outputs_match_independent_oracle": true,
+      "holdout_suite_sha256": "sha256:c7b003e2a2898cc0b506212061db3d2e10b5eb6a89de69e3f38b7b109e4b12a6",
+      "independent_holdout_oracle": {
+        "candidate_outputs": [
+          7,
+          0,
+          7,
+          8
+        ],
+        "expected": [
+          7,
+          0,
+          7,
+          8
+        ],
+        "passed": 4,
+        "total": 4
+      },
+      "intent_id": "piecewise",
+      "ir_plan_sha256": "sha256:01fea887a9a619345a6f88aba816c3a632b3a31f545724b760ccc87ab0a5262c",
+      "model_rounds": [
+        {
+          "accuracy_percent": 100.0,
+          "attempt": 1,
+          "candidate_id": "seven",
+          "decision_latency_ms": 234.114375,
+          "decision_mode": "laya",
+          "error": "",
+          "evaluation_ms": 0.15225,
+          "model": "laya-rl-agent",
+          "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+          "proxy_exchange": {
+            "event_seq": 7,
+            "request_sha256": "538b3a21ab931d2612b4040a01c1598f4b23565c225d843ddc3c2a5edc8db74e",
+            "response_selected_id": "seven",
+            "response_sha256": "265a40cd0809a2dcd0653afa5639fae65392f06a55b1485c894e612550534600",
+            "round_latency_ms": 231.67533300000008
+          },
+          "request_sha256": "sha256:f6a6caa3b54ed07dcd205463a75c514dd0e1e6b51b1446b7ce1157f3b14c9c6e",
+          "scoring_completed": true,
+          "selection_method": "laya",
+          "training_passed": 3,
+          "training_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "repository_writes": 0,
+      "resources": {
+        "cli": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 14.515625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 14864,
+          "samples": 2
+        },
+        "laya_server": {
+          "cpu_percent_host_normalized": 14.557655267178243,
+          "cpu_percent_one_core": 145.57655267178242,
+          "cpu_seconds_delta": 0.34999999999999964,
+          "max_rss_mib": 1754.015625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1796112,
+          "samples": 2
+        },
+        "logical_cpu_count": 10,
+        "raw_samples": "resource-samples.jsonl",
+        "sampling_scope": "recomputed from saved periodic ps samples during this invocation",
+        "schema": "gooo/ir-search-process-resources/v1",
+        "wall_ms": 240.42333299999984
+      },
+      "selected_candidate_id": "seven",
+      "source_digest": "sha256:f5c95ef9353b88256b4d8668941815a9a8c33c45c864a7bf739d3a38eb2905c7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "cda1955dc6d32a2090b5ceeb61d99e4fa65d3c9fb41ab45e692dbe8f9a9e4044",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training": {
+        "accuracy_percent": 100.0,
+        "passed": 3,
+        "total": 3
+      },
+      "training_suite_sha256": "sha256:aecdce3f251fd8057137619efdbd18f0fa5132a57e3a66ae6d62952878044f8c",
+      "untested_candidates": 2,
+      "variant": "laya_fill_search",
+      "wall_ms": 240.42333299999984
+    },
+    {
+      "attempted_candidates": 3,
+      "attempts": [
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 1,
+          "candidate_id": "identity",
+          "decision_latency_ms": 0.01325,
+          "decision_mode": "deterministic_fallback",
+          "error": "",
+          "evaluation_ms": 0.135209,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": "sha256:f6a6caa3b54ed07dcd205463a75c514dd0e1e6b51b1446b7ce1157f3b14c9c6e",
+          "scoring_completed": true,
+          "selection_method": "deterministic_fallback",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 2,
+          "candidate_id": "zero",
+          "decision_latency_ms": 0.00575,
+          "decision_mode": "deterministic_fallback",
+          "error": "",
+          "evaluation_ms": 0.063459,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": "sha256:c9b55e7fcad808b74a848b82e31332307cdaeaa4b0ec42c848b8b7ef0a264a39",
+          "scoring_completed": true,
+          "selection_method": "deterministic_fallback",
+          "training_passed": 0,
+          "training_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 100.0,
+          "attempt": 3,
+          "candidate_id": "seven",
+          "decision_latency_ms": 0,
+          "decision_mode": null,
+          "error": "",
+          "evaluation_ms": 0.04775,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": null,
+          "scoring_completed": true,
+          "selection_method": "sole_remaining_candidate",
+          "training_passed": 3,
+          "training_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "evaluated_candidates": 3,
+      "exit_code": 0,
+      "generated_digest": "sha256:82e59ce28d08585b0828443d5137e846094aefa9251a656084fadf7790022148",
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_outputs_match_independent_oracle": true,
+      "holdout_suite_sha256": "sha256:c7b003e2a2898cc0b506212061db3d2e10b5eb6a89de69e3f38b7b109e4b12a6",
+      "independent_holdout_oracle": {
+        "candidate_outputs": [
+          7,
+          0,
+          7,
+          8
+        ],
+        "expected": [
+          7,
+          0,
+          7,
+          8
+        ],
+        "passed": 4,
+        "total": 4
+      },
+      "intent_id": "piecewise",
+      "ir_plan_sha256": "sha256:01fea887a9a619345a6f88aba816c3a632b3a31f545724b760ccc87ab0a5262c",
+      "model_rounds": [],
+      "repository_writes": 0,
+      "resources": {
+        "cli": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 3.1875,
+          "measurement": "not_available_one_process_sample_only",
+          "rss_peak_kb": 3264,
+          "samples": 1
+        },
+        "laya_server": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 1754.015625,
+          "measurement": "resident_server_only_no_provider_call_during_invocation",
+          "rss_peak_kb": 1796112,
+          "samples": 1
+        },
+        "logical_cpu_count": 10,
+        "raw_samples": "resource-samples.jsonl",
+        "sampling_scope": "recomputed from saved periodic ps samples during this invocation",
+        "schema": "gooo/ir-search-process-resources/v1",
+        "wall_ms": 6.3282919999991805
+      },
+      "selected_candidate_id": "seven",
+      "source_digest": "sha256:f5c95ef9353b88256b4d8668941815a9a8c33c45c864a7bf739d3a38eb2905c7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "2a2f7fabad4fb6d5a51d481aea9a903e8c2a264aae1de593086e4f03b5baf62e",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training": {
+        "accuracy_percent": 100.0,
+        "passed": 3,
+        "total": 3
+      },
+      "training_suite_sha256": "sha256:aecdce3f251fd8057137619efdbd18f0fa5132a57e3a66ae6d62952878044f8c",
+      "untested_candidates": 0,
+      "variant": "deterministic_fill_search",
+      "wall_ms": 6.3282919999991805
+    },
+    {
+      "attempted_candidates": null,
+      "attempts": [],
+      "candidate_scores": [
+        {
+          "accuracy_percent": 0,
+          "expression": "input",
+          "id": "identity",
+          "test_cases_passed": 0,
+          "test_cases_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 0,
+          "expression": "0",
+          "id": "zero",
+          "test_cases_passed": 0,
+          "test_cases_total": 3,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 100,
+          "expression": "7",
+          "id": "seven",
+          "test_cases_passed": 3,
+          "test_cases_total": 3,
+          "typecheck_passed": true
+        }
+      ],
+      "evaluated_candidates": 3,
+      "exit_code": 0,
+      "generated_digest": "sha256:82e59ce28d08585b0828443d5137e846094aefa9251a656084fadf7790022148",
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_measurement": "independent_candidate_oracle_not_executed_by_fill_plan_command",
+      "intent_id": "piecewise",
+      "ir_plan_sha256": "sha256:ca3ad496fec38a3a88875fcbc9d89f11adfde3457ec34477aba2c1c6f6c32c9c",
+      "model_rounds": [],
+      "repository_writes": 0,
+      "resources": {
+        "cli": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 2.84375,
+          "measurement": "not_available_one_process_sample_only",
+          "rss_peak_kb": 2912,
+          "samples": 1
+        },
+        "laya_server": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 1754.015625,
+          "measurement": "resident_server_only_no_provider_call_during_invocation",
+          "rss_peak_kb": 1796112,
+          "samples": 1
+        },
+        "logical_cpu_count": 10,
+        "raw_samples": "resource-samples.jsonl",
+        "sampling_scope": "recomputed from saved periodic ps samples during this invocation",
+        "schema": "gooo/ir-search-process-resources/v1",
+        "wall_ms": 7.43166700000053
+      },
+      "selected_candidate_id": "seven",
+      "source_digest": "sha256:f5c95ef9353b88256b4d8668941815a9a8c33c45c864a7bf739d3a38eb2905c7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "86f6d636af8413e53e9eeaa3bdaf0de94befbdd9a74f69868cfadaeb4b5af0a8",
+      "test_suite_sha256": "sha256:aecdce3f251fd8057137619efdbd18f0fa5132a57e3a66ae6d62952878044f8c",
+      "training": {
+        "accuracy_percent": 100,
+        "passed": 3,
+        "total": 3
+      },
+      "variant": "exhaustive_fill_plan",
+      "wall_ms": 7.43166700000053
+    },
+    {
+      "attempted_candidates": 3,
+      "attempts": [
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 1,
+          "candidate_id": "zero",
+          "decision_latency_ms": 258.902667,
+          "decision_mode": "laya",
+          "error": "",
+          "evaluation_ms": 0.1725,
+          "model": "laya-rl-agent",
+          "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+          "proxy_exchange": {
+            "event_seq": 9,
+            "request_sha256": "1a94a10c01ba17539fee02e07edd91f7f3fdf307484d392164a59d47e53d779c",
+            "response_selected_id": "zero",
+            "response_sha256": "4db6b64ba6b64566705831b52d01f665f63a9b9586d10fb510cddae5dbb953c0",
+            "round_latency_ms": 256.57358300000067
+          },
+          "request_sha256": "sha256:31d07e67af68bbe1dc9e013176f708ee5b383f11848e5b516315b0b23c072e81",
+          "scoring_completed": true,
+          "selection_method": "laya",
+          "training_passed": 0,
+          "training_total": 4,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 2,
+          "candidate_id": "identity",
+          "decision_latency_ms": 350.603,
+          "decision_mode": "laya",
+          "error": "",
+          "evaluation_ms": 0.130625,
+          "model": "laya-rl-agent",
+          "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+          "proxy_exchange": {
+            "event_seq": 11,
+            "request_sha256": "191730b1a7fe681fad7e403843ffe293b7220909aa6dd31d4b874389f1f1530a",
+            "response_selected_id": "identity",
+            "response_sha256": "f6521ca451fe25b7d06db5fa7242db9884f97a4c3a57fe445d2a31fdc3619642",
+            "round_latency_ms": 348.544542
+          },
+          "request_sha256": "sha256:f484d350839ad29ef7990f2ac2de8abcb01c3e61635df0cf094b81533714d000",
+          "scoring_completed": true,
+          "selection_method": "laya",
+          "training_passed": 0,
+          "training_total": 4,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 100.0,
+          "attempt": 3,
+          "candidate_id": "hundred",
+          "decision_latency_ms": 0,
+          "decision_mode": null,
+          "error": "",
+          "evaluation_ms": 0.05925,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": null,
+          "scoring_completed": true,
+          "selection_method": "sole_remaining_candidate",
+          "training_passed": 4,
+          "training_total": 4,
+          "typecheck_passed": true
+        }
+      ],
+      "evaluated_candidates": 3,
+      "exit_code": 0,
+      "generated_digest": "sha256:71433f412853e6c3c6638ed1f3c9bf64a228b5328ae871e4f6a80b875277b9cc",
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_outputs_match_independent_oracle": true,
+      "holdout_suite_sha256": "sha256:c2d8aa55c63c8302eb88b811d1d7d69a113fa8f8b807b7cb3c5195d8b86ab9b0",
+      "independent_holdout_oracle": {
+        "candidate_outputs": [
+          0,
+          9,
+          12,
+          100
+        ],
+        "expected": [
+          0,
+          9,
+          12,
+          100
+        ],
+        "passed": 4,
+        "total": 4
+      },
+      "intent_id": "compound-precedence",
+      "ir_plan_sha256": "sha256:06ed0cfaea0d9b189b68faa799464d9e1847f5b5b6a65066fcb9b39ae7a3cc94",
+      "model_rounds": [
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 1,
+          "candidate_id": "zero",
+          "decision_latency_ms": 258.902667,
+          "decision_mode": "laya",
+          "error": "",
+          "evaluation_ms": 0.1725,
+          "model": "laya-rl-agent",
+          "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+          "proxy_exchange": {
+            "event_seq": 9,
+            "request_sha256": "1a94a10c01ba17539fee02e07edd91f7f3fdf307484d392164a59d47e53d779c",
+            "response_selected_id": "zero",
+            "response_sha256": "4db6b64ba6b64566705831b52d01f665f63a9b9586d10fb510cddae5dbb953c0",
+            "round_latency_ms": 256.57358300000067
+          },
+          "request_sha256": "sha256:31d07e67af68bbe1dc9e013176f708ee5b383f11848e5b516315b0b23c072e81",
+          "scoring_completed": true,
+          "selection_method": "laya",
+          "training_passed": 0,
+          "training_total": 4,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 2,
+          "candidate_id": "identity",
+          "decision_latency_ms": 350.603,
+          "decision_mode": "laya",
+          "error": "",
+          "evaluation_ms": 0.130625,
+          "model": "laya-rl-agent",
+          "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+          "proxy_exchange": {
+            "event_seq": 11,
+            "request_sha256": "191730b1a7fe681fad7e403843ffe293b7220909aa6dd31d4b874389f1f1530a",
+            "response_selected_id": "identity",
+            "response_sha256": "f6521ca451fe25b7d06db5fa7242db9884f97a4c3a57fe445d2a31fdc3619642",
+            "round_latency_ms": 348.544542
+          },
+          "request_sha256": "sha256:f484d350839ad29ef7990f2ac2de8abcb01c3e61635df0cf094b81533714d000",
+          "scoring_completed": true,
+          "selection_method": "laya",
+          "training_passed": 0,
+          "training_total": 4,
+          "typecheck_passed": true
+        }
+      ],
+      "repository_writes": 0,
+      "resources": {
+        "cli": {
+          "cpu_percent_host_normalized": 0.16228775964193512,
+          "cpu_percent_one_core": 1.6228775964193511,
+          "cpu_seconds_delta": 0.01,
+          "max_rss_mib": 15.515625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 15888,
+          "samples": 4
+        },
+        "laya_server": {
+          "cpu_percent_host_normalized": 18.176229079896736,
+          "cpu_percent_one_core": 181.76229079896734,
+          "cpu_seconds_delta": 1.12,
+          "max_rss_mib": 1754.890625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1797008,
+          "samples": 4
+        },
+        "logical_cpu_count": 10,
+        "raw_samples": "resource-samples.jsonl",
+        "sampling_scope": "recomputed from saved periodic ps samples during this invocation",
+        "schema": "gooo/ir-search-process-resources/v1",
+        "wall_ms": 616.1894169999993
+      },
+      "selected_candidate_id": "hundred",
+      "source_digest": "sha256:f3e2935f58beae95dc54ac8d5cef3ad8416b62bd8d0ff5f27a3491e04998d100",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6fee9c5106bf8cfe512bcc847e9819d61ea331ac8028932439c77247147150a5",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "training_suite_sha256": "sha256:d3971048a08c0bf47b044f9e8f32ef1c966e896162e9131d3ba3138b6ea7cb6f",
+      "untested_candidates": 0,
+      "variant": "laya_fill_search",
+      "wall_ms": 616.1894169999993
+    },
+    {
+      "attempted_candidates": 3,
+      "attempts": [
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 1,
+          "candidate_id": "identity",
+          "decision_latency_ms": 0.014291,
+          "decision_mode": "deterministic_fallback",
+          "error": "",
+          "evaluation_ms": 0.150708,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": "sha256:31d07e67af68bbe1dc9e013176f708ee5b383f11848e5b516315b0b23c072e81",
+          "scoring_completed": true,
+          "selection_method": "deterministic_fallback",
+          "training_passed": 0,
+          "training_total": 4,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 0.0,
+          "attempt": 2,
+          "candidate_id": "zero",
+          "decision_latency_ms": 0.003584,
+          "decision_mode": "deterministic_fallback",
+          "error": "",
+          "evaluation_ms": 0.073042,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": "sha256:63d8806053e9aac95aa4c87ebf9761220b6088fa60cda9789765b64e07d778dc",
+          "scoring_completed": true,
+          "selection_method": "deterministic_fallback",
+          "training_passed": 0,
+          "training_total": 4,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 100.0,
+          "attempt": 3,
+          "candidate_id": "hundred",
+          "decision_latency_ms": 0,
+          "decision_mode": null,
+          "error": "",
+          "evaluation_ms": 0.063666,
+          "model": null,
+          "model_revision": null,
+          "request_sha256": null,
+          "scoring_completed": true,
+          "selection_method": "sole_remaining_candidate",
+          "training_passed": 4,
+          "training_total": 4,
+          "typecheck_passed": true
+        }
+      ],
+      "evaluated_candidates": 3,
+      "exit_code": 0,
+      "generated_digest": "sha256:71433f412853e6c3c6638ed1f3c9bf64a228b5328ae871e4f6a80b875277b9cc",
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_outputs_match_independent_oracle": true,
+      "holdout_suite_sha256": "sha256:c2d8aa55c63c8302eb88b811d1d7d69a113fa8f8b807b7cb3c5195d8b86ab9b0",
+      "independent_holdout_oracle": {
+        "candidate_outputs": [
+          0,
+          9,
+          12,
+          100
+        ],
+        "expected": [
+          0,
+          9,
+          12,
+          100
+        ],
+        "passed": 4,
+        "total": 4
+      },
+      "intent_id": "compound-precedence",
+      "ir_plan_sha256": "sha256:06ed0cfaea0d9b189b68faa799464d9e1847f5b5b6a65066fcb9b39ae7a3cc94",
+      "model_rounds": [],
+      "repository_writes": 0,
+      "resources": {
+        "cli": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 3.671875,
+          "measurement": "not_available_one_process_sample_only",
+          "rss_peak_kb": 3760,
+          "samples": 1
+        },
+        "laya_server": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 1784.953125,
+          "measurement": "resident_server_only_no_provider_call_during_invocation",
+          "rss_peak_kb": 1827792,
+          "samples": 1
+        },
+        "logical_cpu_count": 10,
+        "raw_samples": "resource-samples.jsonl",
+        "sampling_scope": "recomputed from saved periodic ps samples during this invocation",
+        "schema": "gooo/ir-search-process-resources/v1",
+        "wall_ms": 6.5294580000001545
+      },
+      "selected_candidate_id": "hundred",
+      "source_digest": "sha256:f3e2935f58beae95dc54ac8d5cef3ad8416b62bd8d0ff5f27a3491e04998d100",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "48d95aa849a2337302a3ba3f4068546da10254defc8b4700480abf5571c12e25",
+      "stop_reason": "TRAINING_SUITE_PASSED",
+      "training": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "training_suite_sha256": "sha256:d3971048a08c0bf47b044f9e8f32ef1c966e896162e9131d3ba3138b6ea7cb6f",
+      "untested_candidates": 0,
+      "variant": "deterministic_fill_search",
+      "wall_ms": 6.5294580000001545
+    },
+    {
+      "attempted_candidates": null,
+      "attempts": [],
+      "candidate_scores": [
+        {
+          "accuracy_percent": 0,
+          "expression": "input",
+          "id": "identity",
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 0,
+          "expression": "0",
+          "id": "zero",
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "typecheck_passed": true
+        },
+        {
+          "accuracy_percent": 100,
+          "expression": "100",
+          "id": "hundred",
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "typecheck_passed": true
+        }
+      ],
+      "evaluated_candidates": 3,
+      "exit_code": 0,
+      "generated_digest": "sha256:71433f412853e6c3c6638ed1f3c9bf64a228b5328ae871e4f6a80b875277b9cc",
+      "holdout": {
+        "accuracy_percent": 100.0,
+        "passed": 4,
+        "total": 4
+      },
+      "holdout_measurement": "independent_candidate_oracle_not_executed_by_fill_plan_command",
+      "intent_id": "compound-precedence",
+      "ir_plan_sha256": "sha256:1537bcfa6335a4d21d3b6ae791995cb4d43874b99874bee9c360da5f2397008e",
+      "model_rounds": [],
+      "repository_writes": 0,
+      "resources": {
+        "cli": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 3.890625,
+          "measurement": "not_available_one_process_sample_only",
+          "rss_peak_kb": 3984,
+          "samples": 1
+        },
+        "laya_server": {
+          "cpu_percent_host_normalized": null,
+          "cpu_percent_one_core": null,
+          "cpu_seconds_delta": null,
+          "max_rss_mib": 1784.953125,
+          "measurement": "resident_server_only_no_provider_call_during_invocation",
+          "rss_peak_kb": 1827792,
+          "samples": 1
+        },
+        "logical_cpu_count": 10,
+        "raw_samples": "resource-samples.jsonl",
+        "sampling_scope": "recomputed from saved periodic ps samples during this invocation",
+        "schema": "gooo/ir-search-process-resources/v1",
+        "wall_ms": 6.129083000000257
+      },
+      "selected_candidate_id": "hundred",
+      "source_digest": "sha256:f3e2935f58beae95dc54ac8d5cef3ad8416b62bd8d0ff5f27a3491e04998d100",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "87bfc927686e5c3e6c8550392b03921a49df95ad5f2bd37eaabf0a4b0cc42493",
+      "test_suite_sha256": "sha256:d3971048a08c0bf47b044f9e8f32ef1c966e896162e9131d3ba3138b6ea7cb6f",
+      "training": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "total": 4
+      },
+      "variant": "exhaustive_fill_plan",
+      "wall_ms": 6.129083000000257
+    }
+  ],
+  "manifest_provenance": {
+    "note": "Pre-run bytes were not persisted by the first runner revision; any post-run reconstruction is labeled and independently hash-matched to the digest recorded before execution.",
+    "reconstructed_snapshot_file": "cohort-manifest-preexecution.reconstructed.json",
+    "reconstruction_evidence_file": "manifest-evidence.json",
+    "reconstruction_matches_recorded_digest": true,
+    "recorded_preexecution_sha256": "626b6122ed597fe64066a9b4a0dc366e8f9795c6fae126ea2d206fe51bbff22c",
+    "snapshot_saved_at_run_time": false
+  },
+  "per_intent_costs": [
+    {
+      "deterministic_search_wall_ms": 7.040917000000313,
+      "exhaustive_fill_plan_wall_ms": 6.749375000000057,
+      "intent_id": "clamp",
+      "laya_decision_latency_total_ms": 432.828708,
+      "laya_search_wall_ms": 967.3119999999997,
+      "laya_vs_deterministic_search_ratio": 137.384377631487,
+      "laya_vs_exhaustive_fill_plan_ratio": 143.3187517362706,
+      "model_rounds": 1
+    },
+    {
+      "deterministic_search_wall_ms": 6.56449999999964,
+      "exhaustive_fill_plan_wall_ms": 6.289167000000262,
+      "intent_id": "absolute",
+      "laya_decision_latency_total_ms": 581.324,
+      "laya_search_wall_ms": 588.0513340000002,
+      "laya_vs_deterministic_search_ratio": 89.5805215934241,
+      "laya_vs_exhaustive_fill_plan_ratio": 93.50226095124772,
+      "model_rounds": 2
+    },
+    {
+      "deterministic_search_wall_ms": 6.3282919999991805,
+      "exhaustive_fill_plan_wall_ms": 7.43166700000053,
+      "intent_id": "piecewise",
+      "laya_decision_latency_total_ms": 234.114375,
+      "laya_search_wall_ms": 240.42333299999984,
+      "laya_vs_deterministic_search_ratio": 37.99182038376721,
+      "laya_vs_exhaustive_fill_plan_ratio": 32.35119832468041,
+      "model_rounds": 1
+    },
+    {
+      "deterministic_search_wall_ms": 6.5294580000001545,
+      "exhaustive_fill_plan_wall_ms": 6.129083000000257,
+      "intent_id": "compound-precedence",
+      "laya_decision_latency_total_ms": 609.505667,
+      "laya_search_wall_ms": 616.1894169999993,
+      "laya_vs_deterministic_search_ratio": 94.37068390668638,
+      "laya_vs_exhaustive_fill_plan_ratio": 100.53533571008475,
+      "model_rounds": 2
+    }
+  ],
+  "process_resource_observation": {
+    "laya_server_max_sampled_rss_invocation": "compound-precedence/deterministic_fill_search",
+    "laya_server_max_sampled_rss_kb": 1827792,
+    "laya_server_max_sampled_rss_mib": 1784.953125,
+    "laya_server_max_sampled_rss_utc": "2026-09-30T04:08:25.244379+00:00",
+    "measurement_limit": "highest recorded RSS sample only; sampling is periodic and is not a continuous peak capture",
+    "sampled_process_rows": 24,
+    "sampling_source": "all saved invocation resource-samples.jsonl files"
+  },
+  "raw_artifact_index": {
+    "invocations": "invocations/<intent>/<variant>/",
+    "process_resources": "resource_samples.json",
+    "proxy_events": "proxy/events.jsonl"
+  },
+  "run_id": "primary_run",
+  "runtime": {
+    "device": "cpu",
+    "model": "english",
+    "name": "Laya",
+    "offline_only": true,
+    "package": "laya",
+    "port": 52462,
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "threads": 4,
+    "version": "0.3.21",
+    "virtualenv": "/private/tmp/meta-ontology-go-laya-venv-20260930",
+    "virtualenv_default": "/tmp/meta-ontology-go-laya-venv-20260930"
+  },
+  "schema": "gooo/ir-search-study-report/v1",
+  "selection_quality": {
+    "final_holdout_perfect": 4,
+    "final_training_perfect": 4,
+    "first_choice_total": 4,
+    "first_choice_training_perfect": 2,
+    "holdout_oracle_matches": 4,
+    "laya_search_invocations": 4,
+    "model_choice_rounds": 6,
+    "training_perfect_model_choices": 2
+  },
+  "source_revision": "29d44bc778d85aee03b9af500bd83dc98f368189",
+  "speed_observation": {
+    "intents_slower_than_both_baselines": 4,
+    "scope": "four-intent local finite cohort only",
+    "speed_benefit_observed": false
+  },
+  "started_utc": "2026-09-30T04:08:17.654815+00:00",
+  "totals": {
+    "captured_laya_rounds": 6,
+    "deterministic_search_attempted_candidates": 12,
+    "deterministic_search_evaluated_candidates": 12,
+    "exhaustive_fill_plan_candidate_scores": 12,
+    "invocation_count": 12,
+    "laya_backed_invocation_count": 4,
+    "laya_search_attempted_candidates": 8,
+    "laya_search_evaluated_candidates": 8,
+    "mean_laya_round_ms": 307.1785486666667,
+    "mean_wall_ms": 205.4198785833333,
+    "successful_invocations": 12
+  }
+}

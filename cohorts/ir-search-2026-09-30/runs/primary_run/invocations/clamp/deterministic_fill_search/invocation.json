@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "/private/tmp/gooo-ir-search-20260930",
+    "body-codegen",
+    "--json",
+    "--fill-search",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-2026-09-30/runs/primary_run/invocations/clamp/deterministic_fill_search/plan.json",
+    "--activity",
+    "ClampNegativeToZero",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-2026-09-30/runs/primary_run/invocations/clamp/deterministic_fill_search/fixture.gooo.fixture"
+  ],
+  "binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+  "completed_utc": "2026-09-30T04:08:23.689232+00:00",
+  "exit_code": 0,
+  "fixture_path": "fixtures/clamp.gooo.fixture",
+  "fixture_sha256": "4a5870cea7474783c472c2c3c0b8c75641e3a09fc867f3038f94f893fcd80be1",
+  "intent_id": "clamp",
+  "invocation_id": "clamp/deterministic_fill_search",
+  "plan_path": "plans/clamp.search-plan.json",
+  "plan_sha256": "12b06c0bfd813ec648cc22e01274b593334677c6ef059dfd72d1964a8ac9f1e6",
+  "proxy_event_sequences": [],
+  "resources_file": "resource.json",
+  "schema": "gooo/ir-search-invocation-record/v1",
+  "started_utc": "2026-09-30T04:08:23.682178+00:00",
+  "stderr_file": "stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_file": "stdout.raw",
+  "stdout_sha256": "97289276ef6c13d7432267476101c9ad201784fd23f6959061aa95663ad0109c",
+  "variant": "deterministic_fill_search",
+  "wall_ms": 7.040917000000313
+}

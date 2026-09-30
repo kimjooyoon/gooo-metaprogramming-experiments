@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/private/tmp/gooo-ir-search-20260930",
+    "body-codegen",
+    "--json",
+    "--fill-search",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-2026-09-30/runs/primary_run/invocations/piecewise/deterministic_fill_search/plan.json",
+    "--activity",
+    "NegativeToSeven",
+    "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-search-2026-09-30/runs/primary_run/invocations/piecewise/deterministic_fill_search/fixture.gooo.fixture"
+  ],
+  "environment": {
+    "GOOO_LAYA_URL": "",
+    "GOOO_LAYA_API_KEY": "unset",
+    "offline_model_calls": false
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "created_after_run": true,
+  "method": "Reconstructed from the published post-run manifest by restoring status=prepared and primary_run=null, restoring the known pre-run JSON key order, and retaining the binary/runtime pins. The reconstructed bytes hash matches the digest captured by run-metadata.json before execution.",
+  "original_snapshot_saved_at_run_time": false,
+  "reconstructed_snapshot_file": "cohort-manifest-preexecution.reconstructed.json",
+  "reconstructed_snapshot_sha256": "626b6122ed597fe64066a9b4a0dc366e8f9795c6fae126ea2d206fe51bbff22c",
+  "reconstruction_matches_recorded_digest": true,
+  "recorded_preexecution_sha256": "626b6122ed597fe64066a9b4a0dc366e8f9795c6fae126ea2d206fe51bbff22c",
+  "schema": "gooo/ir-search-manifest-evidence/v1"
+}

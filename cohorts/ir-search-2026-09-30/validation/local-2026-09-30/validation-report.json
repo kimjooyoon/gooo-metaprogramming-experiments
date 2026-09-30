@@ -1,0 +1,1251 @@
+{
+  "cohort_id": "ir-search-2026-09-30",
+  "compiler_provenance": {
+    "binary_hashes_compared_across_platforms": false,
+    "binary_vcs_modified": false,
+    "binary_vcs_revision": "29d44bc778d85aee03b9af500bd83dc98f368189",
+    "ci_binary_sha256": null,
+    "compiler_checkout_clean": true,
+    "execution_environment": "local",
+    "go_version": "go version go1.27.0 darwin/arm64",
+    "mac_capture_binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9",
+    "source_revision": "29d44bc778d85aee03b9af500bd83dc98f368189",
+    "validation_binary_sha256": "f9f33b86c2114c1adeba01319fddb7d48f666e739aef768bbb5a580adfb7cda9"
+  },
+  "deterministic_replays": [
+    {
+      "compiled_go_oracle": {
+        "actuals_sha256": "432ea57365ef220f350f800f59abaa87611cd5c5681a6264639660c52ea27f60",
+        "compiled_go_matches_oracle": true,
+        "function": "ClampNegativeToZero",
+        "holdout_actuals": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "holdout_count": 4,
+        "training_actuals": [
+          0,
+          0,
+          0
+        ],
+        "training_count": 3
+      },
+      "intent_id": "clamp",
+      "matches_primary_deterministic": true,
+      "provider_configured": false,
+      "repeats_identical": true
+    },
+    {
+      "compiled_go_oracle": {
+        "actuals_sha256": "a89264ad92b390282ee5840413a1d6f4385afebe192be1768a83a254187ac0d1",
+        "compiled_go_matches_oracle": true,
+        "function": "AbsWrapInt64",
+        "holdout_actuals": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "holdout_count": 4,
+        "training_actuals": [
+          3,
+          2,
+          1
+        ],
+        "training_count": 3
+      },
+      "intent_id": "absolute",
+      "matches_primary_deterministic": true,
+      "provider_configured": false,
+      "repeats_identical": true
+    },
+    {
+      "compiled_go_oracle": {
+        "actuals_sha256": "dce969d2cb35683e078c9270feab7fe78657d2a1cac765c7c43b3e8e60e1bf07",
+        "compiled_go_matches_oracle": true,
+        "function": "NegativeToSeven",
+        "holdout_actuals": [
+          7,
+          0,
+          7,
+          8
+        ],
+        "holdout_count": 4,
+        "training_actuals": [
+          7,
+          7,
+          7
+        ],
+        "training_count": 3
+      },
+      "intent_id": "piecewise",
+      "matches_primary_deterministic": true,
+      "provider_configured": false,
+      "repeats_identical": true
+    },
+    {
+      "compiled_go_oracle": {
+        "actuals_sha256": "3959f26806d26d3fabc45e33bcb4b3d6cb9481503fdd464d37923ef82413b30a",
+        "compiled_go_matches_oracle": true,
+        "function": "CompoundPrecedence",
+        "holdout_actuals": [
+          0,
+          9,
+          12,
+          100
+        ],
+        "holdout_count": 4,
+        "training_actuals": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "training_count": 4
+      },
+      "intent_id": "compound-precedence",
+      "matches_primary_deterministic": true,
+      "provider_configured": false,
+      "repeats_identical": true
+    }
+  ],
+  "mock_protocol_replay_label": "local mock chooser; no actual Laya calls and no model-quality claim",
+  "mock_protocol_replays": [
+    {
+      "captured_state_sha256": [
+        "cf715629060799e63921b92edacc8f63297ca09a09c7d02c92f00a1cdacdfe2f",
+        "499619a81d0fd4d3431b15b021a8d676b9289aedd9b385b3f683845563642f31"
+      ],
+      "compiled_go_oracle": {
+        "actuals_sha256": "432ea57365ef220f350f800f59abaa87611cd5c5681a6264639660c52ea27f60",
+        "compiled_go_matches_oracle": true,
+        "function": "ClampNegativeToZero",
+        "holdout_actuals": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "holdout_count": 4,
+        "training_actuals": [
+          0,
+          0,
+          0
+        ],
+        "training_count": 3
+      },
+      "holdout_exposed": false,
+      "intent_id": "clamp",
+      "label": "mock provider protocol replay only; not an actual Laya replay or model evaluation",
+      "mock_rounds": 2
+    },
+    {
+      "captured_state_sha256": [
+        "10b5c58a1cb3c5b0d1b2bfba0cf091a89cdfb379c4a441a4dc2f48419af1d09c",
+        "ce862107f4ab4921936fb00e5335362da1381cc1c7443dda6fd7687f256665af"
+      ],
+      "compiled_go_oracle": {
+        "actuals_sha256": "a89264ad92b390282ee5840413a1d6f4385afebe192be1768a83a254187ac0d1",
+        "compiled_go_matches_oracle": true,
+        "function": "AbsWrapInt64",
+        "holdout_actuals": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "holdout_count": 4,
+        "training_actuals": [
+          3,
+          2,
+          1
+        ],
+        "training_count": 3
+      },
+      "holdout_exposed": false,
+      "intent_id": "absolute",
+      "label": "mock provider protocol replay only; not an actual Laya replay or model evaluation",
+      "mock_rounds": 2
+    },
+    {
+      "captured_state_sha256": [
+        "d67d2ccc98950be1cde238d9ce556b445b2801b1c353c5aa6934f9b1a707982a",
+        "ef61f8a9014c596180c3292c8643411a8d5108b93c9739eeb7943a1033dcb402"
+      ],
+      "compiled_go_oracle": {
+        "actuals_sha256": "dce969d2cb35683e078c9270feab7fe78657d2a1cac765c7c43b3e8e60e1bf07",
+        "compiled_go_matches_oracle": true,
+        "function": "NegativeToSeven",
+        "holdout_actuals": [
+          7,
+          0,
+          7,
+          8
+        ],
+        "holdout_count": 4,
+        "training_actuals": [
+          7,
+          7,
+          7
+        ],
+        "training_count": 3
+      },
+      "holdout_exposed": false,
+      "intent_id": "piecewise",
+      "label": "mock provider protocol replay only; not an actual Laya replay or model evaluation",
+      "mock_rounds": 2
+    },
+    {
+      "captured_state_sha256": [
+        "2cf1edb0e10198c1722ae931e04504cc49982e6a39e4d424dce11b1f5bb5ffd8",
+        "57a3e7af417052a6e34a38741da5b0d8ee6a5dc711033b6ede8bbf97b4420193"
+      ],
+      "compiled_go_oracle": {
+        "actuals_sha256": "3959f26806d26d3fabc45e33bcb4b3d6cb9481503fdd464d37923ef82413b30a",
+        "compiled_go_matches_oracle": true,
+        "function": "CompoundPrecedence",
+        "holdout_actuals": [
+          0,
+          9,
+          12,
+          100
+        ],
+        "holdout_count": 4,
+        "training_actuals": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "training_count": 4
+      },
+      "holdout_exposed": false,
+      "intent_id": "compound-precedence",
+      "label": "mock provider protocol replay only; not an actual Laya replay or model evaluation",
+      "mock_rounds": 2
+    }
+  ],
+  "plan_validation": {
+    "check_stdout": "validated 4 intents, 12 planned invocations, and independent finite oracles",
+    "plans_and_finite_oracles": "PASS"
+  },
+  "primary_capture": {
+    "captured_laya_rounds": 6,
+    "captured_request_privacy_and_linkage": [
+      {
+        "holdout_fields_present": false,
+        "invocation_id": "clamp/laya_fill_search",
+        "request_sha256": "5a999f1d1877f4d77c8f430fd755937aa12db544dbcda2a56647847c3cfe17be",
+        "response_sha256": "5d7ba2459a59af96cc3b74f2185c4a519735a45d45f26cae89f248405ff50106",
+        "selected_candidate_id": "zero",
+        "seq": 1,
+        "state_sha256": "cf715629060799e63921b92edacc8f63297ca09a09c7d02c92f00a1cdacdfe2f",
+        "training_count": 3
+      },
+      {
+        "holdout_fields_present": false,
+        "invocation_id": "absolute/laya_fill_search",
+        "request_sha256": "1fbfa27beca20c76d8e62be93aa3c33cbcafd4cd6aec97c187976c41b67b714d",
+        "response_sha256": "024bf22186e5d7110e847bb89c4fcd554a83e9fc82e32fa4d28f89b146033d80",
+        "selected_candidate_id": "zero",
+        "seq": 3,
+        "state_sha256": "10b5c58a1cb3c5b0d1b2bfba0cf091a89cdfb379c4a441a4dc2f48419af1d09c",
+        "training_count": 3
+      },
+      {
+        "holdout_fields_present": false,
+        "invocation_id": "absolute/laya_fill_search",
+        "request_sha256": "fb574a670e4c20636142520f8c862a77f0f0f047df3fb41fea2de7417fdf4e47",
+        "response_sha256": "ed910b02876c2d2c6eb3233474ffb63cca2b1207d061adf4bf15afd89fcfa3d2",
+        "selected_candidate_id": "identity",
+        "seq": 5,
+        "state_sha256": "4623f5f0937c9d0c354297da0da708eb65220944b5553ecef78e1682044dd2e0",
+        "training_count": 3
+      },
+      {
+        "holdout_fields_present": false,
+        "invocation_id": "piecewise/laya_fill_search",
+        "request_sha256": "538b3a21ab931d2612b4040a01c1598f4b23565c225d843ddc3c2a5edc8db74e",
+        "response_sha256": "265a40cd0809a2dcd0653afa5639fae65392f06a55b1485c894e612550534600",
+        "selected_candidate_id": "seven",
+        "seq": 7,
+        "state_sha256": "d67d2ccc98950be1cde238d9ce556b445b2801b1c353c5aa6934f9b1a707982a",
+        "training_count": 3
+      },
+      {
+        "holdout_fields_present": false,
+        "invocation_id": "compound-precedence/laya_fill_search",
+        "request_sha256": "1a94a10c01ba17539fee02e07edd91f7f3fdf307484d392164a59d47e53d779c",
+        "response_sha256": "4db6b64ba6b64566705831b52d01f665f63a9b9586d10fb510cddae5dbb953c0",
+        "selected_candidate_id": "zero",
+        "seq": 9,
+        "state_sha256": "2cf1edb0e10198c1722ae931e04504cc49982e6a39e4d424dce11b1f5bb5ffd8",
+        "training_count": 4
+      },
+      {
+        "holdout_fields_present": false,
+        "invocation_id": "compound-precedence/laya_fill_search",
+        "request_sha256": "191730b1a7fe681fad7e403843ffe293b7220909aa6dd31d4b874389f1f1530a",
+        "response_sha256": "f6521ca451fe25b7d06db5fa7242db9884f97a4c3a57fe445d2a31fdc3619642",
+        "selected_candidate_id": "identity",
+        "seq": 11,
+        "state_sha256": "2485af40818144c2428f43d15a028da2a6b0050901ae9cccb269340120026f4a",
+        "training_count": 4
+      }
+    ],
+    "compiled_go_oracle_count": 12,
+    "compiled_oracle_results": [
+      {
+        "holdout_actuals": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "holdout_expected": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "holdout_inputs": [
+          0,
+          1,
+          4,
+          -9223372036854775808
+        ],
+        "holdout_suite_hash_scope": "compiler receipt digest linked to the disjoint oracle suite and compiled output",
+        "holdout_suite_sha256": "sha256:aef2361e2addd46bbf9bac8acfc91b45a2b20e6a5061a77c141450a1ebb45736",
+        "intent_id": "clamp",
+        "training_actuals": [
+          0,
+          0,
+          0
+        ],
+        "training_expected": [
+          0,
+          0,
+          0
+        ],
+        "training_inputs": [
+          -3,
+          -2,
+          -1
+        ],
+        "variant": "laya_fill_search"
+      },
+      {
+        "holdout_actuals": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "holdout_expected": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "holdout_inputs": [
+          0,
+          1,
+          4,
+          -9223372036854775808
+        ],
+        "holdout_suite_hash_scope": "compiler receipt digest linked to the disjoint oracle suite and compiled output",
+        "holdout_suite_sha256": "sha256:aef2361e2addd46bbf9bac8acfc91b45a2b20e6a5061a77c141450a1ebb45736",
+        "intent_id": "clamp",
+        "training_actuals": [
+          0,
+          0,
+          0
+        ],
+        "training_expected": [
+          0,
+          0,
+          0
+        ],
+        "training_inputs": [
+          -3,
+          -2,
+          -1
+        ],
+        "variant": "deterministic_fill_search"
+      },
+      {
+        "holdout_actuals": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "holdout_expected": [
+          0,
+          1,
+          4,
+          0
+        ],
+        "holdout_inputs": [
+          0,
+          1,
+          4,
+          -9223372036854775808
+        ],
+        "holdout_suite_hash_scope": "compiler receipt digest linked to the disjoint oracle suite and compiled output",
+        "holdout_suite_sha256": null,
+        "intent_id": "clamp",
+        "training_actuals": [
+          0,
+          0,
+          0
+        ],
+        "training_expected": [
+          0,
+          0,
+          0
+        ],
+        "training_inputs": [
+          -3,
+          -2,
+          -1
+        ],
+        "variant": "exhaustive_fill_plan"
+      },
+      {
+        "holdout_actuals": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "holdout_expected": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "holdout_inputs": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "holdout_suite_hash_scope": "compiler receipt digest linked to the disjoint oracle suite and compiled output",
+        "holdout_suite_sha256": "sha256:bef6cb8e71e6b0ab65d7841525772de1e992d3f87fbbfc649b7f579338656306",
+        "intent_id": "absolute",
+        "training_actuals": [
+          3,
+          2,
+          1
+        ],
+        "training_expected": [
+          3,
+          2,
+          1
+        ],
+        "training_inputs": [
+          -3,
+          -2,
+          -1
+        ],
+        "variant": "laya_fill_search"
+      },
+      {
+        "holdout_actuals": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "holdout_expected": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "holdout_inputs": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "holdout_suite_hash_scope": "compiler receipt digest linked to the disjoint oracle suite and compiled output",
+        "holdout_suite_sha256": "sha256:bef6cb8e71e6b0ab65d7841525772de1e992d3f87fbbfc649b7f579338656306",
+        "intent_id": "absolute",
+        "training_actuals": [
+          3,
+          2,
+          1
+        ],
+        "training_expected": [
+          3,
+          2,
+          1
+        ],
+        "training_inputs": [
+          -3,
+          -2,
+          -1
+        ],
+        "variant": "deterministic_fill_search"
+      },
+      {
+        "holdout_actuals": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "holdout_expected": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "holdout_inputs": [
+          -9223372036854775808,
+          9223372036854775807,
+          0,
+          4
+        ],
+        "holdout_suite_hash_scope": "compiler receipt digest linked to the disjoint oracle suite and compiled output",
+        "holdout_suite_sha256": null,
+        "intent_id": "absolute",
+        "training_actuals": [
+          3,
+          2,
+          1
+        ],
+        "training_expected": [
+          3,
+          2,
+          1
+        ],
+        "training_inputs": [
+          -3,
+          -2,
+          -1
+        ],
+        "variant": "exhaustive_fill_plan"
+      },
+      {
+        "holdout_actuals": [
+          7,
+          0,
+          7,
+          8
+        ],
+        "holdout_expected": [
+          7,
+          0,
+          7,
+          8
+        ],
+        "holdout_inputs": [
+          -8,
+          0,
+          7,
+          8
+        ],
+        "holdout_suite_hash_scope": "compiler receipt digest linked to the disjoint oracle suite and compiled output",
+        "holdout_suite_sha256": "sha256:c7b003e2a2898cc0b506212061db3d2e10b5eb6a89de69e3f38b7b109e4b12a6",
+        "intent_id": "piecewise",
+        "training_actuals": [
+          7,
+          7,
+          7
+        ],
+        "training_expected": [
+          7,
+          7,
+          7
+        ],
+        "training_inputs": [
+          -3,
+          -2,
+          -1
+        ],
+        "variant": "laya_fill_search"
+      },
+      {
+        "holdout_actuals": [
+          7,
+          0,
+          7,
+          8
+        ],
+        "holdout_expected": [
+          7,
+          0,
+          7,
+          8
+        ],
+        "holdout_inputs": [
+          -8,
+          0,
+          7,
+          8
+        ],
+        "holdout_suite_hash_scope": "compiler receipt digest linked to the disjoint oracle suite and compiled output",
+        "holdout_suite_sha256": "sha256:c7b003e2a2898cc0b506212061db3d2e10b5eb6a89de69e3f38b7b109e4b12a6",
+        "intent_id": "piecewise",
+        "training_actuals": [
+          7,
+          7,
+          7
+        ],
+        "training_expected": [
+          7,
+          7,
+          7
+        ],
+        "training_inputs": [
+          -3,
+          -2,
+          -1
+        ],
+        "variant": "deterministic_fill_search"
+      },
+      {
+        "holdout_actuals": [
+          7,
+          0,
+          7,
+          8
+        ],
+        "holdout_expected": [
+          7,
+          0,
+          7,
+          8
+        ],
+        "holdout_inputs": [
+          -8,
+          0,
+          7,
+          8
+        ],
+        "holdout_suite_hash_scope": "compiler receipt digest linked to the disjoint oracle suite and compiled output",
+        "holdout_suite_sha256": null,
+        "intent_id": "piecewise",
+        "training_actuals": [
+          7,
+          7,
+          7
+        ],
+        "training_expected": [
+          7,
+          7,
+          7
+        ],
+        "training_inputs": [
+          -3,
+          -2,
+          -1
+        ],
+        "variant": "exhaustive_fill_plan"
+      },
+      {
+        "holdout_actuals": [
+          0,
+          9,
+          12,
+          100
+        ],
+        "holdout_expected": [
+          0,
+          9,
+          12,
+          100
+        ],
+        "holdout_inputs": [
+          0,
+          9,
+          12,
+          14
+        ],
+        "holdout_suite_hash_scope": "compiler receipt digest linked to the disjoint oracle suite and compiled output",
+        "holdout_suite_sha256": "sha256:c2d8aa55c63c8302eb88b811d1d7d69a113fa8f8b807b7cb3c5195d8b86ab9b0",
+        "intent_id": "compound-precedence",
+        "training_actuals": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "training_expected": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "training_inputs": [
+          -1,
+          10,
+          11,
+          13
+        ],
+        "variant": "laya_fill_search"
+      },
+      {
+        "holdout_actuals": [
+          0,
+          9,
+          12,
+          100
+        ],
+        "holdout_expected": [
+          0,
+          9,
+          12,
+          100
+        ],
+        "holdout_inputs": [
+          0,
+          9,
+          12,
+          14
+        ],
+        "holdout_suite_hash_scope": "compiler receipt digest linked to the disjoint oracle suite and compiled output",
+        "holdout_suite_sha256": "sha256:c2d8aa55c63c8302eb88b811d1d7d69a113fa8f8b807b7cb3c5195d8b86ab9b0",
+        "intent_id": "compound-precedence",
+        "training_actuals": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "training_expected": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "training_inputs": [
+          -1,
+          10,
+          11,
+          13
+        ],
+        "variant": "deterministic_fill_search"
+      },
+      {
+        "holdout_actuals": [
+          0,
+          9,
+          12,
+          100
+        ],
+        "holdout_expected": [
+          0,
+          9,
+          12,
+          100
+        ],
+        "holdout_inputs": [
+          0,
+          9,
+          12,
+          14
+        ],
+        "holdout_suite_hash_scope": "compiler receipt digest linked to the disjoint oracle suite and compiled output",
+        "holdout_suite_sha256": null,
+        "intent_id": "compound-precedence",
+        "training_actuals": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "training_expected": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "training_inputs": [
+          -1,
+          10,
+          11,
+          13
+        ],
+        "variant": "exhaustive_fill_plan"
+      }
+    ],
+    "final_search_and_latency_metrics": {
+      "intents": [
+        {
+          "cli_wall_ms": 967.3119999999997,
+          "completed_by_sole_remaining_candidate": false,
+          "holdout_accuracy_percent": 100,
+          "holdout_passed": 4,
+          "holdout_total": 4,
+          "intent_id": "clamp",
+          "provider_budget_used_ms": 432.827708,
+          "selected_candidate_id": "zero",
+          "training_accuracy_percent": 100,
+          "training_passed": 3,
+          "training_total": 3
+        },
+        {
+          "cli_wall_ms": 588.0513340000002,
+          "completed_by_sole_remaining_candidate": true,
+          "holdout_accuracy_percent": 100,
+          "holdout_passed": 4,
+          "holdout_total": 4,
+          "intent_id": "absolute",
+          "provider_budget_used_ms": 581.323792,
+          "selected_candidate_id": "negate",
+          "training_accuracy_percent": 100,
+          "training_passed": 3,
+          "training_total": 3
+        },
+        {
+          "cli_wall_ms": 240.42333299999984,
+          "completed_by_sole_remaining_candidate": false,
+          "holdout_accuracy_percent": 100,
+          "holdout_passed": 4,
+          "holdout_total": 4,
+          "intent_id": "piecewise",
+          "provider_budget_used_ms": 234.114375,
+          "selected_candidate_id": "seven",
+          "training_accuracy_percent": 100,
+          "training_passed": 3,
+          "training_total": 3
+        },
+        {
+          "cli_wall_ms": 616.1894169999993,
+          "completed_by_sole_remaining_candidate": true,
+          "holdout_accuracy_percent": 100,
+          "holdout_passed": 4,
+          "holdout_total": 4,
+          "intent_id": "compound-precedence",
+          "provider_budget_used_ms": 609.505501,
+          "selected_candidate_id": "hundred",
+          "training_accuracy_percent": 100,
+          "training_passed": 4,
+          "training_total": 4
+        }
+      ],
+      "latency_policy": "provider round, cumulative provider budget, and whole CLI wall time are listed separately; no speedup claim"
+    },
+    "holdout_suite_receipt_digests_by_intent": {
+      "absolute": "sha256:bef6cb8e71e6b0ab65d7841525772de1e992d3f87fbbfc649b7f579338656306",
+      "clamp": "sha256:aef2361e2addd46bbf9bac8acfc91b45a2b20e6a5061a77c141450a1ebb45736",
+      "compound-precedence": "sha256:c2d8aa55c63c8302eb88b811d1d7d69a113fa8f8b807b7cb3c5195d8b86ab9b0",
+      "piecewise": "sha256:c7b003e2a2898cc0b506212061db3d2e10b5eb6a89de69e3f38b7b109e4b12a6"
+    },
+    "laya_backed_invocations": 4,
+    "manifest_snapshot_integrity": {
+      "comparison": "not asserted: run metadata records a pre-finalization manifest snapshot that is not retained; fixture/plan snapshots and their raw digests are verified",
+      "current_manifest_sha256": "13e67b11c6f9f26fa98fe60d56319f26e785420c736ff9d0e1e02d281afa970e",
+      "run_recorded_manifest_sha256": "626b6122ed597fe64066a9b4a0dc366e8f9795c6fae126ea2d206fe51bbff22c"
+    },
+    "model_choice_training_metrics": {
+      "exact_laya_choices": 2,
+      "exact_training_match_rate_percent": 33.333333333333336,
+      "first_choice_exact_intents": 2,
+      "intents": 4,
+      "interpretation": "Observed training-only model choices; not the final selected-body accuracy.",
+      "laya_choices": 6,
+      "rounds": [
+        {
+          "candidate_id": "zero",
+          "exact_training_match": true,
+          "intent_id": "clamp",
+          "provider_decision_latency_ms": 432.828708,
+          "proxy_round_latency_ms": 429.40970899999974,
+          "scoring_completed": true,
+          "training_passed": 3,
+          "training_total": 3
+        },
+        {
+          "candidate_id": "zero",
+          "exact_training_match": false,
+          "intent_id": "absolute",
+          "provider_decision_latency_ms": 251.524958,
+          "proxy_round_latency_ms": 249.067417,
+          "scoring_completed": true,
+          "training_passed": 0,
+          "training_total": 3
+        },
+        {
+          "candidate_id": "identity",
+          "exact_training_match": false,
+          "intent_id": "absolute",
+          "provider_decision_latency_ms": 329.799042,
+          "proxy_round_latency_ms": 327.8007079999998,
+          "scoring_completed": true,
+          "training_passed": 0,
+          "training_total": 3
+        },
+        {
+          "candidate_id": "seven",
+          "exact_training_match": true,
+          "intent_id": "piecewise",
+          "provider_decision_latency_ms": 234.114375,
+          "proxy_round_latency_ms": 231.67533300000008,
+          "scoring_completed": true,
+          "training_passed": 3,
+          "training_total": 3
+        },
+        {
+          "candidate_id": "zero",
+          "exact_training_match": false,
+          "intent_id": "compound-precedence",
+          "provider_decision_latency_ms": 258.902667,
+          "proxy_round_latency_ms": 256.57358300000067,
+          "scoring_completed": true,
+          "training_passed": 0,
+          "training_total": 4
+        },
+        {
+          "candidate_id": "identity",
+          "exact_training_match": false,
+          "intent_id": "compound-precedence",
+          "provider_decision_latency_ms": 350.603,
+          "proxy_round_latency_ms": 348.544542,
+          "scoring_completed": true,
+          "training_passed": 0,
+          "training_total": 4
+        }
+      ]
+    },
+    "proxy_exchange_counts": {
+      "choice": 6,
+      "health_check": 6,
+      "total": 12
+    },
+    "raw_invocations": 12,
+    "raw_resource_evidence": [
+      {
+        "cli_process": {
+          "cpu_percent_host_normalized": 0.20675852258630106,
+          "cpu_percent_one_core": 2.0675852258630107,
+          "cpu_seconds_delta": 0.02,
+          "max_rss_mib": 14.640625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 14992,
+          "samples": 6
+        },
+        "invocation_id": "clamp/laya_fill_search",
+        "laya_server": {
+          "cpu_percent_host_normalized": 5.27234232595068,
+          "cpu_percent_one_core": 52.723423259506795,
+          "cpu_seconds_delta": 0.5100000000000002,
+          "max_rss_mib": 1673.40625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1713568,
+          "samples": 6
+        },
+        "laya_server_interpretation": "Laya server was sampled during provider-backed CLI execution; RSS is the largest observed sample, not a process peak.",
+        "rss_interpretation": "largest observed sample; not a process peak",
+        "sample_count": 6,
+        "sample_file_sha256": "1b29c694c7657107e3766cde1f704b9b4b3badbb2c008bc0e0159c6dabdc5670",
+        "variant": "laya_fill_search"
+      },
+      {
+        "cli_process": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 3.9375,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 4032,
+          "samples": 1
+        },
+        "invocation_id": "clamp/deterministic_fill_search",
+        "laya_server": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 1688.828125,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1729360,
+          "samples": 1
+        },
+        "laya_server_interpretation": "One snapshot of the already-loaded persistent Laya server; zero CPU delta is unknown by construction, and its RSS is resident server size rather than control-specific memory cost.",
+        "rss_interpretation": "largest observed sample; not a process peak",
+        "sample_count": 1,
+        "sample_file_sha256": "0163428a7dd762c06f51ba5868c1e749393f322665902f97978e548b69cf16f3",
+        "variant": "deterministic_fill_search"
+      },
+      {
+        "cli_process": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 2.828125,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 2896,
+          "samples": 1
+        },
+        "invocation_id": "clamp/exhaustive_fill_plan",
+        "laya_server": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 1688.828125,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1729360,
+          "samples": 1
+        },
+        "laya_server_interpretation": "One snapshot of the already-loaded persistent Laya server; zero CPU delta is unknown by construction, and its RSS is resident server size rather than control-specific memory cost.",
+        "rss_interpretation": "largest observed sample; not a process peak",
+        "sample_count": 1,
+        "sample_file_sha256": "84fd4d345a3f986dba9002f93b322a1ebdb8dad274631faebc53b6008d5d3eee",
+        "variant": "exhaustive_fill_plan"
+      },
+      {
+        "cli_process": {
+          "cpu_percent_host_normalized": 0.17005318110544404,
+          "cpu_percent_one_core": 1.7005318110544405,
+          "cpu_seconds_delta": 0.01,
+          "max_rss_mib": 15.515625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 15888,
+          "samples": 4
+        },
+        "invocation_id": "absolute/laya_fill_search",
+        "laya_server": {
+          "cpu_percent_host_normalized": 18.705849921598837,
+          "cpu_percent_one_core": 187.05849921598838,
+          "cpu_seconds_delta": 1.0999999999999996,
+          "max_rss_mib": 1727.65625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1769120,
+          "samples": 4
+        },
+        "laya_server_interpretation": "Laya server was sampled during provider-backed CLI execution; RSS is the largest observed sample, not a process peak.",
+        "rss_interpretation": "largest observed sample; not a process peak",
+        "sample_count": 4,
+        "sample_file_sha256": "36d9b68641dbe71f3d9b9da8ad11b49d4d74515aeb10c7e0b0050430656b5007",
+        "variant": "laya_fill_search"
+      },
+      {
+        "cli_process": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 5.546875,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 5680,
+          "samples": 1
+        },
+        "invocation_id": "absolute/deterministic_fill_search",
+        "laya_server": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 1753.546875,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1795632,
+          "samples": 1
+        },
+        "laya_server_interpretation": "One snapshot of the already-loaded persistent Laya server; zero CPU delta is unknown by construction, and its RSS is resident server size rather than control-specific memory cost.",
+        "rss_interpretation": "largest observed sample; not a process peak",
+        "sample_count": 1,
+        "sample_file_sha256": "73ba8176f62a3215428573e6c610abcdd70c4c147fb38db525dabeb53c2ab379",
+        "variant": "deterministic_fill_search"
+      },
+      {
+        "cli_process": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 2.34375,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 2400,
+          "samples": 1
+        },
+        "invocation_id": "absolute/exhaustive_fill_plan",
+        "laya_server": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 1753.546875,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1795632,
+          "samples": 1
+        },
+        "laya_server_interpretation": "One snapshot of the already-loaded persistent Laya server; zero CPU delta is unknown by construction, and its RSS is resident server size rather than control-specific memory cost.",
+        "rss_interpretation": "largest observed sample; not a process peak",
+        "sample_count": 1,
+        "sample_file_sha256": "4f460c7dbcfb8c620f8bdb895066cab220ec6dfaaa2095f6f4683a110461858a",
+        "variant": "exhaustive_fill_plan"
+      },
+      {
+        "cli_process": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 14.515625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 14864,
+          "samples": 2
+        },
+        "invocation_id": "piecewise/laya_fill_search",
+        "laya_server": {
+          "cpu_percent_host_normalized": 14.557655267178243,
+          "cpu_percent_one_core": 145.57655267178242,
+          "cpu_seconds_delta": 0.34999999999999964,
+          "max_rss_mib": 1754.015625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1796112,
+          "samples": 2
+        },
+        "laya_server_interpretation": "Laya server was sampled during provider-backed CLI execution; RSS is the largest observed sample, not a process peak.",
+        "rss_interpretation": "largest observed sample; not a process peak",
+        "sample_count": 2,
+        "sample_file_sha256": "917159ead54d64b0b630b698d59b023c911d3e084c0e08ee38e7f987ffa14134",
+        "variant": "laya_fill_search"
+      },
+      {
+        "cli_process": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 3.1875,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 3264,
+          "samples": 1
+        },
+        "invocation_id": "piecewise/deterministic_fill_search",
+        "laya_server": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 1754.015625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1796112,
+          "samples": 1
+        },
+        "laya_server_interpretation": "One snapshot of the already-loaded persistent Laya server; zero CPU delta is unknown by construction, and its RSS is resident server size rather than control-specific memory cost.",
+        "rss_interpretation": "largest observed sample; not a process peak",
+        "sample_count": 1,
+        "sample_file_sha256": "324ec55394d289d0e29768fd39d2d0e7e2fd1fc0b9e824714854f5104cc3aea7",
+        "variant": "deterministic_fill_search"
+      },
+      {
+        "cli_process": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 2.84375,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 2912,
+          "samples": 1
+        },
+        "invocation_id": "piecewise/exhaustive_fill_plan",
+        "laya_server": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 1754.015625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1796112,
+          "samples": 1
+        },
+        "laya_server_interpretation": "One snapshot of the already-loaded persistent Laya server; zero CPU delta is unknown by construction, and its RSS is resident server size rather than control-specific memory cost.",
+        "rss_interpretation": "largest observed sample; not a process peak",
+        "sample_count": 1,
+        "sample_file_sha256": "51baefb47568ee3f45735b40417f7a1e727fda808d2cecaa1cfb47a184a66c20",
+        "variant": "exhaustive_fill_plan"
+      },
+      {
+        "cli_process": {
+          "cpu_percent_host_normalized": 0.16228775964193512,
+          "cpu_percent_one_core": 1.6228775964193511,
+          "cpu_seconds_delta": 0.01,
+          "max_rss_mib": 15.515625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 15888,
+          "samples": 4
+        },
+        "invocation_id": "compound-precedence/laya_fill_search",
+        "laya_server": {
+          "cpu_percent_host_normalized": 18.176229079896736,
+          "cpu_percent_one_core": 181.76229079896734,
+          "cpu_seconds_delta": 1.12,
+          "max_rss_mib": 1754.890625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1797008,
+          "samples": 4
+        },
+        "laya_server_interpretation": "Laya server was sampled during provider-backed CLI execution; RSS is the largest observed sample, not a process peak.",
+        "rss_interpretation": "largest observed sample; not a process peak",
+        "sample_count": 4,
+        "sample_file_sha256": "2621d58955d358775b194b308773a00b5c85d37aed58ca35604fcec14b819b37",
+        "variant": "laya_fill_search"
+      },
+      {
+        "cli_process": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 3.671875,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 3760,
+          "samples": 1
+        },
+        "invocation_id": "compound-precedence/deterministic_fill_search",
+        "laya_server": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 1784.953125,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1827792,
+          "samples": 1
+        },
+        "laya_server_interpretation": "One snapshot of the already-loaded persistent Laya server; zero CPU delta is unknown by construction, and its RSS is resident server size rather than control-specific memory cost.",
+        "rss_interpretation": "largest observed sample; not a process peak",
+        "sample_count": 1,
+        "sample_file_sha256": "2d66ad1b7ac66ca070aba4f946ba84e66b9adc1569455ed2b01d9e71f59e3eee",
+        "variant": "deterministic_fill_search"
+      },
+      {
+        "cli_process": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 3.890625,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 3984,
+          "samples": 1
+        },
+        "invocation_id": "compound-precedence/exhaustive_fill_plan",
+        "laya_server": {
+          "cpu_percent_host_normalized": 0.0,
+          "cpu_percent_one_core": 0.0,
+          "cpu_seconds_delta": 0.0,
+          "max_rss_mib": 1784.953125,
+          "measurement": "owned_process_cumulative_cpu_time_delta_over_invocation_wall_time",
+          "rss_peak_kb": 1827792,
+          "samples": 1
+        },
+        "laya_server_interpretation": "One snapshot of the already-loaded persistent Laya server; zero CPU delta is unknown by construction, and its RSS is resident server size rather than control-specific memory cost.",
+        "rss_interpretation": "largest observed sample; not a process peak",
+        "sample_count": 1,
+        "sample_file_sha256": "1ba17582c0b6178c11ea562539419741730708d1c500aac992a917e61f2cf0ee",
+        "variant": "exhaustive_fill_plan"
+      }
+    ],
+    "resource_policy": "per-invocation CLI and Laya CPU/RSS remain separate; largest observed RSS sample is not a process peak; no aggregate mixing"
+  },
+  "resource_aggregation": "not performed; raw CPU/RSS remains split by invocation and process",
+  "schema": "gooo/ir-search-validation-report/v1",
+  "unscored_failure_probe": {
+    "attempted_candidates": 2,
+    "decision": "FAIL_CLOSED",
+    "evaluated_candidates": 0,
+    "provider": "local mock chooser only",
+    "unscored_accuracies": [
+      null,
+      null
+    ]
+  }
+}

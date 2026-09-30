@@ -1,0 +1,1 @@
+{"cli": {"alive": true, "cpu_seconds": 0.0, "pid": 78103, "ps_raw": "0:00.00   3984 78103", "rss_kb": 3984}, "elapsed_seconds": 0.001210541000000731, "laya_server": {"alive": true, "cpu_seconds": 6.29, "pid": 77984, "ps_raw": "0:06.29 1827792 77984", "rss_kb": 1827792}, "sampled_utc": "2026-09-30T04:08:25.259214+00:00"}

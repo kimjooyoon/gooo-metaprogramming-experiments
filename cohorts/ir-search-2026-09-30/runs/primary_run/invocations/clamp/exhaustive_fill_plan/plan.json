@@ -1,0 +1,15 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "For a signed int64 input, replace a negative input with zero and preserve every nonnegative input.",
+  "hole_id": "floor",
+  "candidates": [
+    { "id": "identity", "expression": "input" },
+    { "id": "negate", "expression": "-input" },
+    { "id": "zero", "expression": "0" }
+  ],
+  "test_cases": [
+    { "input": -3, "expected": 0 },
+    { "input": -2, "expected": 0 },
+    { "input": -1, "expected": 0 }
+  ]
+}

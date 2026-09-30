@@ -1,0 +1,66 @@
+{
+  "schema": "gooo/public-ci-observation/v1",
+  "captured_at_utc": "2026-09-30T09:42:49.217897+00:00",
+  "repository": "kimjooyoon/gooo-metaprogramming-experiments",
+  "exact_head_sha": "c5eb378089011dfbd0802e6d0d6849bc6c1ec864",
+  "runs": [
+    {
+      "conclusion": "success",
+      "databaseId": 36695391363,
+      "headSha": "c5eb378089011dfbd0802e6d0d6849bc6c1ec864",
+      "name": "IR-search parallel captured-body replay",
+      "status": "completed",
+      "url": "https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36695391363"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 36695391244,
+      "headSha": "c5eb378089011dfbd0802e6d0d6849bc6c1ec864",
+      "name": "IR composition revision-2 candidate replay",
+      "status": "completed",
+      "url": "https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36695391244"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 36695391718,
+      "headSha": "c5eb378089011dfbd0802e6d0d6849bc6c1ec864",
+      "name": "100-case codegen matrix",
+      "status": "completed",
+      "url": "https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36695391718"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 36695391391,
+      "headSha": "c5eb378089011dfbd0802e6d0d6849bc6c1ec864",
+      "name": "IR body-fill evidence",
+      "status": "completed",
+      "url": "https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36695391391"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 36695391235,
+      "headSha": "c5eb378089011dfbd0802e6d0d6849bc6c1ec864",
+      "name": "IR-search cohort replay",
+      "status": "completed",
+      "url": "https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36695391235"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 36695391096,
+      "headSha": "c5eb378089011dfbd0802e6d0d6849bc6c1ec864",
+      "name": "IR-search MOCK fault evidence replay",
+      "status": "completed",
+      "url": "https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36695391096"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 36695391089,
+      "headSha": "c5eb378089011dfbd0802e6d0d6849bc6c1ec864",
+      "name": "IR composition baseline replay",
+      "status": "completed",
+      "url": "https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36695391089"
+    }
+  ],
+  "model_calls_in_this_observation": 0,
+  "scope": "API observation of seven completed workflows; does not authenticate or replace their individual proof artifacts"
+}

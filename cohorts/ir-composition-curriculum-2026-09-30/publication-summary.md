@@ -32,7 +32,7 @@ CI executes the temporary-copy replay and retains its report; published frozen e
 
 ## Compiler comparison on the unchanged original designs
 
-Clean compiler `60cf7f49` normalizes only outer parentheses in the existing canonical condition/result forms. All eight rejected direct condition/comparison holes now generate successfully. The two original unused-local designs continue to fail typecheck. This repair is [PR 1101](https://github.com/kimjooyoon/meta-ontology-go/pull/1101), which passed all six required checks and merged to dev.
+Clean compiler `60cf7f49` normalizes only outer parentheses in the existing canonical condition/result forms. All eight rejected direct condition/comparison holes now generate successfully. The two original unused-local designs continue to fail typecheck. This repair is [PR 1101](https://github.com/kimjooyoon/meta-ontology-go/pull/1101), which passed all six required checks and merged to dev. [Promotion PR 1102](https://github.com/kimjooyoon/meta-ontology-go/pull/1102) passed the same required checks and exact source/tree-bound promotion proof, and merged to main as `da5f39f31887b00136c63f88529a49206cab4e68`.
 
 | Measure | Original compiler | Equivalence repair |
 |---|---:|---:|
@@ -51,3 +51,7 @@ The repair recorder's original report mistakenly aggregated 32 observed source-u
 ## Evidence consistency experiments
 
 [Seven negative treatments](execution/evidence-mutation-review-v7/) cover frozen plan bytes, raw CLI JSON, emitted source, runner archive, UNKNOWN-to-PASS relabeling, finite-denominator changes and coordinated receipt/hash changes. The first six were rejected. The seventh initially exposed a missing cross-check: a raw source-unit receipt could change from 18/18 to 19/19 while its per-case report retained 18/18, even after the raw hash was refreshed. The strengthened validator now explicitly compares raw receipt dimensions and source/lowered-unit counts with per-case and aggregate records, and rejects this mutation. The unchanged control still passes all 52 saved-source Go replays. These experiments make zero model calls and do not establish detection of every possible forgery.
+
+All seven repository workflows passed on exact publication commit `c5eb378089011dfbd0802e6d0d6849bc6c1ec864`, including the baseline and revision-2 replays. The [CI observation](execution/public-ci-c5eb378/ci-observation.json) records the exact run URLs and source revision. These CI jobs replay archived sources and evidence without invoking Laya.
+
+The next paired study is public in [gooo-ir-composition-tdd-experiments](https://github.com/kimjooyoon/gooo-ir-composition-tdd-experiments). It schedules these same revised 32 intentions under two settings, so its 64 cells are additional treatments rather than new independent intentions. Its status file distinguishes model-free preparation from actual inference.

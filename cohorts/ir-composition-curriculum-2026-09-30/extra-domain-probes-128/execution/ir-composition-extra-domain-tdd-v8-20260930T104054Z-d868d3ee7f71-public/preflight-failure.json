@@ -1,0 +1,13 @@
+{
+  "decision": "PREFLIGHT_FAILED_NO_PROBE_EXECUTION",
+  "executed_probe_rows": 0,
+  "expected_go_binary_sha256": "47b9f3bd1b365d18771ba36b0a2b472b139fdb6a08b404697e188478dce38c6e",
+  "go_version": "go1.27.0 darwin/arm64",
+  "model_calls": 0,
+  "observed_go_binary_sha256": "a19a71df81715c12d9a7e81bab036c12696fec1ddbd4258b48a2131a9080b267",
+  "path_disclosure": "omitted from public receipt",
+  "planned_probe_rows_per_arm": 128,
+  "reason": "requested local Go executable digest did not match the frozen replay pin",
+  "schema": "gooo/ir-composition-extra-domain-probe-preflight-failure/v1",
+  "source_manifest_sha256": "ff815137fd7fea977b6a3cde7c5f832837d8206e976d0031a7d3e9d1279aea64"
+}

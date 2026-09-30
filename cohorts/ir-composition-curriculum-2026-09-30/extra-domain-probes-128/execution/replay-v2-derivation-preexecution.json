@@ -1,0 +1,28 @@
+{
+  "change": {
+    "corrected_value": "a19a71df81715c12d9a7e81bab036c12696fec1ddbd4258b48a2131a9080b267",
+    "field": "GO_BINARY_SHA256",
+    "previous_value": "47b9f3bd1b365d18771ba36b0a2b472b139fdb6a08b404697e188478dce38c6e",
+    "reason": "47b9f3bd... was the Gooo compiler pin, not the direct Go 1.27 executable pin; the approved physical Go binary at the same pinned path hashes to a19a71df..."
+  },
+  "derived_from": {
+    "path": "scripts/replay_extra_domain_probes.py",
+    "sha256": "aff1e24befc600492e2311458c0d607b67449e752a79eef89409bfec0108ce40"
+  },
+  "frozen_inputs": {
+    "probe_freeze_sha256": "7c67f6d8faeccc79ef9a802cf31313d51b72288cfa4ce2d4c2dadfd933ac6061",
+    "probe_rows_sha256": "8040a38fc43e6efa458d119c65d7ff6a6cb4518d8a8e1bbbcf4494068df917bd",
+    "source_manifest_sha256": "ff815137fd7fea977b6a3cde7c5f832837d8206e976d0031a7d3e9d1279aea64",
+    "tdd_capture_id": "ir-composition-tdd-v8-20260930T104054Z-d868d3ee7f71"
+  },
+  "preserved_failed_attempt": {
+    "decision": "PREFLIGHT_FAILED_NO_PROBE_EXECUTION",
+    "path": "cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/execution/ir-composition-extra-domain-tdd-v8-20260930T104054Z-d868d3ee7f71",
+    "preflight_failure_sha256": "61fd2fa40439ae8c7f8b61455677ddd06ba5612b5a6f7b8ded4cde9605f29ccb",
+    "source_manifest_sha256": "ff815137fd7fea977b6a3cde7c5f832837d8206e976d0031a7d3e9d1279aea64"
+  },
+  "runner_path": "scripts/replay_extra_domain_probes_v2.py",
+  "runner_sha256": "2454090a0249476290b5672dd7542064d0a7a70e3b15c633af3fdbbcf0d58238",
+  "schema": "gooo/ir-composition-extra-domain-replay-v2-derivation/v1",
+  "scope": "The frozen probe rows, reference source, source manifest, cell inputs, and replay behavior are unchanged; only the local Go executable digest pin is corrected. No Go probe execution has been performed by this runner yet."
+}

@@ -1,0 +1,5 @@
+=== RUN   TestExtraDomainProbeCandidate
+    probe_test.go:22: EXTRA_DOMAIN_CANDIDATE_RESULT:[{"design_id":"lr12_cap_after_adjustment","probe_id":"lr12_cap_after_adjustment/x1","index":0,"input":-6,"actual":-4},{"design_id":"lr12_cap_after_adjustment","probe_id":"lr12_cap_after_adjustment/x2","index":1,"input":-1,"actual":1},{"design_id":"lr12_cap_after_adjustment","probe_id":"lr12_cap_after_adjustment/x3","index":2,"input":6,"actual":8},{"design_id":"lr12_cap_after_adjustment","probe_id":"lr12_cap_after_adjustment/x4","index":3,"input":9,"actual":11}]
+--- PASS: TestExtraDomainProbeCandidate (0.00s)
+PASS
+ok  	extra-domain-candidate	0.186s

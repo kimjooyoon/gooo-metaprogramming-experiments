@@ -1,0 +1,5 @@
+=== RUN   TestExtraDomainProbeCandidate
+    probe_test.go:22: EXTRA_DOMAIN_CANDIDATE_RESULT:[{"design_id":"lr09_compound_total","probe_id":"lr09_compound_total/x1","index":0,"input":-6,"actual":-2},{"design_id":"lr09_compound_total","probe_id":"lr09_compound_total/x2","index":1,"input":-4,"actual":2},{"design_id":"lr09_compound_total","probe_id":"lr09_compound_total/x3","index":2,"input":9,"actual":28},{"design_id":"lr09_compound_total","probe_id":"lr09_compound_total/x4","index":3,"input":9223372036854775807,"actual":8}]
+--- PASS: TestExtraDomainProbeCandidate (0.00s)
+PASS
+ok  	extra-domain-candidate	0.198s

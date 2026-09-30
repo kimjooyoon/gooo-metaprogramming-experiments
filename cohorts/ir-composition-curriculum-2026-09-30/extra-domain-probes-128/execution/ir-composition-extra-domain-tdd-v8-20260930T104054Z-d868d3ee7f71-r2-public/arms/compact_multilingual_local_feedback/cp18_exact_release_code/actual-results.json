@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "actual": 0,
+      "expected": null,
+      "input": -7,
+      "probe_id": "cp18_exact_release_code/x1"
+    },
+    {
+      "actual": 0,
+      "expected": null,
+      "input": 5,
+      "probe_id": "cp18_exact_release_code/x2"
+    },
+    {
+      "actual": 0,
+      "expected": null,
+      "input": 10,
+      "probe_id": "cp18_exact_release_code/x3"
+    },
+    {
+      "actual": 0,
+      "expected": null,
+      "input": 700,
+      "probe_id": "cp18_exact_release_code/x4"
+    }
+  ]
+}

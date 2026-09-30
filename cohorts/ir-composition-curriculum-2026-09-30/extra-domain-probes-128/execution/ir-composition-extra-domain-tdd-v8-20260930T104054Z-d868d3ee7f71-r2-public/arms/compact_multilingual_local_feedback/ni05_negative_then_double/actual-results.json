@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "actual": -1,
+      "expected": null,
+      "input": -100,
+      "probe_id": "ni05_negative_then_double/x1"
+    },
+    {
+      "actual": -1,
+      "expected": null,
+      "input": -2,
+      "probe_id": "ni05_negative_then_double/x2"
+    },
+    {
+      "actual": 16,
+      "expected": null,
+      "input": 8,
+      "probe_id": "ni05_negative_then_double/x3"
+    },
+    {
+      "actual": 20,
+      "expected": null,
+      "input": 100,
+      "probe_id": "ni05_negative_then_double/x4"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "current_derivation_receipt_path": "replay-v2-derivation.json",
+  "current_derivation_receipt_sha256": "0705d66fa2a98d5a8ac1a859350f7caa7f3011858f5829a974ad316a6cb795f1",
+  "current_receipt_timeline": "The current derivation receipt was edited after the r2 replay completed to add a pointer to the result and clarify scope. Its pre-execution marker describes the separately preserved pre-execution receipt only; it must not be interpreted as the modification time of the current receipt.",
+  "method": "The pre-execution receipt bytes were reconstructed from the values used before replay, then SHA-256 checked against the pre-execution digest reported to root before the replay. Matching digest confirms byte identity.",
+  "preexecution_receipt_path": "replay-v2-derivation-preexecution.json",
+  "preexecution_receipt_sha256": "3727ef2d2f7953fbd5ba7700922a654e48856c26db79fc9d58d415b06ddc3df0",
+  "recorded_after_execution": true,
+  "result_path": "ir-composition-extra-domain-tdd-v8-20260930T104054Z-d868d3ee7f71-r2/replay-report.json",
+  "result_sha256": "d616cace09ef228ea7418ef3bb21a86b932e0bb245f48380258f177f6140432b",
+  "schema": "gooo/ir-composition-extra-domain-replay-v2-timeline-clarification/v1"
+}

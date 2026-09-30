@@ -1,0 +1,18 @@
+{
+  "candidate_selection_calls": 0,
+  "model_calls": 0,
+  "note": "All replay observations are copied byte-for-byte; only the local executable path is removed from the public report.",
+  "public_replay_report_sha256": "f7a8bbac67c1c1c5a6e8076a9dc9aa9d15440c884c9bfe74581a2eea29492daa",
+  "removed_fields": [
+    "go_toolchain.path"
+  ],
+  "replaced_fields": {
+    "go_toolchain.binary": "go",
+    "go_toolchain.path_disclosure": "omitted from public receipt"
+  },
+  "result_decision": "COMPLETE",
+  "schema": "gooo/extra-domain-replay-public-path-redaction/v1",
+  "source_artifact_index_sha256": "22c06ea6e43c0b5b4965dd6f61b1cf66e13f37dc296cd9f7c96e1867d5b7ea27",
+  "source_attempt": "ir-composition-extra-domain-tdd-v8-20260930T104054Z-d868d3ee7f71-r2",
+  "source_replay_report_sha256": "d616cace09ef228ea7418ef3bb21a86b932e0bb245f48380258f177f6140432b"
+}

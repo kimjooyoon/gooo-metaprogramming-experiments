@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "actual": 9223372036854775804,
+      "expected": null,
+      "input": 4611686018427387902,
+      "probe_id": "ob31_saturating_double/x1"
+    },
+    {
+      "actual": 9223372036854775807,
+      "expected": null,
+      "input": 4611686018427387905,
+      "probe_id": "ob31_saturating_double/x2"
+    },
+    {
+      "actual": -9223372036854775806,
+      "expected": null,
+      "input": -4611686018427387903,
+      "probe_id": "ob31_saturating_double/x3"
+    },
+    {
+      "actual": -9223372036854775808,
+      "expected": null,
+      "input": -4611686018427387906,
+      "probe_id": "ob31_saturating_double/x4"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+=== RUN   TestExtraDomainProbeCandidate
+    probe_test.go:22: EXTRA_DOMAIN_CANDIDATE_RESULT:[{"design_id":"cc03_two_islands","probe_id":"cc03_two_islands/x1","index":0,"input":-6,"actual":0},{"design_id":"cc03_two_islands","probe_id":"cc03_two_islands/x2","index":1,"input":-3,"actual":7},{"design_id":"cc03_two_islands","probe_id":"cc03_two_islands/x3","index":2,"input":3,"actual":7},{"design_id":"cc03_two_islands","probe_id":"cc03_two_islands/x4","index":3,"input":6,"actual":0}]
+--- PASS: TestExtraDomainProbeCandidate (0.00s)
+PASS
+ok  	extra-domain-candidate	0.202s

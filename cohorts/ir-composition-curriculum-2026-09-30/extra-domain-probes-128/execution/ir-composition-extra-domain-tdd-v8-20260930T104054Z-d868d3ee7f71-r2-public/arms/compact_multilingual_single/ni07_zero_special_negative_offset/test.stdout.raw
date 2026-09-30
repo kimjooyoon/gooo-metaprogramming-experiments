@@ -1,0 +1,5 @@
+=== RUN   TestExtraDomainProbeCandidate
+    probe_test.go:22: EXTRA_DOMAIN_CANDIDATE_RESULT:[{"design_id":"ni07_zero_special_negative_offset","probe_id":"ni07_zero_special_negative_offset/x1","index":0,"input":-3,"actual":-5},{"design_id":"ni07_zero_special_negative_offset","probe_id":"ni07_zero_special_negative_offset/x2","index":1,"input":3,"actual":3},{"design_id":"ni07_zero_special_negative_offset","probe_id":"ni07_zero_special_negative_offset/x3","index":2,"input":49,"actual":3},{"design_id":"ni07_zero_special_negative_offset","probe_id":"ni07_zero_special_negative_offset/x4","index":3,"input":51,"actual":3}]
+--- PASS: TestExtraDomainProbeCandidate (0.00s)
+PASS
+ok  	extra-domain-candidate	0.189s

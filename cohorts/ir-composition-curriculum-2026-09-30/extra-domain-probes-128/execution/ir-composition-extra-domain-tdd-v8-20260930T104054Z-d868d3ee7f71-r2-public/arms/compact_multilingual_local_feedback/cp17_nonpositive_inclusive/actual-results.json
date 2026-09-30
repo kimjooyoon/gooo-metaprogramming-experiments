@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "actual": 1,
+      "expected": null,
+      "input": -2,
+      "probe_id": "cp17_nonpositive_inclusive/x1"
+    },
+    {
+      "actual": 0,
+      "expected": null,
+      "input": 2,
+      "probe_id": "cp17_nonpositive_inclusive/x2"
+    },
+    {
+      "actual": 1,
+      "expected": null,
+      "input": -1000,
+      "probe_id": "cp17_nonpositive_inclusive/x3"
+    },
+    {
+      "actual": 0,
+      "expected": null,
+      "input": 1000,
+      "probe_id": "cp17_nonpositive_inclusive/x4"
+    }
+  ]
+}

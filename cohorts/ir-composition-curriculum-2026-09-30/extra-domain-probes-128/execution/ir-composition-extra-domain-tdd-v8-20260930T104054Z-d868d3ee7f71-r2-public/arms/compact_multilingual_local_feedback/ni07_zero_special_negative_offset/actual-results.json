@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "actual": -1,
+      "expected": null,
+      "input": -3,
+      "probe_id": "ni07_zero_special_negative_offset/x1"
+    },
+    {
+      "actual": 3,
+      "expected": null,
+      "input": 3,
+      "probe_id": "ni07_zero_special_negative_offset/x2"
+    },
+    {
+      "actual": 3,
+      "expected": null,
+      "input": 49,
+      "probe_id": "ni07_zero_special_negative_offset/x3"
+    },
+    {
+      "actual": 3,
+      "expected": null,
+      "input": 51,
+      "probe_id": "ni07_zero_special_negative_offset/x4"
+    }
+  ]
+}

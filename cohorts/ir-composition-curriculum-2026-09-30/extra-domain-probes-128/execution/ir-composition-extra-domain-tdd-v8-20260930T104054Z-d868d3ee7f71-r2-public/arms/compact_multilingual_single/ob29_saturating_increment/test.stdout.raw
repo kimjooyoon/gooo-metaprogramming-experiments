@@ -1,0 +1,5 @@
+=== RUN   TestExtraDomainProbeCandidate
+    probe_test.go:22: EXTRA_DOMAIN_CANDIDATE_RESULT:[{"design_id":"ob29_saturating_increment","probe_id":"ob29_saturating_increment/x1","index":0,"input":9223372036854775803,"actual":9223372036854775804},{"design_id":"ob29_saturating_increment","probe_id":"ob29_saturating_increment/x2","index":1,"input":9223372036854775802,"actual":9223372036854775803},{"design_id":"ob29_saturating_increment","probe_id":"ob29_saturating_increment/x3","index":2,"input":-9223372036854775808,"actual":-9223372036854775807},{"design_id":"ob29_saturating_increment","probe_id":"ob29_saturating_increment/x4","index":3,"input":-9223372036854775807,"actual":-9223372036854775806}]
+--- PASS: TestExtraDomainProbeCandidate (0.00s)
+PASS
+ok  	extra-domain-candidate	0.195s

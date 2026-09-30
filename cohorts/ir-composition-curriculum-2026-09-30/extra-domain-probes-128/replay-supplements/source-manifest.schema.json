@@ -1,0 +1,227 @@
+{
+  "$defs": {
+    "arm": {
+      "additionalProperties": false,
+      "properties": {
+        "arm_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "designs": {
+          "items": {
+            "$ref": "#/$defs/design"
+          },
+          "maxItems": 32,
+          "minItems": 32,
+          "type": "array"
+        }
+      },
+      "required": [
+        "arm_id",
+        "designs"
+      ],
+      "type": "object"
+    },
+    "design": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "capture_status": {
+                "const": "CAPTURED_AND_COMPILED"
+              }
+            },
+            "required": [
+              "capture_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "captured_reply_matches_compiler_choice": {
+                "const": true
+              },
+              "provider_route_pin_match": {
+                "const": true
+              },
+              "selected_candidate_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "selected_expression": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "source_path": {
+                "minLength": 1,
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_unit_complete": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "source_unit_complete"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_unit_receipt_path": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "source_unit_receipt_sha256": {
+                "$ref": "#/$defs/sha256"
+              }
+            }
+          }
+        }
+      ],
+      "properties": {
+        "activity": {
+          "type": "string"
+        },
+        "capture_status": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "captured_reply_matches_compiler_choice": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "compiler_generated_digest": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "design_id": {
+          "type": "string"
+        },
+        "provider_route_pin_match": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "selected_candidate_id": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "selected_expression": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "source_path": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "source_sha256": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_unit_complete": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "source_unit_receipt_path": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "source_unit_receipt_sha256": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "design_id",
+        "activity",
+        "capture_status",
+        "source_path",
+        "source_sha256",
+        "compiler_generated_digest",
+        "selected_candidate_id",
+        "selected_expression",
+        "provider_route_pin_match",
+        "captured_reply_matches_compiler_choice",
+        "source_unit_complete",
+        "source_unit_receipt_path",
+        "source_unit_receipt_sha256"
+      ],
+      "type": "object"
+    },
+    "nullableString": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sha256": {
+      "pattern": "^(sha256:)?[0-9a-f]{64}$",
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "arms": {
+      "items": {
+        "$ref": "#/$defs/arm"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "capture_complete": {
+      "const": true
+    },
+    "capture_report_path": {
+      "description": "Path relative to --source-root",
+      "minLength": 1,
+      "type": "string"
+    },
+    "capture_report_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "probes_withheld_until_all_candidate_selection_complete": {
+      "const": true
+    },
+    "schema": {
+      "const": "gooo/ir-composition-extra-domain-source-manifest/v1"
+    },
+    "study_run_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "capture_complete",
+    "probes_withheld_until_all_candidate_selection_complete",
+    "capture_report_path",
+    "capture_report_sha256",
+    "arms"
+  ],
+  "title": "Postselection emitted-source manifest for extra domain probes",
+  "type": "object"
+}

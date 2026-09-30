@@ -1,0 +1,28 @@
+{
+  "created_at_utc": "2026-09-30T10:49:44.872560+00:00",
+  "frozen_inputs_unchanged": true,
+  "note": "Preserve the local schema-bundled draft as superseded; original public 4-file probe inventory and preparer restored exactly. Replay schema is a postselection supplement and does not change probe inputs or expectations.",
+  "public_parent_commit": "f96bc06f4c1cedcbca7426553f632d12421a52b5",
+  "restored_frozen_artifacts": [
+    {
+      "archived_draft_path": "cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/replay-supplements/superseded-schema-bundled-draft/cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/README.md",
+      "draft_sha256": "30d35cf06862c739abc57d06a27489473b0d752d50a321a710c7fa3afb2a1988",
+      "path": "cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/README.md",
+      "restored_public_sha256": "39846023ec978a7dddc664266e87a501a7c2965431f5c2ffcfac3eec647f003d"
+    },
+    {
+      "archived_draft_path": "cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/replay-supplements/superseded-schema-bundled-draft/cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/freeze-files.json",
+      "draft_sha256": "7c0ad53b54e7a413902d70a61068753a0ef708fbae260c7e34dfee689d162088",
+      "path": "cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/freeze-files.json",
+      "restored_public_sha256": "ef0dc8213a6f8b16f106eababeb2eef0553280fd8c6366d70819a1b7aa234848"
+    },
+    {
+      "archived_draft_path": "cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/replay-supplements/superseded-schema-bundled-draft/scripts/prepare_extra_domain_probes.py",
+      "draft_sha256": "a96cdf77b35343d5d279cb2e9212a3dc3e38ced059ff31c45397049cb2c6ddfc",
+      "path": "scripts/prepare_extra_domain_probes.py",
+      "restored_public_sha256": "ebad2c7157a0f8d02a0a3a2ec7584a79f00e13655e46e9be90a785eefaeae8a9"
+    }
+  ],
+  "schema": "gooo/ir-composition-extra-domain-replay-supplement/v1",
+  "supplement_source_schema_sha256": "38063c8da8c3dd3eaa04e91ad846a9157d5adf379e9ae22d0443f49875340f37"
+}

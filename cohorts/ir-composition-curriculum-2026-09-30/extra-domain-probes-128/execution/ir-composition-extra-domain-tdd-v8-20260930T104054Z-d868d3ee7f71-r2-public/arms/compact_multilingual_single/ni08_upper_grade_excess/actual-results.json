@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "actual": -1,
+      "expected": null,
+      "input": 58,
+      "probe_id": "ni08_upper_grade_excess/x1"
+    },
+    {
+      "actual": 0,
+      "expected": null,
+      "input": 61,
+      "probe_id": "ni08_upper_grade_excess/x2"
+    },
+    {
+      "actual": 0,
+      "expected": null,
+      "input": 78,
+      "probe_id": "ni08_upper_grade_excess/x3"
+    },
+    {
+      "actual": 1,
+      "expected": null,
+      "input": 82,
+      "probe_id": "ni08_upper_grade_excess/x4"
+    }
+  ]
+}

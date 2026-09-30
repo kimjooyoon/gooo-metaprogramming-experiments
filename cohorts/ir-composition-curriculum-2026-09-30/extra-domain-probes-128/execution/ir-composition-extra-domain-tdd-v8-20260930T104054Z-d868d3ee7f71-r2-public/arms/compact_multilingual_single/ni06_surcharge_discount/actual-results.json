@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "actual": 0,
+      "expected": null,
+      "input": -2,
+      "probe_id": "ni06_surcharge_discount/x1"
+    },
+    {
+      "actual": 11,
+      "expected": null,
+      "input": 2,
+      "probe_id": "ni06_surcharge_discount/x2"
+    },
+    {
+      "actual": 108,
+      "expected": null,
+      "input": 99,
+      "probe_id": "ni06_surcharge_discount/x3"
+    },
+    {
+      "actual": 92,
+      "expected": null,
+      "input": 102,
+      "probe_id": "ni06_surcharge_discount/x4"
+    }
+  ]
+}

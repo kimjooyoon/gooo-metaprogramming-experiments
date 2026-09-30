@@ -1,0 +1,13 @@
+{
+  "arms": [
+    "compact_multilingual_single",
+    "compact_multilingual_local_feedback"
+  ],
+  "model_calls": 0,
+  "postselection_only": true,
+  "probe_freeze_sha256": "7c67f6d8faeccc79ef9a802cf31313d51b72288cfa4ce2d4c2dadfd933ac6061",
+  "probe_rows_sha256": "8040a38fc43e6efa458d119c65d7ff6a6cb4518d8a8e1bbbcf4494068df917bd",
+  "schema": "gooo/ir-composition-extra-domain-probe-run-start/v1",
+  "source_capture_report_sha256": "bdd47db8a63af2d5e6914fb80d0afe980fe8268e7248963abebf50bc617b0402",
+  "source_manifest_sha256": "ff815137fd7fea977b6a3cde7c5f832837d8206e976d0031a7d3e9d1279aea64"
+}

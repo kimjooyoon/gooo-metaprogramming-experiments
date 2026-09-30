@@ -1,0 +1,167 @@
+{
+  "arm_summaries": [
+    {
+      "arm_id": "compact_multilingual_single",
+      "branch_test_adequacy": "UNMEASURED",
+      "capture_status_counts": {
+        "CAPTURED_AND_COMPILED": 32
+      },
+      "coverage_limit": "probe-purpose coverage is static; no dynamic branch instrumentation or branch-test adequacy measurement was collected",
+      "dynamic_branch_coverage": "UNMEASURED",
+      "executed_probe_rows": 128,
+      "finite_match_rate_observed_only": 0.6796875,
+      "matched_probe_rows": 87,
+      "mismatched_probe_rows": 41,
+      "observed_region_targets": 41,
+      "planned_designs": 32,
+      "planned_probe_rows": 128,
+      "planned_region_targets": 41,
+      "probe_purpose_coverage": 1.0,
+      "probe_rows_by_semantic_area": {
+        "boolean_locals": {
+          "observed": 16,
+          "planned": 16
+        },
+        "comparison_expressions": {
+          "observed": 16,
+          "planned": 16
+        },
+        "conditionals": {
+          "observed": 16,
+          "planned": 16
+        },
+        "expression_precedence": {
+          "observed": 16,
+          "planned": 16
+        },
+        "int64_boundaries": {
+          "observed": 16,
+          "planned": 16
+        },
+        "let_reassignment": {
+          "observed": 16,
+          "planned": 16
+        },
+        "nested_if_else": {
+          "observed": 16,
+          "planned": 16
+        },
+        "text_locals": {
+          "observed": 16,
+          "planned": 16
+        }
+      },
+      "reference_output_diversity_by_design": {
+        "designs": 32,
+        "distinct_outputs_max": 4,
+        "distinct_outputs_min": 1
+      },
+      "replay_status_counts": {
+        "compiled_and_executed": 32
+      },
+      "schema": "gooo/ir-composition-extra-domain-probe-arm-result/v1",
+      "scope": "128 new unseen finite int64 inputs across the same 32 intents; passing is not full-domain proof",
+      "source_unit_completeness": {
+        "complete": 32,
+        "incomplete": 0,
+        "unknown": 0
+      },
+      "unknown_probe_rows": 0
+    },
+    {
+      "arm_id": "compact_multilingual_local_feedback",
+      "branch_test_adequacy": "UNMEASURED",
+      "capture_status_counts": {
+        "CAPTURED_AND_COMPILED": 32
+      },
+      "coverage_limit": "probe-purpose coverage is static; no dynamic branch instrumentation or branch-test adequacy measurement was collected",
+      "dynamic_branch_coverage": "UNMEASURED",
+      "executed_probe_rows": 128,
+      "finite_match_rate_observed_only": 1.0,
+      "matched_probe_rows": 128,
+      "mismatched_probe_rows": 0,
+      "observed_region_targets": 41,
+      "planned_designs": 32,
+      "planned_probe_rows": 128,
+      "planned_region_targets": 41,
+      "probe_purpose_coverage": 1.0,
+      "probe_rows_by_semantic_area": {
+        "boolean_locals": {
+          "observed": 16,
+          "planned": 16
+        },
+        "comparison_expressions": {
+          "observed": 16,
+          "planned": 16
+        },
+        "conditionals": {
+          "observed": 16,
+          "planned": 16
+        },
+        "expression_precedence": {
+          "observed": 16,
+          "planned": 16
+        },
+        "int64_boundaries": {
+          "observed": 16,
+          "planned": 16
+        },
+        "let_reassignment": {
+          "observed": 16,
+          "planned": 16
+        },
+        "nested_if_else": {
+          "observed": 16,
+          "planned": 16
+        },
+        "text_locals": {
+          "observed": 16,
+          "planned": 16
+        }
+      },
+      "reference_output_diversity_by_design": {
+        "designs": 32,
+        "distinct_outputs_max": 4,
+        "distinct_outputs_min": 1
+      },
+      "replay_status_counts": {
+        "compiled_and_executed": 32
+      },
+      "schema": "gooo/ir-composition-extra-domain-probe-arm-result/v1",
+      "scope": "128 new unseen finite int64 inputs across the same 32 intents; passing is not full-domain proof",
+      "source_unit_completeness": {
+        "complete": 32,
+        "incomplete": 0,
+        "unknown": 0
+      },
+      "unknown_probe_rows": 0
+    }
+  ],
+  "candidate_selection_calls": 0,
+  "decision": "COMPLETE",
+  "go_toolchain": {
+    "binary": "go",
+    "path_disclosure": "omitted from public receipt",
+    "sha256": "a19a71df81715c12d9a7e81bab036c12696fec1ddbd4258b48a2131a9080b267",
+    "version": "go version go1.27.0 darwin/arm64"
+  },
+  "model_calls": 0,
+  "oracle_limitation": "the handwritten Go reference is from the same source lineage used for the prior finite oracle; matching it is a correlated-oracle diagnostic, not independent ground truth",
+  "probe_freeze_sha256": "7c67f6d8faeccc79ef9a802cf31313d51b72288cfa4ce2d4c2dadfd933ac6061",
+  "probe_inputs_in_prompts": false,
+  "probe_rows_sha256": "8040a38fc43e6efa458d119c65d7ff6a6cb4518d8a8e1bbbcf4494068df917bd",
+  "reference": {
+    "compile_finished_unix_ns": 1790766105044566000,
+    "compile_started_unix_ns": 1790766104435400000,
+    "exit_code": 0,
+    "probe_count": 128,
+    "source_sha256": "799a3410ff39019782b9fc7d2b7f9b5dbae6a136a13c39585bd5ae3053a984e7",
+    "status": "compiled_and_executed",
+    "test_finished_unix_ns": 1790766105366628000,
+    "test_started_unix_ns": 1790766105045146000
+  },
+  "schema": "gooo/ir-composition-extra-domain-probe-replay/v1",
+  "scope": "Each arm's captured emitted source is independently compiled and run against 128 post-selection probe inputs, compared with the separately compiled frozen handwritten Go reference.",
+  "source_capture_report_sha256": "bdd47db8a63af2d5e6914fb80d0afe980fe8268e7248963abebf50bc617b0402",
+  "source_manifest_sha256": "ff815137fd7fea977b6a3cde7c5f832837d8206e976d0031a7d3e9d1279aea64"
+}

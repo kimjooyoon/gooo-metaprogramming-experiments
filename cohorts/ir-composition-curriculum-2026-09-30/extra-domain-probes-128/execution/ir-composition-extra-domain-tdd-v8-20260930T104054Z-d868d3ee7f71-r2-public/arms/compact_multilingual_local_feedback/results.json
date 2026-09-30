@@ -1,0 +1,1798 @@
+{
+  "arm_id": "compact_multilingual_local_feedback",
+  "branch_test_adequacy": "UNMEASURED",
+  "capture_status_counts": {
+    "CAPTURED_AND_COMPILED": 32
+  },
+  "coverage_limit": "probe-purpose coverage is static; no dynamic branch instrumentation or branch-test adequacy measurement was collected",
+  "designs": [
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766134055374000,
+      "compile_started_unix_ns": 1790766133534075000,
+      "design_id": "cc01_inclusive_band",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 2,
+      "rows": [
+        {
+          "actual": -1,
+          "expected": -1,
+          "input": -3,
+          "passed": true,
+          "probe_id": "cc01_inclusive_band/x1",
+          "region_target": "negative:negative_or_low_exterior"
+        },
+        {
+          "actual": -1,
+          "expected": -1,
+          "input": 1,
+          "passed": true,
+          "probe_id": "cc01_inclusive_band/x2",
+          "region_target": "positive:lower_side_interior_or_neighbor"
+        },
+        {
+          "actual": 2,
+          "expected": 2,
+          "input": 7,
+          "passed": true,
+          "probe_id": "cc01_inclusive_band/x3",
+          "region_target": "positive:upper_side_interior_or_neighbor"
+        },
+        {
+          "actual": -1,
+          "expected": -1,
+          "input": 10,
+          "passed": true,
+          "probe_id": "cc01_inclusive_band/x4",
+          "region_target": "positive:positive_or_high_exterior"
+        }
+      ],
+      "selected_candidate_id": "option_a",
+      "source_sha256": "b73d7028d5a656fe971e77fd530962aeeab1360bada512fd88063ea0e7a3f299",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "b0affee29d1cef0a4f0e966b349ba8845ab7601ac555db00fdb00234f0031e74",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766134383728000,
+      "test_started_unix_ns": 1790766134056044000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766134910823000,
+      "compile_started_unix_ns": 1790766134385255000,
+      "design_id": "cc02_nonzero_disjunction",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 1,
+      "rows": [
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": -2,
+          "passed": true,
+          "probe_id": "cc02_nonzero_disjunction/x1",
+          "region_target": "negative:negative_or_low_exterior"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": 2,
+          "passed": true,
+          "probe_id": "cc02_nonzero_disjunction/x2",
+          "region_target": "positive:lower_side_interior_or_neighbor"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": -9223372036854775808,
+          "passed": true,
+          "probe_id": "cc02_nonzero_disjunction/x3",
+          "region_target": "large_value:upper_side_interior_or_neighbor"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": 9223372036854775807,
+          "passed": true,
+          "probe_id": "cc02_nonzero_disjunction/x4",
+          "region_target": "large_value:positive_or_high_exterior"
+        }
+      ],
+      "selected_candidate_id": "option_c",
+      "source_sha256": "9a3819e57c7f088d0d7494b4b39a8a60a5dc985a2becd31b1cf18411366bf76d",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "6a4b6a182e3be474b694372ab8e31485d88d8c0b5db25656be45486e59a9d3f8",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766135243442000,
+      "test_started_unix_ns": 1790766134911443000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766135756861000,
+      "compile_started_unix_ns": 1790766135244996000,
+      "design_id": "cc03_two_islands",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 1,
+      "rows": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -6,
+          "passed": true,
+          "probe_id": "cc03_two_islands/x1",
+          "region_target": "negative:negative_or_low_exterior"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -3,
+          "passed": true,
+          "probe_id": "cc03_two_islands/x2",
+          "region_target": "negative:lower_side_interior_or_neighbor"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 3,
+          "passed": true,
+          "probe_id": "cc03_two_islands/x3",
+          "region_target": "positive:upper_side_interior_or_neighbor"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 6,
+          "passed": true,
+          "probe_id": "cc03_two_islands/x4",
+          "region_target": "positive:positive_or_high_exterior"
+        }
+      ],
+      "selected_candidate_id": "option_b",
+      "source_sha256": "90328636055e179f09575f95e26a0f01c69a0c6cb6a22bf7a6d12680bbd4eecc",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "bb9088d8219211d15ab5f402fc574226ee2d90ad60e830fb0e806a14002d1f4e",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766136081206000,
+      "test_started_unix_ns": 1790766135757362000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766136609671000,
+      "compile_started_unix_ns": 1790766136083417000,
+      "design_id": "cc04_outer_cutoffs",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 2,
+      "rows": [
+        {
+          "actual": 9,
+          "expected": 9,
+          "input": -8,
+          "passed": true,
+          "probe_id": "cc04_outer_cutoffs/x1",
+          "region_target": "negative:negative_or_low_exterior"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -4,
+          "passed": true,
+          "probe_id": "cc04_outer_cutoffs/x2",
+          "region_target": "negative:lower_side_interior_or_neighbor"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 6,
+          "passed": true,
+          "probe_id": "cc04_outer_cutoffs/x3",
+          "region_target": "positive:upper_side_interior_or_neighbor"
+        },
+        {
+          "actual": 9,
+          "expected": 9,
+          "input": 10,
+          "passed": true,
+          "probe_id": "cc04_outer_cutoffs/x4",
+          "region_target": "positive:positive_or_high_exterior"
+        }
+      ],
+      "selected_candidate_id": "option_a",
+      "source_sha256": "7d482a82b50e1171977e77d28f1cb3523bde0054bb052a433b83522e73513b2a",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "fe97c75413755c56f1df3f6eff3848d6320e28cfca35881122a94f1dfcff317f",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766136984681000,
+      "test_started_unix_ns": 1790766136610280000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766137512189000,
+      "compile_started_unix_ns": 1790766136986516000,
+      "design_id": "ni05_negative_then_double",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 3,
+      "rows": [
+        {
+          "actual": -1,
+          "expected": -1,
+          "input": -100,
+          "passed": true,
+          "probe_id": "ni05_negative_then_double/x1",
+          "region_target": "negative:far_negative_branch"
+        },
+        {
+          "actual": -1,
+          "expected": -1,
+          "input": -2,
+          "passed": true,
+          "probe_id": "ni05_negative_then_double/x2",
+          "region_target": "negative:negative_or_lower_neighbor"
+        },
+        {
+          "actual": 16,
+          "expected": 16,
+          "input": 8,
+          "passed": true,
+          "probe_id": "ni05_negative_then_double/x3",
+          "region_target": "positive:upper_threshold_neighbor"
+        },
+        {
+          "actual": 20,
+          "expected": 20,
+          "input": 100,
+          "passed": true,
+          "probe_id": "ni05_negative_then_double/x4",
+          "region_target": "positive:far_positive_branch"
+        }
+      ],
+      "selected_candidate_id": "option_c",
+      "source_sha256": "e5c64f516fd70e8c45c22ff524ed8e36a0f1a944c94011e20a42d482351d1907",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "225cc8bcaacd340c9259a97b9f4bee3561dfa477b2fb0f60ac9f9dadc41ddad2",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766137857197000,
+      "test_started_unix_ns": 1790766137512815000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766138378274000,
+      "compile_started_unix_ns": 1790766137860181000,
+      "design_id": "ni06_surcharge_discount",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 4,
+      "rows": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -2,
+          "passed": true,
+          "probe_id": "ni06_surcharge_discount/x1",
+          "region_target": "negative:far_negative_branch"
+        },
+        {
+          "actual": 12,
+          "expected": 12,
+          "input": 2,
+          "passed": true,
+          "probe_id": "ni06_surcharge_discount/x2",
+          "region_target": "positive:negative_or_lower_neighbor"
+        },
+        {
+          "actual": 109,
+          "expected": 109,
+          "input": 99,
+          "passed": true,
+          "probe_id": "ni06_surcharge_discount/x3",
+          "region_target": "positive:upper_threshold_neighbor"
+        },
+        {
+          "actual": 92,
+          "expected": 92,
+          "input": 102,
+          "passed": true,
+          "probe_id": "ni06_surcharge_discount/x4",
+          "region_target": "positive:far_positive_branch"
+        }
+      ],
+      "selected_candidate_id": "option_b",
+      "source_sha256": "2af52ee47196575af18cf5b96c8bdaf08a41fc04529c91037680fa8453d63d46",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "9d13f9cfd105dd8df813175510be6c7baf82d27b4dff0d19f1baec3c2d6b73d5",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766138689485000,
+      "test_started_unix_ns": 1790766138378822000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766139213726000,
+      "compile_started_unix_ns": 1790766138691384000,
+      "design_id": "ni07_zero_special_negative_offset",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 2,
+      "rows": [
+        {
+          "actual": -1,
+          "expected": -1,
+          "input": -3,
+          "passed": true,
+          "probe_id": "ni07_zero_special_negative_offset/x1",
+          "region_target": "negative:far_negative_branch"
+        },
+        {
+          "actual": 3,
+          "expected": 3,
+          "input": 3,
+          "passed": true,
+          "probe_id": "ni07_zero_special_negative_offset/x2",
+          "region_target": "positive:negative_or_lower_neighbor"
+        },
+        {
+          "actual": 3,
+          "expected": 3,
+          "input": 49,
+          "passed": true,
+          "probe_id": "ni07_zero_special_negative_offset/x3",
+          "region_target": "positive:upper_threshold_neighbor"
+        },
+        {
+          "actual": 3,
+          "expected": 3,
+          "input": 51,
+          "passed": true,
+          "probe_id": "ni07_zero_special_negative_offset/x4",
+          "region_target": "positive:far_positive_branch"
+        }
+      ],
+      "selected_candidate_id": "option_a",
+      "source_sha256": "fd0a2644f5acb00fbfa0925a9e0e2eff9b0117901459d652c5d34f813bef4797",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "6622c0e01db2d4aba32a59dd1d43ef758041ef25f4e19e9a5973f1f48676a2dc",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766139584384000,
+      "test_started_unix_ns": 1790766139214389000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766140134181000,
+      "compile_started_unix_ns": 1790766139587115000,
+      "design_id": "ni08_upper_grade_excess",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 3,
+      "rows": [
+        {
+          "actual": -1,
+          "expected": -1,
+          "input": 58,
+          "passed": true,
+          "probe_id": "ni08_upper_grade_excess/x1",
+          "region_target": "positive:far_negative_branch"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 61,
+          "passed": true,
+          "probe_id": "ni08_upper_grade_excess/x2",
+          "region_target": "positive:negative_or_lower_neighbor"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 78,
+          "passed": true,
+          "probe_id": "ni08_upper_grade_excess/x3",
+          "region_target": "positive:upper_threshold_neighbor"
+        },
+        {
+          "actual": 2,
+          "expected": 2,
+          "input": 82,
+          "passed": true,
+          "probe_id": "ni08_upper_grade_excess/x4",
+          "region_target": "positive:far_positive_branch"
+        }
+      ],
+      "selected_candidate_id": "option_c",
+      "source_sha256": "4eb5d99803ff82185012743f64a6a9e645bb05c6f12a8c7dadf0fad9044dfb03",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "fc84bf78de313c4cb7cf80d0907548bef62575c244752e3e9a89e5690eca9bf3",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766140475780000,
+      "test_started_unix_ns": 1790766140134846000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766141005144000,
+      "compile_started_unix_ns": 1790766140477586000,
+      "design_id": "lr09_compound_total",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 4,
+      "rows": [
+        {
+          "actual": -2,
+          "expected": -2,
+          "input": -6,
+          "passed": true,
+          "probe_id": "lr09_compound_total/x1",
+          "region_target": "negative:lower_boundary_neighbor"
+        },
+        {
+          "actual": 2,
+          "expected": 2,
+          "input": -4,
+          "passed": true,
+          "probe_id": "lr09_compound_total/x2",
+          "region_target": "negative:interior_or_nonnegative_neighbor"
+        },
+        {
+          "actual": 28,
+          "expected": 28,
+          "input": 9,
+          "passed": true,
+          "probe_id": "lr09_compound_total/x3",
+          "region_target": "positive:upper_boundary_or_large_interior"
+        },
+        {
+          "actual": 8,
+          "expected": 8,
+          "input": 9223372036854775807,
+          "passed": true,
+          "probe_id": "lr09_compound_total/x4",
+          "region_target": "large_value:large_int64_arithmetic"
+        }
+      ],
+      "selected_candidate_id": "option_b",
+      "source_sha256": "51f7a2c3c6d6505e1ed5a8ef7267c116c62c0c2346c9ecf17141270dd6587bf1",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "e9540cd8b7987a63edac234327217b3561a35e7fb87d3f2d2e973fc6834611ec",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766141356092000,
+      "test_started_unix_ns": 1790766141006011000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766141896886000,
+      "compile_started_unix_ns": 1790766141357950000,
+      "design_id": "lr10_floor_then_increment",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 4,
+      "rows": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -2,
+          "passed": true,
+          "probe_id": "lr10_floor_then_increment/x1",
+          "region_target": "negative:lower_boundary_neighbor"
+        },
+        {
+          "actual": 3,
+          "expected": 3,
+          "input": 2,
+          "passed": true,
+          "probe_id": "lr10_floor_then_increment/x2",
+          "region_target": "positive:interior_or_nonnegative_neighbor"
+        },
+        {
+          "actual": 101,
+          "expected": 101,
+          "input": 100,
+          "passed": true,
+          "probe_id": "lr10_floor_then_increment/x3",
+          "region_target": "positive:upper_boundary_or_large_interior"
+        },
+        {
+          "actual": -9223372036854775808,
+          "expected": -9223372036854775808,
+          "input": 9223372036854775807,
+          "passed": true,
+          "probe_id": "lr10_floor_then_increment/x4",
+          "region_target": "large_value:large_int64_arithmetic"
+        }
+      ],
+      "selected_candidate_id": "option_a",
+      "source_sha256": "ff2d3a93ff99677b9ea0bbc12f12454994ed6a195b945830057b3842ef554866",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "995d3240fae106cd6852bfaee891ae672e71cd792da89a5ccc7d6538449e580c",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766142245579000,
+      "test_started_unix_ns": 1790766141897794000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766142791892000,
+      "compile_started_unix_ns": 1790766142248464000,
+      "design_id": "lr11_nonnegative_doubled_score",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 3,
+      "rows": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -3,
+          "passed": true,
+          "probe_id": "lr11_nonnegative_doubled_score/x1",
+          "region_target": "negative:lower_boundary_neighbor"
+        },
+        {
+          "actual": 3,
+          "expected": 3,
+          "input": 1,
+          "passed": true,
+          "probe_id": "lr11_nonnegative_doubled_score/x2",
+          "region_target": "positive:interior_or_nonnegative_neighbor"
+        },
+        {
+          "actual": 9223372036854775807,
+          "expected": 9223372036854775807,
+          "input": 4611686018427387903,
+          "passed": true,
+          "probe_id": "lr11_nonnegative_doubled_score/x3",
+          "region_target": "large_value:upper_boundary_or_large_interior"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 9223372036854775807,
+          "passed": true,
+          "probe_id": "lr11_nonnegative_doubled_score/x4",
+          "region_target": "large_value:large_int64_arithmetic"
+        }
+      ],
+      "selected_candidate_id": "option_c",
+      "source_sha256": "47e91bc1feef855df4fd2d4c92525cc30e1df5f727a6202cedac5378930e6f3b",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "76e550839d6221f0c7b9de30a2f85138e52da7f22905d5a6a98556c2b3d6e0ae",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766143139237000,
+      "test_started_unix_ns": 1790766142792635000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766143673881000,
+      "compile_started_unix_ns": 1790766143142288000,
+      "design_id": "lr12_cap_after_adjustment",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 4,
+      "rows": [
+        {
+          "actual": -4,
+          "expected": -4,
+          "input": -6,
+          "passed": true,
+          "probe_id": "lr12_cap_after_adjustment/x1",
+          "region_target": "negative:lower_boundary_neighbor"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": -1,
+          "passed": true,
+          "probe_id": "lr12_cap_after_adjustment/x2",
+          "region_target": "negative:interior_or_nonnegative_neighbor"
+        },
+        {
+          "actual": 8,
+          "expected": 8,
+          "input": 6,
+          "passed": true,
+          "probe_id": "lr12_cap_after_adjustment/x3",
+          "region_target": "positive:upper_boundary_or_large_interior"
+        },
+        {
+          "actual": 9,
+          "expected": 9,
+          "input": 9,
+          "passed": true,
+          "probe_id": "lr12_cap_after_adjustment/x4",
+          "region_target": "large_value:large_int64_arithmetic"
+        }
+      ],
+      "selected_candidate_id": "option_b",
+      "source_sha256": "34630e7fdcb5ad43bb31988f0fb02e3ce7bbcd0db3b8589a927bee03dcc2421e",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "e8690efbe19127c109bb3c2b1824c2561bc40642e82030c98e73d7bfed633c24",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766144020413000,
+      "test_started_unix_ns": 1790766143674476000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766144572552000,
+      "compile_started_unix_ns": 1790766144023357000,
+      "design_id": "pr13_subtract_tripled_sum",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 4,
+      "rows": [
+        {
+          "actual": 103,
+          "expected": 103,
+          "input": -3,
+          "passed": true,
+          "probe_id": "pr13_subtract_tripled_sum/x1",
+          "region_target": "negative:negative_neighbor"
+        },
+        {
+          "actual": 97,
+          "expected": 97,
+          "input": -1,
+          "passed": true,
+          "probe_id": "pr13_subtract_tripled_sum/x2",
+          "region_target": "negative:small_negative_or_zero_neighbor"
+        },
+        {
+          "actual": 82,
+          "expected": 82,
+          "input": 4,
+          "passed": true,
+          "probe_id": "pr13_subtract_tripled_sum/x3",
+          "region_target": "positive:positive_neighbor"
+        },
+        {
+          "actual": -9223372036854775711,
+          "expected": -9223372036854775711,
+          "input": 9223372036854775807,
+          "passed": true,
+          "probe_id": "pr13_subtract_tripled_sum/x4",
+          "region_target": "large_value:int64_wraparound_probe"
+        }
+      ],
+      "selected_candidate_id": "option_a",
+      "source_sha256": "d12ea972b017d8c4a72eb14bf333a48776ff347e2399a455def9ba21c0ba05b0",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "ee900c1d359f19d0eab2fba24c8294b4d7c6a3159b243e4d93a22479f1e5ffdf",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766144935411000,
+      "test_started_unix_ns": 1790766144573233000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766145472194000,
+      "compile_started_unix_ns": 1790766144937567000,
+      "design_id": "pr14_product_neighbor_factors",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 4,
+      "rows": [
+        {
+          "actual": 42,
+          "expected": 42,
+          "input": -4,
+          "passed": true,
+          "probe_id": "pr14_product_neighbor_factors/x1",
+          "region_target": "negative:negative_neighbor"
+        },
+        {
+          "actual": 3,
+          "expected": 3,
+          "input": -1,
+          "passed": true,
+          "probe_id": "pr14_product_neighbor_factors/x2",
+          "region_target": "negative:small_negative_or_zero_neighbor"
+        },
+        {
+          "actual": 7,
+          "expected": 7,
+          "input": 3,
+          "passed": true,
+          "probe_id": "pr14_product_neighbor_factors/x3",
+          "region_target": "positive:positive_neighbor"
+        },
+        {
+          "actual": 9223372036854775806,
+          "expected": 9223372036854775806,
+          "input": -9223372036854775808,
+          "passed": true,
+          "probe_id": "pr14_product_neighbor_factors/x4",
+          "region_target": "large_value:int64_wraparound_probe"
+        }
+      ],
+      "selected_candidate_id": "option_c",
+      "source_sha256": "5ad4dbf616801756a940306915ad9f3d4c8755d81b8084e7401b20409a6770c4",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "dfd3702f69347558bd11f2cc0dda287e301a6ce5e0fa30785ab39e4177e29418",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766145807991000,
+      "test_started_unix_ns": 1790766145472835000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766146336043000,
+      "compile_started_unix_ns": 1790766145810101000,
+      "design_id": "pr15_square_minus_successor_sum",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 3,
+      "rows": [
+        {
+          "actual": 8,
+          "expected": 8,
+          "input": -3,
+          "passed": true,
+          "probe_id": "pr15_square_minus_successor_sum/x1",
+          "region_target": "negative:negative_neighbor"
+        },
+        {
+          "actual": -4,
+          "expected": -4,
+          "input": 1,
+          "passed": true,
+          "probe_id": "pr15_square_minus_successor_sum/x2",
+          "region_target": "positive:small_negative_or_zero_neighbor"
+        },
+        {
+          "actual": 8,
+          "expected": 8,
+          "input": 4,
+          "passed": true,
+          "probe_id": "pr15_square_minus_successor_sum/x3",
+          "region_target": "positive:positive_neighbor"
+        },
+        {
+          "actual": 9223372036854775806,
+          "expected": 9223372036854775806,
+          "input": 9223372036854775807,
+          "passed": true,
+          "probe_id": "pr15_square_minus_successor_sum/x4",
+          "region_target": "large_value:int64_wraparound_probe"
+        }
+      ],
+      "selected_candidate_id": "option_b",
+      "source_sha256": "1ca61dda250b0475bb9a914de118dcf69549c42d1ee5e4ff2199028d086c25c0",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "f175414bff119895ae32e28d6102dcb01ff6c9522150a6419568d744902c2f7d",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766146672105000,
+      "test_started_unix_ns": 1790766146336744000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766147196205000,
+      "compile_started_unix_ns": 1790766146674070000,
+      "design_id": "pr16_composed_neighbor_product",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 3,
+      "rows": [
+        {
+          "actual": 10,
+          "expected": 10,
+          "input": -4,
+          "passed": true,
+          "probe_id": "pr16_composed_neighbor_product/x1",
+          "region_target": "negative:negative_neighbor"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": -1,
+          "passed": true,
+          "probe_id": "pr16_composed_neighbor_product/x2",
+          "region_target": "negative:small_negative_or_zero_neighbor"
+        },
+        {
+          "actual": 17,
+          "expected": 17,
+          "input": 3,
+          "passed": true,
+          "probe_id": "pr16_composed_neighbor_product/x3",
+          "region_target": "positive:positive_neighbor"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": 9223372036854775807,
+          "passed": true,
+          "probe_id": "pr16_composed_neighbor_product/x4",
+          "region_target": "large_value:int64_wraparound_probe"
+        }
+      ],
+      "selected_candidate_id": "option_a",
+      "source_sha256": "1569660855761ce5d1f9a47abd67c6a941809093069b88c863c7afee49a15174",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "0c375b2042b2b227bd3b6126500dc6055c99e6b9c9d974afd51f9d09bca63c40",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766147525392000,
+      "test_started_unix_ns": 1790766147196910000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766148048406000,
+      "compile_started_unix_ns": 1790766147527909000,
+      "design_id": "cp17_nonpositive_inclusive",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 2,
+      "rows": [
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": -2,
+          "passed": true,
+          "probe_id": "cp17_nonpositive_inclusive/x1",
+          "region_target": "negative:negative_exterior"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 2,
+          "passed": true,
+          "probe_id": "cp17_nonpositive_inclusive/x2",
+          "region_target": "positive:lower_or_zero_neighbor"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": -1000,
+          "passed": true,
+          "probe_id": "cp17_nonpositive_inclusive/x3",
+          "region_target": "negative:upper_or_positive_neighbor"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 1000,
+          "passed": true,
+          "probe_id": "cp17_nonpositive_inclusive/x4",
+          "region_target": "positive:positive_exterior"
+        }
+      ],
+      "selected_candidate_id": "option_c",
+      "source_sha256": "8ebe783dccbabbcb53770a12c5aaf0fb71fa5476310a4a500c8bf46baba6e006",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "5cd681a835b914a9c47f037545c882c21a19518a4f400a0ed692f710961a5466",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766148365576000,
+      "test_started_unix_ns": 1790766148048979000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766148887095000,
+      "compile_started_unix_ns": 1790766148368032000,
+      "design_id": "cp18_exact_release_code",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 1,
+      "rows": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -7,
+          "passed": true,
+          "probe_id": "cp18_exact_release_code/x1",
+          "region_target": "negative:negative_exterior"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 5,
+          "passed": true,
+          "probe_id": "cp18_exact_release_code/x2",
+          "region_target": "positive:lower_or_zero_neighbor"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 10,
+          "passed": true,
+          "probe_id": "cp18_exact_release_code/x3",
+          "region_target": "positive:upper_or_positive_neighbor"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 700,
+          "passed": true,
+          "probe_id": "cp18_exact_release_code/x4",
+          "region_target": "positive:positive_exterior"
+        }
+      ],
+      "selected_candidate_id": "option_b",
+      "source_sha256": "0d5f0f83727af39bffc3681b93ff35a0d59dbcaf6baaf0d321de1521c1ce6c5f",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "d5366f5f13203e0fc2180e1c05c633709b3b6f871deeb83251d6613972b1d606",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766149212399000,
+      "test_started_unix_ns": 1790766148887653000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766149739295000,
+      "compile_started_unix_ns": 1790766149214825000,
+      "design_id": "cp19_range_without_origin",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 2,
+      "rows": [
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": -2,
+          "passed": true,
+          "probe_id": "cp19_range_without_origin/x1",
+          "region_target": "negative:negative_exterior"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": -1,
+          "passed": true,
+          "probe_id": "cp19_range_without_origin/x2",
+          "region_target": "negative:lower_or_zero_neighbor"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": 1,
+          "passed": true,
+          "probe_id": "cp19_range_without_origin/x3",
+          "region_target": "positive:upper_or_positive_neighbor"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 5,
+          "passed": true,
+          "probe_id": "cp19_range_without_origin/x4",
+          "region_target": "positive:positive_exterior"
+        }
+      ],
+      "selected_candidate_id": "option_a",
+      "source_sha256": "eb7141337e4d49437037c80e7bd0d57a9beec5280ec71e9ecdd2eccfc16a75b7",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "6b09a9f05990859198bf77aa557b30278af3158fd6e5b5624d33d0c2f8c377bc",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766150060291000,
+      "test_started_unix_ns": 1790766149739886000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766150589399000,
+      "compile_started_unix_ns": 1790766150062824000,
+      "design_id": "cp20_strict_symmetric_window",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 2,
+      "rows": [
+        {
+          "actual": -4,
+          "expected": -4,
+          "input": -7,
+          "passed": true,
+          "probe_id": "cp20_strict_symmetric_window/x1",
+          "region_target": "negative:negative_exterior"
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "input": -3,
+          "passed": true,
+          "probe_id": "cp20_strict_symmetric_window/x2",
+          "region_target": "negative:lower_or_zero_neighbor"
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "input": 3,
+          "passed": true,
+          "probe_id": "cp20_strict_symmetric_window/x3",
+          "region_target": "positive:upper_or_positive_neighbor"
+        },
+        {
+          "actual": -4,
+          "expected": -4,
+          "input": 7,
+          "passed": true,
+          "probe_id": "cp20_strict_symmetric_window/x4",
+          "region_target": "positive:positive_exterior"
+        }
+      ],
+      "selected_candidate_id": "option_c",
+      "source_sha256": "70d56cdbe1bb705112cb96392205afb67e8e4c6cf5e9e0460fa7b72ade733d3b",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "5dd4021449e5143efd7f23c613c0fbf0ccbf022b9acdbb935404813592f00988",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766150920925000,
+      "test_started_unix_ns": 1790766150590033000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766151443159000,
+      "compile_started_unix_ns": 1790766150924104000,
+      "design_id": "bl21_saved_range_predicates",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 1,
+      "rows": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -4,
+          "passed": true,
+          "probe_id": "bl21_saved_range_predicates/x1",
+          "region_target": "negative:negative_neighbor"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 4,
+          "passed": true,
+          "probe_id": "bl21_saved_range_predicates/x2",
+          "region_target": "positive:interior_or_lower_side"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -9223372036854775808,
+          "passed": true,
+          "probe_id": "bl21_saved_range_predicates/x3",
+          "region_target": "large_value:upper_or_positive_side"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 9223372036854775807,
+          "passed": true,
+          "probe_id": "bl21_saved_range_predicates/x4",
+          "region_target": "large_value:large_exterior"
+        }
+      ],
+      "selected_candidate_id": "option_b",
+      "source_sha256": "50d98f0913f5bd62c99cc61a4bad2badf0390615af5938aefe06884bc7c4ed27",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "ec228f2df0c2b8d2e5af5e881ba42b51b753d378a20cf2f4562a5e55c6ca454c",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766151771948000,
+      "test_started_unix_ns": 1790766151443688000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766152300353000,
+      "compile_started_unix_ns": 1790766151774460000,
+      "design_id": "bl22_reassigned_valid_flag",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 2,
+      "rows": [
+        {
+          "actual": -5,
+          "expected": -5,
+          "input": -2,
+          "passed": true,
+          "probe_id": "bl22_reassigned_valid_flag/x1",
+          "region_target": "negative:negative_neighbor"
+        },
+        {
+          "actual": 5,
+          "expected": 5,
+          "input": 1,
+          "passed": true,
+          "probe_id": "bl22_reassigned_valid_flag/x2",
+          "region_target": "positive:interior_or_lower_side"
+        },
+        {
+          "actual": 5,
+          "expected": 5,
+          "input": 4,
+          "passed": true,
+          "probe_id": "bl22_reassigned_valid_flag/x3",
+          "region_target": "positive:upper_or_positive_side"
+        },
+        {
+          "actual": -5,
+          "expected": -5,
+          "input": 7,
+          "passed": true,
+          "probe_id": "bl22_reassigned_valid_flag/x4",
+          "region_target": "positive:large_exterior"
+        }
+      ],
+      "selected_candidate_id": "option_a",
+      "source_sha256": "1003be744d279328f64b06b8dabc1a3c9fe8cebce0706649d45f1c92177cb2c9",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "672f44704c789acf34cbe3b54a0696d55b515e07fd440541b04a8b883d2222b3",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766152627113000,
+      "test_started_unix_ns": 1790766152300937000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766153148872000,
+      "compile_started_unix_ns": 1790766152628959000,
+      "design_id": "bl23_nonzero_bounded_flag",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 2,
+      "rows": [
+        {
+          "actual": 9,
+          "expected": 9,
+          "input": -3,
+          "passed": true,
+          "probe_id": "bl23_nonzero_bounded_flag/x1",
+          "region_target": "negative:negative_neighbor"
+        },
+        {
+          "actual": 9,
+          "expected": 9,
+          "input": 2,
+          "passed": true,
+          "probe_id": "bl23_nonzero_bounded_flag/x2",
+          "region_target": "positive:interior_or_lower_side"
+        },
+        {
+          "actual": 9,
+          "expected": 9,
+          "input": 3,
+          "passed": true,
+          "probe_id": "bl23_nonzero_bounded_flag/x3",
+          "region_target": "positive:upper_or_positive_side"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 6,
+          "passed": true,
+          "probe_id": "bl23_nonzero_bounded_flag/x4",
+          "region_target": "positive:large_exterior"
+        }
+      ],
+      "selected_candidate_id": "option_c",
+      "source_sha256": "5af7879c6f42ca6ee2aa0fcaab1883416604b66afad4206b3e676c299509e8b5",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "48e1193e2d1f00c5fe2a3ef7fe97b7bd253670307ac5c5e6cc94d86170957db9",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766153477531000,
+      "test_started_unix_ns": 1790766153149552000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766154002356000,
+      "compile_started_unix_ns": 1790766153480168000,
+      "design_id": "bl24_selected_nonnegative_codes",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 1,
+      "rows": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -2,
+          "passed": true,
+          "probe_id": "bl24_selected_nonnegative_codes/x1",
+          "region_target": "negative:negative_neighbor"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 3,
+          "passed": true,
+          "probe_id": "bl24_selected_nonnegative_codes/x2",
+          "region_target": "positive:interior_or_lower_side"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 6,
+          "passed": true,
+          "probe_id": "bl24_selected_nonnegative_codes/x3",
+          "region_target": "positive:upper_or_positive_side"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 100,
+          "passed": true,
+          "probe_id": "bl24_selected_nonnegative_codes/x4",
+          "region_target": "positive:large_exterior"
+        }
+      ],
+      "selected_candidate_id": "option_b",
+      "source_sha256": "d7fb991ed311c894c58c264c3b697aa82f32d979e94360d79b444969ece91641",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "12ac593bbeb1d809506ea2fdd7b341b64fd2dc10b02473b5c2493b969e568a90",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766154335688000,
+      "test_started_unix_ns": 1790766154003000000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766154872301000,
+      "compile_started_unix_ns": 1790766154338480000,
+      "design_id": "tx25_sign_label",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 2,
+      "rows": [
+        {
+          "actual": -1,
+          "expected": -1,
+          "input": -2,
+          "passed": true,
+          "probe_id": "tx25_sign_label/x1",
+          "region_target": "negative:negative_neighbor"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": 2,
+          "passed": true,
+          "probe_id": "tx25_sign_label/x2",
+          "region_target": "positive:positive_neighbor"
+        },
+        {
+          "actual": -1,
+          "expected": -1,
+          "input": -9223372036854775808,
+          "passed": true,
+          "probe_id": "tx25_sign_label/x3",
+          "region_target": "large_value:minimum_int64_sign_or_state"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": 9223372036854775807,
+          "passed": true,
+          "probe_id": "tx25_sign_label/x4",
+          "region_target": "large_value:maximum_int64_sign_or_state"
+        }
+      ],
+      "selected_candidate_id": "option_a",
+      "source_sha256": "28f68fa00288a8e8b8525b1404e49a2584b6446db47a5dabcc067e45b9adb1da",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "51ab04cd69c779a772e27a7bb59ba34bc641f56754325149251096a3f4de525f",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766155200684000,
+      "test_started_unix_ns": 1790766154873006000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766155725403000,
+      "compile_started_unix_ns": 1790766155203409000,
+      "design_id": "tx26_state_label",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 2,
+      "rows": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": -2,
+          "passed": true,
+          "probe_id": "tx26_state_label/x1",
+          "region_target": "negative:negative_neighbor"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": 2,
+          "passed": true,
+          "probe_id": "tx26_state_label/x2",
+          "region_target": "positive:positive_neighbor"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": 6,
+          "passed": true,
+          "probe_id": "tx26_state_label/x3",
+          "region_target": "large_value:minimum_int64_sign_or_state"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": 9223372036854775807,
+          "passed": true,
+          "probe_id": "tx26_state_label/x4",
+          "region_target": "large_value:maximum_int64_sign_or_state"
+        }
+      ],
+      "selected_candidate_id": "option_c",
+      "source_sha256": "f4b32991c1bf884a5b53fb3a1af0c7a8d2bca9f63648a61315e07e569cdc857f",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "9c88327ddccaeb10c1eefa38ac908787372314b76fe6738bf8d9d169c57d0e37",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766156036307000,
+      "test_started_unix_ns": 1790766155725962000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766156561086000,
+      "compile_started_unix_ns": 1790766156040525000,
+      "design_id": "tx27_lexical_cutoff",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 2,
+      "rows": [
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": -3,
+          "passed": true,
+          "probe_id": "tx27_lexical_cutoff/x1",
+          "region_target": "negative:negative_neighbor"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 3,
+          "passed": true,
+          "probe_id": "tx27_lexical_cutoff/x2",
+          "region_target": "positive:positive_neighbor"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": -9223372036854775808,
+          "passed": true,
+          "probe_id": "tx27_lexical_cutoff/x3",
+          "region_target": "large_value:minimum_int64_sign_or_state"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "input": 9223372036854775807,
+          "passed": true,
+          "probe_id": "tx27_lexical_cutoff/x4",
+          "region_target": "large_value:maximum_int64_sign_or_state"
+        }
+      ],
+      "selected_candidate_id": "option_b",
+      "source_sha256": "d643d01eea690160d8f08b16932d38f274d600f8a0eb461f688fa5b8a14c2977",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "cdb1372f775167baefaba763e78ab032f64ce51a99572d389f68b1296aecc0c8",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766156892079000,
+      "test_started_unix_ns": 1790766156561684000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766157416528000,
+      "compile_started_unix_ns": 1790766156894561000,
+      "design_id": "tx28_reassigned_text_state",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 2,
+      "rows": [
+        {
+          "actual": -2,
+          "expected": -2,
+          "input": -2,
+          "passed": true,
+          "probe_id": "tx28_reassigned_text_state/x1",
+          "region_target": "negative:negative_neighbor"
+        },
+        {
+          "actual": 2,
+          "expected": 2,
+          "input": 2,
+          "passed": true,
+          "probe_id": "tx28_reassigned_text_state/x2",
+          "region_target": "positive:positive_neighbor"
+        },
+        {
+          "actual": 2,
+          "expected": 2,
+          "input": 99,
+          "passed": true,
+          "probe_id": "tx28_reassigned_text_state/x3",
+          "region_target": "large_value:minimum_int64_sign_or_state"
+        },
+        {
+          "actual": 2,
+          "expected": 2,
+          "input": 101,
+          "passed": true,
+          "probe_id": "tx28_reassigned_text_state/x4",
+          "region_target": "large_value:maximum_int64_sign_or_state"
+        }
+      ],
+      "selected_candidate_id": "option_a",
+      "source_sha256": "66d9587af424d37a03090c9fab4f5824cb797cd88950367eea62689851d3b2f8",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "59b000e04272957760002be4b36b7039f90fb9e71efde44e6016b71969358f07",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766157742107000,
+      "test_started_unix_ns": 1790766157417136000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766158270917000,
+      "compile_started_unix_ns": 1790766157744884000,
+      "design_id": "ob29_saturating_increment",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 4,
+      "rows": [
+        {
+          "actual": 9223372036854775804,
+          "expected": 9223372036854775804,
+          "input": 9223372036854775803,
+          "passed": true,
+          "probe_id": "ob29_saturating_increment/x1",
+          "region_target": "near_or_beyond_boundary_low"
+        },
+        {
+          "actual": 9223372036854775803,
+          "expected": 9223372036854775803,
+          "input": 9223372036854775802,
+          "passed": true,
+          "probe_id": "ob29_saturating_increment/x2",
+          "region_target": "near_or_beyond_boundary_high"
+        },
+        {
+          "actual": -9223372036854775807,
+          "expected": -9223372036854775807,
+          "input": -9223372036854775808,
+          "passed": true,
+          "probe_id": "ob29_saturating_increment/x3",
+          "region_target": "opposite_sign_or_lower_edge"
+        },
+        {
+          "actual": -9223372036854775806,
+          "expected": -9223372036854775806,
+          "input": -9223372036854775807,
+          "passed": true,
+          "probe_id": "ob29_saturating_increment/x4",
+          "region_target": "opposite_sign_or_upper_edge"
+        }
+      ],
+      "selected_candidate_id": "option_c",
+      "source_sha256": "953f699044545fae9394bb71f471d3cc60b31df0c0f47899b63fed9e2f233875",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "86b656f918727f12c5fbaa027a7bf0b568f3e9654f21738d4d3fb73cffeeacbf",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766158601844000,
+      "test_started_unix_ns": 1790766158271745000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766159129342000,
+      "compile_started_unix_ns": 1790766158604811000,
+      "design_id": "ob30_saturating_decrement",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 4,
+      "rows": [
+        {
+          "actual": -9223372036854775805,
+          "expected": -9223372036854775805,
+          "input": -9223372036854775804,
+          "passed": true,
+          "probe_id": "ob30_saturating_decrement/x1",
+          "region_target": "near_or_beyond_boundary_low"
+        },
+        {
+          "actual": -9223372036854775804,
+          "expected": -9223372036854775804,
+          "input": -9223372036854775803,
+          "passed": true,
+          "probe_id": "ob30_saturating_decrement/x2",
+          "region_target": "near_or_beyond_boundary_high"
+        },
+        {
+          "actual": 9223372036854775806,
+          "expected": 9223372036854775806,
+          "input": 9223372036854775807,
+          "passed": true,
+          "probe_id": "ob30_saturating_decrement/x3",
+          "region_target": "opposite_sign_or_lower_edge"
+        },
+        {
+          "actual": 9223372036854775805,
+          "expected": 9223372036854775805,
+          "input": 9223372036854775806,
+          "passed": true,
+          "probe_id": "ob30_saturating_decrement/x4",
+          "region_target": "opposite_sign_or_upper_edge"
+        }
+      ],
+      "selected_candidate_id": "option_b",
+      "source_sha256": "3daaaf50187357787241b99381736c528d66a84ed0d25e521b3a9bd30d247b3a",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "4298313470324c7263de0a3367b0ca57bd63a53b3096cccc4e9780c6206b5322",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766159457645000,
+      "test_started_unix_ns": 1790766159129932000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766159987892000,
+      "compile_started_unix_ns": 1790766159460388000,
+      "design_id": "ob31_saturating_double",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 4,
+      "rows": [
+        {
+          "actual": 9223372036854775804,
+          "expected": 9223372036854775804,
+          "input": 4611686018427387902,
+          "passed": true,
+          "probe_id": "ob31_saturating_double/x1",
+          "region_target": "near_or_beyond_boundary_low"
+        },
+        {
+          "actual": 9223372036854775807,
+          "expected": 9223372036854775807,
+          "input": 4611686018427387905,
+          "passed": true,
+          "probe_id": "ob31_saturating_double/x2",
+          "region_target": "near_or_beyond_boundary_high"
+        },
+        {
+          "actual": -9223372036854775806,
+          "expected": -9223372036854775806,
+          "input": -4611686018427387903,
+          "passed": true,
+          "probe_id": "ob31_saturating_double/x3",
+          "region_target": "opposite_sign_or_lower_edge"
+        },
+        {
+          "actual": -9223372036854775808,
+          "expected": -9223372036854775808,
+          "input": -4611686018427387906,
+          "passed": true,
+          "probe_id": "ob31_saturating_double/x4",
+          "region_target": "opposite_sign_or_upper_edge"
+        }
+      ],
+      "selected_candidate_id": "option_a",
+      "source_sha256": "6bf13c8bd2465eb5056f8047e3796b5609fb0ab0de03a86fd03a8d6fd60d3126",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "9246a3ec08d776dfcf136076fe672821de86f0d5809c5c8e5db869f1b3b948cb",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766160317406000,
+      "test_started_unix_ns": 1790766159988557000,
+      "unknown": 0
+    },
+    {
+      "compile_exit_code": 0,
+      "compile_finished_unix_ns": 1790766160842170000,
+      "compile_started_unix_ns": 1790766160320514000,
+      "design_id": "ob32_clamped_absolute",
+      "matched": 4,
+      "mismatched": 0,
+      "observed_probe_count": 4,
+      "planned_probe_count": 4,
+      "reference_distinct_output_count": 3,
+      "rows": [
+        {
+          "actual": 9223372036854775806,
+          "expected": 9223372036854775806,
+          "input": -9223372036854775806,
+          "passed": true,
+          "probe_id": "ob32_clamped_absolute/x1",
+          "region_target": "near_or_beyond_boundary_low"
+        },
+        {
+          "actual": 9223372036854775805,
+          "expected": 9223372036854775805,
+          "input": -9223372036854775805,
+          "passed": true,
+          "probe_id": "ob32_clamped_absolute/x2",
+          "region_target": "near_or_beyond_boundary_high"
+        },
+        {
+          "actual": 9223372036854775806,
+          "expected": 9223372036854775806,
+          "input": 9223372036854775806,
+          "passed": true,
+          "probe_id": "ob32_clamped_absolute/x3",
+          "region_target": "opposite_sign_or_lower_edge"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "input": -1,
+          "passed": true,
+          "probe_id": "ob32_clamped_absolute/x4",
+          "region_target": "opposite_sign_or_upper_edge"
+        }
+      ],
+      "selected_candidate_id": "option_c",
+      "source_sha256": "f5b597f31d8162baa9501524852f7488dc88e799e03527ca9a427313cc447052",
+      "source_unit_complete": true,
+      "source_unit_receipt_sha256": "6fefbeb33008d8dd8acf5c501ebd6b61029b8f8eb667e79097519a0daf52f28c",
+      "status": "compiled_and_executed",
+      "test_exit_code": 0,
+      "test_finished_unix_ns": 1790766161167485000,
+      "test_started_unix_ns": 1790766160842839000,
+      "unknown": 0
+    }
+  ],
+  "dynamic_branch_coverage": "UNMEASURED",
+  "executed_probe_rows": 128,
+  "finite_match_rate_observed_only": 1.0,
+  "matched_probe_rows": 128,
+  "mismatched_probe_rows": 0,
+  "observed_region_targets": 41,
+  "planned_designs": 32,
+  "planned_probe_rows": 128,
+  "planned_region_targets": 41,
+  "probe_purpose_coverage": 1.0,
+  "probe_rows_by_semantic_area": {
+    "boolean_locals": {
+      "observed": 16,
+      "planned": 16
+    },
+    "comparison_expressions": {
+      "observed": 16,
+      "planned": 16
+    },
+    "conditionals": {
+      "observed": 16,
+      "planned": 16
+    },
+    "expression_precedence": {
+      "observed": 16,
+      "planned": 16
+    },
+    "int64_boundaries": {
+      "observed": 16,
+      "planned": 16
+    },
+    "let_reassignment": {
+      "observed": 16,
+      "planned": 16
+    },
+    "nested_if_else": {
+      "observed": 16,
+      "planned": 16
+    },
+    "text_locals": {
+      "observed": 16,
+      "planned": 16
+    }
+  },
+  "reference_output_diversity_by_design": {
+    "designs": 32,
+    "distinct_outputs_max": 4,
+    "distinct_outputs_min": 1
+  },
+  "replay_status_counts": {
+    "compiled_and_executed": 32
+  },
+  "schema": "gooo/ir-composition-extra-domain-probe-arm-result/v1",
+  "scope": "128 new unseen finite int64 inputs across the same 32 intents; passing is not full-domain proof",
+  "source_unit_completeness": {
+    "complete": 32,
+    "incomplete": 0,
+    "unknown": 0
+  },
+  "unknown_probe_rows": 0
+}

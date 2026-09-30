@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "actual": 8,
+      "expected": null,
+      "input": -3,
+      "probe_id": "pr15_square_minus_successor_sum/x1"
+    },
+    {
+      "actual": -4,
+      "expected": null,
+      "input": 1,
+      "probe_id": "pr15_square_minus_successor_sum/x2"
+    },
+    {
+      "actual": 8,
+      "expected": null,
+      "input": 4,
+      "probe_id": "pr15_square_minus_successor_sum/x3"
+    },
+    {
+      "actual": 9223372036854775806,
+      "expected": null,
+      "input": 9223372036854775807,
+      "probe_id": "pr15_square_minus_successor_sum/x4"
+    }
+  ]
+}

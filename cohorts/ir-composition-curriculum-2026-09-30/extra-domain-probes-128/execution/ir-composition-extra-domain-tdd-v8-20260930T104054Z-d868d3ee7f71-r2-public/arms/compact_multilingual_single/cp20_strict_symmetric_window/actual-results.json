@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "actual": -4,
+      "expected": null,
+      "input": -7,
+      "probe_id": "cp20_strict_symmetric_window/x1"
+    },
+    {
+      "actual": 4,
+      "expected": null,
+      "input": -3,
+      "probe_id": "cp20_strict_symmetric_window/x2"
+    },
+    {
+      "actual": 4,
+      "expected": null,
+      "input": 3,
+      "probe_id": "cp20_strict_symmetric_window/x3"
+    },
+    {
+      "actual": -4,
+      "expected": null,
+      "input": 7,
+      "probe_id": "cp20_strict_symmetric_window/x4"
+    }
+  ]
+}

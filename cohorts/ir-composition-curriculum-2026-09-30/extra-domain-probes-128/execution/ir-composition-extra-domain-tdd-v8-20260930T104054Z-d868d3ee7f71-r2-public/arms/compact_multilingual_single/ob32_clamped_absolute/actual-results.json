@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "actual": -9223372036854775806,
+      "expected": null,
+      "input": -9223372036854775806,
+      "probe_id": "ob32_clamped_absolute/x1"
+    },
+    {
+      "actual": -9223372036854775805,
+      "expected": null,
+      "input": -9223372036854775805,
+      "probe_id": "ob32_clamped_absolute/x2"
+    },
+    {
+      "actual": -9223372036854775806,
+      "expected": null,
+      "input": 9223372036854775806,
+      "probe_id": "ob32_clamped_absolute/x3"
+    },
+    {
+      "actual": -1,
+      "expected": null,
+      "input": -1,
+      "probe_id": "ob32_clamped_absolute/x4"
+    }
+  ]
+}

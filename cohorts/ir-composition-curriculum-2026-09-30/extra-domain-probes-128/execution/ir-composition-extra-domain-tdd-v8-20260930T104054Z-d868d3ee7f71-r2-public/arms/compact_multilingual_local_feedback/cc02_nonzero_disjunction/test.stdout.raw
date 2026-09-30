@@ -1,0 +1,5 @@
+=== RUN   TestExtraDomainProbeCandidate
+    probe_test.go:22: EXTRA_DOMAIN_CANDIDATE_RESULT:[{"design_id":"cc02_nonzero_disjunction","probe_id":"cc02_nonzero_disjunction/x1","index":0,"input":-2,"actual":1},{"design_id":"cc02_nonzero_disjunction","probe_id":"cc02_nonzero_disjunction/x2","index":1,"input":2,"actual":1},{"design_id":"cc02_nonzero_disjunction","probe_id":"cc02_nonzero_disjunction/x3","index":2,"input":-9223372036854775808,"actual":1},{"design_id":"cc02_nonzero_disjunction","probe_id":"cc02_nonzero_disjunction/x4","index":3,"input":9223372036854775807,"actual":1}]
+--- PASS: TestExtraDomainProbeCandidate (0.00s)
+PASS
+ok  	extra-domain-candidate	0.193s

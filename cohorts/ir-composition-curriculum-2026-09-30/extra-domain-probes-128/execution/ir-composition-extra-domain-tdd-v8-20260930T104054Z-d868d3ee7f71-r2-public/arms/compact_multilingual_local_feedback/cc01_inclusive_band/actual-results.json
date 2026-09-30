@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "actual": -1,
+      "expected": null,
+      "input": -3,
+      "probe_id": "cc01_inclusive_band/x1"
+    },
+    {
+      "actual": -1,
+      "expected": null,
+      "input": 1,
+      "probe_id": "cc01_inclusive_band/x2"
+    },
+    {
+      "actual": 2,
+      "expected": null,
+      "input": 7,
+      "probe_id": "cc01_inclusive_band/x3"
+    },
+    {
+      "actual": -1,
+      "expected": null,
+      "input": 10,
+      "probe_id": "cc01_inclusive_band/x4"
+    }
+  ]
+}

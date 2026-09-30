@@ -1,0 +1,5 @@
+=== RUN   TestExtraDomainProbeCandidate
+    probe_test.go:22: EXTRA_DOMAIN_CANDIDATE_RESULT:[{"design_id":"ob32_clamped_absolute","probe_id":"ob32_clamped_absolute/x1","index":0,"input":-9223372036854775806,"actual":9223372036854775806},{"design_id":"ob32_clamped_absolute","probe_id":"ob32_clamped_absolute/x2","index":1,"input":-9223372036854775805,"actual":9223372036854775805},{"design_id":"ob32_clamped_absolute","probe_id":"ob32_clamped_absolute/x3","index":2,"input":9223372036854775806,"actual":9223372036854775806},{"design_id":"ob32_clamped_absolute","probe_id":"ob32_clamped_absolute/x4","index":3,"input":-1,"actual":1}]
+--- PASS: TestExtraDomainProbeCandidate (0.00s)
+PASS
+ok  	extra-domain-candidate	0.188s

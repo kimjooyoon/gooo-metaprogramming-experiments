@@ -1,0 +1,101 @@
+name: Extra-domain probe replay
+
+on:
+  workflow_dispatch:
+    inputs:
+      root_measurement_gate:
+        description: Confirm the root measurement gate is open for postselection Go replay
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-postselection-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GOOO_LAYA_URL: ''
+      GOOO_LAYA_API_KEY: ''
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      GOTOOLCHAIN: local
+      GOPROXY: off
+      GOSUMDB: off
+      GOWORK: off
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check frozen inputs and adapter regressions
+        run: |
+          python3 scripts/prepare_extra_domain_probes.py --verify
+          python3 scripts/test_adapt_tdd_v8_extra_domain_capture.py
+
+      - name: Independently verify saved public capture evidence
+        id: bundle
+        env:
+          CAPTURE_BUNDLE: cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/captures/ir-composition-tdd-v8-20260930T104054Z-d868d3ee7f71-public
+        run: |
+          case "$CAPTURE_BUNDLE" in
+            cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/captures/*) ;;
+            *) echo "capture_bundle must be beneath the frozen capture directory" >&2; exit 2 ;;
+          esac
+          if [ ! -f "$CAPTURE_BUNDLE/adapter-report.json" ]; then
+            echo "decision=NO_RESULT_BUNDLE" >> "$GITHUB_OUTPUT"
+            echo "No committed adapter bundle exists at the selected path; replay was skipped." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          report="$(python3 scripts/adapt_tdd_v8_extra_domain_capture.py --verify-public-bundle "$CAPTURE_BUNDLE")"
+          printf '%s\n' "$report" >> "$GITHUB_STEP_SUMMARY"
+          decision="$(printf '%s' "$report" | python3 -c 'import json,sys; print(json.load(sys.stdin)["decision"])')"
+          echo "decision=$decision" >> "$GITHUB_OUTPUT"
+
+      - name: Record the replay gate decision
+        if: steps.bundle.outputs.decision != 'VERIFIED_PUBLIC_DERIVATIVE' || inputs.root_measurement_gate != true
+        run: |
+          echo "Postselection replay skipped. It requires a verified complete capture bundle and an explicit root measurement gate." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Download and verify the pinned Go 1.27.0 distribution
+        if: ${{ steps.bundle.outputs.decision == 'VERIFIED_PUBLIC_DERIVATIVE' && inputs.root_measurement_gate == true }}
+        env:
+          GO_DIST_SHA256: 675c26c449cbb18fc24b74650de1eabbae6e16f64326fd85a283fb3b58280685
+        run: |
+          archive="$RUNNER_TEMP/go1.27.0.linux-amd64.tar.gz"
+          # Official go.dev download archive checksum for go1.27.0 linux-amd64.
+          curl --fail --location --silent --show-error --retry 3 \
+            https://go.dev/dl/go1.27.0.linux-amd64.tar.gz --output "$archive"
+          echo "$GO_DIST_SHA256  $archive" | sha256sum --check --status
+          tar -xzf "$archive" -C "$RUNNER_TEMP"
+          "$RUNNER_TEMP/go/bin/go" version
+
+      - name: Replay all 128 frozen inputs per arm
+        if: ${{ steps.bundle.outputs.decision == 'VERIFIED_PUBLIC_DERIVATIVE' && inputs.root_measurement_gate == true }}
+        env:
+          CAPTURE_BUNDLE: cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/captures/ir-composition-tdd-v8-20260930T104054Z-d868d3ee7f71-public
+          GO_DIST_SHA256: 675c26c449cbb18fc24b74650de1eabbae6e16f64326fd85a283fb3b58280685
+        run: |
+          python3 scripts/replay_extra_domain_probes_v2.py \
+            --source-root "$CAPTURE_BUNDLE" \
+            --source-manifest "$CAPTURE_BUNDLE/source-manifest.json" \
+            --output "cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/execution/ci-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --go-bin "$RUNNER_TEMP/go/bin/go" \
+            --official-go-dist-sha256 "$GO_DIST_SHA256" \
+            --after-root-measurement-gate
+
+      - name: Publish the finite replay summary
+        if: always()
+        run: |
+          report="cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/execution/ci-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/independent-replay-report.md"
+          if [ -f "$report" ]; then cat "$report" >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: extra-domain-probe-replay-${{ github.run_id }}-${{ github.run_attempt }}
+          path: cohorts/ir-composition-curriculum-2026-09-30/extra-domain-probes-128/execution/ci-${{ github.run_id }}-${{ github.run_attempt }}
+          if-no-files-found: warn

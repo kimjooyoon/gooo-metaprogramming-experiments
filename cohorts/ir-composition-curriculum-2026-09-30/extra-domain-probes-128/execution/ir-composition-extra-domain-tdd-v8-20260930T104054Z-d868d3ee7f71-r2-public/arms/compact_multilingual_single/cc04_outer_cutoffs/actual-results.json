@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "actual": 0,
+      "expected": null,
+      "input": -8,
+      "probe_id": "cc04_outer_cutoffs/x1"
+    },
+    {
+      "actual": 0,
+      "expected": null,
+      "input": -4,
+      "probe_id": "cc04_outer_cutoffs/x2"
+    },
+    {
+      "actual": 0,
+      "expected": null,
+      "input": 6,
+      "probe_id": "cc04_outer_cutoffs/x3"
+    },
+    {
+      "actual": 0,
+      "expected": null,
+      "input": 10,
+      "probe_id": "cc04_outer_cutoffs/x4"
+    }
+  ]
+}

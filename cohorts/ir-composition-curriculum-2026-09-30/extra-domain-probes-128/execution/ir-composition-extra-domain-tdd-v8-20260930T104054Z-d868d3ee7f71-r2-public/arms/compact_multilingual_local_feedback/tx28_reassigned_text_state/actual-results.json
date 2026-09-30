@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "actual": -2,
+      "expected": null,
+      "input": -2,
+      "probe_id": "tx28_reassigned_text_state/x1"
+    },
+    {
+      "actual": 2,
+      "expected": null,
+      "input": 2,
+      "probe_id": "tx28_reassigned_text_state/x2"
+    },
+    {
+      "actual": 2,
+      "expected": null,
+      "input": 99,
+      "probe_id": "tx28_reassigned_text_state/x3"
+    },
+    {
+      "actual": 2,
+      "expected": null,
+      "input": 101,
+      "probe_id": "tx28_reassigned_text_state/x4"
+    }
+  ]
+}

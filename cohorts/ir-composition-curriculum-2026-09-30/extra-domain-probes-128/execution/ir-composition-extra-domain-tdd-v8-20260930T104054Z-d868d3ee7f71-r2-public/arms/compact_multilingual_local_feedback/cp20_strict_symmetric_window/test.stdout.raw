@@ -1,0 +1,5 @@
+=== RUN   TestExtraDomainProbeCandidate
+    probe_test.go:22: EXTRA_DOMAIN_CANDIDATE_RESULT:[{"design_id":"cp20_strict_symmetric_window","probe_id":"cp20_strict_symmetric_window/x1","index":0,"input":-7,"actual":-4},{"design_id":"cp20_strict_symmetric_window","probe_id":"cp20_strict_symmetric_window/x2","index":1,"input":-3,"actual":4},{"design_id":"cp20_strict_symmetric_window","probe_id":"cp20_strict_symmetric_window/x3","index":2,"input":3,"actual":4},{"design_id":"cp20_strict_symmetric_window","probe_id":"cp20_strict_symmetric_window/x4","index":3,"input":7,"actual":-4}]
+--- PASS: TestExtraDomainProbeCandidate (0.00s)
+PASS
+ok  	extra-domain-candidate	0.190s

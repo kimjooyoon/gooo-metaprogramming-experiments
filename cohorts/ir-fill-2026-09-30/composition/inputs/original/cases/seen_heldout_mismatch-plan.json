@@ -1,0 +1,25 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "Return the square of every integer.",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "identity",
+      "expression": "input"
+    },
+    {
+      "id": "square",
+      "expression": "input * input"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": 0,
+      "expected": 0
+    },
+    {
+      "input": 1,
+      "expected": 1
+    }
+  ]
+}

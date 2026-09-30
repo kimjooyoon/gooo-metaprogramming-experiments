@@ -1,0 +1,45 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "Increment every int64 value except the maximum, which remains unchanged.",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "increment",
+      "expression": "input + 1"
+    },
+    {
+      "id": "identity",
+      "expression": "input"
+    },
+    {
+      "id": "skip_two",
+      "expression": "input + 2"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": -9223372036854775808,
+      "expected": -9223372036854775807
+    },
+    {
+      "input": -9223372036854775807,
+      "expected": -9223372036854775806
+    },
+    {
+      "input": -1,
+      "expected": 0
+    },
+    {
+      "input": 0,
+      "expected": 1
+    },
+    {
+      "input": 9223372036854775806,
+      "expected": 9223372036854775807
+    },
+    {
+      "input": 9223372036854775807,
+      "expected": 9223372036854775807
+    }
+  ]
+}

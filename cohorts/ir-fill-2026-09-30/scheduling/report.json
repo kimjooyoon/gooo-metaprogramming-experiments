@@ -1,0 +1,405 @@
+{
+  "clean_binary": {
+    "copied": false,
+    "go_version": "/tmp/gooo-ir-fill-fixed-20260930: go1.27.0",
+    "path": "/tmp/gooo-ir-fill-fixed-20260930",
+    "settings": {
+      "GOARCH": "arm64",
+      "GOOS": "darwin",
+      "vcs.modified": "false",
+      "vcs.revision": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+      "vcs.time": "2026-09-30T02:54:47Z"
+    }
+  },
+  "created_utc": "2026-09-30T03:08:17.502429+00:00",
+  "date_local": "2026-09-30",
+  "fixture_and_plan": {
+    "example_data_only": true,
+    "fixture": "/tmp/gooo-luna-scheduling-experiments-20260930/fixture.gooo",
+    "plan": "/tmp/gooo-luna-scheduling-experiments-20260930/plan.json"
+  },
+  "measurement_notes": [
+    "Wall time includes process startup; provider timestamps isolate the mock wait.",
+    "Concurrent trial launches two independent clean-binary CLI processes; unique mock query markers map each request to the recorded PID.",
+    "Working-tree runs use go run; the recorded PID is the go run driver, not its short-lived executed Go child.",
+    "The body-fill provider context budget is eight seconds. Timeout trial held the mock response 8.35 seconds and captured client fallback.",
+    "The mock returns fixed identity only to exercise scheduling/protocol. This is not model-performance evidence.",
+    "Raw stdout, stderr, parsed request payloads, and response-attempt events are persisted under captures/ before report/summary writes."
+  ],
+  "provider_scope": "Every request went to an owned ephemeral 127.0.0.1 endpoint with a Python MOCK handler. Port 8787 was neither contacted nor bound. No real Laya service/model was used.",
+  "timezone": "Asia/Seoul",
+  "title": "Gooo body-codegen IR-fill scheduling experiments (explicit MOCK provider only)",
+  "trials": [
+    {
+      "name": "01_fixed_binary_immediate_mock",
+      "result": {
+        "decision_mode": "laya",
+        "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+        "exit_code": 0,
+        "fallback_reason": null,
+        "functional_accuracy_percent": 100,
+        "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+        "kind": "fixed_binary",
+        "mock_provider": {
+          "delay_ms": 0,
+          "ephemeral_port": 50961,
+          "explicit_mock": true,
+          "host": "127.0.0.1",
+          "path": "/v1/systemone",
+          "status": 200
+        },
+        "parse_error": null,
+        "pid": 68491,
+        "pid_scope": "direct clean-binary CLI process",
+        "proposed_candidate_id": "identity",
+        "provider_max_active_requests": 1,
+        "provider_selected_candidate_id": "identity",
+        "request_count": 1,
+        "request_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/01_fixed_binary_immediate_mock.requests.json",
+        "request_sha256": "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+        "request_to_response_attempt_ms": 0.445583,
+        "selected_candidate_id": "zero",
+        "stderr_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/01_fixed_binary_immediate_mock-68491.stderr.txt",
+        "stderr_nonempty": false,
+        "stdout_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/01_fixed_binary_immediate_mock-68491.stdout.json",
+        "stdout_json": true,
+        "test_suite_sha256": "sha256:9236df1568d555cfaa56e0a1e9e990d7f8f112d2e9a5ea8570a74a6c8099fc85",
+        "wall_ms": 6.641375
+      }
+    },
+    {
+      "name": "02_worktree_go_run_immediate_mock",
+      "result": {
+        "decision_mode": "laya",
+        "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+        "exit_code": 0,
+        "fallback_reason": null,
+        "functional_accuracy_percent": 100,
+        "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+        "kind": "working_tree_go_run",
+        "mock_provider": {
+          "delay_ms": 0,
+          "ephemeral_port": 50963,
+          "explicit_mock": true,
+          "host": "127.0.0.1",
+          "path": "/v1/systemone",
+          "status": 200
+        },
+        "parse_error": null,
+        "pid": 68493,
+        "pid_scope": "go run driver; executed Go child PID not separately measured",
+        "proposed_candidate_id": "identity",
+        "provider_max_active_requests": 1,
+        "provider_selected_candidate_id": "identity",
+        "request_count": 1,
+        "request_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/02_worktree_go_run_immediate_mock.requests.json",
+        "request_sha256": "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+        "request_to_response_attempt_ms": 0.330875,
+        "selected_candidate_id": "zero",
+        "stderr_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/02_worktree_go_run_immediate_mock-68493.stderr.txt",
+        "stderr_nonempty": false,
+        "stdout_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/02_worktree_go_run_immediate_mock-68493.stdout.json",
+        "stdout_json": true,
+        "test_suite_sha256": "sha256:9236df1568d555cfaa56e0a1e9e990d7f8f112d2e9a5ea8570a74a6c8099fc85",
+        "wall_ms": 177.760917
+      }
+    },
+    {
+      "name": "03_fixed_binary_delayed_mock_450ms",
+      "result": {
+        "decision_mode": "laya",
+        "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+        "exit_code": 0,
+        "fallback_reason": null,
+        "functional_accuracy_percent": 100,
+        "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+        "kind": "fixed_binary",
+        "mock_provider": {
+          "delay_ms": 450.0,
+          "ephemeral_port": 50965,
+          "explicit_mock": true,
+          "host": "127.0.0.1",
+          "path": "/v1/systemone",
+          "status": 200
+        },
+        "parse_error": null,
+        "pid": 68499,
+        "pid_scope": "direct clean-binary CLI process",
+        "proposed_candidate_id": "identity",
+        "provider_max_active_requests": 1,
+        "provider_selected_candidate_id": "identity",
+        "request_count": 1,
+        "request_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/03_fixed_binary_delayed_mock_450ms.requests.json",
+        "request_sha256": "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+        "request_to_response_attempt_ms": 461.095916,
+        "selected_candidate_id": "zero",
+        "stderr_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/03_fixed_binary_delayed_mock_450ms-68499.stderr.txt",
+        "stderr_nonempty": false,
+        "stdout_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/03_fixed_binary_delayed_mock_450ms-68499.stdout.json",
+        "stdout_json": true,
+        "test_suite_sha256": "sha256:9236df1568d555cfaa56e0a1e9e990d7f8f112d2e9a5ea8570a74a6c8099fc85",
+        "wall_ms": 484.197
+      }
+    },
+    {
+      "name": "04_worktree_go_run_delayed_mock_450ms",
+      "result": {
+        "decision_mode": "laya",
+        "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+        "exit_code": 0,
+        "fallback_reason": null,
+        "functional_accuracy_percent": 100,
+        "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+        "kind": "working_tree_go_run",
+        "mock_provider": {
+          "delay_ms": 450.0,
+          "ephemeral_port": 50967,
+          "explicit_mock": true,
+          "host": "127.0.0.1",
+          "path": "/v1/systemone",
+          "status": 200
+        },
+        "parse_error": null,
+        "pid": 68500,
+        "pid_scope": "go run driver; executed Go child PID not separately measured",
+        "proposed_candidate_id": "identity",
+        "provider_max_active_requests": 1,
+        "provider_selected_candidate_id": "identity",
+        "request_count": 1,
+        "request_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/04_worktree_go_run_delayed_mock_450ms.requests.json",
+        "request_sha256": "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+        "request_to_response_attempt_ms": 460.454333,
+        "selected_candidate_id": "zero",
+        "stderr_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/04_worktree_go_run_delayed_mock_450ms-68500.stderr.txt",
+        "stderr_nonempty": false,
+        "stdout_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/04_worktree_go_run_delayed_mock_450ms-68500.stdout.json",
+        "stdout_json": true,
+        "test_suite_sha256": "sha256:9236df1568d555cfaa56e0a1e9e990d7f8f112d2e9a5ea8570a74a6c8099fc85",
+        "wall_ms": 641.124459
+      }
+    },
+    {
+      "name": "05_http_503_deterministic_fallback",
+      "result": {
+        "decision_mode": "deterministic_fallback",
+        "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+        "exit_code": 0,
+        "fallback_reason": "PROVIDER_HTTP_ERROR",
+        "functional_accuracy_percent": 100,
+        "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+        "kind": "fixed_binary",
+        "mock_provider": {
+          "delay_ms": 0,
+          "ephemeral_port": 50971,
+          "explicit_mock": true,
+          "host": "127.0.0.1",
+          "path": "/v1/systemone",
+          "status": 503
+        },
+        "parse_error": null,
+        "pid": 68509,
+        "pid_scope": "direct clean-binary CLI process",
+        "proposed_candidate_id": "zero",
+        "provider_max_active_requests": 1,
+        "provider_selected_candidate_id": "zero",
+        "request_count": 1,
+        "request_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/05_http_503_deterministic_fallback.requests.json",
+        "request_sha256": "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+        "request_to_response_attempt_ms": 0.469458,
+        "selected_candidate_id": "zero",
+        "stderr_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/05_http_503_deterministic_fallback-68509.stderr.txt",
+        "stderr_nonempty": false,
+        "stdout_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/05_http_503_deterministic_fallback-68509.stdout.json",
+        "stdout_json": true,
+        "test_suite_sha256": "sha256:9236df1568d555cfaa56e0a1e9e990d7f8f112d2e9a5ea8570a74a6c8099fc85",
+        "wall_ms": 12.0275
+      }
+    },
+    {
+      "mock_provider": {
+        "delay_ms": 900,
+        "ephemeral_port": 50974,
+        "explicit_mock": true,
+        "host": "127.0.0.1",
+        "server": "threaded Python HTTPServer"
+      },
+      "name": "06_two_process_concurrency",
+      "provider_max_active_requests": 2,
+      "provider_overlap_observed": true,
+      "request_count": 2,
+      "request_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/06_two_process_concurrency.requests.json",
+      "request_start_spread_ms": 0.439292,
+      "results": [
+        {
+          "decision_mode": "laya",
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "exit_code": 0,
+          "fallback_reason": null,
+          "functional_accuracy_percent": 100,
+          "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+          "kind": "fixed_binary",
+          "parse_error": null,
+          "pid": 68510,
+          "pid_scope": "direct clean-binary CLI process",
+          "proposed_candidate_id": "identity",
+          "provider_selected_candidate_id": "identity",
+          "request_sha256": "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+          "selected_candidate_id": "zero",
+          "stderr_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/06_two_process_concurrency-p0-68510.stderr.txt",
+          "stderr_nonempty": false,
+          "stdout_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/06_two_process_concurrency-p0-68510.stdout.json",
+          "stdout_json": true,
+          "test_suite_sha256": "sha256:9236df1568d555cfaa56e0a1e9e990d7f8f112d2e9a5ea8570a74a6c8099fc85",
+          "wall_ms": 935.087916,
+          "worker_index": 0
+        },
+        {
+          "decision_mode": "laya",
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "exit_code": 0,
+          "fallback_reason": null,
+          "functional_accuracy_percent": 100,
+          "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+          "kind": "fixed_binary",
+          "parse_error": null,
+          "pid": 68511,
+          "pid_scope": "direct clean-binary CLI process",
+          "proposed_candidate_id": "identity",
+          "provider_selected_candidate_id": "identity",
+          "request_sha256": "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+          "selected_candidate_id": "zero",
+          "stderr_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/06_two_process_concurrency-p1-68511.stderr.txt",
+          "stderr_nonempty": false,
+          "stdout_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/06_two_process_concurrency-p1-68511.stdout.json",
+          "stdout_json": true,
+          "test_suite_sha256": "sha256:9236df1568d555cfaa56e0a1e9e990d7f8f112d2e9a5ea8570a74a6c8099fc85",
+          "wall_ms": 934.719708,
+          "worker_index": 1
+        }
+      ]
+    },
+    {
+      "name": "07_provider_exceeds_eight_second_context_budget",
+      "result": {
+        "decision_mode": "deterministic_fallback",
+        "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+        "exit_code": 0,
+        "fallback_reason": "PROVIDER_UNAVAILABLE",
+        "functional_accuracy_percent": 100,
+        "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+        "kind": "fixed_binary",
+        "mock_provider": {
+          "delay_ms": 8350.0,
+          "ephemeral_port": 50978,
+          "explicit_mock": true,
+          "host": "127.0.0.1",
+          "path": "/v1/systemone",
+          "status": 200
+        },
+        "parse_error": null,
+        "pid": 68515,
+        "pid_scope": "direct clean-binary CLI process",
+        "proposed_candidate_id": "zero",
+        "provider_max_active_requests": 1,
+        "provider_selected_candidate_id": "zero",
+        "request_count": 1,
+        "request_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/07_provider_exceeds_eight_second_context_budget.requests.json",
+        "request_sha256": "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+        "request_to_response_attempt_ms": 8361.010958,
+        "selected_candidate_id": "zero",
+        "stderr_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/07_provider_exceeds_eight_second_context_budget-68515.stderr.txt",
+        "stderr_nonempty": false,
+        "stdout_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/07_provider_exceeds_eight_second_context_budget-68515.stdout.json",
+        "stdout_json": true,
+        "test_suite_sha256": "sha256:9236df1568d555cfaa56e0a1e9e990d7f8f112d2e9a5ea8570a74a6c8099fc85",
+        "wall_ms": 8022.046875
+      }
+    },
+    {
+      "compared_fields": {
+        "functional_accuracy_percent": [
+          100,
+          100
+        ],
+        "generated_digest": [
+          "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+          "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867"
+        ],
+        "request_sha256": [
+          "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+          "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5"
+        ],
+        "selected_candidate_id": [
+          "zero",
+          "zero"
+        ],
+        "test_suite_sha256": [
+          "sha256:9236df1568d555cfaa56e0a1e9e990d7f8f112d2e9a5ea8570a74a6c8099fc85",
+          "sha256:9236df1568d555cfaa56e0a1e9e990d7f8f112d2e9a5ea8570a74a6c8099fc85"
+        ]
+      },
+      "deterministic_fields_equal": true,
+      "mock_provider": {
+        "delay_ms": 30,
+        "ephemeral_port": 50981,
+        "explicit_mock": true,
+        "host": "127.0.0.1"
+      },
+      "name": "08_same_plan_repeatability",
+      "request_count": 2,
+      "request_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/08_same_plan_repeatability.requests.json",
+      "results": [
+        {
+          "decision_mode": "laya",
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "exit_code": 0,
+          "fallback_reason": null,
+          "functional_accuracy_percent": 100,
+          "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+          "kind": "fixed_binary",
+          "parse_error": null,
+          "pid": 68528,
+          "pid_scope": "direct clean-binary CLI process",
+          "proposed_candidate_id": "identity",
+          "provider_selected_candidate_id": "identity",
+          "request_sha256": "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+          "selected_candidate_id": "zero",
+          "stderr_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/08_same_plan_repeatability-first-68528.stderr.txt",
+          "stderr_nonempty": false,
+          "stdout_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/08_same_plan_repeatability-first-68528.stdout.json",
+          "stdout_json": true,
+          "test_suite_sha256": "sha256:9236df1568d555cfaa56e0a1e9e990d7f8f112d2e9a5ea8570a74a6c8099fc85",
+          "wall_ms": 60.38625
+        },
+        {
+          "decision_mode": "laya",
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "exit_code": 0,
+          "fallback_reason": null,
+          "functional_accuracy_percent": 100,
+          "generated_digest": "sha256:56de401a1ca592ad3112a63c114b5b016096f55afa2531434e89cf9089e54867",
+          "kind": "fixed_binary",
+          "parse_error": null,
+          "pid": 68529,
+          "pid_scope": "direct clean-binary CLI process",
+          "proposed_candidate_id": "identity",
+          "provider_selected_candidate_id": "identity",
+          "request_sha256": "sha256:d0748270fffb18f3f4d0d48f5e45c131f01953513c3c987dc04fa3fe93d31aa5",
+          "selected_candidate_id": "zero",
+          "stderr_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/08_same_plan_repeatability-second-68529.stderr.txt",
+          "stderr_nonempty": false,
+          "stdout_file": "/tmp/gooo-luna-scheduling-experiments-20260930/captures/08_same_plan_repeatability-second-68529.stdout.json",
+          "stdout_json": true,
+          "test_suite_sha256": "sha256:9236df1568d555cfaa56e0a1e9e990d7f8f112d2e9a5ea8570a74a6c8099fc85",
+          "wall_ms": 55.113583
+        }
+      ]
+    }
+  ],
+  "working_tree": {
+    "clean_worktree": true,
+    "head": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+    "path": "/Users/alice/meta-go/.worktrees/gooo-autonomous-governance-20260930",
+    "status_porcelain": ""
+  }
+}

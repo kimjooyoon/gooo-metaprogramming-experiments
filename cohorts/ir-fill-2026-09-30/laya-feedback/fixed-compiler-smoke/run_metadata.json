@@ -1,0 +1,34 @@
+{
+  "started_utc": "2026-09-30T02:56:51.580852+00:00",
+  "server_pid": 61962,
+  "endpoint": "http://127.0.0.1:8787/v1/systemone",
+  "health_before": {
+    "status": "ok",
+    "loaded": [
+      "english"
+    ],
+    "revisions": {
+      "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "device": "cpu",
+    "device_is_preference": false,
+    "checkpoint_devices": {
+      "english": "cpu"
+    },
+    "cpu_fallbacks": {
+      "english": {
+        "count": 0,
+        "last_reason": null
+      }
+    }
+  },
+  "binary": "/tmp/gooo-ir-fill-fixed-20260930",
+  "binary_sha256": "28c5906f4cb9581f8833cebabfad8d977c8d142aed5e5a3f8361d7da4340fa35",
+  "binary_go_version_m": "/tmp/gooo-ir-fill-fixed-20260930: go1.27.0\n\tpath\tgithub.com/kimjooyoon/meta-ontology-go/cmd/gooo\n\tmod\tgithub.com/kimjooyoon/meta-ontology-go\tv0.6.0-dev.0.20260930025447-ec4bf3e5f411\t\n\tbuild\t-buildmode=exe\n\tbuild\t-compiler=gc\n\tbuild\tCGO_ENABLED=1\n\tbuild\tCGO_CFLAGS=\n\tbuild\tCGO_CPPFLAGS=\n\tbuild\tCGO_CXXFLAGS=\n\tbuild\tCGO_LDFLAGS=\n\tbuild\tGOARCH=arm64\n\tbuild\tGOOS=darwin\n\tbuild\tGOARM64=v8.0\n\tbuild\tvcs=git\n\tbuild\tvcs.revision=ec4bf3e5f4119118b501c1b45862936eb46b95b7\n\tbuild\tvcs.time=2026-09-30T02:54:47Z\n\tbuild\tvcs.modified=false\n",
+  "plan": "/Users/alice/meta-go/.worktrees/gooo-autonomous-governance-20260930/examples/body-codegen/ir-fill-clamp-plan.json",
+  "plan_sha256_file": "915f135fae7b70644162dc535c3027fc524fdc9def4da8f097396f2792ec35a4",
+  "fixture": "/Users/alice/meta-go/.worktrees/gooo-autonomous-governance-20260930/examples/body-codegen/ir-fill-clamp.gooo.fixture",
+  "fixture_sha256_file": "631e94b369a29e046b50a90d96779ced97fc48439164a363ce9dbacab4bbcda6",
+  "run_type": "three direct body-codegen --fill-plan commands; service pre-warmed by earlier selection trials; no extra model warm-up request",
+  "timeout_seconds_per_call": 15
+}

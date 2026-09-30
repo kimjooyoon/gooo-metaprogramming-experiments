@@ -1,0 +1,49 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "Square values outside the inclusive range from negative three to three; return zero inside it.",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "square",
+      "expression": "input * input"
+    },
+    {
+      "id": "identity",
+      "expression": "input"
+    },
+    {
+      "id": "zero",
+      "expression": "0"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": -10,
+      "expected": 100
+    },
+    {
+      "input": -4,
+      "expected": 16
+    },
+    {
+      "input": -3,
+      "expected": 0
+    },
+    {
+      "input": 0,
+      "expected": 0
+    },
+    {
+      "input": 3,
+      "expected": 0
+    },
+    {
+      "input": 4,
+      "expected": 16
+    },
+    {
+      "input": 10,
+      "expected": 100
+    }
+  ]
+}

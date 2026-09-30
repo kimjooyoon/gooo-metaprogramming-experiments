@@ -1,0 +1,21 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "true_identifier_shadow",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "true_local",
+      "expression": "true"
+    },
+    {
+      "id": "input",
+      "expression": "input"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": 5,
+      "expected": 5
+    }
+  ]
+}

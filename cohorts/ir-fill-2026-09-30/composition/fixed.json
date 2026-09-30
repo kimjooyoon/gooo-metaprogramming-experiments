@@ -1,0 +1,1755 @@
+{
+  "schema": "gooo/body-codegen-experiment-summary/v1",
+  "run": "fixed",
+  "corpus_version": "original-12-plus-2-probes-plus-2-revised-boolean-plans",
+  "binary": {
+    "path": "/tmp/gooo-ir-fill-fixed-20260930",
+    "sha256": "28c5906f4cb9581f8833cebabfad8d977c8d142aed5e5a3f8361d7da4340fa35",
+    "size_bytes": 19022018,
+    "vcs_revision": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+    "build_metadata": "/tmp/gooo-ir-fill-fixed-20260930: go1.27.0\n\tpath\tgithub.com/kimjooyoon/meta-ontology-go/cmd/gooo\n\tmod\tgithub.com/kimjooyoon/meta-ontology-go\tv0.6.0-dev.0.20260930025447-ec4bf3e5f411\t\n\tbuild\t-buildmode=exe\n\tbuild\t-compiler=gc\n\tbuild\tCGO_ENABLED=1\n\tbuild\tCGO_CFLAGS=\n\tbuild\tCGO_CPPFLAGS=\n\tbuild\tCGO_CXXFLAGS=\n\tbuild\tCGO_LDFLAGS=\n\tbuild\tGOARCH=arm64\n\tbuild\tGOOS=darwin\n\tbuild\tGOARM64=v8.0\n\tbuild\tvcs=git\n\tbuild\tvcs.revision=ec4bf3e5f4119118b501c1b45862936eb46b95b7\n\tbuild\tvcs.time=2026-09-30T02:54:47Z\n\tbuild\tvcs.modified=false",
+    "host_go": "go version go1.26.5 darwin/arm64"
+  },
+  "source_checkout": {
+    "head": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+    "status_at_collection": ""
+  },
+  "laya_configured": false,
+  "counts": {
+    "original_cases": 12,
+    "emitted_core_functions": 11,
+    "seen_go_suites_passed": 11,
+    "seen_go_cases_passed": 55,
+    "heldout_go_suites_passed": 10,
+    "heldout_go_suites_intentional_failures": 1,
+    "heldout_go_cases_failed": 4,
+    "valid_core_case_rejections": 1,
+    "revised_boolean_plans_passed": 2,
+    "revised_boolean_go_cases_passed": 6,
+    "manual_go_semantic_repros_passed": 3,
+    "seen_go_cases_failed": 0,
+    "heldout_go_cases_total": 35,
+    "heldout_go_cases_passed": 31,
+    "go_individual_checks_passed": 86,
+    "go_individual_checks_failed": 4,
+    "original_go_individual_checks": 90
+  },
+  "original_12_cases": [
+    {
+      "name": "nested_clamp",
+      "fixture": "inputs/original/cases/nested_clamp.gooo.fixture",
+      "plan": "inputs/original/cases/nested_clamp-plan.json",
+      "fixture_sha256": "367d396abb316e09b5ee4d4f335cd90c90c763edc8039d4374b7081e231e271b",
+      "plan_file_sha256": "3052e7a899e363ccbf8ce6f597521fae278b93e65f542d6f7519ff5d80e8e131",
+      "command_exit_code": 0,
+      "report_decision": "PASS",
+      "error": null,
+      "body_fill_accuracy_percent": 100,
+      "selected_candidate_id": "zero",
+      "selected_expression": "0",
+      "candidate_scores": [
+        {
+          "id": "zero",
+          "expression": "0",
+          "typecheck_passed": true,
+          "test_cases_passed": 7,
+          "test_cases_total": 7,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "identity",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 7,
+          "accuracy_percent": 71.42857142857143
+        },
+        {
+          "id": "negate",
+          "expression": "-input",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 7,
+          "accuracy_percent": 71.42857142857143
+        }
+      ],
+      "declared_suite": {
+        "cases_total": 7,
+        "cases_passed": 7,
+        "cases_failed": 0,
+        "suite_sha256": "sha256:7a8c06d2c8ff4234f42551838b380c2f8aa2631188714edac16528cf6ffa4b53"
+      },
+      "compiler_receipt": {
+        "activity": "Exp01",
+        "activity_id": "bodycodegen://activity/exp01",
+        "decision": "PASS",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": "sha256:3af8bd2c592402de5e6034570b42996b91e2cce6f3ddccab7f4dddc43a2f7ea7",
+        "program_digest": "sha256:5bf13802da1b68b48391159341d0632f585a4c52a1e30369ca0c9fb10f7620d4",
+        "generated_digest": "sha256:8691c7cd99be81f7975ab912c6e5e53cc0e36fbe81f98dc062c7bace2a7440f2",
+        "replay_digest": "sha256:8691c7cd99be81f7975ab912c6e5e53cc0e36fbe81f98dc062c7bace2a7440f2",
+        "typecheck_passed": true,
+        "deterministic_replay": true,
+        "repository_writes": 0,
+        "body_fill": {
+          "ir_plan_sha256": "sha256:6888af0ea66cffd91c478d9eb33ffce8e803934f3c6ba90034af80438278972f",
+          "proposed_candidate_id": "zero",
+          "proposed_accuracy_percent": 100,
+          "selected_candidate_id": "zero",
+          "selected_expression": "0",
+          "best_candidate_id": "zero",
+          "best_candidate_accuracy_percent": 100,
+          "selection_regret_percentage_points": 0,
+          "selection_adjustment": "proposal_retained",
+          "candidate_scores": [
+            {
+              "id": "zero",
+              "expression": "0",
+              "typecheck_passed": true,
+              "test_cases_passed": 7,
+              "test_cases_total": 7,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "identity",
+              "expression": "input",
+              "typecheck_passed": true,
+              "test_cases_passed": 5,
+              "test_cases_total": 7,
+              "accuracy_percent": 71.42857142857143
+            },
+            {
+              "id": "negate",
+              "expression": "-input",
+              "typecheck_passed": true,
+              "test_cases_passed": 5,
+              "test_cases_total": 7,
+              "accuracy_percent": 71.42857142857143
+            }
+          ],
+          "test_suite_sha256": "sha256:7a8c06d2c8ff4234f42551838b380c2f8aa2631188714edac16528cf6ffa4b53",
+          "test_cases_passed": 7,
+          "test_cases_total": 7,
+          "functional_accuracy_percent": 100,
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+          "timing": {
+            "ir_plan_build_ms": 1.956292,
+            "laya_decision_ms": 0.035291,
+            "final_emission_ms": 0.146375,
+            "total_ms": 4.798292,
+            "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+            "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+          }
+        }
+      },
+      "generated_source": "package bodycodegen\n\n//gooo:generated:start id=\"bodycodegen://activity/exp01\" kind=\"activity\"\nfunc Exp01(input int64) int64 {\n\tvar out = input\n\tif input < 0 {\n\t\tif input < -100 {\n\t\t\tout = 0\n\t\t} else {\n\t\t\tout = 0\n\t\t}\n\t} else {\n\t\tout = input\n\t}\n\treturn out\n}\n\n//gooo:generated:end id=\"bodycodegen://activity/exp01\" kind=\"activity\"\n",
+      "cli_elapsed_ms": 50.112,
+      "independent_go_seen": {
+        "exit_code": 0,
+        "elapsed_ms": 1565.342,
+        "cases_total": 7,
+        "cases_passed": 7,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentSeen\n--- PASS: TestIndependentSeen (0.00s)\nPASS\nok  \tbodyfillcheck\t0.892s"
+      },
+      "independent_go_heldout": {
+        "exit_code": 0,
+        "elapsed_ms": 1480.129,
+        "cases_total": 4,
+        "cases_passed": 4,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentHeldout\n--- PASS: TestIndependentHeldout (0.00s)\nPASS\nok  \tbodyfillcheck\t1.067s"
+      },
+      "cli_observation": null
+    },
+    {
+      "name": "nested_else_if",
+      "fixture": "inputs/original/cases/nested_else_if.gooo.fixture",
+      "plan": "inputs/original/cases/nested_else_if-plan.json",
+      "fixture_sha256": "607d86bcbd4df43bb05fadeded0ec0df9f537a1b64c8af361b3568d47ab0c70f",
+      "plan_file_sha256": "2eab583dd821c7a87a04d07a6878d5f4f3903385e355c09b6dec22007ee803de",
+      "command_exit_code": 0,
+      "report_decision": "PASS",
+      "error": null,
+      "body_fill_accuracy_percent": 100,
+      "selected_candidate_id": "double",
+      "selected_expression": "input * 2",
+      "candidate_scores": [
+        {
+          "id": "double",
+          "expression": "input * 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 8,
+          "test_cases_total": 8,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "identity",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 8,
+          "accuracy_percent": 62.5
+        },
+        {
+          "id": "add_two",
+          "expression": "input + 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 8,
+          "accuracy_percent": 50
+        }
+      ],
+      "declared_suite": {
+        "cases_total": 8,
+        "cases_passed": 8,
+        "cases_failed": 0,
+        "suite_sha256": "sha256:122b3d8e7afcd79499043f5a2f3547d433daa4e4410330194461958bd5147521"
+      },
+      "compiler_receipt": {
+        "activity": "Exp02",
+        "activity_id": "bodycodegen://activity/exp02",
+        "decision": "PASS",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": "sha256:f37428a1690c7f650e6af8740997766428c7d671013e3e20d6afd2b8c8b49252",
+        "program_digest": "sha256:ab651f08f0f7566542c69bbbd30d461207e5e9aac142fc26a347ae2153298062",
+        "generated_digest": "sha256:fb522a80e34ac5b2ec3280b0a872a8ff4877303dfe6a78920adc6cdf2ce8c092",
+        "replay_digest": "sha256:fb522a80e34ac5b2ec3280b0a872a8ff4877303dfe6a78920adc6cdf2ce8c092",
+        "typecheck_passed": true,
+        "deterministic_replay": true,
+        "repository_writes": 0,
+        "body_fill": {
+          "ir_plan_sha256": "sha256:844f5d53e2a765e4fc21f8d0a6142cc18c5a29fcc22e668e8c76746ca98bbe5d",
+          "proposed_candidate_id": "double",
+          "proposed_accuracy_percent": 100,
+          "selected_candidate_id": "double",
+          "selected_expression": "input * 2",
+          "best_candidate_id": "double",
+          "best_candidate_accuracy_percent": 100,
+          "selection_regret_percentage_points": 0,
+          "selection_adjustment": "proposal_retained",
+          "candidate_scores": [
+            {
+              "id": "double",
+              "expression": "input * 2",
+              "typecheck_passed": true,
+              "test_cases_passed": 8,
+              "test_cases_total": 8,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "identity",
+              "expression": "input",
+              "typecheck_passed": true,
+              "test_cases_passed": 5,
+              "test_cases_total": 8,
+              "accuracy_percent": 62.5
+            },
+            {
+              "id": "add_two",
+              "expression": "input + 2",
+              "typecheck_passed": true,
+              "test_cases_passed": 4,
+              "test_cases_total": 8,
+              "accuracy_percent": 50
+            }
+          ],
+          "test_suite_sha256": "sha256:122b3d8e7afcd79499043f5a2f3547d433daa4e4410330194461958bd5147521",
+          "test_cases_passed": 8,
+          "test_cases_total": 8,
+          "functional_accuracy_percent": 100,
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+          "timing": {
+            "ir_plan_build_ms": 0.296125,
+            "laya_decision_ms": 0.022209,
+            "final_emission_ms": 0.1355,
+            "total_ms": 0.569458,
+            "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+            "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+          }
+        }
+      },
+      "generated_source": "package bodycodegen\n\n//gooo:generated:start id=\"bodycodegen://activity/exp02\" kind=\"activity\"\nfunc Exp02(input int64) int64 {\n\tvar out = input\n\tif input < 0 {\n\t\tout = -input\n\t} else if input < 10 {\n\t\tout = (input * 2)\n\t} else {\n\t\tout = input\n\t}\n\treturn out\n}\n\n//gooo:generated:end id=\"bodycodegen://activity/exp02\" kind=\"activity\"\n",
+      "cli_elapsed_ms": 6.206,
+      "independent_go_seen": {
+        "exit_code": 0,
+        "elapsed_ms": 3362.79,
+        "cases_total": 8,
+        "cases_passed": 8,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentSeen\n--- PASS: TestIndependentSeen (0.00s)\nPASS\nok  \tbodyfillcheck\t3.062s"
+      },
+      "independent_go_heldout": {
+        "exit_code": 0,
+        "elapsed_ms": 783.199,
+        "cases_total": 4,
+        "cases_passed": 4,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentHeldout\n--- PASS: TestIndependentHeldout (0.00s)\nPASS\nok  \tbodyfillcheck\t0.626s"
+      },
+      "cli_observation": null
+    },
+    {
+      "name": "sibling_locals_assignment",
+      "fixture": "inputs/original/cases/sibling_locals_assignment.gooo.fixture",
+      "plan": "inputs/original/cases/sibling_locals_assignment-plan.json",
+      "fixture_sha256": "425392a1fcc1a51462dcd9907ab480d61da3078e6e1a951f408e2a7eaa548b24",
+      "plan_file_sha256": "bce912702f0ac1edad9d009f93345a3e3a5dd2db7e193f547d4e89bbccff0d66",
+      "command_exit_code": 0,
+      "report_decision": "PASS",
+      "error": null,
+      "body_fill_accuracy_percent": 100,
+      "selected_candidate_id": "plus_three",
+      "selected_expression": "input + 3",
+      "candidate_scores": [
+        {
+          "id": "plus_three",
+          "expression": "input + 3",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 5,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "identity",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 5,
+          "accuracy_percent": 40
+        },
+        {
+          "id": "times_two",
+          "expression": "input * 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 5,
+          "accuracy_percent": 40
+        }
+      ],
+      "declared_suite": {
+        "cases_total": 5,
+        "cases_passed": 5,
+        "cases_failed": 0,
+        "suite_sha256": "sha256:d1d965c9f46a759528f65cdeaf4268a1b709d9e91f6d7ec7b59e37f011b27b48"
+      },
+      "compiler_receipt": {
+        "activity": "Exp03",
+        "activity_id": "bodycodegen://activity/exp03",
+        "decision": "PASS",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": "sha256:24c92682cd946b2888954980600d512496d9ee639fdf2ff5ea7d00f1c95cf1dd",
+        "program_digest": "sha256:4c2217d7dae62fda7fd29cb6304e230085056bc54828a5034cda58e790f63c78",
+        "generated_digest": "sha256:1a337647b690ec88bbfb0117beaa561ae7546653d0e703bfec7c2729ff189e17",
+        "replay_digest": "sha256:1a337647b690ec88bbfb0117beaa561ae7546653d0e703bfec7c2729ff189e17",
+        "typecheck_passed": true,
+        "deterministic_replay": true,
+        "repository_writes": 0,
+        "body_fill": {
+          "ir_plan_sha256": "sha256:3d5607c2a81c4c5d3775219be613e9699f6613bdaa2d08b225f3fac9843ac390",
+          "proposed_candidate_id": "plus_three",
+          "proposed_accuracy_percent": 100,
+          "selected_candidate_id": "plus_three",
+          "selected_expression": "input + 3",
+          "best_candidate_id": "plus_three",
+          "best_candidate_accuracy_percent": 100,
+          "selection_regret_percentage_points": 0,
+          "selection_adjustment": "proposal_retained",
+          "candidate_scores": [
+            {
+              "id": "plus_three",
+              "expression": "input + 3",
+              "typecheck_passed": true,
+              "test_cases_passed": 5,
+              "test_cases_total": 5,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "identity",
+              "expression": "input",
+              "typecheck_passed": true,
+              "test_cases_passed": 2,
+              "test_cases_total": 5,
+              "accuracy_percent": 40
+            },
+            {
+              "id": "times_two",
+              "expression": "input * 2",
+              "typecheck_passed": true,
+              "test_cases_passed": 2,
+              "test_cases_total": 5,
+              "accuracy_percent": 40
+            }
+          ],
+          "test_suite_sha256": "sha256:d1d965c9f46a759528f65cdeaf4268a1b709d9e91f6d7ec7b59e37f011b27b48",
+          "test_cases_passed": 5,
+          "test_cases_total": 5,
+          "functional_accuracy_percent": 100,
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+          "timing": {
+            "ir_plan_build_ms": 0.311667,
+            "laya_decision_ms": 0.019708,
+            "final_emission_ms": 0.149708,
+            "total_ms": 0.596875,
+            "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+            "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+          }
+        }
+      },
+      "generated_source": "package bodycodegen\n\n//gooo:generated:start id=\"bodycodegen://activity/exp03\" kind=\"activity\"\nfunc Exp03(input int64) int64 {\n\tvar out = input\n\tif input < 0 {\n\t\tvar branchValue = -input\n\t\tout = branchValue\n\t} else {\n\t\tvar adjusted = input\n\t\tadjusted = (input + 3)\n\t\tout = adjusted\n\t}\n\treturn out\n}\n\n//gooo:generated:end id=\"bodycodegen://activity/exp03\" kind=\"activity\"\n",
+      "cli_elapsed_ms": 6.229,
+      "independent_go_seen": {
+        "exit_code": 0,
+        "elapsed_ms": 2856.815,
+        "cases_total": 5,
+        "cases_passed": 5,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentSeen\n--- PASS: TestIndependentSeen (0.00s)\nPASS\nok  \tbodyfillcheck\t2.621s"
+      },
+      "independent_go_heldout": {
+        "exit_code": 0,
+        "elapsed_ms": 1660.836,
+        "cases_total": 3,
+        "cases_passed": 3,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentHeldout\n--- PASS: TestIndependentHeldout (0.00s)\nPASS\nok  \tbodyfillcheck\t1.379s"
+      },
+      "cli_observation": null
+    },
+    {
+      "name": "composed_locals",
+      "fixture": "inputs/original/cases/composed_locals.gooo.fixture",
+      "plan": "inputs/original/cases/composed_locals-plan.json",
+      "fixture_sha256": "cb8204c67719cc0c5f1030462862463c2eb20c76c46aa6743cc342279c856bd1",
+      "plan_file_sha256": "4f889baf7e180d7f643eea44c22744e508282a765f04583740c5bd97db53a330",
+      "command_exit_code": 0,
+      "report_decision": "PASS",
+      "error": null,
+      "body_fill_accuracy_percent": 100,
+      "selected_candidate_id": "scale_out",
+      "selected_expression": "out * 3",
+      "candidate_scores": [
+        {
+          "id": "scale_out",
+          "expression": "out * 3",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 5,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "expanded",
+          "expression": "input * input * 3 + 6",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 5,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "wrong_order",
+          "expression": "input * input + 6",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 5,
+          "accuracy_percent": 20
+        }
+      ],
+      "declared_suite": {
+        "cases_total": 5,
+        "cases_passed": 5,
+        "cases_failed": 0,
+        "suite_sha256": "sha256:4df476fc6d535d28189cb17da62c59164670d8345a6b383f6a4573b358a61459"
+      },
+      "compiler_receipt": {
+        "activity": "Exp04",
+        "activity_id": "bodycodegen://activity/exp04",
+        "decision": "PASS",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": "sha256:6193b0473d21c17c4aec316f3f84d24b605d57982fcf1e5fe48c66608833b35d",
+        "program_digest": "sha256:c0ef0de018029d4643b9d62bdcf3e9b060559144cd8cb85e2c6149ea8e39212d",
+        "generated_digest": "sha256:e1af6b90a4af85989edf124c60c3e55cac9eeeb7a28ecf97b94bbefbcd445cb6",
+        "replay_digest": "sha256:e1af6b90a4af85989edf124c60c3e55cac9eeeb7a28ecf97b94bbefbcd445cb6",
+        "typecheck_passed": true,
+        "deterministic_replay": true,
+        "repository_writes": 0,
+        "body_fill": {
+          "ir_plan_sha256": "sha256:5c4b379e119e854b395b08946a0eeea8b09662c3d8e8a474a130e4dc3b3291ea",
+          "proposed_candidate_id": "scale_out",
+          "proposed_accuracy_percent": 100,
+          "selected_candidate_id": "scale_out",
+          "selected_expression": "out * 3",
+          "best_candidate_id": "scale_out",
+          "best_candidate_accuracy_percent": 100,
+          "selection_regret_percentage_points": 0,
+          "selection_adjustment": "proposal_retained",
+          "candidate_scores": [
+            {
+              "id": "scale_out",
+              "expression": "out * 3",
+              "typecheck_passed": true,
+              "test_cases_passed": 5,
+              "test_cases_total": 5,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "expanded",
+              "expression": "input * input * 3 + 6",
+              "typecheck_passed": true,
+              "test_cases_passed": 5,
+              "test_cases_total": 5,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "wrong_order",
+              "expression": "input * input + 6",
+              "typecheck_passed": true,
+              "test_cases_passed": 1,
+              "test_cases_total": 5,
+              "accuracy_percent": 20
+            }
+          ],
+          "test_suite_sha256": "sha256:4df476fc6d535d28189cb17da62c59164670d8345a6b383f6a4573b358a61459",
+          "test_cases_passed": 5,
+          "test_cases_total": 5,
+          "functional_accuracy_percent": 100,
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+          "timing": {
+            "ir_plan_build_ms": 0.3505,
+            "laya_decision_ms": 0.03275,
+            "final_emission_ms": 0.205083,
+            "total_ms": 0.771583,
+            "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+            "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+          }
+        }
+      },
+      "generated_source": "package bodycodegen\n\n//gooo:generated:start id=\"bodycodegen://activity/exp04\" kind=\"activity\"\nfunc Exp04(input int64) int64 {\n\tvar square = input * input\n\tvar offset = square + 2\n\tvar out = offset\n\tout = (out * 3)\n\treturn out\n}\n\n//gooo:generated:end id=\"bodycodegen://activity/exp04\" kind=\"activity\"\n",
+      "cli_elapsed_ms": 14.55,
+      "independent_go_seen": {
+        "exit_code": 0,
+        "elapsed_ms": 511.195,
+        "cases_total": 5,
+        "cases_passed": 5,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentSeen\n--- PASS: TestIndependentSeen (0.00s)\nPASS\nok  \tbodyfillcheck\t0.347s"
+      },
+      "independent_go_heldout": {
+        "exit_code": 0,
+        "elapsed_ms": 498.55,
+        "cases_total": 3,
+        "cases_passed": 3,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentHeldout\n--- PASS: TestIndependentHeldout (0.00s)\nPASS\nok  \tbodyfillcheck\t0.357s"
+      },
+      "cli_observation": null
+    },
+    {
+      "name": "short_circuit_and",
+      "fixture": "inputs/original/cases/short_circuit_and.gooo.fixture",
+      "plan": "inputs/original/cases/short_circuit_and-plan.json",
+      "fixture_sha256": "de4b32c3dcbe010707a4e145802b2255f78ffa4766295de86e78b3552bc544e6",
+      "plan_file_sha256": "3828bd4a035275ed26bdbf0be981d15910985d3de7ba9613887b1b060c7bc9a6",
+      "command_exit_code": 0,
+      "report_decision": "PASS",
+      "error": null,
+      "body_fill_accuracy_percent": 100,
+      "selected_candidate_id": "double",
+      "selected_expression": "input * 2",
+      "candidate_scores": [
+        {
+          "id": "double",
+          "expression": "input * 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 6,
+          "test_cases_total": 6,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "identity",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 6,
+          "accuracy_percent": 33.333333333333336
+        },
+        {
+          "id": "seven",
+          "expression": "7",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 6,
+          "accuracy_percent": 33.333333333333336
+        }
+      ],
+      "declared_suite": {
+        "cases_total": 6,
+        "cases_passed": 6,
+        "cases_failed": 0,
+        "suite_sha256": "sha256:2412e433d73f2f24f2a68f05e709d1fc2f56cfbcb492713f1e72608e9bf049a8"
+      },
+      "compiler_receipt": {
+        "activity": "Exp05",
+        "activity_id": "bodycodegen://activity/exp05",
+        "decision": "PASS",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": "sha256:e8f5676616cf571bcda61c119539a46324f0515bd95e7b190dd35ed3d03f00a3",
+        "program_digest": "sha256:6eb0a354b8ce0ec357ffce55c270e4f0a3dd0083818aaec5d1defa87c90a791c",
+        "generated_digest": "sha256:4842a6e0843a60cd1807bb67a5d47607b493354e532278f64bcdb7403d8a2be6",
+        "replay_digest": "sha256:4842a6e0843a60cd1807bb67a5d47607b493354e532278f64bcdb7403d8a2be6",
+        "typecheck_passed": true,
+        "deterministic_replay": true,
+        "repository_writes": 0,
+        "body_fill": {
+          "ir_plan_sha256": "sha256:6f8709b3e0261d24d47ef30ef5c25aa0bbdcab36895777b678b01b261aa69b9d",
+          "proposed_candidate_id": "double",
+          "proposed_accuracy_percent": 100,
+          "selected_candidate_id": "double",
+          "selected_expression": "input * 2",
+          "best_candidate_id": "double",
+          "best_candidate_accuracy_percent": 100,
+          "selection_regret_percentage_points": 0,
+          "selection_adjustment": "proposal_retained",
+          "candidate_scores": [
+            {
+              "id": "double",
+              "expression": "input * 2",
+              "typecheck_passed": true,
+              "test_cases_passed": 6,
+              "test_cases_total": 6,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "identity",
+              "expression": "input",
+              "typecheck_passed": true,
+              "test_cases_passed": 2,
+              "test_cases_total": 6,
+              "accuracy_percent": 33.333333333333336
+            },
+            {
+              "id": "seven",
+              "expression": "7",
+              "typecheck_passed": true,
+              "test_cases_passed": 2,
+              "test_cases_total": 6,
+              "accuracy_percent": 33.333333333333336
+            }
+          ],
+          "test_suite_sha256": "sha256:2412e433d73f2f24f2a68f05e709d1fc2f56cfbcb492713f1e72608e9bf049a8",
+          "test_cases_passed": 6,
+          "test_cases_total": 6,
+          "functional_accuracy_percent": 100,
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+          "timing": {
+            "ir_plan_build_ms": 0.469666,
+            "laya_decision_ms": 0.037709,
+            "final_emission_ms": 0.222375,
+            "total_ms": 0.9185,
+            "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+            "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+          }
+        }
+      },
+      "generated_source": "package bodycodegen\n\n//gooo:generated:start id=\"bodycodegen://activity/exp05\" kind=\"activity\"\nfunc Exp05(input int64) int64 {\n\tvar out = input\n\tif input != 0 && input < 5 {\n\t\tout = (input * 2)\n\t} else {\n\t\tout = 7\n\t}\n\treturn out\n}\n\n//gooo:generated:end id=\"bodycodegen://activity/exp05\" kind=\"activity\"\n",
+      "cli_elapsed_ms": 10.174,
+      "independent_go_seen": {
+        "exit_code": 0,
+        "elapsed_ms": 494.257,
+        "cases_total": 6,
+        "cases_passed": 6,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentSeen\n--- PASS: TestIndependentSeen (0.00s)\nPASS\nok  \tbodyfillcheck\t0.346s"
+      },
+      "independent_go_heldout": {
+        "exit_code": 0,
+        "elapsed_ms": 500.535,
+        "cases_total": 3,
+        "cases_passed": 3,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentHeldout\n--- PASS: TestIndependentHeldout (0.00s)\nPASS\nok  \tbodyfillcheck\t0.348s"
+      },
+      "cli_observation": null
+    },
+    {
+      "name": "short_circuit_or",
+      "fixture": "inputs/original/cases/short_circuit_or.gooo.fixture",
+      "plan": "inputs/original/cases/short_circuit_or-plan.json",
+      "fixture_sha256": "e3f70623bc6e57b37c071812d343e0625679cb025ab8427c06bff4058a76adb0",
+      "plan_file_sha256": "b4d3875f51d65400bdb46716fb6975cb96934a9e239376cf59ed2cf258c8301c",
+      "command_exit_code": 0,
+      "report_decision": "PASS",
+      "error": null,
+      "body_fill_accuracy_percent": 100,
+      "selected_candidate_id": "square",
+      "selected_expression": "input * input",
+      "candidate_scores": [
+        {
+          "id": "square",
+          "expression": "input * input",
+          "typecheck_passed": true,
+          "test_cases_passed": 7,
+          "test_cases_total": 7,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "identity",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 3,
+          "test_cases_total": 7,
+          "accuracy_percent": 42.857142857142854
+        },
+        {
+          "id": "zero",
+          "expression": "0",
+          "typecheck_passed": true,
+          "test_cases_passed": 3,
+          "test_cases_total": 7,
+          "accuracy_percent": 42.857142857142854
+        }
+      ],
+      "declared_suite": {
+        "cases_total": 7,
+        "cases_passed": 7,
+        "cases_failed": 0,
+        "suite_sha256": "sha256:bda927f487eb92ae1cc3d50979bf8bde9188b8bf9736f146bd88d0ee287d9244"
+      },
+      "compiler_receipt": {
+        "activity": "Exp06",
+        "activity_id": "bodycodegen://activity/exp06",
+        "decision": "PASS",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": "sha256:a499503d2092aef6c3a1878df5e9270785636c0d92e20f7e96fa20ce2b7a8a0e",
+        "program_digest": "sha256:8c487bee65649366282547a63e5a0fb8c69025262ccea8a577ea287165e14bd1",
+        "generated_digest": "sha256:4ef5b85cbe458be8ebf2cbd67b4362efc9efd922b71b26ee574c69156a757d09",
+        "replay_digest": "sha256:4ef5b85cbe458be8ebf2cbd67b4362efc9efd922b71b26ee574c69156a757d09",
+        "typecheck_passed": true,
+        "deterministic_replay": true,
+        "repository_writes": 0,
+        "body_fill": {
+          "ir_plan_sha256": "sha256:b47dd33c228245d4cfde79fc50093dfd60426073f3f9f49f7ce2b5c69b814f2a",
+          "proposed_candidate_id": "square",
+          "proposed_accuracy_percent": 100,
+          "selected_candidate_id": "square",
+          "selected_expression": "input * input",
+          "best_candidate_id": "square",
+          "best_candidate_accuracy_percent": 100,
+          "selection_regret_percentage_points": 0,
+          "selection_adjustment": "proposal_retained",
+          "candidate_scores": [
+            {
+              "id": "square",
+              "expression": "input * input",
+              "typecheck_passed": true,
+              "test_cases_passed": 7,
+              "test_cases_total": 7,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "identity",
+              "expression": "input",
+              "typecheck_passed": true,
+              "test_cases_passed": 3,
+              "test_cases_total": 7,
+              "accuracy_percent": 42.857142857142854
+            },
+            {
+              "id": "zero",
+              "expression": "0",
+              "typecheck_passed": true,
+              "test_cases_passed": 3,
+              "test_cases_total": 7,
+              "accuracy_percent": 42.857142857142854
+            }
+          ],
+          "test_suite_sha256": "sha256:bda927f487eb92ae1cc3d50979bf8bde9188b8bf9736f146bd88d0ee287d9244",
+          "test_cases_passed": 7,
+          "test_cases_total": 7,
+          "functional_accuracy_percent": 100,
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+          "timing": {
+            "ir_plan_build_ms": 0.272292,
+            "laya_decision_ms": 0.024167,
+            "final_emission_ms": 0.1225,
+            "total_ms": 0.527333,
+            "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+            "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+          }
+        }
+      },
+      "generated_source": "package bodycodegen\n\n//gooo:generated:start id=\"bodycodegen://activity/exp06\" kind=\"activity\"\nfunc Exp06(input int64) int64 {\n\tvar out = input\n\tif input < -3 || input > 3 {\n\t\tout = (input * input)\n\t} else {\n\t\tout = 0\n\t}\n\treturn out\n}\n\n//gooo:generated:end id=\"bodycodegen://activity/exp06\" kind=\"activity\"\n",
+      "cli_elapsed_ms": 6.209,
+      "independent_go_seen": {
+        "exit_code": 0,
+        "elapsed_ms": 485.767,
+        "cases_total": 7,
+        "cases_passed": 7,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentSeen\n--- PASS: TestIndependentSeen (0.00s)\nPASS\nok  \tbodyfillcheck\t0.345s"
+      },
+      "independent_go_heldout": {
+        "exit_code": 0,
+        "elapsed_ms": 509.025,
+        "cases_total": 3,
+        "cases_passed": 3,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentHeldout\n--- PASS: TestIndependentHeldout (0.00s)\nPASS\nok  \tbodyfillcheck\t0.354s"
+      },
+      "cli_observation": null
+    },
+    {
+      "name": "constant_fold",
+      "fixture": "inputs/original/cases/constant_fold.gooo.fixture",
+      "plan": "inputs/original/cases/constant_fold-plan.json",
+      "fixture_sha256": "a53a4f0eb6b26932b3cb5f20420c8a9336bae38e316d3defcbd16f95636aee40",
+      "plan_file_sha256": "844498fdcf7c718a0844b711b9f13c5be3e0775e8ec06dba472de7446e9600d0",
+      "command_exit_code": 0,
+      "report_decision": "PASS",
+      "error": null,
+      "body_fill_accuracy_percent": 100,
+      "selected_candidate_id": "folded_product",
+      "selected_expression": "2 * 3",
+      "candidate_scores": [
+        {
+          "id": "folded_product",
+          "expression": "2 * 3",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 5,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "literal_six",
+          "expression": "6",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 5,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "wrong",
+          "expression": "input + 3",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 5,
+          "accuracy_percent": 80
+        }
+      ],
+      "declared_suite": {
+        "cases_total": 5,
+        "cases_passed": 5,
+        "cases_failed": 0,
+        "suite_sha256": "sha256:fc1a32c0124d9a3920bd3af21870afc0b675b9542cdf3e05ac7a7b4383f410c4"
+      },
+      "compiler_receipt": {
+        "activity": "Exp07",
+        "activity_id": "bodycodegen://activity/exp07",
+        "decision": "PASS",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": "sha256:2b6fe5e892e7548ec2c234f282da1736833866be50956897cc2e8799ce173111",
+        "program_digest": "sha256:e436bda1c176a8c994106d5afef445a0fafabfdf26808c64e7b660baf17e2a12",
+        "generated_digest": "sha256:38b9e2b7d21af1bddbf1aa710643a755e49b00917a7a675ef1a36c5c99e3418e",
+        "replay_digest": "sha256:38b9e2b7d21af1bddbf1aa710643a755e49b00917a7a675ef1a36c5c99e3418e",
+        "typecheck_passed": true,
+        "deterministic_replay": true,
+        "repository_writes": 0,
+        "body_fill": {
+          "ir_plan_sha256": "sha256:abcfd4bedb2101bf12f6825f37f3023d6aa769f459b76c0e574c330788a70ee7",
+          "proposed_candidate_id": "folded_product",
+          "proposed_accuracy_percent": 100,
+          "selected_candidate_id": "folded_product",
+          "selected_expression": "2 * 3",
+          "best_candidate_id": "folded_product",
+          "best_candidate_accuracy_percent": 100,
+          "selection_regret_percentage_points": 0,
+          "selection_adjustment": "proposal_retained",
+          "candidate_scores": [
+            {
+              "id": "folded_product",
+              "expression": "2 * 3",
+              "typecheck_passed": true,
+              "test_cases_passed": 5,
+              "test_cases_total": 5,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "literal_six",
+              "expression": "6",
+              "typecheck_passed": true,
+              "test_cases_passed": 5,
+              "test_cases_total": 5,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "wrong",
+              "expression": "input + 3",
+              "typecheck_passed": true,
+              "test_cases_passed": 4,
+              "test_cases_total": 5,
+              "accuracy_percent": 80
+            }
+          ],
+          "test_suite_sha256": "sha256:fc1a32c0124d9a3920bd3af21870afc0b675b9542cdf3e05ac7a7b4383f410c4",
+          "test_cases_passed": 5,
+          "test_cases_total": 5,
+          "functional_accuracy_percent": 100,
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+          "timing": {
+            "ir_plan_build_ms": 0.456208,
+            "laya_decision_ms": 0.039084,
+            "final_emission_ms": 0.269084,
+            "total_ms": 0.922167,
+            "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+            "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+          }
+        }
+      },
+      "generated_source": "package bodycodegen\n\n//gooo:generated:start id=\"bodycodegen://activity/exp07\" kind=\"activity\"\nfunc Exp07(input int64) int64 {\n\tvar out = input + 1\n\tif input == 2 {\n\t\tout = (2 * 3)\n\t} else {\n\t\tout = input + 1\n\t}\n\treturn out\n}\n\n//gooo:generated:end id=\"bodycodegen://activity/exp07\" kind=\"activity\"\n",
+      "cli_elapsed_ms": 6.42,
+      "independent_go_seen": {
+        "exit_code": 0,
+        "elapsed_ms": 499.137,
+        "cases_total": 5,
+        "cases_passed": 5,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentSeen\n--- PASS: TestIndependentSeen (0.00s)\nPASS\nok  \tbodyfillcheck\t0.354s"
+      },
+      "independent_go_heldout": {
+        "exit_code": 0,
+        "elapsed_ms": 487.79,
+        "cases_total": 3,
+        "cases_passed": 3,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentHeldout\n--- PASS: TestIndependentHeldout (0.00s)\nPASS\nok  \tbodyfillcheck\t0.346s"
+      },
+      "cli_observation": null
+    },
+    {
+      "name": "guarded_int64_increment",
+      "fixture": "inputs/original/cases/guarded_int64_increment.gooo.fixture",
+      "plan": "inputs/original/cases/guarded_int64_increment-plan.json",
+      "fixture_sha256": "c04b274427cae4be7e034520b14739425fe8c2509aa6ca5dfc53224a13a2f5bc",
+      "plan_file_sha256": "80c62bcd2b0a88de56315d5800da2a009abe50097fab6826332960e791b9ef0c",
+      "command_exit_code": 0,
+      "report_decision": "PASS",
+      "error": null,
+      "body_fill_accuracy_percent": 100,
+      "selected_candidate_id": "increment",
+      "selected_expression": "input + 1",
+      "candidate_scores": [
+        {
+          "id": "increment",
+          "expression": "input + 1",
+          "typecheck_passed": true,
+          "test_cases_passed": 6,
+          "test_cases_total": 6,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "identity",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 6,
+          "accuracy_percent": 16.666666666666668
+        },
+        {
+          "id": "skip_two",
+          "expression": "input + 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 6,
+          "accuracy_percent": 16.666666666666668
+        }
+      ],
+      "declared_suite": {
+        "cases_total": 6,
+        "cases_passed": 6,
+        "cases_failed": 0,
+        "suite_sha256": "sha256:d549620f073c2cad0909fb2e3529476331ee8cfe46ce6af3dc017162b737cc52"
+      },
+      "compiler_receipt": {
+        "activity": "Exp08",
+        "activity_id": "bodycodegen://activity/exp08",
+        "decision": "PASS",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": "sha256:14d21135dbdcd6d6899797b9b4857c6dae1481b97b964d976daec64455ed38a7",
+        "program_digest": "sha256:05c3469856c64f06d948a01e75dbcae4371fb2b89ea43259d77e1660ab5bad95",
+        "generated_digest": "sha256:eb35ff7bd6feb49a79a5999fb7ee3ca766c763104d0436fb91d9a9bb1936d833",
+        "replay_digest": "sha256:eb35ff7bd6feb49a79a5999fb7ee3ca766c763104d0436fb91d9a9bb1936d833",
+        "typecheck_passed": true,
+        "deterministic_replay": true,
+        "repository_writes": 0,
+        "body_fill": {
+          "ir_plan_sha256": "sha256:1f25b134c9355a2d6173b7d01bf081c0c465b354c6c0a40f452152d747fe55f7",
+          "proposed_candidate_id": "increment",
+          "proposed_accuracy_percent": 100,
+          "selected_candidate_id": "increment",
+          "selected_expression": "input + 1",
+          "best_candidate_id": "increment",
+          "best_candidate_accuracy_percent": 100,
+          "selection_regret_percentage_points": 0,
+          "selection_adjustment": "proposal_retained",
+          "candidate_scores": [
+            {
+              "id": "increment",
+              "expression": "input + 1",
+              "typecheck_passed": true,
+              "test_cases_passed": 6,
+              "test_cases_total": 6,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "identity",
+              "expression": "input",
+              "typecheck_passed": true,
+              "test_cases_passed": 1,
+              "test_cases_total": 6,
+              "accuracy_percent": 16.666666666666668
+            },
+            {
+              "id": "skip_two",
+              "expression": "input + 2",
+              "typecheck_passed": true,
+              "test_cases_passed": 1,
+              "test_cases_total": 6,
+              "accuracy_percent": 16.666666666666668
+            }
+          ],
+          "test_suite_sha256": "sha256:d549620f073c2cad0909fb2e3529476331ee8cfe46ce6af3dc017162b737cc52",
+          "test_cases_passed": 6,
+          "test_cases_total": 6,
+          "functional_accuracy_percent": 100,
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+          "timing": {
+            "ir_plan_build_ms": 0.471708,
+            "laya_decision_ms": 0.036416,
+            "final_emission_ms": 0.224042,
+            "total_ms": 0.924,
+            "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+            "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+          }
+        }
+      },
+      "generated_source": "package bodycodegen\n\n//gooo:generated:start id=\"bodycodegen://activity/exp08\" kind=\"activity\"\nfunc Exp08(input int64) int64 {\n\tvar out = input\n\tif input == 9223372036854775807 {\n\t\tout = input\n\t} else {\n\t\tout = (input + 1)\n\t}\n\treturn out\n}\n\n//gooo:generated:end id=\"bodycodegen://activity/exp08\" kind=\"activity\"\n",
+      "cli_elapsed_ms": 9.885,
+      "independent_go_seen": {
+        "exit_code": 0,
+        "elapsed_ms": 491.963,
+        "cases_total": 6,
+        "cases_passed": 6,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentSeen\n--- PASS: TestIndependentSeen (0.00s)\nPASS\nok  \tbodyfillcheck\t0.343s"
+      },
+      "independent_go_heldout": {
+        "exit_code": 0,
+        "elapsed_ms": 491.166,
+        "cases_total": 3,
+        "cases_passed": 3,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentHeldout\n--- PASS: TestIndependentHeldout (0.00s)\nPASS\nok  \tbodyfillcheck\t0.346s"
+      },
+      "cli_observation": null
+    },
+    {
+      "name": "seen_heldout_mismatch",
+      "fixture": "inputs/original/cases/seen_heldout_mismatch.gooo.fixture",
+      "plan": "inputs/original/cases/seen_heldout_mismatch-plan.json",
+      "fixture_sha256": "6abbcae6d3d34609d5606bd090df0de7dd06d1e1b86ae39d87129ca204d5e0b3",
+      "plan_file_sha256": "d4004d6c98326d859fc72ad8d756f9bd14bfcc22a52551a888a8ea1f134e0ae0",
+      "command_exit_code": 0,
+      "report_decision": "PASS",
+      "error": null,
+      "body_fill_accuracy_percent": 100,
+      "selected_candidate_id": "identity",
+      "selected_expression": "input",
+      "candidate_scores": [
+        {
+          "id": "identity",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 2,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "square",
+          "expression": "input * input",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 2,
+          "accuracy_percent": 100
+        }
+      ],
+      "declared_suite": {
+        "cases_total": 2,
+        "cases_passed": 2,
+        "cases_failed": 0,
+        "suite_sha256": "sha256:97cefaca8d3e4351636a5bf9e5b07629ebc4fa322bd07ab57e7ca9c549bb7d5c"
+      },
+      "compiler_receipt": {
+        "activity": "Exp09",
+        "activity_id": "bodycodegen://activity/exp09",
+        "decision": "PASS",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": "sha256:6f3ec8d52efb9293d7565e69a1077eb79c8bb2a4c3506834a8a1d20d57285d8e",
+        "program_digest": "sha256:22aff6fc496c247f085d5f6b2beaae9254d21f6c579f107f7d58d6402c24d6b1",
+        "generated_digest": "sha256:c9e3b59a34ea8dd2ad2fa29e52489e4fe091ad3656ac44309fea7cc539b180a4",
+        "replay_digest": "sha256:c9e3b59a34ea8dd2ad2fa29e52489e4fe091ad3656ac44309fea7cc539b180a4",
+        "typecheck_passed": true,
+        "deterministic_replay": true,
+        "repository_writes": 0,
+        "body_fill": {
+          "ir_plan_sha256": "sha256:32c82a0700d82bbe9b6e9d238e3974d2453d33e88d50e383060d5700250e1ee9",
+          "proposed_candidate_id": "identity",
+          "proposed_accuracy_percent": 100,
+          "selected_candidate_id": "identity",
+          "selected_expression": "input",
+          "best_candidate_id": "identity",
+          "best_candidate_accuracy_percent": 100,
+          "selection_regret_percentage_points": 0,
+          "selection_adjustment": "proposal_retained",
+          "candidate_scores": [
+            {
+              "id": "identity",
+              "expression": "input",
+              "typecheck_passed": true,
+              "test_cases_passed": 2,
+              "test_cases_total": 2,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "square",
+              "expression": "input * input",
+              "typecheck_passed": true,
+              "test_cases_passed": 2,
+              "test_cases_total": 2,
+              "accuracy_percent": 100
+            }
+          ],
+          "test_suite_sha256": "sha256:97cefaca8d3e4351636a5bf9e5b07629ebc4fa322bd07ab57e7ca9c549bb7d5c",
+          "test_cases_passed": 2,
+          "test_cases_total": 2,
+          "functional_accuracy_percent": 100,
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+          "timing": {
+            "ir_plan_build_ms": 0.223166,
+            "laya_decision_ms": 0.032708,
+            "final_emission_ms": 0.149333,
+            "total_ms": 0.570541,
+            "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+            "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+          }
+        }
+      },
+      "generated_source": "package bodycodegen\n\n//gooo:generated:start id=\"bodycodegen://activity/exp09\" kind=\"activity\"\nfunc Exp09(input int64) int64 {\n\treturn input\n}\n\n//gooo:generated:end id=\"bodycodegen://activity/exp09\" kind=\"activity\"\n",
+      "cli_elapsed_ms": 9.341,
+      "independent_go_seen": {
+        "exit_code": 0,
+        "elapsed_ms": 482.361,
+        "cases_total": 2,
+        "cases_passed": 2,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentSeen\n--- PASS: TestIndependentSeen (0.00s)\nPASS\nok  \tbodyfillcheck\t0.345s"
+      },
+      "independent_go_heldout": {
+        "exit_code": 1,
+        "elapsed_ms": 486.221,
+        "cases_total": 4,
+        "cases_passed": 0,
+        "cases_failed": 4,
+        "failures": [
+          "input -2: got -2, want 4",
+          "input 2: got 2, want 4",
+          "input -3: got -3, want 9",
+          "input 3: got 3, want 9"
+        ],
+        "output": "=== RUN   TestIndependentHeldout\n    generated_test.go:9: input -2: got -2, want 4\n    generated_test.go:9: input 2: got 2, want 4\n    generated_test.go:9: input -3: got -3, want 9\n    generated_test.go:9: input 3: got 3, want 9\n--- FAIL: TestIndependentHeldout (0.00s)\nFAIL\nFAIL\tbodyfillcheck\t0.344s\nFAIL"
+      },
+      "cli_observation": null
+    },
+    {
+      "name": "compound_hole_precedence",
+      "fixture": "inputs/original/cases/compound_hole_precedence.gooo.fixture",
+      "plan": "inputs/original/cases/compound_hole_precedence-plan.json",
+      "fixture_sha256": "cb3a89a7a5e59aebd43fa38955a70119b1adca8a2c4df6c129f7874ca86cffc3",
+      "plan_file_sha256": "3f4701f3549f7f28b86687f7c045efa1e3bdcfe06660c08217789659901edee2",
+      "command_exit_code": 0,
+      "report_decision": "PASS",
+      "error": null,
+      "body_fill_accuracy_percent": 100,
+      "selected_candidate_id": "plus_one",
+      "selected_expression": "input + 1",
+      "candidate_scores": [
+        {
+          "id": "plus_one",
+          "expression": "input + 1",
+          "typecheck_passed": true,
+          "test_cases_passed": 3,
+          "test_cases_total": 3,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "plus_two",
+          "expression": "input + 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 3,
+          "accuracy_percent": 0
+        }
+      ],
+      "declared_suite": {
+        "cases_total": 3,
+        "cases_passed": 3,
+        "cases_failed": 0,
+        "suite_sha256": "sha256:e18bdc40b7f19d73608262b52afc46d8c8ddf291886cf6f03a057aaa15517969"
+      },
+      "compiler_receipt": {
+        "activity": "Exp10",
+        "activity_id": "bodycodegen://activity/exp10",
+        "decision": "PASS",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": "sha256:63311c0fd27f5851e471afc828c5d3b6015ec93a1837f761ce5f583978349d4f",
+        "program_digest": "sha256:c849b9f400db9e64e6b5ee42f6fc364738996cf51a544712733869d9e606e2c6",
+        "generated_digest": "sha256:166981bd856004acc8ee28771ca6cf38e0c87466a2a5f38d21f55b4dbb087d97",
+        "replay_digest": "sha256:166981bd856004acc8ee28771ca6cf38e0c87466a2a5f38d21f55b4dbb087d97",
+        "typecheck_passed": true,
+        "deterministic_replay": true,
+        "repository_writes": 0,
+        "body_fill": {
+          "ir_plan_sha256": "sha256:4bcc99f109bc861b6696afba056c3e62fd6aba306b39c2717b97b82b3186936e",
+          "proposed_candidate_id": "plus_one",
+          "proposed_accuracy_percent": 100,
+          "selected_candidate_id": "plus_one",
+          "selected_expression": "input + 1",
+          "best_candidate_id": "plus_one",
+          "best_candidate_accuracy_percent": 100,
+          "selection_regret_percentage_points": 0,
+          "selection_adjustment": "proposal_retained",
+          "candidate_scores": [
+            {
+              "id": "plus_one",
+              "expression": "input + 1",
+              "typecheck_passed": true,
+              "test_cases_passed": 3,
+              "test_cases_total": 3,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "plus_two",
+              "expression": "input + 2",
+              "typecheck_passed": true,
+              "test_cases_passed": 0,
+              "test_cases_total": 3,
+              "accuracy_percent": 0
+            }
+          ],
+          "test_suite_sha256": "sha256:e18bdc40b7f19d73608262b52afc46d8c8ddf291886cf6f03a057aaa15517969",
+          "test_cases_passed": 3,
+          "test_cases_total": 3,
+          "functional_accuracy_percent": 100,
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+          "timing": {
+            "ir_plan_build_ms": 0.304334,
+            "laya_decision_ms": 0.039542,
+            "final_emission_ms": 0.206417,
+            "total_ms": 0.743417,
+            "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+            "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+          }
+        }
+      },
+      "generated_source": "package bodycodegen\n\n//gooo:generated:start id=\"bodycodegen://activity/exp10\" kind=\"activity\"\nfunc Exp10(input int64) int64 {\n\treturn (input - (input + 1)) * 2\n}\n\n//gooo:generated:end id=\"bodycodegen://activity/exp10\" kind=\"activity\"\n",
+      "cli_elapsed_ms": 8.239,
+      "independent_go_seen": {
+        "exit_code": 0,
+        "elapsed_ms": 487.236,
+        "cases_total": 3,
+        "cases_passed": 3,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentSeen\n--- PASS: TestIndependentSeen (0.00s)\nPASS\nok  \tbodyfillcheck\t0.353s"
+      },
+      "independent_go_heldout": {
+        "exit_code": 0,
+        "elapsed_ms": 476.435,
+        "cases_total": 3,
+        "cases_passed": 3,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentHeldout\n--- PASS: TestIndependentHeldout (0.00s)\nPASS\nok  \tbodyfillcheck\t0.342s"
+      },
+      "cli_observation": null
+    },
+    {
+      "name": "false_identifier_shadow",
+      "fixture": "inputs/original/cases/false_identifier_shadow.gooo.fixture",
+      "plan": "inputs/original/cases/false_identifier_shadow-plan.json",
+      "fixture_sha256": "4803ed5de6e93f745895b43301cec228203e463dd07bbc966ff606b07d74583d",
+      "plan_file_sha256": "a5204e93044d8d91f878237d3a7245f61da1af318fe06970b1e9dd3c7bb3d3f5",
+      "command_exit_code": 1,
+      "report_decision": "FAIL_CLOSED",
+      "error": "candidate \"input\" is not a valid typed body: typecheck generated activity: body.goo:3:5: declared and not used: false",
+      "body_fill_accuracy_percent": null,
+      "selected_candidate_id": null,
+      "selected_expression": null,
+      "candidate_scores": null,
+      "declared_suite": {
+        "cases_total": null,
+        "cases_passed": null,
+        "cases_failed": null,
+        "suite_sha256": null
+      },
+      "compiler_receipt": {
+        "activity": null,
+        "activity_id": null,
+        "decision": "FAIL_CLOSED",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": null,
+        "program_digest": null,
+        "generated_digest": null,
+        "replay_digest": null,
+        "typecheck_passed": null,
+        "deterministic_replay": null,
+        "repository_writes": 0,
+        "body_fill": null
+      },
+      "generated_source": "",
+      "cli_elapsed_ms": 10.585,
+      "independent_go_seen": null,
+      "independent_go_heldout": null,
+      "cli_observation": null
+    },
+    {
+      "name": "int64_min_literal",
+      "fixture": "inputs/original/cases/int64_min_literal.gooo.fixture",
+      "plan": "inputs/original/cases/int64_min_literal-plan.json",
+      "fixture_sha256": "4cca7a770fc78ed653e58652be5f5882f16dfa6b11feb8527341a3685b8f8ef2",
+      "plan_file_sha256": "2d01fa933ccfd6ae82eef5c9bc8e919639f389b123ecdab1cab332cfbce4eb69",
+      "command_exit_code": 0,
+      "report_decision": "PASS",
+      "error": null,
+      "body_fill_accuracy_percent": 100,
+      "selected_candidate_id": "min_literal",
+      "selected_expression": "-9223372036854775808",
+      "candidate_scores": [
+        {
+          "id": "min_literal",
+          "expression": "-9223372036854775808",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 1,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "zero",
+          "expression": "0",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 1,
+          "accuracy_percent": 0
+        }
+      ],
+      "declared_suite": {
+        "cases_total": 1,
+        "cases_passed": 1,
+        "cases_failed": 0,
+        "suite_sha256": "sha256:df440ba7be8bee7fbeea499654811c7dfad70e13c28c2e9027412d62c78af204"
+      },
+      "compiler_receipt": {
+        "activity": "Exp12",
+        "activity_id": "bodycodegen://activity/exp12",
+        "decision": "PASS",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": "sha256:ee8e0e0881fa67ab2187ea1a85c864684c13d9eae6d62fd6cd72b34569dafa24",
+        "program_digest": "sha256:2f87d9582f3311c418253320f1cca0bcf84d4e0e8172acf19f04428f0640e2f5",
+        "generated_digest": "sha256:9c9f89cc344bef1997c615f27d2f32fa9314f5b9a3dff48958c9ecbb102c24d7",
+        "replay_digest": "sha256:9c9f89cc344bef1997c615f27d2f32fa9314f5b9a3dff48958c9ecbb102c24d7",
+        "typecheck_passed": true,
+        "deterministic_replay": true,
+        "repository_writes": 0,
+        "body_fill": {
+          "ir_plan_sha256": "sha256:c8f52ebac1e3326b5d222571590fe7ea7d8235af6d52152612d71e12a53ad241",
+          "proposed_candidate_id": "min_literal",
+          "proposed_accuracy_percent": 100,
+          "selected_candidate_id": "min_literal",
+          "selected_expression": "-9223372036854775808",
+          "best_candidate_id": "min_literal",
+          "best_candidate_accuracy_percent": 100,
+          "selection_regret_percentage_points": 0,
+          "selection_adjustment": "proposal_retained",
+          "candidate_scores": [
+            {
+              "id": "min_literal",
+              "expression": "-9223372036854775808",
+              "typecheck_passed": true,
+              "test_cases_passed": 1,
+              "test_cases_total": 1,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "zero",
+              "expression": "0",
+              "typecheck_passed": true,
+              "test_cases_passed": 0,
+              "test_cases_total": 1,
+              "accuracy_percent": 0
+            }
+          ],
+          "test_suite_sha256": "sha256:df440ba7be8bee7fbeea499654811c7dfad70e13c28c2e9027412d62c78af204",
+          "test_cases_passed": 1,
+          "test_cases_total": 1,
+          "functional_accuracy_percent": 100,
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+          "timing": {
+            "ir_plan_build_ms": 0.446041,
+            "laya_decision_ms": 0.034542,
+            "final_emission_ms": 0.147917,
+            "total_ms": 0.7725,
+            "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+            "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+          }
+        }
+      },
+      "generated_source": "package bodycodegen\n\n//gooo:generated:start id=\"bodycodegen://activity/exp12\" kind=\"activity\"\nfunc Exp12(input int64) int64 {\n\treturn (-9223372036854775808)\n}\n\n//gooo:generated:end id=\"bodycodegen://activity/exp12\" kind=\"activity\"\n",
+      "cli_elapsed_ms": 7.337,
+      "independent_go_seen": {
+        "exit_code": 0,
+        "elapsed_ms": 492.91,
+        "cases_total": 1,
+        "cases_passed": 1,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentSeen\n--- PASS: TestIndependentSeen (0.00s)\nPASS\nok  \tbodyfillcheck\t0.355s"
+      },
+      "independent_go_heldout": {
+        "exit_code": 0,
+        "elapsed_ms": 492.152,
+        "cases_total": 2,
+        "cases_passed": 2,
+        "cases_failed": 0,
+        "failures": [],
+        "output": "=== RUN   TestIndependentHeldout\n--- PASS: TestIndependentHeldout (0.00s)\nPASS\nok  \tbodyfillcheck\t0.347s"
+      },
+      "cli_observation": null
+    }
+  ],
+  "original_2_probes": [
+    {
+      "name": "nested_same_name_shadow",
+      "fixture": "inputs/original/probes/nested_same_name_shadow.gooo.fixture",
+      "plan": "inputs/original/probes/nested_same_name_shadow-plan.json",
+      "fixture_sha256": "b7e9422d0eda26a0f91bcef06f5b4eaeaadcbb989d794edb7fc017536be09e25",
+      "plan_file_sha256": "065e294e9ffc94345c39cd186d37c0c8c778c5e099af29c46a97b75c1cbaab75",
+      "command_exit_code": 1,
+      "report_decision": "FAIL_CLOSED",
+      "error": "candidate \"one\" is not a valid typed body: let name \"value\" is already bound",
+      "body_fill_accuracy_percent": null,
+      "selected_candidate_id": null,
+      "selected_expression": null,
+      "candidate_scores": null,
+      "declared_suite": {
+        "cases_total": null,
+        "cases_passed": null,
+        "cases_failed": null,
+        "suite_sha256": null
+      },
+      "compiler_receipt": {
+        "activity": null,
+        "activity_id": null,
+        "decision": "FAIL_CLOSED",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": null,
+        "program_digest": null,
+        "generated_digest": null,
+        "replay_digest": null,
+        "typecheck_passed": null,
+        "deterministic_replay": null,
+        "repository_writes": 0,
+        "body_fill": null
+      },
+      "generated_source": "",
+      "cli_elapsed_ms": 9.012,
+      "independent_go_seen": null,
+      "independent_go_heldout": null,
+      "cli_observation": null
+    },
+    {
+      "name": "true_identifier_shadow",
+      "fixture": "inputs/original/probes/true_identifier_shadow.gooo.fixture",
+      "plan": "inputs/original/probes/true_identifier_shadow-plan.json",
+      "fixture_sha256": "87c0941de6b5a57587736fc73a4548b9d672c5362c93005066c819a8dda60551",
+      "plan_file_sha256": "9ccfd1a66eaa2bb81ac00a86feb3f7514815bf8ffce65a86da56f46132aa8dac",
+      "command_exit_code": 1,
+      "report_decision": "FAIL_CLOSED",
+      "error": "candidate \"input\" is not a valid typed body: typecheck generated activity: body.goo:3:5: declared and not used: true",
+      "body_fill_accuracy_percent": null,
+      "selected_candidate_id": null,
+      "selected_expression": null,
+      "candidate_scores": null,
+      "declared_suite": {
+        "cases_total": null,
+        "cases_passed": null,
+        "cases_failed": null,
+        "suite_sha256": null
+      },
+      "compiler_receipt": {
+        "activity": null,
+        "activity_id": null,
+        "decision": "FAIL_CLOSED",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": null,
+        "program_digest": null,
+        "generated_digest": null,
+        "replay_digest": null,
+        "typecheck_passed": null,
+        "deterministic_replay": null,
+        "repository_writes": 0,
+        "body_fill": null
+      },
+      "generated_source": "",
+      "cli_elapsed_ms": 7.005,
+      "independent_go_seen": null,
+      "independent_go_heldout": null,
+      "cli_observation": null
+    }
+  ],
+  "revised_boolean_binding_plans": [
+    {
+      "name": "false_local",
+      "fixture": "inputs/revised_boolean_bindings/false_local.gooo.fixture",
+      "plan": "inputs/revised_boolean_bindings/false_local-plan.json",
+      "fixture_sha256": "936c95f1c2b44681fc62c9b09e966feeffcc6ce72819b494512e78c9b8814814",
+      "plan_file_sha256": "5d4193295ed0e08c252519377425cdeb11b80e6834a1242b88e8675e98ab195a",
+      "command_exit_code": 0,
+      "report_decision": "PASS",
+      "body_fill_accuracy_percent": 100,
+      "selected_candidate_id": "local",
+      "selected_expression": "false",
+      "candidate_scores": [
+        {
+          "id": "local",
+          "expression": "false",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 1,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "add_zero",
+          "expression": "false + 0",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 1,
+          "accuracy_percent": 100
+        }
+      ],
+      "compiler_receipt": {
+        "activity": "FocusedFalse",
+        "activity_id": "bodycodegen://activity/focused-false",
+        "decision": "PASS",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": "sha256:92e8b1bc2b6e68c6cf725ee9f026512b484939ee620aad6d7e4bc868f3ff894a",
+        "program_digest": "sha256:eb165f8fd5695ed38d35d649b56115a1054fd7667636ba36ec89d821831599db",
+        "generated_digest": "sha256:ca9cb2d78dd842adeed1352149aedda95932da25df24d4a0c0ed20d538251ff0",
+        "replay_digest": "sha256:ca9cb2d78dd842adeed1352149aedda95932da25df24d4a0c0ed20d538251ff0",
+        "typecheck_passed": true,
+        "deterministic_replay": true,
+        "repository_writes": 0,
+        "body_fill": {
+          "ir_plan_sha256": "sha256:b8576768dd6e6b234d5ef0f94fb0203bf4edc83c1f1719d9663a444e60b6af35",
+          "proposed_candidate_id": "local",
+          "proposed_accuracy_percent": 100,
+          "selected_candidate_id": "local",
+          "selected_expression": "false",
+          "best_candidate_id": "local",
+          "best_candidate_accuracy_percent": 100,
+          "selection_regret_percentage_points": 0,
+          "selection_adjustment": "proposal_retained",
+          "candidate_scores": [
+            {
+              "id": "local",
+              "expression": "false",
+              "typecheck_passed": true,
+              "test_cases_passed": 1,
+              "test_cases_total": 1,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "add_zero",
+              "expression": "false + 0",
+              "typecheck_passed": true,
+              "test_cases_passed": 1,
+              "test_cases_total": 1,
+              "accuracy_percent": 100
+            }
+          ],
+          "test_suite_sha256": "sha256:a67de5b5ffa5e75d2f81eda31c432a88aabd2d21f9903102f859acbdbea464d2",
+          "test_cases_passed": 1,
+          "test_cases_total": 1,
+          "functional_accuracy_percent": 100,
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+          "timing": {
+            "ir_plan_build_ms": 0.1545,
+            "laya_decision_ms": 0.022625,
+            "final_emission_ms": 0.090416,
+            "total_ms": 0.368667,
+            "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+            "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+          }
+        }
+      },
+      "generated_source": "package bodycodegen\n\n//gooo:generated:start id=\"bodycodegen://activity/focused-false\" kind=\"activity\"\nfunc FocusedFalse(input int64) int64 {\n\tvar false = input\n\treturn false\n}\n\n//gooo:generated:end id=\"bodycodegen://activity/focused-false\" kind=\"activity\"\n",
+      "error": null,
+      "cli_observation": null,
+      "independent_go": {
+        "exit_code": 0,
+        "elapsed_ms": 563.548,
+        "cases_total": 3,
+        "cases_passed": 3,
+        "cases_failed": 0,
+        "output": "=== RUN   TestBooleanLocal\n--- PASS: TestBooleanLocal (0.00s)\nPASS\nok  \tbodyfillcheck\t0.427s"
+      }
+    },
+    {
+      "name": "true_local",
+      "fixture": "inputs/revised_boolean_bindings/true_local.gooo.fixture",
+      "plan": "inputs/revised_boolean_bindings/true_local-plan.json",
+      "fixture_sha256": "4f22b7f04d609ea6a6af3a0ede1f884c396b2cda2960e4f960d0fb6f66b75b51",
+      "plan_file_sha256": "f9cf31cdbd84b4f03935c25ed2de965a31880d6af5422b546166aafd2dbdf434",
+      "command_exit_code": 0,
+      "report_decision": "PASS",
+      "body_fill_accuracy_percent": 100,
+      "selected_candidate_id": "local",
+      "selected_expression": "true",
+      "candidate_scores": [
+        {
+          "id": "local",
+          "expression": "true",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 1,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "add_zero",
+          "expression": "true + 0",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 1,
+          "accuracy_percent": 100
+        }
+      ],
+      "compiler_receipt": {
+        "activity": "FocusedTrue",
+        "activity_id": "bodycodegen://activity/focused-true",
+        "decision": "PASS",
+        "compiler_source_sha": "ec4bf3e5f4119118b501c1b45862936eb46b95b7",
+        "source_digest": "sha256:4902fc25e8f9e496e7e1168062b6ab99958fa3c7244a4a7ddf917f58c957fbd6",
+        "program_digest": "sha256:799171a14c4833b1347980915fe7c2b1fdf5ed56db5ede76f3ea161d392e5c73",
+        "generated_digest": "sha256:afae074d3b621c79e46f62ef28b724034c2ad6268aff2e56317adfb28d019a55",
+        "replay_digest": "sha256:afae074d3b621c79e46f62ef28b724034c2ad6268aff2e56317adfb28d019a55",
+        "typecheck_passed": true,
+        "deterministic_replay": true,
+        "repository_writes": 0,
+        "body_fill": {
+          "ir_plan_sha256": "sha256:94de53b77cff2ea7272a7374053552c25433499bdcd7e6c0f13a97396dba6c73",
+          "proposed_candidate_id": "local",
+          "proposed_accuracy_percent": 100,
+          "selected_candidate_id": "local",
+          "selected_expression": "true",
+          "best_candidate_id": "local",
+          "best_candidate_accuracy_percent": 100,
+          "selection_regret_percentage_points": 0,
+          "selection_adjustment": "proposal_retained",
+          "candidate_scores": [
+            {
+              "id": "local",
+              "expression": "true",
+              "typecheck_passed": true,
+              "test_cases_passed": 1,
+              "test_cases_total": 1,
+              "accuracy_percent": 100
+            },
+            {
+              "id": "add_zero",
+              "expression": "true + 0",
+              "typecheck_passed": true,
+              "test_cases_passed": 1,
+              "test_cases_total": 1,
+              "accuracy_percent": 100
+            }
+          ],
+          "test_suite_sha256": "sha256:a67de5b5ffa5e75d2f81eda31c432a88aabd2d21f9903102f859acbdbea464d2",
+          "test_cases_passed": 1,
+          "test_cases_total": 1,
+          "functional_accuracy_percent": 100,
+          "evaluator": "gooo/bodycodegen-int64-ast-interpreter/v2",
+          "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+          "timing": {
+            "ir_plan_build_ms": 0.229167,
+            "laya_decision_ms": 0.03,
+            "final_emission_ms": 0.141375,
+            "total_ms": 0.551167,
+            "execution_model": "synchronous_sequential_no_background_codegen_goroutines",
+            "decision_stage": "after_typed_ir_plan_and_candidate_test_scores_before_final_emission"
+          }
+        }
+      },
+      "generated_source": "package bodycodegen\n\n//gooo:generated:start id=\"bodycodegen://activity/focused-true\" kind=\"activity\"\nfunc FocusedTrue(input int64) int64 {\n\tvar true = input\n\treturn true\n}\n\n//gooo:generated:end id=\"bodycodegen://activity/focused-true\" kind=\"activity\"\n",
+      "error": null,
+      "cli_observation": null,
+      "independent_go": {
+        "exit_code": 0,
+        "elapsed_ms": 502.052,
+        "cases_total": 3,
+        "cases_passed": 3,
+        "cases_failed": 0,
+        "output": "=== RUN   TestBooleanLocal\n--- PASS: TestBooleanLocal (0.00s)\nPASS\nok  \tbodyfillcheck\t0.366s"
+      }
+    }
+  ],
+  "manual_go_repros": {
+    "exit_code": 0,
+    "elapsed_ms": 483.514,
+    "output": "=== RUN   TestManualLanguageRepros\n--- PASS: TestManualLanguageRepros (0.00s)\nPASS\nok  \tbodyfillcheck\t0.347s",
+    "sources": [
+      "false_shadow.go",
+      "true_shadow.go",
+      "min_literal.go"
+    ]
+  },
+  "limitations": [
+    "Seen/held-out mismatch remains: identity reports 100% on inputs 0 and 1 but fails all four held-out square cases. The original false-local case is rejected because the declared input candidate leaves its local unused; revised false and true plans pass.",
+    "Original full fixed CLI stdout files were removed during lean packaging. This summary preserves extracted fields; a separately timestamped publication replay retains full raw outputs and must not be attributed to the original timing interval."
+  ]
+}

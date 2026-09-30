@@ -1,0 +1,41 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "Return absolute value for negatives and add three for nonnegative values.",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "plus_three",
+      "expression": "input + 3"
+    },
+    {
+      "id": "identity",
+      "expression": "input"
+    },
+    {
+      "id": "times_two",
+      "expression": "input * 2"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": -9,
+      "expected": 9
+    },
+    {
+      "input": -1,
+      "expected": 1
+    },
+    {
+      "input": 0,
+      "expected": 3
+    },
+    {
+      "input": 1,
+      "expected": 4
+    },
+    {
+      "input": 5,
+      "expected": 8
+    }
+  ]
+}

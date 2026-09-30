@@ -1,0 +1,164 @@
+[
+  {
+    "slug": "clamp_negative_to_zero",
+    "intent": "For an int64 input, return zero when the input is negative; otherwise return the input unchanged.",
+    "signature": "func(input int64) int64",
+    "test_inputs": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "expected_outputs": [
+      0,
+      0,
+      0,
+      1,
+      2
+    ],
+    "candidates": [
+      {
+        "id": "clamp",
+        "code": "if input < 0 { return 0 }; return input",
+        "passed": 5,
+        "total": 5
+      },
+      {
+        "id": "identity",
+        "code": "return input",
+        "passed": 3,
+        "total": 5
+      },
+      {
+        "id": "zero",
+        "code": "return 0",
+        "passed": 3,
+        "total": 5
+      }
+    ],
+    "oracle_scope": "Locally computed exact score over the listed finite test cases; candidate snippets are described to the model but not emitted or executed as generated Go."
+  },
+  {
+    "slug": "negate_negative_preserve_nonnegative",
+    "intent": "For an int64 input, negate it if negative; preserve zero and positive inputs unchanged.",
+    "signature": "func(input int64) int64",
+    "test_inputs": [
+      -4,
+      -1,
+      0,
+      1,
+      4
+    ],
+    "expected_outputs": [
+      4,
+      1,
+      0,
+      1,
+      4
+    ],
+    "candidates": [
+      {
+        "id": "conditional_negate",
+        "code": "if input < 0 { return -input }; return input",
+        "passed": 5,
+        "total": 5
+      },
+      {
+        "id": "negate_all",
+        "code": "return -input",
+        "passed": 3,
+        "total": 5
+      },
+      {
+        "id": "identity",
+        "code": "return input",
+        "passed": 3,
+        "total": 5
+      }
+    ],
+    "oracle_scope": "Locally computed exact score over the listed finite test cases; candidate snippets are described to the model but not emitted or executed as generated Go."
+  },
+  {
+    "slug": "integer_sign",
+    "intent": "For an int64 input, return -1 for a negative value, zero for zero, and 1 for a positive value.",
+    "signature": "func(input int64) int64",
+    "test_inputs": [
+      -4,
+      -1,
+      0,
+      1,
+      4
+    ],
+    "expected_outputs": [
+      -1,
+      -1,
+      0,
+      1,
+      1
+    ],
+    "candidates": [
+      {
+        "id": "sign",
+        "code": "if input < 0 { return -1 }; if input > 0 { return 1 }; return 0",
+        "passed": 5,
+        "total": 5
+      },
+      {
+        "id": "negative_one",
+        "code": "return -1",
+        "passed": 2,
+        "total": 5
+      },
+      {
+        "id": "identity",
+        "code": "return input",
+        "passed": 3,
+        "total": 5
+      }
+    ],
+    "oracle_scope": "Locally computed exact score over the listed finite test cases; candidate snippets are described to the model but not emitted or executed as generated Go."
+  },
+  {
+    "slug": "is_even",
+    "intent": "For an int64 input, return true exactly when it is evenly divisible by 2; return false otherwise.",
+    "signature": "func(input int64) bool",
+    "test_inputs": [
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3
+    ],
+    "expected_outputs": [
+      true,
+      false,
+      true,
+      false,
+      true,
+      false
+    ],
+    "candidates": [
+      {
+        "id": "even",
+        "code": "return input % 2 == 0",
+        "passed": 6,
+        "total": 6
+      },
+      {
+        "id": "positive",
+        "code": "return input > 0",
+        "passed": 2,
+        "total": 6
+      },
+      {
+        "id": "nonzero",
+        "code": "return input != 0",
+        "passed": 2,
+        "total": 6
+      }
+    ],
+    "oracle_scope": "Locally computed exact score over the listed finite test cases; candidate snippets are described to the model but not emitted or executed as generated Go."
+  }
+]

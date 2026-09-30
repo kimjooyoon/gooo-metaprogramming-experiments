@@ -1,0 +1,21 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "Return the minimum int64 value, represented as a negated untyped integer literal.",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "min_literal",
+      "expression": "-9223372036854775808"
+    },
+    {
+      "id": "zero",
+      "expression": "0"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": 0,
+      "expected": -9223372036854775808
+    }
+  ]
+}

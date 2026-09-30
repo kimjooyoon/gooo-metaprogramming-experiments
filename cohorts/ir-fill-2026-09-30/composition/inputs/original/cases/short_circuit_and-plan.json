@@ -1,0 +1,45 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "If input is nonzero and below five, double it; otherwise return seven.",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "double",
+      "expression": "input * 2"
+    },
+    {
+      "id": "identity",
+      "expression": "input"
+    },
+    {
+      "id": "seven",
+      "expression": "7"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": -5,
+      "expected": -10
+    },
+    {
+      "input": -1,
+      "expected": -2
+    },
+    {
+      "input": 0,
+      "expected": 7
+    },
+    {
+      "input": 1,
+      "expected": 2
+    },
+    {
+      "input": 4,
+      "expected": 8
+    },
+    {
+      "input": 5,
+      "expected": 7
+    }
+  ]
+}

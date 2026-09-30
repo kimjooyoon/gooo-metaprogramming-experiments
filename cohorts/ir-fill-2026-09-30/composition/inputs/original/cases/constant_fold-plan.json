@@ -1,0 +1,41 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "Return six only for input two; otherwise increment the input.",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "folded_product",
+      "expression": "2 * 3"
+    },
+    {
+      "id": "literal_six",
+      "expression": "6"
+    },
+    {
+      "id": "wrong",
+      "expression": "input + 3"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": -2,
+      "expected": -1
+    },
+    {
+      "input": 0,
+      "expected": 1
+    },
+    {
+      "input": 1,
+      "expected": 2
+    },
+    {
+      "input": 2,
+      "expected": 6
+    },
+    {
+      "input": 3,
+      "expected": 4
+    }
+  ]
+}

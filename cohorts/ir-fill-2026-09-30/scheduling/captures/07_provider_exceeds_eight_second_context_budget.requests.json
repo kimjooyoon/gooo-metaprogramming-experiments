@@ -1,0 +1,36 @@
+[
+  {
+    "candidate_ids": [
+      "zero",
+      "identity",
+      "negate"
+    ],
+    "client_closed_before_response": null,
+    "method": "POST",
+    "path": "/v1/systemone",
+    "process_label": null,
+    "question_ids": [
+      "body_ir_fill"
+    ],
+    "request_payload": {
+      "questions": {
+        "body_ir_fill": {
+          "criteria": {
+            "identity": "Emit exactly this expression: input. It passes 5 of 9 declared test cases (55.56%).",
+            "negate": "Emit exactly this expression: -input. It passes 5 of 9 declared test cases (55.56%).",
+            "zero": "Emit exactly this expression: 0. It passes 9 of 9 declared test cases (100.00%)."
+          },
+          "instructions": "Fill the single typed expression hole in the supplied Gooo body IR. Choose only a listed candidate. Use the intent and declared test evidence; do not invent code or modify any other IR node.",
+          "type": "choice"
+        }
+      },
+      "state": {
+        "request": "{\"schema\":\"gooo/body-codegen-ir-fill-state/v1\",\"stage\":\"ir_ready_before_body_emission\",\"activity\":\"ClampNegativeToZero\",\"activity_id\":\"bodycodegen://activity/clamp-negative-to-zero\",\"input_type\":\"Integer\",\"output_type\":\"Integer\",\"intent\":\"Return zero for negative integers and preserve zero or positive integers.\",\"hole_id\":\"floor\",\"body_ir\":\"var output = input; if input \\u003c 0 { output = __GOOO_BODY_HOLE_floor__ } else { output = input }; return output\",\"test_case_count\":9,\"test_suite_sha256\":\"sha256:9236df1568d555cfaa56e0a1e9e990d7f8f112d2e9a5ea8570a74a6c8099fc85\",\"candidate_scores\":[{\"id\":\"zero\",\"expression\":\"0\",\"typecheck_passed\":true,\"test_cases_passed\":9,\"test_cases_total\":9,\"accuracy_percent\":100},{\"id\":\"identity\",\"expression\":\"input\",\"typecheck_passed\":true,\"test_cases_passed\":5,\"test_cases_total\":9,\"accuracy_percent\":55.55555555555556},{\"id\":\"negate\",\"expression\":\"-input\",\"typecheck_passed\":true,\"test_cases_passed\":5,\"test_cases_total\":9,\"accuracy_percent\":55.55555555555556}]}"
+      }
+    },
+    "response_attempt_monotonic_ns": 12404324416,
+    "response_status": 200,
+    "stage": "ir_ready_before_body_emission",
+    "start_monotonic_ns": 4043313458
+  }
+]

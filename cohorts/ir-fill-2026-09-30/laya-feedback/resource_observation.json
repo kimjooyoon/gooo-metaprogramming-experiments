@@ -1,0 +1,10 @@
+{
+  "server_pid": 61962,
+  "server_bind": "127.0.0.1:8787",
+  "selection_trial_cpu_delta_seconds": null,
+  "selection_trial_rss_before_mib": null,
+  "selection_trial_peak_rss_mib": null,
+  "selection_trial_rss_after_mib": null,
+  "availability": "Unavailable for the scored trial window. The run harness sampled process CPU/RSS in memory, but its post-run summary raised after all requests completed, before it persisted the resource snapshot. Later point-in-time ps observations are intentionally not attributed to the experiment.",
+  "measurement_method_intended": "macOS ps cumulative CPU time and RSS samples every 0.25 seconds."
+}

@@ -1,0 +1,19 @@
+{
+  "call": 1,
+  "started_utc": "2026-09-30T02:56:51.597170+00:00",
+  "finished_utc": "2026-09-30T02:56:52.515091+00:00",
+  "timeout": false,
+  "return_code": 0,
+  "elapsed_ms": 911.238,
+  "server_cpu_start_seconds": 10.66,
+  "server_cpu_end_seconds": 11.55,
+  "server_cpu_delta_seconds_ps_resolution_0.01s": 0.89,
+  "server_rss_start_kb": 2066304,
+  "server_rss_max_sampled_kb": 2127072,
+  "server_rss_end_kb": 2127072,
+  "rss_sample_interval_seconds": 0.05,
+  "stdout_file": "/tmp/gooo-luna-laya-feedback-20260930/fixed-compiler-smoke/calls/call-01.stdout.json",
+  "stderr_file": "/tmp/gooo-luna-laya-feedback-20260930/fixed-compiler-smoke/calls/call-01.stderr.txt",
+  "stdout_sha256": "90eea540d78c92945c8ee508957430f17c58e69a0c2f12a4900ba097558c3600",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "gooo/body-codegen-ir-fill-plan/v1",
+  "intent": "Take absolute value for negatives, double values from zero through nine, otherwise preserve the input.",
+  "hole_id": "expr",
+  "candidates": [
+    {
+      "id": "double",
+      "expression": "input * 2"
+    },
+    {
+      "id": "identity",
+      "expression": "input"
+    },
+    {
+      "id": "add_two",
+      "expression": "input + 2"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": -5,
+      "expected": 5
+    },
+    {
+      "input": -1,
+      "expected": 1
+    },
+    {
+      "input": 0,
+      "expected": 0
+    },
+    {
+      "input": 1,
+      "expected": 2
+    },
+    {
+      "input": 5,
+      "expected": 10
+    },
+    {
+      "input": 9,
+      "expected": 18
+    },
+    {
+      "input": 10,
+      "expected": 10
+    },
+    {
+      "input": 30,
+      "expected": 30
+    }
+  ]
+}

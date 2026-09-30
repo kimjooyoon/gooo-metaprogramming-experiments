@@ -34,7 +34,7 @@ python3 scripts/run_fault_cohort.py --execute \
   --run-id <fresh-run-id>
 ```
 
-`scripts/validate_saved.py` is the short offline validation target for CI: it checks exact source-revision and compiler-digest pins, binds `invocations.json` and per-treatment receipts to decoded `stdout.raw` reports, binds provider receipts to `events.jsonl` and request/response hashes, and scans each complete raw request for holdout field names and exact input/expected pairs (recursively decoding JSON strings). It performs no compiler run, provider call, or network request. Three in-memory probes cover summary tampering, JSON hidden in another field, and legitimate unrelated constants. Add `--write-report` only when intentionally regenerating derived reports.
+`scripts/validate_saved.py` is the short offline validation target for CI: it checks exact source-revision and compiler-digest pins, binds `invocations.json` and per-treatment receipts to decoded `stdout.raw` reports, binds provider receipts to `events.jsonl` and request/response hashes, and scans each complete raw request for holdout field names and exact input/expected pairs (recursively decoding JSON strings). It performs no compiler run, provider call, or network request. Four offline probes cover summary tampering, JSON hidden in another field, legitimate unrelated constants, and validation after copying the saved run under a different parent directory. Add `--write-report` only when intentionally regenerating derived reports.
 
 ```sh
 python3 scripts/validate_saved.py --run-dir runs/final-mock-provider-run-2026-09-30

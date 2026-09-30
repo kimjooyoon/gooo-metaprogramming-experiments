@@ -36,10 +36,11 @@
     "reads_saved_artifacts_only": true,
     "runs_compiler": false,
     "uses_network": false,
-    "unittest_probes": 3,
+    "unittest_probes": 4,
     "binds_raw_stdout": true,
     "binds_provider_events_jsonl": true,
-    "scans_recursive_raw_requests": true
+    "scans_recursive_raw_requests": true,
+    "portable_report_locator": "relative runs/<run-id>"
   },
   "limitations": [
     "One hand-authored int64 fixture and small finite suites do not establish domain coverage or full-domain correctness.",

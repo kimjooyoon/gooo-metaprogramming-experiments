@@ -1,0 +1,29 @@
+{
+  "case_id": "cc04_outer_cutoffs",
+  "activity": "C04",
+  "codegen_status": "failed_or_unverified",
+  "exit_code": 1,
+  "timed_out": false,
+  "error": "",
+  "stdout_sha256": "23b1cd62f5400afa7354c6e8b325cc7ae315640d00b51d25a2af45b5a72a0d15",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "compiler_source_sha": "",
+  "source_digest": "",
+  "plan_sha256": "",
+  "generated_digest": "",
+  "selected_candidate_id": "",
+  "selected_candidate_original_go_validity": "unknown",
+  "candidate_scores": [],
+  "training_passed": 0,
+  "training_total": 0,
+  "accuracy_scope": "",
+  "typecheck_passed": false,
+  "deterministic_replay": false,
+  "source_unit_completeness": {
+    "id": "source_ast_coverage",
+    "status": "MISSING",
+    "numerator": 0,
+    "denominator": 0
+  },
+  "source_generated_equivalence": ""
+}

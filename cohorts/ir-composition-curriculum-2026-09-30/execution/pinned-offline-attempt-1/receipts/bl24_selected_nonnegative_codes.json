@@ -1,0 +1,67 @@
+{
+  "case_id": "bl24_selected_nonnegative_codes",
+  "activity": "C24",
+  "codegen_status": "generated",
+  "exit_code": 0,
+  "timed_out": false,
+  "error": "",
+  "stdout_sha256": "4fba4e14f4d4d43e4e7abafaea8ece146f103651ed100a243f1b624b0cde8a38",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+  "source_digest": "sha256:fd24f9757eef5f0fae92d3cd37c9745799693646464504be64d56c99c789f6da",
+  "plan_sha256": "sha256:96b7d7a3c661a66a3379ff50441c8b384aeeda85b3e618cdef818085e27ef23b",
+  "generated_digest": "sha256:d7fb991ed311c894c58c264c3b697aa82f32d979e94360d79b444969ece91641",
+  "selected_candidate_id": "option_b",
+  "selected_candidate_original_go_validity": "valid",
+  "candidate_scores": [
+    {
+      "id": "option_a",
+      "expression": "input == 2",
+      "typecheck_passed": true,
+      "test_cases_passed": 4,
+      "test_cases_total": 5,
+      "accuracy_percent": 80
+    },
+    {
+      "id": "option_b",
+      "expression": "selected",
+      "typecheck_passed": true,
+      "test_cases_passed": 5,
+      "test_cases_total": 5,
+      "accuracy_percent": 100
+    },
+    {
+      "id": "option_c",
+      "expression": "selected && input != 4",
+      "typecheck_passed": true,
+      "test_cases_passed": 4,
+      "test_cases_total": 5,
+      "accuracy_percent": 80
+    }
+  ],
+  "training_passed": 5,
+  "training_total": 5,
+  "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+  "typecheck_passed": true,
+  "deterministic_replay": true,
+  "source_unit_completeness": {
+    "id": "source_ast_coverage",
+    "status": "PASS",
+    "numerator": 25,
+    "denominator": 25,
+    "unit": "source semantic units lowered"
+  },
+  "source_generated_equivalence": "PASS",
+  "generated_go_execution": {
+    "status": "go_test_did_not_reach_case_execution",
+    "training": {
+      "passed": 0,
+      "total": 0
+    },
+    "evaluation": {
+      "passed": 0,
+      "total": 0
+    },
+    "package_status": "unknown"
+  }
+}

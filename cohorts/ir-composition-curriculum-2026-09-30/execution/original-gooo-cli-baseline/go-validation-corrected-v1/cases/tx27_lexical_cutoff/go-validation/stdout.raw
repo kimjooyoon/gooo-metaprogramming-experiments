@@ -1,0 +1,11 @@
+=== RUN   TestFrozenTrainingVectors_tx27_lexical_cutoff
+    generated_test.go:23: FINITERESULT|training|1|-1|1|1|true
+    generated_test.go:23: FINITERESULT|training|2|0|0|0|true
+    generated_test.go:23: FINITERESULT|training|3|1|0|0|true
+--- PASS: TestFrozenTrainingVectors_tx27_lexical_cutoff (0.00s)
+=== RUN   TestFrozenEvaluationVectors_tx27_lexical_cutoff
+    generated_test.go:31: FINITERESULT|evaluation|1|-2|1|1|true
+    generated_test.go:31: FINITERESULT|evaluation|2|2|0|0|true
+--- PASS: TestFrozenEvaluationVectors_tx27_lexical_cutoff (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/tx27_lexical_cutoff	0.353s

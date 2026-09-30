@@ -1,0 +1,109 @@
+{
+  "activity": "C11",
+  "actual_results": {
+    "evaluation": [
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 1,
+        "input": -10,
+        "passed": true
+      },
+      {
+        "actual": 7,
+        "expected": 7,
+        "index": 2,
+        "input": 3,
+        "passed": true
+      },
+      {
+        "actual": 21,
+        "expected": 21,
+        "index": 3,
+        "input": 10,
+        "passed": true
+      }
+    ],
+    "training": [
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 1,
+        "input": -2,
+        "passed": true
+      },
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 2,
+        "input": -1,
+        "passed": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "index": 3,
+        "input": 0,
+        "passed": true
+      },
+      {
+        "actual": 5,
+        "expected": 5,
+        "index": 4,
+        "input": 2,
+        "passed": true
+      }
+    ]
+  },
+  "case_id": "lr11_nonnegative_doubled_score",
+  "command": [
+    "/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go",
+    "test",
+    "-count=1",
+    "-v",
+    "./..."
+  ],
+  "elapsed_ms": 501.709459,
+  "ended_utc": "2026-09-30T08:25:35.191878+00:00",
+  "exit_code": 0,
+  "finite_fitness": {
+    "evaluation": {
+      "all_observed_cases_passed": true,
+      "go_test_exit_code": 0,
+      "observed": 3,
+      "passed": 3,
+      "planned": 3,
+      "timed_out": false,
+      "unknown": 0
+    },
+    "training": {
+      "all_observed_cases_passed": true,
+      "go_test_exit_code": 0,
+      "observed": 4,
+      "passed": 4,
+      "planned": 4,
+      "timed_out": false,
+      "unknown": 0
+    }
+  },
+  "go_version": "go1.27.0",
+  "launch_error": null,
+  "schema": "gooo/ir-composition-independent-go-validation/v1",
+  "source_sha256": "47e91bc1feef855df4fd2d4c92525cc30e1df5f727a6202cedac5378930e6f3b",
+  "started_utc": "2026-09-30T08:25:34.690151+00:00",
+  "status": "GO_TEST_PASS",
+  "stderr_path": "go-validation/stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_path": "go-validation/stdout.raw",
+  "stdout_sha256": "8a4b4b7c774334ca5c5e3b807e4d2d583f36d30aeda3d31b3de36df5f8116e44",
+  "test_source_sha256": "ccbd0f0242f91cca7de7f3e06c5a2679b308d497d0ca423920c614d2e39c96c3",
+  "timed_out": false,
+  "timeout_seconds": 120,
+  "vector_counts": {
+    "evaluation": 3,
+    "observed_total": 7,
+    "planned_total": 7,
+    "training": 4,
+    "unknown_total": 0
+  }
+}

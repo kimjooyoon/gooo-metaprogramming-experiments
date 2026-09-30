@@ -1,0 +1,10 @@
+=== RUN   TestFrozenTrainingVectors_harness_smoke
+    generated_test.go:22: FINITERESULT|training|1|4|4|4|true
+    generated_test.go:22: FINITERESULT|training|2|5|5|5|true
+--- PASS: TestFrozenTrainingVectors_harness_smoke (0.00s)
+=== RUN   TestFrozenEvaluationVectors_harness_smoke
+    generated_test.go:30: FINITERESULT|evaluation|1|-2|-2|-2|true
+    generated_test.go:30: FINITERESULT|evaluation|2|-3|-3|-3|true
+--- PASS: TestFrozenEvaluationVectors_harness_smoke (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-harness-preflight	0.431s

@@ -1,0 +1,36 @@
+{
+  "id": "lr09_compound_total",
+  "activity": "C09",
+  "training": [
+    {
+      "input": -5,
+      "expected": 0
+    },
+    {
+      "input": 0,
+      "expected": 10
+    },
+    {
+      "input": 1,
+      "expected": 12
+    },
+    {
+      "input": 4,
+      "expected": 18
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -10,
+      "expected": -10
+    },
+    {
+      "input": 8,
+      "expected": 26
+    },
+    {
+      "input": 10,
+      "expected": 30
+    }
+  ]
+}

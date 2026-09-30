@@ -1,0 +1,116 @@
+{
+  "activity": "C02",
+  "candidate_discrimination": {
+    "evaluation_inputs_withheld_from_prompt": [
+      -7,
+      12
+    ],
+    "intended_candidate_id": "option_c",
+    "pairwise_case_report": "oracle/candidate-discrimination.json",
+    "source": "compiled Go candidate executions, evaluated on training inputs only",
+    "training_inputs": [
+      -1,
+      0,
+      1
+    ]
+  },
+  "case_id": "cc02_nonzero_disjunction",
+  "cli": {
+    "baseline_status": "CLI_FAILURE_OR_NO_SOURCE",
+    "command": [
+      "/private/tmp/gooo-pinned-context-final-20260930",
+      "body-codegen",
+      "--json",
+      "--fill-plan",
+      "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-composition-curriculum-2026-09-30/plans/body-fill/02-cc02_nonzero_disjunction.json",
+      "--activity",
+      "C02",
+      "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-composition-curriculum-2026-09-30/fixtures/02-cc02_nonzero_disjunction.gooo"
+    ],
+    "cwd": "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-composition-curriculum-2026-09-30/execution/original-gooo-cli-baseline/cases/cc02_nonzero_disjunction",
+    "elapsed_ms": 6.647958,
+    "emitted_source_path": null,
+    "emitted_source_sha256": null,
+    "ended_utc": "2026-09-30T08:21:38.487322+00:00",
+    "exit_code": 1,
+    "json_parse_error": null,
+    "launch_error": null,
+    "parsed_report_path": null,
+    "started_utc": "2026-09-30T08:21:38.480690+00:00",
+    "stderr_bytes": 0,
+    "stderr_path": "cli/stderr.raw",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_bytes": 13550,
+    "stdout_path": "cli/stdout.raw",
+    "stdout_sha256": "4dd10ce02be4dd68d9c7f235b9e18299d5b0480c7cdb1ca42493ba804e0b1b9e",
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "valid_source_pin": false
+  },
+  "compiler_receipt": {
+    "activity_id": null,
+    "available": false,
+    "body_fill_decision_mode": null,
+    "body_fill_decision_provider": null,
+    "body_fill_fallback_reason": null,
+    "body_fill_finite_score": {
+      "candidate_scores": [],
+      "gooo_training": {
+        "accuracy_percent": null,
+        "passed": null,
+        "scope": null,
+        "total": null
+      }
+    },
+    "body_fill_selected_candidate_id": null,
+    "body_fill_selected_expression": null,
+    "compiler_source_sha": null,
+    "decision": null,
+    "deterministic_replay": null,
+    "generated_digest": null,
+    "generated_source_sha256_matches_receipt": false,
+    "model_calls_reported": 0,
+    "plan_sha256": null,
+    "provider_operations_reported": 0,
+    "reported_diagnostics": null,
+    "reported_error": "candidate \"option_a\" is not a valid typed body: route \"preserve\" failed its canonical semantic equivalence receipt",
+    "route_equivalence_decision": null,
+    "source_digest": null,
+    "source_unit_completeness": {
+      "denominator": 0,
+      "id": "source_ast_coverage",
+      "numerator": 0,
+      "status": "MISSING",
+      "unit": null
+    },
+    "typecheck_passed": null
+  },
+  "finite_fitness": {
+    "gooo_training": {
+      "accuracy_percent": null,
+      "passed": null,
+      "scope": null,
+      "total": null
+    },
+    "independent_generated_go": null
+  },
+  "fixture_sha256": "7d46348d7c4862be945f89d0297a8f1f7722b45f3687b1c8ba5b3d20f66b799c",
+  "go_validation": {
+    "planned_evaluation": 2,
+    "planned_training": 3,
+    "status": "not_run_no_successful_emission"
+  },
+  "plan_sha256": "26d7f33f9075e1943e5ac10ea034530785221db28d50f856a6fe20f6fdc29788",
+  "primary_semantic_area": "conditionals",
+  "schema": "gooo/ir-composition-original-cli-case/v1",
+  "sequence": 2,
+  "source_unit_completeness": {
+    "denominator": 0,
+    "id": "source_ast_coverage",
+    "numerator": 0,
+    "status": "MISSING",
+    "unit": null
+  },
+  "status": "complete",
+  "vector_sha256": "865e4928889d4c27ab7c1b14eaaf1a1f382509dd050026b41a9c6c46834bfe71"
+}

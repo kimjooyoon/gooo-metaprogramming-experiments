@@ -1,0 +1,67 @@
+{
+  "case_id": "tx27_lexical_cutoff",
+  "activity": "C27",
+  "codegen_status": "generated",
+  "exit_code": 0,
+  "timed_out": false,
+  "error": "",
+  "stdout_sha256": "059a657cf2d59aa52643c7628a7969e57411054f0c3121485e6a13f5c405c3fc",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+  "source_digest": "sha256:edb4d7e8a54634bb2c638cb21b5f703474f1f73464c819512068c5e18f668160",
+  "plan_sha256": "sha256:90cab1ddcb25671462f73bd6bccb6929b2bef1e42c1a4ca3ac6c3b3839564e77",
+  "generated_digest": "sha256:d643d01eea690160d8f08b16932d38f274d600f8a0eb461f688fa5b8a14c2977",
+  "selected_candidate_id": "option_b",
+  "selected_candidate_original_go_validity": "valid",
+  "candidate_scores": [
+    {
+      "id": "option_a",
+      "expression": "\"zoo\"",
+      "typecheck_passed": true,
+      "test_cases_passed": 1,
+      "test_cases_total": 3,
+      "accuracy_percent": 33.333333333333336
+    },
+    {
+      "id": "option_b",
+      "expression": "\"gold\"",
+      "typecheck_passed": true,
+      "test_cases_passed": 3,
+      "test_cases_total": 3,
+      "accuracy_percent": 100
+    },
+    {
+      "id": "option_c",
+      "expression": "\"amber\"",
+      "typecheck_passed": true,
+      "test_cases_passed": 2,
+      "test_cases_total": 3,
+      "accuracy_percent": 66.66666666666667
+    }
+  ],
+  "training_passed": 3,
+  "training_total": 3,
+  "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+  "typecheck_passed": true,
+  "deterministic_replay": true,
+  "source_unit_completeness": {
+    "id": "source_ast_coverage",
+    "status": "PASS",
+    "numerator": 21,
+    "denominator": 21,
+    "unit": "source semantic units lowered"
+  },
+  "source_generated_equivalence": "PASS",
+  "generated_go_execution": {
+    "status": "go_test_did_not_reach_case_execution",
+    "training": {
+      "passed": 0,
+      "total": 0
+    },
+    "evaluation": {
+      "passed": 0,
+      "total": 0
+    },
+    "package_status": "unknown"
+  }
+}

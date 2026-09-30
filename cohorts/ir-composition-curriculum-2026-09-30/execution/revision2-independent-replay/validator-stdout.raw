@@ -1,0 +1,36 @@
+{
+  "validation": "passed",
+  "go_version": "go version go1.27.0 darwin/arm64",
+  "replay": [
+    {
+      "module": "evaluation/original-reference",
+      "exit_code": 0,
+      "package_count": 1
+    },
+    {
+      "module": "evaluation/revision2-reference",
+      "exit_code": 0,
+      "package_count": 1
+    },
+    {
+      "module": "evaluation/original-candidates",
+      "exit_code": 1,
+      "package_count": 96
+    },
+    {
+      "module": "evaluation/revision2-candidates",
+      "exit_code": 0,
+      "package_count": 96
+    }
+  ],
+  "original_candidate_counts": {
+    "passed": 93,
+    "failed": 3,
+    "unknown": 0
+  },
+  "revision2_candidate_counts": {
+    "passed": 96,
+    "failed": 0,
+    "unknown": 0
+  }
+}

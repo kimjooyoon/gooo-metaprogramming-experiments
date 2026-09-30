@@ -1,0 +1,119 @@
+{
+  "activity": "C30",
+  "captured_cli_stdout_sha256": "6e4afd94d3fafc90b10f45b86b0ca4a36122c4ea5130abf3f690a44fc934f2c3",
+  "case_id": "ob30_saturating_decrement",
+  "go_validation": {
+    "activity": "C30",
+    "actual_results": {
+      "evaluation": [
+        {
+          "actual": -9223372036854775808,
+          "expected": -9223372036854775808,
+          "index": 1,
+          "input": -9223372036854775808,
+          "passed": true
+        },
+        {
+          "actual": -9223372036854775806,
+          "expected": -9223372036854775806,
+          "index": 2,
+          "input": -9223372036854775805,
+          "passed": true
+        },
+        {
+          "actual": 9,
+          "expected": 9,
+          "index": 3,
+          "input": 10,
+          "passed": true
+        }
+      ],
+      "training": [
+        {
+          "actual": -9223372036854775807,
+          "expected": -9223372036854775807,
+          "index": 1,
+          "input": -9223372036854775806,
+          "passed": true
+        },
+        {
+          "actual": -9223372036854775808,
+          "expected": -9223372036854775808,
+          "index": 2,
+          "input": -9223372036854775807,
+          "passed": true
+        },
+        {
+          "actual": -1,
+          "expected": -1,
+          "index": 3,
+          "input": 0,
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "index": 4,
+          "input": 1,
+          "passed": true
+        }
+      ]
+    },
+    "captured_cli_source_path": "cases/ob30_saturating_decrement/generated.go",
+    "captured_cli_source_sha256": "3daaaf50187357787241b99381736c528d66a84ed0d25e521b3a9bd30d247b3a",
+    "captured_cli_stdout_sha256": "6e4afd94d3fafc90b10f45b86b0ca4a36122c4ea5130abf3f690a44fc934f2c3",
+    "case_id": "ob30_saturating_decrement",
+    "command": [
+      "/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go",
+      "test",
+      "-count=1",
+      "-v",
+      "./..."
+    ],
+    "elapsed_ms": 500.077625,
+    "ended_utc": "2026-09-30T08:25:42.069846+00:00",
+    "exit_code": 0,
+    "finite_fitness": {
+      "evaluation": {
+        "all_observed_cases_passed": true,
+        "go_test_exit_code": 0,
+        "observed": 3,
+        "passed": 3,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 0
+      },
+      "training": {
+        "all_observed_cases_passed": true,
+        "go_test_exit_code": 0,
+        "observed": 4,
+        "passed": 4,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 0
+      }
+    },
+    "frozen_design_semantic_area": "int64_boundaries",
+    "go_version": "go1.27.0",
+    "launch_error": null,
+    "schema": "gooo/ir-composition-independent-go-validation/v1",
+    "source_sha256": "3daaaf50187357787241b99381736c528d66a84ed0d25e521b3a9bd30d247b3a",
+    "started_utc": "2026-09-30T08:25:41.569752+00:00",
+    "status": "GO_TEST_PASS",
+    "stderr_path": "go-validation/stderr.raw",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_path": "go-validation/stdout.raw",
+    "stdout_sha256": "1e905ce3ac157b61b751251d15169d0008b4a384f43423cf10876d071f2c479a",
+    "test_source_sha256": "6b5e46025a7fd5fc2931d755003044bbdfd756e6a15cc995408d0ec0cea96efa",
+    "timed_out": false,
+    "timeout_seconds": 120,
+    "vector_counts": {
+      "evaluation": 3,
+      "observed_total": 7,
+      "planned_total": 7,
+      "training": 4,
+      "unknown_total": 0
+    }
+  },
+  "source_sha256": "3daaaf50187357787241b99381736c528d66a84ed0d25e521b3a9bd30d247b3a"
+}

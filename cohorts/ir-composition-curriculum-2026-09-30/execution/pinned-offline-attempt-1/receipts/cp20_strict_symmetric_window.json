@@ -1,0 +1,29 @@
+{
+  "case_id": "cp20_strict_symmetric_window",
+  "activity": "C20",
+  "codegen_status": "failed_or_unverified",
+  "exit_code": 1,
+  "timed_out": false,
+  "error": "",
+  "stdout_sha256": "a75299236fa7e43cf8782f5487a4d202369698cd11ecf36d570ff4972395cf72",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "compiler_source_sha": "",
+  "source_digest": "",
+  "plan_sha256": "",
+  "generated_digest": "",
+  "selected_candidate_id": "",
+  "selected_candidate_original_go_validity": "unknown",
+  "candidate_scores": [],
+  "training_passed": 0,
+  "training_total": 0,
+  "accuracy_scope": "",
+  "typecheck_passed": false,
+  "deterministic_replay": false,
+  "source_unit_completeness": {
+    "id": "source_ast_coverage",
+    "status": "MISSING",
+    "numerator": 0,
+    "denominator": 0
+  },
+  "source_generated_equivalence": ""
+}

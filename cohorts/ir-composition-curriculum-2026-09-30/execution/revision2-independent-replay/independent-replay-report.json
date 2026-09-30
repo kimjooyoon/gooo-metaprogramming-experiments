@@ -1,0 +1,2441 @@
+{
+  "schema": "gooo/ir-composition-revision2-independent-replay/v1",
+  "decision": "PASS",
+  "model_calls": 0,
+  "gooo_cli_calls": 0,
+  "design_freeze_sha256": "9ef3d4bf5c3be68ef4da9c0e7c712eefb313d6bd325446e229e48b8441e33aca",
+  "revision_manifest_sha256": "d29362bcf9894ac53dc34eb44685cfeaf46b99841574e9473285fac00bfd1dd1",
+  "runner_sha256": "a4515fa815a329a5089cbc4e45a8b8019a1b100aeb43988271733df42bf9edc9",
+  "original": {
+    "designs": 32,
+    "candidates_planned": 96,
+    "compiled_and_executed": 93,
+    "compile_failed": 3,
+    "unknown": 0,
+    "design_results": [
+      {
+        "id": "cc01_inclusive_band",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "cc02_nonzero_disjunction",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 2
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 2
+            }
+          }
+        }
+      },
+      {
+        "id": "cc03_two_islands",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 2
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          }
+        }
+      },
+      {
+        "id": "cc04_outer_cutoffs",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 6,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "ni05_negative_then_double",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "ni06_surcharge_discount",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "ni07_zero_special_negative_offset",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "ni08_upper_grade_excess",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "lr09_compound_total",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "lr10_floor_then_increment",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "lr11_nonnegative_doubled_score",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "lr12_cap_after_adjustment",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "pr13_subtract_tripled_sum",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "pr14_product_neighbor_factors",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "pr15_square_minus_successor_sum",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "pr16_composed_neighbor_product",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "cp17_nonpositive_inclusive",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "cp18_exact_release_code",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "cp19_range_without_origin",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "cp20_strict_symmetric_window",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 6,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "bl21_saved_range_predicates",
+        "candidates": {
+          "option_a": {
+            "status": "compile_failure",
+            "observed": 0
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compile_failure",
+            "observed": 0
+          }
+        }
+      },
+      {
+        "id": "bl22_reassigned_valid_flag",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "bl23_nonzero_bounded_flag",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compile_failure",
+            "observed": 0
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "bl24_selected_nonnegative_codes",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "tx25_sign_label",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 2
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 2
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          }
+        }
+      },
+      {
+        "id": "tx26_state_label",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 2
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 2
+            }
+          }
+        }
+      },
+      {
+        "id": "tx27_lexical_cutoff",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 2
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          }
+        }
+      },
+      {
+        "id": "tx28_reassigned_text_state",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 2
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 2
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          }
+        }
+      },
+      {
+        "id": "ob29_saturating_increment",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "ob30_saturating_decrement",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "ob31_saturating_double",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 6,
+              "total": 6
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 4,
+              "total": 6
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 4,
+              "total": 6
+            }
+          }
+        }
+      },
+      {
+        "id": "ob32_clamped_absolute",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      }
+    ]
+  },
+  "revision_2": {
+    "designs": 32,
+    "candidates_planned": 96,
+    "compiled_and_executed": 96,
+    "compile_failed": 0,
+    "unknown": 0,
+    "design_results": [
+      {
+        "id": "cc01_inclusive_band",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "cc02_nonzero_disjunction",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 2
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 2
+            }
+          }
+        }
+      },
+      {
+        "id": "cc03_two_islands",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 2
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          }
+        }
+      },
+      {
+        "id": "cc04_outer_cutoffs",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 6,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "ni05_negative_then_double",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "ni06_surcharge_discount",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "ni07_zero_special_negative_offset",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "ni08_upper_grade_excess",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "lr09_compound_total",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "lr10_floor_then_increment",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "lr11_nonnegative_doubled_score",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "lr12_cap_after_adjustment",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "pr13_subtract_tripled_sum",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "pr14_product_neighbor_factors",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "pr15_square_minus_successor_sum",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "pr16_composed_neighbor_product",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "cp17_nonpositive_inclusive",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "cp18_exact_release_code",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "cp19_range_without_origin",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "cp20_strict_symmetric_window",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 6,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "bl21_saved_range_predicates",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 4,
+              "total": 4
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 4,
+              "total": 4
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 4,
+              "total": 4
+            }
+          }
+        }
+      },
+      {
+        "id": "bl22_reassigned_valid_flag",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "bl23_nonzero_bounded_flag",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 4,
+              "total": 4
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 4
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 6,
+              "total": 6
+            },
+            "evaluation": {
+              "passed": 4,
+              "total": 4
+            }
+          }
+        }
+      },
+      {
+        "id": "bl24_selected_nonnegative_codes",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "tx25_sign_label",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 2
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 2
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          }
+        }
+      },
+      {
+        "id": "tx26_state_label",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 2
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 2
+            }
+          }
+        }
+      },
+      {
+        "id": "tx27_lexical_cutoff",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 2
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          }
+        }
+      },
+      {
+        "id": "tx28_reassigned_text_state",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 2
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 0,
+              "total": 2
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 2,
+              "total": 3
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 2
+            }
+          }
+        }
+      },
+      {
+        "id": "ob29_saturating_increment",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "ob30_saturating_decrement",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 0,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          }
+        }
+      },
+      {
+        "id": "ob31_saturating_double",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 5,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 6,
+              "total": 6
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 4,
+              "total": 6
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 5
+            },
+            "evaluation": {
+              "passed": 4,
+              "total": 6
+            }
+          }
+        }
+      },
+      {
+        "id": "ob32_clamped_absolute",
+        "candidates": {
+          "option_a": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 3,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 2,
+              "total": 3
+            }
+          },
+          "option_b": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 1,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 1,
+              "total": 3
+            }
+          },
+          "option_c": {
+            "status": "compiled_and_executed",
+            "training": {
+              "passed": 4,
+              "total": 4
+            },
+            "evaluation": {
+              "passed": 3,
+              "total": 3
+            }
+          }
+        }
+      }
+    ]
+  },
+  "same_32_intentions": true,
+  "fresh_discrimination_recomputed": true,
+  "scope": "Finite candidate behavior; source AST completeness is a separate Gooo receipt dimension."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "cc04_outer_cutoffs",
+  "activity": "C04",
+  "training": [
+    {
+      "input": -7,
+      "expected": 9
+    },
+    {
+      "input": -6,
+      "expected": 9
+    },
+    {
+      "input": -5,
+      "expected": 0
+    },
+    {
+      "input": 7,
+      "expected": 0
+    },
+    {
+      "input": 8,
+      "expected": 9
+    },
+    {
+      "input": 9,
+      "expected": 9
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -100,
+      "expected": 9
+    },
+    {
+      "input": 0,
+      "expected": 0
+    },
+    {
+      "input": 100,
+      "expected": 9
+    }
+  ]
+}

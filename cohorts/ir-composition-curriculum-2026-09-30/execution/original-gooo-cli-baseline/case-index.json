@@ -1,0 +1,326 @@
+{
+  "planned": 32,
+  "records": [
+    {
+      "activity": "C01",
+      "case_dir": "cases/cc01_inclusive_band",
+      "case_id": "cc01_inclusive_band",
+      "cli_exit_code": 1,
+      "go_exit_code": null,
+      "result_path": "cases/cc01_inclusive_band/case-result.json",
+      "sequence": 1,
+      "status": "complete"
+    },
+    {
+      "activity": "C02",
+      "case_dir": "cases/cc02_nonzero_disjunction",
+      "case_id": "cc02_nonzero_disjunction",
+      "cli_exit_code": 1,
+      "go_exit_code": null,
+      "result_path": "cases/cc02_nonzero_disjunction/case-result.json",
+      "sequence": 2,
+      "status": "complete"
+    },
+    {
+      "activity": "C03",
+      "case_dir": "cases/cc03_two_islands",
+      "case_id": "cc03_two_islands",
+      "cli_exit_code": 1,
+      "go_exit_code": null,
+      "result_path": "cases/cc03_two_islands/case-result.json",
+      "sequence": 3,
+      "status": "complete"
+    },
+    {
+      "activity": "C04",
+      "case_dir": "cases/cc04_outer_cutoffs",
+      "case_id": "cc04_outer_cutoffs",
+      "cli_exit_code": 1,
+      "go_exit_code": null,
+      "result_path": "cases/cc04_outer_cutoffs/case-result.json",
+      "sequence": 4,
+      "status": "complete"
+    },
+    {
+      "activity": "C05",
+      "case_dir": "cases/ni05_negative_then_double",
+      "case_id": "ni05_negative_then_double",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/ni05_negative_then_double/case-result.json",
+      "sequence": 5,
+      "status": "complete"
+    },
+    {
+      "activity": "C06",
+      "case_dir": "cases/ni06_surcharge_discount",
+      "case_id": "ni06_surcharge_discount",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/ni06_surcharge_discount/case-result.json",
+      "sequence": 6,
+      "status": "complete"
+    },
+    {
+      "activity": "C07",
+      "case_dir": "cases/ni07_zero_special_negative_offset",
+      "case_id": "ni07_zero_special_negative_offset",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/ni07_zero_special_negative_offset/case-result.json",
+      "sequence": 7,
+      "status": "complete"
+    },
+    {
+      "activity": "C08",
+      "case_dir": "cases/ni08_upper_grade_excess",
+      "case_id": "ni08_upper_grade_excess",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/ni08_upper_grade_excess/case-result.json",
+      "sequence": 8,
+      "status": "complete"
+    },
+    {
+      "activity": "C09",
+      "case_dir": "cases/lr09_compound_total",
+      "case_id": "lr09_compound_total",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/lr09_compound_total/case-result.json",
+      "sequence": 9,
+      "status": "complete"
+    },
+    {
+      "activity": "C10",
+      "case_dir": "cases/lr10_floor_then_increment",
+      "case_id": "lr10_floor_then_increment",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/lr10_floor_then_increment/case-result.json",
+      "sequence": 10,
+      "status": "complete"
+    },
+    {
+      "activity": "C11",
+      "case_dir": "cases/lr11_nonnegative_doubled_score",
+      "case_id": "lr11_nonnegative_doubled_score",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/lr11_nonnegative_doubled_score/case-result.json",
+      "sequence": 11,
+      "status": "complete"
+    },
+    {
+      "activity": "C12",
+      "case_dir": "cases/lr12_cap_after_adjustment",
+      "case_id": "lr12_cap_after_adjustment",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/lr12_cap_after_adjustment/case-result.json",
+      "sequence": 12,
+      "status": "complete"
+    },
+    {
+      "activity": "C13",
+      "case_dir": "cases/pr13_subtract_tripled_sum",
+      "case_id": "pr13_subtract_tripled_sum",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/pr13_subtract_tripled_sum/case-result.json",
+      "sequence": 13,
+      "status": "complete"
+    },
+    {
+      "activity": "C14",
+      "case_dir": "cases/pr14_product_neighbor_factors",
+      "case_id": "pr14_product_neighbor_factors",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/pr14_product_neighbor_factors/case-result.json",
+      "sequence": 14,
+      "status": "complete"
+    },
+    {
+      "activity": "C15",
+      "case_dir": "cases/pr15_square_minus_successor_sum",
+      "case_id": "pr15_square_minus_successor_sum",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/pr15_square_minus_successor_sum/case-result.json",
+      "sequence": 15,
+      "status": "complete"
+    },
+    {
+      "activity": "C16",
+      "case_dir": "cases/pr16_composed_neighbor_product",
+      "case_id": "pr16_composed_neighbor_product",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/pr16_composed_neighbor_product/case-result.json",
+      "sequence": 16,
+      "status": "complete"
+    },
+    {
+      "activity": "C17",
+      "case_dir": "cases/cp17_nonpositive_inclusive",
+      "case_id": "cp17_nonpositive_inclusive",
+      "cli_exit_code": 1,
+      "go_exit_code": null,
+      "result_path": "cases/cp17_nonpositive_inclusive/case-result.json",
+      "sequence": 17,
+      "status": "complete"
+    },
+    {
+      "activity": "C18",
+      "case_dir": "cases/cp18_exact_release_code",
+      "case_id": "cp18_exact_release_code",
+      "cli_exit_code": 1,
+      "go_exit_code": null,
+      "result_path": "cases/cp18_exact_release_code/case-result.json",
+      "sequence": 18,
+      "status": "complete"
+    },
+    {
+      "activity": "C19",
+      "case_dir": "cases/cp19_range_without_origin",
+      "case_id": "cp19_range_without_origin",
+      "cli_exit_code": 1,
+      "go_exit_code": null,
+      "result_path": "cases/cp19_range_without_origin/case-result.json",
+      "sequence": 19,
+      "status": "complete"
+    },
+    {
+      "activity": "C20",
+      "case_dir": "cases/cp20_strict_symmetric_window",
+      "case_id": "cp20_strict_symmetric_window",
+      "cli_exit_code": 1,
+      "go_exit_code": null,
+      "result_path": "cases/cp20_strict_symmetric_window/case-result.json",
+      "sequence": 20,
+      "status": "complete"
+    },
+    {
+      "activity": "C21",
+      "case_dir": "cases/bl21_saved_range_predicates",
+      "case_id": "bl21_saved_range_predicates",
+      "cli_exit_code": 1,
+      "go_exit_code": null,
+      "result_path": "cases/bl21_saved_range_predicates/case-result.json",
+      "sequence": 21,
+      "status": "complete"
+    },
+    {
+      "activity": "C22",
+      "case_dir": "cases/bl22_reassigned_valid_flag",
+      "case_id": "bl22_reassigned_valid_flag",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/bl22_reassigned_valid_flag/case-result.json",
+      "sequence": 22,
+      "status": "complete"
+    },
+    {
+      "activity": "C23",
+      "case_dir": "cases/bl23_nonzero_bounded_flag",
+      "case_id": "bl23_nonzero_bounded_flag",
+      "cli_exit_code": 1,
+      "go_exit_code": null,
+      "result_path": "cases/bl23_nonzero_bounded_flag/case-result.json",
+      "sequence": 23,
+      "status": "complete"
+    },
+    {
+      "activity": "C24",
+      "case_dir": "cases/bl24_selected_nonnegative_codes",
+      "case_id": "bl24_selected_nonnegative_codes",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/bl24_selected_nonnegative_codes/case-result.json",
+      "sequence": 24,
+      "status": "complete"
+    },
+    {
+      "activity": "C25",
+      "case_dir": "cases/tx25_sign_label",
+      "case_id": "tx25_sign_label",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/tx25_sign_label/case-result.json",
+      "sequence": 25,
+      "status": "complete"
+    },
+    {
+      "activity": "C26",
+      "case_dir": "cases/tx26_state_label",
+      "case_id": "tx26_state_label",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/tx26_state_label/case-result.json",
+      "sequence": 26,
+      "status": "complete"
+    },
+    {
+      "activity": "C27",
+      "case_dir": "cases/tx27_lexical_cutoff",
+      "case_id": "tx27_lexical_cutoff",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/tx27_lexical_cutoff/case-result.json",
+      "sequence": 27,
+      "status": "complete"
+    },
+    {
+      "activity": "C28",
+      "case_dir": "cases/tx28_reassigned_text_state",
+      "case_id": "tx28_reassigned_text_state",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/tx28_reassigned_text_state/case-result.json",
+      "sequence": 28,
+      "status": "complete"
+    },
+    {
+      "activity": "C29",
+      "case_dir": "cases/ob29_saturating_increment",
+      "case_id": "ob29_saturating_increment",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/ob29_saturating_increment/case-result.json",
+      "sequence": 29,
+      "status": "complete"
+    },
+    {
+      "activity": "C30",
+      "case_dir": "cases/ob30_saturating_decrement",
+      "case_id": "ob30_saturating_decrement",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/ob30_saturating_decrement/case-result.json",
+      "sequence": 30,
+      "status": "complete"
+    },
+    {
+      "activity": "C31",
+      "case_dir": "cases/ob31_saturating_double",
+      "case_id": "ob31_saturating_double",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/ob31_saturating_double/case-result.json",
+      "sequence": 31,
+      "status": "complete"
+    },
+    {
+      "activity": "C32",
+      "case_dir": "cases/ob32_clamped_absolute",
+      "case_id": "ob32_clamped_absolute",
+      "cli_exit_code": 0,
+      "go_exit_code": 1,
+      "result_path": "cases/ob32_clamped_absolute/case-result.json",
+      "sequence": 32,
+      "status": "complete"
+    }
+  ],
+  "schema": "gooo/ir-composition-case-index/v1"
+}

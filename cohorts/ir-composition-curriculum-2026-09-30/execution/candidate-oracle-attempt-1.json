@@ -1,0 +1,19 @@
+{
+  "schema": "gooo/ir-composition-candidate-oracle-attempt/v1",
+  "attempt": 1,
+  "status": "compile_failed",
+  "stage": "original_frozen_candidate_module_go_test",
+  "source_design_freeze_sha256": "e66f71f3bc02350168bb3958628bf5d1a3e02096ed758cbfbe83f987b71eb9b8",
+  "go_version": "go1.27.0",
+  "designs_planned": 32,
+  "designs_compiled": 0,
+  "designs_executed": 0,
+  "designs_failed_or_blocked_by_compile": 32,
+  "candidate_input_executions": 0,
+  "training_and_evaluation_input_rows_planned": 228,
+  "go_test_exit_code": 1,
+  "go_test_stderr": "# example.invalid/gooo/ir-composition-oracle\n./candidates.go:284:6: declared and not used: allowed\n./candidates.go:298:6: declared and not used: allowed\n./candidates.go:328:6: declared and not used: bounded\nFAIL\texample.invalid/gooo/ir-composition-oracle [build failed]\nFAIL\texample.invalid/gooo/ir-composition-oracle/cmd/oracle-report [build failed]\n",
+  "model_calls": 0,
+  "frozen_input_changed": false,
+  "recovery": "attempt 2 uses an execution-only derived Go harness to mark unused declared locals; fixture, plans, candidate expressions, and Python/Go reference semantics remain frozen"
+}

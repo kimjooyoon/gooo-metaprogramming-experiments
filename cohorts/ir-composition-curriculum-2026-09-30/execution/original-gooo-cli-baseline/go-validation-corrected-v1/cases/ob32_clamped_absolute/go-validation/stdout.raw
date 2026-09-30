@@ -1,0 +1,13 @@
+=== RUN   TestFrozenTrainingVectors_ob32_clamped_absolute
+    generated_test.go:24: FINITERESULT|training|1|-3|3|3|true
+    generated_test.go:24: FINITERESULT|training|2|0|0|0|true
+    generated_test.go:24: FINITERESULT|training|3|5|5|5|true
+    generated_test.go:24: FINITERESULT|training|4|7|7|7|true
+--- PASS: TestFrozenTrainingVectors_ob32_clamped_absolute (0.00s)
+=== RUN   TestFrozenEvaluationVectors_ob32_clamped_absolute
+    generated_test.go:33: FINITERESULT|evaluation|1|-9223372036854775808|9223372036854775807|9223372036854775807|true
+    generated_test.go:33: FINITERESULT|evaluation|2|-9223372036854775807|9223372036854775807|9223372036854775807|true
+    generated_test.go:33: FINITERESULT|evaluation|3|9223372036854775807|9223372036854775807|9223372036854775807|true
+--- PASS: TestFrozenEvaluationVectors_ob32_clamped_absolute (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/ob32_clamped_absolute	0.353s

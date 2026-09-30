@@ -1,0 +1,762 @@
+{
+  "evaluation": {
+    "observed": 0,
+    "passed": 0,
+    "planned": 93,
+    "unknown": 93
+  },
+  "go_compile_validation": {
+    "attempted_successful_cli_outputs": 22,
+    "go_test_failures_or_incomplete": 22,
+    "passed_all_vectors": 0,
+    "planned_designs": 32,
+    "unknown_no_compile_attempt": 10
+  },
+  "measure": "independently compiled emitted Go executed over the frozen disjoint training/evaluation vectors",
+  "per_case": [
+    {
+      "case_id": "cc01_inclusive_band",
+      "evaluation": null,
+      "go_validation_status": "not_run_no_successful_emission",
+      "gooo_training_receipt": {
+        "accuracy_percent": null,
+        "passed": null,
+        "scope": null,
+        "total": null
+      },
+      "training": null
+    },
+    {
+      "case_id": "cc02_nonzero_disjunction",
+      "evaluation": null,
+      "go_validation_status": "not_run_no_successful_emission",
+      "gooo_training_receipt": {
+        "accuracy_percent": null,
+        "passed": null,
+        "scope": null,
+        "total": null
+      },
+      "training": null
+    },
+    {
+      "case_id": "cc03_two_islands",
+      "evaluation": null,
+      "go_validation_status": "not_run_no_successful_emission",
+      "gooo_training_receipt": {
+        "accuracy_percent": null,
+        "passed": null,
+        "scope": null,
+        "total": null
+      },
+      "training": null
+    },
+    {
+      "case_id": "cc04_outer_cutoffs",
+      "evaluation": null,
+      "go_validation_status": "not_run_no_successful_emission",
+      "gooo_training_receipt": {
+        "accuracy_percent": null,
+        "passed": null,
+        "scope": null,
+        "total": null
+      },
+      "training": null
+    },
+    {
+      "case_id": "ni05_negative_then_double",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 5,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 5
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 5,
+        "timed_out": false,
+        "unknown": 5
+      }
+    },
+    {
+      "case_id": "ni06_surcharge_discount",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 5,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 5
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 5,
+        "timed_out": false,
+        "unknown": 5
+      }
+    },
+    {
+      "case_id": "ni07_zero_special_negative_offset",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 4
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 4
+      }
+    },
+    {
+      "case_id": "ni08_upper_grade_excess",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 5,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 5
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 5,
+        "timed_out": false,
+        "unknown": 5
+      }
+    },
+    {
+      "case_id": "lr09_compound_total",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 4
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 4
+      }
+    },
+    {
+      "case_id": "lr10_floor_then_increment",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 4
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 4
+      }
+    },
+    {
+      "case_id": "lr11_nonnegative_doubled_score",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 4
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 4
+      }
+    },
+    {
+      "case_id": "lr12_cap_after_adjustment",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 4
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 4
+      }
+    },
+    {
+      "case_id": "pr13_subtract_tripled_sum",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 4
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 4
+      }
+    },
+    {
+      "case_id": "pr14_product_neighbor_factors",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 4
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 4
+      }
+    },
+    {
+      "case_id": "pr15_square_minus_successor_sum",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 4
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 4
+      }
+    },
+    {
+      "case_id": "pr16_composed_neighbor_product",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 4
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 4
+      }
+    },
+    {
+      "case_id": "cp17_nonpositive_inclusive",
+      "evaluation": null,
+      "go_validation_status": "not_run_no_successful_emission",
+      "gooo_training_receipt": {
+        "accuracy_percent": null,
+        "passed": null,
+        "scope": null,
+        "total": null
+      },
+      "training": null
+    },
+    {
+      "case_id": "cp18_exact_release_code",
+      "evaluation": null,
+      "go_validation_status": "not_run_no_successful_emission",
+      "gooo_training_receipt": {
+        "accuracy_percent": null,
+        "passed": null,
+        "scope": null,
+        "total": null
+      },
+      "training": null
+    },
+    {
+      "case_id": "cp19_range_without_origin",
+      "evaluation": null,
+      "go_validation_status": "not_run_no_successful_emission",
+      "gooo_training_receipt": {
+        "accuracy_percent": null,
+        "passed": null,
+        "scope": null,
+        "total": null
+      },
+      "training": null
+    },
+    {
+      "case_id": "cp20_strict_symmetric_window",
+      "evaluation": null,
+      "go_validation_status": "not_run_no_successful_emission",
+      "gooo_training_receipt": {
+        "accuracy_percent": null,
+        "passed": null,
+        "scope": null,
+        "total": null
+      },
+      "training": null
+    },
+    {
+      "case_id": "bl21_saved_range_predicates",
+      "evaluation": null,
+      "go_validation_status": "not_run_no_successful_emission",
+      "gooo_training_receipt": {
+        "accuracy_percent": null,
+        "passed": null,
+        "scope": null,
+        "total": null
+      },
+      "training": null
+    },
+    {
+      "case_id": "bl22_reassigned_valid_flag",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 4
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 4
+      }
+    },
+    {
+      "case_id": "bl23_nonzero_bounded_flag",
+      "evaluation": null,
+      "go_validation_status": "not_run_no_successful_emission",
+      "gooo_training_receipt": {
+        "accuracy_percent": null,
+        "passed": null,
+        "scope": null,
+        "total": null
+      },
+      "training": null
+    },
+    {
+      "case_id": "bl24_selected_nonnegative_codes",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 5,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 5
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 5,
+        "timed_out": false,
+        "unknown": 5
+      }
+    },
+    {
+      "case_id": "tx25_sign_label",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 2,
+        "timed_out": false,
+        "unknown": 2
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 3,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 3
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      }
+    },
+    {
+      "case_id": "tx26_state_label",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 2,
+        "timed_out": false,
+        "unknown": 2
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 3,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 3
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      }
+    },
+    {
+      "case_id": "tx27_lexical_cutoff",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 2,
+        "timed_out": false,
+        "unknown": 2
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 3,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 3
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      }
+    },
+    {
+      "case_id": "tx28_reassigned_text_state",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 2,
+        "timed_out": false,
+        "unknown": 2
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 3,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 3
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      }
+    },
+    {
+      "case_id": "ob29_saturating_increment",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 4
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 4
+      }
+    },
+    {
+      "case_id": "ob30_saturating_decrement",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 4
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 4
+      }
+    },
+    {
+      "case_id": "ob31_saturating_double",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 6,
+        "timed_out": false,
+        "unknown": 6
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 5,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 5
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 5,
+        "timed_out": false,
+        "unknown": 5
+      }
+    },
+    {
+      "case_id": "ob32_clamped_absolute",
+      "evaluation": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 3
+      },
+      "go_validation_status": "GO_TEST_FAILURE_OR_INCOMPLETE",
+      "gooo_training_receipt": {
+        "accuracy_percent": 100,
+        "passed": 4,
+        "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+        "total": 4
+      },
+      "training": {
+        "all_observed_cases_passed": false,
+        "go_test_exit_code": 1,
+        "observed": 0,
+        "passed": 0,
+        "planned": 4,
+        "timed_out": false,
+        "unknown": 4
+      }
+    }
+  ],
+  "planned_designs": 32,
+  "schema": "gooo/ir-composition-finite-fitness-summary/v1",
+  "training": {
+    "observed": 0,
+    "passed": 0,
+    "planned": 135,
+    "unknown": 135
+  }
+}

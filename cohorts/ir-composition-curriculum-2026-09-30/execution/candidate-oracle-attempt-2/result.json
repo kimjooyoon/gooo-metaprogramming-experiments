@@ -1,0 +1,30 @@
+{
+  "schema": "gooo/ir-composition-candidate-oracle-attempt/v1",
+  "attempt": 2,
+  "status": "go_test_failed",
+  "source_design_freeze_sha256": "e66f71f3bc02350168bb3958628bf5d1a3e02096ed758cbfbe83f987b71eb9b8",
+  "go_version": "go version go1.27.0 darwin/arm64",
+  "original_candidates_sha256": "75d31489882de642f6830b9a975571b4e0df870e3c1d32d53dfa91b79fbb2e91",
+  "derived_candidates_sha256": "453a86f5f1599b423bd66a5feca3a4c4f6ed85578dc537d3cb0badb73c5ec8a2",
+  "repair": "append blank identifier uses for declared locals that are unused by a finite candidate branch; candidate expressions and specs unchanged",
+  "repairs": [
+    {
+      "function": " candidate21a",
+      "local": "allowed"
+    },
+    {
+      "function": " candidate21c",
+      "local": "allowed"
+    },
+    {
+      "function": " candidate23b",
+      "local": "bounded"
+    }
+  ],
+  "go_test_exit_code": 1,
+  "go_test_stdout": "FAIL\texample.invalid/gooo/ir-composition-oracle [build failed]\nFAIL\texample.invalid/gooo/ir-composition-oracle/cmd/oracle-report [build failed]\nFAIL\n",
+  "go_test_stderr": "# example.invalid/gooo/ir-composition-oracle\n./candidates.go:287:1: missing return\n./candidates.go:302:1: missing return\n./candidates.go:333:1: missing return\n",
+  "model_calls": 0,
+  "runner_path": "cohorts/ir-composition-curriculum-2026-09-30/execution/candidate-oracle-attempt-2/runner-attempt-2.py",
+  "runner_sha256": "dcb0b9cdff0056d3c6f01f4dab2eb483758cebddf6fb2c631e7d21ee6544506e"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "bl23_nonzero_bounded_flag",
+  "activity": "C23",
+  "training": [
+    {
+      "input": -5,
+      "expected": 0
+    },
+    {
+      "input": -4,
+      "expected": 9
+    },
+    {
+      "input": 0,
+      "expected": 0
+    },
+    {
+      "input": 4,
+      "expected": 9
+    },
+    {
+      "input": 5,
+      "expected": 0
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -100,
+      "expected": 0
+    },
+    {
+      "input": 3,
+      "expected": 9
+    },
+    {
+      "input": 100,
+      "expected": 0
+    }
+  ]
+}

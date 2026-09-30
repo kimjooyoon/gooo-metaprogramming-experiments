@@ -1,0 +1,67 @@
+{
+  "case_id": "bl22_reassigned_valid_flag",
+  "activity": "C22",
+  "codegen_status": "generated",
+  "exit_code": 0,
+  "timed_out": false,
+  "error": "",
+  "stdout_sha256": "113fe5eef66b9f7ec7f74474456335132d42f49a93b94fe7a40b384b3e4178ec",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+  "source_digest": "sha256:4e6461162eb0367e874055094272e438b1896e02b22c5fe62bfdaf68000e4033",
+  "plan_sha256": "sha256:f2cdaa68690969ee902047c00215beaf742824c8f7292c9d8d80adf4b41a28d9",
+  "generated_digest": "sha256:1003be744d279328f64b06b8dabc1a3c9fe8cebce0706649d45f1c92177cb2c9",
+  "selected_candidate_id": "option_a",
+  "selected_candidate_original_go_validity": "valid",
+  "candidate_scores": [
+    {
+      "id": "option_a",
+      "expression": "valid",
+      "typecheck_passed": true,
+      "test_cases_passed": 4,
+      "test_cases_total": 4,
+      "accuracy_percent": 100
+    },
+    {
+      "id": "option_b",
+      "expression": "valid || input == 10",
+      "typecheck_passed": true,
+      "test_cases_passed": 4,
+      "test_cases_total": 4,
+      "accuracy_percent": 100
+    },
+    {
+      "id": "option_c",
+      "expression": "input <= 5",
+      "typecheck_passed": true,
+      "test_cases_passed": 3,
+      "test_cases_total": 4,
+      "accuracy_percent": 75
+    }
+  ],
+  "training_passed": 4,
+  "training_total": 4,
+  "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+  "typecheck_passed": true,
+  "deterministic_replay": true,
+  "source_unit_completeness": {
+    "id": "source_ast_coverage",
+    "status": "PASS",
+    "numerator": 19,
+    "denominator": 19,
+    "unit": "source semantic units lowered"
+  },
+  "source_generated_equivalence": "PASS",
+  "generated_go_execution": {
+    "status": "go_test_did_not_reach_case_execution",
+    "training": {
+      "passed": 0,
+      "total": 0
+    },
+    "evaluation": {
+      "passed": 0,
+      "total": 0
+    },
+    "package_status": "unknown"
+  }
+}

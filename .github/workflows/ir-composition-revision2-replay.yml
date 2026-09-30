@@ -1,0 +1,56 @@
+name: IR composition revision-2 candidate replay
+
+on:
+  push:
+    paths:
+      - '.github/workflows/ir-composition-revision2-replay.yml'
+      - 'scripts/replay_ir_composition_revision2.py'
+      - 'scripts/prepare_ir_composition_revision2.py'
+      - 'cohorts/ir-composition-curriculum-2026-09-30/**'
+  pull_request:
+    paths:
+      - '.github/workflows/ir-composition-revision2-replay.yml'
+      - 'scripts/replay_ir_composition_revision2.py'
+      - 'scripts/prepare_ir_composition_revision2.py'
+      - 'cohorts/ir-composition-curriculum-2026-09-30/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  candidate-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GOOO_LAYA_URL: ''
+      GOOO_LAYA_API_KEY: ''
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      GOTOOLCHAIN: local
+      GOPROXY: off
+      GOSUMDB: off
+      GOWORK: off
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.27.0'
+          cache: false
+      - name: Independently replay original and revised candidates in temporary copies
+        run: |
+          python3 scripts/replay_ir_composition_revision2.py \
+            --go-bin "$(command -v go)" \
+            --output "$RUNNER_TEMP/ir-composition-revision2-replay"
+      - name: Publish finite replay summary
+        if: always()
+        run: |
+          report="$RUNNER_TEMP/ir-composition-revision2-replay/independent-replay-report.md"
+          if [ -f "$report" ]; then cat "$report" >> "$GITHUB_STEP_SUMMARY"; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ir-composition-revision2-replay-${{ github.sha }}
+          path: ${{ runner.temp }}/ir-composition-revision2-replay
+          if-no-files-found: warn

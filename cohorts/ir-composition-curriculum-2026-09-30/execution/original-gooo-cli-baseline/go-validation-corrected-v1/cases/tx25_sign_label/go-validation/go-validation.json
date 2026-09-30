@@ -1,0 +1,95 @@
+{
+  "activity": "C25",
+  "actual_results": {
+    "evaluation": [
+      {
+        "actual": -1,
+        "expected": -1,
+        "index": 1,
+        "input": -20,
+        "passed": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "index": 2,
+        "input": 20,
+        "passed": true
+      }
+    ],
+    "training": [
+      {
+        "actual": -1,
+        "expected": -1,
+        "index": 1,
+        "input": -1,
+        "passed": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "index": 2,
+        "input": 0,
+        "passed": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "index": 3,
+        "input": 1,
+        "passed": true
+      }
+    ]
+  },
+  "case_id": "tx25_sign_label",
+  "command": [
+    "/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go",
+    "test",
+    "-count=1",
+    "-v",
+    "./..."
+  ],
+  "elapsed_ms": 499.261958,
+  "ended_utc": "2026-09-30T08:25:39.560005+00:00",
+  "exit_code": 0,
+  "finite_fitness": {
+    "evaluation": {
+      "all_observed_cases_passed": true,
+      "go_test_exit_code": 0,
+      "observed": 2,
+      "passed": 2,
+      "planned": 2,
+      "timed_out": false,
+      "unknown": 0
+    },
+    "training": {
+      "all_observed_cases_passed": true,
+      "go_test_exit_code": 0,
+      "observed": 3,
+      "passed": 3,
+      "planned": 3,
+      "timed_out": false,
+      "unknown": 0
+    }
+  },
+  "go_version": "go1.27.0",
+  "launch_error": null,
+  "schema": "gooo/ir-composition-independent-go-validation/v1",
+  "source_sha256": "28f68fa00288a8e8b8525b1404e49a2584b6446db47a5dabcc067e45b9adb1da",
+  "started_utc": "2026-09-30T08:25:39.060725+00:00",
+  "status": "GO_TEST_PASS",
+  "stderr_path": "go-validation/stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_path": "go-validation/stdout.raw",
+  "stdout_sha256": "ce221f71eee117d03ae8e97fea3890138c769f1ba793d083c8366bfbc5540e82",
+  "test_source_sha256": "f86d6917617ee843c70d201941adf2208c092dee94f58d66209d0020ebd96a2e",
+  "timed_out": false,
+  "timeout_seconds": 120,
+  "vector_counts": {
+    "evaluation": 2,
+    "observed_total": 5,
+    "planned_total": 5,
+    "training": 3,
+    "unknown_total": 0
+  }
+}

@@ -1,0 +1,3210 @@
+{
+  "schema": "gooo/ir-composition-go-oracle-execution/v1",
+  "model_calls": 0,
+  "designs": [
+    {
+      "id": "cc01_inclusive_band",
+      "training": [
+        {
+          "input": -1,
+          "expected": -1,
+          "actual": -1,
+          "passed": true
+        },
+        {
+          "input": 2,
+          "expected": -1,
+          "actual": -1,
+          "passed": true
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "input": 9,
+          "expected": -1,
+          "actual": -1,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -10,
+          "expected": -1,
+          "actual": -1,
+          "passed": true
+        },
+        {
+          "input": 4,
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "input": 12,
+          "expected": -1,
+          "actual": -1,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          -1,
+          -1,
+          2,
+          2,
+          -1
+        ],
+        "option_b": [
+          -1,
+          -1,
+          -1,
+          2,
+          -1
+        ],
+        "option_c": [
+          -1,
+          -1,
+          2,
+          -1,
+          -1
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          -1,
+          2,
+          -1
+        ],
+        "option_b": [
+          -1,
+          2,
+          -1
+        ],
+        "option_c": [
+          -1,
+          2,
+          -1
+        ]
+      },
+      "gold_candidate": "option_a",
+      "gold_discriminating_inputs": {
+        "option_a": [],
+        "option_b": [
+          3
+        ],
+        "option_c": [
+          8
+        ]
+      }
+    },
+    {
+      "id": "cc02_nonzero_disjunction",
+      "training": [
+        {
+          "input": -1,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -7,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 12,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          0,
+          0,
+          0
+        ],
+        "option_b": [
+          0,
+          1,
+          1
+        ],
+        "option_c": [
+          1,
+          0,
+          1
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          0,
+          0
+        ],
+        "option_b": [
+          0,
+          1
+        ],
+        "option_c": [
+          1,
+          1
+        ]
+      },
+      "gold_candidate": "option_c",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          -1,
+          1
+        ],
+        "option_b": [
+          -1,
+          0
+        ],
+        "option_c": []
+      }
+    },
+    {
+      "id": "cc03_two_islands",
+      "training": [
+        {
+          "input": -5,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": -4,
+          "expected": 7,
+          "actual": 7,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 4,
+          "expected": 7,
+          "actual": 7,
+          "passed": true
+        },
+        {
+          "input": 5,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -100,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 2,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          7,
+          0,
+          0,
+          0,
+          7
+        ],
+        "option_b": [
+          0,
+          7,
+          0,
+          7,
+          0
+        ],
+        "option_c": [
+          0,
+          7,
+          7,
+          7,
+          0
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          7,
+          0
+        ],
+        "option_b": [
+          0,
+          0
+        ],
+        "option_c": [
+          0,
+          7
+        ]
+      },
+      "gold_candidate": "option_b",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          -5,
+          -4,
+          4,
+          5
+        ],
+        "option_b": [],
+        "option_c": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "cc04_outer_cutoffs",
+      "training": [
+        {
+          "input": -7,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        },
+        {
+          "input": -6,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        },
+        {
+          "input": -5,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 7,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 8,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        },
+        {
+          "input": 9,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -100,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 100,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          9,
+          9,
+          0,
+          0,
+          9,
+          9
+        ],
+        "option_b": [
+          0,
+          0,
+          0,
+          9,
+          9,
+          9
+        ],
+        "option_c": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          9,
+          0,
+          9
+        ],
+        "option_b": [
+          9,
+          0,
+          9
+        ],
+        "option_c": [
+          0,
+          0,
+          0
+        ]
+      },
+      "gold_candidate": "option_a",
+      "gold_discriminating_inputs": {
+        "option_a": [],
+        "option_b": [
+          -7,
+          -6,
+          7
+        ],
+        "option_c": [
+          -7,
+          -6,
+          8,
+          9
+        ]
+      }
+    },
+    {
+      "id": "ni05_negative_then_double",
+      "training": [
+        {
+          "input": -1,
+          "expected": -1,
+          "actual": -1,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "input": 9,
+          "expected": 18,
+          "actual": 18,
+          "passed": true
+        },
+        {
+          "input": 10,
+          "expected": 20,
+          "actual": 20,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -5,
+          "expected": -1,
+          "actual": -1,
+          "passed": true
+        },
+        {
+          "input": 5,
+          "expected": 10,
+          "actual": 10,
+          "passed": true
+        },
+        {
+          "input": 11,
+          "expected": 20,
+          "actual": 20,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          -1,
+          2,
+          3,
+          11,
+          20
+        ],
+        "option_b": [
+          -1,
+          0,
+          3,
+          27,
+          20
+        ],
+        "option_c": [
+          -1,
+          0,
+          2,
+          18,
+          20
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          -1,
+          7,
+          20
+        ],
+        "option_b": [
+          -1,
+          15,
+          20
+        ],
+        "option_c": [
+          -1,
+          10,
+          20
+        ]
+      },
+      "gold_candidate": "option_c",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          0,
+          1,
+          9
+        ],
+        "option_b": [
+          1,
+          9
+        ],
+        "option_c": []
+      }
+    },
+    {
+      "id": "ni06_surcharge_discount",
+      "training": [
+        {
+          "input": -1,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 10,
+          "actual": 10,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 11,
+          "actual": 11,
+          "passed": true
+        },
+        {
+          "input": 100,
+          "expected": 110,
+          "actual": 110,
+          "passed": true
+        },
+        {
+          "input": 101,
+          "expected": 91,
+          "actual": 91,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -5,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 50,
+          "expected": 60,
+          "actual": 60,
+          "passed": true
+        },
+        {
+          "input": 111,
+          "expected": 101,
+          "actual": 101,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          0,
+          11,
+          12,
+          111,
+          91
+        ],
+        "option_b": [
+          0,
+          10,
+          11,
+          110,
+          91
+        ],
+        "option_c": [
+          0,
+          9,
+          10,
+          109,
+          91
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          0,
+          61,
+          101
+        ],
+        "option_b": [
+          0,
+          60,
+          101
+        ],
+        "option_c": [
+          0,
+          59,
+          101
+        ]
+      },
+      "gold_candidate": "option_b",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          0,
+          1,
+          100
+        ],
+        "option_b": [],
+        "option_c": [
+          0,
+          1,
+          100
+        ]
+      }
+    },
+    {
+      "id": "ni07_zero_special_negative_offset",
+      "training": [
+        {
+          "input": -2,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": -1,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 5,
+          "actual": 5,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 3,
+          "actual": 3,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -9,
+          "expected": -7,
+          "actual": -7,
+          "passed": true
+        },
+        {
+          "input": 2,
+          "expected": 3,
+          "actual": 3,
+          "passed": true
+        },
+        {
+          "input": 50,
+          "expected": 3,
+          "actual": 3,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          0,
+          1,
+          5,
+          3
+        ],
+        "option_b": [
+          -4,
+          -3,
+          5,
+          3
+        ],
+        "option_c": [
+          -1,
+          0,
+          5,
+          3
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          -7,
+          3,
+          3
+        ],
+        "option_b": [
+          -11,
+          3,
+          3
+        ],
+        "option_c": [
+          -8,
+          3,
+          3
+        ]
+      },
+      "gold_candidate": "option_a",
+      "gold_discriminating_inputs": {
+        "option_a": [],
+        "option_b": [
+          -2,
+          -1
+        ],
+        "option_c": [
+          -2,
+          -1
+        ]
+      }
+    },
+    {
+      "id": "ni08_upper_grade_excess",
+      "training": [
+        {
+          "input": 59,
+          "expected": -1,
+          "actual": -1,
+          "passed": true
+        },
+        {
+          "input": 60,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 79,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 80,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 81,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -1,
+          "expected": -1,
+          "actual": -1,
+          "passed": true
+        },
+        {
+          "input": 70,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 100,
+          "expected": 20,
+          "actual": 20,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          -1,
+          0,
+          0,
+          1,
+          2
+        ],
+        "option_b": [
+          -1,
+          0,
+          0,
+          -1,
+          0
+        ],
+        "option_c": [
+          -1,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          -1,
+          0,
+          21
+        ],
+        "option_b": [
+          -1,
+          0,
+          19
+        ],
+        "option_c": [
+          -1,
+          0,
+          20
+        ]
+      },
+      "gold_candidate": "option_c",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          80,
+          81
+        ],
+        "option_b": [
+          80,
+          81
+        ],
+        "option_c": []
+      }
+    },
+    {
+      "id": "lr09_compound_total",
+      "training": [
+        {
+          "input": -5,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 10,
+          "actual": 10,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 12,
+          "actual": 12,
+          "passed": true
+        },
+        {
+          "input": 4,
+          "expected": 18,
+          "actual": 18,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -10,
+          "expected": -10,
+          "actual": -10,
+          "passed": true
+        },
+        {
+          "input": 8,
+          "expected": 26,
+          "actual": 26,
+          "passed": true
+        },
+        {
+          "input": 10,
+          "expected": 30,
+          "actual": 30,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          5,
+          10,
+          11,
+          14
+        ],
+        "option_b": [
+          0,
+          10,
+          12,
+          18
+        ],
+        "option_c": [
+          -5,
+          5,
+          7,
+          13
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          0,
+          18,
+          20
+        ],
+        "option_b": [
+          -10,
+          26,
+          30
+        ],
+        "option_c": [
+          -15,
+          21,
+          25
+        ]
+      },
+      "gold_candidate": "option_b",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          -5,
+          1,
+          4
+        ],
+        "option_b": [],
+        "option_c": [
+          -5,
+          0,
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "id": "lr10_floor_then_increment",
+      "training": [
+        {
+          "input": -1,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "input": 5,
+          "expected": 6,
+          "actual": 6,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -10,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 4,
+          "expected": 5,
+          "actual": 5,
+          "passed": true
+        },
+        {
+          "input": 20,
+          "expected": 21,
+          "actual": 21,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          0,
+          1,
+          2,
+          6
+        ],
+        "option_b": [
+          -1,
+          0,
+          1,
+          5
+        ],
+        "option_c": [
+          1,
+          2,
+          3,
+          7
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          0,
+          5,
+          21
+        ],
+        "option_b": [
+          -10,
+          4,
+          20
+        ],
+        "option_c": [
+          1,
+          6,
+          22
+        ]
+      },
+      "gold_candidate": "option_a",
+      "gold_discriminating_inputs": {
+        "option_a": [],
+        "option_b": [
+          -1,
+          0,
+          1,
+          5
+        ],
+        "option_c": [
+          -1,
+          0,
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "id": "lr11_nonnegative_doubled_score",
+      "training": [
+        {
+          "input": -2,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": -1,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 2,
+          "expected": 5,
+          "actual": 5,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -10,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 3,
+          "expected": 7,
+          "actual": 7,
+          "passed": true
+        },
+        {
+          "input": 10,
+          "expected": 21,
+          "actual": 21,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          -3,
+          -1,
+          1,
+          5
+        ],
+        "option_b": [
+          -2,
+          -1,
+          0,
+          2
+        ],
+        "option_c": [
+          0,
+          0,
+          1,
+          5
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          -19,
+          7,
+          21
+        ],
+        "option_b": [
+          -10,
+          3,
+          10
+        ],
+        "option_c": [
+          0,
+          7,
+          21
+        ]
+      },
+      "gold_candidate": "option_c",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          -2,
+          -1
+        ],
+        "option_b": [
+          -2,
+          -1,
+          0,
+          2
+        ],
+        "option_c": []
+      }
+    },
+    {
+      "id": "lr12_cap_after_adjustment",
+      "training": [
+        {
+          "input": -5,
+          "expected": -3,
+          "actual": -3,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "input": 7,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        },
+        {
+          "input": 8,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -20,
+          "expected": -18,
+          "actual": -18,
+          "passed": true
+        },
+        {
+          "input": 10,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        },
+        {
+          "input": 100,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          -2,
+          3,
+          10,
+          10
+        ],
+        "option_b": [
+          -3,
+          2,
+          9,
+          9
+        ],
+        "option_c": [
+          -3,
+          2,
+          9,
+          10
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          -17,
+          10,
+          10
+        ],
+        "option_b": [
+          -18,
+          9,
+          9
+        ],
+        "option_c": [
+          -18,
+          12,
+          102
+        ]
+      },
+      "gold_candidate": "option_b",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          -5,
+          0,
+          7,
+          8
+        ],
+        "option_b": [],
+        "option_c": [
+          8
+        ]
+      }
+    },
+    {
+      "id": "pr13_subtract_tripled_sum",
+      "training": [
+        {
+          "input": -2,
+          "expected": 100,
+          "actual": 100,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 94,
+          "actual": 94,
+          "passed": true
+        },
+        {
+          "input": 3,
+          "expected": 85,
+          "actual": 85,
+          "passed": true
+        },
+        {
+          "input": 5,
+          "expected": 79,
+          "actual": 79,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -10,
+          "expected": 124,
+          "actual": 124,
+          "passed": true
+        },
+        {
+          "input": 7,
+          "expected": 73,
+          "actual": 73,
+          "passed": true
+        },
+        {
+          "input": 20,
+          "expected": 34,
+          "actual": 34,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          100,
+          94,
+          85,
+          79
+        ],
+        "option_b": [
+          97,
+          91,
+          82,
+          76
+        ],
+        "option_c": [
+          112,
+          106,
+          97,
+          91
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          124,
+          73,
+          34
+        ],
+        "option_b": [
+          121,
+          70,
+          31
+        ],
+        "option_c": [
+          136,
+          85,
+          46
+        ]
+      },
+      "gold_candidate": "option_a",
+      "gold_discriminating_inputs": {
+        "option_a": [],
+        "option_b": [
+          -2,
+          0,
+          3,
+          5
+        ],
+        "option_c": [
+          -2,
+          0,
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "id": "pr14_product_neighbor_factors",
+      "training": [
+        {
+          "input": -3,
+          "expected": 25,
+          "actual": 25,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": -2,
+          "actual": -2,
+          "passed": true
+        },
+        {
+          "input": 2,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 5,
+          "expected": 33,
+          "actual": 33,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -10,
+          "expected": 228,
+          "actual": 228,
+          "passed": true
+        },
+        {
+          "input": 4,
+          "expected": 18,
+          "actual": 18,
+          "passed": true
+        },
+        {
+          "input": 10,
+          "expected": 168,
+          "actual": 168,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          35,
+          2,
+          0,
+          27
+        ],
+        "option_b": [
+          30,
+          0,
+          0,
+          30
+        ],
+        "option_c": [
+          25,
+          -2,
+          0,
+          33
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          252,
+          14,
+          152
+        ],
+        "option_b": [
+          240,
+          16,
+          160
+        ],
+        "option_c": [
+          228,
+          18,
+          168
+        ]
+      },
+      "gold_candidate": "option_c",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          -3,
+          0,
+          5
+        ],
+        "option_b": [
+          -3,
+          0,
+          5
+        ],
+        "option_c": []
+      }
+    },
+    {
+      "id": "pr15_square_minus_successor_sum",
+      "training": [
+        {
+          "input": -2,
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": -4,
+          "actual": -4,
+          "passed": true
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "input": 6,
+          "expected": 26,
+          "actual": 26,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -10,
+          "expected": 106,
+          "actual": 106,
+          "passed": true
+        },
+        {
+          "input": 5,
+          "expected": 16,
+          "actual": 16,
+          "passed": true
+        },
+        {
+          "input": 20,
+          "expected": 376,
+          "actual": 376,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          10,
+          4,
+          10,
+          34
+        ],
+        "option_b": [
+          2,
+          -4,
+          2,
+          26
+        ],
+        "option_c": [
+          4,
+          -2,
+          4,
+          28
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          114,
+          24,
+          384
+        ],
+        "option_b": [
+          106,
+          16,
+          376
+        ],
+        "option_c": [
+          108,
+          18,
+          378
+        ]
+      },
+      "gold_candidate": "option_b",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          -2,
+          0,
+          3,
+          6
+        ],
+        "option_b": [],
+        "option_c": [
+          -2,
+          0,
+          3,
+          6
+        ]
+      }
+    },
+    {
+      "id": "pr16_composed_neighbor_product",
+      "training": [
+        {
+          "input": -3,
+          "expected": 5,
+          "actual": 5,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "input": 2,
+          "expected": 10,
+          "actual": 10,
+          "passed": true
+        },
+        {
+          "input": 5,
+          "expected": 37,
+          "actual": 37,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -10,
+          "expected": 82,
+          "actual": 82,
+          "passed": true
+        },
+        {
+          "input": 4,
+          "expected": 26,
+          "actual": 26,
+          "passed": true
+        },
+        {
+          "input": 12,
+          "expected": 170,
+          "actual": 170,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          5,
+          2,
+          10,
+          37
+        ],
+        "option_b": [
+          7,
+          1,
+          7,
+          31
+        ],
+        "option_c": [
+          3,
+          3,
+          13,
+          43
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          82,
+          26,
+          170
+        ],
+        "option_b": [
+          91,
+          21,
+          157
+        ],
+        "option_c": [
+          73,
+          31,
+          183
+        ]
+      },
+      "gold_candidate": "option_a",
+      "gold_discriminating_inputs": {
+        "option_a": [],
+        "option_b": [
+          -3,
+          0,
+          2,
+          5
+        ],
+        "option_c": [
+          -3,
+          0,
+          2,
+          5
+        ]
+      }
+    },
+    {
+      "id": "cp17_nonpositive_inclusive",
+      "training": [
+        {
+          "input": -1,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -9,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 5,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 10,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          1,
+          0,
+          0
+        ],
+        "option_b": [
+          0,
+          1,
+          0
+        ],
+        "option_c": [
+          1,
+          1,
+          0
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          1,
+          0,
+          0
+        ],
+        "option_b": [
+          0,
+          0,
+          0
+        ],
+        "option_c": [
+          1,
+          0,
+          0
+        ]
+      },
+      "gold_candidate": "option_c",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          0
+        ],
+        "option_b": [
+          -1
+        ],
+        "option_c": []
+      }
+    },
+    {
+      "id": "cp18_exact_release_code",
+      "training": [
+        {
+          "input": 6,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 7,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 8,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 9,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 100,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          0,
+          0,
+          1
+        ],
+        "option_b": [
+          0,
+          1,
+          0
+        ],
+        "option_c": [
+          0,
+          1,
+          1
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          0,
+          0,
+          0
+        ],
+        "option_b": [
+          0,
+          0,
+          0
+        ],
+        "option_c": [
+          0,
+          1,
+          1
+        ]
+      },
+      "gold_candidate": "option_b",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          7,
+          8
+        ],
+        "option_b": [],
+        "option_c": [
+          8
+        ]
+      }
+    },
+    {
+      "id": "cp19_range_without_origin",
+      "training": [
+        {
+          "input": -4,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": -3,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 3,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 4,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -100,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 2,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 100,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "option_b": [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "option_c": [
+          1,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          0,
+          1,
+          0
+        ],
+        "option_b": [
+          0,
+          1,
+          0
+        ],
+        "option_c": [
+          1,
+          0,
+          1
+        ]
+      },
+      "gold_candidate": "option_a",
+      "gold_discriminating_inputs": {
+        "option_a": [],
+        "option_b": [
+          0
+        ],
+        "option_c": [
+          -4,
+          -3,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "id": "cp20_strict_symmetric_window",
+      "training": [
+        {
+          "input": -6,
+          "expected": -4,
+          "actual": -4,
+          "passed": true
+        },
+        {
+          "input": -5,
+          "expected": -4,
+          "actual": -4,
+          "passed": true
+        },
+        {
+          "input": -4,
+          "expected": 4,
+          "actual": 4,
+          "passed": true
+        },
+        {
+          "input": 4,
+          "expected": 4,
+          "actual": 4,
+          "passed": true
+        },
+        {
+          "input": 5,
+          "expected": -4,
+          "actual": -4,
+          "passed": true
+        },
+        {
+          "input": 6,
+          "expected": -4,
+          "actual": -4,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -100,
+          "expected": -4,
+          "actual": -4,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 4,
+          "actual": 4,
+          "passed": true
+        },
+        {
+          "input": 100,
+          "expected": -4,
+          "actual": -4,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          -4,
+          4,
+          4,
+          4,
+          4,
+          -4
+        ],
+        "option_b": [
+          -4,
+          -4,
+          4,
+          4,
+          4,
+          -4
+        ],
+        "option_c": [
+          -4,
+          -4,
+          4,
+          4,
+          -4,
+          -4
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          -4,
+          4,
+          -4
+        ],
+        "option_b": [
+          -4,
+          4,
+          -4
+        ],
+        "option_c": [
+          -4,
+          4,
+          -4
+        ]
+      },
+      "gold_candidate": "option_c",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          -5,
+          5
+        ],
+        "option_b": [
+          5
+        ],
+        "option_c": []
+      }
+    },
+    {
+      "id": "bl21_saved_range_predicates",
+      "training": [
+        {
+          "input": -3,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": -2,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 2,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 3,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -10,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 10,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "option_b": [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "option_c": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          0,
+          0,
+          0
+        ],
+        "option_b": [
+          0,
+          1,
+          0
+        ],
+        "option_c": [
+          1,
+          1,
+          1
+        ]
+      },
+      "gold_candidate": "option_b",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          -2,
+          2
+        ],
+        "option_b": [],
+        "option_c": [
+          -3,
+          3
+        ]
+      }
+    },
+    {
+      "id": "bl22_reassigned_valid_flag",
+      "training": [
+        {
+          "input": -1,
+          "expected": -5,
+          "actual": -5,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 5,
+          "actual": 5,
+          "passed": true
+        },
+        {
+          "input": 5,
+          "expected": 5,
+          "actual": 5,
+          "passed": true
+        },
+        {
+          "input": 6,
+          "expected": -5,
+          "actual": -5,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -10,
+          "expected": -5,
+          "actual": -5,
+          "passed": true
+        },
+        {
+          "input": 2,
+          "expected": 5,
+          "actual": 5,
+          "passed": true
+        },
+        {
+          "input": 100,
+          "expected": -5,
+          "actual": -5,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          -5,
+          5,
+          5,
+          -5
+        ],
+        "option_b": [
+          -5,
+          5,
+          5,
+          -5
+        ],
+        "option_c": [
+          5,
+          5,
+          5,
+          -5
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          -5,
+          5,
+          -5
+        ],
+        "option_b": [
+          -5,
+          5,
+          -5
+        ],
+        "option_c": [
+          5,
+          5,
+          -5
+        ]
+      },
+      "gold_candidate": "option_a",
+      "gold_discriminating_inputs": {
+        "option_a": [],
+        "option_b": [],
+        "option_c": [
+          -1
+        ]
+      }
+    },
+    {
+      "id": "bl23_nonzero_bounded_flag",
+      "training": [
+        {
+          "input": -5,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": -4,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 4,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        },
+        {
+          "input": 5,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -100,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 3,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        },
+        {
+          "input": 100,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          9,
+          9,
+          9,
+          9,
+          9
+        ],
+        "option_b": [
+          9,
+          9,
+          0,
+          9,
+          9
+        ],
+        "option_c": [
+          0,
+          9,
+          0,
+          9,
+          0
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          9,
+          9,
+          9
+        ],
+        "option_b": [
+          9,
+          9,
+          9
+        ],
+        "option_c": [
+          0,
+          9,
+          0
+        ]
+      },
+      "gold_candidate": "option_c",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          -5,
+          0,
+          5
+        ],
+        "option_b": [
+          -5,
+          5
+        ],
+        "option_c": []
+      }
+    },
+    {
+      "id": "bl24_selected_nonnegative_codes",
+      "training": [
+        {
+          "input": -1,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 2,
+          "expected": 6,
+          "actual": 6,
+          "passed": true
+        },
+        {
+          "input": 4,
+          "expected": 6,
+          "actual": 6,
+          "passed": true
+        },
+        {
+          "input": 5,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -100,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 10,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          0,
+          0,
+          6,
+          0,
+          0
+        ],
+        "option_b": [
+          0,
+          0,
+          6,
+          6,
+          0
+        ],
+        "option_c": [
+          0,
+          0,
+          6,
+          0,
+          0
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          0,
+          0,
+          0
+        ],
+        "option_b": [
+          0,
+          0,
+          0
+        ],
+        "option_c": [
+          0,
+          0,
+          0
+        ]
+      },
+      "gold_candidate": "option_b",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          4
+        ],
+        "option_b": [],
+        "option_c": [
+          4
+        ]
+      }
+    },
+    {
+      "id": "tx25_sign_label",
+      "training": [
+        {
+          "input": -1,
+          "expected": -1,
+          "actual": -1,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -20,
+          "expected": -1,
+          "actual": -1,
+          "passed": true
+        },
+        {
+          "input": 20,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          -1,
+          1,
+          1
+        ],
+        "option_b": [
+          1,
+          -1,
+          -1
+        ],
+        "option_c": [
+          1,
+          1,
+          1
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          -1,
+          1
+        ],
+        "option_b": [
+          1,
+          -1
+        ],
+        "option_c": [
+          1,
+          1
+        ]
+      },
+      "gold_candidate": "option_a",
+      "gold_discriminating_inputs": {
+        "option_a": [],
+        "option_b": [
+          -1,
+          0,
+          1
+        ],
+        "option_c": [
+          -1
+        ]
+      }
+    },
+    {
+      "id": "tx26_state_label",
+      "training": [
+        {
+          "input": -1,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -20,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 7,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          0,
+          1,
+          0
+        ],
+        "option_b": [
+          1,
+          0,
+          0
+        ],
+        "option_c": [
+          0,
+          0,
+          1
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          0,
+          0
+        ],
+        "option_b": [
+          1,
+          0
+        ],
+        "option_c": [
+          0,
+          1
+        ]
+      },
+      "gold_candidate": "option_c",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          0,
+          1
+        ],
+        "option_b": [
+          -1,
+          1
+        ],
+        "option_c": []
+      }
+    },
+    {
+      "id": "tx27_lexical_cutoff",
+      "training": [
+        {
+          "input": -1,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -2,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 2,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          1,
+          1,
+          1
+        ],
+        "option_b": [
+          1,
+          0,
+          0
+        ],
+        "option_c": [
+          0,
+          0,
+          0
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          1,
+          1
+        ],
+        "option_b": [
+          1,
+          0
+        ],
+        "option_c": [
+          0,
+          0
+        ]
+      },
+      "gold_candidate": "option_b",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          0,
+          1
+        ],
+        "option_b": [],
+        "option_c": [
+          -1
+        ]
+      }
+    },
+    {
+      "id": "tx28_reassigned_text_state",
+      "training": [
+        {
+          "input": -1,
+          "expected": -2,
+          "actual": -2,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": -2,
+          "actual": -2,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -10,
+          "expected": -2,
+          "actual": -2,
+          "passed": true
+        },
+        {
+          "input": 100,
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          -2,
+          -2,
+          2
+        ],
+        "option_b": [
+          2,
+          2,
+          -2
+        ],
+        "option_c": [
+          -2,
+          -2,
+          -2
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          -2,
+          2
+        ],
+        "option_b": [
+          2,
+          -2
+        ],
+        "option_c": [
+          -2,
+          -2
+        ]
+      },
+      "gold_candidate": "option_a",
+      "gold_discriminating_inputs": {
+        "option_a": [],
+        "option_b": [
+          -1,
+          0,
+          1
+        ],
+        "option_c": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "ob29_saturating_increment",
+      "training": [
+        {
+          "input": 0,
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "input": 9223372036854775805,
+          "expected": 9223372036854775806,
+          "actual": 9223372036854775806,
+          "passed": true
+        },
+        {
+          "input": 9223372036854775806,
+          "expected": 9223372036854775807,
+          "actual": 9223372036854775807,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": 9223372036854775807,
+          "expected": 9223372036854775807,
+          "actual": 9223372036854775807,
+          "passed": true
+        },
+        {
+          "input": 9223372036854775804,
+          "expected": 9223372036854775805,
+          "actual": 9223372036854775805,
+          "passed": true
+        },
+        {
+          "input": -1,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          0,
+          1,
+          9223372036854775805,
+          9223372036854775806
+        ],
+        "option_b": [
+          -1,
+          0,
+          9223372036854775804,
+          9223372036854775805
+        ],
+        "option_c": [
+          1,
+          2,
+          9223372036854775806,
+          9223372036854775807
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          9223372036854775807,
+          9223372036854775804,
+          -1
+        ],
+        "option_b": [
+          9223372036854775807,
+          9223372036854775803,
+          -2
+        ],
+        "option_c": [
+          9223372036854775807,
+          9223372036854775805,
+          0
+        ]
+      },
+      "gold_candidate": "option_c",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          0,
+          1,
+          9223372036854775805,
+          9223372036854775806
+        ],
+        "option_b": [
+          0,
+          1,
+          9223372036854775805,
+          9223372036854775806
+        ],
+        "option_c": []
+      }
+    },
+    {
+      "id": "ob30_saturating_decrement",
+      "training": [
+        {
+          "input": -9223372036854775806,
+          "expected": -9223372036854775807,
+          "actual": -9223372036854775807,
+          "passed": true
+        },
+        {
+          "input": -9223372036854775807,
+          "expected": -9223372036854775808,
+          "actual": -9223372036854775808,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": -1,
+          "actual": -1,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -9223372036854775808,
+          "expected": -9223372036854775808,
+          "actual": -9223372036854775808,
+          "passed": true
+        },
+        {
+          "input": -9223372036854775805,
+          "expected": -9223372036854775806,
+          "actual": -9223372036854775806,
+          "passed": true
+        },
+        {
+          "input": 10,
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          -9223372036854775805,
+          -9223372036854775806,
+          1,
+          2
+        ],
+        "option_b": [
+          -9223372036854775807,
+          -9223372036854775808,
+          -1,
+          0
+        ],
+        "option_c": [
+          -9223372036854775806,
+          -9223372036854775807,
+          0,
+          1
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          -9223372036854775808,
+          -9223372036854775804,
+          11
+        ],
+        "option_b": [
+          -9223372036854775808,
+          -9223372036854775806,
+          9
+        ],
+        "option_c": [
+          -9223372036854775808,
+          -9223372036854775805,
+          10
+        ]
+      },
+      "gold_candidate": "option_b",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          -9223372036854775806,
+          -9223372036854775807,
+          0,
+          1
+        ],
+        "option_b": [],
+        "option_c": [
+          -9223372036854775806,
+          -9223372036854775807,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "ob31_saturating_double",
+      "training": [
+        {
+          "input": -2,
+          "expected": -4,
+          "actual": -4,
+          "passed": true
+        },
+        {
+          "input": -1,
+          "expected": -2,
+          "actual": -2,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 1,
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "input": 2,
+          "expected": 4,
+          "actual": 4,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": 9223372036854775807,
+          "expected": 9223372036854775807,
+          "actual": 9223372036854775807,
+          "passed": true
+        },
+        {
+          "input": 4611686018427387903,
+          "expected": 9223372036854775806,
+          "actual": 9223372036854775806,
+          "passed": true
+        },
+        {
+          "input": 4611686018427387904,
+          "expected": 9223372036854775807,
+          "actual": 9223372036854775807,
+          "passed": true
+        },
+        {
+          "input": -9223372036854775808,
+          "expected": -9223372036854775808,
+          "actual": -9223372036854775808,
+          "passed": true
+        },
+        {
+          "input": -4611686018427387904,
+          "expected": -9223372036854775808,
+          "actual": -9223372036854775808,
+          "passed": true
+        },
+        {
+          "input": -4611686018427387905,
+          "expected": -9223372036854775808,
+          "actual": -9223372036854775808,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          -4,
+          -2,
+          0,
+          2,
+          4
+        ],
+        "option_b": [
+          -6,
+          -3,
+          0,
+          3,
+          6
+        ],
+        "option_c": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          9223372036854775807,
+          9223372036854775806,
+          9223372036854775807,
+          -9223372036854775808,
+          -9223372036854775808,
+          -9223372036854775808
+        ],
+        "option_b": [
+          9223372036854775807,
+          -4611686018427387907,
+          9223372036854775807,
+          -9223372036854775808,
+          4611686018427387904,
+          -9223372036854775808
+        ],
+        "option_c": [
+          9223372036854775807,
+          4611686018427387905,
+          9223372036854775807,
+          -9223372036854775808,
+          -4611686018427387902,
+          -9223372036854775808
+        ]
+      },
+      "gold_candidate": "option_a",
+      "gold_discriminating_inputs": {
+        "option_a": [],
+        "option_b": [
+          -2,
+          -1,
+          1,
+          2
+        ],
+        "option_c": [
+          -2,
+          -1,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "ob32_clamped_absolute",
+      "training": [
+        {
+          "input": -3,
+          "expected": 3,
+          "actual": 3,
+          "passed": true
+        },
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "input": 5,
+          "expected": 5,
+          "actual": 5,
+          "passed": true
+        },
+        {
+          "input": 7,
+          "expected": 7,
+          "actual": 7,
+          "passed": true
+        }
+      ],
+      "evaluation": [
+        {
+          "input": -9223372036854775808,
+          "expected": 9223372036854775807,
+          "actual": 9223372036854775807,
+          "passed": true
+        },
+        {
+          "input": -9223372036854775807,
+          "expected": 9223372036854775807,
+          "actual": 9223372036854775807,
+          "passed": true
+        },
+        {
+          "input": 9223372036854775807,
+          "expected": 9223372036854775807,
+          "actual": 9223372036854775807,
+          "passed": true
+        }
+      ],
+      "candidate_outputs_by_training_input": {
+        "option_a": [
+          -3,
+          0,
+          5,
+          7
+        ],
+        "option_b": [
+          -3,
+          0,
+          -5,
+          -7
+        ],
+        "option_c": [
+          3,
+          0,
+          5,
+          7
+        ]
+      },
+      "candidate_outputs_by_evaluation_input": {
+        "option_a": [
+          9223372036854775807,
+          -9223372036854775807,
+          9223372036854775807
+        ],
+        "option_b": [
+          9223372036854775807,
+          -9223372036854775807,
+          -9223372036854775807
+        ],
+        "option_c": [
+          9223372036854775807,
+          9223372036854775807,
+          9223372036854775807
+        ]
+      },
+      "gold_candidate": "option_c",
+      "gold_discriminating_inputs": {
+        "option_a": [
+          -3
+        ],
+        "option_b": [
+          -3,
+          5,
+          7
+        ],
+        "option_c": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+=== RUN   TestFrozenTrainingVectors_ni07_zero_special_negative_offset
+    generated_test.go:24: FINITERESULT|training|1|-2|0|0|true
+    generated_test.go:24: FINITERESULT|training|2|-1|1|1|true
+    generated_test.go:24: FINITERESULT|training|3|0|5|5|true
+    generated_test.go:24: FINITERESULT|training|4|1|3|3|true
+--- PASS: TestFrozenTrainingVectors_ni07_zero_special_negative_offset (0.00s)
+=== RUN   TestFrozenEvaluationVectors_ni07_zero_special_negative_offset
+    generated_test.go:33: FINITERESULT|evaluation|1|-9|-7|-7|true
+    generated_test.go:33: FINITERESULT|evaluation|2|2|3|3|true
+    generated_test.go:33: FINITERESULT|evaluation|3|50|3|3|true
+--- PASS: TestFrozenEvaluationVectors_ni07_zero_special_negative_offset (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/ni07_zero_special_negative_offset	0.354s

@@ -1,0 +1,137 @@
+{
+  "activity": "C31",
+  "actual_results": {
+    "evaluation": [
+      {
+        "actual": 9223372036854775807,
+        "expected": 9223372036854775807,
+        "index": 1,
+        "input": 9223372036854775807,
+        "passed": true
+      },
+      {
+        "actual": 9223372036854775806,
+        "expected": 9223372036854775806,
+        "index": 2,
+        "input": 4611686018427387903,
+        "passed": true
+      },
+      {
+        "actual": 9223372036854775807,
+        "expected": 9223372036854775807,
+        "index": 3,
+        "input": 4611686018427387904,
+        "passed": true
+      },
+      {
+        "actual": -9223372036854775808,
+        "expected": -9223372036854775808,
+        "index": 4,
+        "input": -9223372036854775808,
+        "passed": true
+      },
+      {
+        "actual": -9223372036854775808,
+        "expected": -9223372036854775808,
+        "index": 5,
+        "input": -4611686018427387904,
+        "passed": true
+      },
+      {
+        "actual": -9223372036854775808,
+        "expected": -9223372036854775808,
+        "index": 6,
+        "input": -4611686018427387905,
+        "passed": true
+      }
+    ],
+    "training": [
+      {
+        "actual": -4,
+        "expected": -4,
+        "index": 1,
+        "input": -2,
+        "passed": true
+      },
+      {
+        "actual": -2,
+        "expected": -2,
+        "index": 2,
+        "input": -1,
+        "passed": true
+      },
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 3,
+        "input": 0,
+        "passed": true
+      },
+      {
+        "actual": 2,
+        "expected": 2,
+        "index": 4,
+        "input": 1,
+        "passed": true
+      },
+      {
+        "actual": 4,
+        "expected": 4,
+        "index": 5,
+        "input": 2,
+        "passed": true
+      }
+    ]
+  },
+  "case_id": "ob31_saturating_double",
+  "command": [
+    "/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go",
+    "test",
+    "-count=1",
+    "-v",
+    "./..."
+  ],
+  "elapsed_ms": 519.373292,
+  "ended_utc": "2026-09-30T08:25:42.592307+00:00",
+  "exit_code": 0,
+  "finite_fitness": {
+    "evaluation": {
+      "all_observed_cases_passed": true,
+      "go_test_exit_code": 0,
+      "observed": 6,
+      "passed": 6,
+      "planned": 6,
+      "timed_out": false,
+      "unknown": 0
+    },
+    "training": {
+      "all_observed_cases_passed": true,
+      "go_test_exit_code": 0,
+      "observed": 5,
+      "passed": 5,
+      "planned": 5,
+      "timed_out": false,
+      "unknown": 0
+    }
+  },
+  "go_version": "go1.27.0",
+  "launch_error": null,
+  "schema": "gooo/ir-composition-independent-go-validation/v1",
+  "source_sha256": "6bf13c8bd2465eb5056f8047e3796b5609fb0ab0de03a86fd03a8d6fd60d3126",
+  "started_utc": "2026-09-30T08:25:42.072918+00:00",
+  "status": "GO_TEST_PASS",
+  "stderr_path": "go-validation/stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_path": "go-validation/stdout.raw",
+  "stdout_sha256": "006fb2b14bb3e40dea69d5fda8cc0df61f493331fd5365e6d42733f4f059ff20",
+  "test_source_sha256": "8542105f5fd5edc71d00b46dc05160573780244f245cb29a56da08fb065616ad",
+  "timed_out": false,
+  "timeout_seconds": 120,
+  "vector_counts": {
+    "evaluation": 6,
+    "observed_total": 11,
+    "planned_total": 11,
+    "training": 5,
+    "unknown_total": 0
+  }
+}

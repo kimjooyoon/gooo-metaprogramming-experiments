@@ -1,0 +1,13 @@
+=== RUN   TestFrozenTrainingVectors_lr11_nonnegative_doubled_score
+    generated_test.go:24: FINITERESULT|training|1|-2|0|0|true
+    generated_test.go:24: FINITERESULT|training|2|-1|0|0|true
+    generated_test.go:24: FINITERESULT|training|3|0|1|1|true
+    generated_test.go:24: FINITERESULT|training|4|2|5|5|true
+--- PASS: TestFrozenTrainingVectors_lr11_nonnegative_doubled_score (0.00s)
+=== RUN   TestFrozenEvaluationVectors_lr11_nonnegative_doubled_score
+    generated_test.go:33: FINITERESULT|evaluation|1|-10|0|0|true
+    generated_test.go:33: FINITERESULT|evaluation|2|3|7|7|true
+    generated_test.go:33: FINITERESULT|evaluation|3|10|21|21|true
+--- PASS: TestFrozenEvaluationVectors_lr11_nonnegative_doubled_score (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/lr11_nonnegative_doubled_score	0.354s

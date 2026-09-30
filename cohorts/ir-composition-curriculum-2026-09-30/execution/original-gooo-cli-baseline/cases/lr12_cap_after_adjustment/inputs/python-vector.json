@@ -1,0 +1,36 @@
+{
+  "id": "lr12_cap_after_adjustment",
+  "activity": "C12",
+  "training": [
+    {
+      "input": -5,
+      "expected": -3
+    },
+    {
+      "input": 0,
+      "expected": 2
+    },
+    {
+      "input": 7,
+      "expected": 9
+    },
+    {
+      "input": 8,
+      "expected": 9
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -20,
+      "expected": -18
+    },
+    {
+      "input": 10,
+      "expected": 9
+    },
+    {
+      "input": 100,
+      "expected": 9
+    }
+  ]
+}

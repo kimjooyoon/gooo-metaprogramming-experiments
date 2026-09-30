@@ -1,0 +1,13 @@
+=== RUN   TestFrozenTrainingVectors_bl22_reassigned_valid_flag
+    generated_test.go:24: FINITERESULT|training|1|-1|-5|-5|true
+    generated_test.go:24: FINITERESULT|training|2|0|5|5|true
+    generated_test.go:24: FINITERESULT|training|3|5|5|5|true
+    generated_test.go:24: FINITERESULT|training|4|6|-5|-5|true
+--- PASS: TestFrozenTrainingVectors_bl22_reassigned_valid_flag (0.00s)
+=== RUN   TestFrozenEvaluationVectors_bl22_reassigned_valid_flag
+    generated_test.go:33: FINITERESULT|evaluation|1|-10|-5|-5|true
+    generated_test.go:33: FINITERESULT|evaluation|2|2|5|5|true
+    generated_test.go:33: FINITERESULT|evaluation|3|100|-5|-5|true
+--- PASS: TestFrozenEvaluationVectors_bl22_reassigned_valid_flag (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/bl22_reassigned_valid_flag	0.355s

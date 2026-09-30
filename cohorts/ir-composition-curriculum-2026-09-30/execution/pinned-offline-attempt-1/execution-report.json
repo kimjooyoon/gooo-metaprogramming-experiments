@@ -1,0 +1,2173 @@
+{
+  "schema": "gooo/ir-composition-offline-baseline-attempt/v1",
+  "cohort": "ir-composition-curriculum-2026-09-30",
+  "attempt": 1,
+  "design_freeze_sha256": "e66f71f3bc02350168bb3958628bf5d1a3e02096ed758cbfbe83f987b71eb9b8",
+  "runner_sha256": "e6e1e533d852e5393fa26d9ef69ac9135e2086f83a4f507531bd406de0a106ec",
+  "compiler_pin": {
+    "revision": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+    "binary_sha256": "47b9f3bd1b365d18771ba36b0a2b472b139fdb6a08b404697e188478dce38c6e",
+    "go_version": "go1.27.0",
+    "goos": "darwin",
+    "goarch": "arm64",
+    "cgo_enabled": true,
+    "trimpath": true,
+    "vcs_modified": false
+  },
+  "binary_sha256_observed": "47b9f3bd1b365d18771ba36b0a2b472b139fdb6a08b404697e188478dce38c6e",
+  "go_version": "go version go1.27.0 darwin/arm64",
+  "provider_endpoint_unset": true,
+  "provider_api_key_unset": true,
+  "model_calls": 0,
+  "method": "finite-candidate structural baseline; not free-form code generation",
+  "designs_expected": 32,
+  "designs_attempted": 32,
+  "generated_designs": 22,
+  "codegen_failures": [
+    "cc01_inclusive_band",
+    "cc02_nonzero_disjunction",
+    "cc03_two_islands",
+    "cc04_outer_cutoffs",
+    "cp17_nonpositive_inclusive",
+    "cp18_exact_release_code",
+    "cp19_range_without_origin",
+    "cp20_strict_symmetric_window",
+    "bl21_saved_range_predicates",
+    "bl23_nonzero_bounded_flag"
+  ],
+  "generated_go_execution": {
+    "status": "some_packages_failed",
+    "exit_code": 1,
+    "go_version": "go version go1.27.0 darwin/arm64",
+    "package_statuses": {
+      "case_c05_ni05_negative_then_double": "fail",
+      "case_c06_ni06_surcharge_discount": "fail",
+      "case_c07_ni07_zero_special_negative_offset": "fail",
+      "case_c08_ni08_upper_grade_excess": "fail",
+      "case_c09_lr09_compound_total": "fail",
+      "case_c10_lr10_floor_then_increment": "fail",
+      "case_c11_lr11_nonnegative_doubled_score": "fail",
+      "case_c12_lr12_cap_after_adjustment": "fail",
+      "case_c13_pr13_subtract_tripled_sum": "fail",
+      "case_c14_pr14_product_neighbor_factors": "fail",
+      "case_c15_pr15_square_minus_successor_sum": "fail",
+      "case_c16_pr16_composed_neighbor_product": "fail",
+      "case_c22_bl22_reassigned_valid_flag": "fail",
+      "case_c24_bl24_selected_nonnegative_codes": "fail",
+      "case_c25_tx25_sign_label": "fail",
+      "case_c26_tx26_state_label": "fail",
+      "case_c27_tx27_lexical_cutoff": "fail",
+      "case_c28_tx28_reassigned_text_state": "fail",
+      "case_c29_ob29_saturating_increment": "fail",
+      "case_c30_ob30_saturating_decrement": "fail",
+      "case_c31_ob31_saturating_double": "fail",
+      "case_c32_ob32_clamped_absolute": "fail"
+    },
+    "package_output": {
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c05_ni05_negative_then_double": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c05_ni05_negative_then_double [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c06_ni06_surcharge_discount": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c06_ni06_surcharge_discount [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c07_ni07_zero_special_negative_offset": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c07_ni07_zero_special_negative_offset [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c08_ni08_upper_grade_excess": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c08_ni08_upper_grade_excess [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c09_lr09_compound_total": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c09_lr09_compound_total [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c10_lr10_floor_then_increment": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c10_lr10_floor_then_increment [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c11_lr11_nonnegative_doubled_score": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c11_lr11_nonnegative_doubled_score [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c12_lr12_cap_after_adjustment": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c12_lr12_cap_after_adjustment [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c13_pr13_subtract_tripled_sum": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c13_pr13_subtract_tripled_sum [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c14_pr14_product_neighbor_factors": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c14_pr14_product_neighbor_factors [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c15_pr15_square_minus_successor_sum": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c15_pr15_square_minus_successor_sum [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c16_pr16_composed_neighbor_product": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c16_pr16_composed_neighbor_product [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c22_bl22_reassigned_valid_flag": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c22_bl22_reassigned_valid_flag [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c24_bl24_selected_nonnegative_codes": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c24_bl24_selected_nonnegative_codes [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c25_tx25_sign_label": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c25_tx25_sign_label [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c26_tx26_state_label": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c26_tx26_state_label [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c27_tx27_lexical_cutoff": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c27_tx27_lexical_cutoff [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c28_tx28_reassigned_text_state": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c28_tx28_reassigned_text_state [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c29_ob29_saturating_increment": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c29_ob29_saturating_increment [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c30_ob30_saturating_decrement": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c30_ob30_saturating_decrement [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c31_ob31_saturating_double": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c31_ob31_saturating_double [setup failed]\n",
+      "example.invalid/gooo/ir-composition-generated-attempt-1/case_c32_ob32_clamped_absolute": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c32_ob32_clamped_absolute [setup failed]\n"
+    },
+    "stdout_sha256": "6eb90fdbf9cbccd9ec214f5a4b8c44d5574793898c306f9e560f4d47090b3cfb",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "training": {
+      "passed": 0,
+      "total": 0
+    },
+    "evaluation": {
+      "passed": 0,
+      "total": 0
+    },
+    "per_design": {
+      "ni05_negative_then_double": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "ni06_surcharge_discount": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "ni07_zero_special_negative_offset": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "ni08_upper_grade_excess": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "lr09_compound_total": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "lr10_floor_then_increment": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "lr11_nonnegative_doubled_score": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "lr12_cap_after_adjustment": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "pr13_subtract_tripled_sum": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "pr14_product_neighbor_factors": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "pr15_square_minus_successor_sum": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "pr16_composed_neighbor_product": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "bl22_reassigned_valid_flag": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "bl24_selected_nonnegative_codes": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "tx25_sign_label": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "tx26_state_label": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "tx27_lexical_cutoff": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "tx28_reassigned_text_state": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "ob29_saturating_increment": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "ob30_saturating_decrement": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "ob31_saturating_double": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      },
+      "ob32_clamped_absolute": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "results": []
+      }
+    }
+  },
+  "go_execution_failures_or_unknown": [
+    "cc01_inclusive_band",
+    "cc02_nonzero_disjunction",
+    "cc03_two_islands",
+    "cc04_outer_cutoffs",
+    "ni05_negative_then_double",
+    "ni06_surcharge_discount",
+    "ni07_zero_special_negative_offset",
+    "ni08_upper_grade_excess",
+    "lr09_compound_total",
+    "lr10_floor_then_increment",
+    "lr11_nonnegative_doubled_score",
+    "lr12_cap_after_adjustment",
+    "pr13_subtract_tripled_sum",
+    "pr14_product_neighbor_factors",
+    "pr15_square_minus_successor_sum",
+    "pr16_composed_neighbor_product",
+    "cp17_nonpositive_inclusive",
+    "cp18_exact_release_code",
+    "cp19_range_without_origin",
+    "cp20_strict_symmetric_window",
+    "bl21_saved_range_predicates",
+    "bl22_reassigned_valid_flag",
+    "bl23_nonzero_bounded_flag",
+    "bl24_selected_nonnegative_codes",
+    "tx25_sign_label",
+    "tx26_state_label",
+    "tx27_lexical_cutoff",
+    "tx28_reassigned_text_state",
+    "ob29_saturating_increment",
+    "ob30_saturating_decrement",
+    "ob31_saturating_double",
+    "ob32_clamped_absolute"
+  ],
+  "candidate_validity_artifact": "cohorts/ir-composition-curriculum-2026-09-30/execution/candidate-oracle-attempt-5/original-candidate-validity.json",
+  "candidate_validity_denominator": 96,
+  "candidate_validity_valid": 93,
+  "candidate_validity_failed": 3,
+  "candidate_validity_scope": "original declared candidate bodies compiled individually; separate from Gooo source completeness and selected-output execution",
+  "full_domain_claim": false,
+  "design_results": [
+    {
+      "case_id": "cc01_inclusive_band",
+      "activity": "C01",
+      "codegen_status": "failed_or_unverified",
+      "exit_code": 1,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "e34916deb13e2a72cb80ed6a844a5794daabd58ba8cb4c81cf61787a63304ca8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "",
+      "source_digest": "",
+      "plan_sha256": "",
+      "generated_digest": "",
+      "selected_candidate_id": "",
+      "selected_candidate_original_go_validity": "unknown",
+      "candidate_scores": [],
+      "training_passed": 0,
+      "training_total": 0,
+      "accuracy_scope": "",
+      "typecheck_passed": false,
+      "deterministic_replay": false,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "MISSING",
+        "numerator": 0,
+        "denominator": 0
+      },
+      "source_generated_equivalence": ""
+    },
+    {
+      "case_id": "cc02_nonzero_disjunction",
+      "activity": "C02",
+      "codegen_status": "failed_or_unverified",
+      "exit_code": 1,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "4dd10ce02be4dd68d9c7f235b9e18299d5b0480c7cdb1ca42493ba804e0b1b9e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "",
+      "source_digest": "",
+      "plan_sha256": "",
+      "generated_digest": "",
+      "selected_candidate_id": "",
+      "selected_candidate_original_go_validity": "unknown",
+      "candidate_scores": [],
+      "training_passed": 0,
+      "training_total": 0,
+      "accuracy_scope": "",
+      "typecheck_passed": false,
+      "deterministic_replay": false,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "MISSING",
+        "numerator": 0,
+        "denominator": 0
+      },
+      "source_generated_equivalence": ""
+    },
+    {
+      "case_id": "cc03_two_islands",
+      "activity": "C03",
+      "codegen_status": "failed_or_unverified",
+      "exit_code": 1,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "87ece478b3165afd44dcfcefa05db51fb78a5da07c7dc247a07198ade2730681",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "",
+      "source_digest": "",
+      "plan_sha256": "",
+      "generated_digest": "",
+      "selected_candidate_id": "",
+      "selected_candidate_original_go_validity": "unknown",
+      "candidate_scores": [],
+      "training_passed": 0,
+      "training_total": 0,
+      "accuracy_scope": "",
+      "typecheck_passed": false,
+      "deterministic_replay": false,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "MISSING",
+        "numerator": 0,
+        "denominator": 0
+      },
+      "source_generated_equivalence": ""
+    },
+    {
+      "case_id": "cc04_outer_cutoffs",
+      "activity": "C04",
+      "codegen_status": "failed_or_unverified",
+      "exit_code": 1,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "23b1cd62f5400afa7354c6e8b325cc7ae315640d00b51d25a2af45b5a72a0d15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "",
+      "source_digest": "",
+      "plan_sha256": "",
+      "generated_digest": "",
+      "selected_candidate_id": "",
+      "selected_candidate_original_go_validity": "unknown",
+      "candidate_scores": [],
+      "training_passed": 0,
+      "training_total": 0,
+      "accuracy_scope": "",
+      "typecheck_passed": false,
+      "deterministic_replay": false,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "MISSING",
+        "numerator": 0,
+        "denominator": 0
+      },
+      "source_generated_equivalence": ""
+    },
+    {
+      "case_id": "ni05_negative_then_double",
+      "activity": "C05",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "d61c96c9ac0c5a631ebc457d9410fe00fc952d440e2fdcd3766d2e9457d306f5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:3f72a83916878a9ac6fb17dd5af03504bc187112cdb03099006800120c4e3ac3",
+      "plan_sha256": "sha256:c73de0a1b6384004081498a6ddfeac4f7635647ba532ef746ba737dc33250a29",
+      "generated_digest": "sha256:e5c64f516fd70e8c45c22ff524ed8e36a0f1a944c94011e20a42d482351d1907",
+      "selected_candidate_id": "option_c",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input + 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 5,
+          "accuracy_percent": 40
+        },
+        {
+          "id": "option_b",
+          "expression": "input * 3",
+          "typecheck_passed": true,
+          "test_cases_passed": 3,
+          "test_cases_total": 5,
+          "accuracy_percent": 60
+        },
+        {
+          "id": "option_c",
+          "expression": "input * 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 5,
+          "accuracy_percent": 100
+        }
+      ],
+      "training_passed": 5,
+      "training_total": 5,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 18,
+        "denominator": 18,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "ni06_surcharge_discount",
+      "activity": "C06",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "29d1d8a1fc958d67b20685d06bc76eba1bf41741702c2e8f72bb8b2f1cd31084",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:ccbe109ffe7ccdc71093836ec6a9afd514ee31578764b9f755f692c509108a75",
+      "plan_sha256": "sha256:d6fe1866eebb200bd780454c968a3f134199d39f8f8423263bbb57b175b7f77c",
+      "generated_digest": "sha256:2af52ee47196575af18cf5b96c8bdaf08a41fc04529c91037680fa8453d63d46",
+      "selected_candidate_id": "option_b",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input + 11",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 5,
+          "accuracy_percent": 40
+        },
+        {
+          "id": "option_b",
+          "expression": "input + 10",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 5,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_c",
+          "expression": "input + 9",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 5,
+          "accuracy_percent": 40
+        }
+      ],
+      "training_passed": 5,
+      "training_total": 5,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 19,
+        "denominator": 19,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "ni07_zero_special_negative_offset",
+      "activity": "C07",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "7b382fb4902ad690370d01323011c051f648dbf9857a6ef4d9c42e69f8932ced",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:ee2da2aabb2ba3057212da1ac9a13dbefef5e383173c1435819c803356dea781",
+      "plan_sha256": "sha256:813a4123060c3951cd038cb74f099a971e1a55fcb20932687f68703973a125a4",
+      "generated_digest": "sha256:fd0a2644f5acb00fbfa0925a9e0e2eff9b0117901459d652c5d34f813bef4797",
+      "selected_candidate_id": "option_a",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input + 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_b",
+          "expression": "input - 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 4,
+          "accuracy_percent": 50
+        },
+        {
+          "id": "option_c",
+          "expression": "input + 1",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 4,
+          "accuracy_percent": 50
+        }
+      ],
+      "training_passed": 4,
+      "training_total": 4,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 17,
+        "denominator": 17,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "ni08_upper_grade_excess",
+      "activity": "C08",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "14b540abc2d1661a35c8e7e17bfea39ab8c43d35c25d8247f119480c0c1e79ba",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:cdf7019eb8c2bca0771c53f3bfdd1d0643e3eda3dae24c22190c6ce201ebb42c",
+      "plan_sha256": "sha256:04f3b2f26ccdbf3051b7bb425eaed22393b7bf32db43fa4c996296ec8bda47e1",
+      "generated_digest": "sha256:4eb5d99803ff82185012743f64a6a9e645bb05c6f12a8c7dadf0fad9044dfb03",
+      "selected_candidate_id": "option_c",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input - 79",
+          "typecheck_passed": true,
+          "test_cases_passed": 3,
+          "test_cases_total": 5,
+          "accuracy_percent": 60
+        },
+        {
+          "id": "option_b",
+          "expression": "input - 81",
+          "typecheck_passed": true,
+          "test_cases_passed": 3,
+          "test_cases_total": 5,
+          "accuracy_percent": 60
+        },
+        {
+          "id": "option_c",
+          "expression": "input - 80",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 5,
+          "accuracy_percent": 100
+        }
+      ],
+      "training_passed": 5,
+      "training_total": 5,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 18,
+        "denominator": 18,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "lr09_compound_total",
+      "activity": "C09",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "473dc0434693d9a84b53d8930262ddbe77901a13131ae6c831f7fe696e7534e7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:540cd0a36161b386ff5f6ad971f0d9a981b3cc2cdb65d27d8456efdfea642bf7",
+      "plan_sha256": "sha256:30d0cbcc6f3d8248b94b8dd4661e748985ba48ef34e7094dd5bc1d4fc8274402",
+      "generated_digest": "sha256:51f7a2c3c6d6505e1ed5a8ef7267c116c62c0c2346c9ecf17141270dd6587bf1",
+      "selected_candidate_id": "option_b",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input + 10",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 4,
+          "accuracy_percent": 25
+        },
+        {
+          "id": "option_b",
+          "expression": "total",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_c",
+          "expression": "input * 2 + 5",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        }
+      ],
+      "training_passed": 4,
+      "training_total": 4,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 12,
+        "denominator": 12,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "lr10_floor_then_increment",
+      "activity": "C10",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "4ef917907c5cec9aac30595db006fa7b78196e2b13d6598a967e22c16f6cc318",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:2c5a8ed912db0ed06e1c76e6e6c91090978dec6caf2d0a6e7a4426aa1661ce7d",
+      "plan_sha256": "sha256:4e468beb179618adeabceebf35f8dd70faf77d823c0a9e35cf7f70fe23663a26",
+      "generated_digest": "sha256:ff2d3a93ff99677b9ea0bbc12f12454994ed6a195b945830057b3842ef554866",
+      "selected_candidate_id": "option_a",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "adjusted",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_b",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        },
+        {
+          "id": "option_c",
+          "expression": "adjusted + 1",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        }
+      ],
+      "training_passed": 4,
+      "training_total": 4,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 17,
+        "denominator": 17,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "lr11_nonnegative_doubled_score",
+      "activity": "C11",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "951782d51f563d300606ed9226bbc9b2a548f737701272a400bdc5182207da40",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:20f10b719c352b6c90be9a48eaebf10bb19dc084bab839576e1a1603fafa887d",
+      "plan_sha256": "sha256:f64657debd3a0e7ec3ff8b6dd9867fd2e535e8b619e41e1b39804bbd458e3b7c",
+      "generated_digest": "sha256:47e91bc1feef855df4fd2d4c92525cc30e1df5f727a6202cedac5378930e6f3b",
+      "selected_candidate_id": "option_c",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input * 2 + 1",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 4,
+          "accuracy_percent": 50
+        },
+        {
+          "id": "option_b",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        },
+        {
+          "id": "option_c",
+          "expression": "score",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        }
+      ],
+      "training_passed": 4,
+      "training_total": 4,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 22,
+        "denominator": 22,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "lr12_cap_after_adjustment",
+      "activity": "C12",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "3df1ec582e2a37aa561d27801187c10cef0a92887be31d1b0530c8235fda1d51",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:2387c5bfe5fa2774aed257254dcff9fbe685a5f8f4f3399512b63163116bd25c",
+      "plan_sha256": "sha256:b3062a2cf41ba2a7048fbb4cc35885ee1673406890ffbce64ebdf6109da7b017",
+      "generated_digest": "sha256:34630e7fdcb5ad43bb31988f0fb02e3ce7bbcd0db3b8589a927bee03dcc2421e",
+      "selected_candidate_id": "option_b",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "amount + 1",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        },
+        {
+          "id": "option_b",
+          "expression": "amount",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_c",
+          "expression": "input + 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 3,
+          "test_cases_total": 4,
+          "accuracy_percent": 75
+        }
+      ],
+      "training_passed": 4,
+      "training_total": 4,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 25,
+        "denominator": 25,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "pr13_subtract_tripled_sum",
+      "activity": "C13",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "c9865e0d4304f484c3099f31c155cb86474beedd7a690decaaceeb083a2f9cfb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:a3fda3adee48b34a85c650b8514865d4869867d0ca91bdbd92dd7ef83f187e42",
+      "plan_sha256": "sha256:c6e249ddea5e872f51553eee0bf4666e7112db08213a7296f603b7f54de370a3",
+      "generated_digest": "sha256:d12ea972b017d8c4a72eb14bf333a48776ff347e2399a455def9ba21c0ba05b0",
+      "selected_candidate_id": "option_a",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input + 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_b",
+          "expression": "input + 3",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        },
+        {
+          "id": "option_c",
+          "expression": "input - 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        }
+      ],
+      "training_passed": 4,
+      "training_total": 4,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 9,
+        "denominator": 9,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "pr14_product_neighbor_factors",
+      "activity": "C14",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "f720f2441c2039f613788d8e3b520a5a290b49559c505989825f1c0b6977e4d8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:238f4040305b48566fe5165923d1600180247363927ac53fe441410362ff3851",
+      "plan_sha256": "sha256:52e7c453ccb92f51df72aba778e5e6e8d2955086f78e0731e3861f181ed68272",
+      "generated_digest": "sha256:5ad4dbf616801756a940306915ad9f3d4c8755d81b8084e7401b20409a6770c4",
+      "selected_candidate_id": "option_c",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input - 1",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 4,
+          "accuracy_percent": 25
+        },
+        {
+          "id": "option_b",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 4,
+          "accuracy_percent": 25
+        },
+        {
+          "id": "option_c",
+          "expression": "input + 1",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        }
+      ],
+      "training_passed": 4,
+      "training_total": 4,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 13,
+        "denominator": 13,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "pr15_square_minus_successor_sum",
+      "activity": "C15",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "4b9316077611bd64bc5f3f269920ef8427500cd5125a003d2ad159611ef9bbe8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:4d6c9a4786cb47425207eab4cb8fd007bf39406f6045ea7f50dab695c643438c",
+      "plan_sha256": "sha256:ac7ba5365ec1e1278ff960ab35cac4d2162b6ee5549347698436d77f7adfc730",
+      "generated_digest": "sha256:1ca61dda250b0475bb9a914de118dcf69549c42d1ee5e4ff2199028d086c25c0",
+      "selected_candidate_id": "option_b",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input - 4",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        },
+        {
+          "id": "option_b",
+          "expression": "input + 4",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_c",
+          "expression": "input + 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        }
+      ],
+      "training_passed": 4,
+      "training_total": 4,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 9,
+        "denominator": 9,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "pr16_composed_neighbor_product",
+      "activity": "C16",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "edf1f5c36a7884893b57da198ecee98e8b3b626d1b2a7a1cb6d985472f62c05e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:13f55c5f3a557471a5a310444c9761b288b065a6cca9fd038bd9c8ea92a2ca0b",
+      "plan_sha256": "sha256:783eed0a902582aa830d7bdee0a2fd80965a77b187da6d4467a47a564b284215",
+      "generated_digest": "sha256:1569660855761ce5d1f9a47abd67c6a941809093069b88c863c7afee49a15174",
+      "selected_candidate_id": "option_a",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input + 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_b",
+          "expression": "input + 1",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        },
+        {
+          "id": "option_c",
+          "expression": "input + 3",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        }
+      ],
+      "training_passed": 4,
+      "training_total": 4,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 14,
+        "denominator": 14,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "cp17_nonpositive_inclusive",
+      "activity": "C17",
+      "codegen_status": "failed_or_unverified",
+      "exit_code": 1,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "f99d020ccf19c1bd0cf34825e7aa256532d4b053eece3c0de710a840159f9778",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "",
+      "source_digest": "",
+      "plan_sha256": "",
+      "generated_digest": "",
+      "selected_candidate_id": "",
+      "selected_candidate_original_go_validity": "unknown",
+      "candidate_scores": [],
+      "training_passed": 0,
+      "training_total": 0,
+      "accuracy_scope": "",
+      "typecheck_passed": false,
+      "deterministic_replay": false,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "MISSING",
+        "numerator": 0,
+        "denominator": 0
+      },
+      "source_generated_equivalence": ""
+    },
+    {
+      "case_id": "cp18_exact_release_code",
+      "activity": "C18",
+      "codegen_status": "failed_or_unverified",
+      "exit_code": 1,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "713a032072993970c1cad7c710d04b017de803fc217ef459ffec4debf2be5af9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "",
+      "source_digest": "",
+      "plan_sha256": "",
+      "generated_digest": "",
+      "selected_candidate_id": "",
+      "selected_candidate_original_go_validity": "unknown",
+      "candidate_scores": [],
+      "training_passed": 0,
+      "training_total": 0,
+      "accuracy_scope": "",
+      "typecheck_passed": false,
+      "deterministic_replay": false,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "MISSING",
+        "numerator": 0,
+        "denominator": 0
+      },
+      "source_generated_equivalence": ""
+    },
+    {
+      "case_id": "cp19_range_without_origin",
+      "activity": "C19",
+      "codegen_status": "failed_or_unverified",
+      "exit_code": 1,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "2032c134ef77465a66ee5a809ace79571e9093e30f00bc65cf420825b3a667d7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "",
+      "source_digest": "",
+      "plan_sha256": "",
+      "generated_digest": "",
+      "selected_candidate_id": "",
+      "selected_candidate_original_go_validity": "unknown",
+      "candidate_scores": [],
+      "training_passed": 0,
+      "training_total": 0,
+      "accuracy_scope": "",
+      "typecheck_passed": false,
+      "deterministic_replay": false,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "MISSING",
+        "numerator": 0,
+        "denominator": 0
+      },
+      "source_generated_equivalence": ""
+    },
+    {
+      "case_id": "cp20_strict_symmetric_window",
+      "activity": "C20",
+      "codegen_status": "failed_or_unverified",
+      "exit_code": 1,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "a75299236fa7e43cf8782f5487a4d202369698cd11ecf36d570ff4972395cf72",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "",
+      "source_digest": "",
+      "plan_sha256": "",
+      "generated_digest": "",
+      "selected_candidate_id": "",
+      "selected_candidate_original_go_validity": "unknown",
+      "candidate_scores": [],
+      "training_passed": 0,
+      "training_total": 0,
+      "accuracy_scope": "",
+      "typecheck_passed": false,
+      "deterministic_replay": false,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "MISSING",
+        "numerator": 0,
+        "denominator": 0
+      },
+      "source_generated_equivalence": ""
+    },
+    {
+      "case_id": "bl21_saved_range_predicates",
+      "activity": "C21",
+      "codegen_status": "failed_or_unverified",
+      "exit_code": 1,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "385c2e2c1d07496f42fae7b3d9fde6022c0fe60f0e3b6b9e864564d33ad2f427",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "",
+      "source_digest": "",
+      "plan_sha256": "",
+      "generated_digest": "",
+      "selected_candidate_id": "",
+      "selected_candidate_original_go_validity": "unknown",
+      "candidate_scores": [],
+      "training_passed": 0,
+      "training_total": 0,
+      "accuracy_scope": "",
+      "typecheck_passed": false,
+      "deterministic_replay": false,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "MISSING",
+        "numerator": 0,
+        "denominator": 0
+      },
+      "source_generated_equivalence": ""
+    },
+    {
+      "case_id": "bl22_reassigned_valid_flag",
+      "activity": "C22",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "113fe5eef66b9f7ec7f74474456335132d42f49a93b94fe7a40b384b3e4178ec",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:4e6461162eb0367e874055094272e438b1896e02b22c5fe62bfdaf68000e4033",
+      "plan_sha256": "sha256:f2cdaa68690969ee902047c00215beaf742824c8f7292c9d8d80adf4b41a28d9",
+      "generated_digest": "sha256:1003be744d279328f64b06b8dabc1a3c9fe8cebce0706649d45f1c92177cb2c9",
+      "selected_candidate_id": "option_a",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "valid",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_b",
+          "expression": "valid || input == 10",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_c",
+          "expression": "input <= 5",
+          "typecheck_passed": true,
+          "test_cases_passed": 3,
+          "test_cases_total": 4,
+          "accuracy_percent": 75
+        }
+      ],
+      "training_passed": 4,
+      "training_total": 4,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 19,
+        "denominator": 19,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "bl23_nonzero_bounded_flag",
+      "activity": "C23",
+      "codegen_status": "failed_or_unverified",
+      "exit_code": 1,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "a9f5d1feff6db8fceca17ae7dde1b727e542e7b29c9a6facfa96b135ce980979",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "",
+      "source_digest": "",
+      "plan_sha256": "",
+      "generated_digest": "",
+      "selected_candidate_id": "",
+      "selected_candidate_original_go_validity": "unknown",
+      "candidate_scores": [],
+      "training_passed": 0,
+      "training_total": 0,
+      "accuracy_scope": "",
+      "typecheck_passed": false,
+      "deterministic_replay": false,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "MISSING",
+        "numerator": 0,
+        "denominator": 0
+      },
+      "source_generated_equivalence": ""
+    },
+    {
+      "case_id": "bl24_selected_nonnegative_codes",
+      "activity": "C24",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "4fba4e14f4d4d43e4e7abafaea8ece146f103651ed100a243f1b624b0cde8a38",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:fd24f9757eef5f0fae92d3cd37c9745799693646464504be64d56c99c789f6da",
+      "plan_sha256": "sha256:96b7d7a3c661a66a3379ff50441c8b384aeeda85b3e618cdef818085e27ef23b",
+      "generated_digest": "sha256:d7fb991ed311c894c58c264c3b697aa82f32d979e94360d79b444969ece91641",
+      "selected_candidate_id": "option_b",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input == 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 5,
+          "accuracy_percent": 80
+        },
+        {
+          "id": "option_b",
+          "expression": "selected",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 5,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_c",
+          "expression": "selected && input != 4",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 5,
+          "accuracy_percent": 80
+        }
+      ],
+      "training_passed": 5,
+      "training_total": 5,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 25,
+        "denominator": 25,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "tx25_sign_label",
+      "activity": "C25",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "3405ed77babc7c7b1757a04e94d6c36dafc7e7c0ba20db8b1fd198716cf1e5eb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:9bb476b08bd67414c68d89091e8621e0db99e818f009b43d48ac2070e48c8902",
+      "plan_sha256": "sha256:4bae62c057b1ae890f3295c9e5df0b9cfecf34e11b9f8f3c9809675447c41d8d",
+      "generated_digest": "sha256:28f68fa00288a8e8b8525b1404e49a2584b6446db47a5dabcc067e45b9adb1da",
+      "selected_candidate_id": "option_a",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "\"negative\"",
+          "typecheck_passed": true,
+          "test_cases_passed": 3,
+          "test_cases_total": 3,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_b",
+          "expression": "\"nonnegative\"",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 3,
+          "accuracy_percent": 0
+        },
+        {
+          "id": "option_c",
+          "expression": "\"neutral\"",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 3,
+          "accuracy_percent": 66.66666666666667
+        }
+      ],
+      "training_passed": 3,
+      "training_total": 3,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 22,
+        "denominator": 22,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "tx26_state_label",
+      "activity": "C26",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "709979f08c466313392902d2fe48b725753dbfc9b1af7e485f992ca22e4fc6dc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:9957bc7564c1c623a540009b5a15ceca14c79042ca103cf4876a047999c83a4d",
+      "plan_sha256": "sha256:54285279d0ac522367831e0b5514b06f8e529b5450a182e2178c1a9294634b3a",
+      "generated_digest": "sha256:f4b32991c1bf884a5b53fb3a1af0c7a8d2bca9f63648a61315e07e569cdc857f",
+      "selected_candidate_id": "option_c",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "\"closed\"",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 3,
+          "accuracy_percent": 33.333333333333336
+        },
+        {
+          "id": "option_b",
+          "expression": "\"error\"",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 3,
+          "accuracy_percent": 33.333333333333336
+        },
+        {
+          "id": "option_c",
+          "expression": "\"open\"",
+          "typecheck_passed": true,
+          "test_cases_passed": 3,
+          "test_cases_total": 3,
+          "accuracy_percent": 100
+        }
+      ],
+      "training_passed": 3,
+      "training_total": 3,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 28,
+        "denominator": 28,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "tx27_lexical_cutoff",
+      "activity": "C27",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "059a657cf2d59aa52643c7628a7969e57411054f0c3121485e6a13f5c405c3fc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:edb4d7e8a54634bb2c638cb21b5f703474f1f73464c819512068c5e18f668160",
+      "plan_sha256": "sha256:90cab1ddcb25671462f73bd6bccb6929b2bef1e42c1a4ca3ac6c3b3839564e77",
+      "generated_digest": "sha256:d643d01eea690160d8f08b16932d38f274d600f8a0eb461f688fa5b8a14c2977",
+      "selected_candidate_id": "option_b",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "\"zoo\"",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 3,
+          "accuracy_percent": 33.333333333333336
+        },
+        {
+          "id": "option_b",
+          "expression": "\"gold\"",
+          "typecheck_passed": true,
+          "test_cases_passed": 3,
+          "test_cases_total": 3,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_c",
+          "expression": "\"amber\"",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 3,
+          "accuracy_percent": 66.66666666666667
+        }
+      ],
+      "training_passed": 3,
+      "training_total": 3,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 21,
+        "denominator": 21,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "tx28_reassigned_text_state",
+      "activity": "C28",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "1ee3d372c0e808f64037a04a3069afba469b5dec6acc07c0d7100f2f0e8e9b89",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:c34fd542aa2e5a60e039290ee50cdbfe4ab9eb9543e1639adcdc52dbc83f1f8f",
+      "plan_sha256": "sha256:846853c8dd934647739fd28d567dd775430dea79b5695ab5ffa7f8e14433da25",
+      "generated_digest": "sha256:66d9587af424d37a03090c9fab4f5824cb797cd88950367eea62689851d3b2f8",
+      "selected_candidate_id": "option_a",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "\"ready\"",
+          "typecheck_passed": true,
+          "test_cases_passed": 3,
+          "test_cases_total": 3,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_b",
+          "expression": "\"idle-pending\"",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 3,
+          "accuracy_percent": 0
+        },
+        {
+          "id": "option_c",
+          "expression": "\"done\"",
+          "typecheck_passed": true,
+          "test_cases_passed": 2,
+          "test_cases_total": 3,
+          "accuracy_percent": 66.66666666666667
+        }
+      ],
+      "training_passed": 3,
+      "training_total": 3,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 24,
+        "denominator": 24,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "ob29_saturating_increment",
+      "activity": "C29",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "619656f9c31d8a0a1d06a2a02b79fa880d0e9961c858026bc3b28f7605b89a41",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:3e00c1b099385e9590040ded1f9fbea6d9852b4cad1a8f660879a3a6dd61ba58",
+      "plan_sha256": "sha256:35d2c90b3757adf8c9067102f2572db3bbaa0ee22a48c6e2d7e7dcd582346925",
+      "generated_digest": "sha256:953f699044545fae9394bb71f471d3cc60b31df0c0f47899b63fed9e2f233875",
+      "selected_candidate_id": "option_c",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        },
+        {
+          "id": "option_b",
+          "expression": "input - 1",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        },
+        {
+          "id": "option_c",
+          "expression": "input + 1",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        }
+      ],
+      "training_passed": 4,
+      "training_total": 4,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 11,
+        "denominator": 11,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "ob30_saturating_decrement",
+      "activity": "C30",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "918a432450015de32a9fd9347274b560c4dd3e2d2a29e77fa8568816dac179c7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:3b43481fda235ea27e7032f214c6d8de9476921ff9129eddce29504a9aebe573",
+      "plan_sha256": "sha256:a18e1b5e61486c172cd496ced730732b67713a59de10c481e49343909a1e3568",
+      "generated_digest": "sha256:3daaaf50187357787241b99381736c528d66a84ed0d25e521b3a9bd30d247b3a",
+      "selected_candidate_id": "option_b",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input + 1",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        },
+        {
+          "id": "option_b",
+          "expression": "input - 1",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_c",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 0,
+          "test_cases_total": 4,
+          "accuracy_percent": 0
+        }
+      ],
+      "training_passed": 4,
+      "training_total": 4,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 15,
+        "denominator": 15,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "ob31_saturating_double",
+      "activity": "C31",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "a8ceda55b9dd147f6881aaf3c5d55479bab2a3446db23d6bcccf23c022a5a83b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:7f2a85e95f700aae0e67686a8290ec4f277c726650c119dd6b3ebf1c6bbe8d64",
+      "plan_sha256": "sha256:9406dd99444f4d9497ddd6d165e91370084ebdc227b9565189e3b82822eb5685",
+      "generated_digest": "sha256:6bf13c8bd2465eb5056f8047e3796b5609fb0ab0de03a86fd03a8d6fd60d3126",
+      "selected_candidate_id": "option_a",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input * 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 5,
+          "test_cases_total": 5,
+          "accuracy_percent": 100
+        },
+        {
+          "id": "option_b",
+          "expression": "input * 3",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 5,
+          "accuracy_percent": 20
+        },
+        {
+          "id": "option_c",
+          "expression": "input + 2",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 5,
+          "accuracy_percent": 20
+        }
+      ],
+      "training_passed": 5,
+      "training_total": 5,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 25,
+        "denominator": 25,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    },
+    {
+      "case_id": "ob32_clamped_absolute",
+      "activity": "C32",
+      "codegen_status": "generated",
+      "exit_code": 0,
+      "timed_out": false,
+      "error": "",
+      "stdout_sha256": "c71077b004ba162106ebb88622034c2e2262f2a2dffd81f6ab916ffc0b77cd35",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compiler_source_sha": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+      "source_digest": "sha256:3d33cb3c52ed894f56eab6754e3cadf58a3bd13620dbf0d8fa117b9b692a7b8c",
+      "plan_sha256": "sha256:0cfef1382998e795a7da55fc88aa60d3bfd33c88d912bd20a2981e0b90ea3c6c",
+      "generated_digest": "sha256:f5b597f31d8162baa9501524852f7488dc88e799e03527ca9a427313cc447052",
+      "selected_candidate_id": "option_c",
+      "selected_candidate_original_go_validity": "valid",
+      "candidate_scores": [
+        {
+          "id": "option_a",
+          "expression": "input",
+          "typecheck_passed": true,
+          "test_cases_passed": 3,
+          "test_cases_total": 4,
+          "accuracy_percent": 75
+        },
+        {
+          "id": "option_b",
+          "expression": "0 - magnitude",
+          "typecheck_passed": true,
+          "test_cases_passed": 1,
+          "test_cases_total": 4,
+          "accuracy_percent": 25
+        },
+        {
+          "id": "option_c",
+          "expression": "magnitude",
+          "typecheck_passed": true,
+          "test_cases_passed": 4,
+          "test_cases_total": 4,
+          "accuracy_percent": 100
+        }
+      ],
+      "training_passed": 4,
+      "training_total": 4,
+      "accuracy_scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "typecheck_passed": true,
+      "deterministic_replay": true,
+      "source_unit_completeness": {
+        "id": "source_ast_coverage",
+        "status": "PASS",
+        "numerator": 27,
+        "denominator": 27,
+        "unit": "source semantic units lowered"
+      },
+      "source_generated_equivalence": "PASS",
+      "generated_go_execution": {
+        "status": "go_test_did_not_reach_case_execution",
+        "training": {
+          "passed": 0,
+          "total": 0
+        },
+        "evaluation": {
+          "passed": 0,
+          "total": 0
+        },
+        "package_status": "unknown"
+      }
+    }
+  ]
+}

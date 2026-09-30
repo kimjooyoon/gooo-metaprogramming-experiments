@@ -1,0 +1,40 @@
+{
+  "id": "ni06_surcharge_discount",
+  "activity": "C06",
+  "training": [
+    {
+      "input": -1,
+      "expected": 0
+    },
+    {
+      "input": 0,
+      "expected": 10
+    },
+    {
+      "input": 1,
+      "expected": 11
+    },
+    {
+      "input": 100,
+      "expected": 110
+    },
+    {
+      "input": 101,
+      "expected": 91
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -5,
+      "expected": 0
+    },
+    {
+      "input": 50,
+      "expected": 60
+    },
+    {
+      "input": 111,
+      "expected": 101
+    }
+  ]
+}

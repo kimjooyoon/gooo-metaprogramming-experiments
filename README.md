@@ -33,6 +33,19 @@ rejection, timeout and process termination. A deliberately weak suite yields
 denominators separate. The superseded pilot is retained and excluded from final
 claims; these requests are not real Laya measurements.
 
+The [32-intent composition curriculum](cohorts/ir-composition-curriculum-2026-09-30/publication-summary.md)
+adds balanced experiments for nested conditions, assignments, Boolean/Text locals,
+precedence, comparisons, and int64 boundaries. The original offline baseline
+captures all 32 plans: 22 generated outputs independently pass their finite cases,
+and ten failures remain recorded. Candidate validity, source-unit completeness,
+and finite functional fitness are reported separately; this stage makes zero
+Laya calls. Original design defects and failed harness attempts remain visible.
+
+A separate [pinned Laya context study](https://github.com/kimjooyoon/gooo-ci-context-codegen-experiments)
+publishes 72 real model choices plus two warmups, raw replies, process resources,
+and independent compiled-Go replay. It measures four known intents under two
+models and three prompt arms, rather than counting repeated calls as new intents.
+
 This public corpus runs 100 distinct intent/lowering combinations:
 
 - 10 intents: sign, threshold, range, parity, status mapping, compound

@@ -1,0 +1,9 @@
+{
+  "capture_runner_matches_run_metadata": true,
+  "capture_runner_path": "go-validation-corrected-v1/runner-source-original-capture.py",
+  "capture_runner_sha256": "88865e9a106bc85868f82ac9996622703fc59dbc0e0cd33615e8485bc1342d5a",
+  "correction_runner_path": "../../../../../../scripts/run_ir_composition_original_cli.py",
+  "correction_runner_sha256": "52d8044a34257831e40d524223fbfd2629c1d8578482630321c5582ec1cf6d9c",
+  "schema": "gooo/ir-composition-runner-provenance/v1",
+  "source_run_metadata_sha256": "0418e4f3d3599fd3268669485c334ded13976c208c635686f631bd26edfa7fe7"
+}

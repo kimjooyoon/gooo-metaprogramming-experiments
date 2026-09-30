@@ -1,0 +1,485 @@
+{
+  "attempt": 2,
+  "attempted": 32,
+  "binary": {
+    "build_info_raw_sha256": "a18de89c7c522f77e88d050194a8e114accd024605318a87f0de29597adbbc51",
+    "goarch": "arm64",
+    "goos": "darwin",
+    "path": "/private/tmp/gooo-pinned-context-final-20260930",
+    "sha256": "47b9f3bd1b365d18771ba36b0a2b472b139fdb6a08b404697e188478dce38c6e",
+    "source_revision": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+    "vcs_modified": "false"
+  },
+  "child_environment_policy": {
+    "GOOO_LAYA_API_KEY": "unset",
+    "GOOO_LAYA_URL": "unset",
+    "LAYA_API_KEY": "unset",
+    "OPENAI_API_KEY_ANTHROPIC_API_KEY_GEMINI_API_KEY": "removed",
+    "other GOOO_LAYA_ and LAYA_ variables": "removed"
+  },
+  "cli_completed": 32,
+  "cli_finished_utc": "2026-09-30T08:21:38.717654+00:00",
+  "cli_started_utc": "2026-09-30T08:21:38.471112+00:00",
+  "cli_successful_emissions": 22,
+  "completed_utc": "2026-09-30T08:21:39.150246+00:00",
+  "design_count": 32,
+  "design_freeze_sha256": "e66f71f3bc02350168bb3958628bf5d1a3e02096ed758cbfbe83f987b71eb9b8",
+  "execution_method": "32 independent body-codegen --json --fill-plan CLI processes; one Go test module per emitted source",
+  "go_bin": "/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go",
+  "go_test_harness_preflight": {
+    "elapsed_ms": 566.221958,
+    "exit_code": 0,
+    "go_version": "go1.27.0",
+    "schema": "gooo/ir-composition-go-test-harness-preflight/v1",
+    "status": "PASS",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "fd3cc60088ab627ecf2b461c1d151d4956938e173348dae216d627ddf7d69f21",
+    "stub_source_sha256": "38d296fbc5dafa0e2ba07244181425d55c74237b2986ef78bde013e08ee2807f",
+    "test_source_sha256": "16163db381b1abc43112cb58cbd6f1e39b57d7e3f834be499b75b30ea2f9d13a"
+  },
+  "go_validation_completed": 32,
+  "go_validation_started_utc": "2026-09-30T08:21:38.717657+00:00",
+  "go_version": "go version go1.27.0 darwin/arm64",
+  "independent_go_validations": {
+    "attempted_successful_cli_outputs": 22,
+    "go_test_failures_or_incomplete": 22,
+    "passed_all_vectors": 0,
+    "planned_designs": 32,
+    "unknown_no_compile_attempt": 10
+  },
+  "last_cli_case": "ob32_clamped_absolute",
+  "last_go_case": "ob32_clamped_absolute",
+  "lineage": {
+    "attempt_2_role": "separate complete-raw-capture repeat required because predecessor raw stdout/stderr bytes are unavailable",
+    "attempt_number": 2,
+    "predecessor": {
+      "attempt": 1,
+      "attempted": 32,
+      "binary_sha256": "47b9f3bd1b365d18771ba36b0a2b472b139fdb6a08b404697e188478dce38c6e",
+      "cli_failure_case_ids": [
+        "cc01_inclusive_band",
+        "cc02_nonzero_disjunction",
+        "cc03_two_islands",
+        "cc04_outer_cutoffs",
+        "cp17_nonpositive_inclusive",
+        "cp18_exact_release_code",
+        "cp19_range_without_origin",
+        "cp20_strict_symmetric_window",
+        "bl21_saved_range_predicates",
+        "bl23_nonzero_bounded_flag"
+      ],
+      "design_freeze_sha256": "e66f71f3bc02350168bb3958628bf5d1a3e02096ed758cbfbe83f987b71eb9b8",
+      "exact_raw_cli_stdout_stderr_files": 0,
+      "execution_report_sha256": "c867826fd792a0075f11b22852e0f84282f9c106a76251a4a6b436062664577a",
+      "file_count": 100,
+      "generated": 22,
+      "model_calls": 0,
+      "path": "cohorts/ir-composition-curriculum-2026-09-30/execution/pinned-offline-attempt-1",
+      "reuse_reason": "Attempt 1 has stdout/stderr hashes and derived receipts/source, but no exact raw per-case CLI stdout/stderr bytes; its Go test harness was reported to fail during setup.",
+      "reused_for_primary_raw_cli_evidence": false,
+      "runner_sha256": "e6e1e533d852e5393fa26d9ef69ac9135e2086f83a4f507531bd406de0a106ec",
+      "source_report": {
+        "codegen_failures": [
+          "cc01_inclusive_band",
+          "cc02_nonzero_disjunction",
+          "cc03_two_islands",
+          "cc04_outer_cutoffs",
+          "cp17_nonpositive_inclusive",
+          "cp18_exact_release_code",
+          "cp19_range_without_origin",
+          "cp20_strict_symmetric_window",
+          "bl21_saved_range_predicates",
+          "bl23_nonzero_bounded_flag"
+        ],
+        "designs_attempted": 32,
+        "designs_expected": 32,
+        "generated_designs": 22,
+        "generated_go_execution": {
+          "evaluation": {
+            "passed": 0,
+            "total": 0
+          },
+          "exit_code": 1,
+          "go_version": "go version go1.27.0 darwin/arm64",
+          "package_output": {
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c05_ni05_negative_then_double": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c05_ni05_negative_then_double [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c06_ni06_surcharge_discount": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c06_ni06_surcharge_discount [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c07_ni07_zero_special_negative_offset": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c07_ni07_zero_special_negative_offset [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c08_ni08_upper_grade_excess": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c08_ni08_upper_grade_excess [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c09_lr09_compound_total": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c09_lr09_compound_total [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c10_lr10_floor_then_increment": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c10_lr10_floor_then_increment [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c11_lr11_nonnegative_doubled_score": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c11_lr11_nonnegative_doubled_score [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c12_lr12_cap_after_adjustment": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c12_lr12_cap_after_adjustment [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c13_pr13_subtract_tripled_sum": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c13_pr13_subtract_tripled_sum [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c14_pr14_product_neighbor_factors": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c14_pr14_product_neighbor_factors [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c15_pr15_square_minus_successor_sum": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c15_pr15_square_minus_successor_sum [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c16_pr16_composed_neighbor_product": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c16_pr16_composed_neighbor_product [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c22_bl22_reassigned_valid_flag": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c22_bl22_reassigned_valid_flag [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c24_bl24_selected_nonnegative_codes": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c24_bl24_selected_nonnegative_codes [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c25_tx25_sign_label": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c25_tx25_sign_label [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c26_tx26_state_label": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c26_tx26_state_label [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c27_tx27_lexical_cutoff": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c27_tx27_lexical_cutoff [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c28_tx28_reassigned_text_state": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c28_tx28_reassigned_text_state [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c29_ob29_saturating_increment": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c29_ob29_saturating_increment [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c30_ob30_saturating_decrement": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c30_ob30_saturating_decrement [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c31_ob31_saturating_double": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c31_ob31_saturating_double [setup failed]\n",
+            "example.invalid/gooo/ir-composition-generated-attempt-1/case_c32_ob32_clamped_absolute": "FAIL\texample.invalid/gooo/ir-composition-generated-attempt-1/case_c32_ob32_clamped_absolute [setup failed]\n"
+          },
+          "package_statuses": {
+            "case_c05_ni05_negative_then_double": "fail",
+            "case_c06_ni06_surcharge_discount": "fail",
+            "case_c07_ni07_zero_special_negative_offset": "fail",
+            "case_c08_ni08_upper_grade_excess": "fail",
+            "case_c09_lr09_compound_total": "fail",
+            "case_c10_lr10_floor_then_increment": "fail",
+            "case_c11_lr11_nonnegative_doubled_score": "fail",
+            "case_c12_lr12_cap_after_adjustment": "fail",
+            "case_c13_pr13_subtract_tripled_sum": "fail",
+            "case_c14_pr14_product_neighbor_factors": "fail",
+            "case_c15_pr15_square_minus_successor_sum": "fail",
+            "case_c16_pr16_composed_neighbor_product": "fail",
+            "case_c22_bl22_reassigned_valid_flag": "fail",
+            "case_c24_bl24_selected_nonnegative_codes": "fail",
+            "case_c25_tx25_sign_label": "fail",
+            "case_c26_tx26_state_label": "fail",
+            "case_c27_tx27_lexical_cutoff": "fail",
+            "case_c28_tx28_reassigned_text_state": "fail",
+            "case_c29_ob29_saturating_increment": "fail",
+            "case_c30_ob30_saturating_decrement": "fail",
+            "case_c31_ob31_saturating_double": "fail",
+            "case_c32_ob32_clamped_absolute": "fail"
+          },
+          "per_design": {
+            "bl22_reassigned_valid_flag": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "bl24_selected_nonnegative_codes": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "lr09_compound_total": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "lr10_floor_then_increment": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "lr11_nonnegative_doubled_score": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "lr12_cap_after_adjustment": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "ni05_negative_then_double": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "ni06_surcharge_discount": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "ni07_zero_special_negative_offset": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "ni08_upper_grade_excess": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "ob29_saturating_increment": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "ob30_saturating_decrement": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "ob31_saturating_double": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "ob32_clamped_absolute": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "pr13_subtract_tripled_sum": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "pr14_product_neighbor_factors": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "pr15_square_minus_successor_sum": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "pr16_composed_neighbor_product": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "tx25_sign_label": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "tx26_state_label": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "tx27_lexical_cutoff": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            },
+            "tx28_reassigned_text_state": {
+              "evaluation": {
+                "passed": 0,
+                "total": 0
+              },
+              "results": [],
+              "status": "go_test_did_not_reach_case_execution",
+              "training": {
+                "passed": 0,
+                "total": 0
+              }
+            }
+          },
+          "status": "some_packages_failed",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "6eb90fdbf9cbccd9ec214f5a4b8c44d5574793898c306f9e560f4d47090b3cfb",
+          "training": {
+            "passed": 0,
+            "total": 0
+          }
+        },
+        "go_execution_failures_or_unknown": [
+          "cc01_inclusive_band",
+          "cc02_nonzero_disjunction",
+          "cc03_two_islands",
+          "cc04_outer_cutoffs",
+          "ni05_negative_then_double",
+          "ni06_surcharge_discount",
+          "ni07_zero_special_negative_offset",
+          "ni08_upper_grade_excess",
+          "lr09_compound_total",
+          "lr10_floor_then_increment",
+          "lr11_nonnegative_doubled_score",
+          "lr12_cap_after_adjustment",
+          "pr13_subtract_tripled_sum",
+          "pr14_product_neighbor_factors",
+          "pr15_square_minus_successor_sum",
+          "pr16_composed_neighbor_product",
+          "cp17_nonpositive_inclusive",
+          "cp18_exact_release_code",
+          "cp19_range_without_origin",
+          "cp20_strict_symmetric_window",
+          "bl21_saved_range_predicates",
+          "bl22_reassigned_valid_flag",
+          "bl23_nonzero_bounded_flag",
+          "bl24_selected_nonnegative_codes",
+          "tx25_sign_label",
+          "tx26_state_label",
+          "tx27_lexical_cutoff",
+          "tx28_reassigned_text_state",
+          "ob29_saturating_increment",
+          "ob30_saturating_decrement",
+          "ob31_saturating_double",
+          "ob32_clamped_absolute"
+        ],
+        "model_calls": 0,
+        "provider_api_key_unset": true,
+        "provider_endpoint_unset": true,
+        "schema": "gooo/ir-composition-offline-baseline-attempt/v1"
+      },
+      "tree_inventory_sha256": "a47011a6acee101d7830da99b487d0ddd999545120c96903da5fb5f21336c9c3"
+    },
+    "schema": "gooo/ir-composition-baseline-lineage/v1"
+  },
+  "model_calls": 0,
+  "parent_sensitive_provider_key_presence_only": {
+    "ANTHROPIC_API_KEY": false,
+    "GEMINI_API_KEY": false,
+    "OPENAI_API_KEY": false
+  },
+  "plan_file_count": 32,
+  "provider_api_key_unset": true,
+  "provider_endpoint_unset": true,
+  "provider_operations": 0,
+  "run_dir": "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-composition-curriculum-2026-09-30/execution/original-gooo-cli-baseline",
+  "run_id": "original-gooo-cli-baseline",
+  "runner_script_sha256": "88865e9a106bc85868f82ac9996622703fc59dbc0e0cd33615e8485bc1342d5a",
+  "schema": "gooo/ir-composition-original-cli-run-metadata/v1",
+  "started_utc": "2026-09-30T08:21:38.448548+00:00",
+  "status": "complete"
+}

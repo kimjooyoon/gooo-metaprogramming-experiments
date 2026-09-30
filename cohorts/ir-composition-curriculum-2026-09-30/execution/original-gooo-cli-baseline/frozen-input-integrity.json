@@ -1,0 +1,20 @@
+{
+  "all_32_plans_and_fixtures_verified": true,
+  "catalog_sha256": "e94c35e07535c05adc436c2f38c716c41a447d0c2ba0f61b8bfad12afa0909c8",
+  "compiler": {
+    "build_info_raw_sha256": "a18de89c7c522f77e88d050194a8e114accd024605318a87f0de29597adbbc51",
+    "goarch": "arm64",
+    "goos": "darwin",
+    "path": "/private/tmp/gooo-pinned-context-final-20260930",
+    "sha256": "47b9f3bd1b365d18771ba36b0a2b472b139fdb6a08b404697e188478dce38c6e",
+    "source_revision": "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+    "vcs_modified": "false"
+  },
+  "design_freeze_path": "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-composition-curriculum-2026-09-30/design-freeze.json",
+  "design_freeze_sha256": "e66f71f3bc02350168bb3958628bf5d1a3e02096ed758cbfbe83f987b71eb9b8",
+  "frozen_file_count": 142,
+  "post_run_mismatches": [],
+  "vectors_sha256": "6cfa39ddd913531dce5b680e6f12c0019106157836f827ea5c38500824321b08",
+  "verified_after_run": true,
+  "verified_before_run": true
+}

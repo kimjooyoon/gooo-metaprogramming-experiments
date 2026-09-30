@@ -1,0 +1,2 @@
+# example.invalid/gooo/ir-composition-original-cli/pr13_subtract_tripled_sum
+generated_test.go:19:44: expected operand, found ','

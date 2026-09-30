@@ -1,0 +1,952 @@
+{
+  "schema": "gooo/ir-composition-curriculum-catalog/v1",
+  "cohort": "ir-composition-curriculum-2026-09-30",
+  "design_count": 32,
+  "distinct_intentions": 32,
+  "one_expression_hole_per_design": true,
+  "candidate_set_is_finite": true,
+  "primary_areas": {
+    "conditionals": 4,
+    "nested_if_else": 4,
+    "let_reassignment": 4,
+    "expression_precedence": 4,
+    "comparison_expressions": 4,
+    "boolean_locals": 4,
+    "text_locals": 4,
+    "int64_boundaries": 4
+  },
+  "designs": [
+    {
+      "id": "cc01_inclusive_band",
+      "activity": "C01",
+      "primary_semantic_area": "conditionals",
+      "intent": "Return 2 for inputs from 3 through 8 inclusive, and -1 otherwise.",
+      "fixture": "fixtures/01-cc01_inclusive_band.gooo",
+      "body_fill_plan": "plans/body-fill/01-cc01_inclusive_band.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_a",
+        "training_inputs": [
+          -1,
+          2,
+          3,
+          8,
+          9
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -10,
+          4,
+          12
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "cc02_nonzero_disjunction",
+      "activity": "C02",
+      "primary_semantic_area": "conditionals",
+      "intent": "Return 1 for every nonzero integer, including both negative and positive values; return 0 only for zero.",
+      "fixture": "fixtures/02-cc02_nonzero_disjunction.gooo",
+      "body_fill_plan": "plans/body-fill/02-cc02_nonzero_disjunction.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_c",
+        "training_inputs": [
+          -1,
+          0,
+          1
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -7,
+          12
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "cc03_two_islands",
+      "activity": "C03",
+      "primary_semantic_area": "conditionals",
+      "intent": "Return 7 only for the two isolated inputs -4 and 4; return 0 for the gap and the exterior.",
+      "fixture": "fixtures/03-cc03_two_islands.gooo",
+      "body_fill_plan": "plans/body-fill/03-cc03_two_islands.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_b",
+        "training_inputs": [
+          -5,
+          -4,
+          0,
+          4,
+          5
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -100,
+          2
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "cc04_outer_cutoffs",
+      "activity": "C04",
+      "primary_semantic_area": "conditionals",
+      "intent": "Return 9 when the input is at most -6 or at least 8; return 0 in the middle interval.",
+      "fixture": "fixtures/04-cc04_outer_cutoffs.gooo",
+      "body_fill_plan": "plans/body-fill/04-cc04_outer_cutoffs.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_a",
+        "training_inputs": [
+          -7,
+          -6,
+          -5,
+          7,
+          8,
+          9
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -100,
+          0,
+          100
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "ni05_negative_then_double",
+      "activity": "C05",
+      "primary_semantic_area": "nested_if_else",
+      "intent": "Return -1 for a negative input, double inputs from 0 through 9, and return 20 from 10 onward.",
+      "fixture": "fixtures/05-ni05_negative_then_double.gooo",
+      "body_fill_plan": "plans/body-fill/05-ni05_negative_then_double.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_c",
+        "training_inputs": [
+          -1,
+          0,
+          1,
+          9,
+          10
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -5,
+          5,
+          11
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "ni06_surcharge_discount",
+      "activity": "C06",
+      "primary_semantic_area": "nested_if_else",
+      "intent": "Reject negative quantities as 0, add 10 through quantity 100, then discount quantities above 100 by 10.",
+      "fixture": "fixtures/06-ni06_surcharge_discount.gooo",
+      "body_fill_plan": "plans/body-fill/06-ni06_surcharge_discount.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_b",
+        "training_inputs": [
+          -1,
+          0,
+          1,
+          100,
+          101
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -5,
+          50,
+          111
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "ni07_zero_special_negative_offset",
+      "activity": "C07",
+      "primary_semantic_area": "nested_if_else",
+      "intent": "Map zero to 5, positive inputs to 3, and negative inputs to the input plus 2.",
+      "fixture": "fixtures/07-ni07_zero_special_negative_offset.gooo",
+      "body_fill_plan": "plans/body-fill/07-ni07_zero_special_negative_offset.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_a",
+        "training_inputs": [
+          -2,
+          -1,
+          0,
+          1
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -9,
+          2,
+          50
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "ni08_upper_grade_excess",
+      "activity": "C08",
+      "primary_semantic_area": "nested_if_else",
+      "intent": "Return -1 below 60, 0 from 60 through 79, and the excess above 80 from 80 onward.",
+      "fixture": "fixtures/08-ni08_upper_grade_excess.gooo",
+      "body_fill_plan": "plans/body-fill/08-ni08_upper_grade_excess.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_c",
+        "training_inputs": [
+          59,
+          60,
+          79,
+          80,
+          81
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -1,
+          70,
+          100
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "lr09_compound_total",
+      "activity": "C09",
+      "primary_semantic_area": "let_reassignment",
+      "intent": "Add five to an amount, double the updated total, and return that reassigned total.",
+      "fixture": "fixtures/09-lr09_compound_total.gooo",
+      "body_fill_plan": "plans/body-fill/09-lr09_compound_total.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_b",
+        "training_inputs": [
+          -5,
+          0,
+          1,
+          4
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -10,
+          8,
+          10
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "lr10_floor_then_increment",
+      "activity": "C10",
+      "primary_semantic_area": "let_reassignment",
+      "intent": "Replace negative input with zero; otherwise increment it once, then return the updated local.",
+      "fixture": "fixtures/10-lr10_floor_then_increment.gooo",
+      "body_fill_plan": "plans/body-fill/10-lr10_floor_then_increment.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_a",
+        "training_inputs": [
+          -1,
+          0,
+          1,
+          5
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -10,
+          4,
+          20
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "lr11_nonnegative_doubled_score",
+      "activity": "C11",
+      "primary_semantic_area": "let_reassignment",
+      "intent": "Double the input; add one when the doubled score is nonnegative and reset negative scores to zero.",
+      "fixture": "fixtures/11-lr11_nonnegative_doubled_score.gooo",
+      "body_fill_plan": "plans/body-fill/11-lr11_nonnegative_doubled_score.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_c",
+        "training_inputs": [
+          -2,
+          -1,
+          0,
+          2
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -10,
+          3,
+          10
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "lr12_cap_after_adjustment",
+      "activity": "C12",
+      "primary_semantic_area": "let_reassignment",
+      "intent": "Add three, cap the adjusted amount at ten, subtract one from that capped local, and return it.",
+      "fixture": "fixtures/12-lr12_cap_after_adjustment.gooo",
+      "body_fill_plan": "plans/body-fill/12-lr12_cap_after_adjustment.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_b",
+        "training_inputs": [
+          -5,
+          0,
+          7,
+          8
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -20,
+          10,
+          100
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "pr13_subtract_tripled_sum",
+      "activity": "C13",
+      "primary_semantic_area": "expression_precedence",
+      "intent": "Subtract three times the sum of the input and two from one hundred.",
+      "fixture": "fixtures/13-pr13_subtract_tripled_sum.gooo",
+      "body_fill_plan": "plans/body-fill/13-pr13_subtract_tripled_sum.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_a",
+        "training_inputs": [
+          -2,
+          0,
+          3,
+          5
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -10,
+          7,
+          20
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "pr14_product_neighbor_factors",
+      "activity": "C14",
+      "primary_semantic_area": "expression_precedence",
+      "intent": "Multiply the input plus its successor by the input minus two.",
+      "fixture": "fixtures/14-pr14_product_neighbor_factors.gooo",
+      "body_fill_plan": "plans/body-fill/14-pr14_product_neighbor_factors.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_c",
+        "training_inputs": [
+          -3,
+          0,
+          2,
+          5
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -10,
+          4,
+          10
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "pr15_square_minus_successor_sum",
+      "activity": "C15",
+      "primary_semantic_area": "expression_precedence",
+      "intent": "Subtract the input plus four from the square of the input.",
+      "fixture": "fixtures/15-pr15_square_minus_successor_sum.gooo",
+      "body_fill_plan": "plans/body-fill/15-pr15_square_minus_successor_sum.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_b",
+        "training_inputs": [
+          -2,
+          0,
+          3,
+          6
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -10,
+          5,
+          20
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "pr16_composed_neighbor_product",
+      "activity": "C16",
+      "primary_semantic_area": "expression_precedence",
+      "intent": "Multiply the saved successor by the input plus two, then subtract the original input.",
+      "fixture": "fixtures/16-pr16_composed_neighbor_product.gooo",
+      "body_fill_plan": "plans/body-fill/16-pr16_composed_neighbor_product.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_a",
+        "training_inputs": [
+          -3,
+          0,
+          2,
+          5
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -10,
+          4,
+          12
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "cp17_nonpositive_inclusive",
+      "activity": "C17",
+      "primary_semantic_area": "comparison_expressions",
+      "intent": "Return 1 for every input at or below zero, including zero, and 0 for positive inputs.",
+      "fixture": "fixtures/17-cp17_nonpositive_inclusive.gooo",
+      "body_fill_plan": "plans/body-fill/17-cp17_nonpositive_inclusive.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_c",
+        "training_inputs": [
+          -1,
+          0,
+          1
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -9,
+          5,
+          10
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "cp18_exact_release_code",
+      "activity": "C18",
+      "primary_semantic_area": "comparison_expressions",
+      "intent": "Return 1 only for release code 7; neighboring codes are not release code 7.",
+      "fixture": "fixtures/18-cp18_exact_release_code.gooo",
+      "body_fill_plan": "plans/body-fill/18-cp18_exact_release_code.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_b",
+        "training_inputs": [
+          6,
+          7,
+          8
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          0,
+          9,
+          100
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "cp19_range_without_origin",
+      "activity": "C19",
+      "primary_semantic_area": "comparison_expressions",
+      "intent": "Return 1 inside the inclusive range -3 through 3 except at zero; return 0 elsewhere.",
+      "fixture": "fixtures/19-cp19_range_without_origin.gooo",
+      "body_fill_plan": "plans/body-fill/19-cp19_range_without_origin.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_a",
+        "training_inputs": [
+          -4,
+          -3,
+          0,
+          3,
+          4
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -100,
+          2,
+          100
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "cp20_strict_symmetric_window",
+      "activity": "C20",
+      "primary_semantic_area": "comparison_expressions",
+      "intent": "Return 4 only strictly between -5 and 5; both endpoints and everything outside return -4.",
+      "fixture": "fixtures/20-cp20_strict_symmetric_window.gooo",
+      "body_fill_plan": "plans/body-fill/20-cp20_strict_symmetric_window.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_c",
+        "training_inputs": [
+          -6,
+          -5,
+          -4,
+          4,
+          5,
+          6
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -100,
+          0,
+          100
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "bl21_saved_range_predicates",
+      "activity": "C21",
+      "primary_semantic_area": "boolean_locals",
+      "intent": "Save lower and upper range predicates, combine them, and return 1 only for values from -2 through 2.",
+      "fixture": "fixtures/21-bl21_saved_range_predicates.gooo",
+      "body_fill_plan": "plans/body-fill/21-bl21_saved_range_predicates.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_b",
+        "training_inputs": [
+          -3,
+          -2,
+          0,
+          2,
+          3
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -10,
+          1,
+          10
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "bl22_reassigned_valid_flag",
+      "activity": "C22",
+      "primary_semantic_area": "boolean_locals",
+      "intent": "Build a nonnegative flag, refine it in place to require an input no greater than five, then return 5 only when valid.",
+      "fixture": "fixtures/22-bl22_reassigned_valid_flag.gooo",
+      "body_fill_plan": "plans/body-fill/22-bl22_reassigned_valid_flag.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_a",
+        "training_inputs": [
+          -1,
+          0,
+          5,
+          6
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -10,
+          2,
+          100
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "bl23_nonzero_bounded_flag",
+      "activity": "C23",
+      "primary_semantic_area": "boolean_locals",
+      "intent": "Return 9 only when a saved nonzero predicate and a saved inclusive -4 through 4 range predicate are both true.",
+      "fixture": "fixtures/23-bl23_nonzero_bounded_flag.gooo",
+      "body_fill_plan": "plans/body-fill/23-bl23_nonzero_bounded_flag.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_c",
+        "training_inputs": [
+          -5,
+          -4,
+          0,
+          4,
+          5
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -100,
+          3,
+          100
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "bl24_selected_nonnegative_codes",
+      "activity": "C24",
+      "primary_semantic_area": "boolean_locals",
+      "intent": "Select code 2, plus code 4 only when nonnegative; all negative codes and other nonnegative codes return zero.",
+      "fixture": "fixtures/24-bl24_selected_nonnegative_codes.gooo",
+      "body_fill_plan": "plans/body-fill/24-bl24_selected_nonnegative_codes.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_b",
+        "training_inputs": [
+          -1,
+          0,
+          2,
+          4,
+          5
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -100,
+          1,
+          10
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "tx25_sign_label",
+      "activity": "C25",
+      "primary_semantic_area": "text_locals",
+      "intent": "Label the input as negative or nonnegative; return -1 for the negative label and 1 for the other label.",
+      "fixture": "fixtures/25-tx25_sign_label.gooo",
+      "body_fill_plan": "plans/body-fill/25-tx25_sign_label.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_a",
+        "training_inputs": [
+          -1,
+          0,
+          1
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -20,
+          20
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "tx26_state_label",
+      "activity": "C26",
+      "primary_semantic_area": "text_locals",
+      "intent": "Classify zero as closed, positive input as open, and negative input as error; return one only for open.",
+      "fixture": "fixtures/26-tx26_state_label.gooo",
+      "body_fill_plan": "plans/body-fill/26-tx26_state_label.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_c",
+        "training_inputs": [
+          -1,
+          0,
+          1
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -20,
+          7
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "tx27_lexical_cutoff",
+      "activity": "C27",
+      "primary_semantic_area": "text_locals",
+      "intent": "Assign amber to negative inputs and zinc otherwise; return 1 exactly when the label sorts before gold.",
+      "fixture": "fixtures/27-tx27_lexical_cutoff.gooo",
+      "body_fill_plan": "plans/body-fill/27-tx27_lexical_cutoff.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_b",
+        "training_inputs": [
+          -1,
+          0,
+          1
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -2,
+          2
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "tx28_reassigned_text_state",
+      "activity": "C28",
+      "primary_semantic_area": "text_locals",
+      "intent": "Start with the idle-pending text state, replace it with ready for positive input, and return 2 only for ready.",
+      "fixture": "fixtures/28-tx28_reassigned_text_state.gooo",
+      "body_fill_plan": "plans/body-fill/28-tx28_reassigned_text_state.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_a",
+        "training_inputs": [
+          -1,
+          0,
+          1
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -10,
+          100
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "ob29_saturating_increment",
+      "activity": "C29",
+      "primary_semantic_area": "int64_boundaries",
+      "intent": "Increment every int64 input except the maximum, which remains at the maximum instead of wrapping.",
+      "fixture": "fixtures/29-ob29_saturating_increment.gooo",
+      "body_fill_plan": "plans/body-fill/29-ob29_saturating_increment.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_c",
+        "training_inputs": [
+          0,
+          1,
+          9223372036854775805,
+          9223372036854775806
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          9223372036854775807,
+          9223372036854775804,
+          -1
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "ob30_saturating_decrement",
+      "activity": "C30",
+      "primary_semantic_area": "int64_boundaries",
+      "intent": "Decrement every int64 input except the minimum, which remains at the minimum instead of wrapping.",
+      "fixture": "fixtures/30-ob30_saturating_decrement.gooo",
+      "body_fill_plan": "plans/body-fill/30-ob30_saturating_decrement.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_b",
+        "training_inputs": [
+          -9223372036854775806,
+          -9223372036854775807,
+          0,
+          1
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -9223372036854775808,
+          -9223372036854775805,
+          10
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "ob31_saturating_double",
+      "activity": "C31",
+      "primary_semantic_area": "int64_boundaries",
+      "intent": "Double values while the product fits; values beyond either half-range saturate at the corresponding int64 endpoint.",
+      "fixture": "fixtures/31-ob31_saturating_double.gooo",
+      "body_fill_plan": "plans/body-fill/31-ob31_saturating_double.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_a",
+        "training_inputs": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          9223372036854775807,
+          4611686018427387903,
+          4611686018427387904,
+          -9223372036854775808,
+          -4611686018427387904,
+          -4611686018427387905
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    },
+    {
+      "id": "ob32_clamped_absolute",
+      "activity": "C32",
+      "primary_semantic_area": "int64_boundaries",
+      "intent": "Return the nonnegative magnitude; map the unrepresentable absolute value of the minimum int64 to the maximum int64.",
+      "fixture": "fixtures/32-ob32_clamped_absolute.gooo",
+      "body_fill_plan": "plans/body-fill/32-ob32_clamped_absolute.json",
+      "candidate_discrimination": {
+        "source": "compiled Go candidate executions, evaluated on training inputs only",
+        "intended_candidate_id": "option_c",
+        "training_inputs": [
+          -3,
+          0,
+          5,
+          7
+        ],
+        "evaluation_inputs_withheld_from_prompt": [
+          -9223372036854775808,
+          -9223372036854775807,
+          9223372036854775807
+        ],
+        "pairwise_case_report": "oracle/candidate-discrimination.json"
+      },
+      "source_unit_completeness": {
+        "reported_separately_from_candidate_discrimination": true,
+        "source_and_generated_ast_unit_counts": "populated from the pinned Gooo receipt after offline codegen",
+        "scope": "finite structural source coverage only; not semantic correctness or full-domain behavior"
+      }
+    }
+  ]
+}

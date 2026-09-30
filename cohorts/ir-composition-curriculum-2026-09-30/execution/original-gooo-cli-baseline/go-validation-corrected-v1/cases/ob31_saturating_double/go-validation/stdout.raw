@@ -1,0 +1,17 @@
+=== RUN   TestFrozenTrainingVectors_ob31_saturating_double
+    generated_test.go:25: FINITERESULT|training|1|-2|-4|-4|true
+    generated_test.go:25: FINITERESULT|training|2|-1|-2|-2|true
+    generated_test.go:25: FINITERESULT|training|3|0|0|0|true
+    generated_test.go:25: FINITERESULT|training|4|1|2|2|true
+    generated_test.go:25: FINITERESULT|training|5|2|4|4|true
+--- PASS: TestFrozenTrainingVectors_ob31_saturating_double (0.00s)
+=== RUN   TestFrozenEvaluationVectors_ob31_saturating_double
+    generated_test.go:37: FINITERESULT|evaluation|1|9223372036854775807|9223372036854775807|9223372036854775807|true
+    generated_test.go:37: FINITERESULT|evaluation|2|4611686018427387903|9223372036854775806|9223372036854775806|true
+    generated_test.go:37: FINITERESULT|evaluation|3|4611686018427387904|9223372036854775807|9223372036854775807|true
+    generated_test.go:37: FINITERESULT|evaluation|4|-9223372036854775808|-9223372036854775808|-9223372036854775808|true
+    generated_test.go:37: FINITERESULT|evaluation|5|-4611686018427387904|-9223372036854775808|-9223372036854775808|true
+    generated_test.go:37: FINITERESULT|evaluation|6|-4611686018427387905|-9223372036854775808|-9223372036854775808|true
+--- PASS: TestFrozenEvaluationVectors_ob31_saturating_double (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/ob31_saturating_double	0.371s

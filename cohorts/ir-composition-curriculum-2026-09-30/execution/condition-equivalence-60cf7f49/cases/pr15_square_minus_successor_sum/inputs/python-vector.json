@@ -1,0 +1,36 @@
+{
+  "id": "pr15_square_minus_successor_sum",
+  "activity": "C15",
+  "training": [
+    {
+      "input": -2,
+      "expected": 2
+    },
+    {
+      "input": 0,
+      "expected": -4
+    },
+    {
+      "input": 3,
+      "expected": 2
+    },
+    {
+      "input": 6,
+      "expected": 26
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -10,
+      "expected": 106
+    },
+    {
+      "input": 5,
+      "expected": 16
+    },
+    {
+      "input": 20,
+      "expected": 376
+    }
+  ]
+}

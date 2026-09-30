@@ -1,0 +1,78 @@
+{
+  "attempted": 32,
+  "cli_completed": 32,
+  "cli_failure_case_ids": [
+    "bl21_saved_range_predicates",
+    "bl23_nonzero_bounded_flag"
+  ],
+  "cli_finished_utc": "2026-09-30T08:37:13.033613+00:00",
+  "cli_pass_with_source": 30,
+  "cli_started_utc": "2026-09-30T08:37:11.028608+00:00",
+  "completed_utc": "2026-09-30T08:37:42.354390+00:00",
+  "design_count": 32,
+  "design_freeze_sha256": "e66f71f3bc02350168bb3958628bf5d1a3e02096ed758cbfbe83f987b71eb9b8",
+  "finite_fitness": {
+    "evaluation": {
+      "observed": 87,
+      "passed": 87,
+      "planned": 93,
+      "unknown": 6
+    },
+    "go_compile_and_vector_passed": 30,
+    "go_compile_or_vector_failures": 0,
+    "planned_designs": 32,
+    "training": {
+      "observed": 125,
+      "passed": 125,
+      "planned": 135,
+      "unknown": 10
+    },
+    "unknown_no_emitted_source": 2
+  },
+  "go_bin": "/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go",
+  "go_test_harness_preflight": {
+    "command": [
+      "/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go",
+      "test",
+      "-count=1",
+      "-v",
+      "./..."
+    ],
+    "elapsed_ms": 1755.776583,
+    "exit_code": 0,
+    "go_version": "go1.27.0",
+    "schema": "gooo/ir-composition-go-test-harness-preflight/v1",
+    "status": "PASS",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "cf24dd937880114817a353e0155939d260442523ebacbbbc46b2742eae75ae2f",
+    "stub_source_sha256": "38d296fbc5dafa0e2ba07244181425d55c74237b2986ef78bde013e08ee2807f",
+    "test_source_sha256": "e837989f7cb7f8c710801c34f281ce54a5a159b5eaff1a49361cc6b82d48d9d7"
+  },
+  "go_validation_completed": 32,
+  "go_validation_started_utc": "2026-09-30T08:37:13.033616+00:00",
+  "go_version": "go version go1.27.0 darwin/arm64",
+  "last_cli_case": "ob32_clamped_absolute",
+  "last_go_case": "ob32_clamped_absolute",
+  "model_calls": 0,
+  "new_compiler": {
+    "build_info_raw_sha256": "b253af80b3381f483d13e1535834d3a9338feb2caa1c5d135813848f7f02755a",
+    "goarch": "arm64",
+    "goos": "darwin",
+    "path": "/private/tmp/gooo-condition-equivalence-60cf7f49-20260930",
+    "sha256": "7329b8d255b083bacfd7d44c7271caa4e3c8254bd48cc085068c92665a02591a",
+    "source_revision": "60cf7f49b0e302a6bebb42bc8da90f3ed19b2b82",
+    "vcs_modified": "false"
+  },
+  "new_intent_count": 0,
+  "old_corrected_go_report_sha256": "afd8b19bf411ee4505a92535cf5185ce81e057c8eab68c90693d2e2758761c86",
+  "old_report_sha256": "7d6b82ae0afd2c1f7000ebb1cf72e057d74a7930d9084109328c486bb1f6e0ac",
+  "provider_api_key_unset": true,
+  "provider_endpoint_unset": true,
+  "provider_operations": 0,
+  "run_id": "condition-equivalence-60cf7f49",
+  "runner_script_sha256": "5ebbbd55bb739fd9da3686633e72f40253ef1db6610d31050bff96bf35e24b4d",
+  "same_frozen_plans_as_original": true,
+  "schema": "gooo/ir-composition-equivalence-replay-metadata/v1",
+  "started_utc": "2026-09-30T08:37:11.010878+00:00",
+  "status": "complete"
+}

@@ -1,0 +1,15 @@
+=== RUN   TestFrozenTrainingVectors_cp20_strict_symmetric_window
+    generated_test.go:26: FINITERESULT|training|1|-6|-4|-4|true
+    generated_test.go:26: FINITERESULT|training|2|-5|-4|-4|true
+    generated_test.go:26: FINITERESULT|training|3|-4|4|4|true
+    generated_test.go:26: FINITERESULT|training|4|4|4|4|true
+    generated_test.go:26: FINITERESULT|training|5|5|-4|-4|true
+    generated_test.go:26: FINITERESULT|training|6|6|-4|-4|true
+--- PASS: TestFrozenTrainingVectors_cp20_strict_symmetric_window (0.00s)
+=== RUN   TestFrozenEvaluationVectors_cp20_strict_symmetric_window
+    generated_test.go:35: FINITERESULT|evaluation|1|-100|-4|-4|true
+    generated_test.go:35: FINITERESULT|evaluation|2|0|4|4|true
+    generated_test.go:35: FINITERESULT|evaluation|3|100|-4|-4|true
+--- PASS: TestFrozenEvaluationVectors_cp20_strict_symmetric_window (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/cp20_strict_symmetric_window	0.357s

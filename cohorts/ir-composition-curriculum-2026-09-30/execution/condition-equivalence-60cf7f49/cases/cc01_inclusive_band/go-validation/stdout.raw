@@ -1,0 +1,14 @@
+=== RUN   TestFrozenTrainingVectors_cc01_inclusive_band
+    generated_test.go:25: FINITERESULT|training|1|-1|-1|-1|true
+    generated_test.go:25: FINITERESULT|training|2|2|-1|-1|true
+    generated_test.go:25: FINITERESULT|training|3|3|2|2|true
+    generated_test.go:25: FINITERESULT|training|4|8|2|2|true
+    generated_test.go:25: FINITERESULT|training|5|9|-1|-1|true
+--- PASS: TestFrozenTrainingVectors_cc01_inclusive_band (0.00s)
+=== RUN   TestFrozenEvaluationVectors_cc01_inclusive_band
+    generated_test.go:34: FINITERESULT|evaluation|1|-10|-1|-1|true
+    generated_test.go:34: FINITERESULT|evaluation|2|4|2|2|true
+    generated_test.go:34: FINITERESULT|evaluation|3|12|-1|-1|true
+--- PASS: TestFrozenEvaluationVectors_cc01_inclusive_band (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/cc01_inclusive_band	1.589s

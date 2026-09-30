@@ -29,3 +29,21 @@ The [revision-2 cohort](revision-2/README.md) corrects metadata rotation, adds a
 All 96 revised candidates compiled and executed, and each training suite now separates the gold candidate from both distractors. A separate temporary-copy replay independently checked all 189 successful original/revised candidate outputs against their frozen bytes and recomputed revised training discrimination. The original 3/96 candidate failures remain in their own denominator. This is candidate/reference evidence, with zero Laya calls and zero Gooo CLI calls; emitted language completeness is measured elsewhere.
 
 CI executes the temporary-copy replay and retains its report; published frozen evidence is read only. [Local independent replay](execution/revision2-independent-replay/independent-replay-report.md).
+
+## Compiler comparison on the unchanged original designs
+
+Clean compiler `60cf7f49` normalizes only outer parentheses in the existing canonical condition/result forms. All eight rejected direct condition/comparison holes now generate successfully. The two original unused-local designs continue to fail typecheck. This repair is [PR 1101](https://github.com/kimjooyoon/meta-ontology-go/pull/1101), which passed all six required checks and merged to dev.
+
+| Measure | Original compiler | Equivalence repair |
+|---|---:|---:|
+| Source emissions / planned designs | 22/32 | 30/32 |
+| Training passed / observed / planned | 89/89/135 | 125/125/135 |
+| Training unknown | 46 | 10 |
+| Evaluation passed / observed / planned | 65/65/93 | 87/87/93 |
+| Evaluation unknown | 28 | 6 |
+| Source-unit passed / total in available receipts | 410/410 | 516/516 |
+| Available source-unit receipts / planned designs | 22/32 | 30/32 |
+
+[Independent baseline replay](execution/independent-baseline-validation/validation-report.md) compiled and executed all 52 saved emitted modules; all observed finite cases passed. No model was called. These are the same 32 intentions, with local finite scoring and deterministic selection. The repair does not turn this comparison into Laya performance evidence.
+
+The repair recorder's original report mistakenly aggregated 32 observed source-unit receipts and zero unknown. Its per-case rows establish 30 PASS and two UNKNOWN. The [separate derived correction](execution/condition-equivalence-60cf7f49/derived-summary-correction-v1/) fixes only the bound summary fields, and the original report remains unchanged. The as-run replay script source was reconstructed after execution and verified against its recorded SHA; this is explicitly labeled in its provenance rather than presented as an archived-before-run snapshot.

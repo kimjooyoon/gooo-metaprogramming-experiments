@@ -1,0 +1,13 @@
+=== RUN   TestFrozenTrainingVectors_lr12_cap_after_adjustment
+    generated_test.go:24: FINITERESULT|training|1|-5|-3|-3|true
+    generated_test.go:24: FINITERESULT|training|2|0|2|2|true
+    generated_test.go:24: FINITERESULT|training|3|7|9|9|true
+    generated_test.go:24: FINITERESULT|training|4|8|9|9|true
+--- PASS: TestFrozenTrainingVectors_lr12_cap_after_adjustment (0.00s)
+=== RUN   TestFrozenEvaluationVectors_lr12_cap_after_adjustment
+    generated_test.go:33: FINITERESULT|evaluation|1|-20|-18|-18|true
+    generated_test.go:33: FINITERESULT|evaluation|2|10|9|9|true
+    generated_test.go:33: FINITERESULT|evaluation|3|100|9|9|true
+--- PASS: TestFrozenEvaluationVectors_lr12_cap_after_adjustment (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/lr12_cap_after_adjustment	1.500s

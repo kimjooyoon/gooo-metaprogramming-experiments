@@ -1,0 +1,28 @@
+{
+  "id": "cc02_nonzero_disjunction",
+  "activity": "C02",
+  "training": [
+    {
+      "input": -1,
+      "expected": 1
+    },
+    {
+      "input": 0,
+      "expected": 0
+    },
+    {
+      "input": 1,
+      "expected": 1
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -7,
+      "expected": 1
+    },
+    {
+      "input": 12,
+      "expected": 1
+    }
+  ]
+}

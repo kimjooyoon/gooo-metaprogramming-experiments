@@ -1,0 +1,9 @@
+{
+  "all_32_plans_fixtures_and_vectors_verified": true,
+  "design_freeze_path": "cohorts/ir-composition-curriculum-2026-09-30/design-freeze.json",
+  "design_freeze_sha256": "e66f71f3bc02350168bb3958628bf5d1a3e02096ed758cbfbe83f987b71eb9b8",
+  "frozen_file_count": 142,
+  "post_run_mismatches": [],
+  "verified_after_run": true,
+  "verified_before_run": true
+}

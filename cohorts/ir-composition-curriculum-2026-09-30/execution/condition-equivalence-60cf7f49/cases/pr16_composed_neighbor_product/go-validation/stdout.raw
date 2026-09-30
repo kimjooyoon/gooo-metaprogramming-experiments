@@ -1,0 +1,13 @@
+=== RUN   TestFrozenTrainingVectors_pr16_composed_neighbor_product
+    generated_test.go:24: FINITERESULT|training|1|-3|5|5|true
+    generated_test.go:24: FINITERESULT|training|2|0|2|2|true
+    generated_test.go:24: FINITERESULT|training|3|2|10|10|true
+    generated_test.go:24: FINITERESULT|training|4|5|37|37|true
+--- PASS: TestFrozenTrainingVectors_pr16_composed_neighbor_product (0.00s)
+=== RUN   TestFrozenEvaluationVectors_pr16_composed_neighbor_product
+    generated_test.go:33: FINITERESULT|evaluation|1|-10|82|82|true
+    generated_test.go:33: FINITERESULT|evaluation|2|4|26|26|true
+    generated_test.go:33: FINITERESULT|evaluation|3|12|170|170|true
+--- PASS: TestFrozenEvaluationVectors_pr16_composed_neighbor_product (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/pr16_composed_neighbor_product	0.342s

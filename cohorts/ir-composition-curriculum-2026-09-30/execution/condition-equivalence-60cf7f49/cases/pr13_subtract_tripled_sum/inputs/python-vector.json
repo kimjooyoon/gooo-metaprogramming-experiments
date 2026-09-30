@@ -1,0 +1,36 @@
+{
+  "id": "pr13_subtract_tripled_sum",
+  "activity": "C13",
+  "training": [
+    {
+      "input": -2,
+      "expected": 100
+    },
+    {
+      "input": 0,
+      "expected": 94
+    },
+    {
+      "input": 3,
+      "expected": 85
+    },
+    {
+      "input": 5,
+      "expected": 79
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -10,
+      "expected": 124
+    },
+    {
+      "input": 7,
+      "expected": 73
+    },
+    {
+      "input": 20,
+      "expected": 34
+    }
+  ]
+}

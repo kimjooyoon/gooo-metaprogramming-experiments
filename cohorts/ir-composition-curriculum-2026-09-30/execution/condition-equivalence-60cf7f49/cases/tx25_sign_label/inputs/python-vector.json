@@ -1,0 +1,28 @@
+{
+  "id": "tx25_sign_label",
+  "activity": "C25",
+  "training": [
+    {
+      "input": -1,
+      "expected": -1
+    },
+    {
+      "input": 0,
+      "expected": 1
+    },
+    {
+      "input": 1,
+      "expected": 1
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -20,
+      "expected": -1
+    },
+    {
+      "input": 20,
+      "expected": 1
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+=== RUN   TestFrozenTrainingVectors_pr15_square_minus_successor_sum
+    generated_test.go:24: FINITERESULT|training|1|-2|2|2|true
+    generated_test.go:24: FINITERESULT|training|2|0|-4|-4|true
+    generated_test.go:24: FINITERESULT|training|3|3|2|2|true
+    generated_test.go:24: FINITERESULT|training|4|6|26|26|true
+--- PASS: TestFrozenTrainingVectors_pr15_square_minus_successor_sum (0.00s)
+=== RUN   TestFrozenEvaluationVectors_pr15_square_minus_successor_sum
+    generated_test.go:33: FINITERESULT|evaluation|1|-10|106|106|true
+    generated_test.go:33: FINITERESULT|evaluation|2|5|16|16|true
+    generated_test.go:33: FINITERESULT|evaluation|3|20|376|376|true
+--- PASS: TestFrozenEvaluationVectors_pr15_square_minus_successor_sum (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/pr15_square_minus_successor_sum	0.367s

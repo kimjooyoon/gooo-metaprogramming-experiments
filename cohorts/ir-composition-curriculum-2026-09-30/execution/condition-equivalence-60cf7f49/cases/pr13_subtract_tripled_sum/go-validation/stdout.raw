@@ -1,0 +1,13 @@
+=== RUN   TestFrozenTrainingVectors_pr13_subtract_tripled_sum
+    generated_test.go:24: FINITERESULT|training|1|-2|100|100|true
+    generated_test.go:24: FINITERESULT|training|2|0|94|94|true
+    generated_test.go:24: FINITERESULT|training|3|3|85|85|true
+    generated_test.go:24: FINITERESULT|training|4|5|79|79|true
+--- PASS: TestFrozenTrainingVectors_pr13_subtract_tripled_sum (0.00s)
+=== RUN   TestFrozenEvaluationVectors_pr13_subtract_tripled_sum
+    generated_test.go:33: FINITERESULT|evaluation|1|-10|124|124|true
+    generated_test.go:33: FINITERESULT|evaluation|2|7|73|73|true
+    generated_test.go:33: FINITERESULT|evaluation|3|20|34|34|true
+--- PASS: TestFrozenEvaluationVectors_pr13_subtract_tripled_sum (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/pr13_subtract_tripled_sum	0.844s

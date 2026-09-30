@@ -1,0 +1,116 @@
+{
+  "activity": "C06",
+  "actual_results": {
+    "evaluation": [
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 1,
+        "input": -5,
+        "passed": true
+      },
+      {
+        "actual": 60,
+        "expected": 60,
+        "index": 2,
+        "input": 50,
+        "passed": true
+      },
+      {
+        "actual": 101,
+        "expected": 101,
+        "index": 3,
+        "input": 111,
+        "passed": true
+      }
+    ],
+    "training": [
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 1,
+        "input": -1,
+        "passed": true
+      },
+      {
+        "actual": 10,
+        "expected": 10,
+        "index": 2,
+        "input": 0,
+        "passed": true
+      },
+      {
+        "actual": 11,
+        "expected": 11,
+        "index": 3,
+        "input": 1,
+        "passed": true
+      },
+      {
+        "actual": 110,
+        "expected": 110,
+        "index": 4,
+        "input": 100,
+        "passed": true
+      },
+      {
+        "actual": 91,
+        "expected": 91,
+        "index": 5,
+        "input": 101,
+        "passed": true
+      }
+    ]
+  },
+  "case_id": "ni06_surcharge_discount",
+  "command": [
+    "/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go",
+    "test",
+    "-count=1",
+    "-v",
+    "./..."
+  ],
+  "elapsed_ms": 1662.942375,
+  "ended_utc": "2026-09-30T08:37:22.590579+00:00",
+  "exit_code": 0,
+  "finite_fitness": {
+    "evaluation": {
+      "all_observed_cases_passed": true,
+      "go_test_exit_code": 0,
+      "observed": 3,
+      "passed": 3,
+      "planned": 3,
+      "timed_out": false,
+      "unknown": 0
+    },
+    "training": {
+      "all_observed_cases_passed": true,
+      "go_test_exit_code": 0,
+      "observed": 5,
+      "passed": 5,
+      "planned": 5,
+      "timed_out": false,
+      "unknown": 0
+    }
+  },
+  "go_version": "go1.27.0",
+  "launch_error": null,
+  "schema": "gooo/ir-composition-independent-go-validation/v1",
+  "source_sha256": "2af52ee47196575af18cf5b96c8bdaf08a41fc04529c91037680fa8453d63d46",
+  "started_utc": "2026-09-30T08:37:20.927610+00:00",
+  "status": "GO_TEST_PASS",
+  "stderr_path": "go-validation/stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_path": "go-validation/stdout.raw",
+  "stdout_sha256": "d0a4a9e854f51158ccc662eac099dcca3cbb6e1de26eea221006e653aac34016",
+  "test_source_sha256": "4190a8fd9e2248922100422c54949a8697cda56c257ed0f3bacd58ef586e11df",
+  "timed_out": false,
+  "timeout_seconds": 120,
+  "vector_counts": {
+    "evaluation": 3,
+    "observed_total": 8,
+    "planned_total": 8,
+    "training": 5,
+    "unknown_total": 0
+  }
+}

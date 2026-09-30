@@ -1,0 +1,44 @@
+{
+  "id": "cp20_strict_symmetric_window",
+  "activity": "C20",
+  "training": [
+    {
+      "input": -6,
+      "expected": -4
+    },
+    {
+      "input": -5,
+      "expected": -4
+    },
+    {
+      "input": -4,
+      "expected": 4
+    },
+    {
+      "input": 4,
+      "expected": 4
+    },
+    {
+      "input": 5,
+      "expected": -4
+    },
+    {
+      "input": 6,
+      "expected": -4
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -100,
+      "expected": -4
+    },
+    {
+      "input": 0,
+      "expected": 4
+    },
+    {
+      "input": 100,
+      "expected": -4
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+=== RUN   TestFrozenTrainingVectors_cc04_outer_cutoffs
+    generated_test.go:26: FINITERESULT|training|1|-7|9|9|true
+    generated_test.go:26: FINITERESULT|training|2|-6|9|9|true
+    generated_test.go:26: FINITERESULT|training|3|-5|0|0|true
+    generated_test.go:26: FINITERESULT|training|4|7|0|0|true
+    generated_test.go:26: FINITERESULT|training|5|8|9|9|true
+    generated_test.go:26: FINITERESULT|training|6|9|9|9|true
+--- PASS: TestFrozenTrainingVectors_cc04_outer_cutoffs (0.00s)
+=== RUN   TestFrozenEvaluationVectors_cc04_outer_cutoffs
+    generated_test.go:35: FINITERESULT|evaluation|1|-100|9|9|true
+    generated_test.go:35: FINITERESULT|evaluation|2|0|0|0|true
+    generated_test.go:35: FINITERESULT|evaluation|3|100|9|9|true
+--- PASS: TestFrozenEvaluationVectors_cc04_outer_cutoffs (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/cc04_outer_cutoffs	1.646s

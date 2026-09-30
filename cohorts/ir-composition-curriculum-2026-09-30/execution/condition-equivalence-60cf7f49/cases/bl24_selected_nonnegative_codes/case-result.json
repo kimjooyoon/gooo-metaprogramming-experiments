@@ -1,0 +1,226 @@
+{
+  "activity": "C24",
+  "case_id": "bl24_selected_nonnegative_codes",
+  "cli": {
+    "baseline_status": "CLI_PASS_WITH_SOURCE",
+    "command": [
+      "/private/tmp/gooo-condition-equivalence-60cf7f49-20260930",
+      "body-codegen",
+      "--json",
+      "--fill-plan",
+      "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-composition-curriculum-2026-09-30/plans/body-fill/24-bl24_selected_nonnegative_codes.json",
+      "--activity",
+      "C24",
+      "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-composition-curriculum-2026-09-30/fixtures/24-bl24_selected_nonnegative_codes.gooo"
+    ],
+    "cwd": "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-composition-curriculum-2026-09-30/execution/condition-equivalence-60cf7f49/cases/bl24_selected_nonnegative_codes",
+    "elapsed_ms": 7.050791,
+    "emitted_source_path": "generated.go",
+    "emitted_source_sha256": "d7fb991ed311c894c58c264c3b697aa82f32d979e94360d79b444969ece91641",
+    "ended_utc": "2026-09-30T08:37:12.971758+00:00",
+    "exit_code": 0,
+    "json_parse_error": null,
+    "launch_error": null,
+    "parsed_response_path": "cli/response.parsed.json",
+    "started_utc": "2026-09-30T08:37:12.964726+00:00",
+    "stderr_bytes": 0,
+    "stderr_path": "cli/stderr.raw",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_bytes": 16950,
+    "stdout_path": "cli/stdout.raw",
+    "stdout_sha256": "7ff94522ce0dd0adfecb7137161c0547727030fef6d45df516fc34e52efc665c",
+    "timed_out": false,
+    "timeout_seconds": 45
+  },
+  "compiler_receipt": {
+    "activity_id": "bodycodegen://activity/c24",
+    "available": true,
+    "body_fill_selected_candidate_id": "option_b",
+    "body_fill_selected_expression": "selected",
+    "body_fill_training": {
+      "accuracy_percent": 100,
+      "passed": 5,
+      "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "total": 5
+    },
+    "compiler_source_sha": "60cf7f49b0e302a6bebb42bc8da90f3ed19b2b82",
+    "completeness_decision": "PASS_WITHIN_DECLARED_FIXTURE_SCOPE",
+    "decision": "PASS",
+    "error": null,
+    "generated_digest": "sha256:d7fb991ed311c894c58c264c3b697aa82f32d979e94360d79b444969ece91641",
+    "generated_digest_matches_bytes": true,
+    "model_calls_reported": 0,
+    "plan_sha256": "sha256:96b7d7a3c661a66a3379ff50441c8b384aeeda85b3e618cdef818085e27ef23b",
+    "provider_operations_reported": 0,
+    "route_equivalence_decision": "PASS",
+    "schema": "gooo/body-codegen-report/v3",
+    "source_digest": "sha256:fd24f9757eef5f0fae92d3cd37c9745799693646464504be64d56c99c789f6da",
+    "source_unit_completeness": {
+      "denominator": 25,
+      "id": "source_ast_coverage",
+      "numerator": 25,
+      "reason": "Counts supported source-body units represented in the selected Go lowering; it does not estimate unstated intent.",
+      "status": "PASS",
+      "unit": "source semantic units lowered"
+    },
+    "typecheck_passed": true
+  },
+  "finite_fitness": {
+    "gooo_training": {
+      "accuracy_percent": 100,
+      "passed": 5,
+      "scope": "exact observed accuracy over the declared finite test suite; not a full-domain proof",
+      "total": 5
+    },
+    "independent_generated_go": {
+      "evaluation": {
+        "all_observed_cases_passed": true,
+        "go_test_exit_code": 0,
+        "observed": 3,
+        "passed": 3,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 0
+      },
+      "training": {
+        "all_observed_cases_passed": true,
+        "go_test_exit_code": 0,
+        "observed": 5,
+        "passed": 5,
+        "planned": 5,
+        "timed_out": false,
+        "unknown": 0
+      }
+    }
+  },
+  "fixture_sha256": "bc77b8e7e499bf06f8e2de315988199b3e1b5caa0dcb055820cae2067b24478b",
+  "go_validation": {
+    "activity": "C24",
+    "actual_results": {
+      "evaluation": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "index": 1,
+          "input": -100,
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "index": 2,
+          "input": 1,
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "index": 3,
+          "input": 10,
+          "passed": true
+        }
+      ],
+      "training": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "index": 1,
+          "input": -1,
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "index": 2,
+          "input": 0,
+          "passed": true
+        },
+        {
+          "actual": 6,
+          "expected": 6,
+          "index": 3,
+          "input": 2,
+          "passed": true
+        },
+        {
+          "actual": 6,
+          "expected": 6,
+          "index": 4,
+          "input": 4,
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "index": 5,
+          "input": 5,
+          "passed": true
+        }
+      ]
+    },
+    "case_id": "bl24_selected_nonnegative_codes",
+    "command": [
+      "/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go",
+      "test",
+      "-count=1",
+      "-v",
+      "./..."
+    ],
+    "elapsed_ms": 495.777875,
+    "ended_utc": "2026-09-30T08:37:38.251946+00:00",
+    "exit_code": 0,
+    "finite_fitness": {
+      "evaluation": {
+        "all_observed_cases_passed": true,
+        "go_test_exit_code": 0,
+        "observed": 3,
+        "passed": 3,
+        "planned": 3,
+        "timed_out": false,
+        "unknown": 0
+      },
+      "training": {
+        "all_observed_cases_passed": true,
+        "go_test_exit_code": 0,
+        "observed": 5,
+        "passed": 5,
+        "planned": 5,
+        "timed_out": false,
+        "unknown": 0
+      }
+    },
+    "go_version": "go1.27.0",
+    "launch_error": null,
+    "schema": "gooo/ir-composition-independent-go-validation/v1",
+    "source_sha256": "d7fb991ed311c894c58c264c3b697aa82f32d979e94360d79b444969ece91641",
+    "started_utc": "2026-09-30T08:37:37.756151+00:00",
+    "status": "GO_TEST_PASS",
+    "stderr_path": "go-validation/stderr.raw",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_path": "go-validation/stdout.raw",
+    "stdout_sha256": "2a2eea9ab6815caecc9f713335f0a4cdec9330b3476350b49f81ae25385b381b",
+    "test_source_sha256": "ff4bc14a4f967cb566b3cfe0da579d50222ce678868cfc1eaf911543129a2c37",
+    "timed_out": false,
+    "timeout_seconds": 120,
+    "vector_counts": {
+      "evaluation": 3,
+      "observed_total": 8,
+      "planned_total": 8,
+      "training": 5,
+      "unknown_total": 0
+    }
+  },
+  "plan_sha256": "d3d4ebece85131b4106fcc20c79b503067b05cb633acf587566e0c0a4f64f505",
+  "schema": "gooo/ir-composition-equivalence-replay-case/v1",
+  "sequence": 24,
+  "source_unit_completeness": {
+    "denominator": 25,
+    "id": "source_ast_coverage",
+    "numerator": 25,
+    "reason": "Counts supported source-body units represented in the selected Go lowering; it does not estimate unstated intent.",
+    "status": "PASS",
+    "unit": "source semantic units lowered"
+  },
+  "status": "complete",
+  "vector_sha256": "b77800d4c4b876df85c0d404a06d3931dd3d7682353f67a8736baaa1239edbe6"
+}

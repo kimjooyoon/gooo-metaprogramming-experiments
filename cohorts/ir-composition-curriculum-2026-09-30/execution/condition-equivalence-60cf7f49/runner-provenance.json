@@ -1,0 +1,13 @@
+{
+  "current_runner_path": "scripts/run_ir_composition_equivalence_replay.py",
+  "current_runner_sha256": "a0c255fd3d4d6a9abbc7a4026543634689139a6cc485fcf8170671acaa74f497",
+  "execution_report_sha256": "4f0acd5a8e3e720d314317e177db57233208be1af1c21d8d342446943c49affc",
+  "matches_run_metadata": true,
+  "post_run_change": "Derived source-unit summary bookkeeping was corrected after the run; no frozen inputs, raw CLI output, source or scores changed.",
+  "raw_cli_results_modified": false,
+  "reconstructed_after_run": true,
+  "reconstruction_method": "Reversed the two known post-run source-unit summary edits from the current runner; archived bytes hash exactly to run-metadata.runner_script_sha256.",
+  "runner_sha256": "5ebbbd55bb739fd9da3686633e72f40253ef1db6610d31050bff96bf35e24b4d",
+  "runner_source_path": "runner-source-executed.py",
+  "schema": "gooo/ir-composition-equivalence-runner-provenance/v1"
+}

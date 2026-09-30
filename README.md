@@ -37,7 +37,10 @@ The [32-intent composition curriculum](cohorts/ir-composition-curriculum-2026-09
 adds balanced experiments for nested conditions, assignments, Boolean/Text locals,
 precedence, comparisons, and int64 boundaries. The original offline baseline
 captures all 32 plans: 22 generated outputs independently pass their finite cases,
-and ten failures remain recorded. Candidate validity, source-unit completeness,
+and ten failures remain recorded. A compiler repair generates 30/32 from the same
+original plans and independently passes all 125 observed training and 87 observed
+evaluation cases; ten training and six evaluation cases remain unknown because
+two original fixtures still fail typecheck. Candidate validity, source-unit completeness,
 and finite functional fitness are reported separately; this stage makes zero
 Laya calls. Original design defects and failed harness attempts remain visible.
 

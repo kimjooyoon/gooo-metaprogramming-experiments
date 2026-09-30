@@ -1,0 +1,11 @@
+=== RUN   TestFrozenTrainingVectors_cc02_nonzero_disjunction
+    generated_test.go:23: FINITERESULT|training|1|-1|1|1|true
+    generated_test.go:23: FINITERESULT|training|2|0|0|0|true
+    generated_test.go:23: FINITERESULT|training|3|1|1|1|true
+--- PASS: TestFrozenTrainingVectors_cc02_nonzero_disjunction (0.00s)
+=== RUN   TestFrozenEvaluationVectors_cc02_nonzero_disjunction
+    generated_test.go:31: FINITERESULT|evaluation|1|-7|1|1|true
+    generated_test.go:31: FINITERESULT|evaluation|2|12|1|1|true
+--- PASS: TestFrozenEvaluationVectors_cc02_nonzero_disjunction (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/cc02_nonzero_disjunction	1.522s

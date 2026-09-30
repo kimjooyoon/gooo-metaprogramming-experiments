@@ -1,0 +1,29 @@
+{
+  "changed_json_paths": [
+    {
+      "new": 32,
+      "old": null,
+      "path": "source_unit_completeness.receipts_available"
+    },
+    {
+      "new": 30,
+      "old": 32,
+      "path": "source_unit_completeness.observed_receipts"
+    },
+    {
+      "new": 2,
+      "old": 0,
+      "path": "source_unit_completeness.unknown_receipts"
+    }
+  ],
+  "corrected_execution_report_path": "corrected-execution-report.json",
+  "corrected_execution_report_sha256": "eb82ce8e21224e999c5fcd6b5d8917b3d83357634560224ed95b629a6dc8cb5b",
+  "derivation": "Recount per_case source_ast_coverage rows with denominator greater than zero as observed; all other planned rows remain unknown. Preserve receipts_available separately.",
+  "model_calls": 0,
+  "raw_cli_outputs_receipts_generated_go_and_finite_scores_modified": false,
+  "reason": "Two failed CLI responses include a completeness receipt but have UNKNOWN source_ast_coverage with denominator 0. The as-run summary counted all available receipts as observed source-unit measurements.",
+  "runner_sha256": "5ebbbd55bb739fd9da3686633e72f40253ef1db6610d31050bff96bf35e24b4d",
+  "schema": "gooo/ir-composition-summary-correction/v1",
+  "source_execution_report_path": "../execution-report.json",
+  "source_execution_report_sha256": "4f0acd5a8e3e720d314317e177db57233208be1af1c21d8d342446943c49affc"
+}

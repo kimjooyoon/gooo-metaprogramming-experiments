@@ -1,0 +1,123 @@
+{
+  "activity": "C04",
+  "actual_results": {
+    "evaluation": [
+      {
+        "actual": 9,
+        "expected": 9,
+        "index": 1,
+        "input": -100,
+        "passed": true
+      },
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 2,
+        "input": 0,
+        "passed": true
+      },
+      {
+        "actual": 9,
+        "expected": 9,
+        "index": 3,
+        "input": 100,
+        "passed": true
+      }
+    ],
+    "training": [
+      {
+        "actual": 9,
+        "expected": 9,
+        "index": 1,
+        "input": -7,
+        "passed": true
+      },
+      {
+        "actual": 9,
+        "expected": 9,
+        "index": 2,
+        "input": -6,
+        "passed": true
+      },
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 3,
+        "input": -5,
+        "passed": true
+      },
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 4,
+        "input": 7,
+        "passed": true
+      },
+      {
+        "actual": 9,
+        "expected": 9,
+        "index": 5,
+        "input": 8,
+        "passed": true
+      },
+      {
+        "actual": 9,
+        "expected": 9,
+        "index": 6,
+        "input": 9,
+        "passed": true
+      }
+    ]
+  },
+  "case_id": "cc04_outer_cutoffs",
+  "command": [
+    "/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go",
+    "test",
+    "-count=1",
+    "-v",
+    "./..."
+  ],
+  "elapsed_ms": 1827.72825,
+  "ended_utc": "2026-09-30T08:37:19.251064+00:00",
+  "exit_code": 0,
+  "finite_fitness": {
+    "evaluation": {
+      "all_observed_cases_passed": true,
+      "go_test_exit_code": 0,
+      "observed": 3,
+      "passed": 3,
+      "planned": 3,
+      "timed_out": false,
+      "unknown": 0
+    },
+    "training": {
+      "all_observed_cases_passed": true,
+      "go_test_exit_code": 0,
+      "observed": 6,
+      "passed": 6,
+      "planned": 6,
+      "timed_out": false,
+      "unknown": 0
+    }
+  },
+  "go_version": "go1.27.0",
+  "launch_error": null,
+  "schema": "gooo/ir-composition-independent-go-validation/v1",
+  "source_sha256": "7d482a82b50e1171977e77d28f1cb3523bde0054bb052a433b83522e73513b2a",
+  "started_utc": "2026-09-30T08:37:17.423307+00:00",
+  "status": "GO_TEST_PASS",
+  "stderr_path": "go-validation/stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_path": "go-validation/stdout.raw",
+  "stdout_sha256": "ed77645fe114c47e94f18fb5cbf04d4c958cb253b2b8d743cfeac76be4bdcab9",
+  "test_source_sha256": "aca19d07a79968ffe6f4fad8ba56017b87fca6d0030091142b0febd8609ac804",
+  "timed_out": false,
+  "timeout_seconds": 120,
+  "vector_counts": {
+    "evaluation": 3,
+    "observed_total": 9,
+    "planned_total": 9,
+    "training": 6,
+    "unknown_total": 0
+  }
+}

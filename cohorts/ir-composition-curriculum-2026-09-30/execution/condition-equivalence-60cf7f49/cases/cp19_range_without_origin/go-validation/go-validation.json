@@ -1,0 +1,116 @@
+{
+  "activity": "C19",
+  "actual_results": {
+    "evaluation": [
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 1,
+        "input": -100,
+        "passed": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "index": 2,
+        "input": 2,
+        "passed": true
+      },
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 3,
+        "input": 100,
+        "passed": true
+      }
+    ],
+    "training": [
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 1,
+        "input": -4,
+        "passed": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "index": 2,
+        "input": -3,
+        "passed": true
+      },
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 3,
+        "input": 0,
+        "passed": true
+      },
+      {
+        "actual": 1,
+        "expected": 1,
+        "index": 4,
+        "input": 3,
+        "passed": true
+      },
+      {
+        "actual": 0,
+        "expected": 0,
+        "index": 5,
+        "input": 4,
+        "passed": true
+      }
+    ]
+  },
+  "case_id": "cp19_range_without_origin",
+  "command": [
+    "/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go",
+    "test",
+    "-count=1",
+    "-v",
+    "./..."
+  ],
+  "elapsed_ms": 494.426292,
+  "ended_utc": "2026-09-30T08:37:36.740670+00:00",
+  "exit_code": 0,
+  "finite_fitness": {
+    "evaluation": {
+      "all_observed_cases_passed": true,
+      "go_test_exit_code": 0,
+      "observed": 3,
+      "passed": 3,
+      "planned": 3,
+      "timed_out": false,
+      "unknown": 0
+    },
+    "training": {
+      "all_observed_cases_passed": true,
+      "go_test_exit_code": 0,
+      "observed": 5,
+      "passed": 5,
+      "planned": 5,
+      "timed_out": false,
+      "unknown": 0
+    }
+  },
+  "go_version": "go1.27.0",
+  "launch_error": null,
+  "schema": "gooo/ir-composition-independent-go-validation/v1",
+  "source_sha256": "eb7141337e4d49437037c80e7bd0d57a9beec5280ec71e9ecdd2eccfc16a75b7",
+  "started_utc": "2026-09-30T08:37:36.246224+00:00",
+  "status": "GO_TEST_PASS",
+  "stderr_path": "go-validation/stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_path": "go-validation/stdout.raw",
+  "stdout_sha256": "62b49d39896c3759a3058f7637ba85c9a5c856f2c2739823477c0f4287fbcb7c",
+  "test_source_sha256": "66c02e9df405652947bc8e041799f0d0319822040ad373a80767e14727602652",
+  "timed_out": false,
+  "timeout_seconds": 120,
+  "vector_counts": {
+    "evaluation": 3,
+    "observed_total": 8,
+    "planned_total": 8,
+    "training": 5,
+    "unknown_total": 0
+  }
+}

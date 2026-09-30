@@ -1,0 +1,3 @@
+module example.invalid/gooo/ir-composition-original-cli/ni07_zero_special_negative_offset
+
+go 1.27

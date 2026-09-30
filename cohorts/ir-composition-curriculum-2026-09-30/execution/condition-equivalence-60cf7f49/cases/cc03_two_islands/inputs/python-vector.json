@@ -1,0 +1,36 @@
+{
+  "id": "cc03_two_islands",
+  "activity": "C03",
+  "training": [
+    {
+      "input": -5,
+      "expected": 0
+    },
+    {
+      "input": -4,
+      "expected": 7
+    },
+    {
+      "input": 0,
+      "expected": 0
+    },
+    {
+      "input": 4,
+      "expected": 7
+    },
+    {
+      "input": 5,
+      "expected": 0
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -100,
+      "expected": 0
+    },
+    {
+      "input": 2,
+      "expected": 0
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+name: IR composition baseline replay
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-saved-baselines:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GOOO_LAYA_URL: ''
+      GOOO_LAYA_API_KEY: ''
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.27.0'
+
+      - name: Validate both saved compiler baselines and replay emitted Go
+        env:
+          GOTOOLCHAIN: local
+          GOPROXY: 'off'
+          GOSUMDB: 'off'
+          GOWORK: 'off'
+        run: |
+          python3 scripts/validate_ir_composition_baselines.py \
+            --go-bin "$(which go)" \
+            --go-timeout-seconds 180 \
+            --candidate-timeout-seconds 600 \
+            --output "$RUNNER_TEMP/ir-composition-baseline-validation"
+
+      - name: Add replay results to the workflow summary
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/ir-composition-baseline-validation/validation-report.md" ]; then
+            cat "$RUNNER_TEMP/ir-composition-baseline-validation/validation-report.md" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ir-composition-baseline-validation-${{ github.sha }}
+          path: ${{ runner.temp }}/ir-composition-baseline-validation/
+          if-no-files-found: warn

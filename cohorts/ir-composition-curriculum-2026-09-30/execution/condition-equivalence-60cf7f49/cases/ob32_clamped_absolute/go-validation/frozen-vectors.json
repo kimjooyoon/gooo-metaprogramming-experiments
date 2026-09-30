@@ -1,0 +1,34 @@
+{
+  "training": [
+    {
+      "input": -3,
+      "expected": 3
+    },
+    {
+      "input": 0,
+      "expected": 0
+    },
+    {
+      "input": 5,
+      "expected": 5
+    },
+    {
+      "input": 7,
+      "expected": 7
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -9223372036854775808,
+      "expected": 9223372036854775807
+    },
+    {
+      "input": -9223372036854775807,
+      "expected": 9223372036854775807
+    },
+    {
+      "input": 9223372036854775807,
+      "expected": 9223372036854775807
+    }
+  ]
+}

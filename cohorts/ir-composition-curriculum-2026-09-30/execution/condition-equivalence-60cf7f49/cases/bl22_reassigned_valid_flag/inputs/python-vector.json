@@ -1,0 +1,36 @@
+{
+  "id": "bl22_reassigned_valid_flag",
+  "activity": "C22",
+  "training": [
+    {
+      "input": -1,
+      "expected": -5
+    },
+    {
+      "input": 0,
+      "expected": 5
+    },
+    {
+      "input": 5,
+      "expected": 5
+    },
+    {
+      "input": 6,
+      "expected": -5
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -10,
+      "expected": -5
+    },
+    {
+      "input": 2,
+      "expected": 5
+    },
+    {
+      "input": 100,
+      "expected": -5
+    }
+  ]
+}

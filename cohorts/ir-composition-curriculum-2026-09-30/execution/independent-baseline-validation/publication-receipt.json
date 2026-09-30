@@ -1,0 +1,12 @@
+{
+  "schema": "gooo/ir-composition-baseline-publication/v1",
+  "model_calls": 0,
+  "source_compilers": [
+    "bb5c1ec2f81cbfb17ac6fb2f7a9e1d7b67168e7f",
+    "60cf7f49b0e302a6bebb42bc8da90f3ed19b2b82"
+  ],
+  "same_intention_count": 32,
+  "validator_sha256": "fdb59381d5f785db9c6fb38e6101ae565ccfb3e71e8a54096d12404a616d4d52",
+  "working_replay_runner_sha256_at_publication": "584f6f5253108a5ce3c322b03fe16515d98bee62d2003fbd3978f0b574cba0dd",
+  "note": "The runner-provenance current_runner_sha256 field describes its reconstruction-time snapshot, not this publication-time script. Historical executed runner bytes were reconstructed and exact-hash checked. Original raw aggregate issue remains and has a separate bound correction."
+}

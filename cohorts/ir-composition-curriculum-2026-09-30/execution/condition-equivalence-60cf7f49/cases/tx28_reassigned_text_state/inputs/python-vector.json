@@ -1,0 +1,28 @@
+{
+  "id": "tx28_reassigned_text_state",
+  "activity": "C28",
+  "training": [
+    {
+      "input": -1,
+      "expected": -2
+    },
+    {
+      "input": 0,
+      "expected": -2
+    },
+    {
+      "input": 1,
+      "expected": 2
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -10,
+      "expected": -2
+    },
+    {
+      "input": 100,
+      "expected": 2
+    }
+  ]
+}

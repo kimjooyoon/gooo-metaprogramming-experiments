@@ -1,0 +1,96 @@
+{
+  "activity": "C23",
+  "case_id": "bl23_nonzero_bounded_flag",
+  "cli": {
+    "baseline_status": "CLI_FAILURE_OR_UNVERIFIED",
+    "command": [
+      "/private/tmp/gooo-condition-equivalence-60cf7f49-20260930",
+      "body-codegen",
+      "--json",
+      "--fill-plan",
+      "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-composition-curriculum-2026-09-30/plans/body-fill/23-bl23_nonzero_bounded_flag.json",
+      "--activity",
+      "C23",
+      "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-composition-curriculum-2026-09-30/fixtures/23-bl23_nonzero_bounded_flag.gooo"
+    ],
+    "cwd": "/Users/alice/meta-go/research/metaprogramming/gooo-metaprogramming-experiments/cohorts/ir-composition-curriculum-2026-09-30/execution/condition-equivalence-60cf7f49/cases/bl23_nonzero_bounded_flag",
+    "elapsed_ms": 6.179125,
+    "emitted_source_path": null,
+    "emitted_source_sha256": null,
+    "ended_utc": "2026-09-30T08:37:12.963105+00:00",
+    "exit_code": 1,
+    "json_parse_error": null,
+    "launch_error": null,
+    "parsed_response_path": "cli/response.parsed.json",
+    "started_utc": "2026-09-30T08:37:12.956944+00:00",
+    "stderr_bytes": 0,
+    "stderr_path": "cli/stderr.raw",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_bytes": 13578,
+    "stdout_path": "cli/stdout.raw",
+    "stdout_sha256": "4ba3f9822c6de4441d9c6c78ae934fb82315fdea9cb43cac8248db2c1b92df27",
+    "timed_out": false,
+    "timeout_seconds": 45
+  },
+  "compiler_receipt": {
+    "activity_id": null,
+    "available": true,
+    "body_fill_selected_candidate_id": null,
+    "body_fill_selected_expression": null,
+    "body_fill_training": {
+      "accuracy_percent": null,
+      "passed": null,
+      "scope": null,
+      "total": null
+    },
+    "compiler_source_sha": "60cf7f49b0e302a6bebb42bc8da90f3ed19b2b82",
+    "completeness_decision": "FAIL_CLOSED",
+    "decision": "FAIL_CLOSED",
+    "error": "candidate \"option_b\" is not a valid typed body: typecheck generated activity: body.goo:3:31: declared and not used: bounded",
+    "generated_digest": null,
+    "generated_digest_matches_bytes": false,
+    "model_calls_reported": 0,
+    "plan_sha256": "sha256:531d072b5bf6ff3d54c098f21f8abf486c12f511e3eb6ee725d99169fec584c2",
+    "provider_operations_reported": 0,
+    "route_equivalence_decision": null,
+    "schema": "gooo/body-codegen-report/v3",
+    "source_digest": null,
+    "source_unit_completeness": {
+      "denominator": 0,
+      "id": "source_ast_coverage",
+      "numerator": 0,
+      "reason": "Counts supported source-body units represented in the selected Go lowering; it does not estimate unstated intent.",
+      "status": "UNKNOWN",
+      "unit": "source semantic units lowered"
+    },
+    "typecheck_passed": null
+  },
+  "finite_fitness": {
+    "gooo_training": {
+      "accuracy_percent": null,
+      "passed": null,
+      "scope": null,
+      "total": null
+    },
+    "independent_generated_go": null
+  },
+  "fixture_sha256": "ddbf25467e07b7558ed8efd397b719d773a587d5ec46ded5dd73ac32689ee768",
+  "go_validation": {
+    "planned_evaluation": 3,
+    "planned_training": 5,
+    "status": "unknown_no_emitted_source"
+  },
+  "plan_sha256": "3c300ccd41ed45aa20d2f2a6b5df3004cdcc4335962d8757d1f93fec3bb14c77",
+  "schema": "gooo/ir-composition-equivalence-replay-case/v1",
+  "sequence": 23,
+  "source_unit_completeness": {
+    "denominator": 0,
+    "id": "source_ast_coverage",
+    "numerator": 0,
+    "reason": "Counts supported source-body units represented in the selected Go lowering; it does not estimate unstated intent.",
+    "status": "UNKNOWN",
+    "unit": "source semantic units lowered"
+  },
+  "status": "complete",
+  "vector_sha256": "c2229c6d7c7873c83e40e0be173492c338c6ce607d4de67583888649fd7c9538"
+}

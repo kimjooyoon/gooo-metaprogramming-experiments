@@ -1,0 +1,40 @@
+{
+  "id": "ni08_upper_grade_excess",
+  "activity": "C08",
+  "training": [
+    {
+      "input": 59,
+      "expected": -1
+    },
+    {
+      "input": 60,
+      "expected": 0
+    },
+    {
+      "input": 79,
+      "expected": 0
+    },
+    {
+      "input": 80,
+      "expected": 0
+    },
+    {
+      "input": 81,
+      "expected": 1
+    }
+  ],
+  "evaluation": [
+    {
+      "input": -1,
+      "expected": -1
+    },
+    {
+      "input": 70,
+      "expected": 0
+    },
+    {
+      "input": 100,
+      "expected": 20
+    }
+  ]
+}

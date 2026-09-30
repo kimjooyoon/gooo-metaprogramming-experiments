@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alice/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.27.0.darwin-arm64/bin/go",
+    "test",
+    "-count=1",
+    "-v",
+    "./..."
+  ],
+  "elapsed_ms": 1755.776583,
+  "exit_code": 0,
+  "go_version": "go1.27.0",
+  "schema": "gooo/ir-composition-go-test-harness-preflight/v1",
+  "status": "PASS",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "cf24dd937880114817a353e0155939d260442523ebacbbbc46b2742eae75ae2f",
+  "stub_source_sha256": "38d296fbc5dafa0e2ba07244181425d55c74237b2986ef78bde013e08ee2807f",
+  "test_source_sha256": "e837989f7cb7f8c710801c34f281ce54a5a159b5eaff1a49361cc6b82d48d9d7"
+}

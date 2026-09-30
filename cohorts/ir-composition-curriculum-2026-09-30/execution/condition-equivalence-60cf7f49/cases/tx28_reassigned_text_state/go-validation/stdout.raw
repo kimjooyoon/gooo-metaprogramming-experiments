@@ -1,0 +1,11 @@
+=== RUN   TestFrozenTrainingVectors_tx28_reassigned_text_state
+    generated_test.go:23: FINITERESULT|training|1|-1|-2|-2|true
+    generated_test.go:23: FINITERESULT|training|2|0|-2|-2|true
+    generated_test.go:23: FINITERESULT|training|3|1|2|2|true
+--- PASS: TestFrozenTrainingVectors_tx28_reassigned_text_state (0.00s)
+=== RUN   TestFrozenEvaluationVectors_tx28_reassigned_text_state
+    generated_test.go:31: FINITERESULT|evaluation|1|-10|-2|-2|true
+    generated_test.go:31: FINITERESULT|evaluation|2|100|2|2|true
+--- PASS: TestFrozenEvaluationVectors_tx28_reassigned_text_state (0.00s)
+PASS
+ok  	example.invalid/gooo/ir-composition-original-cli/tx28_reassigned_text_state	0.354s

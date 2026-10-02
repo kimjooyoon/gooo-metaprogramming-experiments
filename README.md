@@ -13,6 +13,17 @@ source-linked completeness observations. Follow the
 and [Hugging Face model](https://huggingface.co/asketeddy/gooo-shared-judgment-tiny-v1)
 for current capabilities, comparison tables and the research we build on.
 
+### Current replay status
+
+The [baseline replay on the documentation revision](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/37070962850)
+fails its frozen-input hash check for `prepare_ir_composition_curriculum.py` and
+`run_ir_composition_curriculum.py`. The same check already failed on the
+[preceding toolchain update](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36753863347).
+Those scripts were changed when Go 1.27.1 was pinned; this documentation update
+preserves their bytes and the original study evidence. Restoring reproducible
+replay requires an explicit source-version repair. The dated result tables below
+describe the retained original observations.
+
 ## Recorded studies — September 2026
 
 The 100 cases are also published as ten public, one-intent repositories. See the [intent-slice index](docs/intent-slices.md); [CI validates the catalog](catalog/intent-repositories.json) against the source plan.

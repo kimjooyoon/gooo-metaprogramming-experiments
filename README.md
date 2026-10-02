@@ -1,5 +1,8 @@
 # Gooo Metaprogramming Experiments
 
+[Gooo Wiki, 한국어](https://github.com/kimjooyoon/meta-ontology-go/wiki) explains
+the language, small-model integration, current measurements and research foundations.
+
 ## Where this study fits — 2026-10-03
 
 This repository preserves the 100 intent/route experiments and the subsequent

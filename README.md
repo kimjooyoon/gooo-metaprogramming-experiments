@@ -1,14 +1,29 @@
 # Gooo Metaprogramming Experiments
 
+## Where this study fits — 2026-10-03
+
+This repository preserves the 100 intent/route experiments and the subsequent
+Laya body-fill, feedback and concurrency studies. Each dated cohort retains its
+own inputs, compiler revision and measurement scope.
+
+The work has since developed into small Gooo-specific models, Go inference and
+source-linked completeness observations. Follow the
+[language guide, 한국어](https://github.com/kimjooyoon/meta-ontology-go/blob/dev/docs/language-direction.ko.md),
+[current experiments](https://github.com/kimjooyoon/gooo-neural-decision-experiments)
+and [Hugging Face model](https://huggingface.co/asketeddy/gooo-shared-judgment-tiny-v1)
+for current capabilities, comparison tables and the research we build on.
+
+## Recorded studies — September 2026
+
 The 100 cases are also published as ten public, one-intent repositories. See the [intent-slice index](docs/intent-slices.md); [CI validates the catalog](catalog/intent-repositories.json) against the source plan.
 
-New [IR body-fill experiments](cohorts/ir-fill-2026-09-30/README.md) compare
+The [IR body-fill experiments](cohorts/ir-fill-2026-09-30/README.md) compare
 12 composition cases before/after a compiler repair, 24 real-Laya choices,
 three direct body-fill calls, eight mock scheduling treatments, and four
 candidate/test-count scaling treatments. The model's raw choices, corrected
 emission, held-out behavior, and runtime costs have separate denominators.
 
-New [IR body-search experiments](cohorts/ir-search-2026-09-30/README.md)
+The [IR body-search experiments](cohorts/ir-search-2026-09-30/README.md)
 choose an untried expression before scoring it, then feed local training
 failures into the next choice. Four intents compare real Laya search,
 declared-order search, and exhaustive scoring (12 invocations, six model

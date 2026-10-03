@@ -22,10 +22,16 @@ The [baseline replay on the documentation revision](https://github.com/kimjooyoo
 fails its frozen-input hash check for `prepare_ir_composition_curriculum.py` and
 `run_ir_composition_curriculum.py`. The same check already failed on the
 [preceding toolchain update](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36753863347).
-Those scripts were changed when Go 1.27.1 was pinned; this documentation update
-preserves their bytes and the original study evidence. Restoring reproducible
-replay requires an explicit source-version repair. The dated result tables below
-describe the retained original observations.
+Those scripts were changed when Go 1.27.1 was pinned. An explicit
+[source-version repair and Go replay tool](tools/baseline-replay) now preserves
+the original and current bytes separately. The original freeze and all retained
+results keep their exact contents. The new tool checks 140 current exact files
+and two bound historical archives, then compiles and executes the saved Go.
+Local race/vet and actual replay pass: 52/52 saved modules, plus 93 valid and
+three expected failed candidate packages. Model calls and new intents are zero.
+The new source revision still needs its own public CI result; the two previous
+failed runs above remain part of the record. Dated result tables below describe
+the original observations.
 
 ## Recorded studies — September 2026
 

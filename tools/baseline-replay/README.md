@@ -7,6 +7,7 @@ saved generated programs. Run from this directory with Go 1.27.1:
 go test -race -count=1 ./...
 go vet ./...
 go run . --root ../.. --go-bin "$(command -v go)" --output /tmp/gooo-baseline-new-run
+go run . --revision2 --root ../.. --go-bin "$(command -v go)" --output /tmp/gooo-revision2-new-run
 ```
 
 Choose a fresh output directory. The command writes process stdout/stderr,
@@ -54,3 +55,33 @@ The report says `BOUND_HISTORICAL_ARCHIVE` for those two files and
 the freeze or any other frozen input fail the validation. These explicit
 bindings establish byte consistency and version lineage; the fresh process logs
 provide the observations of this replay.
+
+## Revision-2 candidate execution
+
+`--revision2` runs the two saved reference suites and both candidate modules in
+a temporary copy. It removes all 189 copied result files before execution,
+requires the named finite test to pass in every valid candidate package, and
+matches every freshly written result file to its frozen digest. The original
+three compiler failures stay explicit: 93/96 original candidates execute and
+96/96 repaired candidates execute. Both versions reuse the same 32 intentions.
+
+The tool also checks the revision-2 freeze (536 files), manifest (797 files),
+all 96 provider plans and 32 feedback sets. Feedback contains only training
+observations and is bound to the fixture, training suite and fresh candidate
+results. The fresh training scores must separate the gold candidate from both
+distractors in each of the 32 tasks. Compilation success and behavioral success
+are reported separately. Each candidate's training/evaluation counts are in
+`independent-replay-report.json`.
+
+The third preparer path has explicit frozen/current archives. The retained
+Python validator requires physical Go1.27.0; this Go execution path uses physical
+Go1.27.1 while preserving the old modules and validator as source data. A Go
+port of the frozen Python int64 specification checks all 228 original and 232
+revised expected values, alongside actual execution of the two saved Go
+reference suites. The historical Python specification is covered by the
+manifest hash. Model/provider calls and Python executions in this mode are zero.
+
+The source-file set, executable and Go executable are hashed before/after both
+modes. Logs and process records are written before validation; a failed attempt
+retains the completed observations. Original failed CI runs remain in GitHub's
+history, including [the version mismatch before this repair](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/37120308264).

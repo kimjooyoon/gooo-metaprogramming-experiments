@@ -35,7 +35,7 @@ func fileDigest(name string) string {
 
 func validatorSources(root string) object {
 	files := object{}
-	for _, name := range []string{"go.mod", "json.go", "freeze.go", "receipts.go", "native.go", "process_unix.go", "main.go", "replay_test.go"} {
+	for _, name := range []string{"go.mod", "json.go", "freeze.go", "receipts.go", "native.go", "process_unix.go", "main.go", "replay_test.go", "revision2.go", "reference.go", "revision2_test.go"} {
 		relative := "tools/baseline-replay/" + name
 		files[relative] = digest(readBytes(filepath.Join(root, relative)))
 	}

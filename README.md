@@ -29,9 +29,27 @@ results keep their exact contents. The new tool checks 140 current exact files
 and two bound historical archives, then compiles and executes the saved Go.
 Local race/vet and actual replay pass: 52/52 saved modules, plus 93 valid and
 three expected failed candidate packages. Model calls and new intents are zero.
-The new source revision still needs its own public CI result; the two previous
-failed runs above remain part of the record. Dated result tables below describe
-the original observations.
+The [first Go baseline revision passed public CI](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/37120308246).
+Its separate [revision-2 replay failed the historical version check](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/37120308264).
+[PR #19](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/pull/19)
+extends the Go tool to that path. It preserves the third preparer's frozen and
+current source versions, uses Go1.27.1 and executes original/repaired candidates
+in temporary copies. The 189 copied result files are removed before execution
+so the report can bind newly written observations to the frozen evidence. Both
+revisions reuse the same 32 intentions. The new path needs its own actual replay
+and public CI; all previous failed runs remain in the record.
+
+To reproduce locally with Go1.27.1:
+
+```sh
+cd tools/baseline-replay
+go run . --root ../.. --output /tmp/gooo-baseline-new
+go run . --revision2 --root ../.. --output /tmp/gooo-candidates-new
+```
+
+Choose fresh output folders. Reports include each candidate's training/evaluation
+counts and raw process logs. See [the replay guide](tools/baseline-replay).
+Dated result tables below describe the original observations.
 
 ## Recorded studies — September 2026
 

@@ -17,3 +17,8 @@ The original freeze digest stays
 The [Go replay tool](../../../tools/baseline-replay) checks every archive and
 current file against its explicit binding, then replays the saved Go modules.
 No archived preparation script is executed and no old result is regenerated.
+
+Revision-2 also retains `revision2-prepare.frozen.py.txt` and
+`revision2-prepare.go1271.py.txt`. Their exact digests are bound in the Go
+validator's `revision2.go`. The frozen preparer comes from the same historical
+commit; the active preparer keeps Go1.27.1. These files are read as source data.

@@ -17,6 +17,7 @@ func run() (exitCode int) {
 	rootFlag := flags.String("root", "../..", "repository root")
 	goFlag := flags.String("go-bin", "go", "Go 1.27.1 executable")
 	outputFlag := flags.String("output", "", "fresh report/log directory; default is a temporary directory")
+	revision2 := flags.Bool("revision2", false, "execute original and revision-2 candidate suites in fresh temporary copies")
 	goSeconds := flags.Int("go-timeout-seconds", 180, "per saved-module timeout")
 	candidateSeconds := flags.Int("candidate-timeout-seconds", 600, "candidate-package timeout")
 	if flags.Parse(os.Args[1:]) != nil {
@@ -32,10 +33,14 @@ func run() (exitCode int) {
 			if !ok {
 				panic(recovered)
 			}
-			fmt.Fprintln(os.Stderr, "baseline validation failed:", failure.message)
+			fmt.Fprintln(os.Stderr, "replay validation failed:", failure.message)
 			if output != "" {
 				// Persist a failed attempt without modifying the retained corpus.
-				raw := marshalJSON(object{"schema": "gooo/ir-composition-baseline-validation/v2", "validation": "FAIL_CLOSED", "reason": failure.message})
+				schema := "gooo/ir-composition-baseline-validation/v2"
+				if *revision2 {
+					schema = "gooo/ir-composition-revision2-independent-replay/v2"
+				}
+				raw := marshalJSON(object{"schema": schema, "validation": "FAIL_CLOSED", "reason": failure.message})
 				_ = os.WriteFile(filepath.Join(output, "failed-attempt.json"), append(raw, '\n'), 0644)
 			}
 			exitCode = 1
@@ -68,6 +73,20 @@ func run() (exitCode int) {
 	c := loadCorpus(root)
 	putJSON(filepath.Join(output, "frozen-source-resolution.json"), object{"schema": "gooo/frozen-source-resolution/v1",
 		"original_freeze_sha256": freezeDigest, "files": c.frozenRows, "historical_archives_executed": false})
+	if *revision2 {
+		report := replayRevision2(c, goBin, output, time.Duration(*candidateSeconds)*time.Second)
+		require(eq(sources, validatorSources(root)) && validatorDigest == fileDigest(executable) && toolchainDigest == fileDigest(goBin),
+			"validator source, executable or Go toolchain changed during replay")
+		report["validator_source_files"] = sources
+		report["validator_source_manifest_sha256"] = digest(marshalJSON(sources))
+		report["validator_binary_sha256"] = validatorDigest
+		report["go_binary_sha256"] = toolchainDigest
+		report["go_version"] = string(version.stdout)
+		putJSON(filepath.Join(output, "independent-replay-report.json"), report)
+		require(os.WriteFile(filepath.Join(output, "independent-replay-report.md"), []byte(revision2Text), 0644) == nil, "write revision-2 report")
+		fmt.Printf("Validation PASS; original 93/96 and revision-2 96/96 candidates executed. Reports: %s\n", output)
+		return 0
+	}
 	old := readOld(c)
 	newer := readNew(c, old)
 	oldReplay := replayBaseline(c, old, goBin, output, time.Duration(*goSeconds)*time.Second)

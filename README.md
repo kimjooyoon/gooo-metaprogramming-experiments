@@ -22,10 +22,41 @@ The [baseline replay on the documentation revision](https://github.com/kimjooyoo
 fails its frozen-input hash check for `prepare_ir_composition_curriculum.py` and
 `run_ir_composition_curriculum.py`. The same check already failed on the
 [preceding toolchain update](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/36753863347).
-Those scripts were changed when Go 1.27.1 was pinned; this documentation update
-preserves their bytes and the original study evidence. Restoring reproducible
-replay requires an explicit source-version repair. The dated result tables below
-describe the retained original observations.
+Those scripts were changed when Go 1.27.1 was pinned. An explicit
+[source-version repair and Go replay tool](tools/baseline-replay) now preserves
+the original and current bytes separately. The original freeze and all retained
+results keep their exact contents. The new tool checks 140 current exact files
+and two bound historical archives, then compiles and executes the saved Go.
+Local race/vet and actual replay pass: 52/52 saved modules, plus 93 valid and
+three expected failed candidate packages. Model calls and new intents are zero.
+The [first Go baseline revision passed public CI](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/37120308246).
+Its separate [revision-2 replay failed the historical version check](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/37120308264).
+[PR #19](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/pull/19)
+extends the Go tool to that path. It preserves the third preparer's frozen and
+current source versions, uses Go1.27.1 and executes original/repaired candidates
+in temporary copies. The 189 copied result files are removed before execution
+so the report can bind newly written observations to the frozen evidence. Both
+revisions reuse the same 32 intentions. Its exact-source local execution and
+[public revision-2 CI](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/37122086981)
+pass, along with the [baseline CI](https://github.com/kimjooyoon/gooo-metaprogramming-experiments/actions/runs/37122087007).
+The original candidates execute in 93/96 packages with three preserved compile
+failures; revision-2 executes in 96/96 packages. All 189 fresh result files match
+the frozen bytes. The declared gold candidates satisfy 137/137 training and
+95/95 evaluation cases; this replay makes zero model calls and measures the
+frozen candidate behavior. Every candidate's scores, including distractor
+failures, remain separate in the report. All previous failed runs remain in the record.
+
+To reproduce locally with Go1.27.1:
+
+```sh
+cd tools/baseline-replay
+go run . --root ../.. --output /tmp/gooo-baseline-new
+go run . --revision2 --root ../.. --output /tmp/gooo-candidates-new
+```
+
+Choose fresh output folders. Reports include each candidate's training/evaluation
+counts and raw process logs. See [the replay guide](tools/baseline-replay).
+Dated result tables below describe the original observations.
 
 ## Recorded studies — September 2026
 

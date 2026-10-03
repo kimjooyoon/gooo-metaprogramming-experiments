@@ -6,12 +6,14 @@ on:
       - '.github/workflows/ir-composition-revision2-replay.yml'
       - 'scripts/replay_ir_composition_revision2.py'
       - 'scripts/prepare_ir_composition_revision2.py'
+      - 'tools/baseline-replay/**'
       - 'cohorts/ir-composition-curriculum-2026-09-30/**'
   pull_request:
     paths:
       - '.github/workflows/ir-composition-revision2-replay.yml'
       - 'scripts/replay_ir_composition_revision2.py'
       - 'scripts/prepare_ir_composition_revision2.py'
+      - 'tools/baseline-replay/**'
       - 'cohorts/ir-composition-curriculum-2026-09-30/**'
   workflow_dispatch:
 
@@ -39,8 +41,9 @@ jobs:
           go-version: '1.27.1'
           cache: false
       - name: Independently replay original and revised candidates in temporary copies
+        working-directory: tools/baseline-replay
         run: |
-          python3 scripts/replay_ir_composition_revision2.py \
+          go run . --revision2 --root ../.. \
             --go-bin "$(command -v go)" \
             --output "$RUNNER_TEMP/ir-composition-revision2-replay"
       - name: Publish finite replay summary

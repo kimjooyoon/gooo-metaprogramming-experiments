@@ -21,14 +21,27 @@ jobs:
         with:
           go-version: '1.27.1'
 
-      - name: Validate both saved compiler baselines and replay emitted Go
+      - name: Check the Go replay implementation
+        working-directory: tools/baseline-replay
         env:
           GOTOOLCHAIN: local
           GOPROXY: 'off'
           GOSUMDB: 'off'
           GOWORK: 'off'
         run: |
-          python3 scripts/validate_ir_composition_baselines.py \
+          test -z "$(gofmt -l .)"
+          go vet ./...
+          go test -race -count=1 ./...
+
+      - name: Validate both saved compiler baselines and replay emitted Go
+        working-directory: tools/baseline-replay
+        env:
+          GOTOOLCHAIN: local
+          GOPROXY: 'off'
+          GOSUMDB: 'off'
+          GOWORK: 'off'
+        run: |
+          go run . --root ../.. \
             --go-bin "$(which go)" \
             --go-timeout-seconds 180 \
             --candidate-timeout-seconds 600 \
